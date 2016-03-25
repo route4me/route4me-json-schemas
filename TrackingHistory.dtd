@@ -3,64 +3,41 @@
   "id": "https://github.com/route4me/json-schemas/TrackingHistory.dtd",
   "title": "TrackingHistory",
   "type": "object",
-  "additionalProperties": false,
+  "required": ["s", "lt", "lg", "ts", "ts_friendly"],
   "properties": {
     "s": {
-      "required": true,
-      "type": [
-        "number",
-        "null"
-      ],
+      "type": ["number", "null"],
       "name": "s",
       "title": "Speed",
       "description": "Speed at the time of the location transaction event"
     },
     "lt": {
-      "required": true,
-      "type": [
-        "number",
-        "null"
-      ],
+      "type": ["number", "null"],
       "name": "lt",
       "title": "Latitude",
       "description": "Latitude at the time of the location transaction event"
     },
     "lg": {
-      "required": true,
-      "type": [
-        "number",
-        "null"
-      ],
+      "type": ["number", "null"],
       "name": "lg",
       "title": "Longitude",
       "description": "Longitude at the time of the location transaction event"
     },
     "d": {
-      "required": true,
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "name": "d",
       "title": "Direction",
       "description": "Direction/Heading at the time of the location transaction event"
     },
     "ts": {
-      "required": true,
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": ["string", "null"],
       "name": "ts",
       "title": "Timestamp",
       "description": "The original timestamp in unix timestamp format at the moment location transaction event"
     },
     "ts_friendly": {
-      "required": true,
-      "type": [
-        "string",
-        "null"
-      ],
+
+      "type": ["string", "null"],
       "name": "ts_friendly",
       "title": "Friendly Timestamp",
       "description": "The original timestamp in a human readable timestamp format at the moment location transaction event"
