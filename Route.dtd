@@ -1,0 +1,458 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://github.com/route4me/json-schemas/Route.dtd",
+  "type": "object",
+  "name": "Route",
+      "properties": {
+        "route_id": {
+          "id": "https://github.com/route4me/json-schemas/Route.dtd/route_id",
+          "type": "string",
+          "name": "route_id",
+          "title": "Route ID",
+          "description": "Route Unique Identifier"
+        },
+        "optimization_problem_id": {
+          "id": "https://github.com/route4me/json-schemas/Route.dtd/optimization_problem_id",
+          "type": "string",
+          "name": "optimization_problem_id",
+          "title": "Optimization Problem ID",
+          "description": "Optimization which generated this route"
+        },
+        "vehicle_alias": {
+          "id": "https://github.com/route4me/json-schemas/Route.dtd/vehicle_alias",
+          "type": "string",
+          "name": "vehicle_alias",
+          "title": "Vehicle Alias",
+          "description": "Name of vehicle_id"
+        },
+        "driver_alias": {
+          "id": "https://github.com/route4me/json-schemas/Route.dtd/driver_alias",
+          "type": "string",
+          "name": "driver_alias",
+          "title": "Driver Alias",
+          "description": "Name of driver_id. 32 Character Fixed-length MD5 Hash"
+        },
+        "trip_distance": {
+          "id": "https://github.com/route4me/json-schemas/Route.dtd/trip_distance",
+          "type": "number",
+          "name": "trip_distance",
+          "title": "Trip Distance",
+          "description": "Route length (the unit is given by distance_unit)"
+        },
+        "mpg": {
+          "id": "https://github.com/route4me/json-schemas/Route.dtd/mpg",
+          "type": "integer",
+          "name": "mpg",
+          "title": "MPG",
+          "description": "Miles per gallon (used to compute fuel consumption)"
+        },
+        "gas_price": {
+          "id": "https://github.com/route4me/json-schemas/Route.dtd/gas_price",
+          "type": "number",
+          "name": "gas_price",
+          "title": "Gas Price",
+          "description": "Price of gas (used to compute route costs)"
+        },
+        "route_duration_sec": {
+          "id": "https://github.com/route4me/json-schemas/Route.dtd/route_duration_sec",
+          "type": "integer",
+          "name": "route_duration_sec",
+          "title": "Route Duration sec",
+          "description": "Estimated drive time of route (Seconds)"
+        },
+        "parameters": {
+          "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters",
+          "type": "object",
+          "properties": {
+            "is_upload": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/is_upload",
+              "type": "boolean",
+              "name": "is_upload",
+              "title": "Is Upload",
+              "description": "True if this is an uploaded CSV file"
+            },
+            "rt": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/rt",
+              "type": "boolean",
+              "name": "rt",
+              "description": "Round-trip - the last address is a duplicate of the first",
+              "title": "Round Trip"
+            },
+            "route_name": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/route_name",
+              "type": "string",
+              "name": "route_name",
+              "title": "Route Name",
+              "description": "Name of the route for later retrieval"
+            },
+            "route_date": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/route_date",
+              "type": "integer",
+              "name": "route_date",
+              "title": "Route Date",
+              "description": "Unix time when the route starts"
+            },
+            "route_time": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/route_time",
+              "type": "integer",
+              "name": "route_time",
+              "title": "Route Time",
+              "description": "Time when the route starts (relative to route_date) (Seconds). UTC timezone as well"
+            },
+            "shared_publicly": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/shared_publicly",
+              "type": "boolean",
+              "name": "shared_publicly",
+              "title": "Shared Publicly",
+              "description": "The route can be viewed by anonymous non-logged-in users"
+            },
+            "disable_optimization": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/disable_optimization",
+              "type": "boolean",
+              "name": "disable_optimization",
+              "title": "Disable Optimization",
+              "description": "Depricated. Use algorithm_type instead"
+            },
+            "optimize": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/optimize",
+              "type": "string",
+              "name": "optimize",
+              "title": "Optimize",
+              "description": "The driving directions will be generated biased for this selection. This has no impact on route sequencing"
+            },
+            "lock_last": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/lock_last",
+              "type": "boolean",
+              "name": "lock_last",
+              "title": "Lock Last",
+              "description": "A flag to indicate if the last stop in the route should be fixed"
+            },
+            "vehicle_capacity": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/vehicle_capacity",
+              "type": "integer",
+              "name": "vehicle_capacity",
+              "title": "Vehicle Capacity",
+              "description": "How much cargo can the vehicle carry (units, e.g. cubic meters)"
+            },
+            "vehicle_max_distance_mi": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/vehicle_max_distance_mi",
+              "type": "integer",
+              "name": "vehicle_max_distance_mi",
+              "title": "Vehicle Maximum Distance mi",
+              "description": "Max distance for a single vehicle in this route (always in miles)"
+            },
+            "distance_unit": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/distance_unit",
+              "type": "string",
+              "name": "distance_unit",
+              "title": "Distance Unit",
+              "description": "The distance measurement unit for the route ('mi', 'km')"
+            },
+            "travel_mode": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/travel_mode",
+              "type": "string",
+              "name": "travel_mode",
+              "title": "Travel Mode",
+              "description": "Travel mode ('Driving', 'Walking', 'Trucking', 'Cycling', 'Transit')"
+            },
+            "avoid": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/avoid",
+              "type": "string",
+              "name": "avoid",
+              "title": "Avoid",
+              "description": "Options which let the user choose which road obstacle to avoid ('Highways', 'Tolls' etc)"
+            },
+            "vehicle_id": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/vehicle_id",
+              "type": "string",
+              "name": "vehicle_id",
+              "title": "Vehicle ID",
+              "description": "The unique internal id of a vehicle"
+            },
+            "driver_id": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/driver_id",
+              "type": "string",
+              "description": "The unique internal id of a driver",
+              "name": "driver_id",
+              "title": "Driver ID"
+            },
+            "dev_lat": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/dev_lat",
+              "type": "number",
+              "name": "dev_lat",
+              "title": "Device Latitude",
+              "description": "The latitude location of where a mobile device was located when it made a request to create the route",
+              "minimum": -90
+            },
+            "dev_lng": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/dev_lng",
+              "type": "number",
+              "name": "dev_lng",
+              "title": "Device Longitude",
+              "description": "The longitude location of where a mobile device was located when it made a request to create the route"
+            },
+            "route_max_duration": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/route_max_duration",
+              "type": "integer",
+              "name": "route_max_duration",
+              "title": "Route Maximum Duration",
+              "description": "How many seconds a route can last at most"
+            },
+            "route_email": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/route_email",
+              "type": "string",
+              "name": "route_email",
+              "title": "Route Email",
+              "description": "Addresses where this route was shared after completion"
+            },
+            "route_type": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/route_type",
+              "type": "string",
+              "name": "route_type",
+              "title": "Route Type",
+              "description": "Route Type"
+            },
+            "store_route": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/store_route",
+              "type": "boolean",
+              "name": "store_route",
+              "title": "Store Route",
+              "description": "Always true"
+            },
+            "metric": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/metric",
+              "type": "integer",
+              "name": "metric",
+              "title": "Metric",
+              "description": "Geometric metric (1 - 5)"
+            },
+            "algorithm_type": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/algorithm_type",
+              "type": "integer",
+              "name": "algorithm_type",
+              "title": "Algorithm Type",
+              "description": "The algorithm to be used (1=TSP, 2=VRP etc)",
+              "minimum": 1
+            },
+            "member_id": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/member_id",
+              "type": "integer",
+              "name": "member_id",
+              "title": "Member ID",
+              "description": "User ID who is assigned to the route"
+            },
+            "ip": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/ip",
+              "type": "integer",
+              "name": "ip",
+              "title": "IP",
+              "description": "IP Address in decimal form of user who created the route"
+            },
+            "dm": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/dm",
+              "type": "integer",
+              "name": "dm",
+              "title": "dm",
+              "description": "The matrix method"
+            },
+            "dirm": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/dirm",
+              "type": "integer",
+              "name": "dirm",
+              "description": "Depricated. The directions method",
+              "title": "Directions method"
+            },
+            "parts": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/parts",
+              "type": "integer",
+              "name": "parts",
+              "title": "Parts",
+              "description": "Legacy feature which permits a user to request an example number of optimized routes"
+            },
+            "device_id": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/device_id",
+              "type": "string",
+              "name": "device_id",
+              "title": "Device ID",
+              "description": "The ID of the device that was used to plan this route"
+            },
+            "device_type": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/device_type",
+              "type": "string",
+              "name": "device_type",
+              "title": "Device Type",
+              "description": "The type of the device that is creating this route"
+            },
+            "has_trailer": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/has_trailer",
+              "type": "boolean",
+              "name": "has_trailer",
+              "title": "Has Trailer",
+              "description": "If travel_mode = 'Trucking', specifies whether the truck has a trailer (required)"
+            },
+            "trailer_weight_t": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/trailer_weight_t",
+              "type": "number",
+              "name": "trailer_weight_t",
+              "title": "Trailer Weight t"
+            },
+            "limited_weight_t": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/limited_weight_t",
+              "type": "number",
+              "name": "limited_weight_t",
+              "title": "Limited Weight t",
+              "description": "If travel_mode = 'Trucking', specifies the truck weight (required)"
+            },
+            "weight_per_axle_t": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/weight_per_axle_t",
+              "type": "number",
+              "name": "weight_per_axle_t",
+              "title": "Weight Per Axle t",
+              "description": "If travel_mode = 'Trucking', specifies the weight per axle (required)"
+            },
+            "truck_height_meters": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/truck_height_meters",
+              "type": "integer",
+              "name": "truck_height_meters",
+              "title": "Truck Height (meters)"
+            },
+            "truck_width_meters": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/truck_width_meters",
+              "type": "integer",
+              "name": "truck_width_meters",
+              "title": "Truck Width Meters",
+              "description": "If travel_mode = 'Trucking', specifies the truck width (required)"
+            },
+            "truck_length_meters": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/truck_length_meters",
+              "type": "integer",
+              "name": "truck_length_meters",
+              "title": "Truck Length Meters",
+              "description": "If travel_mode = 'Trucking', specifies the truck length (required)"
+            },
+            "truck_hazardous_goods": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/truck_hazardous_goods",
+              "type": "string",
+              "name": "truck_hazardous_goods",
+              "title": "Truck Hazardous Goods",
+              "description": "Truck hazardous goods ('explosive', 'gas', 'flammable' etc)"
+            },
+            "language": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/language",
+              "type": "string",
+              "name": "language",
+              "title": "Language",
+              "description": "Only available for when the dirm method = 2"
+            },
+            "first_drive_then_wait_between_stops": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/first_drive_then_wait_between_stops",
+              "type": "boolean",
+              "name": "first_drive_then_wait_between_stops",
+              "title": "First Drive Then Wait Between Stops",
+              "description": "Specify the dynamic manifest computation method if there is a wait time present at an address"
+            },
+            "max_subtour_revenue": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/max_subtour_revenue",
+              "type": "number",
+              "name": "max_subtour_revenue",
+              "title": "Maxmum Subtour Revenue",
+              "description": "Each address may have a 'revenue' property. When that is the case, the constraint specifies the maximum sum of revenues in a route"
+            },
+            "traffic_multiplier": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/traffic_multiplier",
+              "type": "number",
+              "name": "traffic_multiplier",
+              "title": "Traffic Multiplier",
+              "description": "For directions systems that support traffic"
+            },
+            "max_tour_size": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/max_tour_size",
+              "type": "integer",
+              "name": "max_tour_size",
+              "title": "Maximum Tour Size",
+              "description": "The maximum number of stops allowed in a subtour. null means there is no maximum"
+            },
+            "min_tour_size": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/min_tour_size",
+              "type": "integer",
+              "name": "min_tour_size",
+              "title": "Minimum Tour Size",
+              "description": "Minimum number of stops allowed in a subtour. null means there is no minimum"
+            },
+            "uturn": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/uturn",
+              "type": "integer",
+              "name": "uturn",
+              "title": "U Turn",
+              "description": "U Turn"
+            },
+            "leftturn": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/parameters/leftturn",
+              "type": "integer",
+              "name": "leftturn",
+              "title": "Left Turn",
+              "description": "Left Turn (1 = LEFTTURN_ALLOW, 2 = LEFTTURN_FORBID, 3 = LEFTTURN_MULTIAPPROACH)"
+            }
+          },
+          "name": "parameters",
+          "title": "Parameters",
+          "description": "Parameters"
+        },
+        "addresses": {
+			"type": "array",
+          "items": {
+				"type": "Address",
+				"$ref":"https://github.com/route4me/json-schemas/Address.dtd"
+		  }
+		  "name": "addresses",
+          "title": "Addresses"
+		},
+        "links": {
+          "id": "https://github.com/route4me/json-schemas/Route.dtd/links",
+          "type": "object",
+          "properties": {
+            "route": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/links/route",
+              "type": "string",
+              "name": "route",
+              "title": "Route",
+              "description": "Link to route"
+            },
+            "optimization_problem_id": {
+              "id": "https://github.com/route4me/json-schemas/Route.dtd/links/optimization_problem_id",
+              "type": "string",
+              "name": "optimization_problem_id",
+              "title": "Optimization Problem ID",
+              "description": "Link to optimization problem"
+            }
+          },
+          "name": "links",
+          "title": "Links",
+          "description": "Links"
+        },
+        "directions": {
+          "type": "array",
+          "items": [],
+          "name": "directions",
+          "description": "Edge by edge turn-by-turn directions.  Note: For round-trip routes (parameters.rt = true), the return to the start address is returned as well"
+        },
+        "path": {
+          "type": "array",
+          "items": [],
+          "name": "path",
+          "title": "Path",
+          "description": "Edge-wise path to be drawn on the map"
+        },
+        "tracking_history": {
+          "type": "array",
+          "items": {
+				"type": "TrackingHistory",
+				"$ref":"hhttps://github.com/route4me/json-schemas/TrackingHistory.dtd"
+		  },
+          "name": "tracking_history",
+          "title": "Tracking History",
+          "description": "A collection of device tracking data with coordinates, speed, and timestamps"
+        }
+      },
+      "required": ["route_id", "optimization_problem_id", "addresses"]
+}
