@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://github.com/route4me/json-schemas/note.dtd",
   "type": "object",
+  "name": "note",
   "properties": {
     "note_id": {
       "id": "https://github.com/route4me/json-schemas/note.dtd/note_id",

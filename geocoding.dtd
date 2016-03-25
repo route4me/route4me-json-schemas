@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://github.com/route4me/json-schemas/geocoding.dtd",
   "type": "object",
+  "name": "geocoding",
   "properties": {
     "key": {
       "id": "https://github.com/route4me/json-schemas/geocoding.dtd/key",
@@ -115,9 +116,5 @@
       "description": "Curbside Coordinates"
     }
   },
-  "required": [
-    "bbox",
-    "lat",
-    "lng"
-  ]
+  "required": ["bbox", "lat", "lng"]
 }

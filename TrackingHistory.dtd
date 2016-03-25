@@ -1,7 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://github.com/route4me/json-schemas/TrackingHistory.dtd",
-  "title": "TrackingHistory",
+  "title": "Tracking History",
+  "name": "TrackingHistory",
   "type": "object",
   "required": ["s", "lt", "lg", "ts", "ts_friendly"],
   "properties": {

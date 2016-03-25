@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://github.com/route4me/json-schemas/Address.dtd",
+  "Name": "Address",
   "type": "object",
   "properties": {
     "route_destination_id": {
@@ -131,12 +132,13 @@
       "description": "True means there was a geocoding attempt which failed. False means success or no geocoding"
     },
     "geocodings": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/geocodings",
       "type": "array",
       "items": {
         "type": "geocoding",
         "$ref": "https://github.com/route4me/json-schemas/geocoding.dtd"
-      }
+      },
+	  "name": "geocodings",
+      "title": "Geocodings ID"
     },
     "contact_id": {
       "id": "https://github.com/route4me/json-schemas/Address.dtd/contact_id",
@@ -380,7 +382,6 @@
       "description": "See time_window_end"
     },
     "notes": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/notes",
       "type": "array",
       "items": {
         "type": "note",
@@ -391,7 +392,6 @@
       "description": "Notes"
     },
     "custom_fields": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/custom_fields",
       "type": "array",
       "items": [],
       "description": "Any unrecognized fields from the original CSV upload will be found here",
