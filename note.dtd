@@ -1,45 +1,45 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://github.com/route4me/json-schemas/note",
+  "id": "https://github.com/route4me/json-schemas/note.dtd",
   "type": "object",
   "properties": {
     "note_id": {
-      "id": "https://github.com/route4me/json-schemas/note/note_id",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/note_id",
       "type": "integer",
       "name": "note_id",
       "title": "Note ID",
       "description": "the id of the note in the system"
     },
     "route_id": {
-      "id": "https://github.com/route4me/json-schemas/note/route_id",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/route_id",
       "type": "string",
       "name": "route_id",
       "title": "Route ID",
       "description": "Route ID"
     },
     "route_destination_id": {
-      "id": "https://github.com/route4me/json-schemas/note/route_destination_id",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/route_destination_id",
       "type": "integer",
       "name": "route_destination_id",
       "title": "Route Destination ID",
       "description": "Route Destination ID"
     },
     "upload_id": {
-      "id": "https://github.com/route4me/json-schemas/note/upload_id",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/upload_id",
       "type": "string",
       "name": "upload_id",
       "title": "Upload ID",
       "description": "The unique and randomly generated ID of the file attachment that is associated with this note"
     },
     "ts_added": {
-      "id": "https://github.com/route4me/json-schemas/note/ts_added",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/ts_added",
       "type": "integer",
       "name": "ts_added",
       "title": "TS Added",
       "description": "The unix timestamp when the note was added"
     },
     "lat": {
-      "id": "https://github.com/route4me/json-schemas/note/lat",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/lat",
       "type": "number",
       "minimum": -90,
       "maximum": 90,
@@ -48,7 +48,7 @@
       "description": "Latitude"
     },
     "lng": {
-      "id": "https://github.com/route4me/json-schemas/note/lng",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/lng",
       "type": "number",
       "minimum": -180,
       "maximum": 180,
@@ -57,42 +57,42 @@
       "description": "Longitude"
     },
     "activity_type": {
-      "id": "https://github.com/route4me/json-schemas/note/activity_type",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/activity_type",
       "type": "string",
       "name": "activity_type",
       "title": "Activity Type",
       "description": "Activity Type"
     },
     "contents": {
-      "id": "https://github.com/route4me/json-schemas/note/contents",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/contents",
       "type": "string",
       "name": "contents",
       "title": "Contents",
       "description": "Contents"
     },
     "upload_type": {
-      "id": "https://github.com/route4me/json-schemas/note/upload_type",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/upload_type",
       "type": "string",
       "name": "upload_type",
       "title": "Upload Type",
       "description": "Upload Type ( 'DRIVER_IMG', 'VEHICLE_IMG', 'ADDRESS_IMG', 'CSV_FILE', 'XLS_FILE', 'ANY_FILE' )"
     },
     "upload_url": {
-      "id": "https://github.com/route4me/json-schemas/note/upload_url",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/upload_url",
       "type": "string",
       "name": "upload_url",
       "title": "Upload url",
       "description": "The direct CDN URL of the attachment uploaded with a note"
     },
     "upload_extension": {
-      "id": "https://github.com/route4me/json-schemas/note/upload_extension",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/upload_extension",
       "type": "string",
       "name": "upload_extension",
       "title": "Upload Extension",
       "description": "The extension of the attachment ('pdf', 'csv' etc)"
     },
     "device_type": {
-      "id": "https://github.com/route4me/json-schemas/note/device_type",
+      "id": "https://github.com/route4me/json-schemas/note.dtd/device_type",
       "type": "string",
       "name": "device_type",
       "title": "Device Type",
