@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://github.com/route4me/json-schemas/DataObjectRoute.dtd",
+  "title": "DataObjectRoute",
+  "type": "object",
+  "name": "DataObjectRoute",
+  "properties": {
+		"route_id": {
+		  "type": ["string"],
+		  "name": "route_id",
+		  "title": "Route ID",
+		  "descrption": "Route Unique Identifier"
+		},
+		"member_id": {
+		  "type": ["string", "null"],
+		  "name": "member_id",
+		  "title": "Member ID",
+		  "descrption": "User ID who is assigned to the route"
+		},
+		"member_email": {
+		  "type": ["string", "null"],
+		  "name": "member_email",
+		  "title": "Member Email",
+		  "format": "email",
+		  "descrption": "User email"
+		},
+		"vehicle_alias": {
+		  "type": ["string", "null"],
+		  "name": "vehicle_alias",
+		  "title": "Vehicle Alias",
+		  "descrption": "Name of vehicle_id"
+		},
+		"driver_alias": {
+		  "type": ["string", "null"],
+		  "name": "driver_alias",
+		  "title": "Driver Alias",
+		  "descrption": "Name of driver_id"
+		},
+		"route_cost": {
+		  "type": ["number", "null"],
+		  "name": "route_cost",
+		  "title": "Route Cost",
+		  "descrption": "Route cost"
+		},
+		"route_revenue": {
+		  "type": ["number", "null"],
+		  "name": "route_revenue",
+		  "title": "Route Revenue",
+		  "descrption": "Route Revenue"
+		},
+		"net_revenue_per_distance_unit": {
+		  "type": ["number", "null"],
+		  "name": "net_revenue_per_distance_unit",
+		  "title": "Net Revenue per Distance Unit",
+		  "descrption": "equal to (Revenue - cost) / distance units"
+		},
+		"created_timestamp": {
+		  "type": ["integer", "null"],
+		  "name": "created_timestamp",
+		  "title": "Created Timestamp",
+		  "descrption": "When was the route created"
+		},
+		"mpg": {
+		  "type": ["string", "null"],
+		  "name": "mpg",
+		  "title": "Miles per Gallon",
+		  "descrption": "Miles per gallon (used to compute fuel consumption)"
+		},
+		"trip_distance": {
+		  "type": ["number", "null"],
+		  "name": "trip_distance",
+		  "title": "Trip Distance",
+		  "descrption": "Route length (the unit is given by distance_unit)"
+		},
+		"gas_price": {
+		  "type": ["number", "null"],
+		  "name": "gas_price",
+		  "title": "Gas Price",
+		  "descrption": "Price of gas (used to compute route costs)"
+		},
+		"route_duration_sec": {
+		  "type": ["integer", "null"],
+		  "name": "route_duration_sec",
+		  "title": "Route Duration (sec)",
+		  "descrption": "Estimated drive time of route (Seconds)"
+		}
+	},
+	"required": ["route_id", "member_id"]
+}
