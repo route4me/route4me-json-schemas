@@ -1,0 +1,87 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/DataObject.dtd",
+	"title": "Optimization",
+	"type": "object",
+	"name": "Optimization",
+	"properties": {
+		"optimization_problem_id": {
+			"type": ["string"],
+			"name": "optimization_problem_id",
+			"title": "Optimization Problem ID",
+			"descrption": "Optimization which generated this route"
+		},
+		"state": {
+			"type": "integer",
+			"enum": [1, 2, 3, 4, 5, 6],
+			"name": "state",
+			"title": "State",
+			"description": "an optimization problem can be at one state at any given time (Initial = 1, MatrixProcessing = 2, Optimizing = 3, Optimized = 4, Error = 5, ComputingDirections = 6)"
+		},
+		"user_errors": {
+			"type": "array",
+			"name": "user_errors",
+			"title": "User Errors",
+			"items": {
+				"type": "string"
+			},
+			"descrption": "User Errors"
+		},
+		"sent_to_background": {
+			"type": ["boolean"],
+			"name": "sent_to_background",
+			"title": "Sent to Background",
+			"descrption": "If true it means the solution was not returned (it is being computed in the background)"
+		},
+		"parameters": {
+			"type": "array",
+			"name": "parameters",
+			"title": "Route Parameters",
+			"items": {
+				"type": "RouteParameters",
+				"$ref": "https: //github.com/route4me/json-schemas/RouteParameters.dtd"
+			},
+			"descrption": "Route Parameters"
+		},
+		"addresses": {
+			"type": "array",
+			"name": "addresses",
+			"title": "Route Addresses",
+			"items": {
+				"type": "Address",
+				"$ref": "https: //github.com/route4me/json-schemas/Address.dtd"
+			},
+			"descrption": "Route Addresses"
+		},
+		"routes": {
+			"type": "array",
+			"name": "routes",
+			"title": "Routes",
+			"items": {
+				"type": "DataObjectRoute",
+				"$ref": "https: //github.com/route4me/json-schemas/DataObjectRoute.dtd"
+			},
+			"descrption": "Routes"
+		},
+		"links": {
+			"type": "array",
+			"name": "links",
+			"title": "Links",
+			"items": {
+				"type": "Links",
+				"$ref": "https: //github.com/route4me/json-schemas/Links.dtd"
+			},
+			"descrption": "Links to the GET operations for the optimization problem"
+		},
+		"tracking_history": {
+			"type": "array",
+			"name": "tracking_history",
+			"title": "TrackingHistory",
+			"items": {
+				"type": "TrackingHistory",
+				"$ref": "https: //github.com/route4me/json-schemas/TrackingHistory.dtd"
+			},
+			"descrption": "A collection of device tracking data with coordinates, speed, and timestamps"
+		}
+	}
+}
