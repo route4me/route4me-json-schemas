@@ -1,0 +1,260 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://github.com/route4me/json-schemas/RouteParameters.dtd",
+  "title": "Route Parameters",
+  "type": "object",
+  "name": "RouteParameters",
+  "properties": {
+    "is_upload": {
+      "type": ["string", "null"],
+	  "name": "is_upload",
+	  "title": "Is Upload",
+	  "description": "Let the R4M api know if this sdk request is coming from a file upload within your environment (for analytics)"
+    },
+    "rt": {
+      "type": ["boolean", "null"],
+	  "name": "rt",
+	  "title": "Round Trip",
+	  "description": "The tour type of this route. rt is short for round trip, the optimization engine changes its behavior for round trip routes"
+    },
+    "disable_optimization": {
+      "type": ["boolean", "null"],
+	  "name": "disable_optimization",
+	  "title": "Disable Optimization",
+	  "description": "By disabling optimization, the route optimization engine will not resequence the stops in your"
+    },
+    "route_name": {
+      "type": ["string", "null"],
+	  "name": "route_name",
+	  "title": "Route Name",
+	  "description": "The name of this route. this route name will be accessible in the search API, and also will be displayed on the mobile device of a user"
+    },
+    "route_date": {
+      "type": ["integer", "null"],
+	  "name": "route_date",
+	  "title": "Route Date",
+	  "description": "The route start date in UTC, unix timestamp seconds. Used to show users when the route will begin, also used for reporting and analytics"
+    },
+    "route_time": {
+      "type": ["integer"],
+	  "default": 0,
+	  "name": "route_time",
+	  "title": "Route Time",
+	  "description": "Time when the route starts (relative to route_date) (Seconds). UTC timezone as well"
+    },
+    "shared_publicly": {
+      "type": ["string", "null"],
+	  "name": "shared_publicly",
+	  "title": "Shared Publicly",
+	  "description": "Deprecated. Specify if the route can be viewed by unauthenticated users"
+    },
+    "optimize": {
+      "type": ["string", "null"],
+	  "name": "optimize",
+	  "title": "Optimize",
+	  "description": "ENUM('Distance', 'Time', 'timeWithTraffic'). The driving directions will be generated biased for this selection. This has no impact on route sequencing"
+    },
+    "lock_last": {
+      "type": ["boolean", "null"],
+	  "name": "lock_last",
+	  "title": "Lock Last",
+	  "description": "A flag to indicate if the last stop in the route should be fixed"
+    },
+    "vehicle_capacity": {
+      "type": ["string", "null"],
+	  "name": "vehicle_capacity",
+	  "title": "Vehicle Capacity",
+	  "description": "How much cargo can the vehicle carry (units, e.g. cubic meters)"
+    },
+    "vehicle_max_distance_mi": {
+      "type": ["string", "null"],
+	  "name": "vehicle_max_distance_mi",
+	  "title": "Vehicle Maximum Distance (mi)",
+	  "description": "Max distance for a single vehicle in this route (always in miles)"
+    },
+    "distance_unit": {
+      "type": ["string", "null"],
+	  "name": "distance_unit",
+	  "title": "Distance Unit",
+	  "description": "The distance measurement unit for the route"
+    },
+    "travel_mode": {
+      "type": ["string", "null"],
+	  "name": "travel_mode",
+	  "title": "Travel Mode",
+	  "description": "ENUM('Driving', 'Walking', 'Trucking', 'Cycling', 'Transit'). The mode of travel that the directions should be optimized for"
+    },
+    "avoid": {
+      "type": ["string", "null"],
+	  "name": "avoid",
+	  "title": "Avoid",
+	  "description": "ENUM('Highways', 'Tolls', 'minimizeHighways', 'minimizeTolls', ''). Options which let the user choose which road obstacles to avoid. This has no impact on route sequencing."
+    },
+    "vehicle_id": {
+      "type": ["string", "null"],
+	  "name": "vehicle_id",
+	  "title": "Vehicle ID",
+	  "description": "The unique internal id of a vehicle"
+    },
+    "driver_id": {
+      "type": ["string", "null"],
+	  "name": "driver_id",
+	  "title": "Driver ID",
+	  "description": "The unique internal id of a driver"
+    },
+    "dev_lat": {
+      "type": ["number", "null"],
+	  "name": "dev_lat",
+	  "title": "Device Latitude",
+	  "description": "The latitude location of where a mobile device was located when it made a request to create the route."
+    },
+    "dev_lng": {
+      "type": ["number", "null"],
+	  "name": "dev_lng",
+	  "title": "Device Longitude",
+	  "description": "The longitude location of where a mobile device was located when it made a request to create the route"
+    },
+    "route_max_duration": {
+      "type": ["integer"],
+	  "default": 86400,
+	  "name": "route_max_duration",
+	  "title": "Route Maximum Duration",
+	  "description": "How many seconds a route can last at most. Default is 24 hours = 86400 seconds"
+    },
+    "route_email": {
+      "type": ["string", "null"],
+	  "name": "route_email",
+	  "title": "Route Email",
+	  "format": "email",
+	  "description": "Addresses where this route was shared after completion"
+    },
+    "route_type": {
+      "type": ["string", "null"],
+	  "name": "route_type",
+	  "title": "Route Type",
+	  "description": "Type of route being created: ENUM(api,null)"
+    },
+    "store_route": {
+      "type": ["boolean", "null"],
+	  "name": "store_route",
+	  "title": "Store Route",
+	  "description": "Always true"
+    },
+    "metric": {
+      "type": "integer",
+      "enum": [1, 2, 3, 4, 5],
+	  "name": "metric",
+	  "title": "Metric",
+	  "description": "Integer [1, 2, 3, 4, 5]"
+    },
+    "algorithm_type": {
+      "type": "integer",
+      "enum": [1, 2, 3, 4, 5, 6, 7],
+	  "name": "algorithm_type",
+	  "title": "Algorithm Type",
+	  "description": "The algorithm to be used. Integer [TSP=1, VRP=2 etc]"
+    },
+    "member_id": {
+      "type": ["string", "null"],
+	  "name": "member_id",
+	  "title": "Member ID",
+	  "description": "User ID who is assigned to the route"
+    },
+    "ip": {
+      "type": ["string", "null"],
+	  "name": "ip",
+	  "title": "IP",
+	  "description": "IP Address in decimal form of user who created the route"
+    },
+    "dm": {
+      "type": ["integer", "null"],
+	  "name": "dm",
+	  "title": "DM",
+	  "description": "Undocumented/not publicly shown"
+    },
+    "dirm": {
+      "type": ["integer", "null"],
+	  "name": "dirm",
+	  "title": "Directions Method",
+	  "description": "Undocumented/not publicly shown"
+    },
+    "parts": {
+      "type": ["integer", "null"],
+	  "name": "parts",
+	  "title": "Parts",
+	  "description": "Legacy feature which permits a user to request an example number of optimized routes"
+    },
+    "device_id": {
+      "type": ["string", "null"],
+	  "name": "device_id",
+	  "title": "Device ID",
+	  "description": "32 Character MD5 String ID of the device that was used to plan this route"
+    },
+    "device_type": {
+      "type": ["string", "null"],
+	  "name": "device_type",
+	  "title": "Device Type",
+	  "description": ""
+    },
+    "has_trailer": {
+      "type": ["boolean", "null"],
+	  "name": "",
+	  "title": "",
+	  "description": "ENUM('web', 'iphone', 'ipad', 'android_phone', 'android_tablet'). The type of the device that is creating this route"
+    },
+    "trailer_weight_t": {
+      "type": ["number", "null"],
+	  "name": "trailer_weight_t",
+	  "title": "Trailer Weight (t)",
+	  "description": "If has_trailer = true, specifies the weight of the trailer (required)"
+    },
+    "limited_weight_t": {
+      "type": ["number", "null"],
+	  "name": "limited_weight_t",
+	  "title": "Limited Weight (t)",
+	  "description": "If travel_mode = 'Trucking', specifies the truck weight (required)"
+    },
+    "weight_per_axle_t": {
+      "type": ["number", "null"],
+	  "name": "weight_per_axle_t",
+	  "title": "Weight per Axle (t)",
+	  "description": "If travel_mode = 'Trucking', specifies the weight per axle (required)"
+    },
+    "truck_height_meters": {
+      "type": ["integer", "null"],
+	  "name": "truck_height_meters",
+	  "title": "Truck Height Meters",
+	  "description": "If travel_mode = 'Trucking', specifies the truck height (required)"
+    },
+    "truck_width_meters": {
+      "type": ["integer", "null"],
+	  "name": "truck_width_meters",
+	  "title": "Truck Width Meters",
+	  "description": "If travel_mode = 'Trucking', specifies the truck width (required)"
+    },
+    "truck_length_meters": {
+      "type": ["integer", "null"],
+	  "name": "truck_length_meters",
+	  "title": "Truck Length Meters",
+	  "description": "If travel_mode = 'Trucking', specifies the truck length (required)"
+    },
+    "min_tour_size": {
+      "type": ["integer", "null"],
+	  "name": "min_tour_size",
+	  "title": "Minimum Tour Size",
+	  "description": "Must be > 0; the minimum number of stops allowed in a subtour. null means there is no minimum"
+    },
+    "max_tour_size": {
+      "type": ["integer", "null"],
+	  "name": "max_tour_size",
+	  "title": "Maximum Tour Size",
+	  "description": "Must be > 0; the maximum number of stops allowed in a subtour. null means there is no maximum"
+    },
+    "optimization_quality": {
+      "type": ["integer", "null"],
+	  "name": "optimization_quality",
+	  "title": "Optimization Quality",
+	  "description": "there are 3 types of optimization qualities that are optimizations goals (1 - Generate Optimized Routes As Quickly as Possible, 2 - Generate Routes That Look Better On A Map, 3 - Generate The Shortest And Quickest Possible Routes)"
+    }
+  }
+}
