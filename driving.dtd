@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/driving.dtd",
+	"id": "https://github.com/route4me/json-schemas/blob/master/driving.dtd",
 	"description": "Driving",
 	"name": "driving",
 	"type": "object",
@@ -8,12 +8,10 @@
 	"required": ["origin", "destination", "key"],
 	"properties": {
 		"origin": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/origin",
 			"description": "The address, textual latitude/longitude value, or place ID from which you wish to calculate directions",
 			"type": "string"
 		},
 		"destination": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/destination",
 			"description": "The address, textual latitude/longitude value, or place ID to which you wish to calculate directions",
 			"type": "string"
 		},
@@ -22,65 +20,54 @@
 			"type": "string"
 		},
 		"mode": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/mode",
 			"description": "(defaults to driving) — Specifies the mode of transport to use when calculating directions (driving (default), walking, bicycling, transit)",
 			"type": "string"
 		},
 		"waypoints": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/waypoints",
 			"type": "array",
 			"items": {
 				"type": "waypoint",
-				"$ref": "https://github.com/route4me/json-schemas/waypoint"
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/waypoint.dtd"
 			}
 		},
 		"alternatives": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/alternatives",
 			"description": "If set to true, specifies that the Directions service may provide more than one route alternative in the response",
 			"type": "boolean"
 		},
 		"avoid": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/avoid",
 			"description": "Indicates that the calculated route(s) should avoid the indicated features ('tolls', 'highways', 'ferries', 'indoor')",
 			"type": "string"
 		},
 		"language": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/language",
 			"description": "Specifies the language in which to return results ('en', 'bg', 'fr', 'de' etc)",
 			"type": "string"
 		},
 		"units": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/units",
-			"description": "Specifies the unit system to use when displaying results ('metric', 'metric')",
-			"type": "string"
+			"description": "Specifies the unit system to use when displaying results ('metric', 'imperial')",
+			"type": "string",
+			"enum": ["metric", "imperial"]
 		},
 		"region": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/region",
 			"description": "Specifies the region code, specified as a ccTLD ('top-level domain') two-character value",
 			"type": "string"
 		},
 		"arrival_time": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/arrival_time",
 			"description": "Specifies the desired time of arrival for transit directions, in seconds since midnight, January 1, 1970 UTC",
 			"type": "integer"
 		},
 		"departure_time": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/departure_time",
 			"description": "Specifies the desired time of departure. You can specify the time as an integer in seconds since midnight, January 1, 1970 UTC",
 			"type": "integer"
 		},
 		"traffic_model": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/traffic_model",
 			"description": "Specifies the assumptions to use when calculating time in traffic (best_guess (default), pessimistic, optimistic)",
 			"type": "string"
 		},
 		"transit_mode": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/transit_mode",
 			"description": "Specifies one or more preferred modes of transit (bus, subway, train, tram, rail)",
 			"type": "string"
 		},
 		"transit_routing_preference": {
-			"id": "https://github.com/route4me/json-schemas/driving.dtd/transit_routing_preference",
 			"description": "Specifies preferences for transit routes (less_walking, fewer_transfers)",
 			"type": "string"
 		}

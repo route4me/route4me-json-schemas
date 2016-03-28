@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://github.com/route4me/json-schemas/RouteParameters.dtd",
+  "id": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd",
   "title": "Route Parameters",
   "type": "object",
   "name": "RouteParameters",
@@ -51,8 +51,9 @@
     "optimize": {
       "type": ["string", "null"],
 	  "name": "optimize",
+	  "enum": ["Distance", "Time", "timeWithTraffic"],
 	  "title": "Optimize",
-	  "description": "ENUM('Distance', 'Time', 'timeWithTraffic'). The driving directions will be generated biased for this selection. This has no impact on route sequencing"
+	  "description": "The driving directions will be generated biased for this selection. This has no impact on route sequencing"
     },
     "lock_last": {
       "type": ["boolean", "null"],
@@ -80,15 +81,17 @@
     },
     "travel_mode": {
       "type": ["string", "null"],
+	  "enum": ["Driving", "Walking", "Trucking", "Cycling", "Transit"],
 	  "name": "travel_mode",
 	  "title": "Travel Mode",
-	  "description": "ENUM('Driving', 'Walking', 'Trucking', 'Cycling', 'Transit'). The mode of travel that the directions should be optimized for"
+	  "description": "The mode of travel that the directions should be optimized for"
     },
     "avoid": {
       "type": ["string", "null"],
 	  "name": "avoid",
+	  "enum": ["Highways", "Tolls", "minimizeHighways", "minimizeTolls", ""],
 	  "title": "Avoid",
-	  "description": "ENUM('Highways', 'Tolls', 'minimizeHighways', 'minimizeTolls', ''). Options which let the user choose which road obstacles to avoid. This has no impact on route sequencing."
+	  "description": "Options which let the user choose which road obstacles to avoid. This has no impact on route sequencing"
     },
     "vehicle_id": {
       "type": ["string", "null"],
@@ -192,15 +195,16 @@
     },
     "device_type": {
       "type": ["string", "null"],
+	  "enum": ["web", "iphone", "ipad", "android_phone", "android_tablet"],
 	  "name": "device_type",
 	  "title": "Device Type",
-	  "description": ""
+	  "description": "The type of the device that is creating this route"
     },
     "has_trailer": {
       "type": ["boolean", "null"],
-	  "name": "",
-	  "title": "",
-	  "description": "ENUM('web', 'iphone', 'ipad', 'android_phone', 'android_tablet'). The type of the device that is creating this route"
+	  "name": "has_trailer",
+	  "title": "Has Trailer",
+	  "description": "if True vehicle has trailer"
     },
     "trailer_weight_t": {
       "type": ["number", "null"],

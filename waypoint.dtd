@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/waypoint.dtd",
+	"id": "https://github.com/route4me/json-schemas/blob/master/waypoint.dtd",
 	"description": "Waypoint",
 	"name": "waypoint",
 	"type": "object",
@@ -8,14 +8,12 @@
 
 	"properties": {
 		"id": {
-			"id": "https://github.com/route4me/json-schemas/waypoint.dtd/id",
 			"type": "integer",
 			"name": "id",
 			"title": "Waypoint ID",
 			"description": "Internal unique ID identifier"
 		},
 		"geo": {
-			"id": "https://github.com/route4me/json-schemas/waypoint.dtd/geo",
 			"type": "string",
 			"name": "geo",
 			"title": "Waypoint GEO locaton",

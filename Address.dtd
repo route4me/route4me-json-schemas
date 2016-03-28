@@ -1,38 +1,33 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://github.com/route4me/json-schemas/Address.dtd",
+  "id": "https://github.com/route4me/json-schemas/blob/master/Address.dtd",
   "Name": "Address",
   "type": "object",
   "properties": {
     "route_destination_id": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/route_destination_id",
       "type": "integer",
       "name": "route_destination_id",
       "title": "Route Destination ID",
       "description": "Internal unique address identifier"
     },
     "alias": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/alias",
       "type": "string",
       "name": "alias",
       "title": "Address Alias",
       "description": "Address Alias"
     },
     "member_id": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/member_id",
       "type": "integer",
       "name": "member_id",
       "title": "Member ID",
       "description": "Member ID"
     },
     "address": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/address",
       "type": "string",
       "name": "address_name",
       "title": "Address Name"
     },
     "is_depot": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/is_depot",
       "type": "boolean",
       "name": "is_depot",
       "title": "Is Depot",
@@ -40,7 +35,6 @@
       "default": "false"
     },
     "lat": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/lat",
       "type": "number",
       "name": "lat",
       "title": "Latitude",
@@ -49,7 +43,6 @@
       "maximum": 90
     },
     "lng": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/lng",
       "type": "number",
       "name": "lng",
       "title": "Longitude",
@@ -58,7 +51,6 @@
       "maximum": 180
     },
     "curbside_lat": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/curbside_lat",
       "type": "number",
       "name": "curbside_lat",
       "title": "Curbside Latitude",
@@ -67,7 +59,6 @@
       "maximum": 90
     },
     "curbside_lng": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/curbside_lng",
       "type": "number",
       "name": "curbside_lng",
       "title": "Curbside Longitude",
@@ -76,56 +67,48 @@
       "maximum": 180
     },
     "route_id": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/route_id",
       "type": "string",
       "name": "route_id",
       "title": "Route ID",
       "description": "Parent route"
     },
     "original_route_id": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/original_route_id",
       "type": "string",
       "name": "original_route_id",
       "title": "Original Route ID",
       "description": "The original customer-specific route id assigned at route creation time."
     },
     "route_name": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/route_name",
       "type": "string",
       "name": "route_name",
       "title": "Route Name",
       "description": "Route Name"
     },
     "optimization_problem_id": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/optimization_problem_id",
       "type": "string",
       "name": "optimization_problem_id",
       "title": "Optimization Problem ID",
       "description": "Optimization Problem ID"
     },
     "sequence_no": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/sequence_no",
       "type": "integer",
       "name": "sequence_no",
       "title": "Sequence No",
       "description": "Sequence in the route"
     },
     "geocoded": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/geocoded",
       "type": "boolean",
       "name": "geocoded",
       "title": "Geocoded",
       "description": "True means the 'address' field was successfully geocoded"
     },
     "preferred_geocoding": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/preferred_geocoding",
       "type": "integer",
       "name": "preferred_geocoding",
       "title": "Preferred Geocoding",
       "description": "Index of 'geocodings' array that the user has chosen"
     },
     "failed_geocoding": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/failed_geocoding",
       "type": "boolean",
       "name": "failed_geocoding",
       "title": "Failed Geocoding",
@@ -135,13 +118,12 @@
       "type": "array",
       "items": {
         "type": "geocoding",
-        "$ref": "https://github.com/route4me/json-schemas/geocoding.dtd"
+        "$ref": "https://github.com/route4me/json-schemas/blob/master/geocoding.dtd"
       },
 	  "name": "geocodings",
       "title": "Geocodings ID"
     },
     "contact_id": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/contact_id",
       "type": "integer",
       "minimum": 0,
       "name": "contact_id",
@@ -149,22 +131,19 @@
       "description": "Address book contact id (0 means not connected to the address book)"
     },
     "is_visited": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/is_visited",
       "type": "boolean",
       "name": "is_visited",
       "title": "Is Visited",
-      "description": "The driver pressed the \"Visited\" button",
+      "description": "The driver pressed the 'Visited' button",
       "default": "false"
     },
     "is_departed": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/is_departed",
       "type": "boolean",
       "name": "is_departed",
       "title": "Is Departed",
       "description": "The driver marked the 'Departed' button"
     },
     "visited_lat": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/visited_lat",
       "type": "number",
       "name": "visited_lat",
       "title": "Visited Latitude",
@@ -173,7 +152,6 @@
       "maximum": 90
     },
     "visited_lng": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/visited_lng",
       "type": "number",
       "name": "visited_lng",
       "title": "Visited Longitude",
@@ -182,7 +160,6 @@
       "maximum": 180
     },
     "departed_lat": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/departed_lat",
       "type": "number",
       "name": "departed_lat",
       "title": "Departed Latitude",
@@ -191,7 +168,6 @@
       "maximum": 90
     },
     "departed_lng": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/departed_lng",
       "type": "number",
       "description": "Last known departed longitude",
       "name": "departed_lng",
@@ -200,182 +176,157 @@
       "maximum": 180
     },
     "timestamp_last_visited": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/timestamp_last_visited",
       "type": "integer",
       "name": "timestamp_last_visited",
       "title": "Timestamp Last Vsited",
       "description": "Timestamp when the driver presses 'Visited'"
     },
     "timestamp_last_departed": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/timestamp_last_departed",
       "type": "integer",
       "name": "timestamp_last_departed",
       "title": "Timestamp Last Departed",
       "description": "Timestamp when the driver marks the stop as 'Departed'"
     },
     "customer_po": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/customer_po",
       "type": "string",
       "name": "customer_po",
       "title": "Customer PO",
       "description": "Customer Purchase Order Number"
     },
     "invoice_no": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/invoice_no",
       "type": "string",
       "name": "invoice_no",
       "title": "Invoice No",
       "description": "Invoice No"
     },
     "reference_no": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/reference_no",
       "type": "string",
       "name": "reference_no",
       "title": "Reference NO",
       "description": "Reference NO"
     },
     "order_no": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/order_no",
       "type": "string",
       "name": "order_no",
       "title": "Order NO",
       "description": "Order NO"
     },
     "weight": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/weight",
       "type": "number",
       "name": "weight",
       "title": "Weight",
       "description": "Weight"
     },
     "cost": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/cost",
       "type": "number",
       "name": "cost",
       "title": "Cost",
       "description": "Traffic Cost"
     },
     "revenue": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/revenue",
       "type": "number",
       "name": "revenue",
       "title": "Revenue",
       "description": "Revenue"
     },
     "cube": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/cube",
       "type": "number",
       "name": "cube",
       "title": "Cube",
       "description": "How many metric cube can carry truck"
     },
     "pieces": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/pieces",
       "type": "integer",
       "name": "pieces",
       "title": "Pieces",
       "description": "Pieces"
     },
     "time": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/time",
       "type": "integer",
       "name": "time",
       "title": "Time",
       "description": "Service time (seconds)"
     },
     "email": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/email",
       "type": "string",
+	  "format": "email",
       "name": "email",
       "title": "Email",
       "description": "Customer Email"
     },
     "phone": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/phone",
       "type": "string",
       "name": "phone",
       "title": "Phone",
       "description": "Customer Phone"
     },
     "custom_data": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/custom_data",
       "type": "object",
       "name": "custom_data",
       "title": "Custom Data",
       "description": "Unclassified data goes here"
     },
     "destination_note_count": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/destination_note_count",
       "type": "integer",
       "name": "destination_note_count",
       "title": "Destination Note Count",
       "description": "How many notes have been added to this destination"
     },
     "drive_time_to_next_destination": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/drive_time_to_next_destination",
       "type": "integer",
       "name": "drive_time_to_next_destination",
       "title": "Drive Time to next Destination",
       "description": "Time to next destination in seconds."
     },
     "abnormal_traffic_time_to_next_destination": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/abnormal_traffic_time_to_next_destination",
       "type": "integer",
       "description": "Abnormal traffic time to next destination",
       "title": "Abnormal traffic time to next destination",
       "name": "abnormal_traffic_time_to_next_destination"
     },
     "uncongested_time_to_next_destination": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/uncongested_time_to_next_destination",
       "type": "integer",
       "name": "uncongested_time_to_next_destination",
       "title": "Uncongested Time To Next Destination",
       "description": "Supposing that there was no traffic at all, this gives how many seconds it takes to get to the next stop."
     },
     "distance_to_next_destination": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/distance_to_next_destination",
       "type": "number",
       "name": "distance_to_next_destination",
       "title": "Distance to next destination",
       "description": "Distance to next destination in route unit (the default unit is in miles)"
     },
     "generated_time_window_start": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/generated_time_window_start",
       "type": "integer",
       "name": "generated_time_window_start",
       "title": "Generated Time Window Start",
       "description": "Generated Time Window Start in seconds"
     },
     "generated_time_window_end": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/generated_time_window_end",
       "type": "integer",
       "name": "generated_time_window_end",
       "title": "Generated Time Window End",
       "description": "Generated Time Window End in seconds"
     },
     "time_window_start": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/time_window_start",
       "type": "integer",
       "name": "time_window_start",
       "title": "Time Window Start",
       "description": "Time Window Start in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start datebecause start time changes would shift time windows"
     },
     "time_window_end": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/time_window_end",
       "type": "integer",
       "name": "time_window_end",
       "title": "Time Window End",
       "description": "Time Window End in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start datebecause start time changes would shift time windows"
     },
     "time_window_start_2": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/time_window_start_2",
       "type": "integer",
       "name": "time_window_start_2",
       "title": "Time Window Start 2",
       "description": "See time_window_start"
     },
     "time_window_end_2": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/time_window_end_2",
       "type": "integer",
       "name": "time_window_end_2",
       "title": "Time Window End 2",
@@ -385,7 +336,7 @@
       "type": "array",
       "items": {
         "type": "note",
-        "$ref": "https://github.com/route4me/json-schemas/note.dtd"
+        "$ref": "https://github.com/route4me/json-schemas/blob/master/note.dtd"
       },
       "name": "notes",
       "title": "Notes",
@@ -393,101 +344,87 @@
     },
     "custom_fields": {
       "type": "array",
-      "items": [],
+      "items": { "type": "string" },
       "description": "Any unrecognized fields from the original CSV upload will be found here",
       "name": "custom_fields",
       "title": "Custom Fields"
     },
     "manifest": {
-      "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest",
       "type": "object",
       "properties": {
         "running_service_time": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/running_service_time",
           "type": "integer",
           "name": "running_service_time",
           "title": "Running Service Time",
           "description": "How much time is to be spent on service from the start in seconds"
         },
         "running_travel_time": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/running_travel_time",
           "type": "integer",
           "name": "running_travel_time",
           "title": "Running Travel Time",
           "description": "How much time is spent driving from the start in seconds"
         },
         "running_wait_time": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/running_wait_time",
           "type": "integer",
           "name": "running_wait_time",
           "title": "Running Wait Time",
           "description": "Running Wait Time"
         },
         "running_distance": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/running_distance",
           "type": "number",
           "name": "running_distance",
           "title": "Running Distance",
           "description": "Distance traversed before reaching this address"
         },
         "fuel_from_start": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/fuel_from_start",
           "type": "number",
           "name": "fuel_from_start",
           "title": "Fuel From Start",
           "description": "Fuel From Start"
         },
         "fuel_cost_from_start": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/fuel_cost_from_start",
           "type": "number",
           "name": "fuel_cost_from_start",
           "title": "Fuel Cost From Start",
           "description": "Fuel Cost From Start"
         },
         "projected_arrival_time_ts": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/projected_arrival_time_ts",
           "type": "integer",
           "name": "projected_arrival_time_ts",
           "title": "Projected Arrival Time ts",
           "description": "Projected arrival time UTC unixtime"
         },
         "projected_departure_time_ts": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/projected_departure_time_ts",
           "type": "integer",
           "name": "projected_departure_time_ts",
           "title": "Projected Departure Time ts",
           "description": "Estimated departure time UTC unixtime"
         },
         "actual_arrival_time_ts": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/actual_arrival_time_ts",
           "type": "integer",
           "name": "actual_arrival_time_ts",
           "title": "Actual Arrival Time ts",
           "description": "Time when the address was marked as visited UTC unixtime. This is actually equal to timestamp_last_visited most of the time."
         },
         "actual_departure_time_ts": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/actual_departure_time_ts",
           "type": "integer",
           "name": "actual_departure_time_ts",
           "title": "Actual Departure Time ts",
           "description": "Time when the address was mared as departed UTC. This is actually equal to timestamp_last_departed most of the time."
         },
         "estimated_arrival_time_ts": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/estimated_arrival_time_ts",
           "type": "integer",
           "name": "estimated_arrival_time_ts",
           "title": "Estimated Arrival Time ts",
           "description": "Estimated arrival time based on the current route progress, i.e. based on the last known actual_arrival_time"
         },
         "estimated_departure_time_ts": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/estimated_departure_time_ts",
           "type": "integer",
           "name": "estimated_departure_time_ts",
           "title": "Estimated Departure Time ts",
           "description": "Estimated departure time based on the current route progress"
         },
         "time_impact": {
-          "id": "https://github.com/route4me/json-schemas/Address.dtd/manifest/time_impact",
           "type": "integer",
           "name": "time_impact",
           "title": "Time Impact",

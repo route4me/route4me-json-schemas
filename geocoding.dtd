@@ -1,39 +1,33 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://github.com/route4me/json-schemas/geocoding.dtd",
+  "id": "https://github.com/route4me/json-schemas/blob/master/geocoding.dtd",
   "type": "object",
   "name": "geocoding",
   "properties": {
     "key": {
-      "id": "https://github.com/route4me/json-schemas/geocoding.dtd/key",
       "type": "string",
       "name": "key",
       "title": "Key",
       "description": "A unique identifier for the geocoding"
     },
     "name": {
-      "id": "https://github.com/route4me/json-schemas/geocoding.dtd/name",
       "type": "string",
       "name": "name",
       "title": "Name",
       "description": "Specific description of the geocoding result"
     },
     "bbox": {
-      "id": "https://github.com/route4me/json-schemas/geocoding.dtd/bbox",
       "type": "array",
       "items": {
-        "id": "https://github.com/route4me/json-schemas/geocoding.dtd/bbox/0",
         "type": "object",
         "properties": {
           "lat": {
-            "id": "https://github.com/route4me/json-schemas/geocoding.dtd/bbox/0/lat",
             "type": "number",
             "name": "lat",
             "title": "Latitude",
             "description": "Latitude"
           },
           "lng": {
-            "id": "https://github.com/route4me/json-schemas/geocoding.dtd/bbox/0/lng",
             "type": "number",
             "name": "lng",
             "title": "Longitude"
@@ -45,14 +39,12 @@
       "description": "Boundary box"
     },
     "lat": {
-      "id": "https://github.com/route4me/json-schemas/geocoding.dtd/lat",
       "type": "number",
       "name": "lat",
       "title": "Latitude",
       "description": "Latitude"
     },
     "lng": {
-      "id": "https://github.com/route4me/json-schemas/geocoding.dtd/lng",
       "type": "number",
       "name": "lng",
       "minimum": -180,
@@ -61,49 +53,41 @@
       "description": "Longitude"
     },
     "confidence": {
-      "id": "https://github.com/route4me/json-schemas/geocoding.dtd/confidence",
       "type": "string",
       "name": "confidence",
       "title": "Confidence",
       "description": "Confidence (\"high\", \"medium\", \"low\")"
     },
     "type": {
-      "id": "https://github.com/route4me/json-schemas/geocoding.dtd/type",
       "type": "string",
       "name": "type",
       "title": "Type",
       "description": "Non-standardized. Is used for tooltip (\"Street\", \"City\" etc)"
     },
     "postalCode": {
-      "id": "https://github.com/route4me/json-schemas/geocoding.dtd/postalCode",
       "type": "string",
       "name": "postalCode",
       "title": "Postal Code",
       "description": "If the result has a postal code, it's returned here"
     },
     "countryRegion": {
-      "id": "https://github.com/route4me/json-schemas/geocoding.dtd/countryRegion",
       "type": "string",
       "name": "countryRegion",
       "title": "Country Region",
       "description": "If the region is known, it's returned here"
     },
     "curbside_coordinates": {
-      "id": "https://github.com/route4me/json-schemas/geocoding.dtd/curbside_coordinates",
       "type": "array",
       "items": {
-        "id": "https://github.com/route4me/json-schemas/geocoding.dtd/curbside_coordinates/0",
         "type": "object",
         "properties": {
           "lat": {
-            "id": "https://github.com/route4me/json-schemas/geocoding.dtd/curbside_coordinates/0/lat",
             "type": "number",
             "name": "ltd",
             "title": "Latitude",
             "description": "Latitude"
           },
           "lng": {
-            "id": "https://github.com/route4me/json-schemas/geocoding.dtd/curbside_coordinates/0/lng",
             "type": "number",
             "name": "lng",
             "title": "Longitude",

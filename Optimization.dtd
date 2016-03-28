@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/DataObject.dtd",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Optimization.dtd",
 	"title": "Optimization",
 	"type": "object",
 	"name": "Optimization",
@@ -39,7 +39,7 @@
 			"title": "Route Parameters",
 			"items": {
 				"type": "RouteParameters",
-				"$ref": "https: //github.com/route4me/json-schemas/RouteParameters.dtd"
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd"
 			},
 			"descrption": "Route Parameters"
 		},
@@ -49,7 +49,7 @@
 			"title": "Route Addresses",
 			"items": {
 				"type": "Address",
-				"$ref": "https: //github.com/route4me/json-schemas/Address.dtd"
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"
 			},
 			"descrption": "Route Addresses"
 		},
@@ -59,7 +59,7 @@
 			"title": "Routes",
 			"items": {
 				"type": "DataObjectRoute",
-				"$ref": "https: //github.com/route4me/json-schemas/DataObjectRoute.dtd"
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/DataObjectRoute.dtd"
 			},
 			"descrption": "Routes"
 		},
@@ -69,7 +69,7 @@
 			"title": "Links",
 			"items": {
 				"type": "Links",
-				"$ref": "https: //github.com/route4me/json-schemas/Links.dtd"
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/Links.dtd"
 			},
 			"descrption": "Links to the GET operations for the optimization problem"
 		},
@@ -79,7 +79,7 @@
 			"title": "TrackingHistory",
 			"items": {
 				"type": "TrackingHistory",
-				"$ref": "https: //github.com/route4me/json-schemas/TrackingHistory.dtd"
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/TrackingHistory.dtd"
 			},
 			"descrption": "A collection of device tracking data with coordinates, speed, and timestamps"
 		}
