@@ -4,7 +4,7 @@
 	"description": "Waypoint",
 	"name": "waypoint",
 	"type": "object",
-	"required": ["origin", "destination", "key"],
+	"required": ["geo"],
 
 	"properties": {
 		"id": {
