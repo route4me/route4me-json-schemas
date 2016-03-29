@@ -53,20 +53,17 @@
           "description": "Estimated drive time of route (Seconds)"
         },
         "parameters": {
-          "type": "RouteParameters",
           "$ref": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd"
         },
         "addresses": {
 			"type": "array",
           "items": {
-				"type": "Address",
 				"$ref":"https://github.com/route4me/json-schemas/blob/master/Address.dtd"
 		  },
 		  "name": "addresses",
           "title": "Addresses"
 		},
         "links": {
-          "type": "Links",
 		  "$ref": "https://github.com/route4me/json-schemas/blob/master/Links.dtd"
         },
         "directions": {
@@ -85,7 +82,6 @@
         "tracking_history": {
           "type": "array",
           "items": {
-				"type": "TrackingHistory",
 				"$ref":"https://github.com/route4me/json-schemas/blob/master/TrackingHistory.dtd"
 		  },
           "name": "tracking_history",

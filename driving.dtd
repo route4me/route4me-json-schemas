@@ -25,10 +25,7 @@
 		},
 		"waypoints": {
 			"type": "array",
-			"items": {
-				"type": "waypoint",
-				"$ref": "https://github.com/route4me/json-schemas/blob/master/waypoint.dtd"
-			}
+			"items": { "$ref": "https://github.com/route4me/json-schemas/blob/master/waypoint.dtd" }
 		},
 		"alternatives": {
 			"description": "If set to true, specifies that the Directions service may provide more than one route alternative in the response",

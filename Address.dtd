@@ -117,7 +117,6 @@
     "geocodings": {
       "type": "array",
       "items": {
-        "type": "geocoding",
         "$ref": "https://github.com/route4me/json-schemas/blob/master/geocoding.dtd"
       },
 	  "name": "geocodings",
@@ -335,7 +334,6 @@
     "notes": {
       "type": "array",
       "items": {
-        "type": "note",
         "$ref": "https://github.com/route4me/json-schemas/blob/master/note.dtd"
       },
       "name": "notes",

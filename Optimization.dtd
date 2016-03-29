@@ -38,7 +38,6 @@
 			"name": "parameters",
 			"title": "Route Parameters",
 			"items": {
-				"type": "RouteParameters",
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd"
 			},
 			"descrption": "Route Parameters"
@@ -48,7 +47,6 @@
 			"name": "addresses",
 			"title": "Route Addresses",
 			"items": {
-				"type": "Address",
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"
 			},
 			"descrption": "Route Addresses"
@@ -58,7 +56,6 @@
 			"name": "routes",
 			"title": "Routes",
 			"items": {
-				"type": "DataObjectRoute",
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/DataObjectRoute.dtd"
 			},
 			"descrption": "Routes"
@@ -68,7 +65,6 @@
 			"name": "links",
 			"title": "Links",
 			"items": {
-				"type": "Links",
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/Links.dtd"
 			},
 			"descrption": "Links to the GET operations for the optimization problem"
@@ -78,7 +74,6 @@
 			"name": "tracking_history",
 			"title": "TrackingHistory",
 			"items": {
-				"type": "TrackingHistory",
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/TrackingHistory.dtd"
 			},
 			"descrption": "A collection of device tracking data with coordinates, speed, and timestamps"
