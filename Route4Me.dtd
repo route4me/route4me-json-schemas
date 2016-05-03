@@ -1,0 +1,45 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Route4Me.dtd",
+	"description": "Route4Me schemas",
+	"name": "Route4Me",
+	"type": "object",
+	"required": ["origin", "destination", "key"],
+	"properties": {
+		"Addressbook": {
+			"type": "object",
+			"$ref":"https://github.com/route4me/json-schemas/blob/master/Addressbook.dtd",
+			"title": "Addressbook",
+			"Description": "Addressbook - user's contacts repository"
+		},
+		"General_api_parameters": {
+			"type": "object",
+			"$ref":"https://github.com/route4me/json-schemas/blob/master/General_api_parameters.dtd",
+			"title": "General api parameters",
+			"Description": "General api parameters"
+		},
+		"Members": {
+			"type": "object",
+			"$ref":"https://github.com/route4me/json-schemas/blob/master/Members.dtd",
+			"Description": "For new account registration. url: https://www.route4me.com/actions/register_action.php"
+		},
+		"Gps_position": {
+			"type": "object",
+			"$ref":"https://github.com/route4me/json-schemas/blob/master/Gps_position.dtd",
+			"title": "GPS position",
+			"Description": "Set GPS Position of the Device. url: https://www.route4me.com/track/set.php"
+		},
+		"Asset_tracking": {
+			"type": "object",
+			"$ref":"https://github.com/route4me/json-schemas/blob/master/Gps_position.dtd",
+			"title": "Asset tracking",
+			"Description": "Asset_tracking"
+		},
+		"Asset_tracking": {
+			"type": "object",
+			"$ref":"https://github.com/route4me/json-schemas/blob/master/Gps_position.dtd",
+			"title": "Asset tracking",
+			"Description": "Asset_tracking"
+		}
+	}
+}
