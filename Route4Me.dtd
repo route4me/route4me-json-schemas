@@ -35,11 +35,11 @@
 			"title": "Asset tracking",
 			"Description": "Asset_tracking"
 		},
-		"Asset_tracking": {
+		"Optimization": {
 			"type": "object",
-			"$ref":"https://github.com/route4me/json-schemas/blob/master/Gps_position.dtd",
-			"title": "Asset tracking",
-			"Description": "Asset_tracking"
+			"$ref":"https://github.com/route4me/json-schemas/blob/master/Optimization.dtd",
+			"title": "Optimization",
+			"Description": "Route optimization"
 		}
 	}
 }
