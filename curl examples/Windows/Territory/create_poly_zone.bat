@@ -5,8 +5,6 @@ SET terid=03C0330958139E3EDF61EFFCEFBBD64E
 
 ECHO ON
 
-
-:: needs clarification
-curl -o file1.txt -g -k -X POST -d '@create_poly_zone_data.json' "%url%?api_key=%apikey%&territory_id=%terid%"
+curl -o file1.txt -g -k -X POST -d "@create_poly_zone_data.json" "%url%?api_key=%apikey%&territory_id=%terid%"
 
 timeout /t 30
