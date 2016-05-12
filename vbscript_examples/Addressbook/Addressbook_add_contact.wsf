@@ -1,0 +1,28 @@
+<job id="AddressbookAddContact">
+	<script language="VBScript" src="../Route4Me.vbs"/>
+	<script language="VBScript">
+		WScript.Quit main()
+		
+		Function main()
+			Dim r4m
+			Dim jFile
+			
+			WScript.Echo "Please, press OK and wait..."
+			
+			url="http://www.route4me.com/api.v4/address_book.php"
+			apikey="11111111111111111111111111111111"
+			
+			url=url&"?api_key="&apikey
+			
+			jFile="new_address_data.json"
+			
+			Set r4m=New Route4Me
+			
+			r4m.HttpPostRequest url,jFile
+			
+			main=1
+			
+			WScript.Echo "Finished..."
+		End Function
+	</script>
+</job>
