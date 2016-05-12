@@ -82,7 +82,7 @@ Class Route4Me
 		jText = File2Json(jFile)
 		http.setRequestHeader "Content-Length", Len(jText)
 		http.send jText
-		
+
 		If Err.Number = 0 Then
 			Write2File(http.responseText)
 		Else
@@ -101,10 +101,13 @@ Class Route4Me
 		http.setRequestHeader "Content-Type", "application/json"
 		
 		On Error Resume Next
-		
-		jText = File2Json(jFile)
-		http.setRequestHeader "Content-Length", Len(jText)
-		http.send jText
+		If jFile="" Then
+			http.send ""
+		Else
+			jText = File2Json(jFile)
+			http.setRequestHeader "Content-Length", Len(jText)
+			http.send jText
+		End If
 		
 		If Err.Number = 0 Then
 			Write2File(http.responseText)

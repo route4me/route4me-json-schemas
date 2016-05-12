@@ -1,0 +1,29 @@
+<job id="MoveDestinationToRoute">
+	<script language="VBScript" src="../Route4Me.vbs"/>
+	<script language="VBScript">
+		WScript.Quit main()
+		
+		Function main()
+			Dim r4m
+			Dim jFile
+			
+			WScript.Echo "Please, press OK and wait..."
+			
+			url="https://www.route4me.com/actions/route/move_route_destination.php"
+			apikey="11111111111111111111111111111111"
+			afterdestinationid=161141878
+			
+			url=url&"?api_key="&apikey
+			
+			jFile="move_destination_data.json"
+			
+			Set r4m=New Route4Me
+			
+			r4m.HttpPostRequest url,jFile
+			
+			main=1
+			
+			WScript.Echo "Finished..."
+		End Function
+	</script>
+</job>
