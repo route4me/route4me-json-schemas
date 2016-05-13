@@ -1,0 +1,31 @@
+<job id="GetAddressNotes">
+	<script language="VBScript" src="../Route4Me.vbs"/>
+	<script language="VBScript">
+		WScript.Quit main()
+		
+		Function main()
+			Dim r4m
+			
+			WScript.Echo "Please, press OK and wait..."
+			
+			' You should insert real test data and your API key for accurate testing
+			
+			url="https://www.route4me.com/api.v4/address.php"
+			apikey="11111111111111111111111111111111"
+			routeid="kllk645lkl6kllk6l5k6l5k6l5k6"
+			rdi="545464355"
+			
+			url=url&"?api_key="&apikey
+			url=url&"&route_id="&routeid
+			url=url&"&route_destination_id="&rdi
+			
+			Set r4m=New Route4Me
+			
+			r4m.HttpGetRequest url
+			
+			main=1
+			
+			WScript.Echo "Finished..."
+		End Function
+	</script>
+</job>
