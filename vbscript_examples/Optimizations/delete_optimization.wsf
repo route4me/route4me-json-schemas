@@ -1,0 +1,32 @@
+<job id="DeleteOptimization">
+	<script language="VBScript" src="../Route4Me.vbs"/>
+	<script language="VBScript">
+		WScript.Quit main()
+		
+		Function main()
+			Dim r4m
+			Dim jFile
+			
+			' this doesn't work. Needs Clarification - is it possible to delete optimization?
+			
+			WScript.Echo "Please, press OK and wait..."
+			
+			url="https://www.route4me.com/api.v4/optimization_problem.php"
+			apikey="11111111111111111111111111111111"
+			opi="07372F2CF3814EC6DFFAFE92E22771AA"
+			
+			url=url&"?api_key="&apikey
+			url=url&"&optimization_problem_id="&opi
+
+			jFile=""
+			
+			Set r4m=New Route4Me
+			
+			r4m.HttpDeleteRequest url,jFile
+			
+			main=1
+			
+			WScript.Echo "Finished..."
+		End Function
+	</script>
+</job>
