@@ -1,21 +1,21 @@
 {
     "addresses": [
-        {
-            "address": "202 E 5th Street, Amherst, TX, 79312",
-                "is_depot": "1",
-                "lat": "34.012741",
-                "lng": "-102.411346"
-        },
-        {
-            "address": "1435 S Central St. #7, Visalia, CA, 93277",
-            "lat": "36.453427",
-            "lng": "-119.582412"
-        },
-        {
-            "address": "709 8th St SW, Decatur, AL, 35601",
-            "lat": "34.589214",
-            "lng": "-86.998069"
-        }
+        { 
+			"address": "3634 W Market St, Fairlawn, OH 44333",
+			"is_depot": true,
+			"lat": 41.135762259364,
+			"lng": -81.629313826561
+		},
+		{ 
+			"address": "1218 Ruth Ave, Cuyahoga Falls, OH 44221",
+			"lat": 41.135762259364,
+			"lng": -81.629313826561
+		},
+		{ 
+			"address": "512 Florida Pl, Barberton, OH 44203",
+			"lat": 41.003671512008,
+			"lng": -81.598461046815
+		}
     ],
     "parameters": {
         "algorithm_type": "1",
