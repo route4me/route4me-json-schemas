@@ -1,0 +1,30 @@
+<job id="Resequence Route All">
+	<script language="VBScript" src="../Route4Me.vbs"/>
+	<script language="VBScript">
+		WScript.Quit main()
+		
+		Function main()
+			Dim r4m
+			Dim jFile
+			
+			WScript.Echo "Please, press OK and wait..."
+			
+			url="https://www.route4me.com/api.v3/route/reoptimize_2.php"
+			apikey="11111111111111111111111111111111"
+			routeid="5C15E83A4BE005BCD1537955D28D51D7"
+			
+			url=url&"?api_key="&apikey
+			url=url&"&route_id="&routeid
+			url=url&"&disable_optimization=0"
+			url=url&"&optimize=Distance"
+			
+			Set r4m=New Route4Me
+			
+			r4m.HttpGetRequest url
+			
+			main=1
+			
+			WScript.Echo "Finished..."
+		End Function
+	</script>
+</job>

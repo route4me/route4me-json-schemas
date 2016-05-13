@@ -25,6 +25,7 @@ Class Route4Me
 		If fso.FileExists(jFile) Then
 			Set spFile = fso.OpenTextFile(jFile,1,True)
 			File2Json = spFile.ReadAll()
+			File2Json=Trim(File2Json)
 		Else
 			WScript.Echo "File " & fileName &" doesn't exists..."
 			File2Json = ""
@@ -66,6 +67,10 @@ Class Route4Me
 		jText = File2Json(jFile)
 		http.setRequestHeader "Content-Length", Len(jText)
 		http.send jText
+
+		If http.Status >= 400 And http.Status <= 599 Then
+        	WScript.Echo "Error Occurred : " & http.status & " - " & http.statusText
+        End If
 		
 		If Err.Number = 0 Then
 			Write2File(http.responseText)

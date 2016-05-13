@@ -1,0 +1,32 @@
+<job id="Resequence Route">
+	<script language="VBScript" src="../Route4Me.vbs"/>
+	<script language="VBScript">
+		WScript.Quit main()
+		
+		Function main()
+			Dim r4m
+			Dim jFile
+			
+			WScript.Echo "Please, press OK and wait..."
+			
+			url="https://www.route4me.com/api.v4/route.php"
+			apikey="11111111111111111111111111111111"
+			routeid="5C15E83A4BE005BCD1537955D28D51D7"
+			rdi="160955261"
+			
+			url=url&"?api_key="&apikey
+			url=url&"&route_id="&routeid
+			url=url&"&route_destination_id="&rdi
+			
+			jFile="resequence_data.json"
+			
+			Set r4m=New Route4Me
+			
+			r4m.HttpPutRequest url,jFile
+			
+			main=1
+			
+			WScript.Echo "Finished..."
+		End Function
+	</script>
+</job>
