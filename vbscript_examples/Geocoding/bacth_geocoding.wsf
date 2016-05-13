@@ -1,0 +1,34 @@
+<job id="BatchGeocoding">
+	<script language="VBScript" src="../Route4Me.vbs"/>
+	<script language="VBScript">
+		WScript.Quit main()
+		
+		Function main()
+			Dim r4m
+			Dim jFile
+			
+			' This task requires clarification- it refuses to work because API key has exceeded its maximum number of requests
+			
+			WScript.Echo "Please, press OK and wait..."
+			
+			url="https://www.route4me.com/api/geocoder.php"
+			apikey="11111111111111111111111111111111"
+			format="xml"
+			addrs="Los20%Angeles20%International20%Airport,20%CA||Boston,20%MA"
+			
+			url=url&"?api_key="&apikey
+			url=url&"&format="&format
+			url=url&"&addresses="&addrs
+			
+			jFile="batch_geocoding_data.json"
+			
+			Set r4m=New Route4Me
+			
+			r4m.HttpPostRequest url,jFile
+			
+			main=1
+			
+			WScript.Echo "Finished..."
+		End Function
+	</script>
+</job>

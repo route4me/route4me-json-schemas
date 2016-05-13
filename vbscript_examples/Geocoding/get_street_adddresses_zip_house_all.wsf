@@ -1,0 +1,29 @@
+<job id="GetStreetAddressesZipHouseAll">
+	<script language="VBScript" src="../Route4Me.vbs"/>
+	<script language="VBScript">
+		WScript.Quit main()
+		
+		Function main()
+			Dim r4m
+			
+			WScript.Echo "Please, press OK and wait..."
+			
+			url="https://45.55.208.13:443/street_data/service"
+			apikey="11111111111111111111111111111111"
+			zipcode="00601"
+			housenumber="17"
+			
+			url=url&"/"&zipcode
+			url=url&"/"&housenumber&"/"
+			url=url&"?api_key="&apikey
+
+			Set r4m=New Route4Me
+			
+			r4m.HttpGetRequest(url)
+			
+			main=1
+			
+			WScript.Echo "Finished..."
+		End Function
+	</script>
+</job>
