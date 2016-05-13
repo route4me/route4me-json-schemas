@@ -1,0 +1,27 @@
+<job id="NewAccountRegistration">
+	<script language="VBScript" src="../Route4Me.vbs"/>
+	<script language="VBScript">
+		WScript.Quit main()
+		
+		Function main()
+			Dim r4m
+			
+			WScript.Echo "Please, press OK and wait..."
+			
+			url="https://www.route4me.com/actions/register_action.php"
+			apikey="11111111111111111111111111111111"
+			
+			url=url&"?api_key="&apikey
+			
+			jFile="new_account_registration_data.json"
+			
+			Set r4m=New Route4Me
+			
+			r4m.HttpPostRequest url,jFile
+			
+			main=1
+			
+			WScript.Echo "Finished..."
+		End Function
+	</script>
+</job>

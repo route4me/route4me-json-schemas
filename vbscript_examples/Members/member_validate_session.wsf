@@ -1,0 +1,31 @@
+<job id="MemberValidateSession">
+	<script language="VBScript" src="../Route4Me.vbs"/>
+	<script language="VBScript">
+		WScript.Quit main()
+		
+		Function main()
+			Dim r4m
+			
+			WScript.Echo "Please, press OK and wait..."
+			
+			url="https://www.route4me.com/datafeed/session/validate_session.php"
+			apikey="11111111111111111111111111111111"
+			sesid="4552222222"
+			memid="787544566"
+			format="json"
+			
+			url=url&"?api_key="&apikey
+			url=url&"&session_guid="&sesid
+			url=url&"&member_id="&memid
+			url=url&"&format="&format
+			
+			Set r4m=New Route4Me
+			
+			r4m.HttpGetRequest(url)
+			
+			main=1
+			
+			WScript.Echo "Finished..."
+		End Function
+	</script>
+</job>
