@@ -1,4 +1,7 @@
+Const SXH_SERVER_CERT_IGNORE_ALL_SERVER_ERRORS = 13056
+
 Class Route4Me
+
 	Public Sub Write2File(result)
 		Dim fileName
 		Dim spFile
@@ -30,11 +33,13 @@ Class Route4Me
 	
 	Public Sub HttpGetRequest(url)
 		Set WshShell = WScript.CreateObject("WScript.Shell")
-		Set http = CreateObject("Microsoft.XmlHttp")
+		'Set http = CreateObject("Microsoft.XmlHttp")
+		Set http = CreateObject("MSXML2.ServerXMLHTTP")
 		
 		On Error Resume Next
 
 		http.open "GET",url,False
+		http.setOption 2, SXH_SERVER_CERT_IGNORE_ALL_SERVER_ERRORS
 		http.send ""
 		
 		If Err.Number = 0 Then
@@ -50,8 +55,10 @@ Class Route4Me
 	Public Sub HttpPostRequest(url,jFile)
 		Dim jText
 		Set WshShell = WScript.CreateObject("WScript.Shell")
-		Set http = CreateObject("Microsoft.XmlHttp")
+		'Set http = CreateObject("Microsoft.XmlHttp")
+		Set http = CreateObject("MSXML2.ServerXMLHTTP")
 		http.open "POST", url, False
+		http.setOption 2, SXH_SERVER_CERT_IGNORE_ALL_SERVER_ERRORS
 		http.setRequestHeader "Content-Type", "application/json"
 		
 		On Error Resume Next
@@ -73,8 +80,10 @@ Class Route4Me
 	Public Sub HttpPutRequest(url,jFile)
 		Dim jText
 		Set WshShell = WScript.CreateObject("WScript.Shell")
-		Set http = CreateObject("Microsoft.XmlHttp")
+		'Set http = CreateObject("Microsoft.XmlHttp")
+		Set http = CreateObject("MSXML2.ServerXMLHTTP")
 		http.open "PUT", url, False
+		http.setOption 2, SXH_SERVER_CERT_IGNORE_ALL_SERVER_ERRORS
 		http.setRequestHeader "Content-Type", "application/json"
 		
 		On Error Resume Next
@@ -96,8 +105,10 @@ Class Route4Me
 	Public Sub HttpDeleteRequest(url,jFile)
 		Dim jText
 		Set WshShell = WScript.CreateObject("WScript.Shell")
-		Set http = CreateObject("Microsoft.XmlHttp")
+		'Set http = CreateObject("Microsoft.XmlHttp")
+		Set http = CreateObject("MSXML2.ServerXMLHTTP")
 		http.open "DELETE", url, False
+		http.setOption 2, SXH_SERVER_CERT_IGNORE_ALL_SERVER_ERRORS
 		http.setRequestHeader "Content-Type", "application/json"
 		
 		On Error Resume Next
