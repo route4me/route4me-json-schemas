@@ -1,0 +1,32 @@
+<job id="Update Circle Zone">
+	<script language="VBScript" src="../Route4Me.vbs"/>
+	<script language="VBScript">
+		WScript.Quit main()
+		
+		Function main()
+			Dim r4m
+			Dim jFile
+			
+			WScript.Echo "Please, press OK and wait..."
+			
+			url="http://www.route4me.com/api.v4/territory.php"
+			apikey="11111111111111111111111111111111"
+			terid1="F540DE7E2698FFA9217AE4C147D94259"
+			terid2="AE1B175E3AB12746125075DF8A088DC4"
+			
+			url=url&"?api_key="&apikey
+			url=url&"&territory_id="&terid1
+			url=url&"&territory_id="&terid2
+			
+			jFile="update_circle_zone_data.json"
+			
+			Set r4m=New Route4Me
+			
+			r4m.HttpPutRequest url,jFile
+			
+			main=1
+			
+			WScript.Echo "Finished..."
+		End Function
+	</script>
+</job>

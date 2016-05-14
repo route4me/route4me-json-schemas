@@ -1,0 +1,30 @@
+<job id="Create Poly Zone">
+	<script language="VBScript" src="../Route4Me.vbs"/>
+	<script language="VBScript">
+		WScript.Quit main()
+		
+		Function main()
+			Dim r4m
+			Dim jFile
+			
+			WScript.Echo "Please, press OK and wait..."
+			
+			url="https://www.route4me.com/api.v4/territory.php"
+			apikey="11111111111111111111111111111111"
+			terid="03C0330958139E3EDF61EFFCEFBBD64E"
+			
+			url=url&"?api_key="&apikey
+			url=url&"&territory_id="&terid
+			
+			jFile="create_poly_zone_data.json"
+			
+			Set r4m=New Route4Me
+			
+			r4m.HttpPostRequest url,jFile
+			
+			main=1
+			
+			WScript.Echo "Finished..."
+		End Function
+	</script>
+</job>
