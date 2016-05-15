@@ -1,4 +1,5 @@
 Const SXH_SERVER_CERT_IGNORE_ALL_SERVER_ERRORS = 13056
+CONST WHR_EnableRedirects = 6
 
 Class Route4Me
 
@@ -66,6 +67,39 @@ Class Route4Me
 		
 		jText = File2Json(jFile)
 		http.setRequestHeader "Content-Length", Len(jText)
+		http.send jText
+
+		'http.waitForResponse(20)
+		If http.Status >= 400 And http.Status <= 599 Then
+        	WScript.Echo "Error Occurred : " & http.status & " - " & http.statusText
+        End If
+		
+		If Err.Number = 0 Then
+			Write2File(http.responseText)
+		Else
+			WScript.Echo "error " & Err.Number& ":" & Err.Description
+		End If
+		
+		Set WshShell = Nothing
+		Set http = Nothing
+	End Sub
+	
+	Public Sub HttpPostRequest2(url,jFile)
+		Dim jText
+		Set WshShell = WScript.CreateObject("WScript.Shell")
+		'Set http = CreateObject("MSXML2.ServerXMLHTTP")
+		Set http = CreateObject("WinHttp.WinHttpRequest.5.1")
+		http.open "POST", url, False
+		http.Option(2) = SXH_SERVER_CERT_IGNORE_ALL_SERVER_ERRORS
+		http.Option(WHR_EnableRedirects) = False
+		
+		http.setRequestHeader "Content-Type", "application/json"
+		
+		On Error Resume Next
+		
+		jText = File2Json(jFile)
+		http.setRequestHeader "Content-Length", Len(jText)
+
 		http.send jText
 
 		If http.Status >= 400 And http.Status <= 599 Then
