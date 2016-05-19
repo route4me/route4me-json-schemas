@@ -69,19 +69,25 @@
 			"type": "object",
 			"$ref":"https://github.com/route4me/json-schemas/blob/master/Territory.dtd",
 			"title": "Territory",
-			"Description": "Json schema for an Territory clas, which is used for meintenance territories of different types. For detailed usage see curl Territory group"
+			"Description": "Json schema for an Territory class, which is used for meintenance territories of different types. For detailed usage see curl Territory group"
 		},
 		"Avoidance_zone": {
 			"type": "object",
 			"$ref":"https://github.com/route4me/json-schemas/blob/master/Avoidance_zone.dtd",
 			"title": "Avoidance zone",
-			"Description": "Json schema for an Avoidance Zone clas, which is used for defining different types of avoidance zones. For detailed usage see curl Avoidance Zones group"
+			"Description": "Json schema for an Avoidance Zone class, which is used for defining different types of avoidance zones. For detailed usage see curl Avoidance Zones group"
 		},
 		"Note": {
 			"type": "object",
 			"$ref":"https://github.com/route4me/json-schemas/blob/master/note.dtd",
 			"title": "Note",
-			"Description": "Json schema for a Note clas, which is used assign notes to route or address objects. For detailed usage see curl Notes group"
+			"Description": "Json schema for a Note class, which is used assign notes to route or address objects. For detailed usage see curl Notes group"
+		},
+		"Activity": {
+			"type": "object",
+			"$ref":"https://github.com/route4me/json-schemas/blob/master/Activity.dtd",
+			"title": "Activity",
+			"Description": "Json schema for a Activity responce format. For detailed usage see curl Activity group"
 		}
 	}
 }
