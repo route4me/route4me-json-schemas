@@ -2,6 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://github.com/route4me/json-schemas/blob/master/Address.dtd",
   "Name": "Address",
+  "Description": "Json schema for an Address clas, which is used for Optimization and ROute mantenance procedures. See curl examples: add_address_to_optimization, add_addresses_to_route"
   "type": "object",
   "properties": {
     "route_destination_id": {
@@ -25,7 +26,8 @@
     "address": {
       "type": "string",
       "name": "address_name",
-      "title": "Address Name"
+      "title": "Address Name",
+	  "description": "The route Address Line 1"
     },
     "is_depot": {
       "type": "boolean",
@@ -33,6 +35,87 @@
       "title": "Is Depot",
       "description": "This address is a depot",
       "default": "false"
+    },
+	"timeframe_violation_state": {
+      "type": "integer",
+      "name": "timeframe_violation_state",
+      "title": "Timeframe violation state",
+      "description": "State of the timeframe violation. In a response only"
+    },
+	"timeframe_violation_time": {
+      "type": "integer",
+      "name": "timeframe_violation_time",
+      "title": "Timeframe violation time",
+      "description": "Moment of the timeframe violation. In a response only"
+    },
+	"timeframe_violation_rate": {
+      "type": "number",
+      "name": "timeframe_violation_rate",
+      "title": "Timeframe violation rate",
+      "description": "Rate of the timeframe violation. In a response only"
+    },
+	"priority": {
+      "type": "integer",
+      "name": "priority",
+      "title": "Priority",
+      "description": "0 is the highest priority; n has higher priority than n + 1"
+    },
+	"address_stop_type": {
+      "type": "string",
+	  "enum": ["PICKUP", "DELIVERY", "BREAK", "MEETUP"]
+      "name": "address_stop_type",
+      "title": "Address stop type",
+      "description": "The type of stop that this is (PICKUP, DELIVERY, BREAK, MEETUP)"
+    },
+	"geofence_detected_visited_timestamp": {
+      "type": "integer",
+      "name": "geofence_detected_visited_timestamp",
+      "title": "Geofence detected visited timestamp",
+      "description": "Timestamp of a geofence detected visited"
+    },
+	"geofence_detected_departed_timestamp": {
+      "type": "integer",
+      "name": "geofence_detected_departed_timestamp",
+      "title": "Geofence detected departed timestamp",
+      "description": "Timestamp of a geofence detected departed"
+    },
+	"geofence_detected_service_time": {
+      "type": "integer",
+      "name": "geofence_detected_service_time",
+      "title": "Geofence detected service time",
+      "description": "The service time of a detected geofence"
+    },
+	"geofence_detected_visited_lat": {
+      "type": "number",
+      "name": "geofence_detected_visited_lat",
+      "title": "Geofence detected visited lat",
+      "description": "Latitude of a visited detected geofence",
+      "minimum": -90,
+      "maximum": 90
+    },
+    "geofence_detected_visited_lng": {
+      "type": "number",
+      "name": "geofence_detected_visited_lng",
+      "title": "Geofence detected visited lng",
+      "description": "Longitude of a visited detected geofence",
+      "minimum": -180,
+      "maximum": 180
+    },
+	"geofence_detected_departed_lat": {
+      "type": "number",
+      "name": "geofence_detected_departed_lat",
+      "title": "Geofence detected departed lat",
+      "description": "Latitude of a departed detected geofence",
+      "minimum": -90,
+      "maximum": 90
+    },
+    "geofence_detected_departed_lng": {
+      "type": "number",
+      "name": "geofence_detected_departed_lng",
+      "title": "Geofence detected departed lng",
+      "description": "Longitude of a departed detected geofence",
+      "minimum": -180,
+      "maximum": 180
     },
     "lat": {
       "type": "number",
@@ -94,7 +177,7 @@
       "type": "integer",
       "name": "sequence_no",
       "title": "Sequence No",
-      "description": "Sequence in the route"
+      "description": "The sequence number for the address"
     },
     "geocoded": {
       "type": "boolean",
@@ -190,25 +273,31 @@
       "type": "string",
       "name": "customer_po",
       "title": "Customer PO",
-      "description": "Customer Purchase Order Number"
+      "description": "The customer purchase order for the address"
     },
     "invoice_no": {
       "type": "string",
       "name": "invoice_no",
       "title": "Invoice No",
-      "description": "Invoice No"
+      "description": "The invoice number for the address"
     },
     "reference_no": {
       "type": "string",
       "name": "reference_no",
       "title": "Reference NO",
-      "description": "Reference NO"
+      "description": "The reference number for the address"
     },
+	"account_no": {
+	  "type": "string",
+      "name": "account_no",
+      "title": "Account NO",
+	  "description": "The account number for the address"
+	},
     "order_no": {
       "type": "string",
       "name": "order_no",
       "title": "Order NO",
-      "description": "Order NO"
+      "description": "The order number for the address"
     },
     "weight": {
       "type": "number",
@@ -220,19 +309,19 @@
       "type": "number",
       "name": "cost",
       "title": "Cost",
-      "description": "Traffic Cost"
+      "description": "The cost of the order for the address"
     },
     "revenue": {
       "type": "number",
       "name": "revenue",
       "title": "Revenue",
-      "description": "Revenue"
+      "description": "The total revenue for the address"
     },
     "cube": {
       "type": "number",
       "name": "cube",
       "title": "Cube",
-      "description": "How many metric cube can carry truck"
+      "description": "The cubic volume of the cargo being delivered or picked up at the address"
     },
     "pieces": {
       "type": "integer",
@@ -251,7 +340,7 @@
 	  "format": "email",
       "name": "email",
       "title": "Email",
-      "description": "Customer Email"
+      "description": "A valid e-mail address assigned to this stop"
     },
     "phone": {
       "type": "string",
@@ -367,6 +456,12 @@
           "name": "running_wait_time",
           "title": "Running Wait Time",
           "description": "Running Wait Time"
+        },
+		"wait_time_to_next_destination": {
+          "type": "integer",
+          "name": "wait_time_to_next_destination",
+          "title": "Wait time to next destination",
+          "description": "Wait time to next destination"
         },
         "running_distance": {
           "type": "number",

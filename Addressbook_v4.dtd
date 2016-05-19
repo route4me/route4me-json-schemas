@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://github.com/route4me/json-schemas/blob/master/Addressbook_v4.dtd",
+  "Name": "Addressbook_v4",
+  "type": "object",
+  "required": ["address_1", "cached_lat", "cached_lng"],
+	  "properties": {
+		"api_key": {
+		  "type": "string",
+		  "name": "api_key",
+		  "title": "Api key",
+		  "description": "User api key"
+		},
+		"address_1": {
+		  "type": "string",
+		  "name": "address_1",
+		  "title": "Address 1",
+		  "description": "The route Address Line 1"
+		},
+		"address_2": {
+		  "type": "string",
+		  "name": "address_2",
+		  "title": "Address 2",
+		  "description": "The route Address Line 2 which is not used for geocoding"
+		},
+		"address_alias": {
+		  "type": "string",
+		  "name": "address_alias",
+		  "title": "Address alias",
+		  "description": "Address alias"
+		},
+		"address_group": {
+		  "type": "string",
+		  "name": "address_group",
+		  "title": "Address group",
+		  "description": "Address group"
+		},
+		"first_name": {
+		  "type": "string",
+		  "name": "first_name",
+		  "title": "First name",
+		  "description": "The first name of the receiving address"
+		},
+		"last_name": {
+		  "type": "string",
+		  "name": "last_name",
+		  "title": "Last name",
+		  "description": "The last name of the receiving party"
+		},
+		"address_email": {
+		  "type": "string",
+		  "name": "address_email",
+		  "title": "Address email",
+		  "description": "Address email"
+		},
+		"address_phone_number": {
+		  "type": "string",
+		  "name": "address_phone_number",
+		  "title": "Address phone number",
+		  "description": "The phone number for the address"
+		},
+		"cached_lat": {
+		  "type": "number",
+		  "name": "cached_lat",
+		  "minimum": -90,
+		  "maximum": 90,
+		  "title": "Cached latitude",
+		  "description": "Cached latitude"
+		},
+		"cached_lng": {
+		  "type": "number",
+		  "name": "cached_lng",
+		  "minimum": -180,
+		  "maximum": 180,
+		  "title": "Cached longitude",
+		  "description": "Cached longitude"
+		},
+		"address_city": {
+		  "type": "string",
+		  "name": "address_city",
+		  "title": "Address city",
+		  "description": "The city the address is located in"
+		},
+		"address_state_id": {
+		  "type": "string",
+		  "name": "address_state_id",
+		  "title": "Address state id",
+		  "description": "The state the address is located in"
+		},
+		"address_country_id": {
+		  "type": "string",
+		  "name": "address_country_id",
+		  "title": "Address country id",
+		  "description": "The country the address is located in"
+		},
+		"address_zip": {
+		  "type": "string",
+		  "name": "address_zip",
+		  "title": "Address zip",
+		  "description": "The zip code the address is located in"
+		},
+		"address_custom_data": {
+		  "type": "array",
+		  "items": {"type": "string"},
+		  "name": "address_custom_data",
+		  "title": "Address custom data",
+		  "description": "Address custom data"
+		}
+	}
+}
