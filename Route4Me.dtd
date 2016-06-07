@@ -29,6 +29,11 @@
 			"$ref":"https://github.com/route4me/json-schemas/blob/master/Members.dtd",
 			"Description": "Maintenance members information. For usage details see curl Members group examples"
 		},
+		"Vehicles": {
+			"type": "object",
+			"$ref":"https://github.com/route4me/json-schemas/blob/master/Vehicle.dtd",
+			"Description": "Response json schema for vehicles. For usage details see curl Members group get vehicles example"
+		},
 		"Gps_position": {
 			"type": "object",
 			"$ref":"https://github.com/route4me/json-schemas/blob/master/Gps_position.dtd",
