@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://github.com/route4me/json-schemas/blob/master/Order.dtd",
+  "Name": "Order",
+  "Description": "Json schema for an Order class, which is used for keeping client order information at certain address. For usage details see curl examples in Order group",
+  "type": "object",
+  "properties": {
+		"api_key": {
+		  "type": "string",
+		  "name": "api_key",
+		  "title": "API key",
+		  "description": "User api key for a developer"
+		},
+		"address_1": {
+		  "type": "string",
+		  "name": "address_1",
+		  "title": "Address 1",
+		  "description": "address_1 field"
+		},
+		"cached_lat": {
+		  "type": "number",
+		  "name": "cached_lat",
+		  "minimum": -90,
+		  "maximum": 90,
+		  "title": "Cached latitude",
+		  "description": "Cached latitude"
+		},
+		"cached_lng": {
+		  "type": "number",
+		  "name": "cached_lng",
+		  "minimum": -180,
+		  "maximum": 180,
+		  "title": "Cached longitude",
+		  "description": "Cached longitude"
+		},
+		"address_alias": {
+		  "type": "string",
+		  "name": "address_alias",
+		  "title": "Address alias",
+		  "description": "Address alias"
+		},
+		"address_city": {
+		  "type": "string",
+		  "name": "address_city",
+		  "title": "Address city",
+		  "description": "The city the address is located in"
+		},
+		"EXT_FIELD_first_name": {
+		  "type": "string",
+		  "name": "first_name",
+		  "title": "First name",
+		  "description": "The first name of the receiving address"
+		},
+		"EXT_FIELD_last_name": {
+		  "type": "string",
+		  "name": "last_name",
+		  "title": "Last name",
+		  "description": "The last name of the receiving address"
+		},
+		"EXT_FIELD_email": {
+		  "type": "string",
+		  "name": "address_email",
+		  "title": "Address email",
+		  "description": "Address email"
+		},
+		"EXT_FIELD_phone": {
+		  "type": "string",
+		  "name": "address_phone_number",
+		  "title": "Address phone number",
+		  "description": "The phone number for the address"
+		},
+		"EXT_FIELD_custom_data": {
+		  "type": "array",
+		  "items": {"type": "string"},
+		  "name": "order_custom_data",
+		  "title": "Order custom data",
+		  "description": "A custom data of the order"
+		}
+	}
+}
