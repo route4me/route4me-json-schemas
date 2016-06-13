@@ -4,7 +4,6 @@
 	"description": "Response schema of a uploaded file",
 	"name": "File_upload_response.dtd",
 	"type": "object",
-	"required": [],
 	"properties": {
 		"csv_header": {
 			"type": "array",
