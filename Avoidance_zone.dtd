@@ -15,7 +15,7 @@
       "type": "string",
       "name": "territory_id",
       "title": "Territory id",
-      "description": "32 character MD5 unique identifier"
+      "description": "32 character unique identifier"
     },
 	"member_id": {
       "type": "integer",
