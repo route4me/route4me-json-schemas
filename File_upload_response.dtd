@@ -27,6 +27,11 @@
 			"items": {
 				"$ref":"https://github.com/route4me/json-schemas/blob/master/Address.dtd" 
 			}
+		},
+		"address_count": {
+			"type": "integer",
+			"title": "Address count",
+			"description": "A number of the returned addresses"
 		}
 	}
 }
