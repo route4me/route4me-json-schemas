@@ -1,0 +1,66 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Member_response.dtd",
+	"title": "Member response",
+	"type": "object",
+	"name": "Member_response",
+	"description": "Response json schema for the retrieved member's object",
+	"properties": {
+		"member_id": {
+			"type": "string",
+			"title": "Member ID",
+			"description": "An unique ID of the member"
+		},
+		"member_first_name": {
+			"type": "string",
+			"title": "Member first name",
+			"description": "A first name of the member"
+		},
+		"member_last_name": {
+			"type": "string",
+			"title": "Member last name",
+			"description": "A last name of the member"
+		},
+		"member_email": {
+			"type": "string",
+			"title": "Member email",
+			"description": "An email of the member"
+		},
+		"account_type_id": {
+			"type": "string",
+			"title": "Account type ID",
+			"description": "Account type ID of the member"
+		},
+		"member_type": {
+			"type": "string",
+			"enum": ["PRIMARY_ACCOUNT", "SUB_ACCOUNT_ADMIN", "SUB_ACCOUNT_REGIONAL_MANAGER", "SUB_ACCOUNT_DISPATCHER", "SUB_ACCOUNT_PLANNER", "SUB_ACCOUNT_DRIVER", "SUB_ACCOUNT_ANALYST", "SUB_ACCOUNT_VENDOR", "SUB_ACCOUNT_CUSTOMER_SERVICE"],
+			"title": "Member type",
+			"description": "A type of the member"
+		},
+		"phone_number": {
+			"type": "string",
+			"title": "Phone number",
+			"description": "A phone number of the member"
+		},
+		"readonly_user": {
+			"type": "string",
+			"title": "Readonly user",
+			"description": "True if value is '1'"
+		},
+		"show_superuser_addresses": {
+			"type": "boolean",
+			"title": "Show superuser addresses",
+			"description": "Show superuser addresses"
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "Api key of the user"
+		},
+		"hashed_member_id": {
+			"type": "string",
+			"title": "Hashed member ID string",
+			"description": "Hashed member ID string"
+		}
+	}
+}
