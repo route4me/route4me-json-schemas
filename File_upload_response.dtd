@@ -5,33 +5,35 @@
 	"name": "File_upload_response.dtd",
 	"type": "object",
 	"properties": {
-		"csv_header": {
+		"status": {
+			"type": "boolean",
+			"title": "Status",
+			"description": "If true, the file was uploaded succesfuly"
+		},
+		"upload_id": {
+			"type": "string",
+			"title": "Upload ID",
+			"description": "Unique 32-char string, ID of the uploaded file"
+		},
+		"type": {
+			"type": "string",
+			"title": "Type",
+			"description": "A file type to be uploaded"
+		},
+		"uploaded_url": {
+			"type": "string",
+			"title": "Uloaded url",
+			"description": "An url of the uploaded file"
+		},
+		"encodings": {
 			"type": "array",
 			"items": {
 				"type": "string"
-			},
-			"description": "A header of the uploaded file"
-		},
-		"sample_csv_data": {
-			"type": "array",
-			"items": {
-				"type": "array",
-				"items": {
-					"type": "string"
-				}
-			},
-			"description": "A data from the uploaded file"
-		},
-		"sample_parsed_data": {
-			"type": "array",
-			"items": {
-				"$ref":"https://github.com/route4me/json-schemas/blob/master/Address.dtd" 
 			}
 		},
-		"address_count": {
-			"type": "integer",
-			"title": "Address count",
-			"description": "A number of the returned addresses"
+		"default_map": {
+			"type": "object",
+			"$ref":"https://github.com/route4me/json-schemas/blob/master/default_map.dtd"
 		}
 	}
 }
