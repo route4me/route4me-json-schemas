@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://github.com/route4me/json-schemas/blob/master/Address.dtd",
   "Name": "Address",
-  "Description": "Json schema for an Address clas, which is used for Optimization and ROute mantenance procedures. See curl examples: add_address_to_optimization, add_addresses_to_route"
+  "Description": "Json schema for an Address class, which is used for Optimization and Route mantenance procedures. See curl examples: add_address_to_optimization, add_addresses_to_route"
   "type": "object",
   "properties": {
     "route_destination_id": {
@@ -298,6 +298,12 @@
       "name": "order_no",
       "title": "Order NO",
       "description": "The order number for the address"
+    },
+	"tracking_number": {
+      "type": "string",
+      "name": "tracking_number",
+      "title": "Tracking Number",
+      "description": "Systemwide unique code, which permits end-users (recipients) to track the status of their order"
     },
     "weight": {
       "type": "number",
