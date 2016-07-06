@@ -1,9 +1,9 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/Optimization.dtd",
-	"title": "Optimization",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Optimization_response.dtd",
+	"title": "Optimization_response",
 	"type": "object",
-	"name": "Optimization",
+	"name": "Optimization_response",
 	"properties": {
 		"optimization_problem_id": {
 			"type": "string",
