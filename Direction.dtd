@@ -58,7 +58,7 @@
 				"type": "object",
 				"properties": {
 					"directions": {
-						"type": "srting",
+						"type": "string",
 						"enum": ["Head", "Go Straight", "Turn Left", "Turn Right", "Turn Slight Left", "Turn Slight Right", "Turn Sharp Left", "Turn Sharp Right", "Roundabout Left", "Roundabout Right", "Uturn Left", "Uturn Right", "Ramp Left", "Ramp Right", "Fork Left", "Fork Right", "Keep Left", "Keep Right", "Ferry", "Ferry Train", "Merge", "Reached Your Destination"],
 						"name": "directions",
 						"title": "Directions",
