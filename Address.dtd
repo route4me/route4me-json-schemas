@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://github.com/route4me/json-schemas/blob/master/Address.dtd",
   "Name": "Address",
-  "Description": "Json schema for an Address class, which is used for Optimization and Route mantenance procedures. See curl examples: add_address_to_optimization, add_addresses_to_route"
+  "Description": "Json schema for an Address class, which is used for Optimization and Route mantenance procedures. See curl examples: add_address_to_optimization, add_addresses_to_route",
   "type": "object",
   "properties": {
     "route_destination_id": {
@@ -62,7 +62,7 @@
     },
 	"address_stop_type": {
       "type": "string",
-	  "enum": ["PICKUP", "DELIVERY", "BREAK", "MEETUP"]
+	  "enum": ["PICKUP", "DELIVERY", "BREAK", "MEETUP"],
       "name": "address_stop_type",
       "title": "Address stop type",
       "description": "The type of stop that this is (PICKUP, DELIVERY, BREAK, MEETUP)"
@@ -435,6 +435,34 @@
       "title": "Notes",
       "description": "Notes"
     },
+	"path_to_next": {
+		"type": "array",
+		"items": {
+			"type": "object",
+			"properties": {
+			  "lat": {
+				"type": "number",
+				"name": "lat",
+				"title": "Latitude",
+				"description": "Latitude",
+				"minimum": -90,
+				"maximum": 90
+				},
+			  "lng": {
+				"type": "number",
+				"name": "lng",
+				"title": "Longitude",
+				"description": "Longitude",
+				"minimum": -180,
+				"maximum": 180
+				}
+			}
+		}
+	},
+	"directions": {
+		"type": "array",
+		"items": { "$ref": "https://github.com/route4me/json-schemas/blob/master/Direction.dtd" }
+	}
     "custom_fields": {
       "type": "array",
       "items": { "type": "string" },
