@@ -75,6 +75,22 @@
 		  "title": "Cached longitude",
 		  "description": "Cached longitude"
 		},
+		"curbside_lat": {
+		  "type": "number",
+		  "name": "curbside_lat",
+		  "minimum": -90,
+		  "maximum": 90,
+		  "title": "Curbside latitude",
+		  "description": "Curbside latitude"
+		},
+		"curbside_lng": {
+		  "type": "number",
+		  "name": "curbside_lng",
+		  "minimum": -180,
+		  "maximum": 180,
+		  "title": "Curbside longitude",
+		  "description": "Curbside longitude"
+		},
 		"address_city": {
 		  "type": "string",
 		  "name": "address_city",
@@ -105,6 +121,18 @@
 		  "name": "address_custom_data",
 		  "title": "Address custom data",
 		  "description": "Address custom data"
+		},
+		"color": {
+		  "type": "string",
+		  "name": "color",
+		  "title": "Color",
+		  "description": "Color of an address"
+		},
+		"address_icon": {
+		  "type": "string",
+		  "name": "address_icon",
+		  "title": "Address icon",
+		  "description": "URL to an address icon file"
 		}
 	}
 }
