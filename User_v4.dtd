@@ -5,7 +5,7 @@
 	"type": "object",
 	"name": "User_v4",
 	"description": "For new account registration. url: https://route4me.com/api.v4/user.php",
-	"required": ["api_key", "member_type", "member_email", "OWNER_MEMBER_ID", "account_type_id", "member_password"],
+	"required": ["api_key", "member_type", "member_email", "OWNER_MEMBER_ID", "member_password"],
 	"properties": {
 		"api_key": {
 			"type": "string",
@@ -49,6 +49,12 @@
 			"title": "Member Email",
 			"format": "email",
 			"descrption": "E-mail address of the user that was used for site registration. HTTP method - POST."
+		},
+		"member_password": {
+			"type": "string",
+			"name": "member_password",
+			"title": "Member Password",
+			"descrption": "Member Password. HTTP method - POST."
 		},
 		"OWNER_MEMBER_ID": {
 			"type": "string",
@@ -134,18 +140,6 @@
 			"name": "date_of_birth",
 			"title": "Date of Birth",
 			"description": "Date of birth. HTTP method - POST."
-		},
-		"member_password": {
-			"type": "string",
-			"name": "member_password",
-			"title": "Member Password",
-			"descrption": "Member Password. HTTP method - POST."
-		},
-		"account_type_id": {
-			"type": "string",
-			"name": "account_type_id",
-			"title": "Account Type ID",
-			"descrption": "Account Type ID. HTTP method - POST."
 		}
 	}
 }
