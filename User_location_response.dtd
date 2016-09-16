@@ -1,0 +1,179 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/blob/master/User_location_response.dtd",
+	"title": "User Location Response",
+	"type": "object",
+	"name": "User_location_response",
+	"description": "End point: https://www.route4me.com/api/track/view_user_locations.php",
+	"required": ["api_key", "member_type", "member_email", "OWNER_MEMBER_ID", "member_password"],
+	"properties": {
+		"additionalProperties": {
+			"type": "array",
+			"items": {
+				"member_data": {
+					"type": "object",
+					"name": "member_data",
+					"title": "Member Data",
+					"properties": {
+						"member_id": {
+							"type": "integer",
+							"name": "member_id",
+							"title": "Member ID",
+							"descrpition": "Member ID"
+						},
+						"member_first_name": {
+							"type": "string",
+							"name": "member_last_name",
+							"title": "Member First Name",
+							"description": "The first name of the user."
+						},
+						"member_last_name": {
+							"type": "string",
+							"name": "member_last_name",
+							"title": "Member Last Name",
+							"description": "The last name of the user."
+						},
+						"member_email": {
+							"type": "string",
+							"name": "member_email",
+							"title": "Member Email",
+							"format": "email",
+							"description": "E-mail address of the user that was used for site registration."
+						},
+						"account_type_id": {
+							"type": "integer",
+							"name": "account_type_id",
+							"title": "Account _type ID",
+							"description": "Account type ID of the member"
+						},
+						"member_type": {
+							"type": "string",
+							"name": "member_type",
+							"title": "Member Type",
+							"description": "Member type, ENUM [PRIMARY_ACCOUNT, SUB_ACCOUNT_ADMIN, SUB_ACCOUNT_REGIONAL_MANAGER, SUB_ACCOUNT_DISPATCHER, SUB_ACCOUNT_DRIVER]."
+						},
+						"phone_number": {
+							"type": "string",
+							"name": "phone_number",
+							"title": "Phone Number",
+							"description": "A phone number of the user."
+						},
+						"readonly_user": {
+							"type": "integer",
+							"name": "readonly_user",
+							"title": "Readonly User",
+							"description": "If equal to 1, an account of an user is readonly"
+						},
+						"show_superuser_addresses": {
+							"type": "integer",
+							"name": "show_superuser_addresses",
+							"title": "Show Superuser Addresses",
+							"description": "If equal to 1, showing of the superuser addresses is enabled"
+						}
+					}
+				},
+				"tracking": {
+					"type": "object",
+					"name": "tracking",
+					"title": "Tracking",
+					"properties": {
+						"position_lng": {
+							"type": "number",
+							"name": "position_lng",
+							"minimum": -180,
+							"maximum": 180,
+							"title": "Position Longitude",
+							"description": "Position longitude"
+						},
+						"position_lat": {
+							"type": "number",
+							"name": "position_lat",
+							"minimum": -90,
+							"maximum": 90,
+							"title": "Position Latitude",
+							"description": "Position latitude"
+						},
+						"direction": {
+							"type": "integer",
+							"name": "direction",
+							"title": "Direction",
+							"description": "Movement direction in the degrees (north = 0, clockwise)"
+						},
+						"data_source_name": {
+							"type": "string",
+							"name": "data_source_name",
+							"title": "Data Source Name",
+							"description": "Data source name"
+						},
+						"activity_timestamp": {
+							"type": "integer",
+							"name": "activity_timestamp",
+							"title": "Activity Timestamp",
+							"description": "Activity timestamp (EPOCH)"
+						},
+						"route_id": {
+						  "type": "string",
+						  "name": "route_id",
+						  "title": "Route ID",
+						  "description": "Route Unique Identifier"
+						},
+						"device_id": {
+							"type": "string",
+							"name": "device_id",
+							"title": "Device ID",
+							"description": "Device ID"
+						},
+						"speed": {
+						  "type": "number",
+						  "name": "speed",
+						  "title": "Speed",
+						  "description": "Movement speed of a vehicle"
+						},
+						"altitude": {
+							"type": "integer",
+							"name": "altitude",
+							"title": "Altitude",
+							"description": "Altitude"
+						},
+						"vehicle_id": {
+							"type": "string",
+							"name": "vehicle_id",
+							"title": "Vehicle ID",
+							"description": "Vehicle ID"
+						},
+						"day_id": {
+							"type": "integer",
+							"name": "day_id",
+							"title": "Day ID",
+							"description": "Day ID"
+						},
+						"device_type": {
+							"type": "string",
+							"name": "device_type",
+							"title": "Device Type",
+							"description": "Device Type"
+						},
+						"member_id": {
+							"type": "integer",
+							"name": "member_id",
+							"title": "Member ID",
+							"descrpition": "Member ID"
+						},
+						"activity_timestamp_friendly": {
+							"type": "string",
+							"name": "activity_timestamp_friendly",
+							"title": "Activity Timestamp Friendly",
+							"description": "Activity timestamp sriendly"
+						},
+						"LAST_KNOWN": {
+							"type": "integer",
+							"name": "LAST_KNOWN",
+							"title": "Last Known Location",
+							"description": "Timestamp of a last known location"
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -23,63 +23,63 @@
 			"type": "string",
 			"name": "member_last_name",
 			"title": "Member First Name",
-			"descrption": "The first name of the user. HTTP method - POST."
+			"description": "The first name of the user. HTTP method - POST."
 		},
 		"member_last_name": {
 			"type": "string",
 			"name": "member_last_name",
 			"title": "Member Last Name",
-			"descrption": "The last name of the user. HTTP method - POST."
+			"description": "The last name of the user. HTTP method - POST."
 		},
 		"member_phone": {
 			"type": "string",
 			"name": "member_phone",
 			"title": "Member Phone",
-			"descrption": "A phone number of the user. HTTP method - POST."
+			"description": "A phone number of the user. HTTP method - POST."
 		},
 		"member_type": {
 			"type": "string",
 			"name": "member_type",
 			"title": "Member Type",
-			"descrption": "Member type, ENUM [PRIMARY_ACCOUNT, SUB_ACCOUNT_ADMIN, SUB_ACCOUNT_REGIONAL_MANAGER, SUB_ACCOUNT_DISPATCHER, SUB_ACCOUNT_DRIVER]. HTTP method - POST."
+			"description": "Member type, ENUM [PRIMARY_ACCOUNT, SUB_ACCOUNT_ADMIN, SUB_ACCOUNT_REGIONAL_MANAGER, SUB_ACCOUNT_DISPATCHER, SUB_ACCOUNT_DRIVER]. HTTP method - POST."
 		},
 		"member_email": {
 			"type": "string",
 			"name": "member_email",
 			"title": "Member Email",
 			"format": "email",
-			"descrption": "E-mail address of the user that was used for site registration. HTTP method - POST."
+			"description": "E-mail address of the user that was used for site registration. HTTP method - POST."
 		},
 		"member_password": {
 			"type": "string",
 			"name": "member_password",
 			"title": "Member Password",
-			"descrption": "Member Password. HTTP method - POST."
+			"description": "Member Password. HTTP method - POST."
 		},
 		"OWNER_MEMBER_ID": {
 			"type": "string",
 			"name": "OWNER_MEMBER_ID",
 			"title": "Owner Member ID",
-			"descrption": "Parent user ID. HTTP method - POST."
+			"description": "Parent user ID. HTTP method - POST."
 		},
 		"member_zipcode": {
 			"type": "string",
 			"name": "member_zipcode",
 			"title": "Zip code",
 			"pattern": "^[0-9]{5,7}$",
-			"descrption": "The 5-7 digit ZIP code (minimum length of 5)). HTTP method - POST."
+			"description": "The 5-7 digit ZIP code (minimum length of 5)). HTTP method - POST."
 		},
 		"preferred_language": {
 			"type": "string",
 			"name": "preferred_language",
 			"title": "Preferred Language",
-			"descrption": "Preferred language, ENUM [en, fr, ...]. HTTP method - POST."
+			"description": "Preferred language, ENUM [en, fr, ...]. HTTP method - POST."
 		},
 		"preferred_units": {
 			"type": "string",
 			"name": "preferred_units",
 			"title": "Preferred Units",
-			"descrption": "Preferred units, ENUM [km, ml]. HTTP method - POST."
+			"description": "Preferred units, ENUM [km, ml]. HTTP method - POST."
 		},
 		"timezone": {
 			"type": "string",
