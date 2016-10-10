@@ -341,12 +341,6 @@
       "title": "Time",
       "description": "Service time (seconds)"
     },
-	"tracking_number": {
-		"type": "string",
-		"name": "tracking_number",
-		"title": "Tracking Number",
-		"description": "An unique ID of Tracking_number object"
-	}
     "email": {
       "type": "string",
 	  "format": "email",
