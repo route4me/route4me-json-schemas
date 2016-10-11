@@ -11,6 +11,12 @@
 		  "title": "API key",
 		  "description": "User api key for a developer"
 		},
+		"order_id": {
+		  "type": "integer",
+		  "name": "order_id",
+		  "title": "Order ID",
+		  "description": "An unique internal ID of an order."
+		},
 		"address_1": {
 		  "type": "string",
 		  "name": "address_1",
