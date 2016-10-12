@@ -1,16 +1,10 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://github.com/route4me/json-schemas/blob/master/Territory.dtd",
-  "Name": "Territory",
-  "Description": "Json schema for an Territory class, which is used for meintenance territories of different types. For detailed usage see curl Territory group",
+  "id": "https://github.com/route4me/json-schemas/blob/master/Territory_response.dtd",
+  "Name": "Territory_response",
+  "Description": "Json schema for an Territory class, which is response from territory endpoints. For detailed usage see curl Territory group",
   "type": "object",
   "properties": {
-	"api_key": {
-      "type": "string",
-      "name": "api_key",
-      "title": "API key",
-      "description": "User api key"
-    },
 	"territory_id": {
       "type": "string",
       "name": "territory_id",
@@ -35,6 +29,12 @@
       "title": "Territory color",
       "description": "Territory color"
     },
+	"addresses": {
+		"type": "array",
+		"items": {
+			"$ref":"https://github.com/route4me/json-schemas/blob/master/Addressbook_v4_response.dtd"
+		}
+	},
 	"territory": {
       "type": "object",
 	  "properties": {
