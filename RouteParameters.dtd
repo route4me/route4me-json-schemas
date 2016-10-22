@@ -6,7 +6,7 @@
   "name": "RouteParameters",
   "properties": {
     "is_upload": {
-      "type": ["string", "null"],
+      "type": ["boolean", "null"],
 	  "name": "is_upload",
 	  "title": "Is Upload",
 	  "description": "Let the R4M api know if this sdk request is coming from a file upload within your environment (for analytics)"
