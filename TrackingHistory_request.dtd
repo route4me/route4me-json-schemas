@@ -19,6 +19,13 @@
       "title": "Route ID",
       "description": "Route ID"
     },
+	"format": {
+      "type": "string",
+	  "enum": ["json", "xml","csv","txt"]
+      "name": "format",
+      "title": "Format",
+      "description": "Response format. Default - xml"
+    },
     "last_position": {
       "type": "boolean",
       "name": "last_position",
