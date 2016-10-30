@@ -2,70 +2,45 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://github.com/route4me/json-schemas/blob/master/Activity.dtd",
   "Name": "Activity",
+  "description": "Parameters for creating user activity. Endpoint - https://www.route4me.com/api.v4/activity_feed.php"
   "type": "object",
  	  "properties": {
 		"api_key": {
 		  "type": "string",
 		  "name": "api_key",
 		  "title": "Api key",
-		  "description": "User api key"
-		},
-		"device_id": {
-		  "type": "string",
-		  "name": "device_id",
-		  "title": "Device ID",
-		  "description": "Device ID"
+		  "description": "User api key. HTTP method - GET."
 		},
 		"route_id": {
 		  "type": "string",
 		  "name": "route_id",
 		  "title": "Route ID",
-		  "description": "Parent route"
+		  "description": "Route ID. HTTP method - POST."
+		},
+		"route_destination_id": {
+		  "type": "integer",
+		  "name": "route_destination_id",
+		  "title": "Route destination ID",
+		  "description": "Route destination ID. HTTP method - POST."
 		},
 		"activity_type": {
 		  "type": "string",
 		  "enum": ["","delete-destination", "insert-destination", "mark-destination-departed", "mark-destination-visited", "member-created", "member-deleted", "member-modified", "move-destination", "note-insert", "route-delete", "route-optimized", "route-owner-changed", "update-destinations","user_message"]
 		  "name": "activity_type",
 		  "title": "Activity type",
-		  "description": "delete-destination - remove address from route; insert-destination - add new address; mark-destination-departed - mark address departed; move-destination - change address sequence; update-destinations - update address attribute; mark-destination-visited - mark address visited; member-created - created team member; member-deleted - delete team member; member-modified - modified member; note-insert - note insert; route-delete - delete route; route-optimized - optimization problem; route-owner-changed - assigned other user to route, user_message - user sent message"
+		  "description": "delete-destination - remove address from route; insert-destination - add new address; mark-destination-departed - mark address departed; move-destination - change address sequence; update-destinations - update address attribute; mark-destination-visited - mark address visited; member-created - created team member; member-deleted - delete team member; member-modified - modified member; note-insert - note insert; route-delete - delete route; route-optimized - optimization problem; route-owner-changed - assigned other user to route, user_message - user sent message. HTTP method - POST."
 		},
 		"member_id": {
 		  "type": "integer",
 		  "name": "member_id",
 		  "title": "Member ID",
-		  "description": "Member ID"
+		  "description": "Member ID. HTTP method - POST."
 		},
-		"offset": {
-		  "type": "integer",
-		  "name": "offset",
-		  "title": "Offset",
-		  "description": "Start position for searching"
-		},
-		"team": {
+		"activity_message": {
 		  "type": "string",
-		  "enum": ["0","1"]
-		  "name": "team",
-		  "title": "Team",
-		  "description": "1 - include team"
-		},
-		"start": {
-		  "type": "integer",
-		  "name": "start",
-		  "title": "Start",
-		  "description": "Start time"
-		},
-		"end": {
-		  "type": "integer",
-		  "name": "end",
-		  "title": "End",
-		  "description": "End time"
-		},
-		"format": {
-		  "type": "string",
-		  "enum": ["json","csv"]
-		  "name": "format",
-		  "title": "Format",
-		  "description": "response format"
+		  "name": "activity_message",
+		  "title": "Activity message",
+		  "description": "Activity message. HTTP method - POST."
 		}
 	  }
 }
