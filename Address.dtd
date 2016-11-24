@@ -473,15 +473,12 @@
       "title": "Notes",
       "description": "Notes"
     },
-	
-    
 	"account_no": {
 	  "type": "string",
       "name": "account_no",
       "title": "Account NO",
 	  "description": "The account number for the address"
 	},
-    
 	"tracking_number": {
       "type": "string",
       "name": "tracking_number",
