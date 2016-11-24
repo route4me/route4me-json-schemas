@@ -1,57 +1,21 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://github.com/route4me/json-schemas/blob/master/Activity.dtd",
-  "Name": "Activity",
+  "id": "https://github.com/route4me/json-schemas/blob/master/Activity_response.dtd",
+  "Name": "Activity_response",
   "type": "object",
  	  "properties": {
-		"route_id": {
-		  "type": "string",
-		  "name": "route_id",
-		  "title": "Route ID",
-		  "description": "Parent route"
-		},
-		"route_destination_id": {
-		  "type": "integer",
-		  "name": "route_destination_id",
-		  "title": "Route destination ID",
-		  "description": "An address on the route"
-		},
-		"member_id": {
-		  "type": "integer",
-		  "name": "member_id",
-		  "title": "Member ID",
-		  "description": "Route's owner member's unique ID number"
-		},
-		"note_id": {
-		  "type": "string",
-		  "name": "note_id",
-		  "title": "Note ID",
-		  "description": "Note ID"
-		},
-		"note_attachment_url": {
-		  "type": "string",
-		  "name": "note_attachment_url",
-		  "title": "Note attachment url",
-		  "description": "URL of the uploaded note"
-		},
-		"api_key": {
-		  "type": "string",
-		  "name": "api_key",
-		  "title": "API key",
-		  "description": "An api key of the user"
-		},
-		"activity_type": {
-		  "type": "string",
-		  "enum": ["","delete-destination", "insert-destination", "mark-destination-departed", "mark-destination-visited", "member-created", "member-deleted", "member-modified", "move-destination", "note-insert", "route-delete", "route-optimized", "route-owner-changed", "update-destinations","user_message"]
-		  "name": "activity_type",
-		  "title": "Activity type",
-		  "description": "delete-destination - remove address from route; insert-destination - add new address; mark-destination-departed - mark address departed; move-destination - change address sequence; update-destinations - update address attribute; mark-destination-visited - mark address visited; member-created - created team member; member-deleted - delete team member; member-modified - modified member; note-insert - note insert; route-delete - delete route; route-optimized - optimization problem; route-owner-changed - assigned other user to route, user_message - user sent message"
-		},
 		"activity_id": {
 		  "type": "string",
 		  "name": "activity_id",
 		  "title": "Activity ID",
 		  "description": "32-char uniqie ID of the acitivity"
+		},
+		"activity_type": {
+		  "type": "string",
+		  "enum": ["","delete-destination", "insert-destination", "mark-destination-departed", "mark-destination-visited", "member-created", "member-deleted", "member-modified", "move-destination", "note-insert", "route-delete", "route-optimized", "route-owner-changed", "update-destinations","user_message"],
+		  "name": "activity_type",
+		  "title": "Activity type",
+		  "description": "delete-destination - remove address from route; insert-destination - add new address; mark-destination-departed - mark address departed; move-destination - change address sequence; update-destinations - update address attribute; mark-destination-visited - mark address visited; member-created - created team member; member-deleted - delete team member; member-modified - modified member; note-insert - note insert; route-delete - delete route; route-optimized - optimization problem; route-owner-changed - assigned other user to route, user_message - user sent message"
 		},
 		"activity_timestamp": {
 		  "type": "integer",
@@ -64,6 +28,77 @@
 		  "name": "activity_message",
 		  "title": "Activity message",
 		  "description": "Activity message"
+		},
+		"route_id": {
+		  "type": "string",
+		  "name": "route_id",
+		  "title": "Route ID",
+		  "description": "Parent route"
+		},
+		"route_name": {
+		  "type": "string",
+		  "name": "route_name",
+		  "title": "Route name",
+		  "description": "Parent route name"
+		},
+		"route_destination_id": {
+		  "type": "integer",
+		  "name": "route_destination_id",
+		  "title": "Route destination ID",
+		  "description": "An address on the route"
+		},
+		"note_id": {
+		  "type": "string",
+		  "name": "note_id",
+		  "title": "Note ID",
+		  "description": "Note ID"
+		},
+		"note_type": {
+		  "type": "string",
+		  "name": "note_type",
+		  "title": "Note type",
+		  "description": "Note type"
+		},
+		"note_contents": {
+		  "type": "string",
+		  "name": "note_contents",
+		  "title": "Note contents",
+		  "description": "Note contents"
+		},
+		"note_file": {
+		  "type": "string",
+		  "name": "note_attachment_url",
+		  "title": "Note attachment url",
+		  "description": "URL of the uploaded note"
+		},
+		"member": {
+			"type": "object",
+			"properties": {
+				"member_id": {
+				  "type": "integer",
+				  "name": "member_id",
+				  "title": "Member ID",
+				  "description": "Unique ID of an user created an activity"
+				},
+				"member_first_name": {
+				  "type": "integer",
+				  "name": "member_first_name",
+				  "title": "Member first name",
+				  "description": "First name of an user created an activity"
+				},
+				"member_last_name": {
+				  "type": "integer",
+				  "name": "member_last_name",
+				  "title": "Member last name",
+				  "description": "Last name of an user created an activity"
+				},
+				"member_email": {
+				  "type": "integer",
+				  "name": "member_email",
+				  "title": "Member email",
+				  "description": "Email of an user created an activity"
+				}
+			}
 		}
 	}
 }
