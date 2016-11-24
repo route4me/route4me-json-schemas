@@ -1,0 +1,61 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Member_app_purchase.dtd",
+	"title": "Member application purchase",
+	"type": "object",
+	"name": "Member_app_purchase",
+	"description": "For purchasing Route4Me application by the member. url: https://www.route4me.com/api/member/user_license.php.",
+	"required": ["api_key", "member_id", "device_id", "device_type", "subscription_name", "token", "payload", "format"],
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"name": "api_key",
+			"title": "API key",
+			"description": "API key of en user. HTTP method - GET"
+		},
+		"member_id": {
+			"type": "integer",
+			"name": "member_id",
+			"title": "Member ID",
+			"description": "Member ID. HTTP method - POST"
+		},
+		"device_id": {
+			"type": "integer",
+			"name": "device_id",
+			"title": "Device ID",
+			"description": "Unique ID of a user's device. HTTP method - POST"
+		},
+		"device_type": {
+			"enum": ["web", "iphone", "ipad", "android_phone", "android_tablet"],
+			"name": "device_type ",
+			"title": "Device type",
+			"descrption": "Type of the user's device. HTTP method - POST"
+		},
+		"subscription_name": {
+			"type": "string",
+			"enum": ["CANCELLED", "ANDROID_MONTHLY", "ANDROID_YEARLY", "IPHONE_MONTHLY", "IPAD_MONTHLY", "IPHONE_YEARLY", "IPAD_YEARLY"],
+			"name": "subscription_name",
+			"title": "Subscription name",
+			"description": "Valid subscription name. HTTP method - POST"
+		},
+		"token": {
+			"type": "string",
+			"name": "token",
+			"title": "Token",
+			"description": "Token from Google. HTTP method - POST"
+		},
+		"payload": {
+			"type": "string",
+			"name": "payload",
+			"title": "Payload",
+			"description": "Payload from Google. HTTP method - POST"
+		},
+		"format": {
+			"type": "string",
+			"enum": ["json", "xml"],
+			"name": "format",
+			"title": "Format",
+			"description": "Response format. HTTP method - POST"
+		}
+	}
+}
