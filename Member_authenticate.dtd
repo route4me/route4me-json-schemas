@@ -1,0 +1,37 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Members_authenticate.dtd",
+	"title": "Members_authenticate",
+	"type": "object",
+	"name": "Members authenticate",
+	"description": "For members authenticate. url: https://www.route4me.com/actions/authenticate.php. Content-Type: multipart/form-data",
+	"required": ["api_key","strEmail", "strPassword"],
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"name": "api_key",
+			"title": "API key",
+			"description": "API key of en user. HTTP method - GET"
+		},
+		"strEmail": {
+			"type": "string",
+			"name": "strEmail",
+			"title": "Email",
+			"format": "email",
+			"descrption": "E-mail address of the user that was used for site registration. HTTP method - FORM data."
+		},
+		"strPassword": {
+			"type": "string",
+			"name": "strPassword",
+			"title": "Password",
+			"description": "Password of an user. HTTP method - FORM data."
+		},
+		"format": {
+			"type": "string",
+			"enum": ["json", "xml"],
+			"name": "format",
+			"title": "Format",
+			"description": "Response format"
+		}
+	}
+}

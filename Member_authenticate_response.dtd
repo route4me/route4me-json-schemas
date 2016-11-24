@@ -1,11 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/Members_authenticate_response.dtd",
-	"title": "Members authenticate response",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Member_authenticate_response.dtd",
+	"title": "Membes authenticate response",
 	"type": "object",
-	"name": "Members_authenticate_response",
+	"name": "Membes_authenticate_response",
 	"description": "For member authentication. url: https://www.route4me.com/actions/authenticate.php",
-	"required": ["strEmail", "strPassword_1", "strPassword_2", "strFirstName", "strLastName", "strIndustry", "chkTerms", "plan"],
 	"properties": {
 		"status": {
 			"type": "boolean",
