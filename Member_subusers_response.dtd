@@ -1,10 +1,10 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/Member_response.dtd",
-	"title": "Member response",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Member_subusers_response.dtd",
+	"title": "Member  get subusers response",
 	"type": "object",
-	"name": "Member_response",
-	"description": "Response json schema for the retrieved member's object",
+	"name": "Member_subusers_response",
+	"description": "Response JSON schema for the retrieved member's object from the endpoint /api/member/view_users.php",
 	"properties": {
 		"member_id": {
 			"type": "string",
