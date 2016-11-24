@@ -1,0 +1,109 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/blob/master/User_v4_create.dtd",
+	"title": "User (v4) create",
+	"type": "object",
+	"name": "User_v4_create",
+	"description": "For new user creation. url: https://route4me.com/api.v4/user.php",
+	"required": ["api_key", "member_type", "member_email", "OWNER_MEMBER_ID", "member_password"],
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"name": "api_key",
+			"title": "API key",
+			"description": "API key of an user. HTTP method - GET"
+		},
+		"HIDE_ROUTED_ADDRESSES": {
+			"type": "boolean",
+			"name": "HIDE_ROUTED_ADDRESSES",
+			"title": "Hide Routed Addresses",
+			"description": "Hide routed sddresses, ENUM[TRUE, FALSE]. HTTP method - POST."
+		},
+		"member_phone": {
+			"type": "string",
+			"name": "member_phone",
+			"title": "Member Phone",
+			"description": "A phone number of the user. HTTP method - POST."
+		},
+		"member_zipcode": {
+			"type": "string",
+			"name": "member_zipcode",
+			"title": "Zip code",
+			"pattern": "^[0-9]{5,7}$",
+			"description": "The 5-7 digit ZIP code (minimum length of 5)). HTTP method - POST."
+		},
+		"route_count": {
+			"type": "string",
+			"name": "route_count",
+			"title": "Route count",
+			"description": "Route count. HTTP method - POST."
+		},
+		"member_email": {
+			"type": "string",
+			"name": "member_email",
+			"title": "Member Email",
+			"format": "email",
+			"description": "E-mail address of the user that was used for site registration. HTTP method - POST."
+		},
+		"HIDE_VISITED_ADDRESSES": {
+			"type": "boolean",
+			"name": "HIDE_VISITED_ADDRESSES",
+			"title": "Hide Visited Addresses",
+			"description": "Hide visited sddresses, ENUM[TRUE, FALSE]. HTTP method - POST."
+		},
+		"READONLY_USER": {
+			"type": "boolean",
+			"name": "READONLY_USER",
+			"title": "Readonly User",
+			"description": "Readonly user, ENUM[TRUE, FALSE]. HTTP method - POST."
+		},
+		"member_type": {
+			"type": "string",
+			"name": "member_type",
+			"title": "Member Type",
+			"description": "Member type, ENUM [PRIMARY_ACCOUNT, SUB_ACCOUNT_ADMIN, SUB_ACCOUNT_REGIONAL_MANAGER, SUB_ACCOUNT_DISPATCHER, SUB_ACCOUNT_DRIVER]. HTTP method - POST."
+		},
+		"date_of_birth": {
+			"type": "string",
+			"name": "date_of_birth",
+			"title": "Date of Birth",
+			"description": "Date of birth. HTTP method - POST."
+		},
+		"member_first_name": {
+			"type": "string",
+			"name": "member_last_name",
+			"title": "Member First Name",
+			"description": "The first name of the user. HTTP method - POST."
+		},
+		"member_password": {
+			"type": "string",
+			"name": "member_password",
+			"title": "Member Password",
+			"description": "Member Password. HTTP method - POST."
+		},
+		"HIDE_NONFUTURE_ROUTES": {
+			"type": "boolean",
+			"name": "HIDE_NONFUTURE_ROUTES",
+			"title": "Hide Nonfuture Routes",
+			"description": "Hide non-future routes, ENUM[TRUE, FALSE]. HTTP method - POST."
+		},
+		"member_last_name": {
+			"type": "string",
+			"name": "member_last_name",
+			"title": "Member Last Name",
+			"description": "The last name of the user. HTTP method - POST."
+		},
+		"SHOW_ALL_VEHICLES": {
+			"type": "boolean",
+			"name": "SHOW_ALL_VEHICLES",
+			"title": "Show All Vehicles",
+			"description": "Show all vehicles, ENUM[TRUE, FALSE]. HTTP method - POST."
+		},
+		"SHOW_ALL_DRIVERS": {
+			"type": "boolean",
+			"name": "SHOW_ALL_DRIVERS",
+			"title": "Show All Drivers",
+			"description": "Show all drivers, ENUM[TRUE, FALSE]. HTTP method - POST."
+		}
+	}
+}
