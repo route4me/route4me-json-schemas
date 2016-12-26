@@ -25,7 +25,7 @@
 		  },
 		  "info": {
 		    "type": "string",
-			"enum": ["Order Received", "Order Assigned to Route", "Packing", "Loaded to Vehicle", "Packing", "Out for Delivery"],
+			"enum": ["Order Received", "Order Assigned to Route", "Packing", "Loaded to Vehicle", "Out for Delivery"],
 			"name": "info",
 			"title": "Information",
 			"description": "Information about a shipped package"
