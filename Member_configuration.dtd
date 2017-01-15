@@ -1,0 +1,23 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Member_configuration.dtd",
+	"title": "Member Configuration",
+	"type": "object",
+	"name": "Member_configuration",
+	"description": "For member configuration. See examples in the folder https://github.com/route4me/route4me-curl/tree/master/Windows/MemberConfiguration",
+	"required": ["config_key", "config_value"],
+	"properties": {
+		"config_key": {
+			"type": "string",
+			"name": "config_key",
+			"title": "Config Key",
+			"descrption": "Config key"
+		},
+		"config_value": {
+			"type": "string",
+			"name": "config_value",
+			"title": "Config Value",
+			"description": "Config value"
+		}
+	}
+}
