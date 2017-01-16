@@ -155,6 +155,12 @@
       "title": "Contact ID",
       "description": "Address book contact id (0 means not connected to the address book)"
     },
+	"order_id": {
+      "type": "integer",
+      "name": "order_id",
+      "title": "Order ID",
+      "description": "Parent order ID"
+    },
 	"address_stop_type": {
       "type": "string",
 	  "enum": ["PICKUP", "DELIVERY", "BREAK", "MEETUP"],
@@ -438,6 +444,12 @@
       "title": "Time",
       "description": "Service time (seconds)"
     },
+	"tracking_number": {
+      "type": "string",
+      "name": "tracking_number",
+      "title": "Tracking Number",
+      "description": "Systemwide unique code, which permits end-users (recipients) to track the status of their order"
+    },
     "custom_fields": {
       "type": "array",
       "items": { "type": "string" },
@@ -473,18 +485,36 @@
       "title": "Notes",
       "description": "Notes"
     },
+	"path_to_next": {
+		"type": "array",
+		"items": {
+			"type": "object",
+			"properties": {
+			  "lat": {
+				"type": "number",
+				"name": "lat",
+				"title": "Latitude",
+				"description": "Latitude",
+				"minimum": -90,
+				"maximum": 90
+				},
+			  "lng": {
+				"type": "number",
+				"name": "lng",
+				"title": "Longitude",
+				"description": "Longitude",
+				"minimum": -180,
+				"maximum": 180
+				}
+			}
+		}
+	},
 	"account_no": {
 	  "type": "string",
       "name": "account_no",
       "title": "Account NO",
 	  "description": "The account number for the address"
 	},
-	"tracking_number": {
-      "type": "string",
-      "name": "tracking_number",
-      "title": "Tracking Number",
-      "description": "Systemwide unique code, which permits end-users (recipients) to track the status of their order"
-    },
     "wait_time_to_next_destination": {
 	  "type": "integer",
 	  "name": "wait_time_to_next_destination",
@@ -578,30 +608,6 @@
       "name": "manifest",
       "title": "Manifest"
     },
-	"path_to_next": {
-		"type": "array",
-		"items": {
-			"type": "object",
-			"properties": {
-			  "lat": {
-				"type": "number",
-				"name": "lat",
-				"title": "Latitude",
-				"description": "Latitude",
-				"minimum": -90,
-				"maximum": 90
-				},
-			  "lng": {
-				"type": "number",
-				"name": "lng",
-				"title": "Longitude",
-				"description": "Longitude",
-				"minimum": -180,
-				"maximum": 180
-				}
-			}
-		}
-	},
 	"directions": {
 		"type": "array",
 		"items": { "$ref": "https://github.com/route4me/json-schemas/blob/master/Direction.dtd" }

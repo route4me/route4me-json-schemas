@@ -201,6 +201,12 @@
       "title": "Order NO",
       "description": "The order number for the address"
     },
+	"order_id": {
+      "type": "integer",
+      "name": "order_id",
+      "title": "Order ID",
+      "description": "Parent order ID"
+    },
 	"weight": {
       "type": "number",
       "name": "weight",
