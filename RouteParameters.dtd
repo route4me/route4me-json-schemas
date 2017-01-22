@@ -67,11 +67,29 @@
 	  "title": "Vehicle Capacity",
 	  "description": "How much cargo can the vehicle carry (units, e.g. cubic meters)"
     },
+	"vehicle_max_cargo_weight": {
+      "type": ["number", "null"],
+	  "name": "vehicle_max_cargo_weight",
+	  "title": "Vehicle Maximum Cargo Weight",
+	  "description": "Max cargo weight a vehicle can cary"
+    },
+	"vehicle_max_cargo_volume": {
+      "type": ["number", "null"],
+	  "name": "vehicle_max_cargo_volume",
+	  "title": "Vehicle Maximum Cargo Volume",
+	  "description": "Max cargo volum a vehicle can cary"
+    },
     "vehicle_max_distance_mi": {
       "type": ["string", "null"],
 	  "name": "vehicle_max_distance_mi",
 	  "title": "Vehicle Maximum Distance (mi)",
 	  "description": "Max distance for a single vehicle in this route (always in miles)"
+    },
+	"subtour_max_revenue": {
+      "type": ["string", "null"],
+	  "name": "subtour_max_revenue",
+	  "title": "Subtour Max Revenue",
+	  "description": "Max allowed revenue from a subtour"
     },
     "distance_unit": {
       "type": ["string", "null"],
@@ -92,6 +110,13 @@
 	  "enum": ["Highways", "Tolls", "minimizeHighways", "minimizeTolls", ""],
 	  "title": "Avoid",
 	  "description": "Options which let the user choose which road obstacles to avoid. This has no impact on route sequencing"
+    },
+	"avoidance_zones": {
+      "type": "array",
+	  "items": { "type": "string" },
+	  "name": "avoidance_zones",
+	  "title": "Avoidance Zones",
+	  "description": "Array of the Avoidance zones IDs"
     },
     "vehicle_id": {
       "type": ["string", "null"],
@@ -155,8 +180,7 @@
       "enum": [1, 2, 3, 4, 5, 6, 7, 100, 101],
 	  "name": "algorithm_type",
 	  "title": "Algorithm Type",
-	  "description": "The algorithm to be used: 1 = TSP, 2 = VRP, 3 = CVRP_TW_SD, 4 = CVRP_TW_MD, 5 = TSP_TW,
-6 = TSP_TW_CR, 7 = BBCVRP, 100 = ALG_NONE, 101 = ALG_LEGACY_DISTRIBUTED"
+	  "description": "The algorithm to be used: 1 = TSP, 2 = VRP, 3 = CVRP_TW_SD, 4 = CVRP_TW_MD, 5 = TSP_TW, 6 = TSP_TW_CR, 7 = BBCVRP, 100 = ALG_NONE, 101 = ALG_LEGACY_DISTRIBUTED"
     },
     "member_id": {
       "type": ["string", "null"],
@@ -201,6 +225,12 @@
 	  "title": "Device Type",
 	  "description": "The type of the device that is creating this route"
     },
+	"first_drive_then_wait_between_stops": {
+      "type": ["boolean", "null"],
+	  "name": "first_drive_then_wait_between_stops",
+	  "title": "First Drive Then Wait Between Stops",
+	  "description": "First drive then wait between stops"
+    },
     "has_trailer": {
       "type": ["boolean", "null"],
 	  "name": "has_trailer",
@@ -243,6 +273,13 @@
 	  "title": "Truck Length",
 	  "description": "If travel_mode = 'Trucking', specifies the truck length (required)"
     },
+	"truck_hazardous_goods": {
+      "type": "array",
+	  "items": { "type": "string" },
+	  "name": "truck_hazardous_goods",
+	  "title": "Truck Hazardous Goods",
+	  "description": "Array of the truck hazardous goods"
+    },
     "min_tour_size": {
       "type": ["integer", "null"],
 	  "name": "min_tour_size",
@@ -260,6 +297,24 @@
 	  "name": "optimization_quality",
 	  "title": "Optimization Quality",
 	  "description": "there are 3 types of optimization qualities that are optimizations goals (1 - Generate Optimized Routes As Quickly as Possible, 2 - Generate Routes That Look Better On A Map, 3 - Generate The Shortest And Quickest Possible Routes)"
+    },
+	"uturn": {
+      "type": ["integer", "null"],
+	  "name": "uturn",
+	  "title": "uturn",
+	  "description": "Available with:1 = UTURN_DEPART_SHORTEST (Allows U-turns), 2 = UTURN_DEPART_TO_RIGHT (Forbids U-turns), 3 = UTURN_DEPART_TO_LEFT (Deprecated)"
+    },
+	"leftturn": {
+      "type": ["integer", "null"],
+	  "name": "leftturn",
+	  "title": "leftturn",
+	  "description": "Available with: 1 = LEFTTURN_ALLOW, 2 = LEFTTURN_FORBID, 3 = LEFTTURN_MULTIAPPROACH (assumes points are intersections and visits them from all sides. Ignores uturn and leftturn constraints.)"
+    },
+	"rightturn": {
+      "type": ["integer", "null"],
+	  "name": "rightturn",
+	  "title": "rightturn",
+	  "description": "Available with: 1 = RIGHTTURN_ALLOW, 2 = RIGHTTURN_FORBID, 3 = RIGHTTURN_MULTIAPPROACH (assumes points are intersections and visits them from all sides. Ignores uturn and leftturn constraints.)"
     }
   }
 }
