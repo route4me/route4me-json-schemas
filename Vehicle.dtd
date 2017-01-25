@@ -44,7 +44,7 @@
 			"descrption": "An ID of the state, where vehicle was registered"
 		},
 		"vehicle_reg_country": {
-			"type": "string",
+			"type": ["string", "null"],
 			"name": "vehicle_reg_country",
 			"title": "Vehicle registration country",
 			"descrption": "A country where vehicle was registered"
@@ -86,20 +86,20 @@
 			"descrption": "A year the vehicle was acquired"
 		},
 		"vehicle_cost_new": {
-			"type": "number",
+			"type": ["number", "null"],
 			"name": "vehicle_cost_new",
 			"title": "Vehicle cost new",
 			"descrption": "A cost f the new vehicle"
 		},
 		"license_start_date": {
-			"type": "string",
+			"type": ["string", "null"],
 			"format": "date-time",
 			"name": "license_start_date",
 			"title": "License start date",
 			"descrption": "A start date of the license"
 		},
 		"license_end_date": {
-			"type": "string",
+			"type": ["string", "null"],
 			"format": "date-time",
 			"name": "license_end_date",
 			"title": "License end date",
