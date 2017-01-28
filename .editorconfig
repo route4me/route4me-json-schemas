@@ -14,6 +14,9 @@ indent_size = 4
 indent_style = tab
 indent_size = 4
 
+[*.dtd]
+indent_style = tab
+
 # Troubles with TABS. Use 2 spaces
 [*.yml]
 indent_style = space

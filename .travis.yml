@@ -1,0 +1,29 @@
+# =============================================================================
+# Access Route4Me's logistics-as-a-service API using our Node.js SDK
+#
+# Copyright (C) 2016-2017 Route4Me
+#
+# =============================================================================
+
+sudo: false
+
+language: node_js
+
+node_js:
+  - 6
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - npm config set spin false
+
+install:
+  - npm i -g gulp
+  - npm i -g jsonlint
+  - npm i -g eslint eslint-plugin-json
+
+script:
+# - gulp lint
+  - jsonlint -q *.dtd
