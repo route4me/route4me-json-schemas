@@ -8,7 +8,7 @@
 		"results": {
 			"type": "array",
 			"items": {
-				"type": {"$ref": "https://github.com/route4me/json-schemas/blob/master/Order_response.dtd"}
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/Order_response.dtd"
 			},
 			"name": "results",
 			"title": "Results",
