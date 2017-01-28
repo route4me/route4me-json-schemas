@@ -1,246 +1,246 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://github.com/route4me/json-schemas/blob/master/Order_response.dtd",
-  "Name": "Order_response",
-  "Description": "Json schema for an Order response, which is used for getting information about existing order. For usage details see curl examples in Order group",
-  "type": "object",
-  "properties": {
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Order_response.dtd",
+	"Name": "Order_response",
+	"Description": "Json schema for an Order response, which is used for getting information about existing order. For usage details see curl examples in Order group",
+	"type": "object",
+	"properties": {
 		"created_timestamp": {
-		  "type": "integer",
-		  "name": "created_timestamp",
-		  "title": "Created Timestamp",
-		  "description": "Timestamp of an order crreation."
+			"type": "integer",
+			"name": "created_timestamp",
+			"title": "Created Timestamp",
+			"description": "Timestamp of an order crreation."
 		},
 		"order_id": {
-		  "type": "integer",
-		  "name": "order_id",
-		  "title": "Order ID",
-		  "description": "An unique internal ID of an order."
+			"type": "integer",
+			"name": "order_id",
+			"title": "Order ID",
+			"description": "An unique internal ID of an order."
 		},
 		"order_status_id": {
-		  "type": "integer",
-		  "name": "order_status_id",
-		  "title": "Order status ID",
-		  "description": "Order status ID"
+			"type": "integer",
+			"name": "order_status_id",
+			"title": "Order status ID",
+			"description": "Order status ID"
 		},
 		"day_added_YYMMDD": {
-		  "type": "string",
-		  "name": "day_added_YYMMDD",
-		  "title": "Day Added",
-		  "description": "Order inserted date"
+			"type": "string",
+			"name": "day_added_YYMMDD",
+			"title": "Day Added",
+			"description": "Order inserted date"
 		},
 		"day_scheduled_for_YYMMDD": {
-		  "type": "string",
-		  "name": "day_scheduled_for_YYMMDD",
-		  "title": "Day scheduled",
-		  "description": "Date order was scheduled for"
+			"type": "string",
+			"name": "day_scheduled_for_YYMMDD",
+			"title": "Day scheduled",
+			"description": "Date order was scheduled for"
 		},
 		"address_alias": {
-		  "type": "string",
-		  "name": "address_alias",
-		  "title": "Address alias",
-		  "description": "Address alias"
+			"type": "string",
+			"name": "address_alias",
+			"title": "Address alias",
+			"description": "Address alias"
 		},
 		"address_1": {
-		  "type": "string",
-		  "name": "address_1",
-		  "title": "Address 1",
-		  "description": "address_1 field"
+			"type": "string",
+			"name": "address_1",
+			"title": "Address 1",
+			"description": "address_1 field"
 		},
 		"address_2": {
-		  "type": "string",
-		  "name": "address_2",
-		  "title": "Address 2",
-		  "description": "address_2 field"
+			"type": "string",
+			"name": "address_2",
+			"title": "Address 2",
+			"description": "address_2 field"
 		},
 		"member_id": {
-		  "type": integer,
-		  "name": "member_id",
-		  "title": "Member ID",
-		  "description": "User ID who is assigned to the route"
+			"type": "integer",
+			"name": "member_id",
+			"title": "Member ID",
+			"description": "User ID who is assigned to the route"
 		},
 		"EXT_FIELD_first_name": {
-		  "type": "string",
-		  "name": "first_name",
-		  "title": "First name",
-		  "description": "The first name of the receiving address"
+			"type": "string",
+			"name": "first_name",
+			"title": "First name",
+			"description": "The first name of the receiving address"
 		},
 		"EXT_FIELD_last_name": {
-		  "type": "string",
-		  "name": "last_name",
-		  "title": "Last name",
-		  "description": "The last name of the receiving address"
+			"type": "string",
+			"name": "last_name",
+			"title": "Last name",
+			"description": "The last name of the receiving address"
 		},
 		"EXT_FIELD_email": {
-		  "type": "string",
-		  "name": "address_email",
-		  "title": "Address email",
-		  "description": "Address email"
+			"type": "string",
+			"name": "address_email",
+			"title": "Address email",
+			"description": "Address email"
 		},
 		"EXT_FIELD_phone": {
-		  "type": "string",
-		  "name": "address_phone_number",
-		  "title": "Address phone number",
-		  "description": "The phone number for the address"
+			"type": "string",
+			"name": "address_phone_number",
+			"title": "Address phone number",
+			"description": "The phone number for the address"
 		},
 		"address_city": {
-		  "type": "string",
-		  "name": "address_city",
-		  "title": "Address city",
-		  "description": "The city the address is located in"
+			"type": "string",
+			"name": "address_city",
+			"title": "Address city",
+			"description": "The city the address is located in"
 		},
 		"address_state_id": {
-		  "type": "string",
-		  "name": "address_state_id",
-		  "title": "Address state id",
-		  "description": "The state the address is located in"
+			"type": "string",
+			"name": "address_state_id",
+			"title": "Address state id",
+			"description": "The state the address is located in"
 		},
 		"address_country_id": {
-		  "type": "string",
-		  "name": "address_country_id",
-		  "title": "Address country id",
-		  "description": "The country the address is located in"
+			"type": "string",
+			"name": "address_country_id",
+			"title": "Address country id",
+			"description": "The country the address is located in"
 		},
 		"address_zip": {
-		  "type": "string",
-		  "name": "address_zip",
-		  "title": "Address zip",
-		  "description": "The zip code the address is located in"
+			"type": "string",
+			"name": "address_zip",
+			"title": "Address zip",
+			"description": "The zip code the address is located in"
 		},
 		"cached_lat": {
-		  "type": "number",
-		  "name": "cached_lat",
-		  "minimum": -90,
-		  "maximum": 90,
-		  "title": "Cached latitude",
-		  "description": "Cached latitude"
+			"type": "number",
+			"name": "cached_lat",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Cached latitude",
+			"description": "Cached latitude"
 		},
 		"cached_lng": {
-		  "type": "number",
-		  "name": "cached_lng",
-		  "minimum": -180,
-		  "maximum": 180,
-		  "title": "Cached longitude",
-		  "description": "Cached longitude"
+			"type": "number",
+			"name": "cached_lng",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Cached longitude",
+			"description": "Cached longitude"
 		},
 		"curbside_lat": {
-		  "type": "number",
-		  "name": "curbside_lat",
-		  "minimum": -90,
-		  "maximum": 90,
-		  "title": "Curbside latitude",
-		  "description": "Curbside latitude"
+			"type": "number",
+			"name": "curbside_lat",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Curbside latitude",
+			"description": "Curbside latitude"
 		},
 		"curbside_lng": {
-		  "type": "number",
-		  "name": "curbside_lng",
-		  "minimum": -180,
-		  "maximum": 180,
-		  "title": "Curbside longitude",
-		  "description": "Curbside longitude"
+			"type": "number",
+			"name": "curbside_lng",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Curbside longitude",
+			"description": "Curbside longitude"
 		},
 		"EXT_FIELD_custom_data": {
-		  "type": "array",
-		  "items": {"type": "string"},
-		  "name": "order_custom_data",
-		  "title": "Order custom data",
-		  "description": "A custom data of the order"
+			"type": "array",
+			"items": {"type": "string"},
+			"name": "order_custom_data",
+			"title": "Order custom data",
+			"description": "A custom data of the order"
 		},
 		"in_route_count": {
-		  "type": "integer",
-		  "name": "in_route_count",
-		  "title": "In route count",
-		  "description": "In how many routes is included address."
+			"type": "integer",
+			"name": "in_route_count",
+			"title": "In route count",
+			"description": "In how many routes is included address."
 		},
 		"last_visited_timestamp": {
-		  "type": "integer",
-		  "name": "last_visited_timestamp",
-		  "title": "Last visited timestamp",
-		  "description": "When the last time an address was visited."
+			"type": "integer",
+			"name": "last_visited_timestamp",
+			"title": "Last visited timestamp",
+			"description": "When the last time an address was visited."
 		},
 		"last_routed_timestamp": {
-		  "type": "integer",
-		  "name": "last_routed_timestamp",
-		  "title": "Last routed timestamp",
-		  "description": "When last time an address was included in a route."
+			"type": "integer",
+			"name": "last_routed_timestamp",
+			"title": "Last routed timestamp",
+			"description": "When last time an address was included in a route."
 		},
 		"local_time_window_start": {
-		  "type": "integer",
-		  "name": "local_time_window_start",
-		  "title": "Local time window start",
-		  "description": "When a time window was started."
+			"type": "integer",
+			"name": "local_time_window_start",
+			"title": "Local time window start",
+			"description": "When a time window was started."
 		},
 		"local_time_window_end": {
-		  "type": "integer",
-		  "name": "local_time_window_end",
-		  "title": "Local time window end",
-		  "description": "When a time window was ended."
+			"type": "integer",
+			"name": "local_time_window_end",
+			"title": "Local time window end",
+			"description": "When a time window was ended."
 		},
 		"local_time_window_start_2": {
-		  "type": "integer",
-		  "name": "local_time_window_start_2",
-		  "title": "Local time window start 2",
-		  "description": "When second time window was started."
+			"type": "integer",
+			"name": "local_time_window_start_2",
+			"title": "Local time window start 2",
+			"description": "When second time window was started."
 		},
 		"local_time_window_end_2": {
-		  "type": "integer",
-		  "name": "local_time_window_end_2",
-		  "title": "Local time window end 2",
-		  "description": "When second time window was ended."
+			"type": "integer",
+			"name": "local_time_window_end_2",
+			"title": "Local time window end 2",
+			"description": "When second time window was ended."
 		},
 		"service_time": {
-		  "type": "integer",
-		  "name": "service_time",
-		  "title": "Service time",
-		  "description": "Consumed service time at an address."
+			"type": "integer",
+			"name": "service_time",
+			"title": "Service time",
+			"description": "Consumed service time at an address."
 		},
 		"local_timezone_string": {
-		  "type": "string",
-		  "name": "local_timezone_string",
-		  "title": "Local timezone",
-		  "description": "Local timezone"
+			"type": "string",
+			"name": "local_timezone_string",
+			"title": "Local timezone",
+			"description": "Local timezone"
 		},
 		"color": {
-		  "type": "string",
-		  "name": "color",
-		  "title": "Color",
-		  "description": "Hexadecimal color."
+			"type": "string",
+			"name": "color",
+			"title": "Color",
+			"description": "Hexadecimal color."
 		},
 		"order_icon": {
-		  "type": "string",
-		  "name": "order_icon",
-		  "title": "Order icon",
-		  "description": "URL of an order icon"
+			"type": "string",
+			"name": "order_icon",
+			"title": "Order icon",
+			"description": "URL of an order icon"
 		},
 		"is_validated": {
-		  "type": "boolean",
-		  "name": "is_validated",
-		  "title": "Is validated",
-		  "description": "If true, the order is validated."
+			"type": "boolean",
+			"name": "is_validated",
+			"title": "Is validated",
+			"description": "If true, the order is validated."
 		},
 		"is_pending": {
-		  "type": "boolean",
-		  "name": "is_pending",
-		  "title": "Is pending",
-		  "description": "If true, the order is pending."
+			"type": "boolean",
+			"name": "is_pending",
+			"title": "Is pending",
+			"description": "If true, the order is pending."
 		},
 		"is_accepted": {
-		  "type": "boolean",
-		  "name": "is_accepted",
-		  "title": "Is accepted",
-		  "description": "If true, the order is accepted."
+			"type": "boolean",
+			"name": "is_accepted",
+			"title": "Is accepted",
+			"description": "If true, the order is accepted."
 		},
 		"is_started": {
-		  "type": "boolean",
-		  "name": "is_started",
-		  "title": "Is started",
-		  "description": "If true, the order is started."
+			"type": "boolean",
+			"name": "is_started",
+			"title": "Is started",
+			"description": "If true, the order is started."
 		},
 		"is_completed": {
-		  "type": "boolean",
-		  "name": "is_completed",
-		  "title": "Is completed",
-		  "description": "If true, the order is completed."
+			"type": "boolean",
+			"name": "is_completed",
+			"title": "Is completed",
+			"description": "If true, the order is completed."
 		}
 	}
 }
