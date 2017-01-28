@@ -22,8 +22,12 @@ before_install:
 install:
   - npm i -g gulp
   - npm i -g jsonlint
+  - npm i -g ajv-cli
   - npm i -g eslint eslint-plugin-json
 
 script:
 # - gulp lint
-  - jsonlint -q *.dtd
+  # TEST 1: find all *.dtd and THEN apply `jsonlint` command
+  - find ./ -iname "*.dtd" -printf '%p' -exec jsonlint -q {} \;
+  # TEST 2
+  - ajv compile --verbose --all-errors --json-pointers -s Route4Me.dtd -r "*.dtd"
