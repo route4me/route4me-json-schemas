@@ -1,122 +1,128 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://github.com/route4me/json-schemas/blob/master/Addressbook.dtd",
-  "Name": "Addressbook",
-  "type": "object",
-  "required": ["address_1", "cached_lat", "cached_lng"],
-	  "properties": {
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Addressbook.dtd",
+	"Name": "Addressbook",
+	"type": "object",
+	"required": [
+		"address_1",
+		"cached_lat",
+		"cached_lng"
+	],
+	"properties": {
 		"member_id": {
-		  "type": "string",
-		  "name": "member_id",
-		  "title": "Member id",
-		  "description": "Member id"
+			"type": "string",
+			"name": "member_id",
+			"title": "Member id",
+			"description": "Member id"
 		},
 		"address_1": {
-		  "type": "string",
-		  "name": "address_1",
-		  "title": "Address 1",
-		  "description": "Address 1"
+			"type": "string",
+			"name": "address_1",
+			"title": "Address 1",
+			"description": "Address 1"
 		},
 		"address_2": {
-		  "type": "string",
-		  "name": "address_2",
-		  "title": "Address 2",
-		  "description": "Address 2"
+			"type": "string",
+			"name": "address_2",
+			"title": "Address 2",
+			"description": "Address 2"
 		},
 		"address_alias": {
-		  "type": "string",
-		  "name": "address_alias",
-		  "title": "Address alias",
-		  "description": "Address alias"
+			"type": "string",
+			"name": "address_alias",
+			"title": "Address alias",
+			"description": "Address alias"
 		},
 		"address_city": {
-		  "type": "string",
-		  "name": "address_city",
-		  "title": "Address city",
-		  "description": "Address city"
+			"type": "string",
+			"name": "address_city",
+			"title": "Address city",
+			"description": "Address city"
 		},
 		"address_state_id": {
-		  "type": "string",
-		  "name": "address_state_id",
-		  "title": "Address state id",
-		  "description": "Address state id"
+			"type": "string",
+			"name": "address_state_id",
+			"title": "Address state id",
+			"description": "Address state id"
 		},
 		"address_zip": {
-		  "type": "string",
-		  "name": "address_zip",
-		  "title": "Address zip",
-		  "description": "Address zip code"
+			"type": "string",
+			"name": "address_zip",
+			"title": "Address zip",
+			"description": "Address zip code"
 		},
 		"address_country_id": {
-		  "type": "string",
-		  "name": "address_country_id",
-		  "title": "Address country id",
-		  "description": "Address country id"
+			"type": "string",
+			"name": "address_country_id",
+			"title": "Address country id",
+			"description": "Address country id"
 		},
 		"cached_lat": {
-		  "type": "number",
-		  "name": "cached_lat",
-		  "minimum": -90,
-		  "maximum": 90,
-		  "title": "Cached latitude",
-		  "description": "Cached latitude"
+			"type": "number",
+			"name": "cached_lat",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Cached latitude",
+			"description": "Cached latitude"
 		},
 		"cached_lng": {
-		  "type": "number",
-		  "name": "cached_lng",
-		  "minimum": -180,
-		  "maximum": 180,
-		  "title": "Cached longitude",
-		  "description": "Cached longitude"
+			"type": "number",
+			"name": "cached_lng",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Cached longitude",
+			"description": "Cached longitude"
 		},
 		"is_validated": {
-		  "type": "boolean",
-		  "name": "is_validated",
-		  "title": "Is validated",
-		  "description": "Is validated"
+			"type": "boolean",
+			"name": "is_validated",
+			"title": "Is validated",
+			"description": "Is validated"
 		},
 		"address_phone_number": {
-		  "type": "string",
-		  "name": "address_phone_number",
-		  "title": "Address phone number",
-		  "description": "Address phone number"
+			"type": "string",
+			"name": "address_phone_number",
+			"title": "Address phone number",
+			"description": "Address phone number"
 		},
 		"first_name": {
-		  "type": "string",
-		  "name": "first_name",
-		  "title": "First name",
-		  "description": "First name"
+			"type": "string",
+			"name": "first_name",
+			"title": "First name",
+			"description": "First name"
 		},
 		"last_name": {
-		  "type": "string",
-		  "name": "last_name",
-		  "title": "Last name",
-		  "description": "Last name"
+			"type": "string",
+			"name": "last_name",
+			"title": "Last name",
+			"description": "Last name"
 		},
 		"company_name": {
-		  "type": "string",
-		  "name": "company_name",
-		  "title": "Company name",
-		  "description": "Company name"
+			"type": "string",
+			"name": "company_name",
+			"title": "Company name",
+			"description": "Company name"
 		},
 		"address_email": {
-		  "type": "string",
-		  "name": "address_email",
-		  "title": "Address email",
-		  "description": "Address email"
+			"type": "string",
+			"name": "address_email",
+			"title": "Address email",
+			"description": "Address email"
 		},
 		"address_group": {
-		  "type": "string",
-		  "name": "address_group",
-		  "title": "Address group",
-		  "description": "Address group"
+			"type": "string",
+			"name": "address_group",
+			"title": "Address group",
+			"description": "Address group"
 		},
 		"address_custom_data": {
-		  "type": "array",
-		  "items": {"type": "string"},
-		  "name": "address_custom_data",
-		  "title": "Address custom data",
-		  "description": "Address custom data"
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"name": "address_custom_data",
+			"title": "Address custom data",
+			"description": "Address custom data"
 		}
 	}
 }

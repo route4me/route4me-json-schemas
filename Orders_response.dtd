@@ -22,7 +22,9 @@
 		},
 		"fields": {
 			"type": "array",
-			"items": {"type": "string"},
+			"items": {
+				"type": "string"
+			},
 			"name": "fields",
 			"title": "Fields",
 			"description": "List of the field names"

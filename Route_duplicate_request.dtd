@@ -3,7 +3,10 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/Route_duplicate_request.dtd",
 	"type": "object",
 	"description": "For duplicating of an route. GET parameters. url: https://www.route4me.com/actions/duplicate_route.php",
-	"required": ["api_key", "route_id"],
+	"required": [
+		"api_key",
+		"route_id"
+	],
 	"name": "Route_duplicate_request",
 	"properties": {
 		"api_key": {

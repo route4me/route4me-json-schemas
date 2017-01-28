@@ -5,7 +5,11 @@
 	"type": "object",
 	"name": "Member_authenticate",
 	"description": "For member authentication. url: https://www.route4me.com/actions/authenticate.php. Content-Type: multipart/form-data",
-	"required": ["api_key","strEmail", "strPassword"],
+	"required": [
+		"api_key",
+		"strEmail",
+		"strPassword"
+	],
 	"properties": {
 		"api_key": {
 			"type": "string",
@@ -28,7 +32,10 @@
 		},
 		"format": {
 			"type": "string",
-			"enum": ["json", "xml"],
+			"enum": [
+				"json",
+				"xml"
+			],
 			"name": "format",
 			"title": "Format",
 			"description": "Response format"

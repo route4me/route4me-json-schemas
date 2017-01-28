@@ -141,7 +141,9 @@
 		},
 		"EXT_FIELD_custom_data": {
 			"type": "array",
-			"items": {"type": "string"},
+			"items": {
+				"type": "string"
+			},
 			"name": "order_custom_data",
 			"title": "Order custom data",
 			"description": "A custom data of the order"

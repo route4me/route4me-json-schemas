@@ -18,7 +18,14 @@
 		},
 		"user_route_rating": {
 			"type": "integer",
-			"enum": [0, 1, 2, 3, 4, 5 ],
+			"enum": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5
+			],
 			"name": "user_route_rating",
 			"title": "User Route Rating",
 			"description": "User route rating [0, 5]. A null value means no rating was given. Users can rate routes so that future optimizations take these ratings into account."
@@ -169,7 +176,11 @@
 		},
 		"geofence_polygon_type": {
 			"type": "string",
-			"enum": ["circle", "poly", "rect"],
+			"enum": [
+				"circle",
+				"poly",
+				"rect"
+			],
 			"name": "geofence_polygon_type",
 			"title": "Geofence Polygon Type",
 			"description": "Geofence polygon type"
@@ -180,42 +191,58 @@
 			"title": "Geofence Polygon Size",
 			"description": "Geofence polygon size"
 		},
-		"parameters": {"$ref": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd"},
+		"parameters": {
+			"$ref": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd"
+		},
 		"addresses": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"},
+			"items": {
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"
+			},
 			"name": "addresses",
 			"title": "Addresses"
 		},
-		"links": {"$ref": "https://github.com/route4me/json-schemas/blob/master/Links.dtd"},
+		"links": {
+			"$ref": "https://github.com/route4me/json-schemas/blob/master/Links.dtd"
+		},
 		"notes": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/note.dtd"},
+			"items": {
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/note.dtd"
+			},
 			"name": "notes",
 			"title": "Notes"
 		},
 		"member_config_storage": {
 			"type": "array",
-			"items": {"type": "string"},
+			"items": {
+				"type": "string"
+			},
 			"name": "member_config_storage",
 			"description": "Member config key-value pairs"
 		},
 		"directions": {
 			"type": "array",
-			"items": {"type": "string"},
+			"items": {
+				"type": "string"
+			},
 			"name": "directions",
 			"description": "Edge by edge turn-by-turn directions.  Note: For round-trip routes (parameters.rt = true), the return to the start address is returned as well"
 		},
 		"path": {
 			"type": "array",
-			"items": {"type": "string"},
+			"items": {
+				"type": "string"
+			},
 			"name": "path",
 			"title": "Path",
 			"description": "Edge-wise path to be drawn on the map"
 		},
 		"tracking_history": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/TrackingHistory.dtd"},
+			"items": {
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/TrackingHistory.dtd"
+			},
 			"name": "tracking_history",
 			"title": "Tracking History",
 			"description": "A collection of device tracking data with coordinates, speed, and timestamps"

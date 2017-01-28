@@ -9,7 +9,9 @@
 			"type": "array",
 			"name": "addresses",
 			"title": "Route Addresses",
-			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"},
+			"items": {
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"
+			},
 			"descrption": "Route Addresses. POST data"
 		},
 		"parameters": {
@@ -23,21 +25,33 @@
 		},
 		"directions": {
 			"type": "integer",
-			"enum": [0, 1],
+			"enum": [
+				0,
+				1
+			],
 			"name": "directions",
 			"title": "Directions",
 			"description": "A flag to enable or disable driving and turn-by-turn directions being returned. Not returning them is more efficient for the database. Query string (GET fields)."
 		},
 		"format": {
 			"type": "string",
-			"enum": ["json", "xml", "serialized", "friendly", "csv"],
+			"enum": [
+				"json",
+				"xml",
+				"serialized",
+				"friendly",
+				"csv"
+			],
 			"name": "format",
 			"title": "Format",
 			"description": "The format in which to return the route data. This parameter is ignored for now, as only JSON is supported. Query string (GET fields)."
 		},
 		"route_path_output": {
 			"type": "string",
-			"enum": ["Points", "None"],
+			"enum": [
+				"Points",
+				"None"
+			],
 			"default": "None",
 			"name": "route_path_output",
 			"title": "Route Path Output",

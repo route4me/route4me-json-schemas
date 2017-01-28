@@ -4,7 +4,11 @@
 	"description": "Route4Me schemas",
 	"name": "Route4Me",
 	"type": "object",
-	"required": ["origin", "destination", "key"],
+	"required": [
+		"origin",
+		"destination",
+		"key"
+	],
 	"properties": {
 		"Addressbook": {
 			"type": "object",

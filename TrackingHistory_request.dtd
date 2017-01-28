@@ -5,7 +5,10 @@
 	"name": "TrackingHistory_request",
 	"description": "GET parameters for the endpoint https://www.route4me.com/api/track/get_device_location.php",
 	"type": "object",
-	"required": ["api_key", "route_id"],
+	"required": [
+		"api_key",
+		"route_id"
+	],
 	"properties": {
 		"api_key": {
 			"type": "string",
@@ -21,7 +24,12 @@
 		},
 		"format": {
 			"type": "string",
-			"enum": ["json", "xml", "csv", "txt"],
+			"enum": [
+				"json",
+				"xml",
+				"csv",
+				"txt"
+			],
 			"name": "format",
 			"title": "Format",
 			"description": "Response format. Default - xml"
@@ -34,7 +42,18 @@
 		},
 		"time_period": {
 			"type": "string",
-			"enum": ["today", "yesterday", "thismonth", "7days", "14days", "30days", "60days", "90days", "all_time", "custom"],
+			"enum": [
+				"today",
+				"yesterday",
+				"thismonth",
+				"7days",
+				"14days",
+				"30days",
+				"60days",
+				"90days",
+				"all_time",
+				"custom"
+			],
 			"name": "time_period",
 			"title": "Time Period",
 			"description": "Time period"

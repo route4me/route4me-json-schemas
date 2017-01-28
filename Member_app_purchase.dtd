@@ -5,7 +5,16 @@
 	"type": "object",
 	"name": "Member_app_purchase",
 	"description": "For purchasing Route4Me application by the member. url: https://www.route4me.com/api/member/user_license.php.",
-	"required": ["api_key", "member_id", "device_id", "device_type", "subscription_name", "token", "payload", "format"],
+	"required": [
+		"api_key",
+		"member_id",
+		"device_id",
+		"device_type",
+		"subscription_name",
+		"token",
+		"payload",
+		"format"
+	],
 	"properties": {
 		"api_key": {
 			"type": "string",
@@ -26,14 +35,28 @@
 			"description": "Unique ID of a user's device. HTTP method - POST"
 		},
 		"device_type": {
-			"enum": ["web", "iphone", "ipad", "android_phone", "android_tablet"],
+			"enum": [
+				"web",
+				"iphone",
+				"ipad",
+				"android_phone",
+				"android_tablet"
+			],
 			"name": "device_type ",
 			"title": "Device type",
 			"descrption": "Type of the user's device. HTTP method - POST"
 		},
 		"subscription_name": {
 			"type": "string",
-			"enum": ["CANCELLED", "ANDROID_MONTHLY", "ANDROID_YEARLY", "IPHONE_MONTHLY", "IPAD_MONTHLY", "IPHONE_YEARLY", "IPAD_YEARLY"],
+			"enum": [
+				"CANCELLED",
+				"ANDROID_MONTHLY",
+				"ANDROID_YEARLY",
+				"IPHONE_MONTHLY",
+				"IPAD_MONTHLY",
+				"IPHONE_YEARLY",
+				"IPAD_YEARLY"
+			],
 			"name": "subscription_name",
 			"title": "Subscription name",
 			"description": "Valid subscription name. HTTP method - POST"
@@ -52,7 +75,10 @@
 		},
 		"format": {
 			"type": "string",
-			"enum": ["json", "xml"],
+			"enum": [
+				"json",
+				"xml"
+			],
 			"name": "format",
 			"title": "Format",
 			"description": "Response format. HTTP method - POST"
