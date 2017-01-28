@@ -5,38 +5,42 @@
   "description": "For duplicating of an route. GET parameters. url: https://www.route4me.com/actions/duplicate_route.php",
   "required": ["api_key", "route_id"],
   "name": "Route_duplicate_request",
-      "properties": {
-		"api_key": {
-          "type": "string",
-          "name": "api_key",
-          "title": "API key",
-          "description": "API key of the user"
-        },
-		"device_id": {
-          "type": "string",
-          "name": "device_id",
-          "title": "Device ID",
-          "description": "The ID of the device that was used to plan this route."
-        },
-        "route_id": {
-          "type": "string",
-          "name": "route_id",
-          "title": "Route ID",
-          "description": "Route Unique Identifier"
-        },
-        "to": {
-          "type": "string",
-		  "enum": ["routes", "editor", "none"],
-		  "default": "routes",
-          "name": "to",
-          "title": "To",
-          "description": "Redirect to page or return json for none"
-        },
-		"__member_id": {
-          "type": "integer",
-          "name": "__member_id",
-          "title": "Member ID",
-          "description": "Member ID"
-        }
-      }
+  "properties": {
+    "api_key": {
+      "type": "string",
+      "name": "api_key",
+      "title": "API key",
+      "description": "API key of the user"
+    },
+    "device_id": {
+      "type": "string",
+      "name": "device_id",
+      "title": "Device ID",
+      "description": "The ID of the device that was used to plan this route."
+    },
+    "route_id": {
+      "type": "string",
+      "name": "route_id",
+      "title": "Route ID",
+      "description": "Route Unique Identifier"
+    },
+    "to": {
+      "type": "string",
+      "enum": [
+        "routes",
+        "editor",
+        "none"
+      ],
+      "default": "routes",
+      "name": "to",
+      "title": "To",
+      "description": "Redirect to page or return json for none"
+    },
+    "__member_id": {
+      "type": "integer",
+      "name": "__member_id",
+      "title": "Member ID",
+      "description": "Member ID"
+    }
+  }
 }

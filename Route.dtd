@@ -3,228 +3,238 @@
   "id": "https://github.com/route4me/json-schemas/blob/master/Route.dtd",
   "type": "object",
   "name": "Route",
-      "properties": {
-        "route_id": {
-          "type": "string",
-          "name": "route_id",
-          "title": "Route ID",
-          "description": "Route Unique Identifier"
-        },
-        "optimization_problem_id": {
-          "type": "string",
-          "name": "optimization_problem_id",
-          "title": "Optimization Problem ID",
-          "description": "Optimization which generated this route"
-        },
-		"user_route_rating": {
-          "type": "integer",
-		  "enum": [0,1,2,3,4,5],
-          "name": "user_route_rating",
-          "title": "User Route Rating",
-          "description": "User route rating [0, 5]. A null value means no rating was given. Users can rate routes so that future optimizations take these ratings into account."
-        },
-		"member_id": {
-          "type": "integer",
-          "name": "member_id",
-          "title": "Member ID",
-          "description": "Member ID"
-        },
-		"member_email": {
-          "type": "string",
-          "name": "member_email",
-          "title": "Member Email",
-          "description": "Member email"
-        },
-		"member_first_name": {
-          "type": "string",
-          "name": "member_first_name",
-          "title": "Member First Name",
-          "description": "Member first name"
-        },
-		"member_last_name": {
-          "type": "string",
-          "name": "member_last_name",
-          "title": "Member Last Name",
-          "description": "Member last name"
-        },
-		"channel_name": {
-          "type": "string",
-          "name": "channel_name",
-          "title": "Channel Name",
-          "description": "Channel name"
-        },
-        "vehicle_alias": {
-          "type": "string",
-          "name": "vehicle_alias",
-          "title": "Vehicle Alias",
-          "description": "Name of vehicle_id"
-        },
-        "driver_alias": {
-          "type": "string",
-          "name": "driver_alias",
-          "title": "Driver Alias",
-          "description": "Name of driver_id. 32 Character Fixed-length MD5 Hash"
-        },
-        "trip_distance": {
-          "type": "number",
-          "name": "trip_distance",
-          "title": "Trip Distance",
-          "description": "Route length (the unit is given by distance_unit)"
-        },
-		"is_unrouted": {
-          "type": "boolean",
-          "name": "is_unrouted",
-          "title": "Is unrouted",
-          "description": "If true, route is unrouted"
-        },
-		"route_cost": {
-          "type": "number",
-          "name": "route_cost",
-          "title": "Route Cost",
-          "description": "Route cost"
-        },
-		"route_revenue": {
-          "type": "number",
-          "name": "route_revenue",
-          "title": "Route Revenue",
-          "description": "Route revenue"
-        },
-		"net_revenue_per_distance_unit": {
-          "type": "number",
-          "name": "net_revenue_per_distance_unit",
-          "title": "Net Revenue Per Distance Unit",
-          "description": "Net revenue per distance unit"
-        },
-		"created_timestamp": {
-          "type": "integer",
-          "name": "created_timestamp",
-          "title": "Created Timestamp",
-          "description": "Created UNIX timestamp"
-        },
-        "mpg": {
-          "type": "integer",
-          "name": "mpg",
-          "title": "MPG",
-          "description": "Miles per gallon (used to compute fuel consumption)"
-        },
-        "gas_price": {
-          "type": "number",
-          "name": "gas_price",
-          "title": "Gas Price",
-          "description": "Price of gas (used to compute route costs)"
-        },
-        "route_duration_sec": {
-          "type": "integer",
-          "name": "route_duration_sec",
-          "title": "Route Duration sec",
-          "description": "Estimated drive time of route (Seconds)"
-        },
-		"planned_total_route_duration": {
-          "type": "integer",
-          "name": "planned_total_route_duration",
-          "title": "Planned Total Route Duration",
-          "description": "Planned total route duration"
-        },
-		"actual_travel_distance": {
-          "type": "number",
-          "name": "actual_travel_distance",
-          "title": "Actual Travel Distance",
-          "description": "Actual travel distance"
-        },
-		"actual_travel_time": {
-          "type": "integer",
-          "name": "actual_travel_time",
-          "title": "Actual Travel Time",
-          "description": "Actual travel time"
-        },
-		"actual_footsteps": {
-          "type": "integer",
-          "name": "actual_footsteps",
-          "title": "Actual Footsteps",
-          "description": "Actual footsteps"
-        },
-		"working_time": {
-          "type": "integer",
-          "name": "working_time",
-          "title": "Working Time",
-          "description": "Working time"
-        },
-		"driving_time": {
-          "type": "integer",
-          "name": "driving_time",
-          "title": "Driving Time",
-          "description": "Driving time"
-        },
-		"idling_time": {
-          "type": "integer",
-          "name": "idling_time",
-          "title": "Idling Time",
-          "description": "Idling time"
-        },
-		"paying_miles": {
-          "type": "integer",
-          "name": "paying_miles",
-          "title": "Paying Miles",
-          "description": "Paying miles"
-        },
-		"geofence_polygon_type": {
-          "type": "string",
-		  "enum": ["circle","poly","rect"],
-          "name": "geofence_polygon_type",
-          "title": "Geofence Polygon Type",
-          "description": "Geofence polygon type"
-        },
-		"geofence_polygon_size": {
-          "type": "integer",
-          "name": "geofence_polygon_size",
-          "title": "Geofence Polygon Size",
-          "description": "Geofence polygon size"
-        },
-        "parameters": {
-          "$ref": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd"
-        },
-        "addresses": {
-			"type": "array",
-          "items": { "$ref":"https://github.com/route4me/json-schemas/blob/master/Address.dtd" },
-		  "name": "addresses",
-          "title": "Addresses"
-		},
-        "links": {
-		  "$ref": "https://github.com/route4me/json-schemas/blob/master/Links.dtd"
-        },
-		"notes": {
-			"type": "array",
-          "items": { "$ref":"https://github.com/route4me/json-schemas/blob/master/note.dtd" },
-		  "name": "notes",
-          "title": "Notes"
-		},
-		"member_config_storage": {
-		  "type": "array",
-          "items": {"type": "string"},
-          "name": "member_config_storage",
-          "description": "Member config key-value pairs"
-        },
-        "directions": {
-          "type": "array",
-          "items": {"type": "string"},
-          "name": "directions",
-          "description": "Edge by edge turn-by-turn directions.  Note: For round-trip routes (parameters.rt = true), the return to the start address is returned as well"
-        },
-        "path": {
-          "type": "array",
-          "items": {"type": "string"},
-          "name": "path",
-          "title": "Path",
-          "description": "Edge-wise path to be drawn on the map"
-        },
-        "tracking_history": {
-          "type": "array",
-          "items": {
-				"$ref":"https://github.com/route4me/json-schemas/blob/master/TrackingHistory.dtd"
-		  },
-          "name": "tracking_history",
-          "title": "Tracking History",
-          "description": "A collection of device tracking data with coordinates, speed, and timestamps"
-        }
-      }
+  "properties": {
+    "route_id": {
+      "type": "string",
+      "name": "route_id",
+      "title": "Route ID",
+      "description": "Route Unique Identifier"
+    },
+    "optimization_problem_id": {
+      "type": "string",
+      "name": "optimization_problem_id",
+      "title": "Optimization Problem ID",
+      "description": "Optimization which generated this route"
+    },
+    "user_route_rating": {
+      "type": "integer",
+      "enum": [0, 1, 2, 3, 4, 5 ],
+      "name": "user_route_rating",
+      "title": "User Route Rating",
+      "description": "User route rating [0, 5]. A null value means no rating was given. Users can rate routes so that future optimizations take these ratings into account."
+    },
+    "member_id": {
+      "type": "integer",
+      "name": "member_id",
+      "title": "Member ID",
+      "description": "Member ID"
+    },
+    "member_email": {
+      "type": "string",
+      "name": "member_email",
+      "title": "Member Email",
+      "description": "Member email"
+    },
+    "member_first_name": {
+      "type": "string",
+      "name": "member_first_name",
+      "title": "Member First Name",
+      "description": "Member first name"
+    },
+    "member_last_name": {
+      "type": "string",
+      "name": "member_last_name",
+      "title": "Member Last Name",
+      "description": "Member last name"
+    },
+    "channel_name": {
+      "type": "string",
+      "name": "channel_name",
+      "title": "Channel Name",
+      "description": "Channel name"
+    },
+    "vehicle_alias": {
+      "type": "string",
+      "name": "vehicle_alias",
+      "title": "Vehicle Alias",
+      "description": "Name of vehicle_id"
+    },
+    "driver_alias": {
+      "type": "string",
+      "name": "driver_alias",
+      "title": "Driver Alias",
+      "description": "Name of driver_id. 32 Character Fixed-length MD5 Hash"
+    },
+    "trip_distance": {
+      "type": "number",
+      "name": "trip_distance",
+      "title": "Trip Distance",
+      "description": "Route length (the unit is given by distance_unit)"
+    },
+    "is_unrouted": {
+      "type": "boolean",
+      "name": "is_unrouted",
+      "title": "Is unrouted",
+      "description": "If true, route is unrouted"
+    },
+    "route_cost": {
+      "type": "number",
+      "name": "route_cost",
+      "title": "Route Cost",
+      "description": "Route cost"
+    },
+    "route_revenue": {
+      "type": "number",
+      "name": "route_revenue",
+      "title": "Route Revenue",
+      "description": "Route revenue"
+    },
+    "net_revenue_per_distance_unit": {
+      "type": "number",
+      "name": "net_revenue_per_distance_unit",
+      "title": "Net Revenue Per Distance Unit",
+      "description": "Net revenue per distance unit"
+    },
+    "created_timestamp": {
+      "type": "integer",
+      "name": "created_timestamp",
+      "title": "Created Timestamp",
+      "description": "Created UNIX timestamp"
+    },
+    "mpg": {
+      "type": "integer",
+      "name": "mpg",
+      "title": "MPG",
+      "description": "Miles per gallon (used to compute fuel consumption)"
+    },
+    "gas_price": {
+      "type": "number",
+      "name": "gas_price",
+      "title": "Gas Price",
+      "description": "Price of gas (used to compute route costs)"
+    },
+    "route_duration_sec": {
+      "type": "integer",
+      "name": "route_duration_sec",
+      "title": "Route Duration sec",
+      "description": "Estimated drive time of route (Seconds)"
+    },
+    "planned_total_route_duration": {
+      "type": "integer",
+      "name": "planned_total_route_duration",
+      "title": "Planned Total Route Duration",
+      "description": "Planned total route duration"
+    },
+    "actual_travel_distance": {
+      "type": "number",
+      "name": "actual_travel_distance",
+      "title": "Actual Travel Distance",
+      "description": "Actual travel distance"
+    },
+    "actual_travel_time": {
+      "type": "integer",
+      "name": "actual_travel_time",
+      "title": "Actual Travel Time",
+      "description": "Actual travel time"
+    },
+    "actual_footsteps": {
+      "type": "integer",
+      "name": "actual_footsteps",
+      "title": "Actual Footsteps",
+      "description": "Actual footsteps"
+    },
+    "working_time": {
+      "type": "integer",
+      "name": "working_time",
+      "title": "Working Time",
+      "description": "Working time"
+    },
+    "driving_time": {
+      "type": "integer",
+      "name": "driving_time",
+      "title": "Driving Time",
+      "description": "Driving time"
+    },
+    "idling_time": {
+      "type": "integer",
+      "name": "idling_time",
+      "title": "Idling Time",
+      "description": "Idling time"
+    },
+    "paying_miles": {
+      "type": "integer",
+      "name": "paying_miles",
+      "title": "Paying Miles",
+      "description": "Paying miles"
+    },
+    "geofence_polygon_type": {
+      "type": "string",
+      "enum": ["circle", "poly", "rect"],
+      "name": "geofence_polygon_type",
+      "title": "Geofence Polygon Type",
+      "description": "Geofence polygon type"
+    },
+    "geofence_polygon_size": {
+      "type": "integer",
+      "name": "geofence_polygon_size",
+      "title": "Geofence Polygon Size",
+      "description": "Geofence polygon size"
+    },
+    "parameters": {
+      "$ref": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd"
+    },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"
+      },
+      "name": "addresses",
+      "title": "Addresses"
+    },
+    "links": {
+      "$ref": "https://github.com/route4me/json-schemas/blob/master/Links.dtd"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "$ref": "https://github.com/route4me/json-schemas/blob/master/note.dtd"
+      },
+      "name": "notes",
+      "title": "Notes"
+    },
+    "member_config_storage": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "name": "member_config_storage",
+      "description": "Member config key-value pairs"
+    },
+    "directions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "name": "directions",
+      "description": "Edge by edge turn-by-turn directions.  Note: For round-trip routes (parameters.rt = true), the return to the start address is returned as well"
+    },
+    "path": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "name": "path",
+      "title": "Path",
+      "description": "Edge-wise path to be drawn on the map"
+    },
+    "tracking_history": {
+      "type": "array",
+      "items": {
+        "$ref": "https://github.com/route4me/json-schemas/blob/master/TrackingHistory.dtd"
+      },
+      "name": "tracking_history",
+      "title": "Tracking History",
+      "description": "A collection of device tracking data with coordinates, speed, and timestamps"
+    }
+  }
 }
