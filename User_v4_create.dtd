@@ -5,7 +5,13 @@
 	"type": "object",
 	"name": "User_v4_create",
 	"description": "For new user creation. url: https://route4me.com/api.v4/user.php",
-	"required": ["api_key", "member_type", "member_email", "OWNER_MEMBER_ID", "member_password"],
+	"required": [
+		"api_key",
+		"member_type",
+		"member_email",
+		"OWNER_MEMBER_ID",
+		"member_password"
+	],
 	"properties": {
 		"api_key": {
 			"type": "string",

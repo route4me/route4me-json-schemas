@@ -33,7 +33,7 @@
 		},
 		"default_map": {
 			"type": "object",
-			"$ref":"https://github.com/route4me/json-schemas/blob/master/default_map.dtd"
+			"$ref": "https://github.com/route4me/json-schemas/blob/master/default_map.dtd"
 		}
 	}
 }

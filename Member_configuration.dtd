@@ -5,7 +5,10 @@
 	"type": "object",
 	"name": "Member_configuration",
 	"description": "For member configuration. See examples in the folder https://github.com/route4me/route4me-curl/tree/master/Windows/MemberConfiguration",
-	"required": ["config_key", "config_value"],
+	"required": [
+		"config_key",
+		"config_value"
+	],
 	"properties": {
 		"config_key": {
 			"type": "string",

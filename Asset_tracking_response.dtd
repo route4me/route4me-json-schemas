@@ -14,9 +14,9 @@
 		},
 		"status_history": {
 			"type": "array",
-				"items": {
-					"type": "object"
-				},
+			"items": {
+				"type": "object"
+			},
 			"name": "status_history",
 			"title": "Status History",
 			"descrption": "Status history"
@@ -51,11 +51,11 @@
 				}
 			}
 		},
-		"custom_data" : {
-		  "type": "object",
-		  "name": "custom_data",
-		  "title": "Custom Data",
-		  "description": "Unclassified data. You can put here asset name too."
+		"custom_data": {
+			"type": "object",
+			"name": "custom_data",
+			"title": "Custom Data",
+			"description": "Unclassified data. You can put here asset name too."
 		},
 		"arrival": {
 			"type": "array",
@@ -77,11 +77,11 @@
 				}
 			}
 		},
-		"delivered" : {
-		  "type": "boolean",
-		  "name": "delivered",
-		  "title": "Delivered",
-		  "description": "If true, the item was delivered to the location"
+		"delivered": {
+			"type": "boolean",
+			"name": "delivered",
+			"title": "Delivered",
+			"description": "If true, the item was delivered to the location"
 		}
 	}
 }

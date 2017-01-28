@@ -25,7 +25,7 @@
 		"sample_parsed_data": {
 			"type": "array",
 			"items": {
-				"$ref":"https://github.com/route4me/json-schemas/blob/master/Address.dtd" 
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"
 			}
 		},
 		"address_count": {

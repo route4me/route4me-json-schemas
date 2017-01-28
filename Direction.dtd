@@ -59,7 +59,30 @@
 				"properties": {
 					"directions": {
 						"type": "string",
-						"enum": ["Head", "Go Straight", "Turn Left", "Turn Right", "Turn Slight Left", "Turn Slight Right", "Turn Sharp Left", "Turn Sharp Right", "Roundabout Left", "Roundabout Right", "Uturn Left", "Uturn Right", "Ramp Left", "Ramp Right", "Fork Left", "Fork Right", "Keep Left", "Keep Right", "Ferry", "Ferry Train", "Merge", "Reached Your Destination"],
+						"enum": [
+							"Head",
+							"Go Straight",
+							"Turn Left",
+							"Turn Right",
+							"Turn Slight Left",
+							"Turn Slight Right",
+							"Turn Sharp Left",
+							"Turn Sharp Right",
+							"Roundabout Left",
+							"Roundabout Right",
+							"Uturn Left",
+							"Uturn Right",
+							"Ramp Left",
+							"Ramp Right",
+							"Fork Left",
+							"Fork Right",
+							"Keep Left",
+							"Keep Right",
+							"Ferry",
+							"Ferry Train",
+							"Merge",
+							"Reached Your Destination"
+						],
 						"name": "directions",
 						"title": "Directions",
 						"description": "Directions of movement"
@@ -78,21 +101,56 @@
 					},
 					"distance_unit": {
 						"type": "string",
-						"enum": ["mi", "km"],
+						"enum": [
+							"mi",
+							"km"
+						],
 						"name": "distance_unit",
 						"title": "Distance unit",
 						"description": "Distance unit - 'mi' or 'km'"
 					},
 					"maneuverType": {
 						"type": "string",
-						"enum": ["HEAD", "GO_STRAIGHT", "TURN_LEFT", "TURN_RIGHT", "TURN_SLIGHT_LEFT", "TURN_SLIGHT_RIGHT", "TURN_SHARP_LEFT", "TURN_SHARP_RIGHT", "ROUNDABOUT_LEFT", "ROUNDABOUT_RIGHT", "UTURN_LEFT", "UTURN_RIGHT", "RAMP_LEFT", "RAMP_RIGHT", "FORK_LEFT", "FORK_RIGHT", "KEEP_LEFT", "KEEP_RIGHT", "FERRY", "FERRY_TRAIN", "MERGE", "REACHED_YOUR_DESTINATION"],
+						"enum": [
+							"HEAD",
+							"GO_STRAIGHT",
+							"TURN_LEFT",
+							"TURN_RIGHT",
+							"TURN_SLIGHT_LEFT",
+							"TURN_SLIGHT_RIGHT",
+							"TURN_SHARP_LEFT",
+							"TURN_SHARP_RIGHT",
+							"ROUNDABOUT_LEFT",
+							"ROUNDABOUT_RIGHT",
+							"UTURN_LEFT",
+							"UTURN_RIGHT",
+							"RAMP_LEFT",
+							"RAMP_RIGHT",
+							"FORK_LEFT",
+							"FORK_RIGHT",
+							"KEEP_LEFT",
+							"KEEP_RIGHT",
+							"FERRY",
+							"FERRY_TRAIN",
+							"MERGE",
+							"REACHED_YOUR_DESTINATION"
+						],
 						"name": "maneuverType",
 						"title": "Maneuver type",
 						"description": "Maneuver type"
 					},
 					"compass_direction": {
 						"type": "string",
-						"enum": ["N", "S", "W", "E", "NW", "NE", "SW", "SE"],
+						"enum": [
+							"N",
+							"S",
+							"W",
+							"E",
+							"NW",
+							"NE",
+							"SW",
+							"SE"
+						],
 						"name": "compass_direction",
 						"title": "Compass direction",
 						"description": "Compass direction"

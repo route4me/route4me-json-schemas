@@ -7,31 +7,73 @@
 	"properties": {
 		"email": {
 			"description": "A valid e-mail address assigned to this stop",
-			"valid_headers": ["email", "e-mail", "email_address", "emailaddress", "customer_email", "order_email", "address_email"]
+			"valid_headers": [
+				"email",
+				"e-mail",
+				"email_address",
+				"emailaddress",
+				"customer_email",
+				"order_email",
+				"address_email"
+			]
 		},
 		"alias": {
 			"description": "Alias assigned to the route",
-			"valid_headers": ["alias", "customeralias", "customer", "name", "nickname", "address_alias"]
+			"valid_headers": [
+				"alias",
+				"customeralias",
+				"customer",
+				"name",
+				"nickname",
+				"address_alias"
+			]
 		},
 		"address": {
 			"description": "The route Address Line 1",
-			"valid_headers": ["adress", "address", "address_1", "address1", "addr1", "destination_name", "customer_address"]
+			"valid_headers": [
+				"adress",
+				"address",
+				"address_1",
+				"address1",
+				"addr1",
+				"destination_name",
+				"customer_address"
+			]
 		},
 		"address2": {
 			"description": "The route Address Line 2 which is not used for geocoding",
-			"valid_headers": ["address2", "address_2", "addr2"]
+			"valid_headers": [
+				"address2",
+				"address_2",
+				"addr2"
+			]
 		},
 		"city": {
 			"description": "The city the address is located in",
-			"valid_headers": ["city", "city_name", "address_city", "cityname", "town"]
+			"valid_headers": [
+				"city",
+				"city_name",
+				"address_city",
+				"cityname",
+				"town"
+			]
 		},
 		"state": {
 			"description": "The state the address is located in",
-			"valid_headers": ["state", "state_name", "address_state"]
+			"valid_headers": [
+				"state",
+				"state_name",
+				"address_state"
+			]
 		},
 		"country": {
 			"description": "The country the address is located in",
-			"valid_headers": ["country", "country_name", "countryname", "nation"]
+			"valid_headers": [
+				"country",
+				"country_name",
+				"countryname",
+				"nation"
+			]
 		},
 		"zip": {
 			"description": "The zip code the address is located in",

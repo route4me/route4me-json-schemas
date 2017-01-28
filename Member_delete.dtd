@@ -5,7 +5,10 @@
 	"type": "object",
 	"name": "Member_delete",
 	"description": "For removing an user. url: https://www.route4me.com/api.v4/user.php",
-	"required": ["api_key", "member_id"],
+	"required": [
+		"api_key",
+		"member_id"
+	],
 	"properties": {
 		"api_key": {
 			"type": "string",

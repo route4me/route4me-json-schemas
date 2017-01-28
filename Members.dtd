@@ -5,7 +5,16 @@
 	"type": "object",
 	"name": "Members",
 	"description": "For new account registration. url: https://www.route4me.com/actions/register_action.php",
-	"required": ["strEmail", "strPassword_1", "strPassword_2", "strFirstName", "strLastName", "strIndustry", "chkTerms", "plan"],
+	"required": [
+		"strEmail",
+		"strPassword_1",
+		"strPassword_2",
+		"strFirstName",
+		"strLastName",
+		"strIndustry",
+		"chkTerms",
+		"plan"
+	],
 	"properties": {
 		"strEmail": {
 			"type": "string",
@@ -52,29 +61,13 @@
 			"descrption": "The 5-7 digit ZIP code (minimum length of 5))"
 		},
 		"chkTerms": {
-			"enum": [0, 1],
+			"enum": [
+				0,
+				1
+			],
 			"name": "chkTerms",
 			"title": "Check terms",
 			"descrption": "If the user agreed to the terms of the site checkbox"
-		},
-		"device_id": {
-			"type": "string",
-			"maxLength": 60,
-			"name": "device_id",
-			"title": "Device id",
-			"descrption": "Android ID or Apple ID"
-		},
-		"plan": {
-			"enum": ["free", "basic", "pro", "premium", "personal"],
-			"name": "plan",
-			"title": "Check terms",
-			"descrption": "The plan type that the user selected"
-		},
-		"format ": {
-			"enum": ["xml", "json"],
-			"name": "format ",
-			"title": "Format",
-			"descrption": "ENUM(xml, json) Returns the new member id, authenticated session id and membership restrictions"
 		},
 		"device_id": {
 			"type": "string",
@@ -82,8 +75,33 @@
 			"title": "Device id",
 			"descrption": "If a device ID is passed, the registration page assumes a temporary member associated with that device id exists. The registration page updates that member's information, sets an email address. After completion, the member is no longer temporary and the member_id is preserved."
 		},
+		"plan": {
+			"enum": [
+				"free",
+				"basic",
+				"pro",
+				"premium",
+				"personal"
+			],
+			"name": "plan",
+			"title": "Check terms",
+			"descrption": "The plan type that the user selected"
+		},
+		"format ": {
+			"enum": [
+				"xml",
+				"json"
+			],
+			"name": "format ",
+			"title": "Format",
+			"descrption": "ENUM(xml, json) Returns the new member id, authenticated session id and membership restrictions"
+		},
 		"business_member_type": {
-			"enum": ["BUSINESS_OWNER_OPERATOR", "BUSINESS_EMPLOYEE", "INDIVIDUAL"],
+			"enum": [
+				"BUSINESS_OWNER_OPERATOR",
+				"BUSINESS_EMPLOYEE",
+				"INDIVIDUAL"
+			],
 			"name": "business_member_type",
 			"title": "Check terms",
 			"descrption": "The plan type that the user selected"

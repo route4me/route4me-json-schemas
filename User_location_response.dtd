@@ -5,7 +5,13 @@
 	"type": "object",
 	"name": "User_location_response",
 	"description": "End point: https://www.route4me.com/api/track/view_user_locations.php",
-	"required": ["api_key", "member_type", "member_email", "OWNER_MEMBER_ID", "member_password"],
+	"required": [
+		"api_key",
+		"member_type",
+		"member_email",
+		"OWNER_MEMBER_ID",
+		"member_password"
+	],
 	"properties": {
 		"additionalProperties": {
 			"type": "array",
@@ -112,10 +118,10 @@
 							"description": "Activity timestamp (EPOCH)"
 						},
 						"route_id": {
-						  "type": "string",
-						  "name": "route_id",
-						  "title": "Route ID",
-						  "description": "Route Unique Identifier"
+							"type": "string",
+							"name": "route_id",
+							"title": "Route ID",
+							"description": "Route Unique Identifier"
 						},
 						"device_id": {
 							"type": "string",
@@ -124,10 +130,10 @@
 							"description": "Device ID"
 						},
 						"speed": {
-						  "type": "number",
-						  "name": "speed",
-						  "title": "Speed",
-						  "description": "Movement speed of a vehicle"
+							"type": "number",
+							"name": "speed",
+							"title": "Speed",
+							"description": "Movement speed of a vehicle"
 						},
 						"altitude": {
 							"type": "integer",

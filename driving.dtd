@@ -4,8 +4,11 @@
 	"description": "Driving",
 	"name": "driving",
 	"type": "object",
-
-	"required": ["origin", "destination", "key"],
+	"required": [
+		"origin",
+		"destination",
+		"key"
+	],
 	"properties": {
 		"origin": {
 			"description": "The address, textual latitude/longitude value, or place ID from which you wish to calculate directions",
@@ -25,7 +28,9 @@
 		},
 		"waypoints": {
 			"type": "array",
-			"items": { "$ref": "https://github.com/route4me/json-schemas/blob/master/waypoint.dtd" }
+			"items": {
+				"$ref": "https://github.com/route4me/json-schemas/blob/master/waypoint.dtd"
+			}
 		},
 		"alternatives": {
 			"description": "If set to true, specifies that the Directions service may provide more than one route alternative in the response",
@@ -42,7 +47,10 @@
 		"units": {
 			"description": "Specifies the unit system to use when displaying results ('metric', 'imperial')",
 			"type": "string",
-			"enum": ["metric", "imperial"]
+			"enum": [
+				"metric",
+				"imperial"
+			]
 		},
 		"region": {
 			"description": "Specifies the region code, specified as a ccTLD ('top-level domain') two-character value",

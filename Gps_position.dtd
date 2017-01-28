@@ -5,11 +5,25 @@
 	"type": "object",
 	"name": "Gps_position",
 	"description": "Set GPS Position of the Device. url: https://www.route4me.com/track/set.php",
-	"required": ["format", "member_id", "route_id", "course", "speed", "lat", "lng", "device_type", "device_guid"],
+	"required": [
+		"format",
+		"member_id",
+		"route_id",
+		"course",
+		"speed",
+		"lat",
+		"lng",
+		"device_type",
+		"device_guid"
+	],
 	"properties": {
 		"format": {
 			"type": "string",
-			"enum": ["serialized", "csv", "xml"],
+			"enum": [
+				"serialized",
+				"csv",
+				"xml"
+			],
 			"default": "xml",
 			"name": "format",
 			"title": "Format",
@@ -75,7 +89,12 @@
 			"descrption": "Altitude relative to sea level of the device being tracked"
 		},
 		"device_type": {
-			"enum": ["phone", "ipad", "android_phone", "android_tablet"],
+			"enum": [
+				"phone",
+				"ipad",
+				"android_phone",
+				"android_tablet"
+			],
 			"name": "device_type",
 			"title": "Device type",
 			"descrption": "The device type submitting the data"

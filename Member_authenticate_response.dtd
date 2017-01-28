@@ -49,7 +49,11 @@
 			"description": "Tracking TTL"
 		},
 		"geofence_polygon_shape ": {
-			"enum": ["circle", "poly", "rect"],
+			"enum": [
+				"circle",
+				"poly",
+				"rect"
+			],
 			"name": "geofence_polygon_shape ",
 			"title": "Geofence polygon shape",
 			"descrption": "Geofence polygon shape. ENUM(circle, poly rect)."
@@ -104,7 +108,17 @@
 		},
 		"member_type": {
 			"type": "string",
-			"enum": ["PRIMARY_ACCOUNT", "SUB_ACCOUNT_ADMIN", "SUB_ACCOUNT_REGIONAL_MANAGER", "SUB_ACCOUNT_DISPATCHER", "SUB_ACCOUNT_PLANNER", "SUB_ACCOUNT_DRIVER", "SUB_ACCOUNT_ANALYST", "SUB_ACCOUNT_VENDOR", "SUB_ACCOUNT_CUSTOMER_SERVICE"],
+			"enum": [
+				"PRIMARY_ACCOUNT",
+				"SUB_ACCOUNT_ADMIN",
+				"SUB_ACCOUNT_REGIONAL_MANAGER",
+				"SUB_ACCOUNT_DISPATCHER",
+				"SUB_ACCOUNT_PLANNER",
+				"SUB_ACCOUNT_DRIVER",
+				"SUB_ACCOUNT_ANALYST",
+				"SUB_ACCOUNT_VENDOR",
+				"SUB_ACCOUNT_CUSTOMER_SERVICE"
+			],
 			"title": "Member type",
 			"description": "A type of the member"
 		},
@@ -127,13 +141,19 @@
 			"description": "Number of the planned routes by an user."
 		},
 		"preferred_units ": {
-			"enum": ["KM", "MI"],
+			"enum": [
+				"KM",
+				"MI"
+			],
 			"name": "preferred_units ",
 			"title": "Preferred units",
 			"descrption": "Preferred units. Enum(km,mi)."
 		},
 		"preferred_language ": {
-			"enum": ["en", "fr"],
+			"enum": [
+				"en",
+				"fr"
+			],
 			"name": "preferred_language ",
 			"title": "Preferred language",
 			"descrption": "Preferred language. Enum(en,fr)"
