@@ -1,27 +1,27 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/Path.dtd",
-	"description": "Path - an array of the geographic points, which are laying on a path",
-	"name": "Path",
-	"type": "array",
-	"items": {
-		"properties": {
-			"lat": {
-				"type": "number",
-				"name": "lat",
-				"minimum": -90,
-				"maximum": 90,
-				"title": "Latitude",
-				"description": "Point latitude"
-			},
-			"lng": {
-				"type": "number",
-				"name": "lng",
-				"minimum": -180,
-				"maximum": 180,
-				"title": "Longitude",
-				"description": "Point longitude"
-			}
-		}
-	}
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://github.com/route4me/json-schemas/blob/master/Path.dtd",
+  "description": "Path - an array of the geographic points, which are laying on a path",
+  "name": "Path",
+  "type": "array",
+  "items": {
+    "properties": {
+      "lat": {
+        "type": "number",
+        "name": "lat",
+        "minimum": -90,
+        "maximum": 90,
+        "title": "Latitude",
+        "description": "Point latitude"
+      },
+      "lng": {
+        "type": "number",
+        "name": "lng",
+        "minimum": -180,
+        "maximum": 180,
+        "title": "Longitude",
+        "description": "Point longitude"
+      }
+    }
+  }
 }

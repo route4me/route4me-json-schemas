@@ -1,0 +1,35 @@
+# =============================================================================
+# Access Route4Me's logistics-as-a-service API using our Node.js SDK
+#
+# Copyright (C) 2016-2017 Route4Me
+#
+# =============================================================================
+
+sudo: false
+
+language: node_js
+
+node_js:
+  - 6
+
+cache:
+  directories:
+    - node_modules
+
+before_install:
+  - npm config set spin false
+
+install:
+  - npm i -g jsonlint
+  - npm i -g ajv-cli
+  # TODO : use gulp for commands
+  # - npm i -g gulp
+  # TODO: implement STYLE LINT
+  # - npm i -g eslint eslint-plugin-json
+
+script:
+# - gulp lint
+  # TEST 1: find all *.dtd and THEN apply `jsonlint` command
+  - find ./ -iname "*.dtd" -printf '%p\n' -exec jsonlint -q {} \;
+  # TEST 2
+  - ajv compile --verbose --all-errors --json-pointers -s Route4Me.dtd -r "*.dtd"

@@ -9,9 +9,7 @@
 			"type": "array",
 			"name": "addresses",
 			"title": "Route Addresses",
-			"items": {
-				"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"
-			},
+			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"},
 			"descrption": "Route Addresses. POST data"
 		},
 		"parameters": {
@@ -32,7 +30,7 @@
 		},
 		"format": {
 			"type": "string",
-			"enum": ["json", "xml", "serialized", "friendly", csv"],
+			"enum": ["json", "xml", "serialized", "friendly", "csv"],
 			"name": "format",
 			"title": "Format",
 			"description": "The format in which to return the route data. This parameter is ignored for now, as only JSON is supported. Query string (GET fields)."
