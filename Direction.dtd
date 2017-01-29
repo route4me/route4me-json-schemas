@@ -157,6 +157,7 @@
 					},
 					"maneuverPoint": {
 						"type": "object",
+						"title": "Maneuver point",
 						"items": {
 							"properties": {
 								"lat": {
