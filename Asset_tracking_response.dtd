@@ -45,7 +45,7 @@
 					"icon": {
 						"type": "string",
 						"name": "icon",
-						"Title": "Icon",
+						"title": "Icon",
 						"description": "Link to the icon"
 					}
 				}
@@ -65,13 +65,13 @@
 					"from_unix_timestamp": {
 						"type": "integer",
 						"name": "from_unix_timestamp",
-						"Title": "From Unix Timestamp",
+						"title": "From Unix Timestamp",
 						"description": "Start of arrival time range in EPOCH"
 					},
 					"to_unix_timestamp": {
 						"type": "integer",
 						"name": "to_unix_timestamp",
-						"Title": "To Unix Timestamp",
+						"title": "To Unix Timestamp",
 						"description": "End of arrival time range in EPOCH"
 					}
 				}
