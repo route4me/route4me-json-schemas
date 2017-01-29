@@ -142,9 +142,7 @@
 		},
 		"geocodings": {
 			"type": "array",
-			"items": {
-				"$ref": "https://github.com/route4me/json-schemas/blob/master/geocoding.dtd"
-			},
+			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/geocoding.dtd"},
 			"name": "geocodings",
 			"title": "Geocodings ID"
 		},
@@ -163,12 +161,7 @@
 		},
 		"address_stop_type": {
 			"type": "string",
-			"enum": [
-				"PICKUP",
-				"DELIVERY",
-				"BREAK",
-				"MEETUP"
-			],
+			"enum": ["PICKUP", "DELIVERY", "BREAK", "MEETUP"],
 			"name": "address_stop_type",
 			"title": "Address stop type",
 			"description": "The type of stop that this is (PICKUP, DELIVERY, BREAK, MEETUP)"
@@ -457,9 +450,7 @@
 		},
 		"custom_fields": {
 			"type": "array",
-			"items": {
-				"type": "string"
-			},
+			"items": {"type": "string"},
 			"description": "Any unrecognized fields from the original CSV upload will be found here",
 			"name": "custom_fields",
 			"title": "Custom Fields"
@@ -472,9 +463,7 @@
 		},
 		"custom_fields_config": {
 			"type": "array",
-			"items": {
-				"type": "string"
-			},
+			"items": {"type": "string"},
 			"name": "custom_fields_config",
 			"title": "Custom fields configuration",
 			"description": "Configuration of the custom fields"
@@ -487,9 +476,7 @@
 		},
 		"notes": {
 			"type": "array",
-			"items": {
-				"$ref": "https://github.com/route4me/json-schemas/blob/master/note.dtd"
-			},
+			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/note.dtd"},
 			"name": "notes",
 			"title": "Notes",
 			"description": "Notes"
