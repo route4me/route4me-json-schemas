@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/Address_request.dtd",
-	"name": "Address_request",
+	"title": "Address_request",
 	"description": "Json schema for an Address request class. See curl examples: add_address_to_optimization, update_address_in_route",
 	"type": "object",
 	"properties": {

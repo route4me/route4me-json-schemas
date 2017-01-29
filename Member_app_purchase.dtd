@@ -3,7 +3,7 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/Member_app_purchase.dtd",
 	"title": "Member application purchase",
 	"type": "object",
-	"name": "Member_app_purchase",
+	"title": "Member_app_purchase",
 	"description": "For purchasing Route4Me application by the member. url: https://www.route4me.com/api/member/user_license.php.",
 	"required": [
 		"api_key",

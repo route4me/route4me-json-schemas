@@ -3,7 +3,7 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/Gps_position.dtd",
 	"title": "Gps position",
 	"type": "object",
-	"name": "Gps_position",
+	"title": "Gps_position",
 	"description": "Set GPS Position of the Device. url: https://www.route4me.com/track/set.php",
 	"required": [
 		"format",

@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/Address.dtd",
-	"name": "Address",
+	"title": "Address",
 	"description": "Json schema for an Address response class. See curl examples: get_route_directions, get_route_path_points",
 	"type": "object",
 	"properties": {

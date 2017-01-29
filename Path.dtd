@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/Path.dtd",
 	"description": "Path - an array of the geographic points, which are laying on a path",
-	"name": "Path",
+	"title": "Path",
 	"type": "array",
 	"items": {
 		"properties": {

@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/Direction.dtd",
 	"description": "the course or path on which something is moving or pointing",
-	"name": "Direction",
+	"title": "Direction",
 	"type": "object",
 	"properties": {
 		"location": {

@@ -3,7 +3,7 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/Asset_tracking_response.dtd",
 	"title": "Asset tracking response",
 	"type": "object",
-	"name": "Asset_tracking_response",
+	"title": "Asset_tracking_response",
 	"description": "Response from the endpoint: https://route4me.com/api.v4/status.php",
 	"properties": {
 		"tracking_number": {

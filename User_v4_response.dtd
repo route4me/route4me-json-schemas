@@ -3,7 +3,7 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/User_v4_response.dtd",
 	"title": "User (v4) response",
 	"type": "object",
-	"name": "User_v4_response",
+	"title": "User_v4_response",
 	"description": "Response object structure from the endpoint: https://route4me.com/api.v4/user.php",
 	"properties": {
 		"member_first_name": {

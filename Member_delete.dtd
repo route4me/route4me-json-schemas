@@ -3,7 +3,7 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/Member_delete.dtd",
 	"title": "Member delete",
 	"type": "object",
-	"name": "Member_delete",
+	"title": "Member_delete",
 	"description": "For removing an user. url: https://www.route4me.com/api.v4/user.php",
 	"required": [
 		"api_key",

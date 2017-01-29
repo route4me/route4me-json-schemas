@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/driving.dtd",
 	"description": "Driving",
-	"name": "driving",
+	"title": "driving",
 	"type": "object",
 	"required": [
 		"origin",

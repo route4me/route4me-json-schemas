@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/waypoint.dtd#",
 	"description": "Waypoint",
-	"name": "waypoint",
+	"title": "waypoint",
 	"type": "object",
 	"required": [
 		"geo"

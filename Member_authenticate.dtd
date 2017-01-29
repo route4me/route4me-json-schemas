@@ -3,7 +3,7 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/Member_authenticate.dtd",
 	"title": "Member authenticate",
 	"type": "object",
-	"name": "Member_authenticate",
+	"title": "Member_authenticate",
 	"description": "For member authentication. url: https://www.route4me.com/actions/authenticate.php. Content-Type: multipart/form-data",
 	"required": [
 		"api_key",
