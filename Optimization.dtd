@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Optimization.dtd",
+	"title": "Optimization",
+	"description": "IT IS A DRAFT!!!! // Json schema for an Optimization class",
+	"type": "object",
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"name": "api_key",
+			"title": "API key",
+			"description": "User api key"
+		}
+	}
+}
