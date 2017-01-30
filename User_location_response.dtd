@@ -42,7 +42,7 @@
 						},
 						"account_type_id": {
 							"type": "integer",
-							"title": "Account _type ID",
+							"title": "Account Type ID",
 							"description": "Account type ID of the member"
 						},
 						"member_type": {
