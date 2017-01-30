@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/File_uploaded_preview_response.dtd",
 	"description": "Response schema of a uploaded file",
-	"title": "File_uploaded_preview_response",
+	"title": "File Uploaded Preview Response",
 	"type": "object",
 	"properties": {
 		"csv_header": {
