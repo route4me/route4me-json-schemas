@@ -11,13 +11,11 @@
 	"properties": {
 		"api_key": {
 			"type": "string",
-			"name": "api_key",
 			"title": "Api key",
 			"descrption": "The API key of the application client"
 		},
 		"tracking": {
 			"type": "string",
-			"name": "tracking",
 			"title": "Tracking",
 			"descrption": "The ID of the asset that is being located"
 		}

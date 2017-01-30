@@ -6,13 +6,11 @@
 	"properties": {
 		"optimization_problem_id": {
 			"type": "string",
-			"name": "optimization_problem_id",
 			"title": "Optimization Problem ID",
 			"descrption": "Optimization which generated this route"
 		},
 		"user_errors": {
 			"type": "array",
-			"name": "user_errors",
 			"title": "User Errors",
 			"items": {
 				"type": "string"
@@ -21,7 +19,6 @@
 		},
 		"optimization_errors": {
 			"type": "array",
-			"name": "optimization_errors",
 			"title": "Optimization Errors",
 			"items": {
 				"type": "string"
@@ -38,31 +35,26 @@
 				5,
 				6
 			],
-			"name": "state",
 			"title": "State",
 			"description": "an optimization problem can be at one state at any given time (Initial = 1, MatrixProcessing = 2, Optimizing = 3, Optimized = 4, Error = 5, ComputingDirections = 6)"
 		},
 		"created_timestamp": {
 			"type": "integer",
-			"name": "created_timestamp",
 			"title": "Created Timestamp",
 			"descrption": "When the optimization problem was created"
 		},
 		"scheduled_for": {
 			"type": "integer",
-			"name": "scheduled_for",
 			"title": "Scheduled For",
 			"descrption": "An Unix Timestamp the Optimization Problem was scheduled for."
 		},
 		"optimization_completed_timestamp": {
 			"type": "integer",
-			"name": "optimization_completed_timestamp",
 			"title": "Optimization Completed Timestamp",
 			"descrption": "When the Optimization Problem was completed."
 		},
 		"parameters": {
 			"type": "array",
-			"name": "parameters",
 			"title": "Route Parameters",
 			"items": {
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd"
@@ -71,13 +63,11 @@
 		},
 		"sent_to_background": {
 			"type": "boolean",
-			"name": "sent_to_background",
 			"title": "Sent to Background",
 			"descrption": "If true it means the solution was not returned (it is being computed in the background)"
 		},
 		"addresses": {
 			"type": "array",
-			"name": "addresses",
 			"title": "Route Addresses",
 			"items": {
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"
@@ -86,7 +76,6 @@
 		},
 		"routes": {
 			"type": "array",
-			"name": "routes",
 			"title": "Routes",
 			"items": {
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/DataObjectRoute.dtd"
@@ -95,7 +84,6 @@
 		},
 		"links": {
 			"type": "array",
-			"name": "links",
 			"title": "Links",
 			"items": {
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/Links.dtd"
@@ -104,7 +92,6 @@
 		},
 		"tracking_history": {
 			"type": "array",
-			"name": "tracking_history",
 			"title": "TrackingHistory",
 			"items": {
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/TrackingHistory.dtd"

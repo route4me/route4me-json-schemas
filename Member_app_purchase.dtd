@@ -17,19 +17,16 @@
 	"properties": {
 		"api_key": {
 			"type": "string",
-			"name": "api_key",
 			"title": "API key",
 			"description": "API key of en user. HTTP method - GET"
 		},
 		"member_id": {
 			"type": "integer",
-			"name": "member_id",
 			"title": "Member ID",
 			"description": "Member ID. HTTP method - POST"
 		},
 		"device_id": {
 			"type": "integer",
-			"name": "device_id",
 			"title": "Device ID",
 			"description": "Unique ID of a user's device. HTTP method - POST"
 		},
@@ -41,7 +38,6 @@
 				"android_phone",
 				"android_tablet"
 			],
-			"name": "device_type ",
 			"title": "Device type",
 			"descrption": "Type of the user's device. HTTP method - POST"
 		},
@@ -56,19 +52,16 @@
 				"IPHONE_YEARLY",
 				"IPAD_YEARLY"
 			],
-			"name": "subscription_name",
 			"title": "Subscription name",
 			"description": "Valid subscription name. HTTP method - POST"
 		},
 		"token": {
 			"type": "string",
-			"name": "token",
 			"title": "Token",
 			"description": "Token from Google. HTTP method - POST"
 		},
 		"payload": {
 			"type": "string",
-			"name": "payload",
 			"title": "Payload",
 			"description": "Payload from Google. HTTP method - POST"
 		},
@@ -78,7 +71,6 @@
 				"json",
 				"xml"
 			],
-			"name": "format",
 			"title": "Format",
 			"description": "Response format. HTTP method - POST"
 		}

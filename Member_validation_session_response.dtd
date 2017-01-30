@@ -7,157 +7,131 @@
 	"properties": {
 		"authenticated": {
 			"type": "boolean",
-			"name": "authenticated",
 			"title": "Authenticated",
 			"descrption": "A boolean flag indicating if the session is valid"
 		},
 		"geocoding_service": {
 			"type": "string",
-			"name": "geocoding_service",
 			"title": "Geocoding service",
 			"description": "Geocoding service"
 		},
 		"api_key": {
 			"type": "string",
-			"name": "api_key",
 			"title": "API key",
 			"description": "Member api key"
 		},
 		"member_id": {
 			"type": "integer",
-			"name": "member_id",
 			"title": "Member ID",
 			"description": "Member ID"
 		},
 		"member_email": {
 			"type": "string",
-			"name": "member_email",
 			"title": "Member email",
 			"description": "Member email"
 		},
 		"is_trial": {
 			"type": "boolean",
-			"name": "is_trial",
 			"title": "Is trial",
 			"descrption": "If the user is currently a trial customer"
 		},
 		"session_id": {
 			"type": "integer",
-			"name": "session_id",
 			"title": "Session ID",
 			"description": "The integer session id of the current session"
 		},
 		"session_guid": {
 			"type": "string",
-			"name": "session_guid",
 			"title": "Session guid",
 			"description": "An MD5 hash string of the currently authenticated sesssion, important to use this with future requests"
 		},
 		"member_first_name": {
 			"type": "string",
-			"name": "member_last_name",
 			"title": "Member First Name",
 			"description": "The first name of the user."
 		},
 		"member_timestamp_added": {
 			"type": "integer",
-			"name": "member_timestamp_added",
 			"title": "Member timestamp added",
 			"description": "The unix timestamp when the user joined the service"
 		},
 		"industry": {
 			"type": "string",
-			"name": "industry",
 			"title": "Industry",
 			"description": "The industry the authenticated user specified"
 		},
 		"account_type_id": {
 			"type": "string",
-			"name": "account_type_id",
 			"title": "Account type ID",
 			"description": "if equal to true, long press is enabled."
 		},
 		"account_type_alias": {
 			"type": "string",
-			"name": "account_type_alias",
 			"title": "Account type alias",
 			"description": "Account type alias."
 		},
 		"max_stops_per_route": {
 			"type": "string",
-			"name": "max_stops_per_route",
 			"title": "Max stops per route",
 			"description": "Maximum stops per route."
 		},
 		"max_routes": {
 			"type": "string",
-			"name": "max_routes",
 			"title": "Max routes",
 			"description": "Maximum number of the routes."
 		},
 		"max_api_optimization_addresses": {
 			"type": "integer",
-			"name": "max_api_optimization_addresses",
 			"title": "Max API optimization addresses",
 			"description": "The maximun number of addresses the authenticated user can optimize in this billing cycle"
 		},
 		"max_api_geocoding_addresses": {
 			"type": "integer",
-			"name": "max_api_geocoding_addresses",
 			"title": "Max API geocoding addresses",
 			"description": "The maximun number of geocodings the authenticated user can optimize in this billing cycle"
 		},
 		"max_api_directions_addresses": {
 			"type": "integer",
-			"name": "max_api_directions_addresses",
 			"title": "Max API directions addresses",
 			"description": "The maximum number of driving route transactions the authenticated user can execute in this billing cycle"
 		},
 		"max_api_validation_addresses": {
 			"type": "integer",
-			"name": "max_api_validation_addresses",
 			"title": "Max API validation addresses",
 			"description": "The maximun number of address validation transactions the authenticated user can execute in this billing cycle"
 		},
 		"max_stops_per_unoptimized_route": {
 			"type": "integer",
-			"name": "max_stops_per_unoptimized_route",
 			"title": "Max stops per unoptimized route",
 			"description": "The maximum number of stops the authenticated user can put into a route with optimization disabled"
 		},
 		"max_api_distance_tx": {
 			"type": "integer",
-			"name": "max_api_distance_tx",
 			"title": "Max API distance tx",
 			"description": "The maximum number of distance transactions the authenticated user can execute in this billing cycle"
 		},
 		"blDisplayUpgradeTrackingHTML": {
 			"type": "boolean",
-			"name": "blDisplayUpgradeTrackingHTML",
 			"title": "Display Upgrade Tracking HTML",
 			"descrption": "Display upgrade tracking HTML"
 		},
 		"last_payment_ts": {
 			"type": "integer",
-			"name": "last_payment_ts",
 			"title": "Last payment ts",
 			"description": "The last unix timestamp when this user was successfully charged"
 		},
 		"ui_input_method": {
 			"type": "string",
-			"name": "ui_input_method",
 			"title": "UI input method",
 			"description": "UI input method"
 		},
 		"registration_app": {
 			"type": "string",
-			"name": "registration_app",
 			"title": "Registration application",
 			"description": "Registration application"
 		},
 		"appdirect_url": {
 			"type": "string",
-			"name": "appdirect_url",
 			"title": "Application direction URL",
 			"description": "Application direction URL"
 		}

@@ -7,7 +7,6 @@
 	"properties": {
 		"tracking_number": {
 			"type": "string",
-			"name": "tracking_number",
 			"title": "Tracking Number",
 			"description": "An unique internal ID of a tracking number object"
 		},
@@ -18,7 +17,6 @@
 				"properties": {
 					"unix_timestamp": {
 						"type": "integer",
-						"name": "unix_timestamp",
 						"title": "Unix Timestamp",
 						"description": "Unix timestamp"
 					},
@@ -31,7 +29,6 @@
 							"Loaded to Vehicle",
 							"Out for Delivery"
 						],
-						"name": "info",
 						"title": "Information",
 						"description": "Information about a shipped package"
 					}
@@ -45,7 +42,6 @@
 				"properties": {
 					"lat": {
 						"type": "number",
-						"name": "lat",
 						"minimum": -90,
 						"maximum": 90,
 						"title": "Latitude",
@@ -53,7 +49,6 @@
 					},
 					"lng": {
 						"type": "number",
-						"name": "lng",
 						"minimum": -180,
 						"maximum": 180,
 						"title": "Longitude",
@@ -61,25 +56,21 @@
 					},
 					"info": {
 						"type": "string",
-						"name": "info",
 						"title": "Information",
 						"description": "Information about a shipped package at a specified location."
 					},
 					"show_info": {
 						"type": "boolean",
-						"name": "show_info",
 						"title": "Show information",
 						"description": "If true, showing of the information is enabled."
 					},
 					"icon": {
 						"type": "string",
-						"name": "icon",
 						"title": "Icon",
 						"description": "URL of the image"
 					},
 					"size": {
 						"type": "integer",
-						"name": "size",
 						"title": "Size",
 						"description": "Size of the icon"
 					},
@@ -98,7 +89,6 @@
 					},
 					"angle": {
 						"type": "integer",
-						"name": "angle",
 						"title": "Angle",
 						"description": "Rotation angle"
 					},
@@ -107,7 +97,6 @@
 						"items": {
 							"type": "string"
 						},
-						"name": "custom_data",
 						"title": "Custom Data",
 						"description": "Unclasified data of a Tracking_number object"
 					},
@@ -118,13 +107,11 @@
 							"properties": {
 								"start_time": {
 									"type": "string",
-									"name": "start_time",
 									"title": "Start Time",
 									"description": "Start time of a time window"
 								},
 								"end_time": {
 									"type": "string",
-									"name": "end_time",
 									"title": "End Time",
 									"description": "End time of a time window"
 								}

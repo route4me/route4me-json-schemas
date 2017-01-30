@@ -14,135 +14,113 @@
 	"properties": {
 		"api_key": {
 			"type": "string",
-			"name": "api_key",
 			"title": "API key",
 			"description": "API key of an user. HTTP method - GET"
 		},
 		"device_id": {
 			"type": "string",
-			"name": "device_id",
 			"title": "Device ID",
 			"description": "HTTP method - GET. If a device ID is passed, the registration page assumes a temporary member associated with that device id exists. The registration page updates that member's information, sets an email address. After completion, the member is no longer temporary and the member_id is preserved."
 		},
 		"member_first_name": {
 			"type": "string",
-			"name": "member_last_name",
 			"title": "Member First Name",
 			"description": "The first name of the user. HTTP method - POST."
 		},
 		"member_last_name": {
 			"type": "string",
-			"name": "member_last_name",
 			"title": "Member Last Name",
 			"description": "The last name of the user. HTTP method - POST."
 		},
 		"member_phone": {
 			"type": "string",
-			"name": "member_phone",
 			"title": "Member Phone",
 			"description": "A phone number of the user. HTTP method - POST."
 		},
 		"member_type": {
 			"type": "string",
-			"name": "member_type",
 			"title": "Member Type",
 			"description": "Member type, ENUM [PRIMARY_ACCOUNT, SUB_ACCOUNT_ADMIN, SUB_ACCOUNT_REGIONAL_MANAGER, SUB_ACCOUNT_DISPATCHER, SUB_ACCOUNT_DRIVER]. HTTP method - POST."
 		},
 		"member_email": {
 			"type": "string",
-			"name": "member_email",
 			"title": "Member Email",
 			"format": "email",
 			"description": "E-mail address of the user that was used for site registration. HTTP method - POST."
 		},
 		"member_password": {
 			"type": "string",
-			"name": "member_password",
 			"title": "Member Password",
 			"description": "Member Password. HTTP method - POST."
 		},
 		"OWNER_MEMBER_ID": {
 			"type": "string",
-			"name": "OWNER_MEMBER_ID",
 			"title": "Owner Member ID",
 			"description": "Parent user ID. HTTP method - POST."
 		},
 		"member_zipcode": {
 			"type": "string",
-			"name": "member_zipcode",
 			"title": "Zip code",
 			"pattern": "^[0-9]{5,7}$",
 			"description": "The 5-7 digit ZIP code (minimum length of 5)). HTTP method - POST."
 		},
 		"preferred_language": {
 			"type": "string",
-			"name": "preferred_language",
 			"title": "Preferred Language",
 			"description": "Preferred language, ENUM [en, fr, ...]. HTTP method - POST."
 		},
 		"preferred_units": {
 			"type": "string",
-			"name": "preferred_units",
 			"title": "Preferred Units",
 			"description": "Preferred units, ENUM [km, ml]. HTTP method - POST."
 		},
 		"timezone": {
 			"type": "string",
-			"name": "timezone",
 			"title": "Timezone",
 			"description": "Member timezone. HTTP method - POST."
 		},
 		"user_reg_country_id": {
 			"type": "string",
-			"name": "user_reg_country_id",
 			"title": "User Region Country ID",
 			"description": "Member country, Enum(COUNTRY_CODES). HTTP method - POST."
 		},
 		"user_reg_state_id": {
 			"type": "string",
-			"name": "user_reg_state_id",
 			"title": "User Region State ID",
 			"description": "Member state, Enum(COUNTRY_CODES). HTTP method - POST."
 		},
 		"HIDE_NONFUTURE_ROUTES": {
 			"type": "boolean",
-			"name": "HIDE_NONFUTURE_ROUTES",
 			"title": "Hide Nonfuture Routes",
 			"description": "Hide non-future routes, ENUM[TRUE, FALSE]. HTTP method - POST."
 		},
 		"HIDE_VISITED_ADDRESSES": {
 			"type": "boolean",
-			"name": "HIDE_VISITED_ADDRESSES",
 			"title": "Hide Visited Addresses",
 			"description": "Hide visited sddresses, ENUM[TRUE, FALSE]. HTTP method - POST."
 		},
 		"HIDE_ROUTED_ADDRESSES": {
 			"type": "boolean",
-			"name": "HIDE_ROUTED_ADDRESSES",
 			"title": "Hide Routed Addresses",
 			"description": "Hide routed sddresses, ENUM[TRUE, FALSE]. HTTP method - POST."
 		},
 		"READONLY_USER": {
 			"type": "boolean",
-			"name": "READONLY_USER",
 			"title": "Readonly User",
 			"description": "Readonly user, ENUM[TRUE, FALSE]. HTTP method - POST."
 		},
 		"SHOW_ALL_DRIVERS": {
 			"type": "boolean",
-			"name": "SHOW_ALL_DRIVERS",
 			"title": "Show All Drivers",
 			"description": "Show all drivers, ENUM[TRUE, FALSE]. HTTP method - POST."
 		},
 		"SHOW_ALL_VEHICLES": {
 			"type": "boolean",
-			"name": "SHOW_ALL_VEHICLES",
 			"title": "Show All Vehicles",
 			"description": "Show all vehicles, ENUM[TRUE, FALSE]. HTTP method - POST."
 		},
 		"date_of_birth": {
 			"type": "string",
-			"name": "date_of_birth",
 			"title": "Date of Birth",
 			"description": "Date of birth. HTTP method - POST."
 		}

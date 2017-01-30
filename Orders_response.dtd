@@ -10,13 +10,11 @@
 			"items": {
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/Order_response.dtd"
 			},
-			"name": "results",
 			"title": "Results",
 			"description": "Array of the Order objects"
 		},
 		"total": {
 			"type": "integer",
-			"name": "total",
 			"title": "Total",
 			"description": "Number of the returned Order objects"
 		},
@@ -25,7 +23,6 @@
 			"items": {
 				"type": "string"
 			},
-			"name": "fields",
 			"title": "Fields",
 			"description": "List of the field names"
 		}
