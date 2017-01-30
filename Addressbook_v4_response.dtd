@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/Addressbook_v4_response.dtd",
-	"Name": "Addressbook_v4_response",
+	"title": "Addressbook v4 Response",
 	"type": "object",
 	"properties": {
 		"created_timestamp": {

@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/Territory.dtd",
-	"Name": "Territory",
-	"Description": "Json schema for an Territory class, which is used for meintenance territories of different types. For detailed usage see curl Territory group",
+	"title": "Territory",
+	"description": "Json schema for an Territory class, which is used for meintenance territories of different types. For detailed usage see curl Territory group",
 	"type": "object",
 	"properties": {
 		"api_key": {

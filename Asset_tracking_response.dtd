@@ -3,7 +3,6 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/Asset_tracking_response.dtd",
 	"title": "Asset tracking response",
 	"type": "object",
-	"name": "Asset_tracking_response",
 	"description": "Response from the endpoint: https://route4me.com/api.v4/status.php",
 	"properties": {
 		"tracking_number": {
@@ -45,7 +44,7 @@
 					"icon": {
 						"type": "string",
 						"name": "icon",
-						"Title": "Icon",
+						"title": "Icon",
 						"description": "Link to the icon"
 					}
 				}
@@ -65,13 +64,13 @@
 					"from_unix_timestamp": {
 						"type": "integer",
 						"name": "from_unix_timestamp",
-						"Title": "From Unix Timestamp",
+						"title": "From Unix Timestamp",
 						"description": "Start of arrival time range in EPOCH"
 					},
 					"to_unix_timestamp": {
 						"type": "integer",
 						"name": "to_unix_timestamp",
-						"Title": "To Unix Timestamp",
+						"title": "To Unix Timestamp",
 						"description": "End of arrival time range in EPOCH"
 					}
 				}

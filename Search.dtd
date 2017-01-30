@@ -2,7 +2,6 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/Search.dtd",
 	"type": "object",
-	"name": "Search",
 	"title": "Search",
 	"properties": {
 		"api_key": {

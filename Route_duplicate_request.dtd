@@ -7,7 +7,7 @@
 		"api_key",
 		"route_id"
 	],
-	"name": "Route_duplicate_request",
+	"title": "Route Duplicate Request",
 	"properties": {
 		"api_key": {
 			"type": "string",

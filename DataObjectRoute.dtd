@@ -3,7 +3,6 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/DataObjectRoute.dtd",
 	"title": "DataObjectRoute",
 	"type": "object",
-	"name": "DataObjectRoute",
 	"properties": {
 		"route_id": {
 			"type": [

@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/File_upload_response.dtd",
 	"description": "Response schema of a uploaded file",
-	"name": "File_upload_response.dtd",
+	"title": "File Upload Response.dtd",
 	"type": "object",
 	"properties": {
 		"status": {

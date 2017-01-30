@@ -3,7 +3,6 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/User_v4_create.dtd",
 	"title": "User (v4) create",
 	"type": "object",
-	"name": "User_v4_create",
 	"description": "For new user creation. url: https://route4me.com/api.v4/user.php",
 	"required": [
 		"api_key",

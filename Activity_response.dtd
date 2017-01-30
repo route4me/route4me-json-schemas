@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/Activity_response.dtd",
-	"Name": "Activity_response",
+	"title": "Activity Response",
 	"type": "object",
 	"properties": {
 		"activity_id": {

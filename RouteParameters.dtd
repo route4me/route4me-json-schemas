@@ -3,7 +3,6 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd",
 	"title": "Route Parameters",
 	"type": "object",
-	"name": "RouteParameters",
 	"properties": {
 		"is_upload": {
 			"type": ["boolean", "null"],

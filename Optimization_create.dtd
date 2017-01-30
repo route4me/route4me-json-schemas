@@ -3,7 +3,6 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/Optimization_create.dtd",
 	"title": "Optimization Create",
 	"type": "object",
-	"name": "Optimization_create",
 	"properties": {
 		"addresses": {
 			"type": "array",

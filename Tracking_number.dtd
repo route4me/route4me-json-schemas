@@ -2,7 +2,6 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/Tracking_number.dtd",
 	"title": "Tracking Number",
-	"name": "Tracking_number",
 	"type": "object",
 	"description": "Tracking numbers are numbers given to packages when they are shipped",
 	"properties": {
