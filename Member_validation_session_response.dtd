@@ -3,7 +3,6 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/Member_validation_session_response.dtd",
 	"title": "Membes validation session response",
 	"type": "object",
-	"title": "Member_validation_session_response",
 	"description": "For validating of a session. url: https://www.route4me.com/datafeed/session/validate_session.php",
 	"properties": {
 		"authenticated": {

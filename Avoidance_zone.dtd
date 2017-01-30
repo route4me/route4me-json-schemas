@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/Avoidance_zone.dtd",
-	"Name": "Avoidance_zone",
-	"Description": "Json schema for an Avoidance Zone clas, which is used for defining different type avoidance zones. For detailed usage see curl Avoidance Zones group",
+	"title": "Avoidance Zone",
+	"description": "Json schema for an Avoidance Zone clas, which is used for defining different type avoidance zones. For detailed usage see curl Avoidance Zones group",
 	"type": "object",
 	"properties": {
 		"api_key": {

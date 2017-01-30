@@ -3,7 +3,7 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/note_request.dtd",
 	"description": "request parameters for adding note object to a route or route destination. Endpoint - https://www.route4me.com/actions/addRouteNotes.php",
 	"type": "object",
-	"title": "note_request",
+	"title": "Note Request",
 	"properties": {
 		"api_key": {
 			"type": "string",

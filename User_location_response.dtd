@@ -3,7 +3,6 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/User_location_response.dtd",
 	"title": "User Location Response",
 	"type": "object",
-	"title": "User_location_response",
 	"description": "End point: https://www.route4me.com/api/track/view_user_locations.php",
 	"required": [
 		"api_key",

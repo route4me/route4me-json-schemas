@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/json-schemas/blob/master/Order.dtd",
-	"Name": "Order",
-	"Description": "Json schema for an Order class, which is used for keeping client order information at certain address. For usage details see curl examples in Order group",
+	"title": "Order",
+	"description": "Json schema for an Order class, which is used for keeping client order information at certain address. For usage details see curl examples in Order group",
 	"type": "object",
 	"properties": {
 		"api_key": {
