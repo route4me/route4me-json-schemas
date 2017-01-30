@@ -274,7 +274,7 @@
 		"abnormal_traffic_time_to_next_destination": {
 			"type": "integer",
 			"description": "Abnormal traffic time to next destination",
-			"title": "Abnormal traffic time to next destination",
+			"title": "Abnormal traffic time to next destination"
 		},
 		"uncongested_time_to_next_destination": {
 			"type": "integer",
