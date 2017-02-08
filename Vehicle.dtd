@@ -7,26 +7,22 @@
 	"properties": {
 		"vehicle_id": {
 			"type": "string",
-			"name": "vehicle_id",
 			"title": "Vehicle id",
 			"descrption": "A unique identifcation 32-char string of the vehicle"
 		},
 		"created_time": {
 			"type": "string",
 			"format": "date-time",
-			"name": "created_time",
 			"title": "Created time",
 			"descrption": "Created time of the record about vehicle"
 		},
 		"member_id": {
 			"type": "integer",
-			"name": "member_id",
 			"title": "Member id",
 			"descrption": "An unique identification number of the member"
 		},
 		"vehicle_alias": {
 			"type": "string",
-			"name": "vehicle_alias",
 			"title": "Vehicle alias",
 			"descrption": "Internal name of the vehicle"
 		},
@@ -35,7 +31,6 @@
 				"string",
 				"null"
 			],
-			"name": "vehicle_reg_state",
 			"title": "Vehicle registration state",
 			"descrption": "A state where vehicle was registered"
 		},
@@ -44,7 +39,6 @@
 				"string",
 				"null"
 			],
-			"name": "vehicle_reg_state_id",
 			"title": "Vehicle registration state ID",
 			"descrption": "An ID of the state, where vehicle was registered"
 		},
@@ -53,7 +47,6 @@
 				"string",
 				"null"
 			],
-			"name": "vehicle_reg_country",
 			"title": "Vehicle registration country",
 			"descrption": "A country where vehicle was registered"
 		},
@@ -62,7 +55,6 @@
 				"string",
 				"null"
 			],
-			"name": "vehicle_reg_country_id",
 			"title": "Vehicle registration country ID",
 			"descrption": "An ID of the country, where vehicle was registered"
 		},
@@ -71,7 +63,6 @@
 				"string",
 				"null"
 			],
-			"name": "vehicle_license_plate",
 			"title": "Vehicle license plate",
 			"descrption": "A license plate of the vehicle"
 		},
@@ -80,7 +71,6 @@
 				"string",
 				"null"
 			],
-			"name": "vehicle_make",
 			"title": "Vehicle make",
 			"descrption": "Vehicle maker brend"
 		},
@@ -89,7 +79,6 @@
 				"string",
 				"null"
 			],
-			"name": "vehicle_model_year",
 			"title": "Vehicle model year",
 			"descrption": "A year of the vehicle model"
 		},
@@ -98,7 +87,6 @@
 				"string",
 				"null"
 			],
-			"name": "vehicle_model",
 			"title": "Vehicle model",
 			"descrption": "A model of the vehicle"
 		},
@@ -107,7 +95,6 @@
 				"string",
 				"null"
 			],
-			"name": "vehicle_year_acquired",
 			"title": "Vehicle acquired year",
 			"descrption": "A year the vehicle was acquired"
 		},
@@ -116,7 +103,6 @@
 				"number",
 				"null"
 			],
-			"name": "vehicle_cost_new",
 			"title": "Vehicle cost new",
 			"descrption": "A cost f the new vehicle"
 		},
@@ -126,7 +112,6 @@
 				"null"
 			],
 			"format": "date-time",
-			"name": "license_start_date",
 			"title": "License start date",
 			"descrption": "A start date of the license"
 		},
@@ -136,7 +121,6 @@
 				"null"
 			],
 			"format": "date-time",
-			"name": "license_end_date",
 			"title": "License end date",
 			"descrption": "An end date of the license"
 		},
@@ -145,7 +129,6 @@
 				"string",
 				"null"
 			],
-			"name": "vehicle_axle_count",
 			"title": "Vehicle axle count",
 			"descrption": "A number of the vecile's axles"
 		},
@@ -154,7 +137,6 @@
 				"string",
 				"null"
 			],
-			"name": "mpg_city",
 			"title": "MPG city",
 			"descrption": "Miles per gallon in the city area"
 		},
@@ -163,7 +145,6 @@
 				"string",
 				"null"
 			],
-			"name": "mpg_highway",
 			"title": "MPG highway",
 			"descrption": "Miles per gallon in the highway area"
 		},
@@ -172,7 +153,6 @@
 				"string",
 				"null"
 			],
-			"name": "fuel_type",
 			"title": "Fuel type",
 			"descrption": "A type of the fuel"
 		},
@@ -181,7 +161,6 @@
 				"string",
 				"null"
 			],
-			"name": "height_inches",
 			"title": "Height inches",
 			"descrption": "A height of the vehicle in the inches."
 		},
@@ -190,7 +169,6 @@
 				"string",
 				"null"
 			],
-			"name": "weight_lb",
 			"title": "Weight lbs",
 			"descrption": "A weight of the vehicle in the pounds."
 		}

@@ -24,50 +24,42 @@
 				"xml"
 			],
 			"default": "xml",
-			"name": "format",
 			"title": "Format",
 			"descrption": "The expected response format"
 		},
 		"member_id": {
 			"type": "number",
-			"name": "member_id",
 			"title": "Member id",
 			"descrption": "The member id retrieved from the website that this instance of the application belongs to"
 		},
 		"route_id": {
 			"type": "string",
-			"name": "route_id",
 			"title": "Route id",
 			"descrption": "The route id that is currently open on the user's phone"
 		},
 		"tx_id": {
 			"type": "string",
-			"name": "tx_id",
 			"title": "tx id",
 			"descrption": "On the first request you do not need to provide a tx_id. On the second request you provide the tx_id which you got back from the first request. The tx_id is the unique group of points related to this specific route transaction"
 		},
 		"vehicle_id": {
 			"type": "number",
 			"default": 0,
-			"name": "vehicle_id",
 			"title": "Vehicle id",
 			"descrption": "Each vehicle added into the system will have a vehicle id if the user added a vehicle. If the user did not add the vehicle, then the vehicle id will be zero"
 		},
 		"course": {
 			"type": "number",
-			"name": "course",
 			"title": "Course",
 			"descrption": "The direction in degrees in which the vehicle is heading"
 		},
 		"speed": {
 			"type": "number",
-			"name": "speed",
 			"title": "Speed",
 			"descrption": "The speed with which the vehicle is moving"
 		},
 		"lat": {
 			"type": "number",
-			"name": "lat",
 			"title": "Latitude",
 			"minimum": -90,
 			"maximum": 90,
@@ -75,7 +67,6 @@
 		},
 		"lng": {
 			"type": "number",
-			"name": "lng",
 			"title": "Longitude",
 			"minimum": -180,
 			"maximum": 180,
@@ -83,7 +74,6 @@
 		},
 		"altitude": {
 			"type": "number",
-			"name": "altitude",
 			"title": "Altitude",
 			"descrption": "Altitude relative to sea level of the device being tracked"
 		},
@@ -94,26 +84,22 @@
 				"android_phone",
 				"android_tablet"
 			],
-			"name": "device_type",
 			"title": "Device type",
 			"descrption": "The device type submitting the data"
 		},
 		"device_guid": {
 			"type": "string",
-			"name": "device_guid",
 			"title": "Device id",
 			"descrption": "Device id"
 		},
 		"device_timestamp": {
 			"type": "string",
 			"format": "date-time",
-			"name": "device_timestamp",
 			"title": "Device timestamp",
 			"descrption": "The timestamp on the local (remote relative to the server) device"
 		},
 		"app_version": {
 			"type": "string",
-			"name": "app_version",
 			"title": "Application version",
 			"descrption": "The version of the app submitting the data"
 		}

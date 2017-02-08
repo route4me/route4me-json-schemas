@@ -3,48 +3,40 @@
 	"id": "https://github.com/route4me/json-schemas/blob/master/Members_authenticate_response.dtd",
 	"title": "Members Authenticate Response",
 	"type": "object",
-	"name": "Members_authenticate_response",
 	"description": "For members authentication. url: https://www.route4me.com/actions/authenticate.php",
 	"properties": {
 		"status": {
 			"type": "boolean",
-			"name": "status",
 			"title": "Status",
 			"descrption": "If true, authentication process was finished successfuly."
 		},
 		"geocoding_service": {
 			"type": "string",
-			"name": "geocoding_service",
 			"title": "Geocoding service",
 			"description": "Geocoding service"
 		},
 		"session_id": {
 			"type": "integer",
-			"name": "session_id",
 			"title": "Session ID",
 			"description": "Session ID"
 		},
 		"session_guid": {
 			"type": "string",
-			"name": "session_guid",
 			"title": "Session guid",
 			"description": "Session guid"
 		},
 		"member_id": {
 			"type": "integer",
-			"name": "member_id",
 			"title": "Member ID",
 			"description": "Member ID"
 		},
 		"api_key": {
 			"type": "string",
-			"name": "api_key",
 			"title": "API key",
 			"description": "API key of an user"
 		},
 		"tracking_ttl": {
 			"type": "integer",
-			"name": "tracking_ttl",
 			"title": "Tracking TTL",
 			"description": "Tracking TTL"
 		},
@@ -54,55 +46,46 @@
 				"poly",
 				"rect"
 			],
-			"name": "geofence_polygon_shape ",
 			"title": "Geofence polygon shape",
 			"descrption": "Geofence polygon shape. ENUM(circle, poly rect)."
 		},
 		"geofence_polygon_size": {
 			"type": "integer",
-			"name": "geofence_polygon_size",
 			"title": "Geofence polygon size",
 			"description": "Geofence polygon size"
 		},
 		"geofence_time_onsite_trigger_secs": {
 			"type": "integer",
-			"name": "geofence_time_onsite_trigger_secs",
 			"title": "Geofence time onsite trigger secs",
 			"description": "Geofence time onsite trigger ins seconds."
 		},
 		"geofence_minimum_trigger_speed": {
 			"type": "integer",
-			"name": "geofence_minimum_trigger_speed",
 			"title": "Geofence minimum trigger speed",
 			"description": "Geofence minimum trigger speed."
 		},
 		"is_subscription_past_due": {
 			"type": "boolean",
-			"name": "is_subscription_past_due",
 			"title": "Is subscription past due",
 			"descrption": "If true, subscription is past due."
 		},
 		"visited_departed_enabled": {
 			"type": "string",
-			"name": "visited_departed_enabled",
 			"title": "Visited departed enabled",
 			"description": "if equal to true, triggering of the visied and departed activities is enabled."
 		},
 		"long_press_enabled": {
 			"type": "string",
-			"name": "long_press_enabled",
 			"title": "Long press enabled",
 			"description": "if equal to true, long press is enabled."
 		},
 		"account_type_id": {
 			"type": "string",
-			"name": "account_type_id",
 			"title": "Account type ID",
 			"description": "if equal to true, long press is enabled."
 		},
 		"account_type_alias": {
 			"type": "string",
-			"name": "account_type_alias",
 			"title": "Account type alias",
 			"description": "Account type alias."
 		},
@@ -124,19 +107,16 @@
 		},
 		"max_stops_per_route": {
 			"type": "string",
-			"name": "max_stops_per_route",
 			"title": "Max stops per route",
 			"description": "Maximum stops per route."
 		},
 		"max_routes": {
 			"type": "string",
-			"name": "max_routes",
 			"title": "Max routes",
 			"description": "Maximum number of the routes."
 		},
 		"routes_planned": {
 			"type": "integer",
-			"name": "routes_planned",
 			"title": "Routes planned",
 			"description": "Number of the planned routes by an user."
 		},
@@ -145,7 +125,6 @@
 				"KM",
 				"MI"
 			],
-			"name": "preferred_units ",
 			"title": "Preferred units",
 			"descrption": "Preferred units. Enum(km,mi)."
 		},
@@ -154,37 +133,31 @@
 				"en",
 				"fr"
 			],
-			"name": "preferred_language ",
 			"title": "Preferred language",
 			"descrption": "Preferred language. Enum(en,fr)"
 		},
 		"HIDE_ROUTED_ADDRESSES": {
 			"type": "string",
-			"name": "HIDE_ROUTED_ADDRESSES",
 			"title": "Hide Routed Addresses",
 			"description": "If equal to true, routed addresses will be hided."
 		},
 		"HIDE_VISITED_ADDRESSES": {
 			"type": "string",
-			"name": "HIDE_VISITED_ADDRESSES",
 			"title": "Hide Visited Addresses",
 			"description": "If equal to true, visited addresses will be hided."
 		},
 		"HIDE_NONFUTURE_ROUTES": {
 			"type": "string",
-			"name": "HIDE_NONFUTURE_ROUTES",
 			"title": "Hide Nonfuture Addresses",
 			"description": "If equal to true, nonfuture addresses will be hided."
 		},
 		"READONLY_USER": {
 			"type": "string",
-			"name": "READONLY_USER",
 			"title": "Readonly User",
 			"description": "If equal to true, user can only read data."
 		},
 		"auto_logout_ts": {
 			"type": "integer",
-			"name": "auto_logout_ts",
 			"title": "Auto logout TS",
 			"description": "Time in seconds. If user is anictive during this period, he will be logouted."
 		}

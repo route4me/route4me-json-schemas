@@ -7,31 +7,26 @@
 	"properties": {
 		"api_key": {
 			"type": "string",
-			"name": "api_key",
 			"title": "API key",
 			"description": "User api key"
 		},
 		"territory_id": {
 			"type": "string",
-			"name": "territory_id",
 			"title": "Territory id",
 			"description": "32 character MD5 unique identifier"
 		},
 		"territory_name": {
 			"type": "string",
-			"name": "territory_name",
 			"title": "Territory name",
 			"description": "Territory name"
 		},
 		"territory_color": {
 			"type": "string",
-			"name": "territory_color",
 			"title": "Territory color",
 			"description": "Territory color"
 		},
 		"member_id": {
 			"type": "integer",
-			"name": "member_id",
 			"title": "Member ID",
 			"description": "Member ID"
 		},

@@ -7,38 +7,32 @@
 	"properties": {
 		"route_destination_id": {
 			"type": "integer",
-			"name": "route_destination_id",
 			"title": "Route Destination ID",
 			"description": "Internal unique address identifier"
 		},
 		"alias": {
 			"type": "string",
-			"name": "alias",
 			"title": "Address Alias",
 			"description": "Address Alias"
 		},
 		"member_id": {
 			"type": "integer",
-			"name": "member_id",
 			"title": "Member ID",
 			"description": "Member ID"
 		},
 		"address": {
 			"type": "string",
-			"name": "address_name",
 			"title": "Address Name",
 			"description": "The route Address Line 1"
 		},
 		"is_depot": {
 			"type": "boolean",
-			"name": "is_depot",
 			"title": "Is Depot",
 			"description": "This address is a depot",
 			"default": "false"
 		},
 		"lat": {
 			"type": "number",
-			"name": "lat",
 			"title": "Latitude",
 			"description": "Latitude",
 			"minimum": -90,
@@ -46,7 +40,6 @@
 		},
 		"lng": {
 			"type": "number",
-			"name": "lng",
 			"title": "Longitude",
 			"description": "Longitude",
 			"minimum": -180,
@@ -54,7 +47,6 @@
 		},
 		"curbside_lat": {
 			"type": "number",
-			"name": "curbside_lat",
 			"title": "Curbside Latitude",
 			"description": "Curbside latitude",
 			"minimum": -90,
@@ -62,7 +54,6 @@
 		},
 		"curbside_lng": {
 			"type": "number",
-			"name": "curbside_lng",
 			"title": "Curbside Longitude",
 			"description": "Curbside longitude",
 			"minimum": -180,
@@ -70,37 +61,31 @@
 		},
 		"priority": {
 			"type": "integer",
-			"name": "priority",
 			"title": "Priority",
 			"description": "0 is the highest priority; n has higher priority than n + 1"
 		},
 		"route_id": {
 			"type": "string",
-			"name": "route_id",
 			"title": "Route ID",
 			"description": "Parent route"
 		},
 		"optimization_problem_id": {
 			"type": "string",
-			"name": "optimization_problem_id",
 			"title": "Optimization Problem ID",
 			"description": "Optimization Problem ID"
 		},
 		"sequence_no": {
 			"type": "integer",
-			"name": "sequence_no",
 			"title": "Sequence No",
 			"description": "The sequence number for the address"
 		},
 		"geocoded": {
 			"type": "boolean",
-			"name": "geocoded",
 			"title": "Geocoded",
 			"description": "True means the 'address' field was successfully geocoded"
 		},
 		"preferred_geocoding": {
 			"type": "integer",
-			"name": "preferred_geocoding",
 			"title": "Preferred Geocoding",
 			"description": "Index of 'geocodings' array that the user has chosen"
 		},
@@ -109,13 +94,11 @@
 			"items": {
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/geocoding.dtd"
 			},
-			"name": "geocodings",
 			"title": "Geocodings ID"
 		},
 		"contact_id": {
 			"type": "integer",
 			"minimum": 0,
-			"name": "contact_id",
 			"title": "Contact ID",
 			"description": "Address book contact id (0 means not connected to the address book)"
 		},
@@ -127,20 +110,17 @@
 				"BREAK",
 				"MEETUP"
 			],
-			"name": "address_stop_type",
 			"title": "Address stop type",
 			"description": "The type of stop that this is (PICKUP, DELIVERY, BREAK, MEETUP)"
 		},
 		"is_visited": {
 			"type": "boolean",
-			"name": "is_visited",
 			"title": "Is Visited",
 			"description": "The driver pressed the 'Visited' button",
 			"default": "false"
 		},
 		"visited_lat": {
 			"type": "number",
-			"name": "visited_lat",
 			"title": "Visited Latitude",
 			"description": "Last known check in latitude",
 			"minimum": -90,
@@ -148,7 +128,6 @@
 		},
 		"visited_lng": {
 			"type": "number",
-			"name": "visited_lng",
 			"title": "Visited Longitude",
 			"description": "Last known check in longitude",
 			"minimum": -180,
@@ -156,13 +135,11 @@
 		},
 		"is_departed": {
 			"type": "boolean",
-			"name": "is_departed",
 			"title": "Is Departed",
 			"description": "The driver marked the 'Departed' button"
 		},
 		"departed_lat": {
 			"type": "number",
-			"name": "departed_lat",
 			"title": "Departed Latitude",
 			"description": "Last known departed latitude",
 			"minimum": -90,
@@ -171,129 +148,108 @@
 		"departed_lng": {
 			"type": "number",
 			"description": "Last known departed longitude",
-			"name": "departed_lng",
 			"title": "Departed Longitude",
 			"minimum": -180,
 			"maximum": 180
 		},
 		"group": {
 			"type": "string",
-			"name": "group",
 			"title": "Group",
 			"description": "Address group"
 		},
 		"customer_po": {
 			"type": "string",
-			"name": "customer_po",
 			"title": "Customer PO",
 			"description": "The customer purchase order for the address"
 		},
 		"invoice_no": {
 			"type": "string",
-			"name": "invoice_no",
 			"title": "Invoice No",
 			"description": "The invoice number for the address"
 		},
 		"reference_no": {
 			"type": "string",
-			"name": "reference_no",
 			"title": "Reference NO",
 			"description": "The reference number for the address"
 		},
 		"order_no": {
 			"type": "string",
-			"name": "order_no",
 			"title": "Order NO",
 			"description": "The order number for the address"
 		},
 		"order_id": {
 			"type": "integer",
-			"name": "order_id",
 			"title": "Order ID",
 			"description": "Parent order ID"
 		},
 		"weight": {
 			"type": "number",
-			"name": "weight",
 			"title": "Weight",
 			"description": "Weight"
 		},
 		"cost": {
 			"type": "number",
-			"name": "cost",
 			"title": "Cost",
 			"description": "The cost of the order for the address"
 		},
 		"revenue": {
 			"type": "number",
-			"name": "revenue",
 			"title": "Revenue",
 			"description": "The total revenue for the address"
 		},
 		"cube": {
 			"type": "number",
-			"name": "cube",
 			"title": "Cube",
 			"description": "The cubic volume of the cargo being delivered or picked up at the address"
 		},
 		"pieces": {
 			"type": "integer",
-			"name": "pieces",
 			"title": "Pieces",
 			"description": "Pieces"
 		},
 		"first_name": {
 			"type": "string",
-			"name": "first_name",
 			"title": "First name",
 			"description": "The first name of the receiving address"
 		},
 		"last_name": {
 			"type": "string",
-			"name": "last_name",
 			"title": "Last name",
 			"description": "The last name of the receiving address"
 		},
 		"email": {
 			"type": "string",
 			"format": "email",
-			"name": "email",
 			"title": "Email",
 			"description": "A valid e-mail address assigned to this stop"
 		},
 		"phone": {
 			"type": "string",
-			"name": "phone",
 			"title": "Phone",
 			"description": "Customer Phone"
 		},
 		"time_window_start": {
 			"type": "integer",
-			"name": "time_window_start",
 			"title": "Time Window Start",
 			"description": "Time Window Start in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start datebecause start time changes would shift time windows"
 		},
 		"time_window_end": {
 			"type": "integer",
-			"name": "time_window_end",
 			"title": "Time Window End",
 			"description": "Time Window End in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start datebecause start time changes would shift time windows"
 		},
 		"time_window_start_2": {
 			"type": "integer",
-			"name": "time_window_start_2",
 			"title": "Time Window Start 2",
 			"description": "See time_window_start"
 		},
 		"time_window_end_2": {
 			"type": "integer",
-			"name": "time_window_end_2",
 			"title": "Time Window End 2",
 			"description": "See time_window_end"
 		},
 		"time": {
 			"type": "integer",
-			"name": "time",
 			"title": "Time",
 			"description": "Service time (seconds)"
 		},
@@ -303,12 +259,10 @@
 				"type": "string"
 			},
 			"description": "Any unrecognized fields from the original CSV upload will be found here",
-			"name": "custom_fields",
 			"title": "Custom Fields"
 		},
 		"custom_fields_str_json": {
 			"type": "string",
-			"name": "custom_fields_str_json",
 			"title": "Custom fields JSON string",
 			"description": "JSON string representation of the custom fields"
 		},
@@ -317,13 +271,11 @@
 			"items": {
 				"type": "string"
 			},
-			"name": "custom_fields_config",
 			"title": "Custom fields configuration",
 			"description": "Configuration of the custom fields"
 		},
 		"custom_fields_config_str_json": {
 			"type": "string",
-			"name": "custom_fields_config_str_json",
 			"title": "Custom fields config JSON string",
 			"description": "JSON string representation of the custom fields configuration"
 		},
@@ -332,19 +284,16 @@
 			"items": {
 				"$ref": "https://github.com/route4me/json-schemas/blob/master/note.dtd"
 			},
-			"name": "notes",
 			"title": "Notes",
 			"description": "Notes"
 		},
 		"account_no": {
 			"type": "string",
-			"name": "account_no",
 			"title": "Account NO",
 			"description": "The account number for the address"
 		},
 		"tracking_number": {
 			"type": "string",
-			"name": "tracking_number",
 			"title": "Tracking Number",
 			"description": "Systemwide unique code, which permits end-users (recipients) to track the status of their order"
 		}

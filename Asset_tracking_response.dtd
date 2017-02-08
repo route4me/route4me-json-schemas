@@ -7,7 +7,6 @@
 	"properties": {
 		"tracking_number": {
 			"type": "string",
-			"name": "tracking_number",
 			"title": "Tracking Number",
 			"descrption": "The ID assigned to an asset by the system"
 		},
@@ -16,7 +15,6 @@
 			"items": {
 				"type": "object"
 			},
-			"name": "status_history",
 			"title": "Status History",
 			"descrption": "Status history"
 		},
@@ -27,7 +25,6 @@
 				"properties": {
 					"lat": {
 						"type": "number",
-						"name": "lat",
 						"minimum": -90,
 						"maximum": 90,
 						"title": "Latitude",
@@ -35,7 +32,6 @@
 					},
 					"lng": {
 						"type": "number",
-						"name": "lng",
 						"minimum": -180,
 						"maximum": 180,
 						"title": "Longitude",
@@ -43,7 +39,6 @@
 					},
 					"icon": {
 						"type": "string",
-						"name": "icon",
 						"title": "Icon",
 						"description": "Link to the icon"
 					}
@@ -52,7 +47,6 @@
 		},
 		"custom_data": {
 			"type": "object",
-			"name": "custom_data",
 			"title": "Custom Data",
 			"description": "Unclassified data. You can put here asset name too."
 		},
@@ -63,13 +57,11 @@
 				"properties": {
 					"from_unix_timestamp": {
 						"type": "integer",
-						"name": "from_unix_timestamp",
 						"title": "From Unix Timestamp",
 						"description": "Start of arrival time range in EPOCH"
 					},
 					"to_unix_timestamp": {
 						"type": "integer",
-						"name": "to_unix_timestamp",
 						"title": "To Unix Timestamp",
 						"description": "End of arrival time range in EPOCH"
 					}
@@ -78,7 +70,6 @@
 		},
 		"delivered": {
 			"type": "boolean",
-			"name": "delivered",
 			"title": "Delivered",
 			"description": "If true, the item was delivered to the location"
 		}

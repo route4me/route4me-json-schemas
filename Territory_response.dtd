@@ -7,25 +7,21 @@
 	"properties": {
 		"territory_id": {
 			"type": "string",
-			"name": "territory_id",
 			"title": "Territory id",
 			"description": "32 character MD5 unique identifier"
 		},
 		"member_id": {
 			"type": "integer",
-			"name": "member_id",
 			"title": "Member ID",
 			"description": "Member ID"
 		},
 		"territory_name": {
 			"type": "string",
-			"name": "territory_name",
 			"title": "Territory name",
 			"description": "Territory name"
 		},
 		"territory_color": {
 			"type": "string",
-			"name": "territory_color",
 			"title": "Territory color",
 			"description": "Territory color"
 		},
