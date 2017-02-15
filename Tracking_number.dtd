@@ -11,6 +11,24 @@
 			"title": "Tracking Number",
 			"description": "An unique internal ID of a tracking number object"
 		},
+		"large_logo_uri": {
+			"type": "string",
+			"name": "large_logo_uri",
+			"title": "Large logo URI",
+			"description": "A link to a large logo"
+		},
+		"mobile_logo_uri": {
+			"type": "string",
+			"name": "mobile_logo_uri",
+			"title": "Mobile logo URI",
+			"description": "A link to a mobile logo"
+		},
+		"map_color": {
+			"type": "string",
+			"name": "map_color",
+			"title": "Map color",
+			"description": "Map color"
+		},
 		"status_history": {
 			"type": "array",
 			"items": {
