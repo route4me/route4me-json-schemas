@@ -17,44 +17,37 @@
 	"properties": {
 		"strEmail": {
 			"type": "string",
-			"name": "strEmail",
 			"title": "Email",
 			"format": "email",
 			"descrption": "E-mail address of the user that was used for site registration"
 		},
 		"strPassword_1": {
 			"type": "string",
-			"name": "strPassword_1",
 			"title": "Password 1",
 			"description": "Password associated with this e-mail address"
 		},
 		"strPassword_2": {
 			"type": "string",
-			"name": "strPassword_2",
 			"title": "Password 2",
 			"descrption": "Password confirmation field"
 		},
 		"strFirstName": {
 			"type": "string",
-			"name": "strFirstName",
 			"title": "First name",
 			"descrption": "The first name of the user"
 		},
 		"strLastName": {
 			"type": "string",
-			"name": "strLastName",
 			"title": "Last name",
 			"descrption": "The last name of the user"
 		},
 		"strIndustry": {
 			"type": "string",
-			"name": "strIndustry",
 			"title": "Industry",
 			"descrption": "The industry of the user (dropdown of industries below)"
 		},
 		"strZIP": {
 			"type": "string",
-			"name": "strZIP",
 			"title": "Zip code",
 			"pattern": "^[0-9]{5,7}$",
 			"descrption": "The 5-7 digit ZIP code (minimum length of 5))"
@@ -64,13 +57,11 @@
 				0,
 				1
 			],
-			"name": "chkTerms",
 			"title": "Check terms",
 			"descrption": "If the user agreed to the terms of the site checkbox"
 		},
 		"device_id": {
 			"type": "string",
-			"name": "device_id",
 			"title": "Device id",
 			"descrption": "If a device ID is passed, the registration page assumes a temporary member associated with that device id exists. The registration page updates that member's information, sets an email address. After completion, the member is no longer temporary and the member_id is preserved."
 		},
@@ -82,7 +73,6 @@
 				"premium",
 				"personal"
 			],
-			"name": "plan",
 			"title": "Check terms",
 			"descrption": "The plan type that the user selected"
 		},
@@ -91,7 +81,6 @@
 				"xml",
 				"json"
 			],
-			"name": "format ",
 			"title": "Format",
 			"descrption": "ENUM(xml, json) Returns the new member id, authenticated session id and membership restrictions"
 		},
@@ -101,7 +90,6 @@
 				"BUSINESS_EMPLOYEE",
 				"INDIVIDUAL"
 			],
-			"name": "business_member_type",
 			"title": "Check terms",
 			"descrption": "The plan type that the user selected"
 		}

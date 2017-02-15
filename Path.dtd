@@ -8,7 +8,6 @@
 		"properties": {
 			"lat": {
 				"type": "number",
-				"name": "lat",
 				"minimum": -90,
 				"maximum": 90,
 				"title": "Latitude",
@@ -16,7 +15,6 @@
 			},
 			"lng": {
 				"type": "number",
-				"name": "lng",
 				"minimum": -180,
 				"maximum": 180,
 				"title": "Longitude",

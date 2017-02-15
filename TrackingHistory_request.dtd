@@ -11,13 +11,11 @@
 	"properties": {
 		"api_key": {
 			"type": "string",
-			"name": "api_key",
 			"title": "API key",
 			"description": "API key of en user"
 		},
 		"route_id": {
 			"type": "string",
-			"name": "route_id",
 			"title": "Route ID",
 			"description": "Route ID"
 		},
@@ -29,13 +27,11 @@
 				"csv",
 				"txt"
 			],
-			"name": "format",
 			"title": "Format",
 			"description": "Response format. Default - xml"
 		},
 		"last_position": {
 			"type": "boolean",
-			"name": "last_position",
 			"title": "Last Position",
 			"description": "If is true, only last position will be returned from a specified time range"
 		},
@@ -53,19 +49,16 @@
 				"all_time",
 				"custom"
 			],
-			"name": "time_period",
 			"title": "Time Period",
 			"description": "Time period"
 		},
 		"start_date": {
 			"type": "integer",
-			"name": "start_date",
 			"title": "Start Date",
 			"description": "if time_period=custom, start of the time period"
 		},
 		"end_date": {
 			"type": "integer",
-			"name": "end_date",
 			"title": "End Date",
 			"description": "if time_period=custom, end of the time period"
 		}

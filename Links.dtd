@@ -8,7 +8,6 @@
 			"type": [
 				"string"
 			],
-			"name": "route",
 			"title": "Route",
 			"descrption": "API URL Route GET call for the current route"
 		},
@@ -16,7 +15,6 @@
 			"type": [
 				"string"
 			],
-			"name": "view",
 			"title": "View",
 			"descrption": "A Link to the GET operation for the optimization problem"
 		},
@@ -24,7 +22,6 @@
 			"type": [
 				"string"
 			],
-			"name": "optimization_problem_id",
 			"title": "Optimization Problem (id)",
 			"descrption": "API URL optimization_problem_id GET call for the current route"
 		}

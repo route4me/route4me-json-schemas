@@ -7,19 +7,16 @@
 	"properties": {
 		"api_key": {
 			"type": "string",
-			"name": "api_key",
 			"title": "Api key",
 			"description": "A valid and active API key obtained from authentication or a user's API control panel.. Required if not defined X-R4M-API-Key"
 		},
 		"X-R4M-API-Key": {
 			"type": "string",
-			"name": "X-R4M-API-Key",
 			"title": "X Route4Me api key",
 			"description": "A valid and active API key obtained from authentication or a user's API control panel. Required if not defined api_key"
 		},
 		"remote_ip": {
 			"type": "string",
-			"name": "remote_ip",
 			"title": "Remote ip",
 			"description": "A decimal converted IP address of a user. If the IP is in the format x.x.x.x it will generate an error response. This is used for example when geolocating: the geolocation is sensitive to the user IP."
 		},
@@ -32,19 +29,16 @@
 				"android_tablet"
 			],
 			"default": "web",
-			"name": "device_type",
 			"title": "Device type",
 			"description": "The device type from which the request originates. This is sometimes used to log actions."
 		},
 		"device_id": {
 			"type": "string",
-			"name": "device_id",
 			"title": "Device id",
 			"description": "The device ID from which the request originates. This is used to ban devices"
 		},
 		"socket_id": {
 			"type": "string",
-			"name": "socket_id",
 			"title": "Socket id",
 			"description": "A socket id that will be included in pusher events"
 		}

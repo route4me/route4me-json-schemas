@@ -6,19 +6,16 @@
 	"properties": {
 		"api_key": {
 			"type": "string",
-			"name": "api_key",
 			"title": "API Key",
 			"description": "api_key"
 		},
 		"device_id": {
 			"type": "string",
-			"name": "device_id",
 			"title": "Device ID",
 			"description": "Device id"
 		},
 		"query": {
 			"type": "string",
-			"name": "query",
 			"title": "Query",
 			"description": "Query"
 		},
@@ -30,21 +27,18 @@
 				"notes",
 				"address_book"
 			],
-			"name": "type",
 			"title": "Search Type",
 			"description": "Type of search: 'routes' - Search in routes index, 'addresses' - Search in routes_data index, 'notes' - Search in notes index, 'address_book' - Search in address book index"
 		},
 		"limit": {
 			"type": "integer",
 			"default": 10,
-			"name": "limit",
 			"title": "Limit",
 			"description": "Limit of displayed found items"
 		},
 		"offset": {
 			"type": "integer",
 			"default": 0,
-			"name": "offset",
 			"title": "Offset",
 			"description": "Offest of start item index searched for"
 		}
