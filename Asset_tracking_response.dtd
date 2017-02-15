@@ -20,11 +20,6 @@
 			"title": "Mobile logo URI",
 			"description": "A link to a mobile logo"
 		},
-		"large_logo_alignment": {
-			"type": "string",
-			"title": "Large_logo_alignment",
-			"description": "Map color"
-		},
 		"map_color": {
 			"type": "string",
 			"title": "Map color",
@@ -185,6 +180,16 @@
 					}
 				}
 			}
+		},
+		"timestamp_geofence_visited": {
+			"type": "integer",
+			"title": "Timestamp geofence visited",
+			"description": "UNIX timestamp when a geofence visited event was triggered"
+		},
+		"timestamp_last_visited": {
+			"type": "integer",
+			"title": "Timestamp geofence visited",
+			"description": "UNIX timestamp of a last visited event"
 		}
 	}
 }
