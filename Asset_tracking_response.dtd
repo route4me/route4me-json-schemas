@@ -7,7 +7,6 @@
 	"properties": {
 		"tracking_number": {
 			"type": "string",
-			"name": "tracking_number",
 			"title": "Tracking Number",
 			"descrption": "The ID assigned to an asset by the system"
 		},
@@ -98,6 +97,7 @@
 		"status_history": {
 			"type": "array",
 			"items": {
+<<<<<<< HEAD
 				"type": "object",
 				"properties": {
 					"unix_timestamp": {
@@ -121,6 +121,12 @@
 					}
 				}
 			}
+=======
+				"type": "object"
+			},
+			"title": "Status History",
+			"descrption": "Status history"
+>>>>>>> origin/master
 		},
 		"locations": {
 			"type": "array",
@@ -129,7 +135,6 @@
 				"properties": {
 					"lat": {
 						"type": "number",
-						"name": "lat",
 						"minimum": -90,
 						"maximum": 90,
 						"title": "Latitude",
@@ -137,7 +142,6 @@
 					},
 					"lng": {
 						"type": "number",
-						"name": "lng",
 						"minimum": -180,
 						"maximum": 180,
 						"title": "Longitude",
@@ -145,7 +149,6 @@
 					},
 					"icon": {
 						"type": "string",
-						"name": "icon",
 						"title": "Icon",
 						"description": "Link to the icon"
 					},
@@ -184,11 +187,15 @@
 			}
 		},
 		"custom_data": {
+<<<<<<< HEAD
 			"type": "array",
 			"items": {
 				"type": "string"
 			},
 			"name": "custom_data",
+=======
+			"type": "object",
+>>>>>>> origin/master
 			"title": "Custom Data",
 			"description": "Unclasified data of a Tracking_number object. You can put here asset name too."
 		},
@@ -199,18 +206,24 @@
 				"properties": {
 					"from_unix_timestamp": {
 						"type": "integer",
-						"name": "from_unix_timestamp",
 						"title": "From Unix Timestamp",
 						"description": "Start of arrival time range in EPOCH"
 					},
 					"to_unix_timestamp": {
 						"type": "integer",
-						"name": "to_unix_timestamp",
 						"title": "To Unix Timestamp",
 						"description": "End of arrival time range in EPOCH"
 					}
 				}
 			}
+<<<<<<< HEAD
+=======
+		},
+		"delivered": {
+			"type": "boolean",
+			"title": "Delivered",
+			"description": "If true, the item was delivered to the location"
+>>>>>>> origin/master
 		}
 	}
 }
