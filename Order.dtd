@@ -34,15 +34,59 @@
 			"title": "Cached longitude",
 			"description": "Cached longitude"
 		},
+		"color": {
+			"type": "string",
+			"title": "Color",
+			"description": "Order icon color on a map"
+		},
+		"curbside_lat": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Curbside latitude",
+			"description": "Curbside latitude"
+		},
+		"curbside_lng": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Curbside longitude",
+			"description": "Curbside longitude"
+		},
+		"day_scheduled_for_YYMMDD": {
+			"type": "string",
+			"title": "Day scheduled",
+			"description": "Date order was scheduled for"
+		},
 		"address_alias": {
 			"type": "string",
 			"title": "Address alias",
 			"description": "Address alias"
 		},
-		"address_city": {
-			"type": "string",
-			"title": "Address city",
-			"description": "The city the address is located in"
+		"local_time_window_start": {
+			"type": "integer",
+			"title": "Local time window start",
+			"description": "When a time window was started."
+		},
+		"local_time_window_end": {
+			"type": "integer",
+			"title": "Local time window end",
+			"description": "When a time window was ended."
+		},
+		"local_time_window_start_2": {
+			"type": "integer",
+			"title": "Local time window start 2",
+			"description": "When second time window was started."
+		},
+		"local_time_window_end_2": {
+			"type": "integer",
+			"title": "Local time window end 2",
+			"description": "When second time window was ended."
+		},
+		"service_time": {
+			"type": "integer",
+			"title": "Service time",
+			"description": "Consumed service time at an address."
 		},
 		"EXT_FIELD_first_name": {
 			"type": "string",
