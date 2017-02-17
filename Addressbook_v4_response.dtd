@@ -116,14 +116,165 @@
 			"description": "Address custom data"
 		},
 		"schedule": {
-			"type": "object",
-			"title": "Schedule",
-			"description": "Schedule. Requires calrification"
+			"type": "array",
+			"title": "Schedules",
+			"description": "Array of the trip schedules to a location",
+			"items": {
+				"type": "object",
+				"title": "Schedule",
+				"description": "A trip schedule to a location",
+				"properties": {
+					"enabled": {
+						"type": "boolean",
+						"title": "Enabled",
+						"descripton": "If true, a location schedule is enabled during construction of a hybrid optimization"
+					},
+					"mode": {
+						"type": "string",
+						"enum": ["daily", "weekly", "monthly", "annually"],
+						"title":"Mode",
+						"Description": "Scheudle mode"
+					},
+					"daily": {
+						"type": "object",
+						"description": "Daily schedule if the mode 'daily' was chosen",
+						"title": "Daily",
+						"properties": {
+							"every": {
+								"type": "integer",
+								"title": "Every",
+								"description": "Repeat every next N days"
+							}
+						}
+					},
+					"weekly": {
+						"type": "object",
+						"title": "Weekly",
+						"description": "Weekly schedule if the mode 'weekly' was chosen",
+						"properties": {
+							"every": {
+								"type": "integer",
+								"title": "Every",
+								"description": "Repeat every week next N days"
+							},
+							"weekdays": {
+								"type": "array",
+								"title": "Weekdays",
+								"description": "Array of the weekdays",
+								"items": {
+									"type": "integer",
+									"title": "Weekday",
+									"description": "Weekday as a number"
+								}
+							}
+						}
+					},
+					"monthly": {
+						"type": "object",
+						"title": "Monthly",
+						"description": "Monthly schedule if the mode 'monthly' was chosen",
+						"properties": {
+							"every": {
+								"type": "integer",
+								"title": "Every",
+								"description": "Repeat every month next N days"
+							},
+							"mode": {
+								"type": "string",
+								"enum": ["dates", "nth"],
+								"title": "Mode",
+								"description": "Monthly schedule mode"
+							},
+							"dates": {
+								"type": "array",
+								"items": {
+									"type": "integer"
+								},
+								"title": "Dates",
+								"description": "Array of month days for monthly schedule if the mode 'dates' was chosen"
+							},
+							"nth": {
+								"type": "object",
+								"title": "NTH",
+								"description": "Monthly schedule option if the mode 'nth' was chosen",
+								"properties": {
+									"n": {
+										"type": "integer",
+										"enum": [1,2,3,4,5,-1],
+										"title": "N",
+										"description": "Which day of the time period, 1: 1st, 2: 2nd, 3: 3rd, 4: 4th, 5: 5th, -1: Last"
+									},
+									"what": {
+										"type": "integer",
+										"enum": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+										"title": "What",
+										"description": "What time. 1: Monday, 2: Tuesday, 3: Wednesday, 4: Thursday, 5: Friday, 6: Saturday, 7: Sunday, 8: Day, 9: Working Day, 10: Weekend"
+									}
+								}
+							}
+						}
+					},
+					"annually": {
+						"type": "object",
+						"title": "Annually",
+						"description": "Annually schedule if the mode 'annually' was chosen",
+						"properties": {
+							"every": {
+								"type": "integer",
+								"title": "Every",
+								"description": "Repeat every year next N months"
+							},
+							"use_nth": {
+								"type": "boolean",
+								"title": "Use NTH",
+								"description": "If true, use NTH mode"
+							},
+							"months": {
+								"type": "array",
+								"title": "Months",
+								"description": "Array of the months numbers",
+								"items": {
+									"type": "integer",
+									"description": "A month number in the year"
+								}
+							},
+							"nth": {
+								"type": "object",
+								"title": "NTH",
+								"description": "Annualy schedule option if 'use_nth' is true",
+								"properties": {
+									"n": {
+										"type": "integer",
+										"enum": [1,2,3,4,5,-1],
+										"title": "N",
+										"description": "Which day of the time period, 1: 1st, 2: 2nd, 3: 3rd, 4: 4th, 5: 5th, -1: Last"
+									},
+									"what": {
+										"type": "integer",
+										"enum": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+										"title": "What",
+										"description": "What time. 1: Monday, 2: Tuesday, 3: Wednesday, 4: Thursday, 5: Friday, 6: Saturday, 7: Sunday, 8: Day, 9: Working Day, 10: Weekend"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
 		},
 		"schedule_blacklist": {
-			"type": "string",
+			"type": "array",
 			"title": "Schedule blacklist",
-			"description": "Schedule blacklist"
+			"description": "Array of the dates, which should be excluded from a trip schedule to a location",
+			"items": {
+				"type": "array",
+				"description": "Comma-separated array of the dates",
+				"items": {
+					"type": "string",
+					"description": "A date in the string format. e.g. '2017-02-20'"
+				}
+			}
 		},
 		"in_route_count": {
 			"type": "integer",
