@@ -271,6 +271,11 @@
 				}
 			}
 		},
+		"service_time": {
+			"type": "integer",
+			"title": "Service time",
+			"description": "Consumed service time at an address."
+		},
 		"color": {
 			"type": "string",
 			"title": "Color",
