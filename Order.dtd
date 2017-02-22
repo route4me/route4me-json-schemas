@@ -115,6 +115,11 @@
 			},
 			"title": "Order custom data",
 			"description": "A custom data of the order"
+		},
+		"order_icon": {
+			"type": "string",
+			"title": "Order icon",
+			"description": "URL to an order icon file"
 		}
 	}
 }
