@@ -1,0 +1,87 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/blob/master/Telematics_vendor_response.dtd",
+	"title": "Telematics vendor",
+	"description": "Json schema for a Telematics vendor response object. For detailed usage see curl Telematics group",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string",
+			"title": "ID",
+			"description": "Vendor ID"
+		},
+		"name": {
+			"type": "string",
+			"title": "Name",
+			"description": "Vendor name"
+		},
+		"title": {
+			"type": "string",
+			"title": "Title",
+			"description": "Vendor title"
+		},
+		"slug": {
+			"type": "string",
+			"title": "Slug",
+			"description": "Slug"
+		},
+		"description": {
+			"type": "string",
+			"title": "description",
+			"description": "Description of a vendor"
+		},
+		"logo_url": {
+			"type": "string",
+			"title": "Logo URL",
+			"description": "URL to a vendor's logo"
+		},
+		"website_url": {
+			"type": "string",
+			"title": "Website URL",
+			"description": "Website URL of a vendor"
+		},
+		"api_docs_url": {
+			"type": "string",
+			"title": "API documentation URL",
+			"description": "URL to a vendor's API documentation."
+		},
+		"is_integrated": {
+			"type": "string",
+			"title": "Is integrated",
+			"description": "If equal to 1, the vendor is integrated in the Route4Me system."
+		},
+		"size": {
+			"type": "string",
+			"title": "Size",
+			"description": "Filter vendors by size. Accepted values: global, regional, local."
+		},
+		"features": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"title": "ID",
+						"description": "Feature ID"
+					},
+					"name": {
+						"type": "string",
+						"title": "Name",
+						"description": "Feature name"
+					},
+					"slug": {
+						"type": "string",
+						"title": "Slug",
+						"description": "Feature slug"
+					},
+					"feature_group": {
+						"type": "string",
+						"title": "Feature group",
+						"description": "Feature group"
+					}
+				}
+			}
+		}
+	}
+}
