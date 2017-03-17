@@ -30,6 +30,21 @@
 			"title": "Member Email",
 			"description": "Member email"
 		},
+		"member_picture":{
+			"type": "string",
+			"title": "Member Picture",
+			"description": "URL to a member picture"
+		},
+		"member_tracking_subheadline" : {
+			"type": "string",
+			"title": "Member Trtacking Subheadline",
+			"description": "Member trtacking subheadline"
+		},
+		"approved_for_execution": {
+			"type": "boolean",
+			"title": "Approved For Execution",
+			"description": "The route approved for execution"
+		},
 		"member_first_name": {
 			"type": "string",
 			"title": "Member First Name",
