@@ -1,0 +1,8 @@
+Territory Name,Address ID,Is Depot,group,Adsress alias,Address,Address 2,Member ID,First name,Last name,E-mail,Phone,City,State,Country ID,Zipcode,Latitude,Longitude,Curbside latitude,Curbside longitude,Schedule,Schedule blacklist,Time window start,Time window end,Time window start 2,Time window end 2,Service time,Timezone,Color,Address icon,Custom data
+,,TRUE,,,"3634 W Market St, Fairlawn, OH 44333",,,,,,,,,,,41.13576226,-81.62931383,,,,,,,,,,,,,
+,,,,,"512 Florida Pl, Barberton, OH 44203",,,,,,,,,,,41.00367151,-81.59846105,,,"[{""daily"":{""every"":1},""enabled"":true,""mode"":""daily""}]",,7:30,7:40,8:00,8:10,0:05,,,,"{""reciver"": ""David"", ""delivery point"": ""warehouse""}"
+,,,,,"512 Florida Pl, Barberton, OH 44203",,,,,,,,,,,41.00367151,-81.59846105,,,,"""2017-03-16"",""2017-03-18"",""2017-03-19""",8:30,8:40,8:50,9:00,0:02,,,,
+,,,,,"3495 Purdue St, Cuyahoga Falls, OH 44221",,,,,,,,,,,41.1629715,-81.47904968,,,,,9:00,9:15,9:30,9:45,0:05,,,,"{""reciver"": ""Nataly"", ""delivery point"": ""store enterance""}"
+,,,,,"1659 Hibbard Dr, Stow, OH 44224",,,,,,,,,,,41.19450599,-81.44335158,,,"[{""enabled"":true,""mode"":""weekly"",""weekly"":{""every"":1,""weekdays"":[4]}}]",,10:00,10:15,10:30,10:45,0:05,,,,
+,,,,,"2705 N River Rd, Stow, OH 44224",,,,,,,,,,,41.14524078,-81.4102478,,,,,11:00,11:15,11:30,11:45,0:05,,,,
+,,,,,"10159 Bissell Dr, Twinsburg, OH 44087",,,,,,,,,,,41.34004211,-81.4212265,,,,,12:00,12:15,12:30,12:45,0:05,,,,

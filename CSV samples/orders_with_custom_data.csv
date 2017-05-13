@@ -1,0 +1,5 @@
+order_id,Is Depot,Latitude,Longitude,Address Alias,Address,City,State,Zip Code,Phone,Schedule Date,Curbside latitude,Curbside longitude,Time window start,Time window end,Time window start 2,Time window end 2,Service time,First name,Last name,Email,Order color,Order icon,Custom data
+,TRUE,40.7191558,-74.0011966,,"273 Canal St, New York, NY 10013, USA",,,,(917) 338-1887,"""2017-05-25""",40.7191558,-74.0011966,,,,,,,,,,,
+,,40.709637,-74.011912,BK Restaurant #: 2446,"106 Liberty St, New York, NY 10006, USA",,,,(212) 227-7535,"""2017-05-25""",40.709637,-74.011912,"""07:00""","""07:05""",,,"""00:05""",,,,,,"{""place"": ""near door"", ""recipient"": ""Carol""}"
+,,40.71615,-74.00505,BK Restaurant #: 20333,"325 Broadway, New York, NY 10007, USA",,,,(212) 566-5132,"""2017-05-25""",40.71615,-74.00505,"""07:40""","""07:45""",,,"""00:05""",,,,,,"{""place"": ""at enterance"", ""recipient"": ""Sone""}"
+,,40.73073,-73.459283,BK Restaurant #: 17871,"106 Fulton St, Farmingdale, NY 11735, USA",,,,,"""2017-05-25""",40.73073,-73.459283,"""08:20""","""08:25""",,,"""00:05""",,,,,,"{""place"": ""in the store"", ""recipient"": ""Katy""}"
