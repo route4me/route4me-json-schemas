@@ -1,8 +1,12 @@
 Address ID,Is Depot,group,Adsress alias,Address,Member ID,First name,Last name,E-mail,Phone,Latitude,Longitude,Curbside latitude,Curbside longitude,Priority,Sequence #,Address stop type,Customer PO,Invoice NO,Reference NO,Order NO,Weight,Cost,Revenue,Cube,Pieces,Account NO,Time window start,Time window end,Time window start 2,Time window end 2,Service time,Custom data,Notes
-,TRUE,,,"3634 W Market St, Fairlawn, OH 44333",,,,,,41.13576226,-81.62931383,,,,,,,,,,,,,,,,,,,,,,
-,,,,"512 Florida Pl, Barberton, OH 44203",,,,,,41.00367151,-81.59846105,,,,,,,,,,,,,,,,7:30,7:40,8:00,8:10,0:05,,
-,,,,"512 Florida Pl, Barberton, OH 44203",,,,,,41.00367151,-81.59846105,,,,,,,,,,,,,,,,8:30,8:40,8:50,9:00,0:02,,Take invoice
-,,,,"3495 Purdue St, Cuyahoga Falls, OH 44221",,,,,,41.1629715,-81.47904968,,,,,,,,,,,,,,,,9:00,9:15,9:30,9:45,0:05,,
-,,,,"1659 Hibbard Dr, Stow, OH 44224",,,,,,41.19450599,-81.44335158,,,,,,,,,,,,,,,,10:00,10:15,10:30,10:45,0:05,,Check-in at arrival
-,,,,"2705 N River Rd, Stow, OH 44224",,,,,,41.14524078,-81.4102478,,,,,,,,,,,,,,,,11:00,11:15,11:30,11:45,0:05,,
-,,,,"10159 Bissell Dr, Twinsburg, OH 44087",,,,,,41.34004211,-81.4212265,,,,,,,,,,,,,,,,12:00,12:15,12:30,12:45,0:05,,
+,TRUE,,,"455 S 4th St, Louisville, KY 40202",,,,,,38.251698,-85.757308,,,,,,,,,,,,,,,,,,,,,,
+,FALSE,,,"1604 PARKRIDGE PKWY, Louisville, KY, 40214",,,,,,38.141598,-85.793846,,,,,,,,,,,,,,,,7:30,7:40,8:00,8:10,0:05,,
+,FALSE,,,"1407 MCCOY, Louisville, KY, 40215",,,,,,38.202496,-85.786514,,,,,,,,,,,,,,,,8:30,8:40,8:50,9:00,0:02,,Take invoice
+,FALSE,,,"4805 BELLEVUE AVE, Louisville, KY, 40215",,,,,,38.178844,-85.774864,,,,,,,,,,,,,,,,9:00,9:15,9:30,9:45,0:05,,
+,FALSE,,,"730 CECIL AVENUE, Louisville, KY, 40211",,,,,,38.248684,-85.821121,,,,,,,,,,,,,,,,10:00,10:15,10:30,10:45,0:05,,Check-in at arrival
+,FALSE,,,"650 SOUTH 29TH ST UNIT 315, Louisville, KY, 40211",,,,,,38.251923,-85.800034,,,,,,,,,,,,,,,,11:00,11:15,11:30,11:45,0:05,,
+,FALSE,,,"4629 HILLSIDE DRIVE, Louisville, KY, 40216",,,,,,38.176067,-85.824638,,,,,,,,,,,,,,,,12:00,12:15,12:30,12:45,0:05,,
+,FALSE,,,"4738 BELLEVUE AVE, Louisville, KY, 40215",,,,,,38.179806,-85.775558,,,,,,,,,,,,,,,,13:00,13:15,13:30,13:45,0:05,,
+,FALSE,,,"318 SO. 39TH STREET, Louisville, KY, 40212",,,,,,38.259335,-85.815094,,,,,,,,,,,,,,,,14:00,14:15,14:30,14:45,0:05,,
+,FALSE,,,"1324 BLUEGRASS AVE, Louisville, KY, 40215",,,,,,38.179253,-85.785118,,,,,,,,,,,,,,,,15:00,15:15,15:30,15:45,0:05,,
+,FALSE,,,"7305 ROYAL WOODS DR, Louisville, KY, 40214",,,,,,38.162472,-85.792854,,,,,,,,,,,,,,,,16:00,16:15,16:30,16:45,0:05,,
