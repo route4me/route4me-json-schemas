@@ -44,6 +44,26 @@
 			"title": "Last name",
 			"description": "The last name of the receiving party"
 		},
+		"local_time_window_start": {
+			"type": "integer",
+			"title": "Time Window Start",
+			"description": "Time Window Start in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start date because start time changes would shift time windows"
+		},
+		"local_time_window_end": {
+			"type": "integer",
+			"title": "Time Window End",
+			"description": "Time Window End in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start datebecause start time changes would shift time windows"
+		},
+		"local_time_window_start_2": {
+			"type": "integer",
+			"title": "Time Window Start 2",
+			"description": "See local_time_window_start"
+		},
+		"local_time_window_end_2": {
+			"type": "integer",
+			"title": "Time Window End 2",
+			"description": "See local_time_window_end"
+		},
 		"address_email": {
 			"type": "string",
 			"title": "Address email",
