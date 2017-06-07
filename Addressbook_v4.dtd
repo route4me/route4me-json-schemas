@@ -296,6 +296,11 @@
 			"title": "Service time",
 			"description": "Consumed service time at an address."
 		},
+		"local_timezone_string": {
+			"type": "string",
+			"title": "Local timezone string",
+			"description": "Local timezone string"
+		},
 		"color": {
 			"type": "string",
 			"title": "Color",
