@@ -80,12 +80,12 @@
 			"description": "Member timezone. HTTP method - POST."
 		},
 		"user_reg_country_id": {
-			"type": "string",
+			"type": "integer",
 			"title": "User Region Country ID",
 			"description": "Member country, Enum(COUNTRY_CODES). HTTP method - POST."
 		},
 		"user_reg_state_id": {
-			"type": "string",
+			"type": "integer",
 			"title": "User Region State ID",
 			"description": "Member state, Enum(COUNTRY_CODES). HTTP method - POST."
 		},
@@ -123,6 +123,11 @@
 			"type": "string",
 			"title": "Date of Birth",
 			"description": "Date of birth. HTTP method - POST."
+		},
+		"custom_data": {
+			"type": "string",
+			"title": "Custom data",
+			"description": "User's custom data (JSON string) - POST."
 		}
 	}
 }
