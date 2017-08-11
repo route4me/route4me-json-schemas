@@ -76,6 +76,11 @@
 			"title": "TrackingHistory",
 			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/TrackingHistory.dtd"},
 			"descrption": "A collection of device tracking data with coordinates, speed, and timestamps"
+		},
+		"total_addresses": {
+			"type": "integer",
+			"title": "Total Addresses",
+			"descrption": "Total addresses include in the optimization"
 		}
 	}
 }
