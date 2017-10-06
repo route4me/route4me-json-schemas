@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Telematics/Telematics_connection_error.dtd",
+	"title": "Telematics connection",
+	"description": "Parameters returned at failed telematics connection attempt. Endpoint - https://production-api-telematics.route4me.com/api/connections",
+	"type": "object",
+	"properties": {
+		
+		"code": {
+			"type": "integer",
+			"title": "Code",
+			"description": "Returned code"
+		},
+		"result": {
+			"type": "string",
+			"title": "Result",
+			"description": "Result description"
+		},
+		"messages": {
+			"type": "array",
+			"items": {"type": "string"},
+			"title": "Messages",
+			"description": "Array of the string messages"
+		}
+	}
+}
