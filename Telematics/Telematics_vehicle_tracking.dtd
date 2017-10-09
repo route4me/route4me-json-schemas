@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Telematics/Telematics_vehicle_tracking.dtd",
+	"title": "Telematics Vehicle Tracking",
+	"description": "Vehicle tracking parameters returned by the endpoint - https://production-api-telematics.route4me.com/api/info/vehicle{vehicle_id}/track",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"properties": {
+			"timestamp": {
+				"type": "integer",
+				"title": "Timestamp",
+				"description": "When GPS location was sent"
+			},
+			"latitude": {
+				"type": "number",
+				"title": "Latitude",
+				"description": "Vehicle location latitude"
+			},
+			"longitude": {
+				"type": "number",
+				"title": "Longitude",
+				"description": "Vehicle location longitude"
+			},
+			"speed": {
+				"type": "number",
+				"title": "Speed",
+				"description": "Vehicle movement speed"
+			}
+		}
+	}
+}
