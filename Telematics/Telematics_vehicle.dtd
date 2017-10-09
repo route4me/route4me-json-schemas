@@ -1,0 +1,69 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Telematics/Telematics_vehicle.dtd",
+	"title": "Telematics Vehicle",
+	"description": "Vehicle parameters returned by the endpoint - https://production-api-telematics.route4me.com/api/info/vehicles",
+	"type": "object",
+	"properties": {
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Member ID"
+		},
+		"vehicle_id": {
+			"type": "string",
+			"title": "Vehicle ID",
+			"description": "32-char vehicle ID"
+		},
+		"external_id": {
+			"type": "string",
+			"title": "External ID",
+			"description": "External ID"
+		},
+		"created_time": {
+			"type": "integer",
+			"title": "Created Time",
+			"description": "Created time in the EPOCH units (secs)"
+		},
+		"vehicle_alias": {
+			"type": "integer",
+			"title": "Vehicle Alias",
+			"description": "Vehicle alias (number)"
+		},
+		"vehicle_license_plate": {
+			"type": "string",
+			"title": "Vehicle License Plate",
+			"description": "Vehicle license plate"
+		},
+		"vehicle_make": {
+			"type": "string",
+			"title": "Vehicle Make",
+			"description": "Vehicle maker brand"
+		},
+		"vehicle_model_year": {
+			"type": "integer",
+			"title": "Vehicle Model Year",
+			"description": "The year vehicle model was released"
+		},
+		"latitude": {
+			"type": "number",
+			"title": "Latitude",
+			"description": "Latitude of the vehicle location"
+		},
+		"longitude": {
+			"type": "number",
+			"title": "Longitude",
+			"description": "Longitude of the vehicle location"
+		},
+		"last_moved_at": {
+			"type": "string",
+			"title": "Last Moved At",
+			"description": "When the vehicle last moved"
+		},
+		"last_position_received": {
+			"type": "string",
+			"title": "Last Position Received",
+			"description": "When the vehicle last position received"
+		}
+	}
+}
