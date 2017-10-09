@@ -1,26 +1,77 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Telematics/Telematics_connection_error.dtd",
-	"title": "Telematics connection",
-	"description": "Parameters returned at failed telematics connection attempt. Endpoint - https://production-api-telematics.route4me.com/api/connections",
+	"title": "Telematics connection_error",
+	"description": "Parameters returned at failed telematics connection attempt. Endpoint - https://production-api-telematics.route4me.com/api/errors",
 	"type": "object",
 	"properties": {
-		
-		"code": {
+		"id": {
 			"type": "integer",
-			"title": "Code",
-			"description": "Returned code"
+			"title": "ID",
+			"description": "Error ID"
 		},
-		"result": {
+		"user_id": {
+			"type": "integer",
+			"title": "User ID",
+			"description": "Telematics user ID"
+		},
+		"connection_id": {
+			"type": "integer",
+			"title": "Connection ID",
+			"description": "Telematics connection ID"
+		},
+		"type": {
 			"type": "string",
-			"title": "Result",
-			"description": "Result description"
+			"title": "Type",
+			"description": "Connection type"
 		},
-		"messages": {
-			"type": "array",
-			"items": {"type": "string"},
-			"title": "Messages",
-			"description": "Array of the string messages"
+		"input": {
+			"type": "string",
+			"title": "Input",
+			"description": "Input text"
+		},
+		"http_code": {
+			"type": "integer",
+			"title": "HTTP Code",
+			"description": "Returned HTTP code"
+		},
+		"request": {
+			"type": "string",
+			"title": "Request",
+			"description": "The request which was sent to the telematics API endpoint"
+		},
+		"response": {
+			"type": "string",
+			"title": "Response",
+			"description": "Received response from the telematics API endpoint"
+		},
+		"error": {
+			"type": "string",
+			"title": "Error",
+			"description": "Error text"
+		},
+		"is_error": {
+			"type": "integer",
+			"title": "Is Error",
+			"description": "If 1, is error"
+		},
+		"verbose_log": {
+			"type": "string",
+			"title": "Verbose Log",
+			"description": "Verbose log text"
+		},
+		"created_at": {
+			"type": "string",
+			"title": "Created At",
+			"description": "When the connection was created "
+		},
+		"updated_at": {
+			"type": "string",
+			"title": "Updated At",
+			"description": "When the connection was updated "
+		},
+		"connection": {
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Telematics/Telematics_connection_response.dtd"
 		}
 	}
 }
