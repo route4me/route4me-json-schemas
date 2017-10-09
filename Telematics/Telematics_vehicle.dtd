@@ -55,6 +55,333 @@
 			"title": "Longitude",
 			"description": "Longitude of the vehicle location"
 		},
+		"custom_data": {
+			"type": "object",
+			"properties": {
+				"auxWarningSpeed": {
+					"type": "array",
+					"itmes": {"type": "integer"},
+					"title": "Auxiliary Warning Speed",
+					"description": "Auxiliary warning speed"
+				},
+				"enableAuxWarning": {
+					"type": "array",
+					"itmes": {"type": "boolean"},
+					"title": "Enable Auxiliary Warning",
+					"description": "Enable auxiliary warning"
+				},
+				"enableControlExternalRelay": {
+					"type": "boolean",
+					"title": "Enable Control External Relay",
+					"description": "Enable control external relay"
+				},
+				"externalDeviceShutDownDelay": {
+					"type": "integer",
+					"title": "External Device Shutdown Delay",
+					"description": "External device shutdown delay"
+				},
+				"immobilizeArming": {
+					"type": "integer",
+					"title": "Immobilize Arming",
+					"description": "Immobilize arming"
+				},
+				"immobilizeUnit": {
+					"type": "boolean",
+					"title": "Immobilize Unit",
+					"description": "Immobilize unit"
+				},
+				"isAuxIgnTrigger": {
+					"type": "array",
+					"itmes": {"type": "boolean"},
+					"title": "Is Auxiliary Ignate Trigger",
+					"description": "Is auxiliary ignate trigger"
+				},
+				"isAuxInverted": {
+					"type": "array",
+					"itmes": {"type": "boolean"},
+					"title": "Is Auxiliary Inverted",
+					"description": "Is auxiliary inverted"
+				},
+				"accelerationWarningThreshold": {
+					"type": "integer",
+					"title": "Acceleration Warning Threshold",
+					"description": "Acceleration warning threshold"
+				},
+				"accelerometerThresholdWarningFactor": {
+					"type": "integer",
+					"title": "Accelerometer Threshold Warning Factor",
+					"description": "Accelerometer threshold warning factor"
+				},
+				"brakingWarningThreshold": {
+					"type": "integer",
+					"title": "Braking Warning Threshold",
+					"description": "Braking warning threshold"
+				},
+				"corneringWarningThreshold": {
+					"type": "integer",
+					"title": "Cornering Warning Threshold",
+					"description": "Cornering warning threshold"
+				},
+				"enableBeepOnDangerousDriving": {
+					"type": "boolean",
+					"title": "Enable Beep On Dangerous Driving",
+					"description": "Enable beep on dangerous driving"
+				},
+				"enableBeepOnRpm": {
+					"type": "boolean",
+					"title": "Enable Beep On Rpm",
+					"description": "Enable beep on RPM"
+				},
+				"engineHourOffset": {
+					"type": "integer",
+					"title": "Engine Hour Offset",
+					"description": "Engine hour offset"
+				},
+				"isActiveTrackingEnabled": {
+					"type": "boolean",
+					"title": "Is Active Tracking Enabled",
+					"description": "Is active tracking enabled"
+				},
+				"isDriverSeatbeltWarningOn": {
+					"type": "boolean",
+					"title": "Is Driver Seatbelt Warning On",
+					"description": "Is driver seatbelt warning on"
+				},
+				"isPassengerSeatbeltWarningOn": {
+					"type": "boolean",
+					"title": "Is Passenger Seatbelt Warning On",
+					"description": "Is passenger seatbelt warning on"
+				},
+				"isReverseDetectOn": {
+					"type": "boolean",
+					"title": "Is Reverse Detect On",
+					"description": "Is reverse detect on"
+				},
+				"odometerFactor": {
+					"type": "integer",
+					"title": "Odometer Factor",
+					"description": "Odometer factor"
+				},
+				"odometerOffset": {
+					"type": "integer",
+					"title": "Odometer Offset",
+					"description": "Odometer offset"
+				},
+				"rpmValue": {
+					"type": "integer",
+					"title": "RPM Value",
+					"description": "RPM value"
+				},
+				"seatbeltWarningSpeed": {
+					"type": "integer",
+					"title": "Seatbelt Warning Speed",
+					"description": "Seatbelt warning speed"
+				},
+				"activeFrom": {
+					"type": "string",
+					"title": "Active From",
+					"description": "When vehicle account was activated"
+				},
+				"activeTo": {
+					"type": "string",
+					"title": "Active To",
+					"description": "Vehicle account will active until this time"
+				},
+				"autoGroups": {
+					"type": "array",
+					"items": {"type": "string"}
+				},
+				"customParameters": {
+					"type": "array",
+					"items": {"type": "string"}
+				},
+				"disableBuzzer": {
+					"type": "boolean",
+					"title": "Disable Buzzer",
+					"description": "Disable buzzer"
+				},
+				"enableBeepOnIdle": {
+					"type": "boolean",
+					"title": "Enable Beep On Idle",
+					"description": "Enable beep on idle"
+				},
+				"enableMustReprogram": {
+					"type": "boolean",
+					"title": "Enable Must Reprogram",
+					"description": "Enable must reprogram"
+				},
+				"enableSpeedWarning": {
+					"type": "boolean",
+					"title": "Enable Speed Warning",
+					"description": "Enable speed warning"
+				},
+				"engineType": {
+					"type": "string",
+					"title": "Engine Type",
+					"description": "Engine type"
+				},
+				"engineVehicleIdentificationNumber": {
+					"type": "string",
+					"title": "Engine Vehicle Identification Number",
+					"description": "Engine vehicle identification number"
+				},
+				"ensureHotStart": {
+					"type": "boolean",
+					"title": "Ensure Hot Start",
+					"description": "Ensure hot start"
+				},
+				"gpsOffDelay": {
+					"type": "integer",
+					"title": "GPS Off Delay",
+					"description": "GPS Off delay"
+				},
+				"idleMinutes": {
+					"type": "integer",
+					"title": "Idle Minutes",
+					"description": "Idle minutes"
+				},
+				"isSpeedIndicator": {
+					"type": "boolean",
+					"title": "Is Speed Indicator",
+					"description": "Is speed indicator"
+				},
+				"licenseState": {
+					"type": "string",
+					"title": "License State",
+					"description": "License state"
+				},
+				"major": {
+					"type": "integer",
+					"title": "Major",
+					"description": "Major"
+				},
+				"minAccidentSpeed": {
+					"type": "integer",
+					"title": "Minimal Accident Speed",
+					"description": "Minimal accident speed"
+				},
+				"minor": {
+					"type": "integer",
+					"title": "Minor",
+					"description": "Minor"
+				},
+				"parameterVersion": {
+					"type": "integer",
+					"title": "Parameter Version",
+					"description": "Parameter version"
+				},
+				"pinDevice": {
+					"type": "boolean",
+					"title": "Pin Device",
+					"description": "Pin device"
+				},
+				"speedingOff": {
+					"type": "integer",
+					"title": "Speeding Off",
+					"description": "Speeding off limit"
+				},
+				"speedingOn": {
+					"type": "integer",
+					"title": "Speeding On",
+					"description": "Speeding on limit"
+				},
+				"goTalkLanguage": {
+					"type": "string",
+					"title": "Go Talk Language",
+					"description": "Go talk language"
+				},
+				"comment": {
+					"type": "string",
+					"title": "Comment",
+					"description": "Comment"
+				},
+				"groups": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"children": {
+								"type": "array",
+								"items": {"type": "string"}
+							},
+							"id": {
+								"type": "string",
+								"title": "ID",
+								"description": "Group ID"
+							}
+						}
+					}
+				},
+				"timeZoneId": {
+					"type": "string",
+					"title": "Time Zone Id",
+					"description": "Time zone id"
+				},
+				"deviceFlags": {
+					"type": "object",
+					"properties": {
+						"activeFeatures": {
+							"type": "array",
+							"items": {"type": "string"},
+							"title": "Active Features",
+							"description": "Active features"
+						},
+						"isActiveTrackingAllowed": {
+							"type": "boolean",
+							"title": "Is Active Tracking Allowed",
+							"description": "Is active tracking allowed"
+						},
+						"isEngineAllowed": {
+							"type": "boolean",
+							"title": "Is Engine Allowed",
+							"description": "Is engine allowed"
+						},
+						"isGarminAllowed": {
+							"type": "boolean",
+							"title": "Is Garmin Allowed",
+							"description": "Is garmin allowed"
+						},
+						"isHOSAllowed": {
+							"type": "boolean",
+							"title": "Is HOS Allowed",
+							"description": "Is HOS allowed"
+						},
+						"isIridiumAllowed": {
+							"type": "boolean",
+							"title": "Is Iridium Allowed",
+							"description": "Is Iridium allowed"
+						},
+						"isOdometerAllowed": {
+							"type": "boolean",
+							"title": "Is Odometer Allowed",
+							"description": "Is odometer allowed"
+						},
+						"isTripDetailAllowed": {
+							"type": "boolean",
+							"title": "Is Trip Detail Allowed",
+							"description": "Is trip detail allowed"
+						},
+						"isUIAllowed": {
+							"type": "boolean",
+							"title": "Is UI Allowed",
+							"description": "Is UI allowed"
+						},
+						"isVINAllowed": {
+							"type": "boolean",
+							"title": "Is VIN Allowed",
+							"description": "Is VIN allowed"
+						},
+						"ratePlans": {
+							"type": "array",
+							"items": {"type": "number"},
+							"description": "Rate plans"
+						}
+					},
+					"title": "Device Flags",
+					"description": "Device flags"
+				}
+			}
+		},
 		"last_moved_at": {
 			"type": "string",
 			"title": "Last Moved At",
