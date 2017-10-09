@@ -379,6 +379,46 @@
 					},
 					"title": "Device Flags",
 					"description": "Device flags"
+				},
+				"hardwareId": {
+					"type": "integer",
+					"title": "Hardware ID",
+					"description": "Hardware ID"
+				},
+				"ignoreDownloadsUntil": {
+					"type": "string",
+					"title": "Ignore Downloads Until",
+					"description": "Ignore downloads until specified date"
+				},
+				"maxSecondsBetweenLogs": {
+					"type": "integer",
+					"title": "Maximum Seconds Between Logs",
+					"description": "Maximum seconds between logs"
+				},
+				"productId": {
+					"type": "integer",
+					"title": "Product ID",
+					"description": "Product ID"
+				},
+				"serialNumber": {
+					"type": "string",
+					"title": "Serial Number",
+					"description": "Serial number"
+				},
+				"timeToDownload": {
+					"type": "string",
+					"title": "Time To Download",
+					"description": "Time to download"
+				},
+				"workTime": {
+					"type": "string",
+					"title": "Work Time",
+					"description": "Work time"
+				},
+				"devicePlans": {
+					"type": "array",
+					"items": {"type": "string"},
+					"description": "Device plans"
 				}
 			}
 		},
