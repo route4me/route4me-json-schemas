@@ -1,0 +1,78 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Telematics/Telematics_vendor.dtd",
+	"title": "Telematics Vendor",
+	"description": "Vendor's parameters returned by the endpoint - https://production-api-telematics.route4me.com/api/vendors",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "integer",
+			"title": "ID",
+			"description": "Vendor ID"
+		},
+		"is_enabled": {
+			"type": "integer",
+			"title": "Is Enabled",
+			"description": "If eaqual to 1, the vendor is enabled."
+		},
+		"is_readonly": {
+			"type": "integer",
+			"title": "Is Readonly",
+			"description": "If eaqual to 1, the vendor is readonly."
+		},
+		"name": {
+			"type": "string",
+			"title": "Name",
+			"description": "Vendor's name"
+		},
+		"created_at": {
+			"type": "string",
+			"title": "Created At",
+			"description": "When the vendor was created"
+		},
+		"updated_at": {
+			"type": "string",
+			"title": "Updated At",
+			"description": "When the vendor was updated"
+		},
+		"title": {
+			"type": "string",
+			"title": "Title",
+			"description": "Vendor's title"
+		},
+		"icon": {
+			"type": "string",
+			"title": "Icon",
+			"description": "the icon associated with the vendor"
+		},
+		"hint": {
+			"type": "string",
+			"title": "Hint",
+			"description": "Hint to the vendor"
+		},
+		"credentials": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string",
+						"enum": ["account_id", "username", "password"],
+						"title": "Name",
+						"description": "The credential's name of the telematics vendor"
+					},
+					"is_required": {
+						"type": "boolean",
+						"title": "Is Required",
+						"description": "If true, the credential is required"
+					},
+					"default": {
+						"type": "string",
+						"title": "Default",
+						"description": "Default value of the credential"
+					}
+				}
+			}
+		}
+	}
+}
