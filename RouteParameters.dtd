@@ -31,7 +31,7 @@
 		},
 		"route_time": {
 			"type": "integer",
-			"default": 0,
+			"default": 25200,
 			"title": "Route Time",
 			"description": "Time when the route starts (relative to route_date) (Seconds). UTC timezone as well"
 		},
