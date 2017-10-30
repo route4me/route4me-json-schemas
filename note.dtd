@@ -79,7 +79,7 @@
 		"device_type": {
 			"type": "string",
 			"title": "Device Type",
-			"description": "Device type ('web', 'phone', 'ipad', 'android phone', 'android tablet' etc)"
+			"description": "Device type ('web', 'iphone', 'ipad', 'android phone', 'android tablet' etc)"
 		}
 	},
 	"required": [
