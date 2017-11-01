@@ -23,7 +23,7 @@
 		},
 		"state": {
 			"type": "integer",
-			"enum": [1, 2, 3, 4, 5, 6 ],
+			"enum": [0, 1, 2, 3, 4, 5, 6 ],
 			"title": "State",
 			"description": "an optimization problem can be at one state at any given time (Initial = 1, MatrixProcessing = 2, Optimizing = 3, Optimized = 4, Error = 5, ComputingDirections = 6)"
 		},
