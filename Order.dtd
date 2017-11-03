@@ -20,6 +20,11 @@
 			"title": "Address 1",
 			"description": "address_1 field"
 		},
+		"address_2": {
+			"type": "string",
+			"title": "Address 2",
+			"description": "address_2 field"
+		},
 		"cached_lat": {
 			"type": "number",
 			"minimum": -90,
