@@ -80,6 +80,10 @@
 			"type": "string",
 			"title": "Device Type",
 			"description": "Device type ('web', 'iphone', 'ipad', 'android phone', 'android tablet' etc)"
+		},
+		"custom_types": {
+			"type": "array",
+			"items": { "$ref": "https://github.com/route4me/json-schemas/blob/master/note_custom_type.dtd" }
 		}
 	},
 	"required": [
