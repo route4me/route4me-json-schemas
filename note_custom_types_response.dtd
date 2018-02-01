@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/json-schemas/blob/master/note_custom_type_response.dtd",
+	"type": "object",
+	"title": "Note Custom Type (Response)",
+	"properties": {
+		"note_custom_type_id": {
+			"type": "integer",
+			"title": "Note Custom Type ID",
+			"description": "Note custom type ID"
+		},
+		"note_custom_type": {
+			"type": "string",
+			"title": "Note Custom Type",
+			"description": "Note custom type"
+		},
+		"root_owner_member_id": {
+			"type": "integer",
+			"title": "Route Owner Member ID",
+			"description": "Route owner member ID"
+		},
+		"note_custom_type_values": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"description": "The value of a note custom type"
+		}
+	}
+}
