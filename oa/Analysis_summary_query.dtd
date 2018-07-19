@@ -1,0 +1,75 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_summary_query.dtd",
+	"title": "Analysis",
+	"description": "Parameters for returning the detailed analysis summary by analysis route id from OA. Endpoint - https://api.route4me.com/api/v1/analysis/route/{analyzed_route_id}",
+	"required": ["analyzed_route_id","auth_token","x-auth-token","original_api_key","x-original-api-key"],
+	"type": "object",
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"title": "Api key",
+			"description": "Use API with API key without authorization. HTTP method - GET."
+		},
+		"analyzed_route_id": {
+			"type": "string",
+			"title": "Analyzed Route ID",
+			"description": "Analysis route id of the planned route - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original Api key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original Api key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - GET."
+		},
+		"from_ts": {
+			"type": "integer",
+			"title": "From ts",
+			"description": "Start period timestamp, unix timestamp in seconds - GET."
+		},
+		"show_detailed_routes_analysis": {
+			"type": "integer",
+			"title": "Show Detailed Routes Analysis",
+			"description": "Include detailed route analysis to report - GET."
+		},
+		"show_location_analysis_summary": {
+			"type": "integer",
+			"title": "Show Location Analysis Summary",
+			"description": "Include locations analysis summary to report - GET."
+		},
+		"show_business_summary": {
+			"type": "integer",
+			"title": "Show Business Summary",
+			"description": "Include business summary to report - GET."
+		},
+		"show_location_analysis": {
+			"type": "integer",
+			"title": "Show Location Analysis",
+			"description": "Include locations analysis to report- GET."
+		},
+		"show_savings": {
+			"type": "integer",
+			"title": "Show Savings",
+			"description": "Include savings to report- GET."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X Api key",
+			"description": "Use API with API key without authorization - GET."
+		}
+	}
+}
