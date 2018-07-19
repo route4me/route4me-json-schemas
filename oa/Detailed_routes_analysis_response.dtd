@@ -1,0 +1,134 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Detailed_routes_analysis_response.dtd",
+	"title": "Detailed Routes Analysis",
+	"description": "The response parameters of the detailed routes analysis. Used by different endpoints",
+	"type": "object",
+	"properties": {
+		"route_date": {
+			"type": "string",
+			"title": "Route Date",
+			"description": "Route Date"
+		},
+		"route_id": {
+			"type": "string",
+			"title": "Route ID",
+			"description": "Route ID"
+		},
+		"savings": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Savings.dtd",
+			"description": "Savings of the scenario"
+		},
+		"scenario_description": {
+			"type": "string",
+			"title": "Scenario Description",
+			"description": "Optimization scenario description"
+		},
+		"scenario_label": {
+			"type": "string",
+			"title": "Scenario Label",
+			"description": "Scenario label"
+		},
+		"scenario_name": {
+			"type": "string",
+			"title": "Scenario Name",
+			"description": "Scenario name"
+		},
+		"subtotal_at_fault_accident_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal At Fault Accident Costs",
+			"description": "Subtotal at fault accident costs"
+		},
+		"subtotal_at_fault_accident_count": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal At Fault Accident Coount",
+			"description": "Subtotal at fault accident count"
+		},
+		"subtotal_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Costs",
+			"description": "Subtotal of the costs"
+		},
+		"subtotal_distance": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Distance",
+			"description": "Subtotal of the distance"
+		},
+		"subtotal_drive_time": {
+			"type": "integer",
+			"title": "Subtotal Drive Time",
+			"description": "Subtotal of the driving time in EPOCH format"
+		},
+		"subtotal_emissions_ktonc02": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Emissions ktonc02",
+			"description": "Subtotal emissions ktonc02"
+		},
+		"subtotal_fuel": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Fuel",
+			"description": "Subtotal of the consumed fuel"
+		},
+		"subtotal_labor_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Labor Costs",
+			"description": "Subtotal of the labor costs"
+		},
+		"subtotal_labor_time": {
+			"type": "integer",
+			"title": "Subtotal Labor Time",
+			"description": "Subtotal of the labor time in EPOCH format"
+		},
+		"subtotal_operating_cost": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Operating Costs",
+			"description": "Subtotal operating costs"
+		},
+		"subtotal_pieces": {
+			"type": "integer",
+			"title": "Subtotal Pieces",
+			"description": "Subtotal of the cargo pieces"
+		},
+		"subtotal_revenue": {
+			"type": "integer",
+			"title": "Subtotal Revenue",
+			"description": "Subtotal of the revenue"
+		},
+		"subtotal_stop_cost": {
+			"type": "integer",
+			"title": "Subtotal Stop Cost",
+			"description": "Subtotal of the stop cost"
+		},
+		"subtotal_stops": {
+			"type": "integer",
+			"title": "Subtotal Stops",
+			"description": "Subtotal of the stops"
+		},
+		"subtotal_stops_per_hour": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Stops Per Hour",
+			"description": "Subtotal of the stops per hour"
+		},
+		"subtotal_summary_title": {
+			"type": "string",
+			"title": "Subtotal Summary Title",
+			"description": "Subtotal summary title"
+		},
+		"subtotal_vehicle_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Vehicle Costs",
+			"description": "Subtotal of the vehicle costs"
+		}
+	}
+}
