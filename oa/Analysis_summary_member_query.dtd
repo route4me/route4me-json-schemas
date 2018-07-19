@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_summary_member_query.dtd",
-	"title": "Analysis",
+	"title": "Detailed Analysis of the Member",
 	"description": "Parameters for returning detailed analysis summary for requested member. Endpoint - https://api.route4me.com/api/v1/analysis/summary",
 	"required": ["original_api_key","x-auth-token","x-original-api-key","member_id","auth_token"],
 	"type": "object",
