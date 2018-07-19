@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_comparison_download_query.dtd",
-	"title": "Analysis",
+	"title": "Routes Comparison Analysis Report",
 	"description": "Parameters for downloading routes comparison reports as csv or xls file. Endpoint - https://api.route4me.com/api/v1/analysis/routes_comparison/{analyzed_route_id}/download/report",
 	"required": ["api_key","analyzed_route_id","format"],
 	"type": "object",
