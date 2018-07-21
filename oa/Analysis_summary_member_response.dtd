@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Agregate_analysis_summary.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_summary_member_response.dtd",
 	"title": "Agregate Analysis Summary",
-	"description": "The agregate analysis summary. The endpoint: https://oa.route4me.com/api/v1/analysis/summary",
+	"description": "The responseJSON schema for the endpointhttps://oa.route4me.com/api/v1/analysis/summary",
 	"type": "object",
 	"properties": {
 		"detailed_routes_analysis": {
@@ -21,6 +21,16 @@
 					"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Optimization_scenario.dtd"
 				},
 				"title": "Array of the Optimization Scenario objects"
+		},
+		"assumptions": {
+			"type": "object",
+			$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Assumptions.dtd",
+			"title": "Assumptions for optimization"
+		},
+		"savings_summary": { 
+			"type": "object",
+			$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Savings_summary.dtd",
+			"title": "Savings Summary"
 		}
 	}
 }
