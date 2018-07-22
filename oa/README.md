@@ -22,3 +22,4 @@
 - [x] [Feed_all_activity_response.dtd](Feed_all_activity_response.dtd "Response. All OA actions in one feed. Endpoint: /feed/all")
     - [ ] [Activity_feed_event.dtd](Activity_feed_event.dtd "Sub-schema. Activity feed event")
     - [ ] [Metadata.dtd](Metadata.dtd "Sub-schema. Metadata")
+- [x] [Feed_activity_query.dtd](Feed_activity_query.dtd "Query. Get generall information about event by its id. Endpoint: /feed/event/{event_id}")
