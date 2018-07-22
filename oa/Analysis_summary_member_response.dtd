@@ -31,6 +31,11 @@
 			"type": "object",
 			$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Savings_summary.dtd",
 			"title": "Savings Summary"
+		},
+		"statistics": { 
+			"type": "object",
+			$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics.dtd",
+			"title": "Statistics"
 		}
 	}
 }
