@@ -20,3 +20,4 @@
 ## Feed : Activity feeds of OA service
 - [x] [Feed_all_activity_query.dtd](Feed_all_activity_query.dtd "Query. All OA actions in one feed. Endpoint: /feed/all")
 - [x] [Feed_all_activity_response.dtd](Feed_all_activity_response.dtd "Response. All OA actions in one feed. Endpoint: /feed/all")
+    - [ ] [Activity_feed_event.dtd](Activity_feed_event.dtd "Sub-schema. Activity feed event")
