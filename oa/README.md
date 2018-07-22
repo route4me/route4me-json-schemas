@@ -26,3 +26,4 @@
 - [x] [Feed_activity_response.dtd](Feed_activity_response.dtd "Response. Get generall information about event by its id. Endpoint: /feed/event/{event_id}")
     - [ ] [Metadata.dtd](Metadata.dtd "Sub-schema. Metadata")
     - [ ] [Activity_feed_event.dtd](Activity_feed_event.dtd "Sub-schema. Activity feed event")
+- [x] [Feed_activity_patch.dtd](Feed_activity_patch.dtd "Patch. Hide/unhide wrong events from the feed. Endpoint: /feed/event/{event_id}")
