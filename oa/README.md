@@ -18,7 +18,7 @@
 - [x] [Routes_comparison_download_query.dtd](Routes_comparison_download_query.dtd "Query. Download routes comparison reports as csv or xls file. Endpoint: /analysis/routes_comparison/{analyzed_route_id}/download/report")
 
 ## Feed : Activity feeds of OA service
-- [x] [Feed_all_activity_query.dtd](Feed_all_activity_query.dtd "Query. All OA actions in one feed. Endpoint: /feed/all") <font size="2">(See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_all_activity_response.bat))</font>
+- [x] [Feed_all_activity_query.dtd](Feed_all_activity_query.dtd "Query. All OA actions in one feed. Endpoint: /feed/all") >(See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_all_activity_response.bat))
 - [x] [Feed_all_activity_response.dtd](Feed_all_activity_response.dtd "Response. All OA actions in one feed. Endpoint: /feed/all") <font size="2">(See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_all_activity_RESPONSE.json))</font>
     - [ ] [Activity_feed_event.dtd](Activity_feed_event.dtd "Sub-schema. Array of the activity feed events")
     - [ ] [Metadata.dtd](Metadata.dtd "Sub-schema. Metadata")
