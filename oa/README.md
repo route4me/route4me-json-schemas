@@ -18,4 +18,5 @@
 - [x] [Routes_comparison_download_query.dtd](Routes_comparison_download_query.dtd "Query. Download routes comparison reports as csv or xls file. Endpoint: /analysis/routes_comparison/{analyzed_route_id}/download/report")
 
 ## Feed : Activity feeds of OA service
-- [x] [Feed_all_activity_query.dtd](Feed_all_activity_query.dtd " Query. All OA actions in one feed. Endpoint: /feed/all")
+- [x] [Feed_all_activity_query.dtd](Feed_all_activity_query.dtd "Query. All OA actions in one feed. Endpoint: /feed/all")
+- [x] [Feed_all_activity_response.dtd](Feed_all_activity_response.dtd "Response. All OA actions in one feed. Endpoint: /feed/all")
