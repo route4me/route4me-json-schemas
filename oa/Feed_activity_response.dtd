@@ -5,7 +5,7 @@
 	"description": "Response schema of getting generall information about event by its id. Endpoint - https://api.route4me.com/api/v1/feed/event/{event_id}",
 	"type": "object",
 	"properties": {
-	"metadata": {
+		"metadata": {
 			"type": "object",
 			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Activity_feed_event.dtd",
 			"title": "Metadata"
