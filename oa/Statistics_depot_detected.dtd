@@ -1,0 +1,75 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics_depot_detected.dtd",
+	"title": "Detected Depot Statistics",
+	"description": "Statistics for detected Depots. Endpoint - https://api.route4me.com/api/v1/statistics/depot/detected/count-grouped",
+	"required": ["trim_ts","from_ts"],
+	"type": "object",
+	"properties": {
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original Api key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"filter_value": {
+			"type": "string",
+			"title": "Filter Value",
+			"description": "The value of a filter - GET."
+		},
+		"group_period": {
+			"type": "string",
+			"title": "Group Period",
+			"description": "Grouping period, 1h by default - GET."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "Use API with API key without authorization - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"distinct": {
+			"type": "string",
+			"title": "Distinct",
+			"description": "Use distinct counter. Accepted values: [1/yes/true/0/no/false - GET."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X Api key",
+			"description": "Use API with API key without authorization - HEADER."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original Api key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"filter_name": {
+			"type": "string",
+			"title": "Filter Name",
+			"description": "The name of a filter parameter - GET."
+		},
+		"group_field": {
+			"type": "string",
+			"title": "Group Field",
+			"description": "Group by field, '' / 'member_id' / 'device_id' - GET."
+		},
+		"trim_ts": {
+			"type": "integer",
+			"title": "Trim ts",
+			"description": "End period timestamp"
+		},
+		"from_ts": {
+			"type": "integer",
+			"title": "From ts",
+			"description": "Start period timestamp"
+		}
+	}
+}
