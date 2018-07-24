@@ -28,3 +28,8 @@
     - [ ] [Activity_feed_event.dtd](Activity_feed_event.dtd "Sub-schema. Activity feed event")
 - [x] [Feed_activity_patch.dtd](Feed_activity_patch.dtd "Patch. Hide/unhide wrong events from the feed. Endpoint: /feed/event/{event_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_activity_event_hide.bat))
 - [x] [Feed_activity_patch_response.dtd](Feed_activity_patch_response.dtd "Response. Hide/unhide wrong events from the feed. Endpoint: /feed/event/{event_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_activity_event_hide_RESPONSE.json))
+
+## Vehicles Info: Vehicles info from telematics API
+- [x] [Vehicles_info_telematis_query.dtd](Vehicles_info_telematis_query.dtd "Query. Returns json with all vehicles from r4m_oa_vehicles table Deprecated. Endpoint: /vehicles_info/all") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Vehicles/Vehicles_info_from_telematics.bat))
+- [x] [Feed_activity_patch_response.dtd](Feed_activity_patch_response.dtd "Response. Hide/unhide wrong events from the feed. Endpoint: /feed/event/{event_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Vehicles/Vehicles_info_from_telematics_RESPONSE.json))
+    - [ ] [Vehicle_info_response.dtd](Vehicle_info_response.dtd "Sub-schema. Response info of a vehicle")
