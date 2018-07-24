@@ -38,3 +38,7 @@
 - [x] [Points_detect_stops.dtd](Points_detect_stops.dtd "POST. Detect stops from raw track. Endpoint: /points/detect-stops") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Points/Points_detect_stops.bat))
     - [ ] [Vehicle_trace.dtd](Vehicle_trace.dtd "JSON input payload. Vehicle trace")
 - [x] [Points_detect_stops_response.dtd](Points_detect_stops_response.dtd "Response. Detected stops. Endpoint: /points/detect-stops") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Points/Points_detect_stops_RESPONSE.json))
+
+## Statistics: Different metrics and statistics
+- [x] [Statistics_analysis_created.dtd](Statistics_analysis_created.dtd "Query. Statistics for created OA Analysis Sessions. Endpoint: /statistics/analysis-session/created/count-grouped") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Statistics/Statistics_analysis_created.bat))
+- [x] [Statistics_analysis_created_response.dtd](Statistics_analysis_created_response.dtd "Response. Statistics of the created analysis. Endpoint: /statistics/analysis-session/created/count-grouped") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Statistics/Statistics_analysis_created_RESPONSE.json))
