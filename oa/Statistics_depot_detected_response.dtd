@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics_depot_detected_response.dtd",
+	"title": "Response of Detected Depots Statistics",
+	"description": "Response JSON schema of the deected depots statistics. Endpoint - https://api.route4me.com/api/v1/statistics/depot/detected/count-grouped",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"time": {
+							"type": "string",
+							"title": "Time",
+							"description": "Time"
+						},
+						"counter": {
+							"type": "integer",
+							"title": "Counter",
+							"description": "Counter"
+						}
+					}
+					
+				}
+			]
+		}
+	}
+}
