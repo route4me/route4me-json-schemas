@@ -26,4 +26,5 @@
 - [x] [Feed_activity_response.dtd](Feed_activity_response.dtd "Response. Get generall information about event by its id. Endpoint: /feed/event/{event_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_activity_event_RESPONSE.json))
     - [ ] [Metadata.dtd](Metadata.dtd "Sub-schema. Metadata")
     - [ ] [Activity_feed_event.dtd](Activity_feed_event.dtd "Sub-schema. Activity feed event")
-- [x] [Feed_activity_patch.dtd](Feed_activity_patch.dtd "Patch. Hide/unhide wrong events from the feed. Endpoint: /feed/event/{event_id}")
+- [x] [Feed_activity_patch.dtd](Feed_activity_patch.dtd "Patch. Hide/unhide wrong events from the feed. Endpoint: /feed/event/{event_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_activity_event_hide.bat))
+- [x] [Feed_activity_patch_response.dtd](Feed_activity_patch_response.dtd "Response. Hide/unhide wrong events from the feed. Endpoint: /feed/event/{event_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_activity_event_hide_RESPONSE.json))
