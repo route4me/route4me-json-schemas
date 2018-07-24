@@ -35,3 +35,6 @@
     - [ ] [Vehicle_info_response.dtd](Vehicle_info_response.dtd "Sub-schema. Response info of a vehicle")
 
 ## Points:  Returns stops, depots and polygons
+- [x] [Points_detect_stops.dtd](Points_detect_stops.dtd "POST. Detect stops from raw track. Endpoint: /points/detect-stops") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Points/Points_detect_stops.bat))
+    - [ ] [Vehicle_trace.dtd](Vehicle_trace.dtd "JSON input payload. Vehicle trace")
+- [x] [Points_detect_stops_response.dtd](Points_detect_stops_response.dtd "Response. Detected stops. Endpoint: /points/detect-stops") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Points/Points_detect_stops_RESPONSE.json))
