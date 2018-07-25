@@ -59,3 +59,6 @@
 - [x] [User_admins_list.dtd](User_admins_list.dtd "Query. List of admins. Endpoint: /user/admins") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_admins_list.bat))
 - [x] [User_admins_list_response.dtd](User_admins_list_response.dtd "Response. List of admins. Endpoint: /user/admins") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_admins_list_RESPONSE.json))
     - [ ] [User_admin.dtd](User_admin.dtd "Subschema. User")
+- [x] [User_admin_create.dtd](User_admin_create.dtd "POST. Create a new admin. Endpoint: /user/admins") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_admin_create.bat))
+    - [ ] [User_admin_create_data.dtd](User_admin_create_data.dtd "Subschema. Payload")
+- [x] [User_admin_create_response.dtd](User_admin_create_response.dtd "Response. Create a new admin. Endpoint: /user/admins") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_admin_create_RESPONSE.json))
