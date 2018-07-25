@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics_route_created_response.dtd",
+	"title": "Response of Route Creating Statistics",
+	"description": "Response JSON schema for the created routes statistics. Endpoint - https://api.route4me.com/api/v1/statistics/route/created/count-grouped",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"time": {
+							"type": "string",
+							"title": "Time",
+							"description": "Time"
+						},
+						"counter": {
+							"type": "integer",
+							"title": "Counter",
+							"description": "Counter"
+						}
+					}
+					
+				}
+			]
+		}
+	}
+}
