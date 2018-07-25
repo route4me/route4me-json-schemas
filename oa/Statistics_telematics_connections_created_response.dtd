@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics_telematics_connections_created_response.dtd",
+	"title": "Response of Telematics Connections Created Statistics",
+	"description": "Statistics for created Telematic Connections. Endpoint - https://api.route4me.com/api/v1/statistics/telematic-connection/created/count-grouped",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"time": {
+							"type": "string",
+							"title": "Time",
+							"description": "Time"
+						},
+						"counter": {
+							"type": "integer",
+							"title": "Counter",
+							"description": "Counter"
+						}
+					}
+					
+				}
+			]
+		}
+	}
+}
