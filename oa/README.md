@@ -54,3 +54,8 @@
 - [x] [Statistics_stops_detected_response.dtd](Statistics_stops_detected_response.dtd "Response. Statistics for detected Stops. Endpoint: /statistics/stop/detected/count-grouped") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Statistics/Statistics_stops_detected_RESPONSE.json))
 - [x] [Statistics_telematics_connections_created.dtd](Statistics_telematics_connections_created.dtd "Query. Statistics for created Telematic Connections. Endpoint: /statistics/telematic-connection/created/count-grouped") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Statistics/Statistics_telematics_connections_created.bat))
 - [x] [Statistics_telematics_connections_created_response.dtd](Statistics_telematics_connections_created_response.dtd "Response. Statistics for created Telematic Connections. Endpoint: /statistics/telematic-connection/created/count-grouped") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Statistics/Statistics_telematics_connections_created_RESPONSE.json))
+
+## User : User roles, manipulations etc
+- [x] [User_admins_list.dtd](User_admins_list.dtd "Query. List of admins. Endpoint: /user/admins") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_admins_list.bat))
+- [x] [User_admins_list_response.dtd](User_admins_list_response.dtd "Response. List of admins. Endpoint: /user/admins") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_admins_list_RESPONSE.json))
+    - [ ] [User_admin.dtd](User_admin.dtd "Subschema. User")
