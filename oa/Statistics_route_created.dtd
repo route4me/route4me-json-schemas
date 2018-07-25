@@ -3,7 +3,7 @@
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics_route_created.dtd",
 	"title": "Route Created Statistics",
 	"description": Statistics for created Routes. Endpoint - https://api.route4me.com/api/v1/statistics/route/created/count-grouped",
-	"required": ["original_api_key","trim_ts","from_ts","auth_token"],
+	"required": ["trim_ts","from_ts","auth_token"],
 	"type": "object",
 	"properties": {
 		"original_api_key": {
