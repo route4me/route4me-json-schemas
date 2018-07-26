@@ -68,3 +68,7 @@
 - [x] [User_admin_info.dtd](User_admin_info.dtd "Query. Admin Info. Endpoint: /user/admins/{admin_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_admin_info.bat))
 - [x] [User_admin_info_response.dtd](User_admin_info_response.dtd "Response. Admin Info. Endpoint: /user/admins/{admin_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_active_admins_RESPONSE.json))
     - [ ] [User_admin.dtd](User_admin.dtd "Subschema. User")  
+- [x] [User_admin_deactivate.dtd](User_admin_deactivate.dtd "Query. Activate/Deactivate Admin. Endpoint:/user/admins/{admin_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_admin_deactivate.bat))
+    - [ ] [User_admin_deactivate_data.dtd](User_admin_deactivate_data.dtd "Subschema. Payload")  
+- [x] [User_admin_deactivate_response.dtd](User_admin_deactivate_response.dtd "Response. Activate/Deactivate Admin. Endpoint: /user/admins/{admin_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_admin_deactivate_RESPONSE.json))  
+   - [ ] [User_admin.dtd](User_admin.dtd "Subschema. User")
