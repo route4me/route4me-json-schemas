@@ -76,3 +76,6 @@
     - [ ] [User_admin_update_data.dtd](User_admin_update_data.dtd "Subschema. Payload")  
 - [x] [User_admin_update_response.dtd](User_admin_update_response.dtd "Response. Update Admin. Endpoint: /user/admins/{admin_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_admin_update_RESPONSE.json))  
    - [ ] [User_admin.dtd](User_admin.dtd "Subschema. User")  
+- [x] [User_all_affiliates.dtd](User_all_affiliates.dtd "Query. All Affiliates. Endpoint:/user/affiliates") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_all_affiliates.bat))  
+- [x] [User_all_affiliates_response.dtd](User_all_affiliates_response.dtd "Response. All Affiliates. Endpoint: /user/affiliates") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_all_affiliates_RESPONSE.json))  
+   - [ ] [User_admin.dtd](User_admin.dtd "Subschema. User")
