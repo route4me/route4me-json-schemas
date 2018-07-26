@@ -81,4 +81,7 @@
    - [ ] [User_admin.dtd](User_admin.dtd "Subschema. User")  
 - [x] [User_affiliate_create.dtd](User_affiliate_create.dtd "Query. Create new affiliate. Endpoint:/user/affiliates") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_affiliate_create.bat))  
     - [ ] [User_affiliate_create_data.dtd](User_affiliate_create_data.dtd "Subschema. Payload")
-- [x] [User_all_affiliates_response.dtd](User_all_affiliates_response.dtd "Response. Create new affiliate. Endpoint: /user/affiliates") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_affiliate_create_RESPONSE.json))
+- [x] [User_all_affiliates_response.dtd](User_all_affiliates_response.dtd "Response. Create new affiliate. Endpoint: /user/affiliates") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_affiliate_create_RESPONSE.json))  
+- [x] [User_active_affiliates.dtd](User_active_affiliates.dtd "Query. Active Affiliates. Endpoint:/user/affiliates/active") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_active_affiliates.bat))  
+- [x] [User_active_affiliates_response.dtd](User_active_affiliates_response.dtd "Response. Active Affiliates. Endpoint: /user/affiliates/active") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_active_affiliates_RESPONSE.json))  
+   - [ ] [User_admin.dtd](User_admin.dtd "Subschema. User")  
