@@ -32,7 +32,7 @@
 		},
 		"payload": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin_create_data.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_affiliate_create_data.dtd",
 			"description": "JSON payload for input"
 		},
 		"x-api-key": {
