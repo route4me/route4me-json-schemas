@@ -7,7 +7,7 @@
 	"properties": {
 		"is_active": {
 			"type": "boolean",
-			"title": "Company Name",
+			"title": "Is Active",
 			"description": "If is true, an admin will be activated"
 		}
 	}
