@@ -30,11 +30,6 @@
 			"title": "Website",
 			"description": "Website"
 		},
-		"email": {
-			"type": "string",
-			"title": "Email",
-			"description": "Email"
-		},
 		"phone_number": {
 			"type": "string",
 			"title": "Phone Number",
