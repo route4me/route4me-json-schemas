@@ -1,0 +1,17 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_active_affiliates_response.dtd",
+	"title": "Resposne Active Affiliates",
+	"description": "Response for getting of the activie affiliates. patch. Endpoint: https://api.route4me.com/api/v1/user/affiliates/active",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin.dtd"
+			},
+			"title": "Users List",
+			"description": "Array of the objects User_admin"
+		}
+	}
+}
