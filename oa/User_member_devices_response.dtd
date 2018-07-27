@@ -12,6 +12,16 @@
 			},
 			"title": "Devices List",
 			"description": "Array of the objects User_vehicle_info"
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"total": {
+					"type": "integer",
+					"title": "Total",
+					"description": "Total number of the devices"
+				}
+			}
 		}
 	}
 }
