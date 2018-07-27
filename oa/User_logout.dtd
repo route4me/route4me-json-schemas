@@ -1,0 +1,7 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_logout.dtd",
+	"title": "User Logout",
+	"description": "Logout user from the system. Without properties. Endpoint - https://api.route4me.com/api/v1/user/logout",
+	"type": "object"
+}
