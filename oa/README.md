@@ -101,4 +101,4 @@
 - [x] [User_login_response.dtd](User_login_response.dtd "Response. Login to the System. Endpoint: /user/login") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_login_RESPONSE.json))  
 
 - [x] [User_logout.dtd](User_logout.dtd "Get. Logout from the System. Endpoint: /user/logout") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_logout.bat))  
-- [x] [User_login_response.dtd](User_login_response.dtd "Response. Logout from the System. Endpoint: /user/logout") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_logout_RESPONSE.json))  
+- [x] [User_logout_response.dtd](User_logout_response.dtd "Response. Logout from the System. Endpoint: /user/logout") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_logout_RESPONSE.json))  
