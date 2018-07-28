@@ -103,4 +103,7 @@
 - [x] [User_logout_response.dtd](User_logout_response.dtd "Response. Logout from the System. Endpoint: /user/logout") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_logout_RESPONSE.json))  
 - [x] [User_member_devices.dtd](User_member_devices.dtd "Get. Member's Devices. Endpoint: /user/members/devices") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_member_devices.bat))  
 - [x] [User_member_devices_response.dtd](User_member_devices_response.dtd "Response. Member's Devices. Endpoint: /user/members/devices") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_member_devices_RESPONSE.json))
+    - [ ] [User_vehicle_info.dtd](User_vehicle_info.dtd "Subschema. User Vehicle")  
+- [x] [User_member_device.dtd](User_member_device.dtd "Get. Member's Device. Endpoint: /user/members/devices") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_member_device.bat))  
+- [x] [User_member_devices_response.dtd](User_member_devices_response.dtd "Response. Member's Device. Endpoint: /user/members/devices") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_member_device_RESPONSE.json))
     - [ ] [User_vehicle_info.dtd](User_vehicle_info.dtd "Subschema. User Vehicle")
