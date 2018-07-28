@@ -1,0 +1,49 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_member_device_stop.dtd",
+	"title": "Member's Device",
+	"description": "Returns json with device by its id (vehicle_id param). Endpoint - https://api.route4me.com/api/v1/user/members/devices/{device_id}/stops/{stop_timestamp}",
+	"type": "object",
+	"properties": {
+		"device_id": {
+			"type": "string",
+			"title": "Device ID",
+			"description": "Device with given id only will be returned - PATH."
+		},
+		"stop_timestamp": {
+			"type": "string",
+			"title": "Stop Timestamp",
+			"description": "Stop will be return for this device - PATH."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original Api Key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original Api key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "Use API with API key without authorization - GET."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X Api key",
+			"description": "Use API with API key without authorization - HEADER."
+		}
+	}
+}
