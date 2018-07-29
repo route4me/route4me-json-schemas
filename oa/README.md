@@ -114,7 +114,9 @@
 - [x] [User_member_device_track.dtd](User_member_device_track.dtd "Get. Member's device track. Endpoint: /user/members/devices/{device_id}/track") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_member_device_track.bat))  
 - [x] [User_member_device_track_response.dtd](User_member_device_track_response.dtd "Response. Member's device track. Endpoint: /user/members/devices/{device_id}/track") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_member_device_track_RESPONSE.json))
     - [ ] [Track_point.dtd](Track_point.dtd "Subschema. Track point")  
-
 - [x] [User_member_devices.dtd](User_member_devices.dtd "Get. Member's devices. Endpoint: /user/members/{members_id}/devices") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_member_devices.bat))  
 - [x] [User_member_devices_response.dtd](User_member_devices_response.dtd "Response. Member's devices. Endpoint: /user/members/{members_id}/devices") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_member_devices_RESPONSE.json))
-    - [ ] [User_vehicle_info.dtd](User_vehicle_info.dtd "Subschema. User Vehicle")
+    - [ ] [User_vehicle_info.dtd](User_vehicle_info.dtd "Subschema. User Vehicle")  
+- [x] [User_participant_create.dtd](User_participant_create.dtd "Query. Create new participant. Endpoint:/user/participants") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participant_create.bat))  
+    - [ ] [User_participant_create_data.dtd](User_participant_create_data.dtd "Subschema. Payload")
+- [x] [User_participant_create_response.dtd](User_participant_create_response.dtd "Response. Create new participant. Endpoint: /user/participants") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participant_create_RESPONSE.json))  
