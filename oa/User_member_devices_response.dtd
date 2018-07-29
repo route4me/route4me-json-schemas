@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_member_devices_response.dtd",
+	"title": "Member Devices Resposne",
+	"description": "Response for getting device by members_id param. Get. Endpoint: https://api.route4me.com/api/v1/user/members/{members_id}/devices",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_vehicle_info.dtd"
+			},
+			"title": "Devices List",
+			"description": "Array of the objects User_vehicle_info"
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"total": {
+					"type": "integer",
+					"title": "Total",
+					"description": "Total number of the devices"
+				}
+			}
+		}
+	}
+}
