@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_member_devices.dtd",
-	"title": "Member's Devices",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_members_devices.dtd",
+	"title": "Members Devices",
 	"description": "Returns json with all devices for current user. Endpoint - https://api.route4me.com/api/v1/user/members/devices",
 	"type": "object",
 	"properties": {
