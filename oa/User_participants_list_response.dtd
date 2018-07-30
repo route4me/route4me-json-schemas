@@ -5,6 +5,16 @@
 	"description": "Response for getting of the participants list. patch. Endpoint: https://api.route4me.com/api/v1/user/participants/plain",
 	"type": "object",
 	"properties": {
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"recordsTotal": {
+					"type": "integer",
+					"title": "Records Total",
+					"description": "Total number of the returned records"
+				}
+			}
+		},
 		"data": {
 			"type": "array",
 			"items": {
