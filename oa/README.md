@@ -131,4 +131,7 @@
     - [ ] [User_participant.dtd](User_participant.dtd "Subschema. User Participant")  
 - [x] [User_participant_register.dtd](User_participant_register.dtd "Post. Register new participant. Endpoint: /user/participants/register") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participant_register.bat))  
     - [ ] [User_participant_register_data.dtd](User_participant_register_data.dtd "Subschema. Payload")
-- [x] [User_participant_register_response.dtd](User_participant_register_response.dtd "Response. Register new participant. Endpoint: /user/participants/register") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participant_register_RESPONSE.json))
+- [x] [User_participant_register_response.dtd](User_participant_register_response.dtd "Response. Register new participant. Endpoint: /user/participants/register") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participant_register_RESPONSE.json))  
+- [x] [User_participant_get.dtd](User_participant_get.dtd "Get. Get Participant. Endpoint: /user/participants/{participant_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participant_get.bat))  
+- [x] [User_participant_get_response.dtd](User_participant_get_response.dtd "Response. Get Participant. Endpoint: /user/participants/{participant_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participant_get_RESPONSE.json))
+    - [ ] [User_participant.dtd](User_participant.dtd "Subschema. User Participant")  
