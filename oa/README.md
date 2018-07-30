@@ -123,3 +123,6 @@
 - [x] [User_non_active_participants.dtd](User_non_active_participants.dtd "Get. Non-active Participants. Endpoint: /user/participants/non-active") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_non_active_participants.bat))  
 - [x] [User_non_active_participants_response.dtd](User_non_active_participants_response.dtd "Response. Non-active Participants. Endpoint: /user/participants/non-active") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_non_active_participants_RESPONSE.json))
     - [ ] [User_participant.dtd](User_participant.dtd "Subschema. User Participant")  
+- [x] [User_participants_list.dtd](User_participants_list.dtd "Get. Get Participants. Endpoint: /user/participants/plain") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participants_list.bat))  
+- [x] [User_participants_list_response.dtd](User_participants_list_response.dtd "Response. Get Participants. Endpoint: /user/participants/plain") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participants_list_RESPONSE.json))
+    - [ ] [User_participant.dtd](User_participant.dtd "Subschema. User Participant")  
