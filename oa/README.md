@@ -128,4 +128,7 @@
     - [ ] [User_participant.dtd](User_participant.dtd "Subschema. User Participant")  
 - [x] [User_participants_draw.dtd](User_participants_draw.dtd "Post. Assign draw to Participants. Endpoint: /user/participants/plain") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participants_draw.bat))  
 - [x] [User_participants_draw_response.dtd](User_participants_draw_response.dtd "Response. Assign draw to Participants. Endpoint: /user/participants/plain") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participants_draw_RESPONSE.json))
-  - [ ] [User_participant.dtd](User_participant.dtd "Subschema. User Participant")  
+    - [ ] [User_participant.dtd](User_participant.dtd "Subschema. User Participant")  
+- [x] [User_participant_register.dtd](User_participant_register.dtd "Post. Register new participant. Endpoint: /user/participants/register") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participant_register.bat))  
+    - [ ] [User_participant_register_data.dtd](User_participant_register_data.dtd "Subschema. Payload")
+- [x] [User_participant_register_response.dtd](User_participant_register_response.dtd "Response. Register new participant. Endpoint: /user/participants/register") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participant_register_RESPONSE.json))
