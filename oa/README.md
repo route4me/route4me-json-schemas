@@ -127,5 +127,5 @@
 - [x] [User_participants_list_response.dtd](User_participants_list_response.dtd "Response. Get Participants. Endpoint: /user/participants/plain") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participants_list_RESPONSE.json))
     - [ ] [User_participant.dtd](User_participant.dtd "Subschema. User Participant")  
 - [x] [User_participants_draw.dtd](User_participants_draw.dtd "Post. Assign draw to Participants. Endpoint: /user/participants/plain") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participants_draw.bat))  
-- [x] [User_participants_list_response.dtd](User_participants_list_response.dtd "Response. Assign draw to Participants. Endpoint: /user/participants/plain") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participants_draw_RESPONSE.json))
+- [x] [User_participants_draw_response.dtd](User_participants_draw_response.dtd "Response. Assign draw to Participants. Endpoint: /user/participants/plain") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participants_draw_RESPONSE.json))
   - [ ] [User_participant.dtd](User_participant.dtd "Subschema. User Participant")  
