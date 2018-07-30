@@ -1,0 +1,44 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/UUser_participant_get.dtd",
+	"title": "Get Participant",
+	"description": "Returns participant by sending participant_is. Endpoint - https://api.route4me.com/api/v1/user/participants/{participant_id}",
+	"type": "object",
+	"properties": {
+		"participant_id": {
+			"type": "string",
+			"title": "Participant ID",
+			"description": "User's id - PATH."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original Api key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original Api key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "Use API with API key without authorization - GET."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X Api key",
+			"description": "Use API with API key without authorization - HEADER."
+		}
+	}
+}
