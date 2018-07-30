@@ -1,0 +1,156 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_register_response.dtd",
+	"title": "Participant Register Response",
+	"description": "Response JSON schema for the a new participant registering in the system. Endpoint: https://api.route4me.com/api/v1/user/participants/register",
+	"type": "object",
+	"properties": {
+		"data": {
+			"original_r4m_api_key": {
+				"type": "string",
+				"title": "Original Route4Me API Key",
+				"description": "Original Route4Me API Key"
+			},
+			"email": {
+				"type": "string",
+				"title": "Email",
+				"description": "Email"
+			},
+			"vendor_company_name": {
+				"type": "string",
+				"title": "Vendor Company Name",
+				"description": "Vendor company name"
+			},
+			"locale": {
+				"type": "string",
+				"title": "Locale",
+				"description": "Locale code ('en', 'fr', etc)"
+			},
+			"timezone": {
+				"type": "string",
+				"title": "Timezone",
+				"description": "Timezone (e.g. 'UTC')"
+			},
+			"affiliate_user_id": {
+				"type": "string",
+				"title": "Affiliate User ID",
+				"description": "Affiliate user ID"
+			},
+			"api_key": {
+				"type": "object",
+				"properties": {
+					"creator_id": {
+						"type": "string",
+						"title": "Creator ID",
+						"description": "Unique 32-char ID of the API key creator"
+					},
+					"private": {
+						"type": "string",
+						"title": "Private",
+						"description": "Private password"
+					},
+					"public": {
+						"type": "string",
+						"title": "Public",
+						"description": "Public password"
+					},
+					"ttl": {
+						"type": "integer",
+						"title": "TTL",
+						"description": "TTL timeout"
+					},
+					"owner_id": {
+						"type": "string",
+						"title": "Owner ID",
+						"description": "Unique 32-char ID of the API key owner"
+					},
+					"is_active": {
+						"type": "boolean",
+						"title": "Is Active",
+						"description": "If true, created admin acoount will be active"
+					},
+					"api_key_id": {
+						"type": "string",
+						"title": "API Key ID",
+						"description": "Unique 32-char ID for the API key"
+					},
+					"created_at": {
+						"type": "integer",
+						"title": "Created At",
+						"description": "Timestamp of the API key creating"
+					}
+				}
+			},
+			"affiliate_email": {
+				"type": "string",
+				"title": "Affiliate Email",
+				"description": "Affiliate email"
+			},
+			"user_id": {
+				"type": "string",
+				"title": "User ID",
+				"description": "User ID"
+			},
+			"measurement": {
+				"type": "integer",
+				"title": "Measurement",
+				"description": "Measurement"
+			},
+			"affiliate_company_name": {
+				"type": "string",
+				"title": "Affiliate Company Name",
+				"description": "Affiliate company name"
+			},
+			"origin_r4m_member_id": {
+				"type": "integer",
+				"title": "Original Route4Me Member ID",
+				"description": "Original Route4Me member ID"
+			},
+			"vendor_user_id": {
+				"type": "string",
+				"title": "Vendor User ID",
+				"description": "Vendor user ID"
+			},
+			"vendor_id": {
+				"type": "string",
+				"title": "Vendor ID",
+				"description": "Vendor ID"
+			},
+			"phone_number": {
+				"type": "string",
+				"title": "Phone Number",
+				"description": "Phone numberof the user"
+			},
+			"last_name": {
+				"type": "string",
+				"title": "Last Name",
+				"description": "Last name"
+			},
+			"r4m_api_key": {
+				"type": "string",
+				"title": "Route4Me API Key",
+				"description": "Route4Me API Key"
+			},
+			"website": {
+				"type": "string",
+				"title": "Website",
+				"description": "Website"
+			},
+			"company_name": {
+				"type": "string",
+				"title": "Company Name",
+				"description": "User's company name"
+			},
+			"r4m_member_id": {
+				"type": "integer",
+				"title": "Route4Me Member ID",
+				"description": "Route4Me member ID"
+			},
+			"first_name": {
+				"type": "string",
+				"title": "First Name",
+				"description": "First name"
+			}
+		}
+	}
+}
