@@ -143,3 +143,7 @@
     - [ ] [User_participant_update_data.dtd](User_participant_update_data.dtd "Subschema. Payload")  
 - [x] [User_participant_update_response.dtd](User_participant_update_response.dtd "Response. Update a Participant. Endpoint: /user/participants/{participant_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participant_update_RESPONSE.json))  
     - [ ] [User_participant.dtd](User_participant.dtd "Subschema. Participant")  
+- [x] [User_participant_telematics_connection_create.dtd](User_participant_telematics_connection_create.dtd "Post. Create participant's telematics connection. Endpoint: /user/participants/{participant_user_id}/telematics-connection") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participant_telematics_connection_create.bat))
+    - [ ] [User_participant_telematics_connection_create_data.dtd](User_participant_telematics_connection_create_data.dtd "Subschema. Payload")  
+- [x] [User_participant_telematics_connection_create_response.dtd](User_participant_telematics_connection_create_response.dtd "Response. Create participant's telematics connection. Endpoint: /user/participants/{participant_user_id}/telematics-connection") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_participant_telematics_connection_create_RESPONSE.json))  
+    - [ ] [User_participant.dtd](User_participant.dtd "Subschema. Participant")  
