@@ -1,0 +1,104 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_telematics_connection.dtd",
+	"title": "Participant's Telematics Connection Info",
+	"description": "JSON sub-schema for a participant's telematics connection",
+	"type": "object",
+	"properties": {
+		"telematics_api_token": {
+			"type": "string",
+			"title": "Telematics API Token",
+			"description": "Telematics API token"
+		},
+		"email": {
+			"type": "string",
+			"title": "Email",
+			"description": "Email"
+		},
+		"name": {
+			"type": "string",
+			"title": "Name",
+			"description": "Telematics connection name"
+		},
+		"last_name": {
+			"type": "string",
+			"title": "Last Name",
+			"description": "Last name"
+		},
+		"first_name": {
+			"type": "string",
+			"title": "First Name",
+			"description": "First name"
+		},
+		"virtual_password": {
+			"type": "string",
+			"title": "Virtual Password",
+			"description": "Virtual password"
+		},
+		"is_active": {
+			"type": "boolean",
+			"title": "Is Active",
+			"description": "If true, telematics connection is active"
+		},
+		"updated_at": {
+			"type": "integer",
+			"title": "Updated At",
+			"description": "When the telematics connection was updated"
+		},
+		"telematics_connection_id": {
+			"type": "string",
+			"title": "Telematics Connection ID",
+			"description": "Telematics connection ID"
+		},
+		"virtual_email": {
+			"type": "string",
+			"title": "Virtual Email",
+			"description": "Virtual email"
+		},
+		"telematics_id": {
+			"type": "integer",
+			"title": "Telematics ID",
+			"description": "Telematics ID"
+		},
+		"vendor_id": {
+			"type": "integer",
+			"title": "Vendor ID",
+			"description": "Vendor ID"
+		},
+		"user_id": {
+			"type": "string",
+			"title": "User ID",
+			"description": "Participant's user ID"
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "Unique 32-char API key for telematics connection"
+		},
+		"device_position_refresh_rate": {
+			"type": "integer",
+			"title": "Device Position Refresh Rate",
+			"description": "Device position refresh rate"
+		},
+		"company_name": {
+			"type": "string",
+			"title": "Company Name",
+			"description": "Company name"
+		},
+		"vendor_name": {
+			"type": "string",
+			"title": "Vendor Name",
+			"description": "Vendor name"
+		},
+		"telematics_connection_token": {
+			"type": "string",
+			"title": "Telematics Connection Token",
+			"description": "Telematics connection token"
+		},
+		"created_at": {
+			"type": "integer",
+			"title": "Created At",
+			"description": "When the telematics connection was created"
+		}
+	}
+}
