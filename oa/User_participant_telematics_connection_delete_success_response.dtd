@@ -1,0 +1,24 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_telematics_connection_delete_success_response.dtd",
+	"title": "Delete Telematics Connection Success Resposne",
+	"description": "Response JSON schema for successfuly deleting a telematics connection. Endpoint: https://api.route4me.com/api/v1/user/participants/{participant_user_id}/telematics-connection/{telematic_connection_id}",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"title": "Data",
+			"description": "Returned information about deleted conncetion (Null)"
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"user_id": {
+					"type": "string",
+					"title": "User ID",
+					"description": "User ID of the connection owner"
+				}
+			}
+		}
+	}
+}
