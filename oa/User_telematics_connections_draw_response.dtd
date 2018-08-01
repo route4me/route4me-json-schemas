@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_connections_draw_response.dtd",
+	"title": "Telematics Connections Draw Resposne",
+	"description": "Response for assigning the parameter draw to the telematics connections. Endpoint: https://api.route4me.com/api/v1/user/telematics-connections",
+	"type": "object",
+	"properties": {
+		"recordsTotal": {
+			"type": "integer",
+			"title": "Records Total",
+			"description": "Total number of the returned records"
+		},
+		"draw": {
+			"type": "integer",
+			"title": "Draw",
+			"description": "Technical parameter draw"
+		},
+		"data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_connection_credentials.dtd"
+			},
+			"title": "Telematics Connections List",
+			"description": "Telematics connections list with credentials"
+		},
+		"recordsFiltered": {
+			"type": "integer",
+			"title": "Records Filtered",
+			"description": "Total number of the filtered records"
+		}
+	}
+}
