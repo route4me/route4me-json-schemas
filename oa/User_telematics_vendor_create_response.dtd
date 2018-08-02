@@ -8,8 +8,8 @@
 		"data": {
 			"type": "object",
 			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_tc_vendor.dtd",
-			"title": "Participant's Teleamtics Connection Info",
-			"description": "Participant's teleamtics connection iInfo"
+			"title": "Teleamtics Vendor",
+			"description": "Teleamtics vendor"
 		}
 	}
 }
