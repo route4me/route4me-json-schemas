@@ -10,7 +10,7 @@
 			"items": {
 				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_tc_vendor.dtd"
 			},
-			"title": "Participants List",
+			"title": "Telematics Vendors List",
 			"description": "Array of the objects User_tc_vendor"
 		}
 	}
