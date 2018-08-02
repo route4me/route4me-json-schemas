@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_vendor_update_response.dtd",
+	"title": "Update Telematics Vendor Response",
+	"description": "Response for updating a telematics vendor. Put. Endpoint: https://api.route4me.com/api/v1/user/vendors/{vendor_id}",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_tc_vendor.dtd",
+			"title": "Teleamtics Vendor",
+			"description": "Teleamtics vendor"
+		}
+	}
+}
