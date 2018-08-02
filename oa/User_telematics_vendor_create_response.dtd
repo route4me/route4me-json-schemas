@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_vendor_create_response.dtd",
+	"title": "Create Telematics Vendor Response",
+	"description": "Response for creating a new Vendor in the system. Post. Endpoint: https://api.route4me.com/api/v1/user/vendors",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_tc_vendor.dtd",
+			"title": "Participant's Teleamtics Connection Info",
+			"description": "Participant's teleamtics connection iInfo"
+		}
+	}
+}
