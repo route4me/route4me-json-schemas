@@ -180,3 +180,7 @@
     - [ ] [User_telematics_vendor_deactivate_data.dtd](User_telematics_vendor_deactivate_data.dtd "Subschema. Payload")  
 - [x] [User_telematics_vendor_deactivate_response.dtd](User_telematics_vendor_deactivate_response.dtd "Response. Activate/deactivate telematics vendor. Endpoint: /user/vendors/{vendor_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_telematics_vendor_deactivate_RESPONSE.json))
    - [ ] [User_tc_vendor.dtd](User_tc_vendor.dtd "Subschema. Telematics vendor info")  
+- [x] [User_telematics_vendor_update.dtd](User_telematics_vendor_update.dtd "Put. Update telematics vendor. Endpoint: /user/vendors/{vendor_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_telematics_vendor_update.bat))
+    - [ ] [User_telematics_vendor_update_data.dtd](User_telematics_vendor_update_data.dtd "Subschema. Payload")  
+- [x] [User_telematics_vendor_update_response.dtd](User_telematics_vendor_update_response.dtd "Response. Update telematics vendor. Endpoint: /user/vendors/{vendor_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_telematics_vendor_update_RESPONSE.json))
+    - [ ] [User_tc_vendor.dtd](User_tc_vendor.dtd "Subschema. Telematics vendor info")  
