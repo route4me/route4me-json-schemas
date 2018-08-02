@@ -169,4 +169,7 @@
 - [x] [User_telematics_vendor_create.dtd](User_telematics_vendor_create.dtd "Post. Create telematics vendor. Endpoint: /user/vendors") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_telematics_vendor_create.bat))
     - [ ] [User_telematics_vendor_create_data.dtd](User_telematics_vendor_create_data.dtd "Subschema. Payload")  
 - [x] [User_telematics_vendor_create_response.dtd](User_telematics_vendor_create_response.dtd "Response. Create telematics vendor. Endpoint: /user/vendors}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_telematics_vendor_create_RESPONSE.json))  
-    - [ ] [User_tc_vendor.dtd](User_tc_vendor.dtd "Subschema. Telematics vendor info")
+    - [ ] [User_tc_vendor.dtd](User_tc_vendor.dtd "Subschema. Telematics vendor info")  
+- [x] [User_telematics_vendors_active.dtd](User_telematics_vendors_active.dtd "Get. Get active telematics vendors. Endpoint: /user/vendors/active") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_telematics_vendors_active.bat))
+- [x] [User_telematics_vendors_active_response.dtd](User_telematics_vendors_active_response.dtd "Response. Get active telematics vendors. Endpoint: /user/vendors/active") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_telematics_vendors_active_RESPONSE.json))  
+    - [ ] [User_tc_vendor.dtd](User_tc_vendor.dtd "Subschema. Telematic vendor info")  
