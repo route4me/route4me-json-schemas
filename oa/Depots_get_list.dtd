@@ -4,6 +4,7 @@
 	"title": "Get Depots List",
 	"description": "Get depots list. Endpoint - https://api.route4me.com/api/v1/depot/",
 	"type": "object",
+	"required": ["member_id"],
 	"properties": {
 		"algo_id": {
 			"type": "string",
