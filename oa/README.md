@@ -196,6 +196,12 @@
 - [x] [Report_settings_delete.dtd](Report_settings_delete.dtd "Delete. Delete report settings. Endpoint: /report/settings/") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Report%20Settings/Report_settings_delete.bat))  
 - [x] [Report_settings_delete_response.dtd](Report_settings_delete_response.dtd "Response. Delete report settings. Endpoint: /report/settings/") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Report%20Settings/Report_settings_delete_RESPONSE.json))  
 
-## Algos: Systems algos
+## Algos: Systems algorithms
 - [x] [System_algos_get.dtd](System_algos_get.dtd "Get. Get system algorithms. Endpoint: /algos/") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/System%20Algos/System_algos_get.bat))  
 - [x] [Report_settings_delete_response.dtd](Report_settings_delete_response.dtd "Response. Get system algorithms. Endpoint: /algos/") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/System%20Algos/System_algos_get_RESPONSE.json))  
+
+## Depots: Depots with polygons
+- [x] [Depots_get_list.dtd](Depots_get_list.dtd "Get. Get depots list. Endpoint: /depot/") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Depots/Depots_get_list.bat))  
+- [x] [Depots_get_list_response.dtd](Depots_get_list_response.dtd "Response. Get depots list. Endpoint: /depot/") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Depots/Depots_get_list_RESPONSE.json)) 
+    - [ ] [Depots_depot.dtd](Depots_depot.dtd "Subschema. Depot info")
+        - [ ] [Geo_point.dtd](Geo_point.dtd "Subschema. Geographic point")
