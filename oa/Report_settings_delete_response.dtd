@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Report_settings_delete_response.dtd",
+	"title": "Delete Report Settings Response",
+	"description": "Response for deleting the report settings. Delete. Endpoint: https://api.route4me.com/api/v1/report/settings/",
+	"type": "object",
+	"properties": {
+		"message": {
+			"type": "string",
+			"title": "Message",
+			"description": "Message about reposrt settings deleting"
+		}
+	}
+}
