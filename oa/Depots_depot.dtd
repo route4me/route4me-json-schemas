@@ -6,7 +6,10 @@
 	"type": "object",
 	"properties": {
 		"depot": {
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Geo_point.dtd"
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Geo_point.dtd"
+			}
 		},
 		"metadata": {
 			"type": "object",
