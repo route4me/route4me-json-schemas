@@ -5,40 +5,10 @@
 	"description": "Response for deleting the report settings. Delete. Endpoint: https://api.route4me.com/api/v1/report/settings/",
 	"type": "object",
 	"properties": {
-		"created_at": {
-			"type": "integer",
-			"title": "Created At",
-			"description": "When the report settings was created"
-		},
-		"description": "Description of the report settings",
-		"report_settings": {
-			"type": "object",
-			"properties": {
-				"ID": {
-					"type": "string",
-					"title": "ID",
-					"description": "Report settings ID"
-				}
-			}
-		},
-		"settings": {
-			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Report_settings.dtd"
-		},
-		"settings_id": {
+		"message": {
 			"type": "string",
-			"title": "Settings ID",
-			"description": "Unique 32-char ID of the report settings"
-		},
-		"updated_at": {
-			"type": "integer",
-			"title": "Updated At",
-			"description": "When the report settings was updated"
-		},
-		"user_id": {
-			"type": "string",
-			"title": "User ID",
-			"description": "User ID"
+			"title": "message",
+			"description": "Report settings delete message"
 		}
 	}
 }
