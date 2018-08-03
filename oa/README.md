@@ -193,3 +193,6 @@
 - [x] [Report_settings_get.dtd](Report_settings_get.dtd "Get. Get report settings. Endpoint: /report/settings/") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Report%20Settings/Report_settings_get.bat))  
 - [x] [Report_settings_get_response.dtd](Report_settings_get_response.dtd "Response. Get report settings. Endpoint: /report/settings/") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Report%20Settings/Report_settings_get_RESPONSE.json))
     - [ ] [Report_settings.dtd](Report_settings.dtd "Subschema. Report settings info")  
+- [x] [Report_settings_delete.dtd](Report_settings_delete.dtd "Delete. Delete report settings. Endpoint: /report/settings/") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Report%20Settings/Report_settings_delete.bat))  
+- [x] [Report_settings_delete_response.dtd](Report_settings_delete_response.dtd "Response. Delete report settings. Endpoint: /report/settings/") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Report%20Settings/Report_settings_delete_RESPONSE.json))
+    - [ ] [Report_settings.dtd](Report_settings.dtd "Subschema. Report settings info")  
