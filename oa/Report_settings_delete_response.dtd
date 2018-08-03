@@ -7,7 +7,7 @@
 	"properties": {
 		"message": {
 			"type": "string",
-			"title": "message",
+			"title": "Message",
 			"description": "Report settings delete message"
 		}
 	}
