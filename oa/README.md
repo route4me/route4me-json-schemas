@@ -202,6 +202,9 @@
 
 ## Depots: Depots with polygons
 - [x] [Depots_get_list.dtd](Depots_get_list.dtd "Get. Get depots list. Endpoint: /depot/") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Depots/Depots_get_list.bat))  
-- [x] [Depots_get_list_response.dtd](Depots_get_list_response.dtd "Response. Get depots list. Endpoint: /depot/") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Depots/Depots_get_list_RESPONSE.json)) 
+- [x] [Depots_get_list_response.dtd](Depots_get_list_response.dtd "Response. Get depots list. Endpoint: /depot/") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Depots/Depots_get_list_RESPONSE.json))
     - [ ] [Depots_depot.dtd](Depots_depot.dtd "Subschema. Depot info")
-        - [ ] [Geo_point.dtd](Geo_point.dtd "Subschema. Geographic point")
+        - [ ] [Geo_point.dtd](Geo_point.dtd "Subschema. Geographic point")  
+- [x] [Depots_get_depot.dtd](Depots_get_depot.dtd "Get. Get a depot. Endpoint: /depot/{depot_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Depots/Depots_get_depot.bat))  
+- [x] [Depots_get_list_response.dtd](Depots_get_list_response.dtd "Response. Get a depot. Endpoint: /depot/{depot_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Depots/Depots_get_depot_RESPONSE.json))  
+    - [ ] [Geo_point.dtd](Geo_point.dtd "Subschema. Geographic point")  
