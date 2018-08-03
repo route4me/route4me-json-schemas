@@ -184,3 +184,9 @@
     - [ ] [User_telematics_vendor_update_data.dtd](User_telematics_vendor_update_data.dtd "Subschema. Payload")  
 - [x] [User_telematics_vendor_update_response.dtd](User_telematics_vendor_update_response.dtd "Response. Update telematics vendor. Endpoint: /user/vendors/{vendor_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_telematics_vendor_update_RESPONSE.json))
     - [ ] [User_tc_vendor.dtd](User_tc_vendor.dtd "Subschema. Telematics vendor info")  
+    
+## Report settings : Custom settings for saving reports
+- [x] [Report_settings_create.dtd](Report_settings_create.dtd "Post. Create report settings. Endpoint: /report/settings/") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Report%20Settings/Report_settings_create.bat))
+    - [ ] [Report_settings_create_data.dtd](Report_settings_create_data.dtd "Subschema. Payload")  
+- [x] [Report_settings_create_response.dtd](Report_settings_create_response.dtd "Response. Create report settings. Endpoint: /report/settings/") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Report%20Settings/Report_settings_create_RESPONSE.json))
+    - [ ] [Report_settings.dtd](Report_settings.dtd "Subschema. Report settings info")  
