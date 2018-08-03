@@ -1,6 +1,6 @@
 # JSON Schemas for OA Route4Me API
 
-## analysis : Access to analysis results
+## analysis: Access to analysis results
 
 - [x] [Analysis_download_report_query.dtd](Analysis_download_report_query.dtd "Query. Download detailed routes analysis reports as csv/xls/pdf file. Endpoint: /analysis/download/report")
 - [ ] [Analysis_download_report_response.dtd](Analysis_download_report_response.dtd "Response from downloading of the detailed routes analysis reports as csv/xls/pdf file.")
@@ -17,7 +17,7 @@
    - [ ] [Statistics.dtd](Statistics.dtd "Sub-schema")
 - [x] [Routes_comparison_download_query.dtd](Routes_comparison_download_query.dtd "Query. Download routes comparison reports as csv or xls file. Endpoint: /analysis/routes_comparison/{analyzed_route_id}/download/report")
 
-## Feed : Activity feeds of OA service
+## Feed: Activity feeds of OA service
 - [x] [Feed_all_activity_query.dtd](Feed_all_activity_query.dtd "Query. All OA actions in one feed. Endpoint: /feed/all") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_all_activity.bat))
 - [x] [Feed_all_activity_response.dtd](Feed_all_activity_response.dtd "Response. All OA actions in one feed. Endpoint: /feed/all") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_all_activity_RESPONSE.json))
     - [ ] [Activity_feed_event.dtd](Activity_feed_event.dtd "Sub-schema. Array of the activity feed events")
@@ -55,7 +55,7 @@
 - [x] [Statistics_telematics_connections_created.dtd](Statistics_telematics_connections_created.dtd "Query. Statistics for created Telematic Connections. Endpoint: /statistics/telematic-connection/created/count-grouped") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Statistics/Statistics_telematics_connections_created.bat))
 - [x] [Statistics_telematics_connections_created_response.dtd](Statistics_telematics_connections_created_response.dtd "Response. Statistics for created Telematic Connections. Endpoint: /statistics/telematic-connection/created/count-grouped") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Statistics/Statistics_telematics_connections_created_RESPONSE.json))
 
-## User : User roles, manipulations etc
+## User: User roles, manipulations etc
 - [x] [User_admins_list.dtd](User_admins_list.dtd "Query. List of admins. Endpoint: /user/admins") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_admins_list.bat))
 - [x] [User_admins_list_response.dtd](User_admins_list_response.dtd "Response. List of admins. Endpoint: /user/admins") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_admins_list_RESPONSE.json))
     - [ ] [User_admin.dtd](User_admin.dtd "Subschema. User")  
@@ -185,7 +185,7 @@
 - [x] [User_telematics_vendor_update_response.dtd](User_telematics_vendor_update_response.dtd "Response. Update telematics vendor. Endpoint: /user/vendors/{vendor_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/User/User_telematics_vendor_update_RESPONSE.json))
     - [ ] [User_tc_vendor.dtd](User_tc_vendor.dtd "Subschema. Telematics vendor info")  
 
-## Report settings : Custom settings for saving reports
+## Report settings: Custom settings for saving reports
 - [x] [Report_settings_create.dtd](Report_settings_create.dtd "Post. Create report settings. Endpoint: /report/settings/") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Report%20Settings/Report_settings_create.bat))
     - [ ] [Report_settings_create_data.dtd](Report_settings_create_data.dtd "Subschema. Payload")  
 - [x] [Report_settings_create_response.dtd](Report_settings_create_response.dtd "Response. Create report settings. Endpoint: /report/settings/") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Report%20Settings/Report_settings_create_RESPONSE.json))
@@ -195,3 +195,7 @@
     - [ ] [Report_settings.dtd](Report_settings.dtd "Subschema. Report settings info")  
 - [x] [Report_settings_delete.dtd](Report_settings_delete.dtd "Delete. Delete report settings. Endpoint: /report/settings/") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Report%20Settings/Report_settings_delete.bat))  
 - [x] [Report_settings_delete_response.dtd](Report_settings_delete_response.dtd "Response. Delete report settings. Endpoint: /report/settings/") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Report%20Settings/Report_settings_delete_RESPONSE.json))  
+
+## Algos: Systems algos
+- [x] [System_algos_get.dtd](System_algos_get.dtd "Get. Get system algorithms. Endpoint: /algos/") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/System%20Algos/System_algos_get.bat))  
+- [x] [Report_settings_delete_response.dtd](Report_settings_delete_response.dtd "Response. Get system algorithms. Endpoint: /algos/") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/System%20Algos/System_algos_get_RESPONSE.json))  
