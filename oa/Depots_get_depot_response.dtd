@@ -1,0 +1,96 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Depots_get_depot_response.dtd",
+	"title": "Get Depot Response",
+	"description": "Response JSON schema for getting a depot. Endpoint - https://api.route4me.com/api/v1/depot/{depot_id}",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"properties": {
+				"algo_id": {
+					"type": "string",
+					"title": "Algorithm ID",
+					"description": "Unique 32-char ID of an algorithm"
+				},
+				"source_address_stop_type": {
+					"type": "string",
+					"title": "Source Address Stop Type",
+					"description": "Source address stop type"
+				},
+				"polygon": {
+					"type": "array",
+					"items": {
+						"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Geo_point.dtd"
+					}
+				},
+				"source_type": {
+					"type": "integer",
+					"title": "Source Type",
+					"description": "Source type"
+				},
+				"source_route_id": {
+					"type": "string",
+					"title": "Source Route ID",
+					"description": "Source route ID"
+				},
+				"depot": {
+					"type": "array",
+					"items": {
+						"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Geo_point.dtd"
+					}
+				},
+				"source_created_timestamp": {
+					"type": "string",
+					"title": "Source Created Timestamp",
+					"description": "Source created timestamp"
+				},
+				"polygon_hash": {
+					"type": "string",
+					"title": "Polygon Hash",
+					"description": "Polygon hash"
+				},
+				"probability": {
+					"type": "number",
+					"title": "Probability",
+					"description": "Probability"
+				},
+				"user_id": {
+					"type": "string",
+					"title": "User ID",
+					"description": "User ID"
+				},
+				"detected_depot_id": {
+					"type": "string",
+					"title": "Detected Depot ID",
+					"description": "Detected depot ID"
+				}
+			}
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"algo_params": {
+					"type": "object",
+					"properties": {
+						"precision": {
+							"type": "number",
+							"title": "Precision",
+							"description": "The number precision"
+						}
+					}
+				},
+				"algo_name": {
+					"type": "string",
+					"title": "Algorithm Name",
+					"description": "The name of the algorithm"
+				},
+				"algo_id": {
+					"type": "string",
+					"title": "Algorithm ID",
+					"description": "Unique 32-char ID of an algorithm"
+				}
+			}
+		}
+	}
+}
