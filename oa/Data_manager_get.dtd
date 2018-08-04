@@ -9,7 +9,7 @@
 		"start": {
 			"type": "integer",
 			"title": "Start",
-			"description": "Starting point on participants list(Should start from 0) - GET."
+			"description": "Starting point on data managers list(Should start from 0) - GET."
 		},
 		"x-original-api-key": {
 			"type": "string",
@@ -29,7 +29,7 @@
 		"length": {
 			"type": "integer",
 			"title": "Length",
-			"description": "Length of participants list - GET."
+			"description": "Length of data managers list - GET."
 		},
 		"ts_to": {
 			"type": "integer",
