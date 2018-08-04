@@ -217,5 +217,5 @@
     - [ ] [Apikeys_apikey.dtd](Apikeys_apikey.dtd "Subschema. API key")  
 - [x] [Apikeys_apikey_create.dtd](Apikeys_apikey_create.dtd "Post. Create an api key. Endpoint: /api_keys") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/API%20Keys/Apikeys_apikey_create.bat))  
     - [ ] [Apikeys_apikey_create_data.dtd](Apikeys_apikey_create_data.dtd "Subschema. Payload")
-- [x] [ApiKeys_get_list_response.dtd](ApiKeys_get_list_response.dtd "Response. Create an api key. Endpoint: /api_keys") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/API%20Keys/Apikeys_apikey_create_RESPONSE.json))  
+- [x] [Apikeys_apikey_create_response.dtd](Apikeys_apikey_create_response.dtd "Response. Create an api key. Endpoint: /api_keys") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/API%20Keys/Apikeys_apikey_create_RESPONSE.json))  
     - [ ] [Apikeys_apikey.dtd](Apikeys_apikey.dtd "Subschema. API key")  
