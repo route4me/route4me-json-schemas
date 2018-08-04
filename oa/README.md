@@ -224,3 +224,6 @@
 - [x] [Data_manager_get.dtd](Data_manager_get.dtd "Get. Get the OA dashboard. Endpoint: /data/manager") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Data%20Manager/Data_manager_get.bat))  
 - [x] [Data_manager_get_response.dtd](Data_manager_get_response.dtd "Response. Get the OA dashboard. Endpoint: /data/manager") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Data%20Manager/Data_manager_get_RESPONSE.json))  
     - [ ] [Data_manager.dtd](Data_manager.dtd "Subschema. Data manager")  
+- [x] [Data_manager_draw.dtd](Data_manager_draw.dtd "Post. Assign draw to the data managers. Endpoint: /data/manager") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Data%20Manager/Data_manager_draw.bat))  
+- [x] [Data_manager_draw_response.dtd](Data_manager_draw_response.dtd "Response. Assign draw to the data managers. Endpoint: /data/manager") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Data%20Manager/Data_manager_draw_RESPONSE.json))  
+    - [ ] [Data_manager.dtd](Data_manager.dtd "Subschema. Data manager")  
