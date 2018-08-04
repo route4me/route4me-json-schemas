@@ -219,3 +219,8 @@
     - [ ] [Apikeys_apikey_create_data.dtd](Apikeys_apikey_create_data.dtd "Subschema. Payload")
 - [x] [Apikeys_apikey_create_response.dtd](Apikeys_apikey_create_response.dtd "Response. Create an api key. Endpoint: /api_keys") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/API%20Keys/Apikeys_apikey_create_RESPONSE.json))  
     - [ ] [Apikeys_apikey.dtd](Apikeys_apikey.dtd "Subschema. API key")  
+
+## Data manager
+- [x] [Data_manager_get.dtd](Data_manager_get.dtd "Get. Get the OA dashboard. Endpoint: /data/manager") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Data%20Manager/Data_manager_get.bat))  
+- [x] [Data_manager_get_response.dtd](Data_manager_get_response.dtd "Response. Get the OA dashboard. Endpoint: /data/manager") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Data%20Manager/Data_manager_get_RESPONSE.json))  
+    - [ ] [Data_manager.dtd](Data_manager.dtd "Subschema. Data manager")  
