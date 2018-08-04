@@ -4,7 +4,6 @@
 	"title": "Get API Keys List",
 	"description": "Returns list of available API keys only for Admins. Endpoint - https://api.route4me.com/api/v1/api_keys",
 	"type": "object",
-	"required": ["member_id"],
 	"properties": {
 		"limit": {
 			"type": "integer",
