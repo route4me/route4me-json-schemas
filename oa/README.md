@@ -208,3 +208,10 @@
 - [x] [Depots_get_depot.dtd](Depots_get_depot.dtd "Get. Get a depot. Endpoint: /depot/{depot_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Depots/Depots_get_depot.bat))  
 - [x] [Depots_get_depot_response.dtd](Depots_get_depot_response.dtd "Response. Get a depot. Endpoint: /depot/{depot_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Depots/Depots_get_depot_RESPONSE.json))  
     - [ ] [Geo_point.dtd](Geo_point.dtd "Subschema. Geographic point")  
+
+## Audit: Returns routes for actual and virtual members and matches between them
+
+## API Keys: API keys management
+- [x] [ApiKeys_get_list.dtd](ApiKeys_get_list.dtd "Get. Get the KEYS list. Endpoint: /api_keys") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/API%20Keys/ApiKeys_get_list.bat))  
+- [x] [ApiKeys_get_list_response.dtd](ApiKeys_get_list_response.dtd "Response. Get the KEYS list. Endpoint: /api_keys") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/API%20Keys/ApiKeys_get_list_RESPONSE.json))  
+    - [ ] [Apikeys_apikey.dtd](Apikeys_apikey.dtd "Subschema. API key")  
