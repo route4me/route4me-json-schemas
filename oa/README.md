@@ -227,3 +227,10 @@
 - [x] [Data_manager_draw.dtd](Data_manager_draw.dtd "Post. Assign draw to the data managers. Endpoint: /data/manager") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Data%20Manager/Data_manager_draw.bat))  
 - [x] [Data_manager_draw_response.dtd](Data_manager_draw_response.dtd "Response. Assign draw to the data managers. Endpoint: /data/manager") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Data%20Manager/Data_manager_draw_RESPONSE.json))  
     - [ ] [Data_manager.dtd](Data_manager.dtd "Subschema. Data manager")  
+
+## Route data proxy: Proxy for routes
+
+## Vendors
+- [x] [Vendors_get_list.dtd](Vendors_get_list.dtd "Get. Get vendors list. Endpoint: /vendors") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Vendors/Vendors_get_list.bat))  
+- [x] [Vendors_get_list_response.dtd](Vendors_get_list_response.dtd "Response. Get vendors list. Endpoint: /vendors") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Vendors/Vendors_get_list_RESPONSE.json))  
+    - [ ] [Vendors_vendor.dtd](Vendors_vendor.dtd "Subschema. Vendor")  
