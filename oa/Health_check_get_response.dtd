@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Health_check_get_response.dtd",
+	"title": "Check System Health Response",
+	"description": "Response JSON schema for checking of the system's health. Endpoint - https://api.route4me.com/api/v1/health/check",
+	"type": "object",
+	"properties": {
+		"error": {
+			"type": "string",
+			"title": "Error",
+			"description": "If failed, system failure error text"
+		}
+	}
+}
