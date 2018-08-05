@@ -10,10 +10,45 @@
 			"title": "Records Total",
 			"description": "Total number of the returned records"
 		},
+		"updated_at": {
+			"type": "string",
+			"title": "Updated At",
+			"description": "When was updated a vendor's account"
+		},
+		"is_readonly": {
+			"type": "integer",
+			"title": "Is Readonly",
+			"description": "If equal to 1, a vendor's account is readonly"
+		},
+		"title": {
+			"type": "string",
+			"title": "Title",
+			"description": "The title of a vendor's account"
+		},
+		"created_at": {
+			"type": "string",
+			"title": "Created At",
+			"description": "When was created a vendor's account"
+		},
 		"is_integrated": {
 			"type": "boolean",
 			"title": "Is Integrated",
 			"description": "If true, the vendor is integrated into the system"
+		},
+		"is_enabled": {
+			"type": "integer",
+			"title": "Is Enabled",
+			"description": "If equal to 1, the vendor is enabled"
+		},
+		"hint": {
+			"type": "string",
+			"title": "Hint",
+			"description": "Hint text for a vendor's account"
+		},
+		"slug": {
+			"type": "string",
+			"title": "Slug",
+			"description": "The slug"
 		},
 		"website_url": {
 			"type": "string",
@@ -24,6 +59,11 @@
 			"type": "string",
 			"title": "Name",
 			"description": "A vendor's name"
+		},
+		"icon": {
+			"type": "string",
+			"title": "Icon",
+			"description": "Icon"
 		},
 		"icon_url": {
 			"type": "string",
