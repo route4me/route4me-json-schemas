@@ -234,3 +234,7 @@
 - [x] [Vendors_get_list.dtd](Vendors_get_list.dtd "Get. Get vendors list. Endpoint: /vendors") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Vendors/Vendors_get_list.bat))  
 - [x] [Vendors_get_list_response.dtd](Vendors_get_list_response.dtd "Response. Get vendors list. Endpoint: /vendors") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Vendors/Vendors_get_list_RESPONSE.json))  
     - [ ] [Vendors_vendor.dtd](Vendors_vendor.dtd "Subschema. Vendor")  
+
+## Health check: Frontend versions endpoint
+- [x] [Health_check_get.dtd](Health_check_get.dtd "Get. Check system's health. Endpoint: /health/check") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Health%20Check/Health_check.bat))  
+- [x] [Vendors_get_list_response.dtd](Vendors_get_list_response.dtd "Response. Check system's health. Endpoint: /health/check") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Health%20Check/Health_check_RESPONSE.json))  
