@@ -237,4 +237,4 @@
 
 ## Health check: Frontend versions endpoint
 - [x] [Health_check_get.dtd](Health_check_get.dtd "Get. Check system's health. Endpoint: /health/check") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Health%20Check/Health_check.bat))  
-- [x] [Vendors_get_list_response.dtd](Vendors_get_list_response.dtd "Response. Check system's health. Endpoint: /health/check") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Health%20Check/Health_check_RESPONSE.json))  
+- [x] [Health_check_get_response.dtd](Health_check_get_response.dtd "Response. Check system's health. Endpoint: /health/check") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Health%20Check/Health_check_RESPONSE.json))  
