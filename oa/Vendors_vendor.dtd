@@ -78,7 +78,7 @@
 		"size": {
 			"type": "string",
 			"title": "Size",
-			"description": "The size of s vendor ['global', 'regional']"
+			"description": "The size of s vendor ['global', 'regional', 'size']"
 		},
 		"credentials": {
 			"type": "array",
