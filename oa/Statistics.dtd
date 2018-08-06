@@ -18,6 +18,16 @@
 					"title": "Period",
 					"description": "Selected time period counter"
 				},
+				"period_formatted": {
+					"type": "string",
+					"title": "Period Formatted",
+					"description": "Period formatted"
+				},
+				"global_formatted": {
+					"type": "string",
+					"title": "Global Formatted",
+					"description": "Global formatted"
+				},
 				"_args": {
 					"@meta": {
 						"type": "string",
