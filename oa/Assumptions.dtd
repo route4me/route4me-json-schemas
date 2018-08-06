@@ -16,6 +16,16 @@
 			"title": "Cost Per Accident",
 			"description": "Cost per accident"
 		},
+		"drive_time_per_hour": {
+			"type": "integer",
+			"title": "Drive Time Per Hour",
+			"description": "Drive time per hour"
+		},
+		"service_time_per_hour": {
+			"type": "integer",
+			"title": "Service Time Per Hour",
+			"description": "Service time per hour"
+		},
 		"gallon_fuel_cost": {
 			"type": "number",
 			"multipleOf": 0.01,
