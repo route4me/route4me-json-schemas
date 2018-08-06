@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Autid_members_detected_route.dtd",
-	"title": "Autid Members Detected Route",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Audit_members_detected_route.dtd",
+	"title": "Audit Members Detected Route",
 	"description": "The response parameters of the detected route. Sub-schema",
 	"type": "object",
 	"properties": {
