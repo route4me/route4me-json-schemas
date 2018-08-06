@@ -37,13 +37,13 @@
 		},
 		"analyzed_route_id": {
 			"type": "string",
-			"title": "Analyzed Route ID",
-			"description": "Analyzed route ID"
+			"title": "Analysed Route ID",
+			"description": "Analysed route ID"
 		},
 		"affiliate_id": {
 			"type": "string",
 			"title": "Affiliate ID",
-			"description": "A unique ID of a affiliated user"
+			"description": "A unique ID of an affiliated user"
 		},
 		"telematics_connection_token": {
 			"type": "string",
