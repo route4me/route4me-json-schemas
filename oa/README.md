@@ -213,6 +213,9 @@
 - [x] [Audit_members_detected_routes_get.dtd](Audit_members_detected_routes_get.dtd "Get. Get detected routes. Endpoint: /audit/members/{r4m_member_id}/detected-routes") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Audit/Audit_members_detected_routes_get.bat))  
 - [x] [Audit_members_detected_routes_response.dtd](Audit_members_detected_routes_response.dtd "Response. Get detected routes. Endpoint: /audit/members/{r4m_member_id}/detected-routes") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Audit/Audit_members_detected_routes_get_RESPONSE.json))  
     - [ ] [Audit_members_detected_route.dtd](Audit_members_detected_route.dtd "Subschema. Detected Route")  
+- [x] [Audit_members_detected_route_get.dtd](Audit_members_detected_route_get.dtd "Get. Get a detected route. Endpoint: /audit/members/{r4m_member_id}/detected-routes/{internal_route_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Audit/Audit_members_detected_route_get.bat))  
+- [x] [Audit_members_detected_route_response.dtd](Audit_members_detected_route_response.dtd "Response. Get a detected route. Endpoint: /audit/members/{r4m_member_id}/detected-routes/{internal_route_id}}/detected-routes") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Audit/Audit_members_detected_route_get_RESPONSE.json))  
+    - [ ] [Audit_members_detected_route.dtd](Audit_members_detected_route.dtd "Subschema. Detected Route")  
 
 ## API Keys: API keys management
 - [x] [ApiKeys_get_list.dtd](ApiKeys_get_list.dtd "Get. Get the KEYS list. Endpoint: /api_keys") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/API%20Keys/ApiKeys_get_list.bat))  
