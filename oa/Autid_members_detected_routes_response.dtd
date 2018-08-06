@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Autid_members_detected_routes_response.dtd",
+	"title": "Get Detected Routes",
+	"description": "Response JSON schema for getting the detected routes. Endpoint - https://api.route4me.com/api/v1/audit/members/{r4m_member_id}/detected-routes",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Autid_members_detected_route.dtd"
+			}	
+		}
+	}
+}
