@@ -210,6 +210,9 @@
     - [ ] [Geo_point.dtd](Geo_point.dtd "Subschema. Geographic point")  
 
 ## Audit: Returns routes for actual and virtual members and matches between them
+- [x] [Autid_members_detected_routes_get.dtd](Autid_members_detected_routes_get.dtd "Get. Get detected routes. Endpoint: /audit/members/{r4m_member_id}/detected-routes") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Audit/Autid_members_detected_routes_get.bat))  
+- [x] [Autid_members_detected_routes_response.dtd](Autid_members_detected_routes_response.dtd "Response. Get detected routes. Endpoint: /audit/members/{r4m_member_id}/detected-routes") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Audit/Autid_members_detected_routes_get_RESPONSE.json))  
+    - [ ] [Autid_members_detected_route.dtd](Autid_members_detected_route.dtd "Subschema. Detected Route")  
 
 ## API Keys: API keys management
 - [x] [ApiKeys_get_list.dtd](ApiKeys_get_list.dtd "Get. Get the KEYS list. Endpoint: /api_keys") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/API%20Keys/ApiKeys_get_list.bat))  
