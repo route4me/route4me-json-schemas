@@ -31,7 +31,52 @@
 					}
 				},
 				"export_all_link": {
-					"type": "boolean",
+					"type": "object",
+					"properties": {
+						"url": {
+							"type": "string",
+							"title": "URL",
+							"description": "URL to the export link"
+						},
+						"label": {
+							"type": "string",
+							"title": "Label",
+							"description": "The export label"
+						},
+						"title": {
+							"type": "string",
+							"title": "Title",
+							"description": "The export title"
+						},
+						"formats": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"url": {
+										"type": "string",
+										"title": "URL",
+										"description": "URL to the specific format of the export data (xls, csv)"
+									},
+									"label": {
+										"type": "string",
+										"title": "Label",
+										"description": "The label of the specific format export data (xls, csv)"
+									},
+									"title": {
+										"type": "string",
+										"title": "Title",
+										"description": "The title of the specific format export data (xls, csv)"
+									},
+									"format": {
+										"type": "string",
+										"title": "Title",
+										"description": "The format of the current export data (xls, csv)"
+									}
+								}
+							}
+						}
+					},
 					"title": "Export All Link",
 					"description": "If true, all the links will be exported"
 				}
