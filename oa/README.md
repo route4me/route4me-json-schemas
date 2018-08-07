@@ -16,15 +16,14 @@
 - [x] [Analysis_routes_comparison_report_download.dtd](Analysis_routes_comparison_report_download.dtd "Get. Download routes comparison report as csv or xls file. Endpoint: /analysis/routes_comparison/{analyzed_route_id}/download/report") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Analysis/Analysis_routes_comparison_report_download.bat))  
     - [x] (See downloaded XLS report file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Analysis/Analysis_routes_comparison_report_download_RESPONSE.xls))
 - [x] [Analysis_summary_original_route_query.dtd](Analysis_summary_original_route_query.dtd "Query.Returns detailed analysis summary for Route planned in the Route4Me(or other system). Endpoint: /analysis/summary/{original_route_id}")
-- [x] [Analysis_summary_member_query.dtd](Analysis_summary_member_query.dtd "Query. Returns detailed analysis summary for requested member")
-- [x] [Analysis_summary_member_response.dtd](Analysis_summary_member_response.dtd "Response. Returns detailed analysis summary for requested member. Endpoint: /analysis/summary")
+- [x] [Analysis_summary_member_query.dtd](Analysis_summary_member_query.dtd "Query. Returns detailed analysis summary for requested member") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Analysis/Analysis_summary_member_query.bat))
+- [x] [Analysis_summary_member_response.dtd](Analysis_summary_member_response.dtd "Response. Returns detailed analysis summary for requested member. Endpoint: /analysis/summary") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Analysis/Analysis_summary_member_query_RESPONSE.json))
    - [ ] [Detailed_routes_analysis_response.dtd]( Detailed_routes_analysis_response.dtd "Sub-schema. Routes detailed analysis.")
        - [ ] [Savings.dtd](Savings.dtd "Sub-schema")
    - [ ] [Optimization_scenario.dtd](Optimization_scenario.dtd "Sub-schema. Optimization scenario")
    - [ ] [Assumptions.dtd](Assumptions.dtd "Sub-schema. Assumptions for optimization")
    - [ ] [Savings_summary.dtd](Savings_summary.dtd "Sub-schema. Savings summary")
    - [ ] [Statistics.dtd](Statistics.dtd "Sub-schema")
-
 
 ## Feed: Activity feeds of OA service
 - [x] [Feed_all_activity_query.dtd](Feed_all_activity_query.dtd "Query. All OA actions in one feed. Endpoint: /feed/all") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_all_activity.bat))
