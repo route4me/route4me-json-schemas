@@ -2,8 +2,8 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Feed_activity_patch.dtd",
 	"title": "Hide/Unhide Feed Event",
-	"description": "Hide/unhide wrong events from the feed. Endpoint - https://api.route4me.com/api/v1/feed/event/{event_id}",
-	"required": ["event_id","hide","auth_token","original_api_key"],
+	"description": "Hide/unhide wrong events from the feed. Patch. Endpoint - https://api.route4me.com/api/v1/feed/event/{event_id}",
+	"required": ["event_id","hide"],
 	"type": "object",
 	"properties": {
 	"event_id": {
