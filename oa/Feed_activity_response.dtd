@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Feed_activity_response.dtd",
 	"title": "Action Feed Event",
-	"description": "Response schema of getting generall information about event by its id. Endpoint - https://api.route4me.com/api/v1/feed/event/{event_id}",
+	"description": "Response schema for getting generall information about event by its id. Endpoint - https://api.route4me.com/api/v1/feed/event/{event_id}",
 	"type": "object",
 	"properties": {
 		"metadata": {
