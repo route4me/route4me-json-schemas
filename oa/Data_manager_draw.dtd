@@ -3,6 +3,7 @@
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Data_manager_draw.dtd",
 	"title": "Data Manager Draw",
 	"description": "Assigns value of the technical parameter <draw> to the data managers. HTTP method: POST. Endpoint - https://api.route4me.com/api/v1/data/manager",
+	"required": ["length","start","draw","ts_to","ts_from"],
 	"type": "object",
 	"properties": {
 		"length": {
@@ -13,7 +14,7 @@
 		"start": {
 			"type": "integer",
 			"title": "Start",
-			"description": "Starting point on data manager list - formData."
+			"description": "Starting point on data manager list(Should start from 0) - formData."
 		},
 		"x-original-api-key": {
 			"type": "string",
