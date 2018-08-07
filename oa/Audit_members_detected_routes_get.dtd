@@ -4,6 +4,7 @@
 	"title": "Get Detected Routes",
 	"description": "Returns list of detected routes and related vehicles by given member id. Endpoint - https://api.route4me.com/api/v1/audit/members/{r4m_member_id}/detected-routes",
 	"type": "object",
+	"required": ["r4m_member_id","timestamp_from","timestamp_to"],
 	"properties": {
 		"r4m_member_id": {
 			"type": "integer",
