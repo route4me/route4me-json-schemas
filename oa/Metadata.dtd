@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Metadata.dtd",
 	"title": "Savings",
-	"description": "Metadata part of the response",
+	"description": "Metadata. Sub-schema",
 	"type": "object",
 	"properties": {
 		"type_list": {
@@ -14,7 +14,7 @@
 		"offset": {
 			"type": "integer",
 			"title": "Type",
-			"description": "Type"
+			"description": "Offset"
 		},
 		"current_lang": {
 			"type": "string",
