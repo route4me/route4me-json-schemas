@@ -1,9 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Feed_all_activity_query.dtd",
-	"title": "All OA actions in one feed",
-	"description": "Parameters for getting all OA actions in one feed. Endpoint - https://api.route4me.com/api/v1/feed/all",
-	"required": ["auth_token","original_api_key"],
+	"title": "All OA Actions Feed",
+	"description": "All OA actions in one feed. Endpoint - https://api.route4me.com/api/v1/feed/all",
 	"type": "object",
 	"properties": {
 		"trim_ts": {
