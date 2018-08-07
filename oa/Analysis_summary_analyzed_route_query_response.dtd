@@ -21,7 +21,7 @@
 				"optimization_scenarios": {
 					"type": "array",
 					"items": {
-						"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics.dtd"
+						"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Optimization_scenario.dtd"
 					}
 				},
 				"detailed_routes_analysis": {
