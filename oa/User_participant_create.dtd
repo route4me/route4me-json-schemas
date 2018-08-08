@@ -2,17 +2,18 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_create.dtd",
 	"title": "Create New Participant",
-	"description": "Creates a new Participant in the system only for Admins, Affiliates. HTTP method: POST. Endpoint: https://api.route4me.com/api/v1/user/participants",
+	"description": "Creates a new Participant in the system. Only for Admins, Affiliates. POST. Endpoint: https://api.route4me.com/api/v1/user/participants",
+	"required": ["payload"],
 	"type": "object",
 	"properties": {
 		"original_api_key": {
 			"type": "string",
-			"title": "Original Api key",
+			"title": "Original API Key",
 			"description": "Authorization by Route4Me key, for Route4Me users - GET."
 		},
 		"x-original-api-key": {
 			"type": "string",
-			"title": "X Original Api key",
+			"title": "X Original API Key",
 			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
 		},
 		"x-auth-token": {
@@ -27,7 +28,7 @@
 		},
 		"api_key": {
 			"type": "string",
-			"title": "API key",
+			"title": "API Key",
 			"description": "Use API with API key without authorization - GET."
 		},
 		"auth_token": {
@@ -37,7 +38,7 @@
 		},
 		"x-api-key": {
 			"type": "string",
-			"title": "X Api key",
+			"title": "X API Key",
 			"description": "Use API with API key without authorization - HEADER."
 		}
 	}
