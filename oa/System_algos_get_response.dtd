@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/System_algos_get_response.dtd",
 	"title": "Get System Algorithms",
-	"description": "Response for getting the system algorithms. Delete. Endpoint: https://api.route4me.com/api/v1/algos/",
+	"description": "Response for getting the system algorithms. Endpoint: https://api.route4me.com/api/v1/algos/",
 	"type": "object",
 	"properties": {
 		"data": {
