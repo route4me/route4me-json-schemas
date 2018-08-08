@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_affiliate_deactivate_data.dtd",
-	"title": "Activate Payload",
-	"description": "JSON payload for activating/deactivating affiliate",
+	"title": "Affiliate Activate/Deactivate Payload",
+	"description": "JSON payload for activating/deactivating of an affiliate",
 	"type": "object",
 	"properties": {
 		"is_active": {
