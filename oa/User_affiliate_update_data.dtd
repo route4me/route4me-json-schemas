@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_affiliate_update_data.dtd",
-	"title": "Affiliate Payload",
-	"description": "JSON payload for updating affiliate",
+	"title": "Update Affiliate Payload",
+	"description": "JSON payload for updating an affiliate",
 	"type": "object",
 	"properties": {
 		"company_name": {
@@ -33,7 +33,7 @@
 		"phone_number": {
 			"type": "string",
 			"title": "Phone Number",
-			"description": "Phone numberof the user"
+			"description": "Phone number of the user"
 		},
 		"email": {
 			"type": "string",
