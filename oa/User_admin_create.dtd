@@ -2,43 +2,44 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin_create.dtd",
 	"title": "Create Admin",
-	"description": "Creates a new admin in the system only for Admins. HTTP method: POST. Endpoint: https://api.route4me.com/api/v1/user/admins",
+	"description": "Creates a new admin in the system. Only for Admins. POST. Endpoint: https://api.route4me.com/api/v1/user/admins",
+	"required": ["payload"],
 	"type": "object",
 	"properties": {
-		"payload": {
-			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin_create_data.dtd",
-			"description": "JSON payload for input"
-		},
-		"auth_token": {
+		"original_api_key": {
 			"type": "string",
-			"title": "Authentication Token",
-			"description": "Authorization token that will be given after signing in - GET."
+			"title": "Original API Key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
 		},
 		"x-original-api-key": {
 			"type": "string",
-			"title": "X Original Api key",
+			"title": "X Original API Key",
 			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
-		},
-		"api_key": {
-			"type": "string",
-			"title": "API key",
-			"description": "Use API with API key without authorization - GET."
 		},
 		"x-auth-token": {
 			"type": "string",
 			"title": "X Authentication Token",
 			"description": "Authorization token that will be given after signing in - HEADER."
 		},
+		"payload": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin_create_data.dtd",
+			"description": "JSON payload for input"
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API Key",
+			"description": "Use API with API key without authorization - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
 		"x-api-key": {
 			"type": "string",
-			"title": "X Api key",
+			"title": "X API Key",
 			"description": "Use API with API key without authorization - HEADER."
-		},
-		"original_api_key": {
-			"type": "string",
-			"title": "Original Api key",
-			"description": "Authorization by Route4Me key, for Route4Me users - GET."
 		}
 	}
 }
