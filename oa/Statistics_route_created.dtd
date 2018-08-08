@@ -3,7 +3,7 @@
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics_route_created.dtd",
 	"title": "Route Created Statistics",
 	"description": Statistics for created Routes. Endpoint - https://api.route4me.com/api/v1/statistics/route/created/count-grouped",
-	"required": ["trim_ts","from_ts","auth_token"],
+	"required": ["trim_ts","from_ts"],
 	"type": "object",
 	"properties": {
 		"original_api_key": {
@@ -11,60 +11,60 @@
 			"title": "Original Api key",
 			"description": "Authorization by Route4Me key, for Route4Me users - GET."
 		},
-		"x-original-api-key": {
+		"x-auth-token": {
 			"type": "string",
-			"title": "X Original Api key",
-			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
 		},
 		"filter_value": {
 			"type": "string",
 			"title": "Filter Value",
 			"description": "The value of a filter - GET."
 		},
-		"from_ts": {
-			"type": "integer",
-			"title": "From ts",
-			"description": "Start period timestamp"
-		},
-		"x-api-key": {
-			"type": "string",
-			"title": "X Api key",
-			"description": "Use API with API key without authorization - HEADER."
-		},
-		"trim_ts": {
-			"type": "integer",
-			"title": "Trim ts",
-			"description": "End period timestamp"
-		},
 		"algorithm_type": {
 			"type": "string",
 			"title": "Algorithm Type",
 			"description": "Filter by algorithm type, optimization enabled/disabled - GET."
 		},
-		"api_key": {
+		"from_ts": {
+			"type": "integer",
+			"title": "From Ts",
+			"description": "Start period timestamp"
+		},
+		"group_period": {
 			"type": "string",
-			"title": "API key",
-			"description": "Use API with API key without authorization - GET."
+			"title": "Group Period",
+			"description": "Grouping period, 1h by default - GET."
 		},
 		"filter_name": {
 			"type": "string",
 			"title": "Filter Name",
 			"description": "The name of a filter parameter - GET."
 		},
+		"api_key": {
+			"type": "string",
+			"title": "API Key",
+			"description": "Use API with API key without authorization - GET."
+		},
+		"trim_ts": {
+			"type": "integer",
+			"title": "Trim Ts",
+			"description": "End period timestamp"
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original Api key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
 		"auth_token": {
 			"type": "string",
 			"title": "Authentication Token",
 			"description": "Authorization token that will be given after signing in - GET."
 		},
-		"x-auth-token": {
+		"x-api-key": {
 			"type": "string",
-			"title": "X Authentication Token",
-			"description": "Authorization token that will be given after signing in - HEADER."
-		},
-		"group_period": {
-			"type": "string",
-			"title": "Group Period",
-			"description": "Grouping period, 1h by default - GET."
+			"title": "X Api key",
+			"description": "Use API with API key without authorization - HEADER."
 		}
 	}
 }
