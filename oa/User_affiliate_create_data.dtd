@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_affiliate_create_data",
-	"title": "User Payload",
-	"description": "JSON payload for creating affiliate",
+	"title": "Create Affiliate Payload",
+	"description": "JSON payload for creating an affiliate",
 	"type": "object",
 	"properties": {
 		"company_name": {
