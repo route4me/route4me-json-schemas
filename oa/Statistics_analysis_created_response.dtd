@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics_analysis_created_response.dtd",
 	"title": "Response of Statistics for Analysis Sessions",
-	"description": "Response JSON schema of the statistics for created OA Analysis Sessions. Endpoint - https://api.route4me.com/api/v1/statistics/analysis-session/created/count-grouped",
+	"description": "Response JSON schema of the statistics for the created OA Analysis Sessions. Endpoint - https://api.route4me.com/api/v1/statistics/analysis-session/created/count-grouped",
 	"type": "object",
 	"properties": {
 		"data": {
