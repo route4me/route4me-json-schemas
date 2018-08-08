@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_affiliate_info_response.dtd",
-	"title": "Response Affiliate Info",
-	"description": "Response JSON schema for returned affiliate info. patch. Endpoint: https://api.route4me.com/api/v1/user/affiliates/{affiliate_id}",
+	"title": "Response for Affiliate Info",
+	"description": "Response JSON schema for returned affiliate info. Endpoint: https://api.route4me.com/api/v1/user/affiliates/{affiliate_id}",
 	"type": "object",
 	"properties": {
 		"data": {
