@@ -3,6 +3,7 @@
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin_info.dtd",
 	"title": "Get Admin Info",
 	"description": "Returns admin's information by its id. Only for Admins. Get. Endpoint - https://api.route4me.com/api/v1/user/admins/{admin_id} ",
+	"required": ["admin_id"],
 	"type": "object",
 	"properties": {
 		"admin_id": {
