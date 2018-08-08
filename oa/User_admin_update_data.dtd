@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin_update_data.dtd",
-	"title": "User Payload",
-	"description": "JSON payload for creating admin",
+	"title": "Admin Update Payload",
+	"description": "JSON payload for updating an admin",
 	"type": "object",
 	"properties": {
 		"company_name": {
@@ -33,7 +33,7 @@
 		"phone_number": {
 			"type": "string",
 			"title": "Phone Number",
-			"description": "Phone numberof the user"
+			"description": "Phone number of the user"
 		}
 	}
 }
