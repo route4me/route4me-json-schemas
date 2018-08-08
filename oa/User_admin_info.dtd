@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin_info.dtd",
-	"title": "Admin Info",
-	"description": "Returns admin's information by its id only for Admins. Endpoint - https://api.route4me.com/api/v1/user/admins/{admin_id} ",
+	"title": "Get Admin Info",
+	"description": "Returns admin's information by its id. Only for Admins. Get. Endpoint - https://api.route4me.com/api/v1/user/admins/{admin_id} ",
 	"type": "object",
 	"properties": {
 		"admin_id": {
@@ -10,34 +10,34 @@
 			"title": "Admin ID",
 			"description": "User's id - PATH."
 		},
-		"auth_token": {
+		"original_api_key": {
 			"type": "string",
-			"title": "Authentication Token",
-			"description": "Authorization token that will be given after signing in - GET."
+			"title": "Original API Key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
 		},
 		"api_key": {
 			"type": "string",
-			"title": "API key",
+			"title": "API Key",
 			"description": "Use API with API key without authorization - GET."
-		},
-		"original_api_key": {
-			"type": "string",
-			"title": "Original Api key",
-			"description": "Authorization by Route4Me key, for Route4Me users - GET."
-		},
-		"x-original-api-key": {
-			"type": "string",
-			"title": "X Original Api key",
-			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
 		},
 		"x-auth-token": {
 			"type": "string",
 			"title": "X Authentication Token",
 			"description": "Authorization token that will be given after signing in - HEADER."
 		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original API Key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
 		"x-api-key": {
 			"type": "string",
-			"title": "X Api key",
+			"title": "X API Key",
 			"description": "Use API with API key without authorization - HEADER."
 		}
 	}
