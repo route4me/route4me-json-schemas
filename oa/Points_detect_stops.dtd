@@ -3,8 +3,19 @@
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Points_detect_stops.dtd",
 	"title": "Detect Stops",
 	"description": "Detect stops from raw track. Endpoint - https://api.route4me.com/api/v1/points/detect-stops",
+	"required": ["payload"],
 	"type": "object",
 	"properties": {
+		"original_api_key": {
+			"type": "string",
+			"title": "Original Api key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original Api key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - GET."
+		},
 		"x-auth-token": {
 			"type": "string",
 			"title": "X Authentication Token",
@@ -14,11 +25,6 @@
 			"type": "object",
 			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Vehicle_trace.dtd",
 			"description": "JSON payload for input"
-		},
-		"x-original-api-key": {
-			"type": "string",
-			"title": "X Original Api key",
-			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - GET."
 		},
 		"api_key": {
 			"type": "string",
@@ -34,11 +40,6 @@
 			"type": "string",
 			"title": "X Api key",
 			"description": "Use API with API key without authorization - GET."
-		},
-		"original_api_key": {
-			"type": "string",
-			"title": "Original Api key",
-			"description": "Authorization by Route4Me key, for Route4Me users - GET."
 		}
 	}
 }
