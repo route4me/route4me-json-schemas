@@ -8,7 +8,7 @@
 		"phone_number": {
 			"type": "string",
 			"title": "Phone Number",
-			"description": "Phone numberof the user"
+			"description": "Phone number of the user"
 		},
 		"website": {
 			"type": "string",
