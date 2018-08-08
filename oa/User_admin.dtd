@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin.dtd",
 	"title": "User (admin)",
-	"description": "JSON schema for a user (admin). Endpoint - https://api.route4me.com/api/v1/user/admins",
+	"description": "JSON schema for a user (admin). Sub-schema",
 	"type": "object",
 	"properties": {
 		"company_name": {
@@ -13,7 +13,7 @@
 		"phone_number": {
 			"type": "string",
 			"title": "Phone Number",
-			"description": "Phone numberof the user"
+			"description": "Phone number of the user"
 		},
 		"locale": {
 			"type": "string",
