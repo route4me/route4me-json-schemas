@@ -23,7 +23,7 @@
 		"error": {
 			"type": "string",
 			"title": "Error",
-			"description": "Error"
+			"description": "Error text"
 		},
 		"code": {
 			"type": "string",
