@@ -35,12 +35,12 @@
 					},
 					"from_ts": {
 						"type": "integer",
-						"title": "From ts",
+						"title": "From Ts",
 						"description": "Include from timestamp for analysis to report"
 					},
 					"trim_ts": {
 						"type": "integer",
-						"title": "Trim ts",
+						"title": "Trim Ts",
 						"description": "Include trim timestamp for analysis to report"
 					},
 					"member_id": {
@@ -51,7 +51,7 @@
 				}
 			},
 			"title": "GPS Counter",
-			"description": "GPS Counter"
+			"description": "GPS counter"
 		}
 	}
 }
