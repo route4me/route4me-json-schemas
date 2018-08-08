@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Track_point.dtd",
 	"title": "Device Track Poin",
-	"description": "Response Schema For device track point",
+	"description": "Response Schema For the device track point",
 	"type": "object",
 	"properties": {
 		"longitude": {
@@ -34,7 +34,7 @@
 				},
 				"typeId": {
 					"type": "integer",
-					"title": "TypeId",
+					"title": "Type Id",
 					"description": "Type Id"
 				},
 				"volts": {
