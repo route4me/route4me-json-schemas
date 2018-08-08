@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admins_list_response.dtd",
-	"title": "Resposne Users List",
-	"description": "Returns list of admins only for Admins. patch. Endpoint: https://api.route4me.com/api/v1/user/admins",
+	"title": "Resposne for Users List",
+	"description": "Returns list of the admins only for Admins. Endpoint: https://api.route4me.com/api/v1/user/admins",
 	"type": "object",
 	"properties": {
 		"data": {
