@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Savings_summary.dtd",
-	"title": "Savings Summary",
-	"description": "The response parameters of the savings summary. The endpoint: https://oa.route4me.com/api/v1/analysis/summary",
+	"title": "Savings Summary Response",
+	"description": "The response parameters for the savings summary. The endpoint: https://oa.route4me.com/api/v1/analysis/summary",
 	"type": "object",
 	"properties": {
 		"device_count_formatted": {
@@ -17,7 +17,7 @@
 		},
 		"subtotal_emissions_ktonc02_optimized_formatted": {
 			"type": "integer",
-			"title": "Subtotal Emissions Ktonc02 Optimized Formatted",
+			"title": "Subtotal Emissions KtonC02 Optimized Formatted",
 			"description": "Subtotal emissions ktonc02 optimized formatted (e.g. 93)"
 		},
 		"subtotal_distance_savings": {
@@ -50,7 +50,7 @@
 		"subtotal_emissions_ktonc02_savings": {
 			"type": "number",
 			"multipleOf": 0.01,
-			"title": "Subtotal Emissions ktonc02 Savings",
+			"title": "Subtotal Emissions KtonC02 Savings",
 			"description": "Subtotal emissions ktonc02 savings"
 		},
 		"scenario_description_optimized": {
@@ -97,7 +97,7 @@
 		"subtotal_emissions_ktonc02_optimized": {
 			"type": "number",
 			"multipleOf": 0.1,
-			"title": "Subtotal Emissions ktonc02 Optimized",
+			"title": "Subtotal Emissions KtonC02 Optimized",
 			"description": "Subtotal of the emissions ktonc02 optimized"
 		},
 		"accidents_percent_savings_formated": {
@@ -168,7 +168,7 @@
 		},
 		"subtotal_emissions_ktonc02_percent_savings_formatted": {
 			"type": "string",
-			"title": "Subtotal Emissions Ktonc02 Percent Savings Formatted",
+			"title": "Subtotal Emissions KtonC02 Percent Savings Formatted",
 			"description": "Subtotal emissions ktonc02 percent savings formatted (e.g. '57%')"
 		},
 		"accidents_percent_savings_formated_formatted": {
@@ -185,7 +185,7 @@
 		"subtotal_emissions_ktonc02_percent_savings": {
 			"type": "number",
 			"multipleOf": 0.01,
-			"title": "Subtotal Emissions ktonc02 Percent Savings",
+			"title": "Subtotal Emissions KtonC02 Percent Savings",
 			"description": "Subtotal emissions ktonc02 percent savings"
 		},
 		"scenario_name_optimized": {
@@ -200,7 +200,7 @@
 		},
 		"subtotal_emissions_ktonc02_formatted": {
 			"type": "string",
-			"title": "Subtotal Emissions ktonc02 Formatted",
+			"title": "Subtotal Emissions KtonC02 Formatted",
 			"description": "Subtotal Emissions ktonc02 Formatted (e.g. '216')"
 		},
 		"subtotal_at_fault_accident_count_savings_formatted": {
@@ -248,7 +248,7 @@
 		"subtotal_emissions_ktonc02": {
 			"type": "number",
 			"multipleOf": 0.1,
-			"title": "Subtotal Emissions ktonc02",
+			"title": "Subtotal Emissions KtonC02",
 			"description": "Subtotal of the emissions ktonc02"
 		},
 		"subtotal_routes_count": {
@@ -260,7 +260,7 @@
 			"type": "number",
 			"multipleOf": 0.01,
 			"title": "Subtotal Fuel Optimized",
-			"description": "Subtotal of the fuel comsumption optimized"
+			"description": "Subtotal of the fuel consumption, optimized"
 		},
 		"subtotal_distance": {
 			"type": "number",
@@ -281,7 +281,7 @@
 		},
 		"subtotal_routes_count_formatted": {
 			"type": "string",
-			"title": "Subtotal routes count formatted",
+			"title": "Subtotal Routes Count Formatted",
 			"description": "Subtotal routes count formatted (e.g. '200')"
 		},
 		"accidents_optimized": {
@@ -293,7 +293,7 @@
 			"type": "number",
 			"multipleOf": 0.01,
 			"title": "Subtotal Fuel",
-			"description": "Subtotal of the fuel comsumption"
+			"description": "Subtotal of the fuel consumption"
 		},
 		"subtotal_costs": {
 			"type": "number",
@@ -329,7 +329,7 @@
 		},
 		"subtotal_distance_formatted": {
 			"type": "string",
-			"title": "Subtotal distance formatted",
+			"title": "Subtotal Distance Formatted",
 			"description": "Subtotal distance formatted (e.g. '23.8K mi')"
 		},
 		"subtotal_emissions_ktonc02_savings_formatted": {
@@ -356,7 +356,7 @@
 		"subtotal_at_fault_accident_costs": {
 			"type": "number",
 			"multipleOf": 0.01,
-			"title": "Subtotal at fault accident_costs",
+			"title": "Subtotal At Fault Accident Costs",
 			"description": "Subtotal at fault accident_costs"
 		},
 		"subtotal_at_fault_accident_costs_optimized": {
@@ -463,7 +463,8 @@
 			"multipleOf": 0.01,
 			"title": "Subtotal Operating Cost Savings",
 			"description": "Subtotal operating cost savings"
-		},"subtotal_pieces": {
+		},
+		"subtotal_pieces": {
 			"type": "integer",
 			"title": "Subtotal Pieces",
 			"description": "Subtotal of the cargo pieces"
