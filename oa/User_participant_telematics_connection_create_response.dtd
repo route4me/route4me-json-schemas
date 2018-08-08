@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_telematics_connection_create_response.dtd",
-	"title": "Participant's Telematics Connection Create Response",
-	"description": "Response JSON schema for creating of a participant's telematics connection. Endpoint: https://api.route4me.com/api/v1/user/participants/{participant_user_id}/telematics-connection",
+	"title": "Response for Create Participant's Telematics Connection",
+	"description": "Response JSON schema for creating the telematics connection for a participant. Endpoint: https://api.route4me.com/api/v1/user/participants/{participant_user_id}/telematics-connection",
 	"type": "object",
 	"properties": {
 		"data": {
