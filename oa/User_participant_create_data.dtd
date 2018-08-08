@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_create_data.dtd",
-	"title": "Participant Payload",
-	"description": "JSON payload for creating participant",
+	"title": "Create Participant Payload",
+	"description": "JSON payload for creating a participant",
 	"type": "object",
 	"properties": {
 		"affiliate_user_id": {
