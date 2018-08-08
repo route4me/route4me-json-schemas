@@ -2,7 +2,7 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Savings.dtd",
 	"title": "Savings",
-	"description": "The response parameters of the savings. Used by different Endpoints",
+	"description": "The response parameters of the savings. Sub-schema",
 	"type": "object",
 	"properties": {
 		"subtotal_at_fault_accident_costs_percent_savings": {
@@ -68,13 +68,13 @@
 		"subtotal_emissions_ktonc02_percent_savings": {
 			"type": "number",
 			"multipleOf": 0.01,
-			"title": "Subtotal Emissions ktonc02 Percent Savings",
+			"title": "Subtotal Emissions KtonC02 Percent Savings",
 			"description": "Subtotal emissions ktonc02 percent savings"
 		},
 		"subtotal_emissions_ktonc02_savings": {
 			"type": "number",
 			"multipleOf": 0.01,
-			"title": "Subtotal Emissions ktonc02 Savings",
+			"title": "Subtotal Emissions KtonC02 Savings",
 			"description": "Subtotal emissions ktonc02 savings"
 		},
 		"subtotal_fuel_percent_savings": {
