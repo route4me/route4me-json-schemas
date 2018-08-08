@@ -2,27 +2,17 @@
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/System_algos_get.dtd",
 	"title": "Get System Algos",
-	"description": "Returns algorithms list. Endpoint - https://api.route4me.com/api/v1/algos/",
+	"description": "Returns the algorithms list. Endpoint - https://api.route4me.com/api/v1/algos/",
 	"type": "object",
 	"properties": {
-		"x-original-api-key": {
-			"type": "string",
-			"title": "X Original Api key",
-			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
-		},
 		"original_api_key": {
 			"type": "string",
-			"title": "Original Api key",
+			"title": "Original API Key",
 			"description": "Authorization by Route4Me key, for Route4Me users - GET."
-		},
-		"auth_token": {
-			"type": "string",
-			"title": "Authentication Token",
-			"description": "Authorization token that will be given after signing in - GET."
 		},
 		"api_key": {
 			"type": "string",
-			"title": "API key",
+			"title": "API Key",
 			"description": "Use API with API key without authorization - GET."
 		},
 		"x-auth-token": {
@@ -30,9 +20,19 @@
 			"title": "X Authentication Token",
 			"description": "Authorization token that will be given after signing in - HEADER."
 		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original API Key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
 		"x-api-key": {
 			"type": "string",
-			"title": "X Api key",
+			"title": "X API Key",
 			"description": "Use API with API key without authorization - HEADER."
 		}
 	}
