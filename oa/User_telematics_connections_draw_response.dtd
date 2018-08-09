@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_connections_draw_response.dtd",
-	"title": "Telematics Connections Draw Resposne",
+	"title": "Resposne for Telematics Connections Draw",
 	"description": "Response for assigning the parameter draw to the telematics connections. Endpoint: https://api.route4me.com/api/v1/user/telematics-connections",
 	"type": "object",
 	"properties": {
