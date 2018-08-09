@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participants_list_response.dtd",
-	"title": "Participants List Resposne",
-	"description": "Response for getting of the participants list. patch. Endpoint: https://api.route4me.com/api/v1/user/participants/plain",
+	"title": "Resposne for Participants List",
+	"description": "Response for getting the participants list. Endpoint: https://api.route4me.com/api/v1/user/participants/plain",
 	"type": "object",
 	"properties": {
 		"metadata": {
