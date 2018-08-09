@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_vendor_get_response.dtd",
-	"title": "Get Telematics Vendor Response",
-	"description": "Response for getting a telematics vendor. Post. Endpoint: https://api.route4me.com/api/v1/user/vendors/{vendor_id}",
+	"title": "Response for Get Telematics Vendor",
+	"description": "Response for getting a telematics vendor. Endpoint: https://api.route4me.com/api/v1/user/vendors/{vendor_id}",
 	"type": "object",
 	"properties": {
 		"data": {
