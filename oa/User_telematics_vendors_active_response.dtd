@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_vendors_active_response.dtd",
-	"title": "Get Actove Telematics Vendors Response",
+	"title": "Response for Get Actove Telematics Vendors",
 	"description": "Response for getting the active telematics vendors. Endpoint: https://api.route4me.com/api/v1/user/vendors/active",
 	"type": "object",
 	"properties": {
@@ -11,7 +11,7 @@
 				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_tc_vendor.dtd"
 			},
 			"title": "Telematics Vendors List",
-			"description": "Telematics vendors list"
+			"description": "The list of the telematics vendors"
 		}
 	}
 }
