@@ -171,6 +171,11 @@
 			],
 			"title": "Weight lbs",
 			"descrption": "A weight of the vehicle in the pounds."
+		},
+		"is_operational": {
+			"type": "boolean",
+			"title": "Is Operational",
+			"description": "If true, the vehicle is operational"
 		}
 	}
 }
