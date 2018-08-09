@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_vendor_deactivate_response.dtd",
-	"title": "Activate/Deactivate Telematics Vendor Response",
-	"description": "Response for activating/deactivating a telematics vendor. Patch. Endpoint: https://api.route4me.com/api/v1/user/vendors/{vendor_id}",
+	"title": "Response for Activate/Deactivate Telematics Vendor",
+	"description": "Response for activating/deactivating a telematics vendor. Endpoint: https://api.route4me.com/api/v1/user/vendors/{vendor_id}",
 	"type": "object",
 	"properties": {
 		"data": {
