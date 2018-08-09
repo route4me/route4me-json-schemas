@@ -3,42 +3,43 @@
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_vendor_create.dtd",
 	"title": "Create Telematics Vendor",
 	"description": "Creates a new Vendor in the system only for Admins. HTTP method: POST. Endpoint: https://api.route4me.com/api/v1/user/vendors",
+	"required": ["payload"],
 	"type": "object",
 	"properties": {
-		"x-original-api-key": {
-			"type": "string",
-			"title": "X Original Api key",
-			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
-		},
-		"original_api_key": {
-			"type": "string",
-			"title": "Original Api key",
-			"description": "Authorization by Route4Me key, for Route4Me users - GET."
-		},
-		"auth_token": {
-			"type": "string",
-			"title": "Authentication Token",
-			"description": "Authorization token that will be given after signing in - GET."
-		},
-		"api_key": {
-			"type": "string",
-			"title": "API key",
-			"description": "Use API with API key without authorization - GET."
-		},
-		"x-auth-token": {
-			"type": "string",
-			"title": "X Authentication Token",
-			"description": "Authorization token that will be given after signing in - HEADER."
-		},
 		"x-api-key": {
 			"type": "string",
-			"title": "X Api key",
+			"title": "X API Key",
 			"description": "Use API with API key without authorization - HEADER."
 		},
 		"payload": {
 			"type": "object",
 			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_vendor_create_data.dtd",
 			"description": "JSON payload for input"
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original API Key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original API Key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API Key",
+			"description": "Use API with API key without authorization - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
 		}
 	}
 }
