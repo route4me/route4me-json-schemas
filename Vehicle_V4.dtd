@@ -25,6 +25,14 @@
 			"title": "Vehicle alias",
 			"descrption": "Internal name of the vehicle"
 		},
+		"vehicle_vin": {
+			"type": [
+				"string",
+				"null"
+			],
+			"title": "Vehicle VIN",
+			"descrption": "Vehicle VIN number"
+		},
 		"vehicle_reg_state_id": {
 			"type": [
 				"string",
@@ -72,7 +80,7 @@
 		},
 		"vehicle_model_year": {
 			"type": [
-				"string",
+				"integer",
 				"null"
 			],
 			"title": "Vehicle model year",
@@ -88,7 +96,7 @@
 		},
 		"vehicle_year_acquired": {
 			"type": [
-				"string",
+				"integer",
 				"null"
 			],
 			"title": "Vehicle acquired year",
@@ -127,15 +135,20 @@
 		},
 		"vehicle_axle_count": {
 			"type": [
-				"string",
+				"integer",
 				"null"
 			],
 			"title": "Vehicle axle count",
 			"descrption": "A number of the vecile's axles"
 		},
+		"is_operational": {
+			"type": "boolean",
+			"title": "Is Operational",
+			"description": "If true, the vehicle is operational"
+		},
 		"mpg_city": {
 			"type": [
-				"string",
+				"integer",
 				"null"
 			],
 			"title": "MPG city",
@@ -143,7 +156,7 @@
 		},
 		"mpg_highway": {
 			"type": [
-				"string",
+				"integer",
 				"null"
 			],
 			"title": "MPG highway",
@@ -159,7 +172,7 @@
 		},
 		"height_inches": {
 			"type": [
-				"string",
+				"integer",
 				"null"
 			],
 			"title": "Height inches",
@@ -167,17 +180,13 @@
 		},
 		"weight_lb": {
 			"type": [
-				"string",
+				"integer",
 				"null"
 			],
 			"title": "Weight lbs",
 			"descrption": "A weight of the vehicle in the pounds."
 		},
-		"is_operational": {
-			"type": "boolean",
-			"title": "Is Operational",
-			"description": "If true, the vehicle is operational"
-		},
+		
 		"external_telematics_vehicle_id": {
 			"type": [
 				"string",
