@@ -54,7 +54,7 @@
 				"string",
 				"null"
 			],
-			"title": "Vehicle license plate",
+			"title": "Vehicle License Plate",
 			"descrption": "A license plate of the vehicle"
 		},
 		"vehicle_type_id": {
@@ -62,20 +62,22 @@
 				"string",
 				"null"
 			],
+			"enum": ["sedan", "suv", "pickup_truck", "van", "18wheeler", "cabin", "hatchback", "motorcyle", "waste_disposal", "tree_cutting", "bigrig", "cement_mixer", "livestock_carrier", "dairy","tractor_trailer"],
 			"title": "Vehicle Type ID",
-			"descrption": "Vehicle type (e.g. pickup_truck, cabin, van, livestock_carrier)"
+			"descrption": "Vehicle type"
 		},
 		"timestamp_added": {
 			"type": "string",
 			"title": "Timestamp Added",
-			"descrption": "When he vehicle was added"
+			"descrption": "When the vehicle was added"
 		},
 		"vehicle_make": {
 			"type": [
 				"string",
 				"null"
 			],
-			"title": "Vehicle make",
+			"enum": ["american coleman", "bmw", "chevrolet", "ford", "freightliner", "gmc", "hino", "honda", "isuzu", "kenworth", "mack", "mercedes-benz", "mitsubishi", "navistar", "nissan", "peterbilt", "renault", "scania", "sterling", "toyota", "volvo", "western star"],
+			"title": "Vehicle Make",
 			"descrption": "Vehicle maker brend"
 		},
 		"vehicle_model_year": {
@@ -83,7 +85,7 @@
 				"integer",
 				"null"
 			],
-			"title": "Vehicle model year",
+			"title": "Vehicle Model Year",
 			"descrption": "A year of the vehicle model"
 		},
 		"vehicle_model": {
@@ -91,7 +93,7 @@
 				"string",
 				"null"
 			],
-			"title": "Vehicle model",
+			"title": "Vehicle Model",
 			"descrption": "A model of the vehicle"
 		},
 		"vehicle_year_acquired": {
@@ -99,7 +101,7 @@
 				"integer",
 				"null"
 			],
-			"title": "Vehicle acquired year",
+			"title": "Vehicle Acquired Year",
 			"descrption": "A year the vehicle was acquired"
 		},
 		"vehicle_cost_new": {
@@ -107,7 +109,7 @@
 				"number",
 				"null"
 			],
-			"title": "Vehicle cost new",
+			"title": "Vehicle Cost New",
 			"descrption": "A cost f the new vehicle"
 		},
 		"purchased_new": {
@@ -121,7 +123,7 @@
 				"null"
 			],
 			"format": "date-time",
-			"title": "License start date",
+			"title": "License Start Date",
 			"descrption": "A start date of the license"
 		},
 		"license_end_date": {
@@ -130,7 +132,7 @@
 				"null"
 			],
 			"format": "date-time",
-			"title": "License end date",
+			"title": "License End Date",
 			"descrption": "An end date of the license"
 		},
 		"vehicle_axle_count": {
@@ -138,7 +140,7 @@
 				"integer",
 				"null"
 			],
-			"title": "Vehicle axle count",
+			"title": "Vehicle Axle Count",
 			"descrption": "A number of the vecile's axles"
 		},
 		"is_operational": {
@@ -151,7 +153,9 @@
 				"integer",
 				"null"
 			],
-			"title": "MPG city",
+			"minimum": 6,
+			"maximum": 60,
+			"title": "MPG City",
 			"descrption": "Miles per gallon in the city area"
 		},
 		"mpg_highway": {
@@ -159,7 +163,9 @@
 				"integer",
 				"null"
 			],
-			"title": "MPG highway",
+			"minimum": 6,
+			"maximum": 60,
+			"title": "MPG Highway",
 			"descrption": "Miles per gallon in the highway area"
 		},
 		"fuel_type": {
@@ -167,7 +173,8 @@
 				"string",
 				"null"
 			],
-			"title": "Fuel type",
+			"enum": ["unleaded 87", "unleaded 89", "unleaded 91", "unleaded 93", "diesel", "electric", "hybrid"],
+			"title": "Fuel Type",
 			"descrption": "A type of the fuel"
 		},
 		"height_inches": {
@@ -175,7 +182,7 @@
 				"integer",
 				"null"
 			],
-			"title": "Height inches",
+			"title": "Height Inches",
 			"descrption": "A height of the vehicle in the inches."
 		},
 		"weight_lb": {
@@ -183,7 +190,7 @@
 				"integer",
 				"null"
 			],
-			"title": "Weight lbs",
+			"title": "Weight LB",
 			"descrption": "A weight of the vehicle in the pounds."
 		},
 		
@@ -253,54 +260,61 @@
 				"string",
 				"NONE"
 			],
+			"enum": ["INVALID", "NONE", "GENERAL", "EXPLOSIVE", "INHALANT", "RADIOACTIVE", "CAUSTIC", "FLAMMABLE", "HARMFUL_TO_WATER"],
 			"title": "Hazardous Materials Type",
-			"descrption": "Hazardous materials type (e.g. NONE, GENERAL)"
+			"descrption": "Hazardous materials type"
 		},
 		"LowEmissionZonePref": {
 			"type": [
 				"string",
 				"null"
 			],
+			"enum": ["AVOID", "ALLOW", "WARN"],
 			"title": "Low Emission Zone Preference",
-			"descrption": "Low emission zone preference (e.g. WARN)"
+			"descrption": "Low emission zone preference"
 		},
 		"Use53FootTrailerRouting": {
 			"type": [
 				"string",
 				"null"
 			],
+			"enum": ["YES", "NO"],
 			"title": "Use 53 Foot Trailer Routing",
-			"descrption": "Use 53 foot trailer routing (e.g. NO, YES)"
+			"descrption": "Use 53 foot trailer routing"
 		},
 		"UseNationalNetwork": {
 			"type": [
 				"string",
 				"null"
 			],
+			"enum": ["YES", "NO"],
 			"title": "Use National Network",
-			"descrption": "Use national network (e.g. NO, YES)"
+			"descrption": "Use national network"
 		},
 		"UseTruckRestrictions": {
 			"type": [
 				"string",
 				"null"
 			],
+			"enum": ["YES", "NO"],
 			"title": "Use Truck Restrictions",
-			"descrption": "Use truck restrictions (e.g. NO, YES)"
+			"descrption": "Use truck restrictions"
 		},
 		"AvoidFerries": {
 			"type": [
 				"string",
 				"NO"
 			],
+			"enum": ["YES", "NO"],
 			"title": "Avoid Ferries",
-			"descrption": "Avoid Ferries (e.g. NO, YES)"
+			"descrption": "Avoid Ferries"
 		},
 		"DividedHighwayAvoidPreference": {
 			"type": [
 				"string",
 				"null"
 			],
+			"enum": ["STRONG_AVOID", "AVOID", "NEUTRAL", "FAVOR", "STRONG_FAVOR"],
 			"title": "Divided Highway Avoid Preference",
 			"descrption": "Divided highway avoid preference (e.g. NEUTRAL)"
 		},
@@ -309,14 +323,16 @@
 				"string",
 				"null"
 			],
+			"enum": ["STRONG_AVOID", "AVOID", "NEUTRAL", "FAVOR", "STRONG_FAVOR"],
 			"title": "Freeway Avoid Preference",
-			"descrption": "Freeway avoid preference (e.g. NEUTRAL)"
+			"descrption": "Freeway avoid preference"
 		},
 		"InternationalBordersOpen": {
 			"type": [
 				"string",
 				"null"
 			],
+			"enum": ["YES", "NO"],
 			"title": "International Borders Open",
 			"descrption": "International borders open (e.g. NO, YES)"
 		},
@@ -325,8 +341,9 @@
 				"string",
 				"null"
 			],
+			"enum": ["ALWAYS_AVOID", "IF_NECESSARY", "NO_RESTRICTION"],
 			"title": "Toll Road Usage",
-			"descrption": "Toll road usage (e.g. NO_RESTRICTION)"
+			"descrption": "Toll road usage"
 		},
 		"hwy_only": {
 			"type": "boolean",
@@ -348,16 +365,18 @@
 				"string",
 				"OFF"
 			],
+			"enum": ["OFF", "MINIMAL", "MODERATE", "AVERAGE", "STRICT", "ADHERE", "STRONGLYHERE"],
 			"title": "Side Street Adherence",
-			"descrption": "Side street adherence (e.g. OFF, ON)"
+			"descrption": "Side street adherence"
 		},
 		"truck_config": {
 			"type": [
 				"string",
 				"NONE"
 			],
-			"title": "Side Street Adherence",
-			"descrption": "Side street adherence"
+			"enum": ["NONE","PASSENGER","28_DOUBLETRAILER","48_STRAIGHT_TRUCK","48_SEMI_TRAILER","53_SEMI_TRAILER","FULLSIZEVAN"],
+			"title": "Truck Configuration",
+			"descrption": "Truck configuration"
 		},
 		"height_metric": {
 			"type": [
@@ -401,8 +420,8 @@
 		},
 		"timestamp_removed": {
 			"type": "string",
-			"title": "Timestamp Added",
-			"descrption": "When he vehicle was added"
+			"title": "Timestamp Removed",
+			"descrption": "When he vehicle was removed"
 		}
 	}
 }
