@@ -256,10 +256,8 @@
 			"descrption": "Weight in pounds"
 		},
 		"HazmatType": {
-			"type": [
-				"string",
-				"NONE"
-			],
+			"type": "string",
+			"default": "NONE",
 			"enum": ["INVALID", "NONE", "GENERAL", "EXPLOSIVE", "INHALANT", "RADIOACTIVE", "CAUSTIC", "FLAMMABLE", "HARMFUL_TO_WATER"],
 			"title": "Hazardous Materials Type",
 			"descrption": "Hazardous materials type"
@@ -301,10 +299,8 @@
 			"descrption": "Use truck restrictions"
 		},
 		"AvoidFerries": {
-			"type": [
-				"string",
-				"NO"
-			],
+			"type": "string",
+			"default": "NO",
 			"enum": ["YES", "NO"],
 			"title": "Avoid Ferries",
 			"descrption": "Avoid Ferries"
@@ -361,20 +357,16 @@
 			"description": "If true, the vehicle should avoid highways"
 		},
 		"side_street_adherence": {
-			"type": [
-				"string",
-				"OFF"
-			],
+			"type": "string",
+			"default": "OFF",
 			"enum": ["OFF", "MINIMAL", "MODERATE", "AVERAGE", "STRICT", "ADHERE", "STRONGLYHERE"],
 			"title": "Side Street Adherence",
 			"descrption": "Side street adherence"
 		},
 		"truck_config": {
-			"type": [
-				"string",
-				"NONE"
-			],
-			"enum": ["NONE","PASSENGER","28_DOUBLETRAILER","48_STRAIGHT_TRUCK","48_SEMI_TRAILER","53_SEMI_TRAILER","FULLSIZEVAN"],
+			"type": "string",
+			"default": "NONE",
+			"enum": ["NONE", "PASSENGER", "28_DOUBLETRAILER", "48_STRAIGHT_TRUCK", "48_SEMI_TRAILER", "53_SEMI_TRAILER", "FULLSIZEVAN", "26_STRAIGHT_TRUCK"],
 			"title": "Truck Configuration",
 			"descrption": "Truck configuration"
 		},
