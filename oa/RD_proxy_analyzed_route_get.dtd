@@ -1,0 +1,44 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_analyzed_route_get.dtd",
+	"title": "Get Actual Analyzed Route",
+	"description": "JSON schema for getting of a combined analyzed route information. Endpoint - https://api.route4me.com/api/v1/route-data-proxy/actual/{analyzed_route_id}",
+	"type": "object",
+	"properties": {
+		"analyzed_route_id": {
+			"type": "string",
+			"title": "Analyzed Route ID",
+			"description": "Analyzed route ID - PATH."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X API Key",
+			"description": "Use API with API key without authorization - HEADER."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API Key",
+			"description": "Use API with API key without authorization - GET."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original API Key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original API Key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		}
+	}
+}
