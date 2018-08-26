@@ -1,0 +1,225 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_combined_route_get_response.dtd",
+	"title": "Response for Get Combined Analyzed Route",
+	"description": "Response JSON schema for getting of a combined analyzed route information. Endpoint: https://oa.route4me.com/api/v1/route-data-proxy/actual/{analyzed_route_id}",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"properties": {
+				"vehicle": {
+					"type": "object",
+					"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_vehicle_info.dtd"
+				},
+				"depots": {
+					"type": "array",
+					"items": {
+						"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_depot.dtd"
+					}
+				},
+				"savings": {
+					"type": "object",
+					"properties": {
+						"0": {
+							"type": "object",
+							"properties": {
+								"100": {
+									"type": "object",
+									"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_savings.dtd"
+								}
+							}
+						}
+					}
+				},
+				"routes": {
+					"type": "object",
+					"0": {
+						"type": "object",
+						"properties": {
+							"addresses": {
+								"type": "array",
+								"item": {
+									"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Address.dtd"
+								}
+							},
+							"trip_costs": {
+								"type": "number",
+								"title": "Trip Costs",
+								"description": "How much costs the trip"
+							},
+							"trip_costs_formatted": {
+								"type": "string",
+								"title": "Trip Costs Formatted",
+								"description": "Formatted value of the trip costs (e.g. '$27')"
+							},
+							"trip_time_formatted": {
+								"type": "string",
+								"title": "Trip Time Formatted",
+								"description": "Formatted value of the trip time (e.g. '3 minutes')"
+							},
+							"scenario_label": {
+								"type": "string",
+								"title": "Scenario Label",
+								"description": "Scenario label"
+							},
+							"description": {
+								"type": "string",
+								"title": "Description",
+								"description": "Description of the reponse content"
+							},
+							"trip_distance": {
+								"type": "number",
+								"title": "Trip distance",
+								"description": "Trip distance"
+							},
+							"trip_time": {
+								"type": "integer",
+								"title": "Trip Time",
+								"description": "Trip time in the EPOCH format"
+							},
+							"algorithm_type": {
+								"type": "integer",
+								"title": "Algorithm Type",
+								"description": "Algorithm type"
+							},
+							"label": {
+								"type": "string",
+								"title": "Label",
+								"description": "The analysis label"
+							},
+							"trip_distance_formatted": {
+								"type": "string",
+								"title": "Trip Distance Formatted",
+								"description": "Formatted value of the trip distance (e.g. '1 mi')"
+							},
+							"path": {
+								"type": "string",
+								"title": "Psth",
+								"description": "Compressed track of the route"
+							}
+						}
+					},
+					"100": {
+						"type": "object",
+						"properties": {
+							"scenario_label": {
+								"type": "string",
+								"title": "Label",
+								"description": "The analysis label"
+							},
+							"savings": {
+								"type": "object",
+								"o": {
+									"type": "object",
+									"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_savings.dtd"
+								}
+							},
+							"trip_costs": {
+								"type": "number",
+								"title": "Trip Costs",
+								"description": "Trip costs"
+							},
+							"trip_costs_formatted": {
+								"type": "string",
+								"title": "Trip Costs Formatted",
+								"description": "Trip costs formatted (e.g. '$26')"
+							},
+							"trip_time_formatted": {
+								"type": "string",
+								"title": "Trip Time Formatted",
+								"description": "Trip time formatted (e.g. '3 minutes')"
+							},
+							"addresses": {
+								"type": "array",
+								"item": {
+									"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Address.dtd"
+								}
+							},
+							"description": {
+								"type": "string",
+								"title": "Description",
+								"description": "Description of the route analysis"
+							},
+							"trip_distance": {
+								"type": "number",
+								"title": "Trip Distance",
+								"description": "Trip distance"
+							},
+							"trip_time": {
+								"type": "integer",
+								"title": "Trip Type",
+								"description": "Trip type"
+							},
+							"is_round_trip": {
+								"type": "boolean",
+								"title": "Is Round Trip",
+								"description": "If true, the route type is rount trip"
+							},
+							"algorithm_type": {
+								"type": "integer",
+								"title": "Algorithm Type",
+								"description": "Algorithm type"
+							},
+							"label": {
+								"type": "string",
+								"title": "Label",
+								"description": "The analysis label"
+							},
+							"trip_distance_formatted": {
+								"type": "string",
+								"title": "Trip Distance Formatted",
+								"description": "Formatted value of the trip distance (e.g. '1 mi')"
+							},
+							"path": {
+								"type": "string",
+								"title": "Psth",
+								"description": "Compressed track of the route"
+							}
+						}
+					}
+				}
+			}
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"links": {
+					"type": "object",
+					"properties": {
+						"0": {
+							"type": "string",
+							"title"	: "0",
+							"description": "link to route analize of the type 0"
+						},
+						"100": {
+							"type": "string",
+							"title"	: "100",
+							"description": "link to route analize of the type 100"
+						}
+					}
+				},
+				"is_round_trip": {
+					"type": "boolean",
+					"title": "Is Round Trip",
+					"description": "If true, the route type is rount trip"
+				},
+				"origin_route_id": {
+					"type": "string",
+					"title": "Origin Route ID",
+					"description": "Origin route ID"
+				},
+				"is_eligible": {
+					"type": "boolean",
+					"title": "Is Eligible",
+					"description": "If true, the route is eligible"
+				},
+				"analyzed_route_id": {
+					"type": "string",
+					"title": "Analysed Route ID",
+					"description": "Analysed route ID"
+				}
+			}
+		}
+	}
+}
