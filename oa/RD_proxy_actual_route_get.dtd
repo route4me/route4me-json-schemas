@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_analyzed_route_get.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_actual_route_get.dtd",
 	"title": "Get Actual Analyzed Route",
-	"description": "JSON schema for getting of a combined analyzed route information. Endpoint - https://api.route4me.com/api/v1/route-data-proxy/actual/{analyzed_route_id}",
+	"description": "JSON schema for getting of an actual analyzed route information. Endpoint - https://api.route4me.com/api/v1/route-data-proxy/actual/{analyzed_route_id}",
 	"type": "object",
 	"properties": {
 		"analyzed_route_id": {
