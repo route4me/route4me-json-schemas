@@ -257,6 +257,11 @@
     - [ ] [Data_manager.dtd](Data_manager.dtd "Subschema. Data manager")  
 
 ## Route data proxy: Proxy for routes
+- [x] [RD_proxy_analyzed_route_get.dtd](RD_proxy_analyzed_route_get.dtd "Get active analyzed route. Endpoint: /route-data-proxy/actual/{analyzed_route_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Route%20Data%20Proxy/RD_proxy_analyzed_route_get.bat))  
+- [x] [RD_proxy_analyzed_route_get_response.dtd](RD_proxy_analyzed_route_get_response.dtd "Response. Get active analyzed route. Endpoint: /route-data-proxy/actual/{analyzed_route_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Route%20Data%20Proxy/RD_proxy_analyzed_route_get_RESPONSE.json))  
+    - [ ] [Address.dtd](Address.dtd "Subschema. Address")  
+    - [ ] [User_vehicle_info.dtd](User_vehicle_info.dtd "Subschema. Vehicle")  
+    - [ ] [Track_point.dtd](Track_point.dtd "Subschema. Trackpoint")  
 
 ## Vendors
 - [x] [Vendors_get_list.dtd](Vendors_get_list.dtd "Get. Get vendors list. Endpoint: /vendors") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Vendors/Vendors_get_list.bat))  
