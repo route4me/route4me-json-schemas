@@ -45,6 +45,11 @@
 			"title": "Approved For Execution",
 			"description": "The route approved for execution"
 		},
+		"approved_revisions_counter": {
+			"type": "integer",
+			"title": "Approved Revisions Counter",
+			"description": "Approved revisions counter"
+		},
 		"member_first_name": {
 			"type": "string",
 			"title": "Member First Name",
@@ -166,17 +171,31 @@
 			"title": "Geofence Polygon Size",
 			"description": "Geofence polygon size"
 		},
+		"destination_count": {
+			"type": "integer",
+			"title": "Destination Count",
+			"description": "Destination count"
+		},
+		"notes_count": {
+			"type": "integer",
+			"title": "Notes Count",
+			"description": "Notes count in the route"
+		},
 		"parameters": {"$ref": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd"},
 		"addresses": {
 			"type": "array",
 			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"},
 			"title": "Addresses"
 		},
-		"links": {"$ref": "https://github.com/route4me/json-schemas/blob/master/Links.dtd"},
+		"links": {"$ref": "https://github.com/route4me/json-schemas/blob/master/Link.dtd"},
 		"notes": {
 			"type": "array",
 			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/note.dtd"},
 			"title": "Notes"
+		},
+		"vehicle": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/json-schemas/blob/master/Vehicle_V4.dtd"
 		},
 		"member_config_storage": {
 			"type": "array",
