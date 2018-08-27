@@ -17,6 +17,7 @@
 		},
 		"type": {
 			"type": "string",
+			"enum": ["analysis_session.created", "depot.detected", "member.created", "route.created", "stop_detection.created", "saving.created", "saving.as-is.created", "saving.optimized.created", "report.daily", "report.weekly", "report.monthly"],
 			"title": "Type",
 			"description": "End period timestamp, unix timestamp in seconds - GET."
 		},
