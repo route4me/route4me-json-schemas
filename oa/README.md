@@ -268,6 +268,14 @@
     - [ ] [RD_proxy_depo.dtd](RD_proxy_depo.dtd "Subschema. Depot")  
     - [ ] [RD_proxy_savings.dtd](RD_proxy_savings.dtd "Subschema. Savings")  
     - [ ] [Address.dtd](Address.dtd "Subschema. Address")  
+- [x] [RD_proxy_route_get](RD_proxy_route_get "Get route. Endpoint: /route-data-proxy/{route_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Route%20Data%20Proxy/RD_proxy_route_get.bat))  
+- [x] [OA_Route.dtd](OA_Route.dtd "Response. Get route. Endpoint: /route-data-proxy/{route_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Route%20Data%20Proxy/RD_proxy_route_get_RESPONSE.json))  
+    - [ ] [RouteParameters.dtd](https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd "Subschema. Route parameters")  
+    - [ ] [Address.dtd](https://github.com/route4me/json-schemas/blob/master/Address.dtd "Subschema. Address")  
+    - [ ] [Link.dtd](https://github.com/route4me/json-schemas/blob/master/Link.dtd "Subschema. Link")  
+    - [ ] [note.dtd](https://github.com/route4me/json-schemas/blob/master/note.dtd "Subschema. Note")  
+    - [ ] [OA_Vehicle_V4.dtd](OA_Vehicle_V4.dtd "Subschema.Vehicle")  
+    - [ ] [TrackingHistory.dtd](https://github.com/route4me/json-schemas/blob/master/TrackingHistory.dtd "Subschema. Tracking history")  
 
 ## Vendors
 - [x] [Vendors_get_list.dtd](Vendors_get_list.dtd "Get. Get vendors list. Endpoint: /vendors") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Vendors/Vendors_get_list.bat))  
