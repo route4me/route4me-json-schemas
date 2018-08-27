@@ -262,6 +262,12 @@
     - [ ] [Address.dtd](Address.dtd "Subschema. Address")  
     - [ ] [User_vehicle_info.dtd](User_vehicle_info.dtd "Subschema. Vehicle")  
     - [ ] [Track_point.dtd](Track_point.dtd "Subschema. Trackpoint")  
+- [x] [RD_proxy_combined_route_get.dtd](RD_proxy_combined_route_get.dtd "Get combined analyzed route. Endpoint: /route-data-proxy/combined/{analyzed_route_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Route%20Data%20Proxy/RD_proxy_combined_route_get.bat))  
+- [x] [RD_proxy_combined_route_get_response.dtd](RD_proxy_combined_route_get_response.dtd "Response. Get combined analyzed route. Endpoint: /route-data-proxy/combined/{analyzed_route_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Route%20Data%20Proxy/RD_proxy_actual_route_get_RESPONSE.json))  
+    - [ ] [User_vehicle_info.dtd](User_vehicle_info.dtd "Subschema. Vehicle")  
+    - [ ] [RD_proxy_depo.dtd](RD_proxy_depo.dtd "Subschema. Depot")  
+    - [ ] [RD_proxy_savings.dtd](RD_proxy_savings.dtd "Subschema. Savings")  
+    - [ ] [Address.dtd](Address.dtd "Subschema. Address")  
 
 ## Vendors
 - [x] [Vendors_get_list.dtd](Vendors_get_list.dtd "Get. Get vendors list. Endpoint: /vendors") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Vendors/Vendors_get_list.bat))  
