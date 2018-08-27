@@ -11,7 +11,6 @@
 					"type": "object",
 					"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/OA_Vehicle_V4.dtd"
 				}
-                "type": { "enum": [ "residential", "business" ] }
             }
         }
 	}
