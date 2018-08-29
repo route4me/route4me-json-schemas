@@ -48,11 +48,6 @@
 					"title": "User ID",
 					"description": "Participant's user ID"
 				},
-				"virtual_email": {
-					"type": "string",
-					"title": "Virtual Email",
-					"description": "Virtual email"
-				},
 				"telematics_id": {
 					"type": "integer",
 					"title": "Telematics ID",
@@ -87,11 +82,6 @@
 					"type": "string",
 					"title": "First Name",
 					"description": "First name"
-				},
-				"virtual_password": {
-					"type": "string",
-					"title": "Virtual Password",
-					"description": "Virtual password"
 				},
 				"company_name": {
 					"type": "string",
