@@ -1,0 +1,25 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_data_monitoring_get_response.dtd",
+	"title": "Data Monitoring Response",
+	"description": "Response JSON schema for data monitoring. Endpoint - https://api.route4me.com/api/v1/analysis/monitoring",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Data_manager.dtd"
+			}	
+		},
+		"recordsTotal": {
+			"type": "integer",
+			"title": "Records Total",
+			"description": "Total number of the returned records"
+		},
+		"recordsFiltered": {
+			"type": "integer",
+			"title": "Records Filtered",
+			"description": "Total number of the filtered records"
+		}
+	}
+}
