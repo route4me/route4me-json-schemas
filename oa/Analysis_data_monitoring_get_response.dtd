@@ -8,7 +8,7 @@
 		"data": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Data_manager.dtd"
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_data_monitoring.dtd"
 			}	
 		},
 		"recordsTotal": {
