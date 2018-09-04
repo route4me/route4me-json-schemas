@@ -4,6 +4,9 @@
 
 - [x] [Analysis_download_report_query.dtd](Analysis_download_report_query.dtd "Query. Download detailed routes analysis reports as csv/xls/pdf file. Endpoint: /analysis/download/report") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_activity_event.bat))
     - [x] (See downloaded XLS report file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Analysis/Analysis_download_report_RESPONSE.xls))
+- [x] [Analysis_data_monitoring_get.dtd](Analysis_data_monitoring_get.dtd "Get. Get Data Monitoring. Endpoint: /analysis/monitoring") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Analysis/Analysis_data_monitoring_get.bat))  
+- [x] [Analysis_data_monitoring_get_response.dtd](Analysis_data_monitoring_get_response.dtd "Response. Get Data Monitoring. Endpoint: /analysis/monitoring") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Analysis/Analysis_data_monitoring_get_RESPONSE.json))  
+    - [ ] [Analysis_data_monitoring.dtd](Analysis_data_monitoring.dtd "Subschema. Data Monitoring Objects")  
 - [x] [Analysis_get_report_query.dtd](Analysis_get_report_query.dtd "Get analysis report. Endpoint: /analysis/report/{report_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Analysis/Analysis_get_report.bat))
 - [x] [Analysis_get_report_response.dtd](Analysis_get_report_response.dtd "Response. Get analysis report. Endpoint: /analysis/report/{report_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Analysis/Analysis_get_report_RESPONSE.json))  
     - [ ] [Savings_summary.dtd](Savings_summary.dtd "Sub-schema. Savings summary")
