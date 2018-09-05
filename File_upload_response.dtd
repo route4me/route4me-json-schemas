@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/File_upload_response.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/File_upload_response.dtd",
 	"description": "Response schema of a uploaded file",
 	"title": "File Upload Response.dtd",
 	"type": "object",
@@ -33,7 +33,7 @@
 		},
 		"default_map": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/default_map.dtd"
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/default_map.dtd"
 		}
 	}
 }

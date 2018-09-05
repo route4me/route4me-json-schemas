@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/General_api_parameters.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/General_api_parameters.dtd",
 	"type": "object",
 	"title": "General API Parameters",
 	"description": "General API Parameters",
