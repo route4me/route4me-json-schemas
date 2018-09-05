@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/note_custom_type_response.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/note_custom_type_response.dtd",
 	"type": "object",
 	"title": "Note Custom Type (Response)",
 	"properties": {

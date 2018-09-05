@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/Members_authenticate.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Members_authenticate.dtd",
 	"title": "Members Authenticate",
 	"type": "object",
 	"description": "For members authentication. url: https://www.route4me.com/actions/authenticate.php. Content-Type: multipart/form-data",

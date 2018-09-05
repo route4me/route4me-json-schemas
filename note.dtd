@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/note.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/note.dtd",
 	"type": "object",
 	"title": "Note",
 	"properties": {
@@ -83,7 +83,7 @@
 		},
 		"custom_types": {
 			"type": "array",
-			"items": { "$ref": "https://github.com/route4me/json-schemas/blob/master/note_custom_type.dtd" }
+			"items": { "$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/note_custom_type.dtd" }
 		}
 	},
 	"required": [

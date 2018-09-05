@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/Member_delete.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Member_delete.dtd",
 	"title": "Member Delete",
 	"type": "object",
 	"description": "For removing an user. url: https://www.route4me.com/api.v4/user.php",
