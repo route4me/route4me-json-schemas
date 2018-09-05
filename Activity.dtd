@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/Activity.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Activity.dtd",
 	"title": "Activity",
 	"description": "Parameters for creating user activity. Endpoint - https://www.route4me.com/api.v4/activity_feed.php",
 	"type": "object",

@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/Address_request.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Address_request.dtd",
 	"title": "Address Request",
 	"description": "Json schema for an Address request class. See curl examples: add_address_to_optimization, update_address_in_route",
 	"type": "object",
@@ -92,7 +92,7 @@
 		"geocodings": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/json-schemas/blob/master/geocoding.dtd"
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/geocoding.dtd"
 			},
 			"title": "Geocodings ID"
 		},
@@ -282,7 +282,7 @@
 		"notes": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/json-schemas/blob/master/note.dtd"
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/note.dtd"
 			},
 			"title": "Notes",
 			"description": "Notes"
