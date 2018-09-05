@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/Route4Me.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Route4Me.dtd",
 	"description": "Route4Me schemas",
 	"title": "Route4Me",
 	"type": "object",
@@ -12,84 +12,84 @@
 	"properties": {
 		"Addressbook": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/Addressbook.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Addressbook.dtd",
 			"title": "Addressbook",
 			"description": "Addressbook - user's contacts repository. urls: View Address Book Contacts - /actions/address/get_addresses.php (DEPRECATED); Add Contact to the Address Book - /api/address_book/add_contact.php; Delete Contact(s) from Address Book - /api/address_book/delete_contacts.php; Modify Contact in Address Book - /api/address_book/modify_contact.php"
 		},
 		"Addressbook_v4": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/Addressbook_v4.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Addressbook_v4.dtd",
 			"title": "Addressbook V4",
 			"description": "Addressbook V4 - user's contacts repository. url: /api.v4/address_book.php. See curl examples in Addressbook folder"
 		},
 		"General_api_parameters": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/General_api_parameters.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/General_api_parameters.dtd",
 			"title": "General api parameters",
 			"description": "General api parameters accepted by https://www.route4me.com/api.v4/route.php endpoint"
 		},
 		"Members": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/Members.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Members.dtd",
 			"title": "Members",
 			"description": "User who is assigned to the route; this must be part of the user's team. For usage details see curl examples in Members folder"
 		},
 		"Vehicles": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/Vehicle.dtd",
-			"description": "Response json schema for vehicles. For usage details see curl Members group get vehicles example"
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Vehicle_V4.dtd",
+			"description": "Response json schema for vehicles. For usage details see curl Vehicles group examples"
 		},
 		"Gps_position": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/Gps_position.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Gps_position.dtd",
 			"title": "GPS position",
 			"description": "Setting GPS position of the asset. For usage details see curl Tracking group examples"
 		},
 		"Asset_tracking": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/TrackingHistory.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingHistory.dtd",
 			"title": "Asset tracking",
 			"description": "Assets tracking using GPS unit. For usage details see curl Tracking group examples"
 		},
 		"Optimization": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/Optimization.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Optimization.dtd",
 			"title": "Optimization",
 			"description": "Route optimization. An Optimization Problem is a collection of addresses that need to be visited. The optimization problem takes into consideration all of the addresses that need to be visited and all the constraints associated with each address and depot. This is different from a Route, which is a sequence of addresses that need to be visited by a single vehicle and a single driver in a fixed time period. Solving an Optimization Problem results in a number of routes. For usage details see curl examples in Optimization group, also examples in WIndows and Linux core folder - multiple_depot_multiple_driver, single_driver_multiple_time_windows etc"
 		},
 		"Address": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.dtd",
 			"title": "Address",
 			"description": "An Address is a destination in a route or optimization problem. Addresses can be depots, which means they are a departure points. Addresses can belong to only one route and one optimization problem, except for depots. One depot can be part of many routes if we have a VRP (multi-route) solution. For usage details see curl examples in Address folder"
 		},
 		"Route": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/Route.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Route.dtd",
 			"title": "Route",
 			"description": "A Route is a collection of addresses usually sorted in the most optimal sequence. One route can have many addresses. Each address can have attributes, constraints, and metadata which influence the way the route is sequenced. For usage details see curl examples in Route folder"
 		},
 		"Territory": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/Territory.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Territory.dtd",
 			"title": "Territory",
 			"description": "Json schema for an Territory class, which is used for meintenance territories of different types. For detailed usage see curl Territory group"
 		},
 		"Avoidance_zone": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/Avoidance_zone.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Avoidance_zone.dtd",
 			"title": "Avoidance zone",
 			"description": "Json schema for an Avoidance Zone class, which is used for defining different types of avoidance zones. For detailed usage see curl Avoidance Zones group"
 		},
 		"Note": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/note.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/note.dtd",
 			"title": "Note",
 			"description": "Json schema for a Note class, which is used assign notes to route or address objects. For detailed usage see curl Notes group"
 		},
 		"Activity": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/Activity.dtd",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Activity.dtd",
 			"title": "Activity",
 			"description": "Json schema for a Activity responce format. For detailed usage see curl Activity group"
 		}

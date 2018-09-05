@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/Route.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Route.dtd",
 	"type": "object",
 	"title": "Route",
 	"properties": {
@@ -181,21 +181,21 @@
 			"title": "Notes Count",
 			"description": "Notes count in the route"
 		},
-		"parameters": {"$ref": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd"},
+		"parameters": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.dtd"},
 		"addresses": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"},
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.dtd"},
 			"title": "Addresses"
 		},
-		"links": {"$ref": "https://github.com/route4me/json-schemas/blob/master/Link.dtd"},
+		"links": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Link.dtd"},
 		"notes": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/note.dtd"},
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/note.dtd"},
 			"title": "Notes"
 		},
 		"vehicle": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/json-schemas/blob/master/Vehicle_V4.dtd"
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Vehicle_V4.dtd"
 		},
 		"member_config_storage": {
 			"type": "array",
@@ -215,7 +215,7 @@
 		},
 		"tracking_history": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/json-schemas/blob/master/TrackingHistory.dtd"},
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingHistory.dtd"},
 			"title": "Tracking History",
 			"description": "A collection of device tracking data with coordinates, speed, and timestamps"
 		}

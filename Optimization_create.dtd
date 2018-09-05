@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/Optimization_create.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Optimization_create.dtd",
 	"title": "Optimization Create",
 	"type": "object",
 	"properties": {
@@ -8,7 +8,7 @@
 			"type": "array",
 			"title": "Route Addresses",
 			"items": {
-				"$ref": "https://github.com/route4me/json-schemas/blob/master/Address.dtd"
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.dtd"
 			},
 			"descrption": "Route Addresses. POST data"
 		},
@@ -16,7 +16,7 @@
 			"type": "array",
 			"title": "Route Parameters",
 			"items": {
-				"$ref": "https://github.com/route4me/json-schemas/blob/master/RouteParameters.dtd"
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.dtd"
 			},
 			"descrption": "Route Parameters. POST data"
 		},
