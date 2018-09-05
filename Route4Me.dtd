@@ -1,14 +1,9 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Route4Me.dtd",
-	"description": "Route4Me schemas",
-	"title": "Route4Me",
 	"type": "object",
-	"required": [
-		"origin",
-		"destination",
-		"key"
-	],
+	"title": "Route4Me",
+	"description": "Route4Me schemes",
 	"properties": {
 		"Addressbook": {
 			"type": "object",
