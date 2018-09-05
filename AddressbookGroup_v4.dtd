@@ -1,0 +1,84 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/AddressbookGroup_v4.dtd",
+	"title": "Addressbook Group v4",
+	"type": "object",
+	"description": "Describes the query response from the endpoint http://www.route4me.com/api.v4/address_book_group.php",
+	"properties": {
+		"group_id": {
+			"type": "string",
+			"title": "Group ID",
+			"description": "Unique 32-char group ID"
+		},
+		"group_name": {
+			"type": "string",
+			"title": "Group Name",
+			"description": "Group name"
+		},
+		"group_color": {
+			"type": "string",
+			"title": "Group Color",
+			"description": "Group color"
+		},
+		"group_icon": {
+			"type": "string",
+			"title": "Group Icon",
+			"description": "Group icon"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Member ID"
+		},
+		"filter": {
+			"type": "object",
+			"title": "Filter",
+			"description": "The array of the group filters for the address book contacts",
+			"properties": {
+				"condition": {
+					"type": "string",
+					"title": "Condition",
+					"description": "The group filter condition ['AND', 'OR']"
+				},
+				"rules": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "string",
+								"title": "ID",
+								"description": "The unique ID of the group filter rule"
+							},
+							"field": {
+								"type": "string",
+								"title": "Field",
+								"description": "The group filter field"
+							},
+							"type": {
+								"type": "string",
+								"title": "Type",
+								"description": "Default is <string>"
+							},
+							"input": {
+								"type": "string",
+								"title": "Input",
+								"description": "The field Input type. Default is <text>"
+							},
+							"operator": {
+								"type": "string",
+								"title": "Operator",
+								"description": "The group filter operator ['equal', 'not_equal', 'less', 'less_or_equal', 'greater', 'greater_or_equal', 'between', 'contains', 'not_contains', 'begins_with', 'ends_with', 'has_word', 'is_empty', 'is_not_empty']"
+							},
+							"value": {
+								"type": "string",
+								"title": "Value",
+								"description": "The group filter field value"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
