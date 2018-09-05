@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/json-schemas/blob/master/Telematics_vendor_response.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Telematics_vendor_response.dtd",
 	"title": "Telematics vendor",
 	"description": "Json schema for a Telematics vendor response object. For detailed usage see curl Telematics group",
 	"type": "object",

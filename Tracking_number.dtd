@@ -1,0 +1,138 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Tracking_number.dtd",
+	"title": "Tracking Number",
+	"type": "object",
+	"description": "Tracking numbers are numbers given to packages when they are shipped",
+	"properties": {
+		"tracking_number": {
+			"type": "string",
+			"name": "tracking_number",
+			"title": "Tracking Number",
+			"description": "An unique internal ID of a tracking number object"
+		},
+		"status_history": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"unix_timestamp": {
+						"type": "integer",
+						"name": "unix_timestamp",
+						"title": "Unix Timestamp",
+						"description": "Unix timestamp"
+					},
+					"info": {
+						"type": "string",
+						"enum": [
+							"Order Received",
+							"Order Assigned to Route",
+							"Packing",
+							"Loaded to Vehicle",
+							"Out for Delivery"
+						],
+						"name": "info",
+						"title": "Information",
+						"description": "Information about a shipped package"
+					}
+				}
+			}
+		},
+		"locations": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"lat": {
+						"type": "number",
+						"name": "lat",
+						"minimum": -90,
+						"maximum": 90,
+						"title": "Latitude",
+						"description": "Point latitude"
+					},
+					"lng": {
+						"type": "number",
+						"name": "lng",
+						"minimum": -180,
+						"maximum": 180,
+						"title": "Longitude",
+						"description": "Point longitude"
+					},
+					"info": {
+						"type": "string",
+						"name": "info",
+						"title": "Information",
+						"description": "Information about a shipped package at a specified location."
+					},
+					"show_info": {
+						"type": "boolean",
+						"name": "show_info",
+						"title": "Show information",
+						"description": "If true, showing of the information is enabled."
+					},
+					"icon": {
+						"type": "string",
+						"name": "icon",
+						"title": "Icon",
+						"description": "URL of the image"
+					},
+					"size": {
+						"type": "integer",
+						"name": "size",
+						"title": "Size",
+						"description": "Size of the icon"
+					},
+					"anchor": {
+						"type": "array",
+						"items": {
+							"type": "integer"
+						},
+						"description": "A icon's acnhor position"
+					},
+					"popupAnchor": {
+						"type": "array",
+						"items": {
+							"type": "integer"
+						}
+					},
+					"angle": {
+						"type": "integer",
+						"name": "angle",
+						"title": "Angle",
+						"description": "Rotation angle"
+					},
+					"custom_data": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"name": "custom_data",
+						"title": "Custom Data",
+						"description": "Unclasified data of a Tracking_number object"
+					},
+					"time_windows": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"start_time": {
+									"type": "string",
+									"name": "start_time",
+									"title": "Start Time",
+									"description": "Start time of a time window"
+								},
+								"end_time": {
+									"type": "string",
+									"name": "end_time",
+									"title": "End Time",
+									"description": "End time of a time window"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
