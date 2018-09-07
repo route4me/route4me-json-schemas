@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Points_detect_stops_response.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Stops_detect_stops_response.dtd",
 	"title": "Detected Stops Response",
-	"description": "Response JSON schema for the detect stops from raw track. Endpoint - https://api.route4me.com/api/v1/points/detect-stops",
+	"description": "Response JSON schema for the detect stops from raw track. Endpoint - https://api.route4me.com/api/v1/stops/detect",
 	"type": "object",
 	"properties": {
 		"stops": {
