@@ -55,15 +55,15 @@
 - [x] [Feed_activity_patch.dtd](Feed_activity_patch.dtd "Patch. Hide/unhide wrong events from the feed. Endpoint: /feed/event/{event_id}") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_activity_event_hide.bat))
 - [x] [Feed_activity_patch_response.dtd](Feed_activity_patch_response.dtd "Response. Hide/unhide wrong events from the feed. Endpoint: /feed/event/{event_id}") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Activity%20Feed/Feed_activity_event_hide_RESPONSE.json))
 
+## Stops:  Returns stops, depots and polygons
+- [x] [Stops_detect_stops.dtd](Stops_detect_stops.dtd "POST. Detect stops from raw track. Endpoint: /stops/detect") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Stops/Stops_detect_stops.bat))
+    - [ ] [Vehicle_trace.dtd](Vehicle_trace.dtd "JSON input payload. Vehicle trace")
+- [x] [Stops_detect_stops_response.dtd](Stops_detect_stops_response.dtd "Response. Detected stops. Endpoint: /stops/detect") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Stops/Stops_detect_stops_RESPONSE.json))
+
 ## Vehicles Info: Vehicles info from telematics API
 - [x] [Vehicles_info_telematis_query.dtd](Vehicles_info_telematis_query.dtd "Query. Returns json with all vehicles from r4m_oa_vehicles table Deprecated. Endpoint: /vehicles_info/all") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Vehicles/Vehicles_info_from_telematics.bat))
 - [x] [Vehicle_info_all_response.dtd](Vehicle_info_all_response.dtd "Response. Vehicles info from the telematics vendors. Endpoint: /vehicles_info/all") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Vehicles/Vehicles_info_from_telematics_RESPONSE.json))
     - [ ] [Vehicle_info_response.dtd](Vehicle_info_response.dtd "Sub-schema. Response info of a vehicle")
-
-## Points:  Returns stops, depots and polygons
-- [x] [Points_detect_stops.dtd](Points_detect_stops.dtd "POST. Detect stops from raw track. Endpoint: /points/detect-stops") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Points/Points_detect_stops.bat))
-    - [ ] [Vehicle_trace.dtd](Vehicle_trace.dtd "JSON input payload. Vehicle trace")
-- [x] [Points_detect_stops_response.dtd](Points_detect_stops_response.dtd "Response. Detected stops. Endpoint: /points/detect-stops") (See JSON response file [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Points/Points_detect_stops_RESPONSE.json))
 
 ## Statistics: Different metrics and statistics
 - [x] [Statistics_analysis_created.dtd](Statistics_analysis_created.dtd "Query. Statistics for created OA Analysis Sessions. Endpoint: /statistics/analysis-session/created/count-grouped") (See curl (cmd) example [here](https://github.com/route4me/route4me-curl/blob/master/Windows/Route4Me%20OA/Statistics/Statistics_analysis_created.bat))
