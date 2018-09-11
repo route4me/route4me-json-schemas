@@ -1,0 +1,241 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is an API doc of Route4Me Blog",
+    "version": "1.0.0",
+    "title": "R4M Blog API",
+    "contact": {
+      "email": "valesopia@gmail.com"
+    }
+  },
+  "host": "blog.route4me.com",
+  "basePath": "/wp-json/wp/v2",
+  "tags": [
+    {
+      "name": "ebooks",
+      "description": "Access to Route4Me Ebooks"
+    },
+    {
+      "name": "posts",
+      "description": "Access to Route4Me Posts"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/ebooks": {
+      "get": {
+        "tags": [
+          "ebooks"
+        ],
+        "summary": "Returns ebooks",
+        "description": "Returns a map of status codes to quantities",
+        "operationId": "getInventory",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "context",
+            "in": "query",
+            "description": "Scope under which the request is made; determines fields present in response.\n Default: view \n One of: view, embed, edit",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "view",
+              "embed",
+              "edit"
+            ],
+            "default": "view"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Current page of the collection. \n Default: 1",
+            "type": "integer",
+            "default": 1
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Maximum number of items to be returned in result set.. \n Default: 10",
+            "type": "integer",
+            "default": 10
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Limit results to those matching a string.",
+            "type": "string"
+          },
+          {
+            "name": "exclude",
+            "in": "query",
+            "description": "Ensure result set excludes specific IDs.",
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "include",
+            "in": "query",
+            "description": "Limit result set to specific IDs.",
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset the result set by a specific number of items",
+            "type": "integer"
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Order sort attribute ascending or descending.\n Default: desc \n One of: asc, desc",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "default": "desc"
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Limit result set to posts assigned one or more statuses.",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "publish",
+              "future",
+              "draft",
+              "pending",
+              "private",
+              "trash",
+              "auto-draft"
+            ],
+            "default": "publish"
+          },
+          {
+            "name": "filter[ebook-language]",
+            "in": "query",
+            "type": "string",
+            "enum": [
+              "english",
+              "russian",
+              "arabic",
+              "chinese",
+              "dutch",
+              "french",
+              "german",
+              "italian",
+              "japanese",
+              "portuguese",
+              "spanish"
+            ],
+            "default": "english"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Ebooks"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Ebooks": {
+      "type": "object",
+      "properties": {
+        "context": {
+          "type": "string",
+          "enum": [
+            "view",
+            "embed",
+            "edit"
+          ]
+        },
+        "page": {
+          "type": "integer",
+          "format": "int64",
+          "default": 1
+        },
+        "per_page": {
+          "type": "integer",
+          "format": "int64",
+          "default": 10
+        },
+        "search": {
+          "type": "string"
+        },
+        "exclude": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "include": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "offset": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "order": {
+          "type": "string",
+          "enum": [
+            "asc",
+            "desc"
+          ],
+          "default": "desc"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "publish",
+            "future",
+            "draft",
+            "pending",
+            "private",
+            "trash",
+            "auto-draft"
+          ],
+          "default": "publish"
+        },
+        "filter[ebook-language]": {
+          "type": "string",
+          "enum": [
+            "english",
+            "russian",
+            "arabic",
+            "chinese",
+            "dutch",
+            "french",
+            "german",
+            "italian",
+            "japanese",
+            "portuguese",
+            "spanish"
+          ],
+          "default": "english"
+        }
+      },
+      "xml": {
+        "name": "Order"
+      }
+    }
+  }
+}
