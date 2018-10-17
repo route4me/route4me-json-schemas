@@ -144,6 +144,11 @@
 						"title": "Enabled",
 						"descripton": "If true, a location schedule is enabled during construction of a hybrid optimization"
 					},
+					"from": {
+						"type": "string",
+						"title":"From",
+						"Description": "When schedule will be started from"
+					},
 					"mode": {
 						"type": "string",
 						"enum": ["daily", "weekly", "monthly", "annually"],
