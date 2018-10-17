@@ -215,17 +215,17 @@
 			"description": "If travel_mode = 'Trucking', specifies the weight per axle (required)"
 		},
 		"truck_height": {
-			"type": ["integer", "null"],
+			"type": ["number", "null"],
 			"title": "Truck Height",
 			"description": "If travel_mode = 'Trucking', specifies the truck height (required)"
 		},
 		"truck_width": {
-			"type": ["integer", "null"],
+			"type": ["number", "null"],
 			"title": "Truck Width",
 			"description": "If travel_mode = 'Trucking', specifies the truck width (required)"
 		},
 		"truck_length": {
-			"type": ["integer", "null"],
+			"type": ["number", "null"],
 			"title": "Truck Length",
 			"description": "If travel_mode = 'Trucking', specifies the truck length (required)"
 		},
