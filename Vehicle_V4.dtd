@@ -150,7 +150,7 @@
 		},
 		"mpg_city": {
 			"type": [
-				"integer",
+				"number",
 				"null"
 			],
 			"minimum": 6,
@@ -160,7 +160,7 @@
 		},
 		"mpg_highway": {
 			"type": [
-				"integer",
+				"number",
 				"null"
 			],
 			"minimum": 6,
@@ -179,7 +179,7 @@
 		},
 		"height_inches": {
 			"type": [
-				"integer",
+				"number",
 				"null"
 			],
 			"title": "Height Inches",
@@ -187,7 +187,7 @@
 		},
 		"weight_lb": {
 			"type": [
-				"integer",
+				"number",
 				"null"
 			],
 			"title": "Weight LB",
@@ -209,7 +209,7 @@
 		},
 		"heightInInches": {
 			"type": [
-				"integer",
+				"number",
 				"null"
 			],
 			"title": "Height In Inches",
@@ -217,7 +217,7 @@
 		},
 		"lengthInInches": {
 			"type": [
-				"integer",
+				"number",
 				"null"
 			],
 			"title": "Length In Inches",
@@ -225,7 +225,7 @@
 		},
 		"widthInInches": {
 			"type": [
-				"integer",
+				"number",
 				"null"
 			],
 			"title": "Width In Inches",
@@ -233,7 +233,7 @@
 		},
 		"maxWeightPerAxleGroupInPounds": {
 			"type": [
-				"integer",
+				"number",
 				"null"
 			],
 			"title": "Maximum Weight Per Axle Group In Pounds",
@@ -249,7 +249,7 @@
 		},
 		"weightInPounds": {
 			"type": [
-				"integer",
+				"number",
 				"null"
 			],
 			"title": "Weight In Pounds",
