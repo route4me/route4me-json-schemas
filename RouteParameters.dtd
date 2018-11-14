@@ -264,6 +264,17 @@
 			"type": ["integer", "null"],
 			"title": "rightturn",
 			"description": "Available with: 1 = RIGHTTURN_ALLOW, 2 = RIGHTTURN_FORBID, 3 = RIGHTTURN_MULTIAPPROACH (assumes points are intersections and visits them from all sides. Ignores uturn and leftturn constraints.)"
+		},
+		"override_addresses": {
+			"type": "object",
+			"title": "Override Addresses",
+			"properties": {
+				"time": {
+					"type": "integer",
+					"title": "TIme",
+					"description": "Service time at a route destination (address)"
+				}
+			}
 		}
 	}
 }
