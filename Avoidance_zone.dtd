@@ -25,6 +25,13 @@
 			"title": "Territory color",
 			"description": "Territory color"
 		},
+		"orders": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_response.dtd"
+			},
+			"description": "The orders enclosed in the avoidance zone"
+		},
 		"member_id": {
 			"type": "integer",
 			"title": "Member ID",
