@@ -54,6 +54,11 @@
 			"title": "Readonly User",
 			"description": "Readonly user, ENUM['TRUE', 'FALSE']. HTTP method - POST."
 		},
+		"OWNER_MEMBER_ID": {
+			"type": "string",
+			"title": "Owner Member ID",
+			"description": "Parent user ID."
+		},
 		"member_type": {
 			"type": "string",
 			"title": "Member Type",
