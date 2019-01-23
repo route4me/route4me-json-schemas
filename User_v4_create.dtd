@@ -98,6 +98,16 @@
 			"type": "string",
 			"title": "Show All Drivers",
 			"description": "Show all drivers, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
+		"SHOW_SUSR_ADDR": {
+			"type": "string",
+			"title": "Show Global Addresses",
+			"description": "Show global address book contacts in a user's account, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
+		"SHOW_SUSR_ORDERS": {
+			"type": "string",
+			"title": "Show Global Orders",
+			"description": "Show global orders in a user's account, ENUM['TRUE', 'FALSE']. HTTP method - POST."
 		}
 	}
 }

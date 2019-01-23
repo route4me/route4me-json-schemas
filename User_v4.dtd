@@ -119,6 +119,16 @@
 			"title": "Show All Vehicles",
 			"description": "Show all vehicles, ENUM['TRUE', 'FALSE']. HTTP method - POST."
 		},
+		"SHOW_SUSR_ADDR": {
+			"type": "string",
+			"title": "Show Global Addresses",
+			"description": "Show global address book contacts in a user's account, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
+		"SHOW_SUSR_ORDERS": {
+			"type": "string",
+			"title": "Show Global Orders",
+			"description": "Show global orders in a user's account, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
 		"date_of_birth": {
 			"type": "string",
 			"title": "Date of Birth",
