@@ -19,5 +19,17 @@
 			"title": "Config Value",
 			"description": "Config value"
 		}
+		,
+		"is_hidden_value": {
+			"type": "boolean",
+			"title": "Is Hidden Value",
+			"description": "If true, the config key value is hidden"
+		}
+		,
+		"can_unhide_value": {
+			"type": "boolean",
+			"title": "Can Unhide Value",
+			"description": "If true, the configuration key value can be visible"
+		}
 	}
 }
