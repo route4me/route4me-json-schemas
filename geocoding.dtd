@@ -84,6 +84,16 @@
 			},
 			"title": "Curbside Coordinates",
 			"description": "Curbside Coordinates"
+		},
+		"address_without_number": {
+			"type": "string",
+			"title": "Address Without Number",
+			"description": "Address without number"
+		},
+		"place_id": {
+			"type": "string",
+			"title": "Place ID",
+			"description": "Address place ID"
 		}
 	},
 	"required": [
