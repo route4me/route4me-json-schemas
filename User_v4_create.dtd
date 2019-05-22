@@ -108,6 +108,11 @@
 			"type": "string",
 			"title": "Show Global Orders",
 			"description": "Show global orders in a user's account, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
+		"custom_data": {
+			"type": "string",
+			"title": "Custom data",
+			"description": "User's custom data (JSON string) - POST."
 		}
 	}
 }
