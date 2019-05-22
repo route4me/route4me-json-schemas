@@ -111,6 +111,11 @@
 			"type": "string",
 			"title": "Member picture",
 			"description": "A link to Member's image file"
+		},
+		"custom_data": {
+			"type": "string",
+			"title": "Custom data",
+			"description": "User's custom data (JSON string) - POST."
 		}
 	}
 }
