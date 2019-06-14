@@ -3,7 +3,10 @@
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Vehicle_V4.dtd",
 	"title": "Vehicle",
 	"type": "object",
-	"description": "Vehicle object in the user's account. Endpoint: url: https://api.route4me.com/api/vehicles",
+	"required": [
+		"vehicle_alias"
+	],
+	"description": "Vehicle object in the user's account. Endpoint: url: https://wh.route4me.com/modules/api/vehicles",
 	"properties": {
 		"vehicle_id": {
 			"type": "string",
