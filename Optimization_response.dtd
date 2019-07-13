@@ -80,7 +80,7 @@
 		"total_addresses": {
 			"type": "integer",
 			"title": "Total Addresses",
-			"descrption": "Total addresses include in the optimization"
+			"descrption": "Total addresses included in the optimization"
 		}
 	}
 }
