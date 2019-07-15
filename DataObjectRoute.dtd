@@ -9,7 +9,7 @@
 				"string"
 			],
 			"title": "Route ID",
-			"descrption": "Route Unique Identifier"
+			"descrption": "Route unique identifier"
 		},
 		"member_id": {
 			"type": [
@@ -41,8 +41,8 @@
 				"string",
 				"null"
 			],
-			"title": "Member Trtacking Subheadline",
-			"description": "Member trtacking subheadline"
+			"title": "Member Tracking Subheadline",
+			"description": "Member tracking subheadline"
 		},
 		"approved_for_execution": {
 			"type": "boolean",
@@ -79,7 +79,7 @@
 				"null"
 			],
 			"title": "Route Revenue",
-			"descrption": "Route Revenue"
+			"descrption": "Route revenue"
 		},
 		"net_revenue_per_distance_unit": {
 			"type": [
