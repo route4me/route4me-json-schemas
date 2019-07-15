@@ -116,6 +116,11 @@
 			"type": "string",
 			"title": "Custom data",
 			"description": "User's custom data (JSON string) - POST."
+		},
+		"level": {
+			"type": "integer",
+			"title": "Level",
+			"description": "Subordination level. 0 is the highest level."
 		}
 	}
 }
