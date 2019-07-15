@@ -8,7 +8,7 @@
 		"status": {
 			"type": "boolean",
 			"title": "Status",
-			"descrption": "If true, authentication process was finished successfuly."
+			"descrption": "True, if authentication process was finished successfuly."
 		},
 		"geocoding_service": {
 			"type": "string",
@@ -57,7 +57,7 @@
 		"geofence_time_onsite_trigger_secs": {
 			"type": "integer",
 			"title": "Geofence time onsite trigger secs",
-			"description": "Geofence time onsite trigger ins seconds."
+			"description": "Geofence time onsite trigger in seconds."
 		},
 		"geofence_minimum_trigger_speed": {
 			"type": "integer",
@@ -72,17 +72,17 @@
 		"visited_departed_enabled": {
 			"type": "string",
 			"title": "Visited departed enabled",
-			"description": "if equal to true, triggering of the visied and departed activities is enabled."
+			"description": "if true, triggering of the visited and departed activities is enabled."
 		},
 		"long_press_enabled": {
 			"type": "string",
 			"title": "Long press enabled",
-			"description": "if equal to true, long press is enabled."
+			"description": "if true, long press is enabled."
 		},
 		"account_type_id": {
 			"type": "string",
 			"title": "Account type ID",
-			"description": "if equal to true, long press is enabled."
+			"description": "The account type ID"
 		},
 		"account_type_alias": {
 			"type": "string",
@@ -139,17 +139,17 @@
 		"HIDE_ROUTED_ADDRESSES": {
 			"type": "string",
 			"title": "Hide Routed Addresses",
-			"description": "If equal to true, routed addresses will be hided."
+			"description": "If true, routed addresses will be hidden."
 		},
 		"HIDE_VISITED_ADDRESSES": {
 			"type": "string",
 			"title": "Hide Visited Addresses",
-			"description": "If equal to true, visited addresses will be hided."
+			"description": "If true, visited addresses will be hidden."
 		},
 		"HIDE_NONFUTURE_ROUTES": {
 			"type": "string",
 			"title": "Hide Nonfuture Addresses",
-			"description": "If equal to true, nonfuture addresses will be hided."
+			"description": "If equal to true, nonfuture addresses will be hidden."
 		},
 		"READONLY_USER": {
 			"type": "string",
@@ -159,7 +159,7 @@
 		"auto_logout_ts": {
 			"type": "integer",
 			"title": "Auto logout TS",
-			"description": "Time in seconds. If user is anictive during this period, he will be logouted."
+			"description": "Time in seconds. If a user is inactive during this period, he will be logout."
 		}
 	}
 }
