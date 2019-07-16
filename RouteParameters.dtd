@@ -59,22 +59,22 @@
 		"vehicle_max_cargo_weight": {
 			"type": ["number", "null"],
 			"title": "Vehicle Maximum Cargo Weight",
-			"description": "Max cargo weight a vehicle can cary"
+			"description": "Maximum cargo weight a vehicle can cary"
 		},
 		"vehicle_max_cargo_volume": {
 			"type": ["number", "null"],
 			"title": "Vehicle Maximum Cargo Volume",
-			"description": "Max cargo volum a vehicle can cary"
+			"description": "Maximum cargo volume a vehicle can cary"
 		},
 		"vehicle_max_distance_mi": {
 			"type": ["string", "null"],
 			"title": "Vehicle Maximum Distance (mi)",
-			"description": "Max distance for a single vehicle in this route (always in miles)"
+			"description": "Maximum distance for a single vehicle in this route (always in miles)"
 		},
 		"subtour_max_revenue": {
 			"type": ["string", "null"],
 			"title": "Subtour Max Revenue",
-			"description": "Max allowed revenue from a subtour"
+			"description": "Maximum allowed revenue from a subtour"
 		},
 		"distance_unit": {
 			"type": ["string", "null"],
@@ -177,6 +177,11 @@
 			"type": ["integer", "null"],
 			"title": "Parts",
 			"description": "Legacy feature which permits a user to request an example number of optimized routes"
+		},
+		"parts_min": {
+			"type": ["integer", "null"],
+			"title": "Parts Minimum",
+			"description": "Minimum number of optimized routes"
 		},
 		"device_id": {
 			"type": ["string", "null"],
