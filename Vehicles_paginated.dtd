@@ -42,7 +42,7 @@
 		"path": {
 			"type": "string",
 			"title": "Path",
-			"descrption": "PAth to the API endpoint"
+			"descrption": "Path to the API endpoint"
 		},
 		"per_page": {
 			"type": "integer",
