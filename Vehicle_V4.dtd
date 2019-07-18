@@ -113,7 +113,7 @@
 				"null"
 			],
 			"title": "Vehicle Cost New",
-			"descrption": "A cost f the new vehicle"
+			"descrption": "A cost of the new vehicle"
 		},
 		"purchased_new": {
 			"type": "boolean",
@@ -248,7 +248,7 @@
 				"null"
 			],
 			"title": "Axles Number",
-			"descrption": "NUmber of the axles"
+			"descrption": "Number of the axles"
 		},
 		"weightInPounds": {
 			"type": [
