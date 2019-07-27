@@ -44,6 +44,9 @@
 		"strIndustry": {
 			"type": "string",
 			"title": "Industry",
+			"enum": [
+				'Airport Shuttle Service', 'Alarm and Security', 'Appliance Install/Repair', 'Asset Recovery', 'Auto Parts/Repair', 'Beauty Supply', 'Cable/Satellite Sales', 'Cable/Satellite Installation', 'Carpet Cleaning', 'Charitable Foundation', 'Distribution', 'Driveway Sealcoating', 'Education / Tutor', 'Electricians', 'Farming and Agriculture', 'Federal Government', 'Fire and Water Restoration', 'Fire Extinguishers', 'Fleet Maintenance and Repair', 'Fleet/Trucking', 'Florists', 'Food - Catering', 'Gutter Cleaning', 'Home Health Care', 'HVAC - Heating and AC', 'Inspections', 'Janitorial', 'Laboratory Courier', 'Laundromat / Cleaners', 'Law Enforcement', 'Maintenance', 'Medical Equipment Installation', 'Municipal Government', 'Non-Profit Organization', 'Patio and Deck', 'Pest Control', 'Pet Sitting', 'Political Organization', 'Pool Maintenance', 'Printing and Press', 'Real Estate', 'Residential Cleaning', 'Retail Furniture', 'Satellite Dish Installation', 'Secret Shopper', 'Septic Tank Cleaning', 'Siding Installation Service', 'State Government', 'Taxi/Limo Service', 'Technicians', 'Telecommunications', 'Vehicle Transport', 'Waste Collection', 'Other'
+			],
 			"descrption": "The industry of the user (dropdown of industries below)"
 		},
 		"strZIP": {
@@ -73,7 +76,7 @@
 				"premium",
 				"personal"
 			],
-			"title": "Check terms",
+			"title": "Plan",
 			"descrption": "The plan type that the user selected"
 		},
 		"format ": {

@@ -510,12 +510,6 @@
 			},
 			"description": "The manifest contains values derived from other values",
 			"title": "Manifest"
-		},
-		"directions": {
-			"type": "array",
-			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Direction.dtd"
-			}
 		}
 	}
 }
