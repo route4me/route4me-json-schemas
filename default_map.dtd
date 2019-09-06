@@ -274,7 +274,7 @@
 			]
 		},
 		"address_stop_type": {
-			"description": "The type of stop that this is (PICKUP, DELIVERY, BREAK, MEETUP)",
+			"description": "The type of stop that this is (DELIVERY,PICKUP,BREAK,MEETUP,SERVICE,VISIT,DRIVEBY)",
 			"valid_headers": [
 				"address_type",
 				"address_stop_type",
