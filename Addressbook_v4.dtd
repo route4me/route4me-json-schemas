@@ -318,10 +318,10 @@
 		},
 		"address_stop_type": {
 			"type": "string",
-			"enum": ["PICKUP", "DELIVERY", "BREAK", "MEETUP"],
+			"enum": ["DELIVERY","PICKUP","BREAK","MEETUP","SERVICE","VISIT","DRIVEBY"],
 			"name": "address_stop_type",
 			"title": "Address stop type",
-			"description": "The type of stop that this is (PICKUP, DELIVERY, BREAK, MEETUP)"
+			"description": "The type of stop that this is (DELIVERY,PICKUP,BREAK,MEETUP,SERVICE,VISIT,DRIVEBY)"
 		},
 		"address_cube": {
 			"type": "number",
