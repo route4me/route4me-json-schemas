@@ -70,17 +70,6 @@
 			"title": "Links",
 			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Links.dtd"},
 			"descrption": "Links to the GET operations for the optimization problem"
-		},
-		"tracking_history": {
-			"type": "array",
-			"title": "TrackingHistory",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingHistory.dtd"},
-			"descrption": "A collection of device tracking data with coordinates, speed, and timestamps"
-		},
-		"total_addresses": {
-			"type": "integer",
-			"title": "Total Addresses",
-			"descrption": "Total addresses included in the optimization"
 		}
 	}
 }
