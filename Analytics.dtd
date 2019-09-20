@@ -1,0 +1,152 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://github.com/route4me/json-schemas/blob/master/Analytics.dtd",
+    "title": "Analytics",
+    "description": "JSON schema for the query response from the endpoint - https://api.route4me.com/datafeed/account_analytics.php",
+    "type": "object",
+    "properties": {
+        "totalMilesSaved": {
+            "type": "integer",
+            "title": "Total Miles Saved",
+            "description": "Total save miles during specified period"
+        },
+        "totalActualDistance": {
+            "type": "number",
+            "title": "Total Actual Distance",
+            "description": "Total actual distance"
+        },
+        "totalRoutes": {
+            "type": "integer",
+            "title": "Total Routes",
+            "description": "Total generated routes"
+        },
+        "totalStops": {
+            "type": "integer",
+            "title": "Total Stops",
+            "description": "Total stops included in the all generated routes"
+        },
+        "drivenMiles": {
+            "type": "number",
+            "title": "drivenMiles",
+            "description": "Driven miles during specified period"
+        },
+        "spend_time": {
+            "type": "integer",
+            "title": "spend_time",
+            "description": "Total save miles during specified period"
+        },
+        "totalCheckins": {
+            "type": "integer",
+            "title": "Total Checkins",
+            "description": "Total number of the check-in events"
+        },
+        "totalNotes": {
+            "type": "integer",
+            "title": "Total Notes",
+            "description": "Total number of the notes"
+        },
+        "reports": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                   "day_id": {
+                      "type": "integer",
+                      "title": "Day ID",
+                      "description": "Unique ID of the day"
+                   },
+				   "label": {
+                      "type": "string",
+                      "title": "Label",
+                      "description": "Day label (e.g. '2019-08-01')"
+                   },
+				   "total_routes": {
+                      "type": "integer",
+                      "title": "Total Routes",
+                      "description": "Total number of the routes"
+                   },
+				   "avg_stops": {
+                      "type": "number",
+                      "title": "Average Stops",
+                      "description": "Average stops per route"
+                   },
+				   "avg_distance": {
+                      "type": "number",
+                      "title": "Average Distance",
+                      "description": "Average distance per route"
+                   },
+				   "total_stops": {
+                      "type": "integer",
+                      "title": "Total Stops",
+                      "description": "Total stops"
+                   },
+				   "total_distance": {
+                      "type": "number",
+                      "title": "Total Distance",
+                      "description": "Total distance"
+                   },
+				   "total_time": {
+                      "type": "integer",
+                      "title": "Total Time",
+                      "description": "Total time"
+                   },
+				   "avg_actual_distance": {
+                      "type": "number",
+                      "title": "Total Actual Distance",
+                      "description": "Total actual distance"
+                   },
+				   "total_actual_time": {
+                      "type": "integer",
+                      "title": "Total Actual Time",
+                      "description": "Total actual time"
+                   },
+				   "avg_actual_time": {
+                      "type": "integer",
+                      "title": "Average Actual Time",
+                      "description": "Average actual time"
+                   },
+				   "original_total_distance": {
+                      "type": "number",
+                      "title": "Original Total Distance",
+                      "description": "Original total distance"
+                   },
+				   "total_notes": {
+                      "type": "integer",
+                      "title": "Total Notes",
+                      "description": "Total notes"
+                   },
+				   "total_visited": {
+                      "type": "integer",
+                      "title": "Total Visited",
+                      "description": "Total visited"
+                   },
+				   "avg_time_on_site": {
+                      "type": "integer",
+                      "title": "Average Time On Site",
+                      "description": "Average time on site"
+                   },
+				   "allocated_service_time": {
+                      "type": "integer",
+                      "title": "Allocated Service Time",
+                      "description": "Allocated service time"
+                   },
+				   "deviation_percent": {
+                      "type": "number",
+                      "title": "Deviation Percent",
+                      "description": "Deviation percent"
+                   },
+				   "co2": {
+                      "type": "double",
+                      "title": "CO2",
+                      "description": "CO2 emmision"
+                   },
+				   "date": {
+                      "type": "string",
+                      "title": "Date",
+                      "description": "Date (e.g. 'Aug1')"
+                   }
+                }
+            }
+        }
+    }
+}
