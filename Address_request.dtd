@@ -284,11 +284,6 @@
 			"title": "Notes",
 			"description": "Notes"
 		},
-		"account_no": {
-			"type": "string",
-			"title": "Account NO",
-			"description": "The account number for the address"
-		},
 		"tracking_number": {
 			"type": "string",
 			"title": "Tracking Number",
