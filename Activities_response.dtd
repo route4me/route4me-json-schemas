@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://github.com/route4me/route4me-json-schemas/blob/master/Activities_response.dtd",
+    "title": "Activity Response",
+	"description": "Json schema for the response (query) from the endpoint: https://api.route4me.com/api/get_activities.php",
+    "type": "object",
+    "properties": {
+	    "results": {
+		    "type": "array",
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Activity_response.dtd"},
+			"description": "Array of the activity objects"
+		},
+		"total": {
+		    "type": "integer",
+			"title": "Total",
+            "description": "Total number of the activity objects in the response"
+		}
+    }
+}
