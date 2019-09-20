@@ -89,11 +89,6 @@
 			"title": "Original Route ID",
 			"description": "The original customer-specific route id assigned at route creation time."
 		},
-		"route_name": {
-			"type": "string",
-			"title": "Route Name",
-			"description": "Route Name"
-		},
 		"optimization_problem_id": {
 			"type": "string",
 			"title": "Optimization Problem ID",
@@ -291,6 +286,11 @@
 			"title": "Distance to next destination",
 			"description": "Distance to next destination in route unit (the default unit is in miles)"
 		},
+		"udu_distance_to_next_destination": {
+			"type": "number",
+			"title": "UDU Distance To Next Destination",
+			"description": "UDU distance to next destination in route unit (the default unit is in miles)"
+		},
 		"channel_name": {
 			"type": "string",
 			"title": "Channel name",
@@ -429,11 +429,6 @@
 				}
 			}
 		},
-		"account_no": {
-			"type": "string",
-			"title": "Account NO",
-			"description": "The account number for the address"
-		},
 		"wait_time_to_next_destination": {
 			"type": "integer",
 			"title": "Wait time to next destination",
@@ -461,6 +456,11 @@
 					"type": "number",
 					"title": "Running Distance",
 					"description": "Distance traversed before reaching this address"
+				},
+				"udu_running_distance": {
+					"type": "number",
+					"title": "UDU Running Distance",
+					"description": "UDU distance traversed before reaching this address"
 				},
 				"fuel_from_start": {
 					"type": "number",
@@ -501,6 +501,16 @@
 					"type": "integer",
 					"title": "Estimated Departure Time ts",
 					"description": "Estimated departure time based on the current route progress"
+				},
+				"scheduled_arrival_time_ts": {
+					"type": "integer",
+					"title": "Scheduled Arrival Time ts",
+					"description": "Scheduled arrival time of a vehicle to this destination"
+				},
+				"scheduled_departure_time_ts": {
+					"type": "integer",
+					"title": "Scheduled Departure Time ts",
+					"description": "Scheduled departure time of a vehicle from this destination"
 				},
 				"time_impact": {
 					"type": "integer",
