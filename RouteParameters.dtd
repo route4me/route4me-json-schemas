@@ -131,11 +131,6 @@
 			"format": "email",
 			"description": "Addresses where this route was shared after completion"
 		},
-		"route_type": {
-			"type": ["string", "null"],
-			"title": "Route Type",
-			"description": "Type of route being created: ENUM(api,null)"
-		},
 		"store_route": {
 			"type": ["boolean", "null"],
 			"title": "Store Route",
@@ -159,7 +154,7 @@
 			"description": "User ID who is assigned to the route"
 		},
 		"ip": {
-			"type": ["string", "null"],
+			"type": ["integer", "null"],
 			"title": "IP",
 			"description": "IP Address in decimal form of user who created the route"
 		},
@@ -240,6 +235,70 @@
 			"title": "Truck Hazardous Goods",
 			"description": "Array of the truck hazardous goods"
 		},
+		"truck_axles": {
+			"type": ["integer", "null"],
+			"title": "Truck Axles",
+			"description": "Truck axles number"
+		},
+		"truck_toll_road_usage": {
+			"type": ["string", "null"],
+			"enum": ["YES", "NO"],
+			"title": "Truck Toll Road Usage",
+			"description": "Truck toll road usage"
+		},
+		"truck_avoid_ferries": {
+			"type": ["string", "null"],
+			"enum": ["YES", "NO"],
+			"title": "Truck Avoid Ferries",
+			"description": "Truck avoid ferries"
+		},
+		"truck_hwy_only": {
+			"type": ["string", "null"],
+			"enum": ["YES", "NO"],
+			"title": "Truck Highway Only",
+			"description": "Truck highway only"
+		},
+		"truck_lcv": {
+			"type": ["string", "null"],
+			"enum": ["YES", "NO"],
+			"title": "Truck LCV",
+			"description": "Truck of the type Long Combination Vehicle"
+		},
+		"truck_borders": {
+			"type": ["string", "null"],
+			"enum": ["YES", "NO"],
+			"title": "Truck Borders",
+			"description": "Avoid international borders"
+		},
+		"truck_side_street_adherence": {
+			"type": ["string", "null"],
+			"enum": ["OFF", "MINIMAL","MODERATE","AVERAGE","STRICT","ADHERE","STRONGLYHERE"],
+			"title": "Truck Side Street Adherence",
+			"description": "Truck side street adherence"
+		},
+		"truck_config": {
+			"type": ["string", "null"],
+			"enum": ["NONE","PASSENGER","28_DOUBLETRAILER","48_STRAIGHT_TRUCK","48_SEMI_TRAILER","53_SEMI_TRAILER","FULLSIZEVAN","26_STRAIGHT_TRUCK"],
+			"title": "Truck Config",
+			"description": "Truck configuration"
+		},
+		"truck_dim_unit": {
+			"type": "string",
+			"enum": ["mi","km"],
+			"title": "Truck Dimension Unit",
+			"description": "Truck dimension unit"
+		},
+		"truck_type": {
+			"type": "string",
+			"enum": ["suv","pickup_truck","van","18wheeler","cabin","waste_disposal","tree_cutting","bigrig","cement_mixer","livestock_carrier","dairy","tractor_trailer"],
+			"title": "Truck Type",
+			"description": "Truck type"
+		},
+		"truck_weight": {
+			"type": ["number", "null"],
+			"title": "Truck Weight",
+			"description": "If travel_mode = 'Trucking', specifies the truck weight (required)"
+		},
 		"min_tour_size": {
 			"type": ["integer", "null"],
 			"title": "Minimum Tour Size",
@@ -269,6 +328,21 @@
 			"type": ["integer", "null"],
 			"title": "rightturn",
 			"description": "Available with: 1 = RIGHTTURN_ALLOW, 2 = RIGHTTURN_FORBID, 3 = RIGHTTURN_MULTIAPPROACH (assumes points are intersections and visits them from all sides. Ignores uturn and leftturn constraints.)"
+		},
+		"route_time_multiplier": {
+			"type": ["number", "null"],
+			"title": "Route Time Multiplier",
+			"description": "Route travel time slowdown (e.g. 25 (means 25% slowdown))"
+		},
+		"route_service_time_multiplier": {
+			"type": ["number", "null"],
+			"title": "Route Service Time Multiplier",
+			"description": "Route service time slowdown (e.g. 10 (means 10% slowdown))"
+		},
+		"optimization_engine": {
+			"type": "string",
+			"title": "Optimization Engine",
+			"description": "Optimization engine (e.g. '1','2' etc)"
 		},
 		"override_addresses": {
 			"type": "object",
