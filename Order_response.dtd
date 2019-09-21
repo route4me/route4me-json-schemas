@@ -205,6 +205,14 @@
 			"type": "boolean",
 			"title": "Is completed",
 			"description": "If true, the order is completed."
+		},
+		"custom_user_fields": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"title": "Custom User Fields",
+			"description": "Custom user fields"
 		}
 	}
 }
