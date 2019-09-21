@@ -142,6 +142,11 @@
 						"title": "Compass direction",
 						"description": "Compass direction"
 					},
+					"udu_distance": {
+						"type": "number",
+						"title": "UDU Distance",
+						"description": "UDU distance"
+					},
 					"maneuverPoint": {
 						"type": "object",
 						"title": "Maneuver point",
