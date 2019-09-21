@@ -80,6 +80,17 @@
 			"title": "Trip Distance",
 			"description": "Route length (the unit is given by distance_unit)"
 		},
+		"udu_distance_unit": {
+			"type": "string",
+			"enum": ["mi","km"],
+			"title": "UDU Distance Unit",
+			"description": "UDU distance unit"
+		},
+		"udu_trip_distance": {
+			"type": "number",
+			"title": "UDU Trip Distance",
+			"description": "UDU Route length (the unit is given by distance_unit)"
+		},
 		"is_unrouted": {
 			"type": "boolean",
 			"title": "Is unrouted",
@@ -124,6 +135,16 @@
 			"type": "integer",
 			"title": "Planned Total Route Duration",
 			"description": "Planned total route duration"
+		},
+		"total_wait_time": {
+			"type": "integer",
+			"title": "Total Wait Time",
+			"description": "Total wait time"
+		},
+		"udu_actual_travel_distance": {
+			"type": "number",
+			"title": "UDU Actual Travel Distance",
+			"description": "UDU Actual travel distance"
 		},
 		"actual_travel_distance": {
 			"type": "number",
