@@ -236,7 +236,7 @@
 		},
 		"tracking_history": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingHistory.dtd"},
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingHistory_packet.dtd"},
 			"title": "Tracking History",
 			"description": "A collection of device tracking data with coordinates, speed, and timestamps"
 		}
