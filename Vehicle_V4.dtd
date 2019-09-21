@@ -196,7 +196,14 @@
 			"title": "Weight LB",
 			"descrption": "A weight of the vehicle in the pounds."
 		},
-		
+		"route4me_telematics_internal_api_key": {
+			"type": [
+				"string",
+				"null"
+			],
+			"title": "Route4Me Telematics Internal API Key",
+			"descrption": "Route4Me telematics internal API key"
+		},
 		"external_telematics_vehicle_id": {
 			"type": [
 				"string",
@@ -204,6 +211,22 @@
 			],
 			"title": "External Telematics Vehicle ID",
 			"descrption": "External telematics vehicle ID"
+		},
+		"r4m_telematics_gateway_connection_id": {
+			"type": [
+				"string",
+				"null"
+			],
+			"title": "Route4Me Telematics Gateway Connection ID",
+			"descrption": "Route4Me telematics gateway connection ID"
+		},
+		"r4m_telematics_gateway_vehicle_id": {
+			"type": [
+				"string",
+				"null"
+			],
+			"title": "Route4Me Telematics Gateway Vehicle ID",
+			"descrption": "Route4Me telematics gateway vehicle ID"
 		},
 		"has_trailer": {
 			"type": "boolean",
