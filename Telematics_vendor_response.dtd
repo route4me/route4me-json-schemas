@@ -82,6 +82,29 @@
 					}
 				}
 			}
+		},
+		"countries": {
+		    "type": "array",
+			"items": {
+			    "type": "object",
+				"properties": {
+				    "id": {
+						"type": "string",
+						"title": "ID",
+						"description": "Country ID"
+					},
+					"country_code": {
+						"type": "string",
+						"title": "Country Code",
+						"description": "Country code"
+					},
+					"country_name": {
+						"type": "string",
+						"title": "Country Name",
+						"description": "Country name"
+					}
+				}
+			}
 		}
 	}
 }
