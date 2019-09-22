@@ -28,7 +28,21 @@
 		"addresses": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Addressbook_v4_response.dtd"
+				"type": "array",
+				"properties": {
+				    "type": "integer",
+					"description": "An address ID enclosed in the territory"
+				}
+			}
+		},
+		"orders": {
+			"type": "array",
+			"items": {
+				"type": "array",
+				"properties": {
+				    "type": "integer",
+					"description": "An order ID enclosed in the territory"
+				}
 			}
 		},
 		"territory": {
