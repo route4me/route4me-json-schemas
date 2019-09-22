@@ -100,6 +100,12 @@
 							"title": "Activity Timestamp",
 							"description": "Activity timestamp (EPOCH)"
 						},
+						},
+						"device_timestamp": {
+							"type": "integer",
+							"title": "Device Timestamp",
+							"description": "Device timestamp (EPOCH)"
+						},
 						"route_id": {
 							"type": "string",
 							"title": "Route ID",
@@ -119,6 +125,27 @@
 							"type": "integer",
 							"title": "Altitude",
 							"description": "Altitude"
+						},
+						"footsteps": {
+							"type": "integer",
+							"title": "Footsteps",
+							"description": "Footsteps"
+						},
+						"custom_data": {
+						    "type": "array",
+							"items": {"type": "string"},
+							"description": "Custom data",
+							"title": "Custom Data"
+						},
+						"device_timezone": {
+							"type": "string",
+							"title": "Device Timezone",
+							"description": "Device timezone (e.g. 'America/New_York')"
+						},
+						"device_timezone_offset": {
+							"type": "integer",
+							"title": "Device Timezone Offset",
+							"description": "Device timezone offset"
 						},
 						"vehicle_id": {
 							"type": "string",
