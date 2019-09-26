@@ -11,27 +11,27 @@
 			"descrption": "The ID assigned to an asset by the system"
 		},
 		"large_logo_uri": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Large logo URI",
 			"description": "A link to a large logo"
 		},
 		"mobile_logo_uri": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Mobile logo URI",
 			"description": "A link to a mobile logo"
 		},
 		"map_color": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Map color",
 			"description": "Map color"
 		},
 		"large_logo_alignment": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Large logo alignment",
 			"description": "An alignment of a large logo"
 		},
 		"mobile_logo_alignment": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Mobile logo alignment",
 			"description": "An alignment of a mobile logo"
 		},
@@ -41,17 +41,17 @@
 			"description": "If true, the map zoom controls will be shown"
 		},
 		"driver_phone": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Driver phone",
 			"description": "Driver phone number"
 		},
 		"route_started": {
-			"type": "integer",
+			"type": "boolean",
 			"title": "Route Started",
 			"description": "Route started"
 		},
 		"customer_service_phone": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Customer Service Phone",
 			"description": "Customer service phone"
 		},
@@ -61,12 +61,12 @@
 			"description": "Driver name"
 		},
 		"driver_picture": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Driver picture",
 			"description": "A link to a driver picture file"
 		},
 		"tracking_page_subheadline": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Tracking page subheadline",
 			"description": "A subheadline of a tracking page"
 		},
@@ -135,7 +135,7 @@
 						"description": "Point longitude"
 					},
 					"icon": {
-						"type": "string",
+						"type": ["string", "null"],
 						"title": "Icon",
 						"description": "Link to the icon"
 					},
@@ -152,7 +152,7 @@
 						"description": "A icon's acnhor position"
 					},
 					"popupAnchor": {
-						"type": "array",
+						"type": ["array", "null"],
 						"items": {
 							"type": "integer"
 						}
@@ -171,10 +171,8 @@
 			}
 		},
 		"custom_data": {
-			"type": "array",
-			"items": {
-				"type": "string"
-			},
+			"type": "object",
+			"additionalProperties": { "type": "string" },
 			"title": "Custom Data",
 			"description": "Unclasified data of a Tracking_number object. You can put here asset name too."
 		},
@@ -197,12 +195,12 @@
 			}
 		},
 		"timestamp_geofence_visited": {
-			"type": "integer",
+			"type": ["integer", "null"],
 			"title": "Timestamp geofence visited",
 			"description": "UNIX timestamp when a geofence visited event was triggered"
 		},
 		"timestamp_last_visited": {
-			"type": "integer",
+			"type": ["integer", "null"],
 			"title": "Timestamp geofence visited",
 			"description": "UNIX timestamp of a last visited event"
 		}
