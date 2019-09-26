@@ -78,7 +78,7 @@
 			"description": "Contents"
 		},
 		"upload_type": {
-			"type": "string",
+			"type": ["string", "null"],
 			"enum": [
 				"DRIVER_IMG",
 				"VEHICLE_IMG",
@@ -91,12 +91,12 @@
 			"description": "Upload Type"
 		},
 		"upload_url": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Upload url",
 			"description": "The direct CDN URL of the attachment uploaded with a note"
 		},
 		"upload_extension": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Upload Extension",
 			"description": "The extension of the attachment ('pdf', 'csv' etc)"
 		},
