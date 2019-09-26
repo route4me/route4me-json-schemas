@@ -76,7 +76,7 @@
 			"description": "The city the address is located in"
 		},
 		"address_state_id": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Address state id",
 			"description": "The state the address is located in"
 		},
@@ -119,10 +119,8 @@
 			"description": "Curbside longitude"
 		},
 		"EXT_FIELD_custom_data": {
-			"type": "array",
-			"items": {
-				"type": "string"
-			},
+			"type": "object",
+			"additionalProperties": { "type": "string" },
 			"title": "Order custom data",
 			"description": "A custom data of the order"
 		},
@@ -162,7 +160,7 @@
 			"description": "When second time window was ended."
 		},
 		"service_time": {
-			"type": "integer",
+			"type": ["integer","null"],
 			"title": "Service time",
 			"description": "Consumed service time at an address."
 		},
@@ -172,12 +170,12 @@
 			"description": "Local timezone"
 		},
 		"color": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Color",
 			"description": "Hexadecimal color."
 		},
 		"order_icon": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Order icon",
 			"description": "URL of an order icon"
 		},
@@ -207,10 +205,8 @@
 			"description": "If true, the order is completed."
 		},
 		"custom_user_fields": {
-			"type": "array",
-			"items": {
-				"type": "string"
-			},
+			"type": "object",
+			"additionalProperties": { "type": "string" },
 			"title": "Custom User Fields",
 			"description": "Custom user fields"
 		}
