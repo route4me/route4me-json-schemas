@@ -26,7 +26,7 @@
 			"description": "Territory color"
 		},
 		"orders": {
-			"type": "array",
+			"type": ["array", "null"],
 			"items": {
 				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_response.dtd"
 			},
