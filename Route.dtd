@@ -219,8 +219,8 @@
 			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Vehicle_V4.dtd"
 		},
 		"member_config_storage": {
-			"type": "array",
-			"items": {"type": "string"},
+			"type": "object",
+			"additionalProperties": { "type": "string" },
 			"description": "Member config key-value pairs"
 		},
 		"directions": {
