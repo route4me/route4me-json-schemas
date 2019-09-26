@@ -15,7 +15,7 @@
 			"description": "Optimization which generated this route"
 		},
 		"user_route_rating": {
-			"type": "integer",
+			"type": ["integer", "null"],
 			"enum": [0, 1, 2, 3, 4, 5 ],
 			"title": "User Route Rating",
 			"description": "User route rating [0, 5]. A null value means no rating was given. Users can rate routes so that future optimizations take these ratings into account."
@@ -31,12 +31,12 @@
 			"description": "Member email"
 		},
 		"member_picture":{
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Member Picture",
 			"description": "URL to a member picture"
 		},
 		"member_tracking_subheadline" : {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Member Trtacking Subheadline",
 			"description": "Member trtacking subheadline"
 		},
