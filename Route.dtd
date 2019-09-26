@@ -202,7 +202,11 @@
 			"title": "Notes Count",
 			"description": "Notes count in the route"
 		},
-		"parameters": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.dtd"},
+		"parameters": {
+		    "type": "object",
+		    "$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.dtd",
+			"description": "Route parameters"
+		},
 		"addresses": {
 			"type": "array",
 			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.dtd"},
