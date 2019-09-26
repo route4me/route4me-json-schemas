@@ -38,7 +38,7 @@
 			"descrption": "An Unix Timestamp the Optimization Problem was scheduled for."
 		},
 		"optimization_completed_timestamp": {
-			"type": "integer",
+			"type": ["integer", "null"],
 			"title": "Optimization Completed Timestamp",
 			"descrption": "When the Optimization Problem was completed."
 		},
