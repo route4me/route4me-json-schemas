@@ -33,6 +33,7 @@
 				"string",
 				"null"
 			],
+			"maxLength": 17,
 			"title": "Vehicle VIN",
 			"descrption": "Vehicle VIN number"
 		},
