@@ -41,7 +41,7 @@
 			"description": "Website URL of a vendor"
 		},
 		"api_docs_url": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "API documentation URL",
 			"description": "URL to a vendor's API documentation."
 		},
