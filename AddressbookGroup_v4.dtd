@@ -21,7 +21,7 @@
 			"description": "Group color. See allowed values and colors at this link: https://github.com/route4me/route4me-json-schemas/blob/master/ColorSamples/AddressBookGroupAvailableColors.png"
 		},
 		"group_icon": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Group Icon",
 			"description": "Group icon"
 		},
