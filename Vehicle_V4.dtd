@@ -29,43 +29,28 @@
 			"descrption": "Internal name of the vehicle"
 		},
 		"vehicle_vin": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": ["string", "null"],
 			"maxLength": 17,
 			"title": "Vehicle VIN",
 			"descrption": "Vehicle VIN number"
 		},
 		"vehicle_reg_state_id": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": ["string", "null"],
 			"title": "Vehicle registration state ID",
 			"descrption": "An ID of the state, where vehicle was registered"
 		},
 		"vehicle_reg_country_id": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": ["string", "null"],
 			"title": "Vehicle registration country ID",
 			"descrption": "An ID of the country, where vehicle was registered"
 		},
 		"vehicle_license_plate": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": ["string", "null"],
 			"title": "Vehicle License Plate",
 			"descrption": "A license plate of the vehicle"
 		},
 		"vehicle_type_id": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": ["string", "null"],
 			"enum": ["sedan", "suv", "pickup_truck", "van", "18wheeler", "cabin", "hatchback", "motorcyle", "waste_disposal", "tree_cutting", "bigrig", "cement_mixer", "livestock_carrier", "dairy","tractor_trailer"],
 			"title": "Vehicle Type ID",
 			"descrption": "Vehicle type"
@@ -76,366 +61,63 @@
 			"descrption": "When the vehicle was added"
 		},
 		"vehicle_make": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": ["string", "null"],
 			"enum": ["american coleman", "bmw", "chevrolet", "ford", "freightliner", "gmc", "hino", "honda", "isuzu", "kenworth", "mack", "mercedes-benz", "mitsubishi", "navistar", "nissan", "peterbilt", "renault", "scania", "sterling", "toyota", "volvo", "western star"],
 			"title": "Vehicle Make",
 			"descrption": "Vehicle maker brend"
 		},
 		"vehicle_model_year": {
-			"type": [
-				"integer",
-				"null"
-			],
+			"type": ["integer", "null"],
 			"title": "Vehicle Model Year",
 			"descrption": "A year of the vehicle model"
 		},
 		"vehicle_model": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": ["string", "null"],
 			"title": "Vehicle Model",
 			"descrption": "A model of the vehicle"
 		},
 		"vehicle_year_acquired": {
-			"type": [
-				"integer",
-				"null"
-			],
+			"type": ["integer", "null"],
 			"title": "Vehicle Acquired Year",
 			"descrption": "A year the vehicle was acquired"
 		},
 		"vehicle_cost_new": {
-			"type": [
-				"number",
-				"null"
-			],
+			"type": ["number", "null"],
 			"title": "Vehicle Cost New",
 			"descrption": "A cost of the new vehicle"
 		},
 		"purchased_new": {
-			"type": "boolean",
+			"type": ["boolean", "null"],
 			"title": "Purchased New",
 			"description": "If true, the vehicle was purchased new"
 		},
 		"license_start_date": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": ["string", "null"],
 			"format": "date-time",
 			"title": "License Start Date",
 			"descrption": "A start date of the license"
 		},
 		"license_end_date": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": ["string", "null"],
 			"format": "date-time",
 			"title": "License End Date",
 			"descrption": "An end date of the license"
-		},
-		"vehicle_axle_count": {
-			"type": [
-				"integer",
-				"null"
-			],
-			"title": "Vehicle Axle Count",
-			"descrption": "A number of the vecile's axles"
 		},
 		"is_operational": {
 			"type": "boolean",
 			"title": "Is Operational",
 			"description": "If true, the vehicle is operational"
 		},
-		"mpg_city": {
-			"type": [
-				"number",
-				"null"
-			],
-			"minimum": 6,
-			"maximum": 60,
-			"title": "MPG City",
-			"descrption": "Miles per gallon in the city area"
-		},
-		"mpg_highway": {
-			"type": [
-				"number",
-				"null"
-			],
-			"minimum": 6,
-			"maximum": 60,
-			"title": "MPG Highway",
-			"descrption": "Miles per gallon in the highway area"
-		},
 		"fuel_type": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": ["string", "null"],
 			"enum": ["unleaded 87", "unleaded 89", "unleaded 91", "unleaded 93", "diesel", "electric", "hybrid"],
 			"title": "Fuel Type",
 			"descrption": "A type of the fuel"
 		},
-		"height_inches": {
-			"type": [
-				"number",
-				"null"
-			],
-			"title": "Height Inches",
-			"descrption": "A height of the vehicle in the inches."
-		},
-		"weight_lb": {
-			"type": [
-				"number",
-				"null"
-			],
-			"title": "Weight LB",
-			"descrption": "A weight of the vehicle in the pounds."
-		},
-		"route4me_telematics_internal_api_key": {
-			"type": [
-				"string",
-				"null"
-			],
-			"title": "Route4Me Telematics Internal API Key",
-			"descrption": "Route4Me telematics internal API key"
-		},
 		"external_telematics_vehicle_id": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": ["string", "null"],
 			"title": "External Telematics Vehicle ID",
 			"descrption": "External telematics vehicle ID"
-		},
-		"r4m_telematics_gateway_connection_id": {
-			"type": [
-				"string",
-				"null"
-			],
-			"title": "Route4Me Telematics Gateway Connection ID",
-			"descrption": "Route4Me telematics gateway connection ID"
-		},
-		"r4m_telematics_gateway_vehicle_id": {
-			"type": [
-				"string",
-				"null"
-			],
-			"title": "Route4Me Telematics Gateway Vehicle ID",
-			"descrption": "Route4Me telematics gateway vehicle ID"
-		},
-		"has_trailer": {
-			"type": "boolean",
-			"title": "Has Trailer",
-			"description": "If true, the vehicle has trailer"
-		},
-		"heightInInches": {
-			"type": [
-				"number",
-				"null"
-			],
-			"title": "Height In Inches",
-			"descrption": "Vehicle height in inches"
-		},
-		"lengthInInches": {
-			"type": [
-				"number",
-				"null"
-			],
-			"title": "Length In Inches",
-			"descrption": "Vehicle length in inches"
-		},
-		"widthInInches": {
-			"type": [
-				"number",
-				"null"
-			],
-			"title": "Width In Inches",
-			"descrption": "Vehicle width in inches"
-		},
-		"maxWeightPerAxleGroupInPounds": {
-			"type": [
-				"number",
-				"null"
-			],
-			"title": "Maximum Weight Per Axle Group In Pounds",
-			"descrption": "Maximum weight per axle group in pounds"
-		},
-		"numAxles": {
-			"type": [
-				"integer",
-				"null"
-			],
-			"title": "Axles Number",
-			"descrption": "Number of the axles"
-		},
-		"weightInPounds": {
-			"type": [
-				"number",
-				"null"
-			],
-			"title": "Weight In Pounds",
-			"descrption": "Weight in pounds"
-		},
-		"HazmatType": {
-			"type": "string",
-			"default": "NONE",
-			"enum": ["INVALID", "NONE", "GENERAL", "EXPLOSIVE", "INHALANT", "RADIOACTIVE", "CAUSTIC", "FLAMMABLE", "HARMFUL_TO_WATER"],
-			"title": "Hazardous Materials Type",
-			"descrption": "Hazardous materials type"
-		},
-		"LowEmissionZonePref": {
-			"type": [
-				"string",
-				"null"
-			],
-			"enum": ["AVOID", "ALLOW", "WARN"],
-			"title": "Low Emission Zone Preference",
-			"descrption": "Low emission zone preference"
-		},
-		"Use53FootTrailerRouting": {
-			"type": [
-				"string",
-				"null"
-			],
-			"enum": ["YES", "NO"],
-			"title": "Use 53 Foot Trailer Routing",
-			"descrption": "Use 53 foot trailer routing"
-		},
-		"UseNationalNetwork": {
-			"type": [
-				"string",
-				"null"
-			],
-			"enum": ["YES", "NO"],
-			"title": "Use National Network",
-			"descrption": "Use national network"
-		},
-		"UseTruckRestrictions": {
-			"type": [
-				"string",
-				"null"
-			],
-			"enum": ["YES", "NO"],
-			"title": "Use Truck Restrictions",
-			"descrption": "Use truck restrictions"
-		},
-		"AvoidFerries": {
-			"type": "string",
-			"default": "NO",
-			"enum": ["YES", "NO"],
-			"title": "Avoid Ferries",
-			"descrption": "Avoid Ferries"
-		},
-		"DividedHighwayAvoidPreference": {
-			"type": [
-				"string",
-				"null"
-			],
-			"enum": ["STRONG_AVOID", "AVOID", "NEUTRAL", "FAVOR", "STRONG_FAVOR"],
-			"title": "Divided Highway Avoid Preference",
-			"descrption": "Divided highway avoid preference (e.g. NEUTRAL)"
-		},
-		"FreewayAvoidPreference": {
-			"type": [
-				"string",
-				"null"
-			],
-			"enum": ["STRONG_AVOID", "AVOID", "NEUTRAL", "FAVOR", "STRONG_FAVOR"],
-			"title": "Freeway Avoid Preference",
-			"descrption": "Freeway avoid preference"
-		},
-		"InternationalBordersOpen": {
-			"type": [
-				"string",
-				"null"
-			],
-			"enum": ["YES", "NO"],
-			"title": "International Borders Open",
-			"descrption": "International borders open (e.g. NO, YES)"
-		},
-		"TollRoadUsage": {
-			"type": [
-				"string",
-				"null"
-			],
-			"enum": ["ALWAYS_AVOID", "IF_NECESSARY", "NO_RESTRICTION"],
-			"title": "Toll Road Usage",
-			"descrption": "Toll road usage"
-		},
-		"hwy_only": {
-			"type": "boolean",
-			"title": "Highway Only",
-			"description": "If true, the vehicle uses only highway"
-		},
-		"long_combination_vehicle": {
-			"type": "boolean",
-			"title": "Long Combination Vehicle",
-			"description": "If true, the vehicle is long combination"
-		},
-		"avoid_highways": {
-			"type": "boolean",
-			"title": "Avoid Highways",
-			"description": "If true, the vehicle should avoid highways"
-		},
-		"side_street_adherence": {
-			"type": "string",
-			"default": "OFF",
-			"enum": ["OFF", "MINIMAL", "MODERATE", "AVERAGE", "STRICT", "ADHERE", "STRONGLYHERE"],
-			"title": "Side Street Adherence",
-			"descrption": "Side street adherence"
-		},
-		"truck_config": {
-			"type": "string",
-			"default": "NONE",
-			"enum": ["NONE", "PASSENGER", "28_DOUBLETRAILER", "48_STRAIGHT_TRUCK", "48_SEMI_TRAILER", "53_SEMI_TRAILER", "FULLSIZEVAN", "26_STRAIGHT_TRUCK"],
-			"title": "Truck Configuration",
-			"descrption": "Truck configuration"
-		},
-		"height_metric": {
-			"type": [
-				"number",
-				"null"
-			],
-			"title": "Height Metric",
-			"descrption": "Vehicle height in metric unit"
-		},
-		"length_metric": {
-			"type": [
-				"number",
-				"null"
-			],
-			"title": "Length Metric",
-			"descrption": "Vehicle length in metric unit"
-		},
-		"width_metric": {
-			"type": [
-				"number",
-				"null"
-			],
-			"title": "Width Metric",
-			"descrption": "Vehicle width in metric unit"
-		},
-		"weight_metric": {
-			"type": [
-				"number",
-				"null"
-			],
-			"title": "Weight Metric",
-			"descrption": "Vehicle weight in metric unit"
-		},
-		"max_weight_per_axle_group_metric": {
-			"type": [
-				"number",
-				"null"
-			],
-			"title": "Maximum Weight Per Axle Group Metric",
-			"descrption": "Maximum weight per axle group in metric unit"
 		},
 		"timestamp_removed": {
 			"type": "string",
