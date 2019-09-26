@@ -108,15 +108,13 @@
 			"description": "Curbside longitude"
 		},
 		"address_custom_data": {
-			"type": "array",
-			"items": {
-				"type": "string"
-			},
+			"type": "object",
+			"additionalProperties": { "type": "string" },
 			"title": "Address custom data",
 			"description": "Address custom data"
 		},
 		"schedule": {
-			"type": "array",
+			"type": ["array", "null"],
 			"title": "Schedules",
 			"description": "Array of the trip schedules to a location",
 			"items": {
@@ -269,7 +267,7 @@
 			
 		},
 		"schedule_blacklist": {
-			"type": "array",
+			"type": ["array", "null"],
 			"title": "Schedule blacklist",
 			"description": "Array of the dates, which should be excluded from a trip schedule to a location",
 			"items": {
@@ -286,53 +284,58 @@
 			"title": "In route count",
 			"description": "In how many route is icluded"
 		},
+		"visited_count": {
+			"type": "integer",
+			"title": "Visited Count",
+			"description": "How many route destination were visited"
+		},
 		"last_visited_timestamp": {
 			"type": "integer",
 			"title": "Last visited timestamp",
 			"description": "Last visited timestamp"
 		},
 		"last_routed_timestamp": {
-			"type": "integer",
+			"type": ["integer", "null"],
 			"title": "Last routed timestamp",
 			"description": "Last routed timestamp"
 		},
 		"local_time_window_start": {
-			"type": "integer",
+			"type": ["integer", "null"],
 			"title": "Local time window start",
 			"description": "Local time window start"
 		},
 		"local_time_window_end": {
-			"type": "integer",
+			"type": ["integer", "null"],
 			"title": "Local time window end",
 			"description": "Local time window end"
 		},
 		"local_time_window_start_2": {
-			"type": "integer",
+			"type": ["integer", "null"],
 			"title": "Local time window start 2",
 			"description": "Local time window start 2"
 		},
 		"local_time_window_end_2": {
-			"type": "integer",
+			"type": ["integer", "null"],
 			"title": "Local time window end 2",
 			"description": "Local time window end 2"
 		},
 		"service_time": {
-			"type": "integer",
+			"type": ["integer", "null"],
 			"title": "Service time",
 			"description": "Service time"
 		},
 		"local_timezone_string": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Local timezone string",
 			"description": "Local timezone string"
 		},
 		"color": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Color",
 			"description": "Color of an address"
 		},
 		"address_icon": {
-			"type": "string",
+			"type": ["string", "null"],
 			"title": "Address icon",
 			"description": "URL to an address icon file"
 		},
@@ -344,43 +347,43 @@
 			"description": "The type of stop that this is (DELIVERY,PICKUP,BREAK,MEETUP,SERVICE,VISIT,DRIVEBY)"
 		},
 		"address_cube": {
-			"type": "number",
+			"type": ["number", "null"],
 			"name": "address_cube",
 			"title": "Address Cube",
 			"description": "The cubic volume of the cargo being delivered or picked up at the address"
 		},
 		"address_pieces": {
-			"type": "integer",
+			"type": ["integer", "null"],
 			"name": "address_pieces",
 			"title": "Address Pieces",
 			"description": "The item quantity of the cargo being delivered or picked up at the address"
 		},
 		"address_reference_no": {
-			"type": "string",
+			"type": ["string", "null"],
 			"name": "address_reference_no",
 			"title": "Address Reference NO",
 			"description": "The reference number for the address"
 		},
 		"address_revenue": {
-			"type": "number",
+			"type": ["number", "null"],
 			"name": "address_revenue",
 			"title": "Address Revenue",
 			"description": "The total revenue for the address"
 		},
 		"address_weight": {
-			"type": "number",
+			"type": ["number", "null"],
 			"name": "address_weight",
 			"title": "Address Weight",
 			"description": "Weight of the cargo being delivered or picked up at the address"
 		},
 		"address_priority": {
-			"type": "integer",
+			"type": ["integer", "null"],
 			"name": "address_priority",
 			"title": "Address Priority",
 			"description": "0 is the highest priority; n has higher priority than n + 1"
 		},
 		"address_customer_po": {
-			"type": "string",
+			"type": ["string", "null"],
 			"name": "address_customer_po",
 			"title": "Address Customer PO",
 			"description": "The customer purchase order for the address"
