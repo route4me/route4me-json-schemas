@@ -43,9 +43,9 @@
 			"descrption": "When the Optimization Problem was completed."
 		},
 		"parameters": {
-			"type": "array",
+			"type": "object",
 			"title": "Route Parameters",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.dtd"},
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.dtd",
 			"descrption": "Route Parameters"
 		},
 		"sent_to_background": {
