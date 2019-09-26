@@ -26,23 +26,17 @@
 			"description": "Territory color"
 		},
 		"addresses": {
-			"type": "array",
+			"type": ["array", "null"],
 			"items": {
-				"type": "array",
-				"properties": {
-				    "type": "integer",
-					"description": "An address ID enclosed in the territory"
-				}
+				"type": "integer",
+				"description": "An address ID enclosed in the territory"
 			}
 		},
 		"orders": {
-			"type": "array",
+			"type": ["array", "null"],
 			"items": {
-				"type": "array",
-				"properties": {
-				    "type": "integer",
-					"description": "An order ID enclosed in the territory"
-				}
+				"type": "integer",
+				"description": "An order ID enclosed in the territory"
 			}
 		},
 		"territory": {
