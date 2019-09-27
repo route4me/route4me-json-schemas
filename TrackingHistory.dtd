@@ -4,150 +4,61 @@
 	"title": "Tracking History",
 	"type": "object",
 	"properties": {
-		"data": {
-			"type": "array",
-			"title": "Data",
-			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingHistory_packet.dtd"
-			}
+		"s": {
+			"type": [
+				"number", "null"
+			],
+			"title": "Speed",
+			"description": "Speed at the time of the location transaction event"
 		},
-		"mmd": {
-			"type": "object",
-			"title": "MMD",
-			"description": "Road snapping/map matching. The entire GPS feed was run through a map matching algorithm inside our routing engine. The driving directions and the corresponding points were converted to encoded polylines as well.",
-			"properties": {
-				"status": {
-					"type": "integer",
-					"title": "Status",
-					"description": ""
-				},
-				"matchings": {
-					"type": "array",
-					"items": {
-						"type": "object",
-						"properties": {
-							"trace_time": {
-								"type": "integer",
-								"title": "Trace Time",
-								"description": "Trace time in seconds"
-							},
-							"trace_distance": {
-								"type": "integer",
-								"title": "Trace Distance",
-								"description": "Trace distance in miles"
-							},
-							"matched_points": {
-								"type": "array",
-								"items": {
-										"type": "array",
-										"items": {
-											"type": "object",
-											"properties": {
-												"lat": {
-													"type": "number",
-													"title": "Latitude",
-													"minimum": -90,
-													"maximum": 90,
-													"description": "Latitude of the mathing point"
-												},
-												"lng": {
-													"type": "number",
-													"title": "Longitude",
-													"minimum": -180,
-													"maximum": 180,
-													"description": "Longitude of the mathing point"
-												}
-											}
-									}
-								}
-							},
-							"indices": {
-								"type": "array",
-								"title": "Indices",
-								"items": {
-									"type": "integer",
-									"title": "index",
-									"description": "Index of a map matching point"
-								}
-							},
-							"matched_time": {
-								"type": "integer",
-								"title": "Matched Time",
-								"description": "Matched time in the seconds"
-							},
-							"instructions": {
-								"type": "array",
-								"title": "Instructions",
-								"items": {
-									"type": "array",
-									"title": "Instruction",
-									"items": {
-										"type": "object",
-										"properties": {
-											"time": {"type": "string"},
-											"place": {"type": "string"},
-											"par3": {"type": "integer"},
-											"par4": {"type": "integer"},
-											"par5": {"type": "integer"},
-											"distance": {"type": "string"},
-											"dir_compass": {"type": "string"},
-											"dir_degree": {"type": "integer"},
-											"par9": {"type": "integer"}
-										}
-									}
-								}
-							},
-							"matched_distance": {
-								"type": "integer",
-								"title": "Matched Distance",
-								"description": "Matched distance"
-							},
-							"geometry": {
-								"type": "string",
-								"title": "Geometry",
-								"description": "Geometry",
-								"properties": {
-									"total_distance": {
-										"type": "integer",
-										"title": "Total Distance",
-										"description": "Total distance"
-									},
-									"matched_time": {
-										"type": "integer",
-										"title": "Matched Time",
-										"description": "Matched time in the seconds"
-									},
-									"matched_distance": {
-										"type": "integer",
-										"title": "Matched Distance",
-										"description": "Matched distance in the miles"
-									},
-									"total_time": {
-										"type": "integer",
-										"title": "Total Time",
-										"description": "Total time in the seconds"
-									},
-									"trace_time": {
-										"type": "integer",
-										"title": "Trace Time",
-										"description": "Trace time in the seconds"
-									},
-									"trace_distance": {
-										"type": "integer",
-										"title": "Trace Distance",
-										"description": "Trace distance in the miles"
-									}
-								}
-							}
-						}
-					}
-				},
-				"summary": {
-					"type": "object",
-					"title": "Summary",
-					"description": "Summary"
-				}
-			}
+		"lt": {
+			"type": [
+				"number", "null"
+			],
+			"title": "Latitude",
+			"description": "Latitude at the time of the location transaction event"
+		},
+		"m": {
+			"type": [
+				"integer", "null"
+			],
+			"title": "Member ID",
+			"description": "Member ID"
+		},
+		"lg": {
+			"type": [
+				"number", "null"
+			],
+			"title": "Longitude",
+			"description": "Longitude at the time of the location transaction event"
+		},
+		"d": {
+			"type": [
+				"string", "null"
+			],
+			"title": "Direction",
+			"description": "Direction/Heading at the time of the location transaction event"
+		},
+		"ts": {
+			"type": [
+				"string", "null"
+			],
+			"title": "Timestamp",
+			"description": "The original timestamp in unix timestamp format at the moment location transaction event"
+		},
+		"ts_friendly": {
+			"type": [
+				"string", "null"
+			],
+			"title": "Friendly Timestamp",
+			"description": "The original timestamp in a human readable timestamp format at the moment location transaction event"
+		},
+		"src": {
+			"type": [
+				"string", "null"
+			],
+			"title": "SRC",
+			"description": "Package src (e.g. 'R4M')"
 		}
 	}
 }

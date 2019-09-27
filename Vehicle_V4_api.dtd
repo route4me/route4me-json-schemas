@@ -6,7 +6,7 @@
 	"required": [
 		"vehicle_alias"
 	],
-	"description": "Vehicle object in the user's account. Endpoint: url: https://api.route4me.com/api.v4/vehicle.php",
+	"description": "Vehicle object in the user's account. Endpoint: https://api.route4me.com/api.v4/vehicle.php",
 	"properties": {
 		"vehicle_id": {
 			"type": "string",
