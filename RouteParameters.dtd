@@ -345,7 +345,7 @@
 		"optimization_engine": {
 			"type": "string",
 			"title": "Optimization Engine",
-			"description": "Optimization engine (e.g. '1','2' etc)"
+			"description": "The parameter shows what solver engine system use for build optimization routes 1 RVRP, 2 NVRP (default)."
 		},
 		"override_addresses": {
 			"type": "object",
