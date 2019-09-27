@@ -104,7 +104,7 @@
 								"description": "Matched distance"
 							},
 							"geometry": {
-								"type": "string",
+								"type": "object",
 								"title": "Geometry",
 								"description": "Geometry",
 								"properties": {
