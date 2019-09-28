@@ -177,7 +177,7 @@
 			"description": "Idling time"
 		},
 		"paying_miles": {
-			"type": "integer",
+			"type": "number",
 			"title": "Paying Miles",
 			"description": "Paying miles"
 		},
