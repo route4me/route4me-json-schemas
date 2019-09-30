@@ -1,0 +1,61 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/OrderCustomField_create_response.dtd",
+	"title": "Order",
+	"description": "JSON schema for Order Custom Filed. Endpoint: https://api.route4me.com/api.v4/order_custom_user_fields.php",
+	"type": "object",
+	"properties": {
+		"result": {
+			"type": "string",
+			"title": "Result",
+			"description": "If the order custom field created, equals to 'OK'"
+		},
+		"affected": {
+			"type": "integer",
+			"title": "Affected",
+			"description": "How many custom order fields were affected."
+		},
+		"data": {
+			"type": "object",
+			"properties": {
+				"order_custom_field_id": {
+					"type": "integer",
+					"title": "Order Custom Field ID",
+					"description": "Order custom field ID."
+				},
+				"order_custom_field_name": {
+					"type": "string",
+					"title": "Order Custom Field Name",
+					"description": "Order custom field name"
+				},
+				"order_custom_field_type": {
+					"type": "string",
+					"title": "Order Custom Field Type",
+					"description": "Order custom field type (default: 'checkbox')"
+				},
+				"order_custom_field_label": {
+					"type": "string",
+					"title": "Order Custom Field Label",
+					"description": "Order custom field label"
+				},
+				"order_custom_field_type_info": {
+					"type": "object",
+					"properties": {
+						"short_label": {
+							"type": "string",
+							"title": "Short Label",
+							"description": "Short label"
+						}
+					},
+					"title": "Order Custom Field Type Info",
+					"description": "Order custom field type info"
+				},
+				"root_owner_member_id": {
+					"type": "integer",
+					"title": "Root Owner Member ID",
+					"description": "Root owner member ID"
+				}
+			}
+		}
+	}
+}
