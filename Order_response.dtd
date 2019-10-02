@@ -205,8 +205,8 @@
 			"description": "If true, the order is completed."
 		},
 		"custom_user_fields": {
-			"type": "object",
-			"additionalProperties": { "type": "string" },
+			"type": "array",
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_custom_field.dtd"},
 			"title": "Custom User Fields",
 			"description": "Custom user fields"
 		}
