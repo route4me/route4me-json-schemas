@@ -25,6 +25,11 @@
 			"title": "Order Custom Field Type",
 			"description": "Order custom field type (default: 'checkbox')"
 		},
+		"order_custom_field_value": {
+			"type": "string",
+			"title": "Order Custom Field Value",
+			"description": "Order custom field value. If order_custom_field_type='checkbox', valid values are: 'true', 'false'."
+		},
 		"root_owner_member_id": {
 			"type": "integer",
 			"title": "Root Owner Member ID",
@@ -40,7 +45,7 @@
 				}
 			},
 			"title": "Order Custom Field Type Info",
-			"description": "Order custom field type info"
+			"description": "Information about an order's custom field. You can specify the propertiesof the different types in this property, but the property "short_label" is reserved - it specifies custom field column header in the orders table in the page: https://route4me.com/orders."
 		}
 	}
 }
