@@ -243,6 +243,12 @@
 			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingHistory_packet.dtd"},
 			"title": "Tracking History",
 			"description": "A collection of device tracking data with coordinates, speed, and timestamps"
+		},
+		"original_route": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Route.dtd",
+			"title": "Original Route",
+			"description": "Original route"
 		}
 	}
 }
