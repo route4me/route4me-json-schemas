@@ -29,14 +29,14 @@
 			"type": ["array", "null"],
 			"items": {
 				"type": "integer",
-				"description": "An address ID enclosed in the territory"
+				"description": "An address IDs enclosed in the territory"
 			}
 		},
 		"orders": {
 			"type": ["array", "null"],
 			"items": {
 				"type": "integer",
-				"description": "An order ID enclosed in the territory"
+				"description": "An order IDs enclosed in the territory"
 			}
 		},
 		"territory": {
