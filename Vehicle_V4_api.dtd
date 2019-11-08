@@ -23,6 +23,11 @@
 			"title": "Is Deleted",
 			"description": "If true, the vehicle is deleted"
 		},
+		"vehicle_name": {
+			"type": "string",
+			"title": "Vehicle Name",
+			"descrption": "Vehicle name"
+		},
 		"vehicle_alias": {
 			"type": "string",
 			"title": "Vehicle alias",
