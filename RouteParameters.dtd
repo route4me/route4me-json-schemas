@@ -232,10 +232,9 @@
 			"description": "If travel_mode = 'Trucking', specifies the truck length (required)"
 		},
 		"truck_hazardous_goods": {
-			"type": "array",
-			"items": {"type": "string"},
+			"type": "string",
 			"title": "Truck Hazardous Goods",
-			"description": "Array of the truck hazardous goods"
+			"description": "Comma-delimited list of the truck hazardous goods"
 		},
 		"truck_axles": {
 			"type": ["integer", "null"],
