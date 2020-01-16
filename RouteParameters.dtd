@@ -90,7 +90,7 @@
 		},
 		"avoid": {
 			"type": "string",
-			"enum": ["Highways", "Tolls", "minimizeHighways", "minimizeTolls", ""],
+			"enum": ["Highways", "Tolls", "minimizeHighways", "minimizeTolls", "highways,tolls", ""],
 			"title": "Avoid",
 			"description": "Options which let the user choose which road obstacles to avoid. This has no impact on route sequencing"
 		},
