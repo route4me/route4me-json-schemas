@@ -1,0 +1,226 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddressClustersFilter.dtd",
+	"title": "Address Clusters Filter",
+	"description": "Parameters for searching the address book contact clusters. Endpoint: https://wh.route4me.com/modules/api/v5.0/address-book/addresses/index/clustering",
+	"type": "object",
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"title": "Api key",
+			"description": "User api key. HTTP method - GET."
+		},
+		"clustering": {
+			"type": "object",
+			"properties": {
+				"precision": {
+					"type": "integer",
+					"title": "Clusering",
+					"description": "Clusering precision"
+				}
+			}
+		},
+		"filter": {
+			"type": "object",
+			"properties": {
+				"query": {
+					"type": "string",
+					"title": "Query",
+					"description": "Query string"
+				},
+				"selected_areas": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"type": {
+								"type": "string",
+								"enum": [
+									"circle",
+									"polygon",
+									"rect"
+								],
+								"Title": "Type",
+								"description": "Shape type of the selected area."
+							},
+							"value": {
+								"anyOf": [
+									{
+										"type": "object",
+										"properties": {
+											"center": {
+												"type": "object",
+												"properties": {
+													"lat": {
+														"type": "number",
+														"minimum": -90,
+														"maximum": 90,
+														"title": "Latitude",
+														"description": "Latitude"
+													},
+													"lng": {
+														"type": "number",
+														"title": "Longitude",
+														"minimum": -180,
+														"maximum": 180,
+														"description": "Longitude"
+													}
+												},
+												"title": "Center",
+												"description": "A center of an area with the circle shape type."
+											},
+											"distance": {
+												"type": "integer",
+												"title": "Distance",
+												"description": "A radius of an area with the circle shape type."
+											}
+										}
+									},
+									{
+										"type": "object",
+										"properties": {
+											"points": {
+												"type": "array",
+												"items": {
+													"type": "object",
+													"properties": {
+														"allOf": [
+															{
+																"type": "number",
+																"minimum": -90,
+																"maximum": 90,
+																"description": "Latitude of the polygon point"
+															},
+															{
+																"type": "number",
+																"minimum": -180,
+																"maximum": 180,
+																"description": "Longitude of the polygon point"
+															}
+														]
+													}
+												}
+											}
+										}
+									},
+									{
+										"type": "object",
+										"properties": {
+											"top_left": {
+												"type": "object",
+												"properties": {
+													"allOf": [
+														{
+															"type": "number",
+															"minimum": -90,
+															"maximum": 90,
+															"description": "Latitude of the top-left point of the rectangle shape area."
+														},
+														{
+															"type": "number",
+															"minimum": -180,
+															"maximum": 180,
+															"description": "Longitude of the top-left point of the rectangle shape area."
+														}
+													]
+												}
+											},
+											"bottom_right": {
+												"type": "object",
+												"properties": {
+													"allOf": [
+														{
+															"type": "number",
+															"minimum": -90,
+															"maximum": 90,
+															"description": "Latitude of the bottom-right point of the rectangle shape area."
+														},
+														{
+															"type": "number",
+															"minimum": -180,
+															"maximum": 180,
+															"description": "Longitude of the bottom-right point of the rectangle shape area."
+														}
+													]
+												}
+											}
+										}
+									}
+								]
+							}
+						}
+					},
+					"title": "Selected Areas",
+					"description": "Selected area for search"
+				},
+				"bounding_box": {
+					"type": "object",
+					"properties": {
+						"top": {
+							"type": "number",
+							"minimum": -90,
+							"maximum": 90,
+							"description": "Latitude of the top-left point of the bounding box."
+						},
+						"left": {
+							"type": "number",
+							"minimum": -180,
+							"maximum": 180,
+							"description": "Longitude of the top-left point of the bounding box."
+						},
+						"bottom": {
+							"type": "number",
+							"minimum": -90,
+							"maximum": 90,
+							"description": "Latitude of the bottom-right point of the bounding box."
+						},
+						"right": {
+							"type": "number",
+							"minimum": -180,
+							"maximum": 180,
+							"description": "Longitude of the bottom-right point of the bounding box."
+						}
+					}
+				},
+				"center": {
+					"type": "object",
+					"properties": {
+						"lat": {
+							"type": "number",
+							"minimum": -90,
+							"maximum": 90,
+							"title": "Latitude",
+							"description": "Latitude"
+						},
+						"lng": {
+							"type": "number",
+							"minimum": -180,
+							"maximum": 180,
+							"description": "Longitude",
+							"title": "Longitude"
+						}
+					},
+					"title": "Center",
+					"description": "A center of an area"
+				},
+				"distance": {
+					"type": "integer",
+					"title": "Distance",
+					"description": "Clustering distance"
+				},
+				"display": {
+					"type": "string",
+					"enum": ["all", "routed", "unrouted"],
+					"title": "Display",
+					"description": "Display option of the contacts"
+				},
+				"assigned_member_id": {
+					"type": "integer",
+					"title": "Distance",
+					"description": "Clustering distance"
+				}
+				
+			}
+		}
+	}
+}
