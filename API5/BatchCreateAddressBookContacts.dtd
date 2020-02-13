@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/BatchCreateAddressBookContacts.dtd",
+	"description": "JSON schema for batch creating of the address book contacts payload. Endpoint: https://wh.route4me.com/modules/api/v5.0/address-book/addresses/batch-create",
+	"title": "Batch Create Address Book Contacts",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddNewAddressBookContact.dtd"},
+			"title": "Data",
+			"description": "An array of the address book contacts for batch creating."
+		}
+	}
+}
