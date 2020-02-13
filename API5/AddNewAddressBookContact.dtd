@@ -1,0 +1,387 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/AddNewAddressBookContact.dtd",
+	"description": "JSON schema for an address book contact creating payload. Endpoint: https://wh.route4me.com/modules/api/v5.0/address-book/addresses",
+	"title": "Add New Address Book Contact",
+	"type": "object",
+	"required": [
+		"address_1",
+		"cached_lat",
+		"cached_lng"
+	],
+	"properties": {
+		"address_1": {
+			"type": "string",
+			"title": "Address 1",
+			"description": "The route Address Line 1"
+		},
+		"address_2": {
+			"type": "string",
+			"title": "Address 2",
+			"description": "The route Address Line 2 which is not used for geocoding"
+		},
+		"address_alias": {
+			"type": "string",
+			"title": "Address alias",
+			"description": "Address alias"
+		},
+		"address_group": {
+			"type": "string",
+			"title": "Address group",
+			"description": "Address group"
+		},
+		"first_name": {
+			"type": "string",
+			"title": "First name",
+			"description": "The first name of the receiving address"
+		},
+		"last_name": {
+			"type": "string",
+			"title": "Last name",
+			"description": "The last name of the receiving party"
+		},
+		"local_time_window_start": {
+			"type": "integer",
+			"title": "Time Window Start",
+			"description": "Time Window Start in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start date because start time changes would shift time windows"
+		},
+		"local_time_window_end": {
+			"type": "integer",
+			"title": "Time Window End",
+			"description": "Time Window End in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start datebecause start time changes would shift time windows"
+		},
+		"local_time_window_start_2": {
+			"type": "integer",
+			"title": "Time Window Start 2",
+			"description": "See local_time_window_start"
+		},
+		"local_time_window_end_2": {
+			"type": "integer",
+			"title": "Time Window End 2",
+			"description": "See local_time_window_end"
+		},
+		"address_email": {
+			"type": "string",
+			"title": "Address email",
+			"description": "Address email"
+		},
+		"address_phone_number": {
+			"type": "string",
+			"title": "Address phone number",
+			"description": "The phone number for the address"
+		},
+		"cached_lat": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Cached latitude",
+			"description": "Cached latitude"
+		},
+		"cached_lng": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Cached longitude",
+			"description": "Cached longitude"
+		},
+		"curbside_lat": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Curbside latitude",
+			"description": "Curbside latitude"
+		},
+		"curbside_lng": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Curbside longitude",
+			"description": "Curbside longitude"
+		},
+		"address_city": {
+			"type": "string",
+			"title": "Address city",
+			"description": "The city the address is located in"
+		},
+		"address_state_id": {
+			"type": "string",
+			"title": "Address state id",
+			"description": "The state the address is located in"
+		},
+		"address_country_id": {
+			"type": "string",
+			"title": "Address country id",
+			"description": "The country the address is located in"
+		},
+		"address_zip": {
+			"type": "string",
+			"title": "Address zip",
+			"description": "The zip code the address is located in"
+		},
+		"address_custom_data": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"title": "Address custom data",
+			"description": "Address custom data"
+		},
+		"schedule": {
+			"type": "array",
+			"title": "Schedules",
+			"description": "Array of the trip schedules to a location",
+			"items": {
+				"type": "object",
+				"title": "Schedule",
+				"description": "A trip schedule to a location",
+				"properties": {
+					"enabled": {
+						"type": "boolean",
+						"title": "Enabled",
+						"descripton": "If true, a location schedule is enabled during construction of a hybrid optimization"
+					},
+					"from": {
+						"type": "string",
+						"title":"From",
+						"Description": "When schedule will be started from"
+					},
+					"mode": {
+						"type": "string",
+						"enum": ["daily", "weekly", "monthly", "annually"],
+						"title":"Mode",
+						"Description": "Schedule mode"
+					},
+					"daily": {
+						"type": "object",
+						"description": "Daily schedule if the mode 'daily' was chosen",
+						"title": "Daily",
+						"properties": {
+							"every": {
+								"type": "integer",
+								"title": "Every",
+								"description": "Repeat every next N days"
+							}
+						}
+					},
+					"weekly": {
+						"type": "object",
+						"title": "Weekly",
+						"description": "Weekly schedule if the mode 'weekly' was chosen",
+						"properties": {
+							"every": {
+								"type": "integer",
+								"title": "Every",
+								"description": "Repeat every week next N days"
+							},
+							"weekdays": {
+								"type": "array",
+								"title": "Weekdays",
+								"description": "Array of the weekdays",
+								"items": {
+									"type": "integer",
+									"title": "Weekday",
+									"description": "Weekday as a number"
+								}
+							}
+						}
+					},
+					"monthly": {
+						"type": "object",
+						"title": "Monthly",
+						"description": "Monthly schedule if the mode 'monthly' was chosen",
+						"properties": {
+							"every": {
+								"type": "integer",
+								"title": "Every",
+								"description": "Repeat every month next N days"
+							},
+							"mode": {
+								"type": "string",
+								"enum": ["dates", "nth"],
+								"title": "Mode",
+								"description": "Monthly schedule mode"
+							},
+							"dates": {
+								"type": "array",
+								"items": {
+									"type": "integer"
+								},
+								"title": "Dates",
+								"description": "Array of month days for monthly schedule if the mode 'dates' was chosen"
+							},
+							"nth": {
+								"type": "object",
+								"title": "NTH",
+								"description": "Monthly schedule option if the mode 'nth' was chosen",
+								"properties": {
+									"n": {
+										"type": "integer",
+										"enum": [1,2,3,4,5,-1],
+										"title": "N",
+										"description": "Which day of the time period, 1: 1st, 2: 2nd, 3: 3rd, 4: 4th, 5: 5th, -1: Last"
+									},
+									"what": {
+										"type": "integer",
+										"enum": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+										"title": "What",
+										"description": "What time. 1: Monday, 2: Tuesday, 3: Wednesday, 4: Thursday, 5: Friday, 6: Saturday, 7: Sunday, 8: Day, 9: Working Day, 10: Weekend"
+									}
+								}
+							}
+						}
+					},
+					"annually": {
+						"type": "object",
+						"title": "Annually",
+						"description": "Annually schedule if the mode 'annually' was chosen",
+						"properties": {
+							"every": {
+								"type": "integer",
+								"title": "Every",
+								"description": "Repeat every year next N months"
+							},
+							"use_nth": {
+								"type": "boolean",
+								"title": "Use NTH",
+								"description": "If true, use NTH mode"
+							},
+							"months": {
+								"type": "array",
+								"title": "Months",
+								"description": "Array of the months numbers",
+								"items": {
+									"type": "integer",
+									"description": "A month number in the year"
+								}
+							},
+							"nth": {
+								"type": "object",
+								"title": "NTH",
+								"description": "Annualy schedule option if 'use_nth' is true",
+								"properties": {
+									"n": {
+										"type": "integer",
+										"enum": [1,2,3,4,5,-1],
+										"title": "N",
+										"description": "Which day of the time period, 1: 1st, 2: 2nd, 3: 3rd, 4: 4th, 5: 5th, -1: Last"
+									},
+									"what": {
+										"type": "integer",
+										"enum": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+										"title": "What",
+										"description": "What time. 1: Monday, 2: Tuesday, 3: Wednesday, 4: Thursday, 5: Friday, 6: Saturday, 7: Sunday, 8: Day, 9: Working Day, 10: Weekend"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+		},
+		"schedule_blacklist": {
+			"type": "array",
+			"title": "Schedule blacklist",
+			"description": "Array of the dates, which should be excluded from a trip schedule to a location",
+			"items": {
+				"type": "array",
+				"description": "Comma-separated array of the dates",
+				"items": {
+					"type": "string",
+					"description": "A date in the string format. e.g. '2017-02-20'"
+				}
+			}
+		},
+		"service_time": {
+			"type": "integer",
+			"title": "Service time",
+			"description": "Consumed service time at an address."
+		},
+		"local_timezone_string": {
+			"type": "string",
+			"title": "Local timezone string",
+			"description": "Local timezone string"
+		},
+		"color": {
+			"type": "string",
+			"title": "Color",
+			"description": "Color of an address"
+		},
+		"address_icon": {
+			"type": "string",
+			"title": "Address icon",
+			"description": "URL to an address icon file"
+		},
+		"address_stop_type": {
+			"type": "string",
+			"enum": ["DELIVERY","PICKUP","BREAK","MEETUP","SERVICE","VISIT","DRIVEBY"],
+			"title": "Address stop type",
+			"description": "The type of stop that this is (DELIVERY,PICKUP,BREAK,MEETUP,SERVICE,VISIT,DRIVEBY)"
+		},
+		"address_cube": {
+			"type": "number",
+			"title": "Address Cube",
+			"description": "The cubic volume of the cargo being delivered or picked up at the address"
+		},
+		"address_pieces": {
+			"type": "integer",
+			"title": "Address Pieces",
+			"description": "The item quantity of the cargo being delivered or picked up at the address"
+		},
+		"address_reference_no": {
+			"type": "string",
+			"title": "Address Reference NO",
+			"description": "The reference number for the address"
+		},
+		"address_revenue": {
+			"type": "number",
+			"title": "Address Revenue",
+			"description": "The total revenue for the address"
+		},
+		"address_weight": {
+			"type": "number",
+			"title": "Address Weight",
+			"description": "Weight of the cargo being delivered or picked up at the address"
+		},
+		"address_priority": {
+			"type": "integer",
+			"title": "Address Priority",
+			"description": "0 is the highest priority; n has higher priority than n + 1"
+		},
+		"address_customer_po": {
+			"type": "string",
+			"title": "Address Customer PO",
+			"description": "The customer purchase order for the address"
+		},
+		"assigned_to": {
+			"type": "object",
+			"properties": {
+				"member_id": {
+					"type": "integer",
+					"title": "Member ID",
+					"description": "Member ID to which the contact is assigned"
+				},
+				"member_first_name": {
+					"type": "string",
+					"title": "Member First Name",
+					"description": "Member first name"
+				},
+				"member_last_name": {
+					"type": "string",
+					"title": "Member Last Name",
+					"description": "Member last name"
+				},
+				"member_email": {
+					"type": "string",
+					"title": "Member Email",
+					"description": "Member email"
+				},
+				"until": {
+					"type": "string",
+					"title": "Until",
+					"description": "Until this date, the contact will be assigned to the member"
+				}
+			}
+		}
+	}
+}
