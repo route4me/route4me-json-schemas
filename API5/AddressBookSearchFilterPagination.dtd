@@ -1,7 +1,7 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddressSearchFilterPagination.dtd",
-	"title": "Address Search Filter With Pagination",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddressBookSearchFilterPagination.dtd",
+	"title": "Address Book Search Filter With Pagination",
 	"description": "Parameters for searching all the address book contacts. Endpoint: https://wh.route4me.com/modules/api/v5.0/address-book/addresses/index/pagination",
 	"type": "object",
 	"properties": {
