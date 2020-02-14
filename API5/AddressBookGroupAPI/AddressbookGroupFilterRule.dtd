@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/AddressbookGroupFilterRule.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddressBookGroupAPI/AddressbookGroupFilterRule.dtd",
 	"title": "Address Book Group Filter Rule",
 	"type": "object",
 	"description": "The parameters for the address group filter rule",
