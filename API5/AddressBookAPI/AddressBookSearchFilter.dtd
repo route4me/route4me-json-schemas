@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddressBookSearchFilter.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddressBookAPI/AddressBookSearchFilter.dtd",
 	"title": "Address Book Search Filter",
 	"description": "Parameters for searching all the address book contacts. Endpoint: https://wh.route4me.com/modules/api/v5.0/address-book/addresses/index/all",
 	"type": "object",

@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/FilterBySelectedAreas.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddressBookAPI/FilterBySelectedAreas.dtd",
 	"title": "Filter By Selected Areas",
 	"description": "Parameters for filtering the address book contacts by selecteded areas.",
 	"type": "object",

@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/UpdateAddressBookContact.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddressBookAPI/UpdateAddressBookContact.dtd",
 	"description": "JSON schema for updating an address book contact. Endpoint: https://wh.route4me.com/modules/api/v5.0/address-book/addresses/{address_id}",
 	"title": "Update Address Book Contact",
 	"type": "object",
-	"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddNewAddressBookContact.dtd"
+	"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddressBookAPI/AddNewAddressBookContact.dtd"
 }
