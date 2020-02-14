@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/UpdateAddressBookContactByScheduledArea.dtd",
-	"title": "Update Address Book Contact By Scheduled Area",
-	"description": "Parameters for updating an address book contact by scheduled area. Endpoint: https://wh.route4me.com/modules/api/v5.0/address-book/addresses/update-by-areas",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/UpdateAddressBookContactsBySelectedAreas.dtd",
+	"title": "Update Address Book Contacts By Selected Areas",
+	"description": "Parameters for updating an address book contacts by selected areas. Endpoint: https://wh.route4me.com/modules/api/v5.0/address-book/addresses/update-by-areas",
 	"type": "object",
 	"properties": {
 		"filter": {
