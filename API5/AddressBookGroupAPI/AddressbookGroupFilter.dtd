@@ -1,0 +1,84 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/AddressbookGroupFilter.dtd",
+	"title": "Address Book Group Filter",
+	"type": "object",
+	"description": "The parameters for the address group filtering. https://wh.route4me.com/modules/api/v5.0/address-book/groups/filter/all",
+	"properties": {
+		"group_id": {
+			"type": "string",
+			"title": "Group ID",
+			"description": "Unique 32-char group ID"
+		},
+		"group_name": {
+			"type": "string",
+			"title": "Group Name",
+			"description": "Group name"
+		},
+		"group_color": {
+			"type": "string",
+			"title": "Group Color",
+			"description": "Group color. See allowed values and colors at this link: https://github.com/route4me/route4me-json-schemas/blob/master/ColorSamples/AddressBookGroupAvailableColors.png"
+		},
+		"group_icon": {
+			"type": ["string", "null"],
+			"title": "Group Icon",
+			"description": "Group icon"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Member ID"
+		},
+		"filter": {
+			"type": "object",
+			"title": "Filter",
+			"description": "The array of the group filters for the address book contacts",
+			"properties": {
+				"condition": {
+					"type": "string",
+					"title": "Condition",
+					"description": "The group filter condition ['AND', 'OR']"
+				},
+				"rules": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "string",
+								"title": "ID",
+								"description": "The unique ID of the group filter rule"
+							},
+							"field": {
+								"type": "string",
+								"title": "Field",
+								"description": "The group filter field"
+							},
+							"type": {
+								"type": "string",
+								"title": "Type",
+								"description": "Default is <string>"
+							},
+							"input": {
+								"type": "string",
+								"title": "Input",
+								"description": "The field Input type. Default is <text>"
+							},
+							"operator": {
+								"type": "string",
+								"title": "Operator",
+								"description": "The group filter operator ['equal', 'not_equal', 'less', 'less_or_equal', 'greater', 'greater_or_equal', 'between', 'contains', 'not_contains', 'begins_with', 'ends_with', 'has_word', 'is_empty', 'is_not_empty']"
+							},
+							"value": {
+								"type": "string",
+								"title": "Value",
+								"description": "The group filter field value"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
