@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/UpdateAddressBookContactsBySelectedAreas.dtd",
-	"title": "Update Address Book Contacts By Selected Areas",
-	"description": "Parameters for updating an address book contacts by selected areas. Endpoint: https://wh.route4me.com/modules/api/v5.0/address-book/addresses/update-by-areas",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/ExportAddressBookContactsBySelectedAreas.dtd",
+	"title": "Export Address Book Contacts By Selected Areas",
+	"description": "Parameters for exporting the address book contacts by selecteded areas. Endpoint: https://wh.route4me.com/modules/api/v5.0/address-book/addresses/export-by-areas",
 	"type": "object",
 	"properties": {
 		"filter": {
@@ -166,93 +166,6 @@
 							"description": "Longitude of the bottom-right point of the bounding box."
 						}
 					}
-				}
-			}
-		},
-		"data": {
-			"type": "object",
-			"title": "Data",
-			"properties": {
-				"address_group": {
-					"type": "string",
-					"title": "Address Group",
-					"description": "Name of an address group"
-				},
-				"address_alias": {
-					"type": "string",
-					"title": "Address Alias",
-					"description": "An address alias"
-				},
-				"member_id": {
-					"type": "integer",
-					"title": "Member ID",
-					"description": "Member ID"
-				},
-				"first_name": {
-					"type": "string",
-					"title": "First Name",
-					"description": "First name of an address owner"
-				},
-				"last_name": {
-					"type": "string",
-					"title": "Last Name",
-					"description": "Last name of an address owner"
-				},
-				"address_email": {
-					"type": "string",
-					"title": "Address Email",
-					"description": "Address email"
-				},
-				"address_phone_number": {
-					"type": "string",
-					"title": "Address Phone Number",
-					"description": "Address phone number"
-				},
-				"address_custom_data": {
-					"type": "object",
-					"title": "Address Custom Data",
-					"additionalProperties": { "type": "string" },
-					"description": "Any unrecognized fields from the original CSV upload will be found here"
-				},
-				"local_time_window_start": {
-					"type": ["integer", "null"],
-					"title": "Local Time Window Start",
-					"description": "Time Window Start in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start date because start time changes would shift time windows"
-				},
-				"local_time_window_end": {
-					"type": ["integer", "null"],
-					"title": "Local Time Window End",
-					"description": "Time Window End in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start date because start time changes would shift time windows"
-				},
-				"local_time_window_start_2": {
-					"type": ["integer", "null"],
-					"title": "Local Time Window Start 2",
-					"description": "See local_time_window_start"
-				},
-				"local_time_window_end_2": {
-					"type": ["integer", "null"],
-					"title": "Local Time Window End 2",
-					"description": "See local_time_window_end"
-				},
-				"service_time": {
-					"type": "integer",
-					"title": "Service Time",
-					"description": "Service time (seconds)"
-				},
-				"local_timezone_string": {
-					"type": "string",
-					"title": "Local timezone string",
-					"description": "Local timezone string"
-				},
-				"color": {
-					"type": "string",
-					"title": "Color",
-					"description": "Color of an address"
-				},
-				"address_icon": {
-					"type": "string",
-					"title": "Address icon",
-					"description": "URL to an address icon file"
 				}
 			}
 		}
