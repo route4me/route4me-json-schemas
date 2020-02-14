@@ -1,0 +1,80 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddressBookGroupAPI/AddressbookGroupFilterClustering.dtd",
+	"title": "Address Book Group Filter  And Clustering",
+	"type": "object",
+	"description": "The parameters for the address group filtering and clustering. https://wh.route4me.com/modules/api/v5.0/address-book/groups/filter/clustering",
+	"properties": {
+		"data": {
+			"type": "object",
+			"title": "Data",
+			"properties": {
+				"rules": {
+					"type": "object",
+					"title": "Rules",
+					"properties": {
+						"condition": {
+							"type": "string",
+							"title": "Condition",
+							"description": "The group filter condition ['AND', 'OR']"
+						},
+						"rules": {
+							"type": "array",
+							"anyOf": [
+								{
+									"ref": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddressBookGroupAPI/AddressbookGroupFilterRule.dtd"
+								},
+								{
+									"condition": {
+										"type": "string",
+										"title": "Condition",
+										"description": "The group filter condition ['AND', 'OR']"
+									},
+									"rules": {
+										"type": "array",
+										"items": {"ref": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AddressBookGroupAPI/AddressbookGroupFilterRule.dtd"}
+									}
+								}
+							]
+						},
+						"valid": {
+							"type": "boolean",
+							"title": "Valid",
+							"description": "If true the rule is valid"
+						}
+					}
+				},
+				"bounding_box": {
+					"type": "object",
+					"properties": {
+						"top": {
+							"type": "number",
+							"minimum": -90,
+							"maximum": 90,
+							"description": "Latitude of the top-left point of the bounding box."
+						},
+						"left": {
+							"type": "number",
+							"minimum": -180,
+							"maximum": 180,
+							"description": "Longitude of the top-left point of the bounding box."
+						},
+						"bottom": {
+							"type": "number",
+							"minimum": -90,
+							"maximum": 90,
+							"description": "Latitude of the bottom-right point of the bounding box."
+						},
+						"right": {
+							"type": "number",
+							"minimum": -180,
+							"maximum": 180,
+							"description": "Longitude of the bottom-right point of the bounding box."
+						}
+					}
+				}
+			},
+			"description": "Payload data for the address groups filtering and clustering"
+		}
+	}
+}
