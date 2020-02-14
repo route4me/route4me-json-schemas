@@ -1,0 +1,187 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/StoreOrdersInDatabase.dtd",
+	"title": "Store Orders In Database",
+	"description": "JSON payload for storing the orders in a database. Endpoint: https://wh.route4me.com/modules/api/v5.0/orders",
+	"type": "object",
+	"properties": {
+		"order_id": {
+			"type": "integer",
+			"title": "Order ID",
+			"description": "An unique internal ID of an order."
+		},
+		"order_ids": {
+			"type": "array",
+			"title": "Order IDs",
+			"items": { "type": "integer" },
+			"description": "An unique internal ID of an order."
+		},
+		"address_1": {
+			"type": "string",
+			"title": "Address 1",
+			"description": "address_1 field"
+		},
+		"address_2": {
+			"type": "string",
+			"title": "Address 2",
+			"description": "address_2 field"
+		},
+		"address_zip": {
+			"type": "string",
+			"title": "Address Zip",
+			"description": "Address zip code"
+		},
+		"address_alias": {
+			"type": "string",
+			"title": "Address Alias",
+			"description": "Address alias"
+		},
+		"address_city": {
+			"type": "string",
+			"title": "Address City",
+			"description": "Address city"
+		},
+		"address_state_id": {
+			"type": "integer",
+			"title": "Address State ID",
+			"description": "Address state ID"
+		},
+		"address_country_id": {
+			"type": "integer",
+			"title": "Address Country ID",
+			"description": "Address country ID"
+		},
+		"EXT_FIELD_first_name": {
+			"type": "string",
+			"title": "First name",
+			"description": "The first name of the receiving address"
+		},
+		"EXT_FIELD_last_name": {
+			"type": "string",
+			"title": "Last name",
+			"description": "The last name of the receiving address"
+		},
+		"EXT_FIELD_email": {
+			"type": "string",
+			"title": "Address email",
+			"description": "Address email"
+		},
+		"EXT_FIELD_phone": {
+			"type": "string",
+			"title": "Address phone number",
+			"description": "The phone number for the address"
+		},
+		"cached_lat": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Cached latitude",
+			"description": "Cached latitude"
+		},
+		"cached_lng": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Cached longitude",
+			"description": "Cached longitude"
+		},
+		"curbside_lat": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Curbside latitude",
+			"description": "Curbside latitude"
+		},
+		"curbside_lng": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Curbside longitude",
+			"description": "Curbside longitude"
+		},
+		"EXT_FIELD_custom_data": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"title": "Order custom data",
+			"description": "A custom data of the order"
+		},
+		"local_time_window_start": {
+			"type": "integer",
+			"title": "Local time window start",
+			"description": "When a time window was started."
+		},
+		"local_time_window_end": {
+			"type": "integer",
+			"title": "Local time window end",
+			"description": "When a time window was ended."
+		},
+		"local_time_window_start_2": {
+			"type": "integer",
+			"title": "Local time window start 2",
+			"description": "When second time window was started."
+		},
+		"local_time_window_end_2": {
+			"type": "integer",
+			"title": "Local time window end 2",
+			"description": "When second time window was ended."
+		},
+		"service_time": {
+			"type": "integer",
+			"title": "Service time",
+			"description": "Consumed service time at an address."
+		},
+		"color": {
+			"type": "string",
+			"title": "Color",
+			"description": "Order icon color on a map"
+		},
+		"order_icon": {
+			"type": "string",
+			"title": "Order icon",
+			"description": "URL to an order icon file"
+		},
+		"city_id": {
+			"type": "integer",
+			"title": "Address City ID",
+			"description": "Address city ID"
+		},
+		"day_scheduled_for_YYMMDD": {
+			"type": "string",
+			"title": "Day scheduled",
+			"description": "Date order was scheduled for"
+		},
+		"is_accepted": {
+			"type": "boolean",
+			"title": "Is Accepted",
+			"description": "If true, the order is accepted."
+		},
+		"is_completed": {
+			"type": "boolean",
+			"title": "Is Completed",
+			"description": "If true, the order is completed."
+		},
+		"is_pending": {
+			"type": "boolean",
+			"title": "Is Pending",
+			"description": "If true, the order is pending."
+		},
+		"is_started": {
+			"type": "boolean",
+			"title": "Is Started",
+			"description": "If true, the order is started."
+		},
+		"is_validated": {
+			"type": "boolean",
+			"title": "Is Validated",
+			"description": "If true, the order is validated."
+		},
+		"custom_user_fields": {
+			"type": "array",
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_custom_field.dtd"},
+			"title": "Custom User Fields",
+			"description": "Custom user fields"
+		}
+	}
+}
