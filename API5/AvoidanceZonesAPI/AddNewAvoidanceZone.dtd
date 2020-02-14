@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/AddNewAvoidanceZone.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/AvoidanceZonesAPI/AddNewAvoidanceZone.dtd",
 	"title": "Add New Avoidance Zone",
 	"description": "Json payload schema for creating an avoidance zone, which is used for defining different type avoidance zones. For detailed usage see curl Avoidance Zones group. Endpoint: https://wh.route4me.com/modules/api/v5.0/avoidance",
 	"type": "object",
