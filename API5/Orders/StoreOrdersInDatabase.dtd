@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/StoreOrdersInDatabase.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/Orders/StoreOrdersInDatabase.dtd",
 	"title": "Store Orders In Database",
 	"description": "JSON payload for storing the orders in a database. Endpoint: https://wh.route4me.com/modules/api/v5.0/orders",
 	"type": "object",
