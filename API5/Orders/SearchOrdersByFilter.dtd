@@ -30,12 +30,12 @@
 				"day_added_YYMMDD": {
 					"type": "string",
 					"title": "Day Added YYMMDD",
-					"description": "Order inserted date (e.g. "2020-01-20")."
+					"description": "Order inserted date (e.g. '2020 - 01 - 20 ')."
 				},
 				"scheduled_for_YYMMDD": {
 					"type": "string",
 					"title": "Scheduled For YYMMDD",
-					"description": "An array of the dates the orders were scheduled for(e.g. ["2020-01-20","2020-01-22"])."
+					"description": "Start and end dates for filter the orders by schedule (e.g. ['2020 - 01 - 20', '2020 - 01 - 22'])."
 				}
 			}
 		},
@@ -46,8 +46,7 @@
 				"items": {
 					"type": "object",
 					"properties": {
-						"allOf": [
-							{
+						"allOf": [{
 								"type": "string",
 								"description": "Field name"
 							},
