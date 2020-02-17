@@ -1,9 +1,9 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/CreateUser.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/TeamManagement/CreateUser.dtd",
 	"title": "Create User (v5)",
 	"type": "object",
-	"description": Json payload schema for creating a user. Endpoint: htpps://wh.route4me.com/modules/api/v5.0/team/users",
+	"description": "Json payload schema for creating a user. Endpoint: htpps://wh.route4me.com/modules/api/v5.0/team/users",
 	"required": [
 		"member_type",
 		"member_email",
