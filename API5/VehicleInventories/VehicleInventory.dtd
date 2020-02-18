@@ -1,0 +1,54 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/VehicleInventories/VehicleInventory.dtd,
+	"title": "Vehicle Inventories",
+	"description": "Json payload schema for creating/updating vehicle inventories. Endpoint: https://wh.route4me.com/modules/webapi/v5.0/vehicle-inventory",
+	"type": "object",
+	"properties": {
+		"inventory_id": {
+			"type": "string",
+			"title": "Inventory id",
+			"descrption": "Vehicle inventory ID"
+		},
+		"name": {
+			"type": "string",
+			"title": "Name",
+			"description": "Vehicle inventory name"
+		},
+		"quantity": {
+			"type": ["integer", "null"],
+			"title": "Quantity",
+			"descrption": "How many items can carry the vehicle"
+		},
+		"total_weight": {
+			"type": ["number", "null"],
+			"title": "Total Weight",
+			"descrption": "Total weight of a vehicle"
+		},
+		"total_volume": {
+			"type": ["number", "null"],
+			"title": "Total Volume",
+			"descrption": "Total volume of a vehicle"
+		},
+		"total_cost": {
+			"type": ["number", "null"],
+			"title": "Total Cost",
+			"descrption": "Total cost of a vehicle"
+		},
+		"total_price": {
+			"type": ["number", "null"],
+			"title": "Total Price",
+			"descrption": "Total price of a vehicle"
+		},
+		"created_at": {
+			"type": "string",
+			"title": "Created At",
+			"description": "When the inventory created"
+		},
+		updated_at": {
+			"type": "string",
+			"title": "Updated At",
+			"description": "When the inventory updated"
+		}
+	}
+}
