@@ -26,11 +26,6 @@
 			"maximum": 180,
 			"title": "Longitude",
 			"description": "Point longitude"
-		},
-		"vehicle_id": {
-			"type": "string",
-			"title": "Vehicle id",
-			"descrption": "A unique identifcation 32-char string of the vehicle"
 		}
 	}
 }
