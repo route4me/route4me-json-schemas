@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/VehicleInventories/UpdateVehicleInventory.dtd,
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/VehicleInventories/UpdateVehicleInventory.dtd",
 	"title": "Update Vehicle Inventories",
 	"description": "Json payload schema for updating vehicle inventories. Endpoint: https://wh.route4me.com/modules/webapi/v5.0/vehicle-inventory",
 	"type": "object",
@@ -9,7 +9,7 @@
 			"type": "array",
 			"items": {
 				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/VehicleInventories/VehicleInventory.dtd"
-				}
+				},
 			"title": "Vehicle Inventories",
 			"descrption": "An array of vehicle inventories"
 		}
