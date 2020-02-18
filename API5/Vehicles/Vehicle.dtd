@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Vehicle.dtd",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/Vehicles/Vehicle.dtd",
 	"title": "Vehicle (V5)",
 	"type": "object",
 	"required": [
