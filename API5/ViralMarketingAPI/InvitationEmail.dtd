@@ -1,0 +1,46 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/ViralMarketingAPI/InvitationEmail.dtd",
+	"title": "Invitation Email (V5)",
+	"type": "object",
+	"required": [
+		"email"
+	],
+	"description": "JSON  schema for a person initation email. Endpoint: https://wh.route4me.com/modules/api/v5.0/viral-marketing/invitations/{invitation_id}/people/send",
+	"properties": {
+		"email": {
+			"type": "string",
+			"title": "Email",
+			"descrption": "An email address"
+		},
+		"object_id": {
+			"type": "integer",
+			"title": "Object ID",
+			"descrption": "Invitation object ID"
+		},
+		"object_type": {
+			"type": "string",
+			"enum": ["member", "lead"],
+			"title": "Object Type",
+			"descrption": "An invitation object type"
+		},
+		"target_email": {
+			"type": "array",
+			"items": {"type": "string"},
+			"title": "Target Email",
+			"descrption": "An array of the target emails"
+		},
+		"device_type": {
+			"type": "string",
+			"enum": [
+				"web",
+				"iphone",
+				"ipad",
+				"android_phone",
+				"android_tablet"
+			],
+			"title": "Device Type",
+			"descrption": "The device type from which the request originates. This is sometimes used to log actions."
+		}
+	}
+}
