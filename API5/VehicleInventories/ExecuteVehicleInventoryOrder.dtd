@@ -1,0 +1,20 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/VehicleInventories/ExecuteVehicleInventoryOrder.dtd",
+	"title": "Execute Vehicle Inventories Order",
+	"description": "Json payload schema for executing the vehicle inventories order. Endpoint: https://wh.route4me.com/modules/webapi/v5.0/vehicle-inventory/execute",
+	"type": "object",
+	"properties": {
+		"allOf": [
+			{ "$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/VehicleInventories/SearchVehicleByInventories.dtd" },
+			{ "properties": {
+				"vehicle_id": {
+					"type": "string",
+					"title": "Vehicle id",
+					"descrption": "A unique identifcation 32-char string of the vehicle"
+				}
+			  }
+			}
+		]
+	}
+}
