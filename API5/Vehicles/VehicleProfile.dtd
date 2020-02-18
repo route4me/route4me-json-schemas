@@ -1,0 +1,159 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/Vehicles/VehicleProfile.dtd",
+	"title": "Vehicle Profile (V5)",
+	"type": "object",
+	"required": [
+		"vehicle_alias"
+	],
+	"description": "Vehicle profile object in the user's account. Endpoint: https://wh.route4me.com/modules/webapi/v5.0​/vehicle-profiles",
+	"properties": {
+		"vehicle_profile_id": {
+			"type": "integer",
+			"title": "Vehicle Profile ID",
+			"descrption": "Vehicle profile ID"
+		},
+		"root_member_id": {
+			"type": "integer",
+			"title": "Root Member ID",
+			"descrption": "Root member ID"
+		},
+		"name": {
+			"type": "string",
+			"title": "Name",
+			"descrption": "The vehicle profile name"
+		},
+		"height": {
+			"type": ["number", "null"],
+			"title": "Height",
+			"descrption": "A height of the vehicle."
+		},
+		"width": {
+			"type": ["number", "null"],
+			"title": "Width",
+			"descrption": "A width of the vehicle."
+		},
+		"length": {
+			"type": ["number", "null"],
+			"title": "Length",
+			"descrption": "A length of the vehicle."
+		},
+		"weight": {
+			"type": ["number", "null"],
+			"title": "Weight",
+			"descrption": "A weight of the vehicle."
+		},
+		"max_weight_per_axle_group_metric": {
+			"type": ["number", "null"],
+			"title": "Maximum Weight Per Axle Group Metric",
+			"descrption": "Maximum weight per axle group in metric unit"
+		},
+		"created_at": {
+			"type": "string",
+			"title": "Created At",
+			"description": "When the profile created (e.g. \"2019-10-30 04:56:08\")"
+		},
+		"updated_at": {
+			"type": "string",
+			"title": "Updated At",
+			"description": "When the profile updated"
+		},
+		"deleted_at": {
+			"type": "string",
+			"title": "Deleted At",
+			"description": "When the profile was deleted"
+		},
+		"fuel_consumption_city": {
+			"type": ["number", "null"],
+			"title": "Fuel consumption city",
+			"descrption": "Fuel consumption in the city area"
+		},
+		"fuel_consumption_highway": {
+			"type": ["number", "null"],
+			"minimum": 6,
+			"maximum": 60,
+			"title": "Fuel Consumption Highway",
+			"descrption": "Fuel consumption in the highway area"
+		},
+		"is_predefined": {
+			"type": "boolean",
+			"title": "Is Predefined",
+			"description": "If true, the vehicle profile is predefined"
+		},
+		"is_default": {
+			"type": "boolean",
+			"title": "Is Default",
+			"description": "If true, the vehicle profile is default"
+		},
+		"height_units": {
+			"type": ["string", "null"],
+			"title": "Height Units",
+			"descrption": "Vehicle height units (e.g. \"ft\")"
+		},
+		"width_units": {
+			"type": ["string", "null"],
+			"title": "Width Units",
+			"descrption": "Vehicle width units (e.g. \"ft\")"
+		},
+		"length_units": {
+			"type": ["string", "null"],
+			"title": "Length Units",
+			"descrption": "Vehicle length units (e.g. \"ft\")"
+		},
+		"weight_units": {
+			"type": ["string", "null"],
+			"title": "Weight Units",
+			"descrption": "Vehicle weight units (e.g. \"lb\")"
+		},
+		"max_weight_per_axle_units": {
+			"type": ["string", "null"],
+			"title": "Maximum Weight Per Axle Units",
+			"descrption": "Maximum weight per axle units (e.g. \"lb\")"
+		},
+		"fuel_consumption_city_units": {
+			"type": ["string", "null"],
+			"title": "Fuel Consumption City Units",
+			"descrption": "Fuel consumption units in the city area (e.g. \"mpg\")"
+		},
+		"fuel_consumption_highway_units": {
+			"type": ["string", "null"],
+			"title": "Fuel Consumption Highway Units",
+			"descrption": "Fuel consumption units in the highway area (e.g. \"mpg\")"
+		},
+		"height_uf_value": {
+			"type": ["string", "null"],
+			"title": "Height UF Value",
+			"descrption": "Height UF value (e.g. \"3 m\")"
+		},
+		"width_uf_value": {
+			"type": ["string", "null"],
+			"title": "Width UF Value",
+			"descrption": "Width UF value (e.g. \"5'\")"
+		},
+		"length_uf_value": {
+			"type": ["string", "null"],
+			"title": "Length UF Value",
+			"descrption": "Length UF value (e.g. \"10'7''\")"
+		},
+		"weight_uf_value": {
+			"type": ["string", "null"],
+			"title": "Weight UF Value",
+			"descrption": "Weight UF value (e.g. \"26,000lb 3oz\")"
+		},
+		"max_weight_per_axle_uf_value": {
+			"type": ["string", "null"],
+			"title": "Maximum Weight Per Axle UF Value",
+			"descrption": "Maximum weight per axle UF value (e.g. \"900lb\")"
+		},
+		"fuel_consumption_city_uf_value": {
+			"type": ["string", "null"],
+			"title": "Fuel Consumption City UF Value",
+			"descrption": "Fuel consumption UF value in the city area (e.g. \"20.01 mi/l\")"
+		},
+		"fuel_consumption_highway_uf_value": {
+			"type": ["string", "null"],
+			"title": "Fuel Consumption Highway UF Value",
+			"descrption": "Fuel consumption UF value in the highway area (e.g. \"2,000.01 mpg\")"
+		}
+	}
+}
