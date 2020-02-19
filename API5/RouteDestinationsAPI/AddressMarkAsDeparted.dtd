@@ -1,0 +1,38 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/RouteDestinationsAPI/AddressMarkAsDeparted.dtd",
+	"title": "Mark Address As Departed (API 5)",
+	"description": "Json schema for an address marking as departed. Endpoint: htpps://wh.route4me.com/modules/api/v5.0/route-destinations/mark_departed",
+	"type": "object",
+	"properties": {
+		"route_id": {
+			"type": "string",
+			"title": "Route ID",
+			"description": "Parent route"
+		},
+		"route_destination_id": {
+			"type": "integer",
+			"title": "Route Destination ID",
+			"description": "Internal unique address identifier"
+		},
+		"is_departed": {
+			"type": "boolean",
+			"title": "Is Departed",
+			"description": "The driver marked the 'Departed' button"
+		},
+		"lat": {
+			"type": "number",
+			"title": "Latitude",
+			"description": "Latitude of the departure point",
+			"minimum": -90,
+			"maximum": 90
+		},
+		"lng": {
+			"type": "number",
+			"title": "Longitude",
+			"description": "Longitude of the departure point",
+			"minimum": -180,
+			"maximum": 180
+		}
+	}
+}
