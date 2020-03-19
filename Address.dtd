@@ -89,6 +89,11 @@
 			"title": "Original Route ID",
 			"description": "The original customer-specific route id assigned at route creation time."
 		},
+		"route_name": {
+			"type": ["string", "null"],
+			"title": "Route Name",
+			"description": "Route name of a depot address"
+		},
 		"optimization_problem_id": {
 			"type": "string",
 			"title": "Optimization Problem ID",
