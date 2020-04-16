@@ -1,0 +1,12 @@
+Address ID,Is Depot,Group,Alias,Address,First name,Last name,Email,Phone,Latitude,Longitude,Curb_Lat,Curb_Lng,Priority,SequenceNo,Address_Stop_Type,CustomerPO,Invoice_NO,Reference_NO,Order NO,Weight,Cost,Revenue,Cube,Pieces,Time Window Start 1,Time Window End 1,Time Window Start 2,Time Window End 2,Service Time,Depot_Route_Name,Custom data,Tracking Number,Contact ID,Order ID,Note
+,TRUE,,,"455 S 4th St, Louisville, KY 40202",,,,,38.251698,-85.757308,,,,,,,,,,,,,,,,,,,,,,,,,
+,FALSE,,Bonnie Lea Ct Lawn,"3400 Bonnie Lea Ct, Shively, KY 40216, USA",,,,,38.197478,-85.815426,,,,,,,,,,,,,2,,,,,,0:35,,,,,,
+,FALSE,,Burrel Lawn,"3535 Burrell Dr, Louisville, KY 40216, USA",,,,,38.195647,-85.826178,,,,,,,,,,,,,1,,,,,,0:42,,,,,,
+,FALSE,,Farnsley Rd Lawn,"1835 Farnsley Rd, Shively, KY 40216, USA",,,,,38.201263,-85.806011,,,,,,,,,,,,,1,,,,,,0:55,,,,,,
+,FALSE,,Fern Lea Rd Lawn,"3504 Fern Lea Rd, Shively, KY 40216, USA",,,,,38.195482,-85.816802,,,,,,,,,,,,,2,,,,,,0:40,,,,,,
+,FALSE,,Janel Rd Lawn,"3417 Janell Rd, Louisville, KY 40216, USA",,,,,38.199725,-85.813133,,,,,,,,,,,,,1,,,,,,0:25,,,,,,
+,FALSE,,Lomond Dr Lawn,"4001 Lomond Dr, Louisville, KY 40216, USA",,,,,38.194603,-85.820828,,,,,,,,,,,,,1,,,,,,0:32,,,,,,
+,FALSE,,Mary Catherine Dr Lawn,"1850 Mary Catherine Dr, Shively, KY 40216, USA",,,,,38.200539,-85.810842,,,,,,,,,,,,,2,,,,,,0:31,,,,,,
+,FALSE,,Park Row Dr Lawn,"3412 Park Row Dr, Shively, KY 40216, USA",,,,,38.20001,-85.811983,,,,,,,,,,,,,1,,,,,,0:43,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
