@@ -84,7 +84,7 @@
 		},
 		"travel_mode": {
 			"type": "string",
-			"enum": ["Driving", "Walking"],
+			"enum": ["Driving", "Walking", "Bicycling"],
 			"title": "Travel Mode",
 			"description": "The mode of travel that the directions should be optimized for"
 		},
