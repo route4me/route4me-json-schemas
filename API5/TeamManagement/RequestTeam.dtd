@@ -1,0 +1,160 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/API5/TeamManagement/RequestTeam.dtd",
+	"title": "Request Team (v5)",
+	"type": "object",
+	"description": "Json payload schema for a user. Endpoint: htpps://wh.route4me.com/modules/api/v5.0/team/users",
+	"properties": {
+          "new_password" : {
+            "type" : "string",
+			"title": "New Password",
+			"description": "A new passowrd of the user to loggin"
+          },
+          "new_member_picture" : {
+            "type" : "string",
+			"title": "New Member Picture",
+            "description" : "An URL to a member picture file. e.g: /uploads/cc6aba1a0e68ea429c51e3f9cb12e1ac/profile_c96135b77f6fc42be64cd98e0c21d341.jpg"
+          },
+          "member_first_name" : {
+            "type" : "string",
+			"title": "Member First Name",
+			"description": "The first name of the user."
+          },
+          "member_last_name" : {
+            "type" : "string",
+			"title": "Member Last Name",
+			"description": "The last name of the user."
+          },
+          "member_email" : {
+            "type" : "string",
+			"title": "Member Email",
+			"format": "email",
+			"description": "E-mail address of the user that was used for site registration."
+          },
+          "member_company" : {
+            "type" : "string",
+			"title": "Member Company",
+			"description": "Member's company name"
+          },
+          "member_type" : {
+            "type" : "string",
+            "enum": ["PRIMARY_ACCOUNT", "SUB_ACCOUNT_ADMIN", "SUB_ACCOUNT_REGIONAL_MANAGER", "SUB_ACCOUNT_DISPATCHER", "SUB_ACCOUNT_PLANNER", "SUB_ACCOUNT_DRIVER"],
+			"title": "Member Type",
+			"description": "Member type."
+          },
+          "OWNER_MEMBER_ID" : {
+            "type" : "integer",
+			"title": "Owner Member ID",
+			"description": "Parent user ID."
+          },
+          "member_phone" : {
+            "type" : "string",
+			"title": "Member Phone",
+			"description": "A phone number of the user."
+          },
+          "date_of_birth" : {
+            "type" : "string",
+			"title": "Date of Birth",
+			"description": "Member's date of birth."
+          },
+          "user_reg_state_id" : {
+            "type" : "integer",
+			"title": "User registration state ID",
+			"descrption": "An ID of a state, where the user was registered"
+          },
+          "user_reg_country_id" : {
+            "type" : "integer",
+			"title": "User registration Country ID",
+			"descrption": "An ID of a country, where the user was registered"
+          },
+          "DriverHourlyRate" : {
+            "type" : "number",
+			"title": "Driver Hourly Rate",
+			"descrption": "Hourly rate of a user/driver"
+          },
+          "HIDE_ROUTED_ADDRESSES" : {
+            "type" : "boolean",
+			"enum": [true, false],
+			"title": "Hide Routed Addresses",
+			"description": "If true, the routed addresses will be hidden"
+          },
+          "HIDE_VISITED_ADDRESSES" : {
+            "type" : "boolean",
+			"enum": [true, false],
+			"title": "Hide Visited Addresses",
+			"description": "If true, the visited addresses will be hidden"
+          },
+          "HIDE_NONFUTURE_ROUTES" : {
+            "type" : "boolean",
+			"enum": [true, false],
+			"title": "Hide Nonfuture Routes",
+			"description": "If true, the non-future routes will be hidden"
+          },
+          "READONLY_USER" : {
+            "type" : "boolean",
+			"enum": [true, false],
+			"title": "Readonly User",
+			"description": "If true, the user have readonly access to the account data"
+          },
+          "SHOW_SUSR_ADDR" : {
+            "type" : "boolean",
+			"enum": [true, false],
+			"title": "Show Global Addresses",
+			"description": "Show global address book contacts in a user's account."
+          },
+          "SHOW_SUSR_ORDERS" : {
+            "type" : "boolean",
+			"enum": [true, false],
+			"title": "Show Global Orders",
+			"description": "Show global orders in a user's account."
+          },
+          "SHOW_ALL_DRIVERS" : {
+            "type" : "boolean",
+			"enum": [true, false],
+			"title": "Show All Drivers",
+			"description": "Show all drivers in the user's account."
+          },
+          "SHOW_ALL_VEHICLES" : {
+            "type" : "boolean",
+			"enum": [true, false],
+			"title": "Show All Vehicles",
+			"description": "Show all vehicles  in the user's account."
+          },
+          "display_max_routes_future_days" : {
+            "type" : "boolean",
+			"enum": [true, false],
+			"title": "Display Maximum_Routes Number Of Future Days",
+			"description": "Display maximum_routes number of future days."
+          },
+          "vendor_id" : {
+            "type" : "integer",
+			"title": "Vendor ID",
+			"descrption": "Telematics vendor ID"
+          },
+          "driving_rate" : {
+            "type" : "number",
+			"title": "Driving Rate",
+			"description": "Driving rate of a user."
+          },
+          "working_rate" : {
+            "type" : "number",
+			"title": "Working Rate",
+			"description": "Working rate of a user."
+          },
+          "mile_rate" : {
+            "type" : "number",
+			"title": "Mile Rate",
+			"description": "Mile rate of a user."
+          },
+          "idling_rate" : {
+            "type" : "number",
+			"title": "Idling Rate",
+			"description": "Idling rate of a user."
+          },
+          "timezone" : {
+            "type" : "string",
+			"title": "Timezone",
+			"description": "Timezone (e.g. 'UTC', 'America/New_York')"
+          }
+	}
+}
