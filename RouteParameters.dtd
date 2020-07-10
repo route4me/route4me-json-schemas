@@ -127,19 +127,19 @@
 			"description": "How many seconds a route can last at most. Default is 24 hours = 86400 seconds"
 		},
 		"target_duration": {
-			"type": "integer",
+			"type": "double",
 			"title": "Target Duration",
-			"description": "Target duration (seconds)"
+			"description": "Target duration"
 		},
 		"target_distance": {
-			"type": "integer",
+			"type": "double",
 			"title": "Target Distance",
-			"description": "Target distance (miles)"
+			"description": "Target distance"
 		},
 		"target_wait_by_tail_size": {
-			"type": "integer",
+			"type": "double",
 			"title": "Target Wait By Tail Size",
-			"description": "Target wait time by tail size (seconds)"
+			"description": "Target wait time by tail size"
 		},
 		"route_email": {
 			"type": ["string", "null"],
