@@ -1,0 +1,479 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Route4Me Inventories API",
+    "description" : "Package for Inventories",
+    "version" : "5.0"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/inventory-manager"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "Inventories",
+    "description" : "Everything about Inventories."
+  } ],
+  "paths" : {
+    "/inventories" : {
+      "get" : {
+        "tags" : [ "inventories" ],
+        "summary" : "Get all Inventories.",
+        "description" : "Get all Inventories from the user's account.",
+        "operationId" : "getInventories",
+        "responses" : {
+          "200" : {
+            "description" : "Inventories loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/InventoryList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "inventories" ],
+        "summary" : "Create an Inventory.",
+        "description" : "Create a new Inventory by sending the corresponding body payload.",
+        "operationId" : "createInventory",
+        "requestBody" : {
+          "description" : "Inventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InventoryRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Inventory created.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Inventory"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inventories/{inventory_id}" : {
+      "get" : {
+        "tags" : [ "inventories" ],
+        "summary" : "Get the Inventory by its ID.",
+        "description" : "Get the Inventory by specifying the 'inventory_id' path parameter.",
+        "operationId" : "getInventoryById",
+        "parameters" : [ {
+          "name" : "inventory_id",
+          "in" : "path",
+          "description" : "Inventory ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Inventory loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Inventory"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "inventories" ],
+        "summary" : "Update the Inventory.",
+        "description" : "Update the Inventory by specifying the 'inventory_id' path parameter and by sending the corresponding body payload.",
+        "operationId" : "updateInventory",
+        "parameters" : [ {
+          "name" : "inventory_id",
+          "in" : "path",
+          "description" : "Inventory ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Inventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InventoryRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Inventory updated.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Inventory"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "inventories" ],
+        "summary" : "Delete the Inventory by its ID.",
+        "description" : "Delete the Inventory by specifying the 'inventory_id' path parameter.",
+        "operationId" : "deleteInventoryById",
+        "parameters" : [ {
+          "name" : "inventory_id",
+          "in" : "path",
+          "description" : "Inventory ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Inventory deleted.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Inventory"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inventories/{inventory_id}/restore" : {
+      "post" : {
+        "tags" : [ "inventories" ],
+        "summary" : "Restore the Inventory by its ID.",
+        "description" : "Restore the Inventory by specifying the 'inventory_id' path parameter.",
+        "operationId" : "restoreInventoryById",
+        "parameters" : [ {
+          "name" : "inventory_id",
+          "in" : "path",
+          "description" : "Inventory ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Inventory restored.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Inventory"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inventories/restore" : {
+      "post" : {
+        "tags" : [ "inventories" ],
+        "summary" : "Bulk restore Inventories.",
+        "description" : "Bulk restore multiple Inventories by sending a body payload with the array of the corresponding Inventory IDs.",
+        "operationId" : "restoreInventoriesBulk",
+        "requestBody" : {
+          "description" : "Inventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InventoryBulkRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Multiple Inventories restored.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/InventoryList"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inventories/destroy" : {
+      "post" : {
+        "tags" : [ "inventories" ],
+        "summary" : "Bulk delete Inventories.",
+        "description" : "Bulk delete multiple Inventories by sending a body payload with the array of the corresponding Inventory IDs.",
+        "operationId" : "destroyInventoriesBulk",
+        "requestBody" : {
+          "description" : "Inventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/InventoryBulkRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Multiple Inventories deleted.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/InventoryList"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Inventory" : {
+        "type" : "object",
+        "properties" : {
+          "inventory_id" : {
+            "type" : "string"
+          },
+          "root_member_id" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "sku" : {
+            "type" : "string"
+          },
+          "weight" : {
+            "type" : "number"
+          },
+          "length" : {
+            "type" : "number"
+          },
+          "height" : {
+            "type" : "number"
+          },
+          "width" : {
+            "type" : "number"
+          },
+          "cost" : {
+            "type" : "number"
+          },
+          "price" : {
+            "type" : "number"
+          },
+          "created_at" : {
+            "type" : "string"
+          },
+          "updated_at" : {
+            "type" : "string"
+          },
+          "deleted_at" : {
+            "type" : "string"
+          },
+          "is_deleted" : {
+            "type" : "boolean",
+            "default" : false
+          }
+        }
+      },
+      "InventoryList" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Inventory"
+        }
+      },
+      "ApiResponse" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer"
+          },
+          "status" : {
+            "type" : "string",
+            "default" : "false"
+          },
+          "messages" : {
+            "type" : "string"
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "default" : 1
+          }
+        }
+      },
+      "InventoryRequest" : {
+        "required" : [ "name", "sku" ],
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "sku" : {
+            "type" : "string"
+          },
+          "weight" : {
+            "type" : "number"
+          },
+          "length" : {
+            "type" : "number"
+          },
+          "height" : {
+            "type" : "number"
+          },
+          "width" : {
+            "type" : "number"
+          },
+          "cost" : {
+            "type" : "number"
+          },
+          "price" : {
+            "type" : "number"
+          }
+        }
+      },
+      "InventoryBulkRequest" : {
+        "required" : [ "inventory_ids" ],
+        "type" : "object",
+        "properties" : {
+          "inventory_ids" : {
+            "type" : "array",
+            "items" : {
+              "type" : "number"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

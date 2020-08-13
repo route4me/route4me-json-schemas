@@ -1,0 +1,1048 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Address Book Group API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/address-book"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/groups" : {
+      "get" : {
+        "tags" : [ "Groups" ],
+        "summary" : "Get all Address Book Groups.",
+        "description" : "Get all Address Book Groups.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "headers" : {
+              "Body-length" : {
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAll"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Groups" ],
+        "summary" : "Add a new Address Book Group.",
+        "description" : "Add a new Address Book Group by sending a body payload with the corresponding Address Book Group parameters.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/addGroup"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseGroup"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/groups/{group}" : {
+      "get" : {
+        "tags" : [ "Groups" ],
+        "summary" : "Find the Address Book Group by ID.",
+        "description" : "Find the Address Book Group by specifying the 'group' path parameter.",
+        "parameters" : [ {
+          "name" : "group",
+          "in" : "path",
+          "description" : "Address Book Group ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseGroup"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Groups" ],
+        "summary" : "Update the Address Book Group.",
+        "description" : "Update the Address Book Group by specifying the 'group' path parameter and by sending a body payload with the corresponding Address Book Group parameters.",
+        "parameters" : [ {
+          "name" : "group",
+          "in" : "path",
+          "description" : "Address Book Group ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdateGroup"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseGroup"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Groups" ],
+        "summary" : "Delete the Address Book Group.",
+        "description" : "Delete the Address Book Group by specifying the 'group' path parameter.",
+        "parameters" : [ {
+          "name" : "group",
+          "in" : "path",
+          "description" : "Address Book Group ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/groups/filter/all" : {
+      "post" : {
+        "tags" : [ "Group Filtering" ],
+        "summary" : "Filter by Address Book Group rules and output as a list of Addresses.",
+        "description" : "Filter the Address Book Contacts by the Address Book Group rules by sending the corresponding body payload with the option to filter the Contacts by 'Routed' or 'Unrouted'.",
+        "parameters" : [ {
+          "name" : "display",
+          "in" : "query",
+          "description" : "Specify which Address Book Contacts to show in the query. result.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "all",
+            "enum" : [ "all", "routed", "unrouted" ]
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/BodyFilterAll"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAddressGroupAll"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/groups/filter/clustering" : {
+      "post" : {
+        "tags" : [ "Group Filtering" ],
+        "summary" : "Filter by the Address Book Group rules and cluster output.",
+        "description" : "Filter and cluster the Address Book Contacts by sending a body payload with the option to specify the Address showing option and cluster precision values by the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "display",
+          "in" : "query",
+          "description" : "Specify which Address Book Contacts to show in the query. result.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "all",
+            "enum" : [ "all", "routed", "unrouted" ]
+          }
+        }, {
+          "name" : "precision",
+          "in" : "query",
+          "description" : "Cluster precision.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "maximum" : 12,
+            "minimum" : 1,
+            "type" : "number",
+            "default" : 5
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/BodyFilterClusters"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAddressGroupClusters"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/groups/{group_id}/filter/all" : {
+      "post" : {
+        "tags" : [ "Group Filtering" ],
+        "summary" : "Filter by Address Book Group ID and output as a list of Addresses.",
+        "description" : "Filter the Address Book Contacts by sending the corresponding body payload and by specifying the 'display' and 'group_id' query parameters.",
+        "parameters" : [ {
+          "name" : "group_id",
+          "in" : "path",
+          "description" : "Address Book Group ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "display",
+          "in" : "query",
+          "description" : "Specify which Address Book Contacts to show in the query. result.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "all",
+            "enum" : [ "all", "routed", "unrouted" ]
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/BodyFilterByGroup"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAddressGroupAll"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/groups/{group_id}/filter/clustering" : {
+      "post" : {
+        "tags" : [ "Group Filtering" ],
+        "summary" : "Filter by Address Book Group ID and cluster output.",
+        "description" : "Filter ad Cluster the Address Book Contacts by sending the corresponding body payload and by specifying the 'display', 'group_id' and 'precision' query parameters.",
+        "parameters" : [ {
+          "name" : "group_id",
+          "in" : "path",
+          "description" : "Address Book Group ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "display",
+          "in" : "query",
+          "description" : "Specify which Address Book Contacts to show in the query. result.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "all",
+            "enum" : [ "all", "routed", "unrouted" ]
+          }
+        }, {
+          "name" : "precision",
+          "in" : "query",
+          "description" : "Cluster precision.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "maximum" : 12,
+            "minimum" : 1,
+            "type" : "number",
+            "default" : 5
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/BodyFilterByGroupClusters"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAddressGroupClusters"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "addGroup" : {
+        "required" : [ "filter", "group_color", "group_name" ],
+        "type" : "object",
+        "properties" : {
+          "group_name" : {
+            "type" : "string",
+            "example" : "some group name"
+          },
+          "group_color" : {
+            "type" : "string",
+            "example" : "#000000"
+          },
+          "group_icon" : {
+            "type" : "string",
+            "example" : "emoji/emoji-thumbsup"
+          },
+          "filter" : {
+            "type" : "object",
+            "example" : { }
+          }
+        }
+      },
+      "UpdateGroup" : {
+        "type" : "object",
+        "properties" : {
+          "group_name" : {
+            "type" : "string",
+            "example" : "some group name"
+          },
+          "group_color" : {
+            "type" : "string",
+            "example" : "#000000"
+          },
+          "group_icon" : {
+            "type" : "string",
+            "example" : "emoji/emoji-thumbsup"
+          },
+          "filter" : {
+            "type" : "object",
+            "example" : { }
+          }
+        }
+      },
+      "ResponseGroup" : {
+        "type" : "object",
+        "properties" : {
+          "group_id" : {
+            "type" : "string",
+            "example" : "79E506E7A696B3C7A47D2D287D91C040"
+          },
+          "group_name" : {
+            "type" : "string",
+            "example" : "some group name"
+          },
+          "group_color" : {
+            "type" : "string",
+            "example" : "#000000"
+          },
+          "group_icon" : {
+            "type" : "string",
+            "example" : "emoji/emoji-thumbsup"
+          },
+          "member_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "filter" : {
+            "type" : "object",
+            "example" : { }
+          }
+        }
+      },
+      "ResponseAll" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseGroup"
+            }
+          }
+        }
+      },
+      "ResponseAddressGroupAll" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseAddress"
+            }
+          },
+          "total" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "fields" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "ResponseAddressGroupClusters" : {
+        "type" : "object",
+        "properties" : {
+          "clusters" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Cluster"
+            }
+          },
+          "total" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        }
+      },
+      "ResponseAddress" : {
+        "type" : "object",
+        "properties" : {
+          "created_timestamp" : {
+            "type" : "string",
+            "example" : "2019-08-08T08:53:03.000Z"
+          },
+          "address_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "address_group" : {
+            "type" : "string"
+          },
+          "address_alias" : {
+            "type" : "string",
+            "example" : "Jenkins Ways"
+          },
+          "address_1" : {
+            "type" : "string",
+            "example" : "999 Aurelio Summit, Jamirtown, CO 52979-8465"
+          },
+          "address_2" : {
+            "type" : "string"
+          },
+          "member_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "first_name" : {
+            "type" : "string",
+            "example" : "Keyon"
+          },
+          "last_name" : {
+            "type" : "string",
+            "example" : "Will"
+          },
+          "address_email" : {
+            "type" : "string"
+          },
+          "address_phone_number" : {
+            "type" : "string"
+          },
+          "address_city" : {
+            "type" : "string"
+          },
+          "address_state_id" : {
+            "type" : "string"
+          },
+          "address_country_id" : {
+            "type" : "string"
+          },
+          "address_zip" : {
+            "type" : "string"
+          },
+          "cached_lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "cached_lng" : {
+            "type" : "number",
+            "example" : -162.156663
+          },
+          "curbside_lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "curbside_lng" : {
+            "type" : "number",
+            "example" : -162.156663
+          },
+          "address_custom_data" : {
+            "$ref" : "#/components/schemas/ResponseAddress_address_custom_data"
+          },
+          "schedule" : {
+            "type" : "object"
+          },
+          "schedule_blacklist" : {
+            "type" : "object"
+          },
+          "in_route_count" : {
+            "type" : "number"
+          },
+          "visited_count" : {
+            "type" : "number"
+          },
+          "last_visited_timestamp" : {
+            "type" : "number"
+          },
+          "last_routed_timestamp" : {
+            "type" : "number"
+          },
+          "local_time_window_start" : {
+            "type" : "number"
+          },
+          "local_time_window_end" : {
+            "type" : "number"
+          },
+          "local_time_window_start_2" : {
+            "type" : "number"
+          },
+          "local_time_window_end_2" : {
+            "type" : "number"
+          },
+          "service_time" : {
+            "type" : "number"
+          },
+          "local_timezone_string" : {
+            "type" : "string"
+          },
+          "color" : {
+            "type" : "string",
+            "example" : "#000000"
+          },
+          "address_icon" : {
+            "type" : "string"
+          },
+          "address_stop_type" : {
+            "type" : "string"
+          },
+          "address_cube" : {
+            "type" : "number"
+          },
+          "address_pieces" : {
+            "type" : "number"
+          },
+          "address_reference_no" : {
+            "type" : "string"
+          },
+          "address_revenue" : {
+            "type" : "number"
+          },
+          "address_weight" : {
+            "type" : "number"
+          },
+          "address_priority" : {
+            "type" : "number"
+          },
+          "address_customer_po" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Cluster" : {
+        "type" : "object",
+        "properties" : {
+          "geohash" : {
+            "type" : "string",
+            "example" : "1mr8h4r9"
+          },
+          "lat" : {
+            "type" : "number",
+            "example" : -60.456132888793945
+          },
+          "lng" : {
+            "type" : "number",
+            "example" : -60.456132888793945
+          },
+          "bbox" : {
+            "type" : "array",
+            "example" : [ [ -60.45621871948242, -113.01704406738281 ], [ -60.45604705810547, -113.0167007446289 ] ],
+            "items" : {
+              "type" : "number"
+            }
+          },
+          "address_count" : {
+            "type" : "number",
+            "example" : 1
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "type" : "object"
+          }
+        }
+      },
+      "BodyFilterAll" : {
+        "required" : [ "rules" ],
+        "type" : "object",
+        "properties" : {
+          "rules" : {
+            "$ref" : "#/components/schemas/BodyParamFilterRules"
+          },
+          "bounding_box" : {
+            "$ref" : "#/components/schemas/BodyParamBoundingBox"
+          },
+          "fields" : {
+            "$ref" : "#/components/schemas/BodyParamFields"
+          },
+          "order_by" : {
+            "$ref" : "#/components/schemas/BodyParamOrderBy"
+          }
+        }
+      },
+      "BodyFilterClusters" : {
+        "required" : [ "rules" ],
+        "type" : "object",
+        "properties" : {
+          "rules" : {
+            "$ref" : "#/components/schemas/BodyParamFilterRules"
+          },
+          "bounding_box" : {
+            "$ref" : "#/components/schemas/BodyParamBoundingBox"
+          }
+        }
+      },
+      "BodyFilterByGroup" : {
+        "type" : "object",
+        "properties" : {
+          "bounding_box" : {
+            "$ref" : "#/components/schemas/BodyParamBoundingBox"
+          },
+          "fields" : {
+            "$ref" : "#/components/schemas/BodyParamFields"
+          },
+          "order_by" : {
+            "$ref" : "#/components/schemas/BodyParamOrderBy"
+          }
+        }
+      },
+      "BodyFilterByGroupClusters" : {
+        "type" : "object",
+        "properties" : {
+          "bounding_box" : {
+            "$ref" : "#/components/schemas/BodyParamBoundingBox"
+          }
+        }
+      },
+      "BodyParamBoundingBox" : {
+        "required" : [ "bottom", "left", "right", "top" ],
+        "type" : "object",
+        "properties" : {
+          "top" : {
+            "type" : "number",
+            "example" : 40.73
+          },
+          "left" : {
+            "type" : "number",
+            "example" : -74.1
+          },
+          "bottom" : {
+            "type" : "number",
+            "example" : 40.01
+          },
+          "right" : {
+            "type" : "number",
+            "example" : 71.12
+          }
+        }
+      },
+      "BodyParamFilterRules" : {
+        "type" : "object",
+        "example" : {
+          "condition" : "AND",
+          "rules" : [ {
+            "id" : "address_1",
+            "field" : "address_1",
+            "type" : "string",
+            "input" : "text",
+            "operator" : "contains",
+            "value" : "usa"
+          }, {
+            "condition" : "OR",
+            "rules" : [ {
+              "id" : "address_1",
+              "field" : "address_1",
+              "type" : "string",
+              "input" : "text",
+              "operator" : "contains",
+              "value" : "houston"
+            }, {
+              "id" : "address_1",
+              "field" : "address_1",
+              "type" : "string",
+              "input" : "text",
+              "operator" : "contains",
+              "value" : "chicago"
+            } ]
+          } ],
+          "valid" : true
+        }
+      },
+      "BodyParamFields" : {
+        "type" : "array",
+        "description" : "Filter the results by the corresponding fields.",
+        "example" : [ "address_id", "address_alias", "first_name" ],
+        "items" : {
+          "type" : "string"
+        }
+      },
+      "BodyParamOrderBy" : {
+        "type" : "object",
+        "description" : "You can sort the results using the following fields: * address_1 * address_alias * first_name * last_name * address_phone_number * address_email * address_group * in_route_count * visited_count * last_visited_timestamp * last_routed_timestamp\n",
+        "example" : [ [ "address_1", "desc" ], [ "address_alias", "desc" ], [ "first_name", "asc" ] ]
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : true
+          }
+        }
+      },
+      "ResponseAddress_address_custom_data" : {
+        "type" : "object",
+        "properties" : {
+          "custom field name #1" : {
+            "type" : "string",
+            "example" : "custom field value #1"
+          },
+          "custom field name #2" : {
+            "type" : "string",
+            "example" : "custom field value #2"
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "displayParam" : {
+        "name" : "display",
+        "in" : "query",
+        "description" : "Specify which Address Book Contacts to show in the query. result.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string",
+          "default" : "all",
+          "enum" : [ "all", "routed", "unrouted" ]
+        }
+      },
+      "precisionParam" : {
+        "name" : "precision",
+        "in" : "query",
+        "description" : "Cluster precision.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "maximum" : 12,
+          "minimum" : 1,
+          "type" : "number",
+          "default" : 5
+        }
+      },
+      "groupIdyParam" : {
+        "name" : "group_id",
+        "in" : "path",
+        "description" : "Address Book Group ID.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

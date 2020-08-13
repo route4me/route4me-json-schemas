@@ -1,0 +1,170 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Assigned Address Book Addresses API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/temporal-address-book"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/" : {
+      "post" : {
+        "summary" : "Store a new Address in the database.",
+        "description" : "Insert a new Address into the database by sending the corresponding body payload.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAll"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ResponseAll" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseTemporalAddressAccess"
+            }
+          }
+        }
+      },
+      "ResponseTemporalAddressAccess" : {
+        "type" : "object",
+        "properties" : {
+          "address_id" : {
+            "type" : "integer"
+          },
+          "expires_at" : {
+            "type" : "string"
+          },
+          "original_member_id" : {
+            "type" : "integer"
+          },
+          "root_member_id" : {
+            "type" : "integer"
+          },
+          "assigned_member_id" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          }
+        }
+      },
+      "body" : {
+        "required" : [ "address_id", "expires_at", "mode", "new_member_id" ],
+        "type" : "object",
+        "properties" : {
+          "address_id" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          },
+          "new_member_id" : {
+            "type" : "integer"
+          },
+          "expires_at" : {
+            "type" : "integer",
+            "description" : "Unix timestamp."
+          },
+          "mode" : {
+            "type" : "string",
+            "enum" : [ "return_to_original", "assign_to_team_owner" ]
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

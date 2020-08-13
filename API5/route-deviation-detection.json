@@ -1,0 +1,744 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Route Deviation Detection API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/route-deviation"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/check" : {
+      "post" : {
+        "summary" : "Get the Route Deviation analysis and store it in the database.",
+        "description" : "Get the Route Deviation analysis and store it in the database by sending the corresponding body payload with the 'route_id' parameter.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseDetection"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports" : {
+      "get" : {
+        "summary" : "Display the list of Route Deviation reports.",
+        "description" : "Get the list of Route Deviation reports.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "string",
+                    "example" : "Report ID"
+                  }
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/{Id}" : {
+      "get" : {
+        "summary" : "Display the specified report.",
+        "description" : "Get the report by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Report ID (string type).",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseDetection"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Remove the specified report from the storage.",
+        "description" : "Remove the Route Deviation report from the storage by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "String ID of the Route Deviation report to get.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseDetection"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/violations" : {
+      "get" : {
+        "summary" : "Display the list of violations (Route Deviations).",
+        "description" : "Get the list of violations (Route Deviations).",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "string",
+                    "example" : "Violation (Route Deviation) ID."
+                  }
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/violations/{Id}" : {
+      "get" : {
+        "summary" : "Display the specified violation (Route Deviation).",
+        "description" : "Get the violation (Route Deviation) by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Violation (Route Deviation) ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseViolation"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Remove the specified violation (Route Deviation) from the storage.",
+        "description" : "Delete the violation (Route Deviation) by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Violation (Route Deviation) ID (string type).",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseViolation"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rules" : {
+      "get" : {
+        "summary" : "Display the list of Route Deviation rules.",
+        "description" : "Get the list of Route Deviation rules.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseRules"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Store a newly created Route Deviation rule in the database.",
+        "description" : "Create a new Route Deviation rule by sending the corresponding body payload.",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/Data"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseRule"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rules/{Id}" : {
+      "get" : {
+        "summary" : "Display the specified Route Deviation rule.",
+        "description" : "Get the violation (Route Deviation) by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Violation (Route Deviation) ID (string type).",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseRule"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update the specified Route Deviation rule in the storage.",
+        "description" : "Update the violation (Route Deviation) by specifying the path parameter ID and by sending the corresponding body payload.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Violation (Route Deviation) ID (string type).",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/Data"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseRule"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Remove the specified Route Deviation rule from the storage.",
+        "description" : "Delete the violation (Route Deviation) by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Violation (Route Deviation) ID (string type).",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseRule"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ResponseRules" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseRule"
+            }
+          }
+        }
+      },
+      "ResponseRule" : {
+        "type" : "object",
+        "properties" : {
+          "route_deviation_rule_id" : {
+            "type" : "string",
+            "example" : "D3C21ADAEDEC516C9231E8134097190B"
+          },
+          "root_member_id" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "rule" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ResponseViolation" : {
+        "type" : "object",
+        "properties" : {
+          "route_deviation_history_id" : {
+            "type" : "integer"
+          },
+          "root_member_id" : {
+            "type" : "integer"
+          },
+          "route_deviation_rule_id" : {
+            "type" : "string",
+            "example" : "D3C21ADAEDEC516C9231E8134097190B"
+          },
+          "report_id" : {
+            "type" : "string"
+          },
+          "timestamp" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "ResponseDetection" : {
+        "type" : "object",
+        "properties" : {
+          "summary" : {
+            "$ref" : "#/components/schemas/ResponseDetection_summary"
+          },
+          "deviations" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseDetection_deviations"
+            }
+          },
+          "alternatives" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "cpu_time" : {
+            "type" : "number"
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          }
+        }
+      },
+      "body" : {
+        "required" : [ "route_id" ],
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string",
+            "example" : "1B2B1C25D259035BDF458E45487CF531"
+          }
+        }
+      },
+      "ResponseDetection_summary" : {
+        "type" : "object",
+        "properties" : {
+          "deviation" : {
+            "type" : "integer"
+          },
+          "total_distance" : {
+            "type" : "integer"
+          },
+          "deviation_distance" : {
+            "type" : "integer"
+          },
+          "alternate_distance" : {
+            "type" : "integer"
+          },
+          "offroad_distance" : {
+            "type" : "integer"
+          },
+          "planned_part" : {
+            "type" : "number"
+          },
+          "deviation_part" : {
+            "type" : "number"
+          },
+          "alternate_part" : {
+            "type" : "integer"
+          },
+          "onroad_part" : {
+            "type" : "number"
+          },
+          "offroad_part" : {
+            "type" : "number"
+          }
+        }
+      },
+      "ResponseDetection_summary_1" : {
+        "type" : "object",
+        "properties" : {
+          "total_distance" : {
+            "type" : "integer"
+          },
+          "planned_distance" : {
+            "type" : "integer"
+          },
+          "offroad_distance" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "ResponseDetection_waypoints" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "location" : {
+            "type" : "array",
+            "items" : {
+              "type" : "number",
+              "example" : -79.102999
+            }
+          }
+        }
+      },
+      "ResponseDetection_deviations" : {
+        "type" : "object",
+        "properties" : {
+          "summary" : {
+            "$ref" : "#/components/schemas/ResponseDetection_summary_1"
+          },
+          "geometry" : {
+            "type" : "array",
+            "items" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          },
+          "waypoints" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseDetection_waypoints"
+            }
+          },
+          "indices" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "requestBodies" : {
+      "Data" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "required" : [ "name", "root_member_id", "rule" ],
+              "type" : "object",
+              "properties" : {
+                "root_member_id" : {
+                  "type" : "integer"
+                },
+                "name" : {
+                  "type" : "string"
+                },
+                "rule" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

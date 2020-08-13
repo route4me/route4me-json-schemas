@@ -1,0 +1,1365 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Route4Me Route Schedules Add-On API",
+    "description" : "Package for Route Schedules",
+    "version" : "5.0"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/webapi/v5.0/recurring-routes"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "schedules",
+    "description" : "Everything about Schedules."
+  }, {
+    "name" : "route-schedules",
+    "description" : "Everything about Route Schedules."
+  }, {
+    "name" : "scheduled-routes",
+    "description" : "Scheduled Routes Operations."
+  } ],
+  "paths" : {
+    "/schedules/pagination" : {
+      "get" : {
+        "tags" : [ "schedules" ],
+        "summary" : "Get all Schedules.",
+        "description" : "Get the paginated list of Schedules.",
+        "operationId" : "getSchedulesPagination",
+        "parameters" : [ {
+          "name" : "with_pagination",
+          "in" : "query",
+          "description" : "Enable the paginated output.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "default" : false
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Requested page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "default" : 1
+          }
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "description" : "Number of Schedules per page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "default" : 15
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Schedules loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ScheduleListWithPagination"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/schedules" : {
+      "get" : {
+        "tags" : [ "schedules" ],
+        "summary" : "Get all Schedules.",
+        "description" : "Get the paginated list of Schedules.",
+        "operationId" : "getSchedules",
+        "responses" : {
+          "200" : {
+            "description" : "Schedules loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ScheduleList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "schedules" ],
+        "summary" : "Create a new Schedule.",
+        "description" : "Create a new Schedule by sending the corresponding body payload.",
+        "operationId" : "addSchedule",
+        "requestBody" : {
+          "description" : "Schedule attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ScheduleRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Schedule created.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ScheduleList"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/schedules/{schedule_uid}" : {
+      "get" : {
+        "tags" : [ "schedules" ],
+        "summary" : "Get the Schedule.",
+        "description" : "Get the Schedule by specifying the 'schedule_uid' path parameter.",
+        "operationId" : "getSchedule",
+        "parameters" : [ {
+          "name" : "schedule_uid",
+          "in" : "path",
+          "description" : "Schedule ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Schedule loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ScheduleList"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "schedules" ],
+        "summary" : "Update the existing Schedule.",
+        "description" : "Update the existing Schedule by sending the corresponding body payload.",
+        "operationId" : "updateSchedule",
+        "parameters" : [ {
+          "name" : "schedule_uid",
+          "in" : "path",
+          "description" : "Schedule ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Schedule attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ScheduleRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Schedule updated.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ScheduleList"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "schedules" ],
+        "summary" : "Delete the Schedule.",
+        "description" : "Delete the specified Schedule with the option to delete the associated route.",
+        "operationId" : "deleteSchedule",
+        "parameters" : [ {
+          "name" : "schedule_uid",
+          "in" : "path",
+          "description" : "Schedule ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with-routes",
+          "in" : "query",
+          "description" : "Delete the Schedule that matches the specified Schedule ID. If the deleted Schedule has one or multiple associated Routes, these Routes are also deleted.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "default" : false
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Schedule deleted.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ScheduleList"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/route-schedules/pagination" : {
+      "get" : {
+        "tags" : [ "route-schedules" ],
+        "summary" : "Get all Route Schedules with pagination.",
+        "description" : "Get the paginated list of Route Schedules.",
+        "operationId" : "getRouteSchedulesPagination",
+        "parameters" : [ {
+          "name" : "with_pagination",
+          "in" : "query",
+          "description" : "Enable the paginated output.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "default" : false
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Requested page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "default" : 1
+          }
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "description" : "Number of Route Schedules per page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "default" : 15
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Route Schedules loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RouteScheduleListWithPagination"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/route-schedules" : {
+      "get" : {
+        "tags" : [ "route-schedules" ],
+        "summary" : "Get all Route Schedules.",
+        "description" : "Get the paginated list of Route Schedules.",
+        "operationId" : "getRouteSchedules",
+        "responses" : {
+          "200" : {
+            "description" : "Route Schedules loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RouteScheduleList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "route-schedules" ],
+        "summary" : "Create a new Route Schedule.",
+        "description" : "Create a new Route Schedule by sending the corresponding body payload.",
+        "operationId" : "addRouteSchedule",
+        "requestBody" : {
+          "description" : "Route Schedule attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RouteScheduleRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Route Schedule created.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RouteScheduleList"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/route-schedules/{route_id}" : {
+      "get" : {
+        "tags" : [ "route-schedules" ],
+        "summary" : "Get the Route Schedule.",
+        "description" : "Get the Route Schedule by specifying the 'route_id' path parameter.",
+        "operationId" : "getRouteSchedule",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "177551BA85AC282D043A4A8759A8ACDD"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Route Schedule loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExtendedRouteSchedule"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "route-schedules" ],
+        "summary" : "Update the existing Route Schedule.",
+        "description" : "Update the existing Route Schedule by sending the corresponding body payload.",
+        "operationId" : "updateRouteSchedule",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "177551BA85AC282D043A4A8759A8ACDD"
+        } ],
+        "requestBody" : {
+          "description" : "Route Schedule attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RouteScheduleUpdateRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Route Schedule updated.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RouteScheduleList"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "route-schedules" ],
+        "summary" : "Delete the Route Schedules.",
+        "description" : "Delete the route schedules.",
+        "operationId" : "deleteRouteSchedules",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "177551BA85AC282D043A4A8759A8ACDD"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Route Schedules deleted.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "boolean"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/route-schedules/{route_id}/items" : {
+      "delete" : {
+        "tags" : [ "route-schedules" ],
+        "summary" : "Delete the Route Schedule.",
+        "description" : "Delete the specified route schedule.",
+        "operationId" : "deleteRouteSchedule",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Route Schedule deleted.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RouteScheduleList"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/route-schedules/replace/{route_id}" : {
+      "put" : {
+        "tags" : [ "route-schedules" ],
+        "summary" : "Replace the existing Route Schedule.",
+        "description" : "Replace the existing Route Schedule by sending the corresponding body payload.",
+        "operationId" : "replaceRouteSchedule",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          },
+          "example" : "177551BA85AC282D043A4A8759A8ACDD"
+        } ],
+        "requestBody" : {
+          "description" : "Route Schedule attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RouteScheduleReplaceRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Route Schedule replaced.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ExtendedRouteSchedule"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/scheduled-routes/is-copy/{routeId}" : {
+      "get" : {
+        "tags" : [ "scheduled-routes" ],
+        "summary" : "Check if the route's ScheduledRoute was copied.",
+        "description" : "Check if the Scheduled Route was copied by specifying the 'routeId' path parameter.",
+        "operationId" : "isScheduledRouteCopy",
+        "parameters" : [ {
+          "name" : "routeId",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Scheduled Route checked.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/scheduled-routes/get-copies" : {
+      "post" : {
+        "tags" : [ "scheduled-routes" ],
+        "summary" : "Get all routes that have copied the current route's ScheduledRoute.",
+        "description" : "Get all routes copied from the specified Scheduled Route by sending the corresponding body payload.",
+        "operationId" : "getScheduledRoutesCopies",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ScheduledRouteGetCopiesRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Scheduled Routes' copies loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ScheduledRouteGetCopies"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/master-routes" : {
+      "post" : {
+        "summary" : "Create a new Master Route.",
+        "description" : "Create a new Master Route by sending the corresponding body payload.",
+        "operationId" : "addMasterRoute",
+        "requestBody" : {
+          "description" : "Master Route attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MasterRouteRequest"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Route Schedule created."
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/master-routes/apiconf" : {
+      "get" : {
+        "summary" : "Configuration request.",
+        "description" : "Get the configuration.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/master-routes/datatable" : {
+      "get" : {
+        "summary" : "Get Routes.",
+        "description" : "Search for the Routes by specifying the corresponding query parameters and retrieving a paginated list of the Routes.",
+        "parameters" : [ {
+          "name" : "order_by",
+          "in" : "query",
+          "description" : "[['route_name', 'asc']]",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Requested page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "description" : "Amount of the File information per page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/MasterRoutes"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Schedule" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "root_member_id" : {
+            "type" : "integer"
+          },
+          "schedule_uid" : {
+            "type" : "string"
+          },
+          "advance_interval" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "advance_schedule_interval_days" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "schedule_blacklist" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "2020-02-10"
+            }
+          },
+          "schedule" : {
+            "type" : "string",
+            "example" : "{\"enabled\": true, \"mode\": \"daily\", \"daily\": {\"every\": 2}, \"from\": \"2019-06-05\", \"timestamp\":1558538737}"
+          }
+        }
+      },
+      "ScheduleListWithPagination" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Schedule"
+            }
+          },
+          "links" : {
+            "$ref" : "#/components/schemas/ScheduleListWithPagination_links"
+          },
+          "meta" : {
+            "$ref" : "#/components/schemas/ScheduleListWithPagination_meta"
+          }
+        }
+      },
+      "ScheduleList" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Schedule"
+            }
+          }
+        }
+      },
+      "ScheduleRequest" : {
+        "type" : "object",
+        "properties" : {
+          "schedule_uid" : {
+            "type" : "string"
+          },
+          "root_member_id" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "schedule_blacklist" : {
+            "type" : "array",
+            "description" : "Blacklisted dates.",
+            "example" : [ "2019-12-31", "2020-01-01" ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "advance_interval" : {
+            "type" : "integer",
+            "default" : 1
+          },
+          "advance_schedule_interval_days" : {
+            "type" : "integer",
+            "default" : 0
+          },
+          "schedule" : {
+            "type" : "string",
+            "example" : "{\"enabled\": true, \"mode\": \"daily\", \"daily\": {\"every\": 2}, \"from\": \"2019-06-05\", \"timestamp\":1558538737}"
+          }
+        }
+      },
+      "RouteScheduleReplaceRequest" : {
+        "type" : "object",
+        "properties" : {
+          "member_id" : {
+            "type" : "integer"
+          },
+          "vehicle_id" : {
+            "type" : "string"
+          },
+          "schedule_uid" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "schedule_blacklist" : {
+            "type" : "array",
+            "description" : "Blacklisted dates.",
+            "example" : [ "2019-12-31", "2020-01-01" ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "advance_interval" : {
+            "type" : "integer",
+            "default" : 1
+          },
+          "advance_schedule_interval_days" : {
+            "type" : "integer",
+            "default" : 0
+          },
+          "schedule" : {
+            "type" : "string",
+            "example" : "{\"enabled\": true, \"mode\": \"daily\", \"daily\": {\"every\": 2}, \"from\": \"2019-06-05\", \"timestamp\":1558538737}"
+          }
+        }
+      },
+      "RouteSchedule" : {
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string"
+          },
+          "schedule_uid" : {
+            "type" : "string"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "vehicle_id" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ExtendedRouteSchedule" : {
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string"
+          },
+          "schedule_uid" : {
+            "type" : "string"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "vehicle_id" : {
+            "type" : "string"
+          },
+          "schedule" : {
+            "$ref" : "#/components/schemas/ExtendedRouteSchedule_schedule"
+          }
+        }
+      },
+      "RouteScheduleListWithPagination" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/RouteSchedule"
+            }
+          },
+          "links" : {
+            "$ref" : "#/components/schemas/ScheduleListWithPagination_links"
+          },
+          "meta" : {
+            "$ref" : "#/components/schemas/ScheduleListWithPagination_meta"
+          }
+        }
+      },
+      "RouteScheduleList" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/RouteSchedule"
+            }
+          }
+        }
+      },
+      "ScheduledRouteGetCopies" : {
+        "type" : "object",
+        "properties" : {
+          "parent_route_id" : {
+            "type" : "string"
+          },
+          "scheduled_routes" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ScheduledRouteGetCopies_scheduled_routes"
+            }
+          }
+        }
+      },
+      "RouteScheduleRequest" : {
+        "required" : [ "route_id", "schedule_uid" ],
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string"
+          },
+          "schedule_uid" : {
+            "type" : "string"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "vehicle_id" : {
+            "type" : "string"
+          }
+        }
+      },
+      "RouteScheduleUpdateRequest" : {
+        "type" : "object",
+        "properties" : {
+          "schedule_uid" : {
+            "type" : "string",
+            "example" : "BD821B668877C0C7E7832A0317508A66"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "vehicle_id" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ScheduledRouteGetCopiesRequest" : {
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string",
+            "description" : "Route ID."
+          },
+          "schedule_id" : {
+            "type" : "string",
+            "description" : "The Schedule's schedule_uid."
+          },
+          "route_date" : {
+            "type" : "string",
+            "description" : "route_date of ScheduledRoute.",
+            "example" : "2020-01-01"
+          }
+        }
+      },
+      "ApiResponse" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer"
+          },
+          "status" : {
+            "type" : "string",
+            "default" : "false"
+          },
+          "messages" : {
+            "type" : "string"
+          }
+        }
+      },
+      "MasterRoutes" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/MasterRoute"
+            }
+          },
+          "links" : {
+            "$ref" : "#/components/schemas/ScheduleListWithPagination_links"
+          },
+          "meta" : {
+            "$ref" : "#/components/schemas/ScheduleListWithPagination_meta"
+          }
+        }
+      },
+      "MasterRoute" : {
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string",
+            "description" : "Route ID."
+          },
+          "route_name" : {
+            "type" : "string"
+          },
+          "date" : {
+            "type" : "string",
+            "example" : "2020-06-17"
+          },
+          "schedule_data" : {
+            "$ref" : "#/components/schemas/MasterRoute_schedule_data"
+          }
+        }
+      },
+      "MasterRouteRequest" : {
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string",
+            "description" : "Route ID."
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "vehicle_id" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "schedule_blacklist" : {
+            "type" : "array",
+            "description" : "Blacklisted dates.",
+            "example" : [ "2019-12-31", "2020-01-01" ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "advance_interval" : {
+            "type" : "integer",
+            "default" : 1
+          },
+          "advance_schedule_interval_days" : {
+            "type" : "integer",
+            "default" : 0
+          },
+          "schedule" : {
+            "type" : "string",
+            "example" : "{\"enabled\": true, \"mode\": \"daily\", \"daily\": {\"every\": 2}, \"from\": \"2019-06-05\", \"timestamp\":1558538737}"
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "api_capabilities" : {
+            "$ref" : "#/components/schemas/inline_response_200_api_capabilities"
+          },
+          "api_preferences" : {
+            "$ref" : "#/components/schemas/inline_response_200_api_preferences"
+          }
+        }
+      },
+      "ScheduleListWithPagination_links" : {
+        "type" : "object",
+        "properties" : {
+          "first" : {
+            "type" : "string"
+          },
+          "last" : {
+            "type" : "string"
+          },
+          "prev" : {
+            "type" : "string"
+          },
+          "next" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ScheduleListWithPagination_meta" : {
+        "type" : "object",
+        "properties" : {
+          "current_page" : {
+            "type" : "integer"
+          },
+          "from" : {
+            "type" : "integer"
+          },
+          "last_page" : {
+            "type" : "integer"
+          },
+          "path" : {
+            "type" : "string"
+          },
+          "per_page" : {
+            "type" : "integer"
+          },
+          "to" : {
+            "type" : "integer"
+          },
+          "total" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "ExtendedRouteSchedule_schedule" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "schedule_uid" : {
+            "type" : "string"
+          },
+          "advance_interval" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "advance_schedule_interval_days" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "schedule_blacklist" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "2020-02-10"
+            }
+          },
+          "schedule" : {
+            "type" : "string",
+            "example" : "{\"enabled\": true, \"mode\": \"daily\", \"daily\": {\"every\": 2}, \"from\": \"2019-06-05\", \"timestamp\":1558538737}"
+          }
+        }
+      },
+      "ScheduledRouteGetCopies_scheduled_routes" : {
+        "type" : "object",
+        "properties" : {
+          "schedule_uid" : {
+            "type" : "string"
+          },
+          "child_route_id" : {
+            "type" : "string"
+          },
+          "route_date" : {
+            "type" : "string",
+            "example" : "2020-01-01"
+          }
+        }
+      },
+      "MasterRoute_schedule_data" : {
+        "type" : "object",
+        "properties" : {
+          "schedule_uid" : {
+            "type" : "string"
+          },
+          "schedule" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "advance_interval" : {
+            "type" : "integer"
+          },
+          "advance_schedule_interval_days" : {
+            "type" : "integer"
+          },
+          "schedule_blacklist" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "inline_response_200_api_capabilities" : {
+        "type" : "object",
+        "properties" : {
+          "sortable_fields" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "filterable_fields" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "search" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "inline_response_200_api_preferences" : {
+        "type" : "object",
+        "properties" : {
+          "force_server_side_search" : {
+            "type" : "boolean"
+          },
+          "partial_load" : {
+            "type" : "boolean"
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

@@ -1,0 +1,664 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Analytics API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/analytics/account"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/users" : {
+      "get" : {
+        "summary" : "Display the list of Users.",
+        "description" : "Get the list of Users.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseUsers"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports" : {
+      "get" : {
+        "summary" : "Display the Report.",
+        "description" : "Get the Report about the users' activity by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "member_ids",
+          "in" : "query",
+          "description" : "Array of the associated member IDs.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "start",
+          "in" : "query",
+          "description" : "Start of the date range (e.g., '2020-01-20' (YYYY-MM-DD)).",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end",
+          "in" : "query",
+          "description" : "End of the date range (e.g., '2020-01-25' (YYYY-MM-DD)).",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "aggregation",
+          "in" : "query",
+          "description" : "Aggregation by a specific feature ('day' or 'stop-type').",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "day", "stop_type", "member" ]
+          }
+        }, {
+          "name" : "charts",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "enum" : [ "SumRoute", "SumActualRouteDistance", "SumActualRouteDuration", "CO2", "CountStop", "SumVisited", "SumNotVisited", "SumDetected", "NotesCount", "SumPlannedServiceTime", "AvgPlannedServiceTime", "SumPlannedRouteDistance", "SumPlannedRouteDuration", "GeofenceEnteredCount", "GeofenceLeftCount", "SumMarkedTime", "AvgMarkedTime", "SumWeight", "SumPieces", "SumCube", "SumRevenue", "SumCost" ]
+            }
+          }
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "description" : "API key of the user.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseReports"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/export" : {
+      "get" : {
+        "summary" : "Download the Report.",
+        "description" : "Download the Report about the users' activity by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "member_ids",
+          "in" : "query",
+          "description" : "Array of the associated member IDs.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "start",
+          "in" : "query",
+          "description" : "Start of the date range (e.g., '2020-01-20' (YYYY-MM-DD)).",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end",
+          "in" : "query",
+          "description" : "End of the date range (e.g., '2020-01-25' (YYYY-MM-DD)).",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "aggregation",
+          "in" : "query",
+          "description" : "Aggregation by a specific feature ('day' or 'stop-type').",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "day", "stop_type", "member" ]
+          }
+        }, {
+          "name" : "charts",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "enum" : [ "SumRoute", "SumVisited", "SumDetected", "SumNotVisited", "SumActualRouteDistance", "SumActualRouteDistanceUnit", "SumActualRouteDuration", "CO", "SumStop", "NotesCount", "SumPlannedServiceTime", "AvgPlannedServiceTime", "SumPlannedRouteDistance", "SumPlannedRouteDistanceUnit", "SumPlannedRouteDuration", "GeofenceEnteredCount", "GeofenceLeftCount", "SumMarkedTime", "AvgMarkedTime", "SumWeight", "SumWeightUnit", "SumPieces", "SumCube", "SumCubeUnitSumRevenue", "SumCost" ]
+            }
+          }
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "description" : "API key of the user.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/reports/async-export" : {
+      "get" : {
+        "summary" : "Asynchronous Report download.",
+        "description" : "Download the Report asynchronously.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ResponseUsers" : {
+        "type" : "object",
+        "properties" : {
+          "total" : {
+            "type" : "integer"
+          },
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseUsers_results"
+            }
+          }
+        }
+      },
+      "ResponseReports" : {
+        "type" : "object",
+        "properties" : {
+          "total" : {
+            "$ref" : "#/components/schemas/ResponseReports_total"
+          },
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseReports_results"
+            }
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          }
+        }
+      },
+      "body" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "job_id" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "ResponseUsers_results" : {
+        "type" : "object",
+        "properties" : {
+          "member_id" : {
+            "type" : "integer"
+          },
+          "OWNER_MEMBER_ID" : {
+            "type" : "integer"
+          },
+          "member_first_name" : {
+            "type" : "string"
+          },
+          "member_last_name" : {
+            "type" : "string"
+          },
+          "member_email" : {
+            "type" : "string"
+          },
+          "member_type" : {
+            "type" : "string",
+            "enum" : [ "PRIMARY_ACCOUNT", "SUB_ACCOUNT", "SUB_ACCOUNT_ADMIN", "SUB_ACCOUNT_REGIONAL_MANAGER", "SUB_ACCOUNT_DISPATCHER", "SUB_ACCOUNT_PLANNER", "SUB_ACCOUNT_DRIVER", "SUB_ACCOUNT_ANALYST" ]
+          }
+        }
+      },
+      "ResponseReports_total" : {
+        "type" : "object",
+        "properties" : {
+          "SumRoute" : {
+            "type" : "integer"
+          },
+          "SumVisited" : {
+            "type" : "integer"
+          },
+          "SumNotVisited" : {
+            "type" : "integer"
+          },
+          "SumDetected" : {
+            "type" : "integer"
+          },
+          "SumActualRouteDistance" : {
+            "type" : "number"
+          },
+          "SumActualRouteDuration" : {
+            "type" : "integer"
+          },
+          "CO2" : {
+            "type" : "number"
+          },
+          "CountStop" : {
+            "type" : "integer"
+          },
+          "NotesCount" : {
+            "type" : "integer"
+          },
+          "SumPlannedServiceTime" : {
+            "type" : "integer"
+          },
+          "AvgPlannedServiceTime" : {
+            "type" : "number"
+          },
+          "SumPlannedRouteDistance" : {
+            "type" : "number"
+          },
+          "SumPlannedRouteDuration" : {
+            "type" : "integer"
+          },
+          "GeofenceEnteredCount" : {
+            "type" : "integer"
+          },
+          "GeofenceLeftCount" : {
+            "type" : "integer"
+          },
+          "SumMarkedTime" : {
+            "type" : "integer"
+          },
+          "AvgMarkedTime" : {
+            "type" : "number"
+          },
+          "SumWeight" : {
+            "type" : "number"
+          },
+          "SumPieces" : {
+            "type" : "number"
+          },
+          "SumCube" : {
+            "type" : "number"
+          },
+          "SumRevenue" : {
+            "type" : "number"
+          },
+          "SumCost" : {
+            "type" : "number"
+          }
+        }
+      },
+      "ResponseReports_results" : {
+        "type" : "object",
+        "properties" : {
+          "Group" : {
+            "type" : "string",
+            "example" : "2020-01-02"
+          },
+          "SumRoute" : {
+            "type" : "integer"
+          },
+          "SumVisited" : {
+            "type" : "integer"
+          },
+          "SumNotVisited" : {
+            "type" : "integer"
+          },
+          "SumDetected" : {
+            "type" : "integer"
+          },
+          "SumActualRouteDistance" : {
+            "type" : "number"
+          },
+          "SumActualRouteDistanceUnit" : {
+            "type" : "string",
+            "enum" : [ "mi", "km" ]
+          },
+          "SumActualRouteDuration" : {
+            "type" : "integer"
+          },
+          "CO2" : {
+            "type" : "number"
+          },
+          "CountStop" : {
+            "type" : "integer"
+          },
+          "NotesCount" : {
+            "type" : "integer"
+          },
+          "SumPlannedServiceTime" : {
+            "type" : "integer"
+          },
+          "AvgPlannedServiceTime" : {
+            "type" : "number"
+          },
+          "SumPlannedRouteDistance" : {
+            "type" : "number"
+          },
+          "SumPlannedRouteDistanceUnit" : {
+            "type" : "string",
+            "enum" : [ "mi", "km" ]
+          },
+          "SumPlannedRouteDuration" : {
+            "type" : "integer"
+          },
+          "GeofenceEnteredCount" : {
+            "type" : "integer"
+          },
+          "GeofenceLeftCount" : {
+            "type" : "integer"
+          },
+          "SumMarkedTime" : {
+            "type" : "integer"
+          },
+          "AvgMarkedTime" : {
+            "type" : "number"
+          },
+          "SumWeight" : {
+            "type" : "integer"
+          },
+          "SumWeightUnit" : {
+            "type" : "string",
+            "enum" : [ "kg", "lb" ]
+          },
+          "SumPieces" : {
+            "type" : "integer"
+          },
+          "SumCube" : {
+            "type" : "integer"
+          },
+          "SumCubeUnit" : {
+            "type" : "string",
+            "enum" : [ "m3", "cu ft" ]
+          },
+          "SumRevenue" : {
+            "type" : "integer"
+          },
+          "SumCost" : {
+            "type" : "integer"
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "memberIdsParam" : {
+        "name" : "member_ids",
+        "in" : "query",
+        "description" : "Array of the associated member IDs.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      },
+      "startParam" : {
+        "name" : "start",
+        "in" : "query",
+        "description" : "Start of the date range (e.g., '2020-01-20' (YYYY-MM-DD)).",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "endParam" : {
+        "name" : "end",
+        "in" : "query",
+        "description" : "End of the date range (e.g., '2020-01-25' (YYYY-MM-DD)).",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "agregationParam" : {
+        "name" : "aggregation",
+        "in" : "query",
+        "description" : "Aggregation by a specific feature ('day' or 'stop-type').",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "day", "stop_type", "member" ]
+        }
+      },
+      "apiKeyParam" : {
+        "name" : "api_key",
+        "in" : "query",
+        "description" : "API key of the user.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

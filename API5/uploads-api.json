@@ -1,0 +1,561 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Uploads API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/file-uploads",
+    "description" : "Route4Me API V5"
+  }, {
+    "url" : "https://virtserver.swaggerhub.com/Route4Me/uploads-api/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "summary" : "Get Uploads.",
+        "description" : "Get the list of the Uploaded Files.",
+        "parameters" : [ {
+          "name" : "api_key",
+          "in" : "query",
+          "description" : "User's API key.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Uploads"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{Id}" : {
+      "get" : {
+        "summary" : "Get Uploaded Files by ID.",
+        "description" : "Get an Uploaded File by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "ID of the Uploaded File.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "description" : "User's API key.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Upload"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/download/{Id}" : {
+      "get" : {
+        "summary" : "Download Uploaded Files by ID.",
+        "description" : "Download a File by Upload ID that is specified as the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "ID of the Uploaded File.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "302" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Redirect302"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/upload" : {
+      "put" : {
+        "summary" : "Upload Files.",
+        "description" : "Upload a File by selecting it from a local folder and linking it to the specified route and destination.",
+        "requestBody" : {
+          "content" : {
+            "multipart/form-data" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Upload"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/apiconf" : {
+      "get" : {
+        "summary" : "Configuration request.",
+        "description" : "Get the configuration of the File Uploading application.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/datatable" : {
+      "get" : {
+        "summary" : "Get Uploads.",
+        "description" : "Search for the Uploaded Files by specifying the corresponding query parameters and retrieving a paginated list of the Uploaded Files.",
+        "parameters" : [ {
+          "name" : "upload_type",
+          "in" : "query",
+          "description" : "Uploaded File type.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "DRIVER_IMG", "VEHICLE_IMG", "ADDRESS_IMG", "CSV_FILE", "XLS_FILE", "ANY_FILE", "MOVIE", "ESIGNATURE_IMG" ]
+          }
+        }, {
+          "name" : "member_id",
+          "in" : "query",
+          "description" : "Member ID.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Route ID.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "upload_date_start",
+          "in" : "query",
+          "description" : "Date range start.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "upload_date_end",
+          "in" : "query",
+          "description" : "Date range end.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "order_by",
+          "in" : "query",
+          "description" : "[['filesize_bytes', 'asc']]",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Requested page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "description" : "Amount of the File information per page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "description" : "User's API key.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Uploads"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Upload" : {
+        "type" : "object",
+        "properties" : {
+          "upload_id" : {
+            "type" : "string"
+          },
+          "upload_date" : {
+            "type" : "string"
+          },
+          "upload_timestamp" : {
+            "type" : "integer"
+          },
+          "upload_extension" : {
+            "type" : "string"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "member_first_name" : {
+            "type" : "string"
+          },
+          "member_last_name" : {
+            "type" : "string"
+          },
+          "upload_type" : {
+            "type" : "string",
+            "enum" : [ "DRIVER_IMG", "VEHICLE_IMG", "ADDRESS_IMG", "CSV_FILE", "XLS_FILE", "ANY_FILE", "MOVIE", "ESIGNATURE_IMG" ]
+          },
+          "route_id" : {
+            "type" : "string"
+          },
+          "route_destination_id" : {
+            "type" : "integer"
+          },
+          "filesize_bytes" : {
+            "type" : "integer"
+          },
+          "optimization_problem_id" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Uploads" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Upload"
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          }
+        }
+      },
+      "Redirect302" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 302
+          }
+        }
+      },
+      "body" : {
+        "required" : [ "file", "route_destination_id", "route_id" ],
+        "type" : "object",
+        "properties" : {
+          "file" : {
+            "type" : "string",
+            "description" : "The File to Upload.",
+            "format" : "binary"
+          },
+          "upload_type" : {
+            "type" : "string",
+            "description" : "Uploaded File type.",
+            "enum" : [ "DRIVER_IMG", "VEHICLE_IMG", "ADDRESS_IMG", "CSV_FILE", "XLS_FILE", "ANY_FILE", "MOVIE", "ESIGNATURE_IMG" ]
+          },
+          "route_id" : {
+            "type" : "string",
+            "description" : "Route ID."
+          },
+          "route_destination_id" : {
+            "type" : "integer",
+            "description" : "Route destination ID."
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "api_capabilities" : {
+            "$ref" : "#/components/schemas/inline_response_200_api_capabilities"
+          },
+          "api_preferences" : {
+            "$ref" : "#/components/schemas/inline_response_200_api_preferences"
+          }
+        }
+      },
+      "inline_response_200_api_capabilities" : {
+        "type" : "object",
+        "properties" : {
+          "sortable_fields" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "filterable_fields" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "search" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "inline_response_200_api_preferences" : {
+        "type" : "object",
+        "properties" : {
+          "force_server_side_search" : {
+            "type" : "boolean"
+          },
+          "partial_load" : {
+            "type" : "boolean"
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      },
+      "Redirect" : {
+        "description" : "Link to the File.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Redirect302"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "apiKeyParam" : {
+        "name" : "api_key",
+        "in" : "query",
+        "description" : "User's API key.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "idParam" : {
+        "name" : "Id",
+        "in" : "path",
+        "description" : "ID of the Uploaded File.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

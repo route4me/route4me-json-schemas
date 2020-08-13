@@ -1,0 +1,2598 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Address Book API",
+    "description" : "Package for the Address Book API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/",
+    "description" : "Route4Me API V5"
+  }, {
+    "url" : "https://virtserver.swaggerhub.com/Route4Me/address-book/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "address-book-api",
+    "description" : "Everything about the Address Book API."
+  } ],
+  "paths" : {
+    "/addresses/index/all" : {
+      "get" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Get all Addresses.",
+        "description" : "Get all Addresses filtered by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "fields",
+          "in" : "query",
+          "description" : "The array of the fields to be included into the search results. e.g., [\"address_id\",  \"address_alias\", \"address_1\"].",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "uniqueItems" : true,
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "display",
+          "in" : "query",
+          "description" : "Specify which Addresses to show in the corresponding query results.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "all",
+            "enum" : [ "all", "routed", "unrouted" ]
+          }
+        }, {
+          "name" : "query",
+          "in" : "query",
+          "description" : "Search in the Addresses by the corresponding query phrase.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "Limit of the queried records number.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "offset",
+          "in" : "query",
+          "description" : "Offset from the beginning of the queried records.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "headers" : {
+              "Body-length" : {
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAll"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/responses/InvalidValue"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Get all Addresses.",
+        "description" : "Get all Addresses filtered and sorted by sending the corresponding body payload, with the option to search by the specified areas.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RequestBodyAll"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "headers" : {
+              "Body-length" : {
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAll"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/index/pagination" : {
+      "get" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Get a paginated list of all Addresses.",
+        "description" : "Get a paginated list of all Addresses.",
+        "parameters" : [ {
+          "name" : "fields",
+          "in" : "query",
+          "description" : "The array of the fields to be included into the search results. e.g., [\"address_id\",  \"address_alias\", \"address_1\"].",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "uniqueItems" : true,
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "display",
+          "in" : "query",
+          "description" : "Specify which Addresses to show in the corresponding query results.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "all",
+            "enum" : [ "all", "routed", "unrouted" ]
+          }
+        }, {
+          "name" : "query",
+          "in" : "query",
+          "description" : "Search in the Addresses by the corresponding query phrase.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Requested page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 1
+          }
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "description" : "Number of Addresses per page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 30
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "headers" : {
+              "Body-length" : {
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponsePagination"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Get a paginated list of all Addresses.",
+        "description" : "Get the paginated list of all Addresses filtered and sorted by sending the corresponding body payload, with the option to search by the specified areas.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RequestBodyPagination"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "headers" : {
+              "Body-length" : {
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponsePagination"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/index/clustering" : {
+      "get" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Get Address clusters.",
+        "description" : "Get the Address clusters filtered by the corresponding query text, and with the option to filter the result by the 'routed' and 'unrouted' state.",
+        "parameters" : [ {
+          "name" : "display",
+          "in" : "query",
+          "description" : "Specify which Addresses to show in the corresponding query results.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "all",
+            "enum" : [ "all", "routed", "unrouted" ]
+          }
+        }, {
+          "name" : "query",
+          "in" : "query",
+          "description" : "Search in the Addresses by the corresponding query phrase.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "headers" : {
+              "Body-length" : {
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseClustering"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Get Address clusters.",
+        "description" : "Get the Address clusters by sending the corresponding body payload.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RequestBodyClustering"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "headers" : {
+              "Body-length" : {
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseClustering"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/show" : {
+      "get" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Find an Address by ID.",
+        "description" : "Find an Address by sending the 'address_id' query parameter.",
+        "parameters" : [ {
+          "name" : "address_id",
+          "in" : "query",
+          "description" : "The Address ID to be searched for.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Address"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Find multiple Addresses by their IDs.",
+        "description" : "Find multiple Addresses by sending a body payload with the array of the corresponding Address IDs.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddressIdsProp"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "headers" : {
+              "Body-length" : {
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses" : {
+      "post" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Add a new Address.",
+        "description" : "Add a new Address Book Contact by sending a body payload with the corresponding parameters.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Address"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAddress"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/batch-create" : {
+      "post" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Add multiple Addresses.",
+        "description" : "Add multiple new Address Book Contacts by sending a body payload with the array of the corresponding Address parameters.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_1"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/{address_id}" : {
+      "put" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Update the Address by ID.",
+        "description" : "Update the Address Book Contact by specifying the 'address_id' path parameter and by sending a body payload with the corresponding Address parameters.",
+        "parameters" : [ {
+          "name" : "address_id",
+          "in" : "path",
+          "description" : "Address ID is specified as the path parameter.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "number"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Address"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAddress"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/batch-update" : {
+      "put" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Update multiple Addresses by their IDs.",
+        "description" : "Update multiple Address Book Contacts by sending a body payload with the array of the corresponding Address IDs and Address parameters.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AddressButchUpdate"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_1"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/update-by-areas" : {
+      "put" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Update Addresses by the selected areas.",
+        "description" : "Update Address Book Contacts by sending a body payload with the corresponding query text and specified territory areas.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_1"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "202" : {
+            "description" : "Job was queued.",
+            "headers" : {
+              "Location" : {
+                "description" : "Path to the status checker.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/delete" : {
+      "delete" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Delete multiple Addresses by their IDs.",
+        "description" : "Delete multiple Address Book Contacts by sending a body payload with the array of the corresponding Address IDs.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_2"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_2"
+                }
+              }
+            }
+          },
+          "202" : {
+            "description" : "Job was queued.",
+            "headers" : {
+              "Location" : {
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "string",
+                  "description" : "Path to the status checker."
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/delete-by-areas" : {
+      "delete" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Delete Addresses by the selected areas.",
+        "description" : "Delete the Address Book Contacts located in the selected areas by sending the corresponding body payload.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_3"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "202" : {
+            "description" : "Job was queued.",
+            "headers" : {
+              "Location" : {
+                "description" : "Path to the status checker.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/custom-fields" : {
+      "get" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Get Address custom fields.",
+        "description" : "Get all Address custom fields.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_3"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/export" : {
+      "post" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Export the specified Addresses.",
+        "description" : "Export Address Book Contacts to the specified file by sending a body payload with the array of the corresponding Address IDs.",
+        "parameters" : [ {
+          "name" : "filename",
+          "in" : "query",
+          "description" : "The file for exporting the corresponding Address Book Contacts.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "extension",
+          "in" : "query",
+          "description" : "File extension.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "csv",
+            "enum" : [ "csv", "tsv", "xls", "xlsx" ]
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_4"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "202" : {
+            "description" : "Job was queued.",
+            "headers" : {
+              "Location" : {
+                "description" : "Path to the status checker.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/export-by-areas" : {
+      "post" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Export Addresses by the selected areas.",
+        "description" : "Export the Address Book Contacts located in the selected areas by sending the corresponding body payload.",
+        "parameters" : [ {
+          "name" : "filename",
+          "in" : "query",
+          "description" : "The file for exporting the corresponding Address Book Contacts.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "extension",
+          "in" : "query",
+          "description" : "File extension.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "csv",
+            "enum" : [ "csv", "tsv", "xls", "xlsx" ]
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_5"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "202" : {
+            "description" : "Job was queued.",
+            "headers" : {
+              "Location" : {
+                "description" : "Path to the status checker.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/export/status{job_id}" : {
+      "get" : {
+        "tags" : [ "Check the job status." ],
+        "summary" : "Check the export job status.",
+        "description" : "Check the export job status by specifying the 'job_id' path parameter.",
+        "parameters" : [ {
+          "name" : "job_id",
+          "in" : "path",
+          "description" : "Export job ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "redirect",
+          "in" : "query",
+          "description" : "Set it to '0' if you want to disable the redirect to download a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 1,
+            "enum" : [ 0, 1 ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Export process status.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Export200"
+                }
+              }
+            }
+          },
+          "303" : {
+            "description" : "Export processed.",
+            "headers" : {
+              "Location" : {
+                "description" : "Path to the resource.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Export303"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/job-tracker/status/{job_id}" : {
+      "get" : {
+        "tags" : [ "Check the job status." ],
+        "summary" : "Check the asynchronous job status.",
+        "description" : "Check the asynchronous job status by specifying the 'job_id' path parameter.",
+        "parameters" : [ {
+          "name" : "job_id",
+          "in" : "path",
+          "description" : "Job ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Job process status.",
+            "headers" : {
+              "X-R4M-Async-Job-Running-Time" : {
+                "description" : "Job running time in seconds.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/JobTrackerPending"
+                }
+              }
+            }
+          },
+          "303" : {
+            "description" : "Job process status.",
+            "headers" : {
+              "Location" : {
+                "description" : "Path to the job result.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/JobTracker303"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/addresses/job-tracker/result/{job_id}" : {
+      "get" : {
+        "tags" : [ "Get the job result." ],
+        "summary" : "Get the asynchronous job result.",
+        "description" : "Check the asynchronous job status by specifying the 'job_id' path parameter.",
+        "parameters" : [ {
+          "name" : "job_id",
+          "in" : "path",
+          "description" : "Job ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Job ended with success.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/JobResult200"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Job ended with success.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/JobResult500"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Address" : {
+        "required" : [ "address_1", "cached_lat", "cached_lng" ],
+        "type" : "object",
+        "properties" : {
+          "address_1" : {
+            "type" : "string",
+            "example" : "999 Aurelio Summit, Jamirtown, CO 52979-8465"
+          },
+          "address_2" : {
+            "type" : "string"
+          },
+          "address_zip" : {
+            "type" : "string"
+          },
+          "address_group" : {
+            "type" : "string"
+          },
+          "address_alias" : {
+            "type" : "string",
+            "example" : "Jenkins Ways"
+          },
+          "address_city" : {
+            "type" : "string"
+          },
+          "address_state_id" : {
+            "type" : "string"
+          },
+          "address_country_id" : {
+            "type" : "string"
+          },
+          "first_name" : {
+            "type" : "string",
+            "example" : "Keyon"
+          },
+          "last_name" : {
+            "type" : "string",
+            "example" : "Will"
+          },
+          "address_email" : {
+            "type" : "string"
+          },
+          "address_phone_number" : {
+            "type" : "string"
+          },
+          "cached_lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "cached_lng" : {
+            "type" : "number",
+            "example" : -162.156663
+          },
+          "curbside_lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "curbside_lng" : {
+            "type" : "number",
+            "example" : -162.156663
+          },
+          "address_custom_data" : {
+            "$ref" : "#/components/schemas/Address_address_custom_data"
+          },
+          "local_time_window_start" : {
+            "type" : "number"
+          },
+          "local_time_window_end" : {
+            "type" : "number"
+          },
+          "local_time_window_start_2" : {
+            "type" : "number"
+          },
+          "local_time_window_end_2" : {
+            "type" : "number"
+          },
+          "local_timezone_string" : {
+            "type" : "string"
+          },
+          "service_time" : {
+            "type" : "number"
+          },
+          "color" : {
+            "type" : "string",
+            "example" : "000000"
+          },
+          "address_icon" : {
+            "type" : "string"
+          },
+          "schedule" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ScheduleItem"
+            }
+          },
+          "schedule_blacklist" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ScheduleBlacklistItem"
+            }
+          },
+          "address_stop_type" : {
+            "type" : "string"
+          },
+          "address_cube" : {
+            "type" : "number"
+          },
+          "address_pieces" : {
+            "type" : "number"
+          },
+          "address_reference_no" : {
+            "type" : "string"
+          },
+          "address_revenue" : {
+            "type" : "number"
+          },
+          "address_weight" : {
+            "type" : "number"
+          },
+          "address_priority" : {
+            "type" : "number"
+          },
+          "address_customer_po" : {
+            "type" : "string"
+          },
+          "assigned_to" : {
+            "$ref" : "#/components/schemas/AssignedTo"
+          }
+        }
+      },
+      "AddressButchUpdate" : {
+        "type" : "object",
+        "properties" : {
+          "address_ids" : {
+            "$ref" : "#/components/schemas/AddressIdsProp"
+          },
+          "address_1" : {
+            "type" : "string",
+            "example" : "999 Aurelio Summit, Jamirtown, CO 52979-8465"
+          },
+          "address_2" : {
+            "type" : "string"
+          },
+          "address_zip" : {
+            "type" : "string"
+          },
+          "address_group" : {
+            "type" : "string"
+          },
+          "address_alias" : {
+            "type" : "string",
+            "example" : "Jenkins Ways"
+          },
+          "address_city" : {
+            "type" : "string"
+          },
+          "address_state_id" : {
+            "type" : "string"
+          },
+          "address_country_id" : {
+            "type" : "string"
+          },
+          "first_name" : {
+            "type" : "string",
+            "example" : "Keyon"
+          },
+          "last_name" : {
+            "type" : "string",
+            "example" : "Will"
+          },
+          "address_email" : {
+            "type" : "string"
+          },
+          "address_phone_number" : {
+            "type" : "string"
+          },
+          "cached_lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "cached_lng" : {
+            "type" : "number",
+            "example" : -162.156663
+          },
+          "curbside_lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "curbside_lng" : {
+            "type" : "number",
+            "example" : -162.156663
+          },
+          "address_custom_data" : {
+            "$ref" : "#/components/schemas/Address_address_custom_data"
+          },
+          "local_time_window_start" : {
+            "type" : "number"
+          },
+          "local_time_window_end" : {
+            "type" : "number"
+          },
+          "local_time_window_start_2" : {
+            "type" : "number"
+          },
+          "local_time_window_end_2" : {
+            "type" : "number"
+          },
+          "local_timezone_string" : {
+            "type" : "string"
+          },
+          "service_time" : {
+            "type" : "number"
+          },
+          "color" : {
+            "type" : "string",
+            "example" : "000000"
+          },
+          "address_icon" : {
+            "type" : "string"
+          },
+          "schedule" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ScheduleItem"
+            }
+          },
+          "schedule_blacklist" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ScheduleBlacklistItem"
+            }
+          },
+          "address_stop_type" : {
+            "type" : "string"
+          },
+          "address_cube" : {
+            "type" : "number"
+          },
+          "address_pieces" : {
+            "type" : "number"
+          },
+          "address_reference_no" : {
+            "type" : "string"
+          },
+          "address_revenue" : {
+            "type" : "number"
+          },
+          "address_weight" : {
+            "type" : "number"
+          },
+          "address_priority" : {
+            "type" : "number"
+          },
+          "address_customer_po" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Cluster" : {
+        "required" : [ "address_1", "cached_lat", "cached_lng" ],
+        "type" : "object",
+        "properties" : {
+          "geohash" : {
+            "type" : "string",
+            "example" : "1mr8h4r9"
+          },
+          "lat" : {
+            "type" : "number",
+            "example" : -60.456132888793945
+          },
+          "lng" : {
+            "type" : "number",
+            "example" : -60.456132888793945
+          },
+          "bbox" : {
+            "type" : "array",
+            "example" : [ [ -60.45621871948242, -113.01704406738281 ], [ -60.45604705810547, -113.0167007446289 ] ],
+            "items" : {
+              "type" : "number"
+            }
+          },
+          "address_count" : {
+            "type" : "number",
+            "example" : 1
+          }
+        }
+      },
+      "Export200" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string",
+            "description" : "Current export status.",
+            "enum" : [ "completed", "panding", "failed" ]
+          },
+          "link" : {
+            "type" : "string",
+            "description" : "Link to download. Available if the redirect parameter is set to '0'."
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 200
+          }
+        }
+      },
+      "Export303" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string",
+            "description" : "Current export status.",
+            "enum" : [ "completed" ]
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 303
+          }
+        }
+      },
+      "JobTrackerPending" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string",
+            "description" : "Specified job status.",
+            "enum" : [ "started", "processing", "exception_occurred" ]
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 200
+          }
+        }
+      },
+      "JobTracker303" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string",
+            "description" : "Specified job status.",
+            "enum" : [ "processed", "failed" ]
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 303
+          }
+        }
+      },
+      "JobResult200" : {
+        "type" : "object",
+        "example" : {
+          "status" : true
+        }
+      },
+      "JobResult500" : {
+        "type" : "object",
+        "properties" : {
+          "errors" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "type" : "object"
+          }
+        }
+      },
+      "Filter" : {
+        "type" : "object",
+        "properties" : {
+          "query" : {
+            "type" : "string",
+            "example" : "some query string"
+          },
+          "selected_areas" : {
+            "$ref" : "#/components/schemas/SelectedAreas"
+          },
+          "bounding_box" : {
+            "$ref" : "#/components/schemas/BoundingBox"
+          },
+          "center" : {
+            "$ref" : "#/components/schemas/Filter_center"
+          },
+          "distance" : {
+            "type" : "number",
+            "example" : 500,
+            "default" : 500
+          },
+          "display" : {
+            "type" : "string",
+            "default" : "all",
+            "enum" : [ "all", "routed", "unrouted" ]
+          },
+          "assigned_member_id" : {
+            "type" : "number",
+            "example" : 1
+          },
+          "is_assigned" : {
+            "type" : "boolean",
+            "example" : false
+          }
+        }
+      },
+      "OrderBy" : {
+        "type" : "array",
+        "description" : "You can sort the results using the specified fields: * address_1 * address_alias * first_name * last_name * address_phone_number * address_email * address_group * in_route_count * visited_count * last_visited_timestamp * last_routed_timestamp\n",
+        "example" : [ [ "address_1", "desc" ], [ "address_alias", "desc" ], [ "first_name", "asc" ] ],
+        "items" : {
+          "type" : "string"
+        }
+      },
+      "RequestBodyAll" : {
+        "type" : "object",
+        "properties" : {
+          "fields" : {
+            "type" : "array",
+            "example" : [ "address_id", "address_alias" ],
+            "items" : {
+              "uniqueItems" : true,
+              "type" : "string"
+            },
+            "default" : [ ]
+          },
+          "filter" : {
+            "$ref" : "#/components/schemas/Filter"
+          },
+          "order_by" : {
+            "$ref" : "#/components/schemas/OrderBy"
+          },
+          "limit" : {
+            "type" : "number",
+            "example" : 25
+          },
+          "offset" : {
+            "type" : "number"
+          }
+        }
+      },
+      "RequestBodyPagination" : {
+        "type" : "object",
+        "properties" : {
+          "fields" : {
+            "type" : "array",
+            "example" : [ "address_id", "address_alias" ],
+            "items" : {
+              "uniqueItems" : true,
+              "type" : "string"
+            },
+            "default" : [ ]
+          },
+          "filter" : {
+            "$ref" : "#/components/schemas/Filter"
+          },
+          "order_by" : {
+            "$ref" : "#/components/schemas/OrderBy"
+          },
+          "page" : {
+            "type" : "number",
+            "example" : 1
+          },
+          "per_page" : {
+            "type" : "number",
+            "example" : 30
+          }
+        }
+      },
+      "RequestBodyClustering" : {
+        "type" : "object",
+        "properties" : {
+          "clustering" : {
+            "$ref" : "#/components/schemas/RequestBodyClustering_clustering"
+          },
+          "filter" : {
+            "$ref" : "#/components/schemas/Filter"
+          }
+        }
+      },
+      "ResponseAddress" : {
+        "type" : "object",
+        "properties" : {
+          "created_timestamp" : {
+            "type" : "string",
+            "example" : "2019-08-08T08:53:03+00:00"
+          },
+          "address_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "address_group" : {
+            "type" : "string"
+          },
+          "address_alias" : {
+            "type" : "string",
+            "example" : "Jenkins Ways"
+          },
+          "address_1" : {
+            "type" : "string",
+            "example" : "999 Aurelio Summit, Jamirtown, CO 52979-8465"
+          },
+          "address_2" : {
+            "type" : "string"
+          },
+          "member_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "first_name" : {
+            "type" : "string",
+            "example" : "Keyon"
+          },
+          "last_name" : {
+            "type" : "string",
+            "example" : "Will"
+          },
+          "address_email" : {
+            "type" : "string"
+          },
+          "address_phone_number" : {
+            "type" : "string"
+          },
+          "address_city" : {
+            "type" : "string"
+          },
+          "address_state_id" : {
+            "type" : "string"
+          },
+          "address_country_id" : {
+            "type" : "string"
+          },
+          "address_zip" : {
+            "type" : "string"
+          },
+          "cached_lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "cached_lng" : {
+            "type" : "number",
+            "example" : -162.156663
+          },
+          "curbside_lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "curbside_lng" : {
+            "type" : "number",
+            "example" : -162.156663
+          },
+          "address_custom_data" : {
+            "$ref" : "#/components/schemas/Address_address_custom_data"
+          },
+          "schedule" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ScheduleItem"
+            }
+          },
+          "schedule_blacklist" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ScheduleBlacklistItem"
+            }
+          },
+          "in_route_count" : {
+            "type" : "number"
+          },
+          "visited_count" : {
+            "type" : "number"
+          },
+          "last_visited_timestamp" : {
+            "type" : "number"
+          },
+          "last_routed_timestamp" : {
+            "type" : "number"
+          },
+          "local_time_window_start" : {
+            "type" : "number"
+          },
+          "local_time_window_end" : {
+            "type" : "number"
+          },
+          "local_time_window_start_2" : {
+            "type" : "number"
+          },
+          "local_time_window_end_2" : {
+            "type" : "number"
+          },
+          "service_time" : {
+            "type" : "number"
+          },
+          "local_timezone_string" : {
+            "type" : "string"
+          },
+          "color" : {
+            "type" : "string",
+            "example" : "000000"
+          },
+          "address_icon" : {
+            "type" : "string"
+          },
+          "address_stop_type" : {
+            "type" : "string"
+          },
+          "address_cube" : {
+            "type" : "number"
+          },
+          "address_pieces" : {
+            "type" : "number"
+          },
+          "address_reference_no" : {
+            "type" : "string"
+          },
+          "address_revenue" : {
+            "type" : "number"
+          },
+          "address_weight" : {
+            "type" : "number"
+          },
+          "address_priority" : {
+            "type" : "number"
+          },
+          "address_customer_po" : {
+            "type" : "string"
+          },
+          "assigned_to" : {
+            "$ref" : "#/components/schemas/AssignedTo"
+          }
+        }
+      },
+      "ResponseAll" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseAddress"
+            }
+          },
+          "total" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "fields" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "ResponsePagination" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseAddress"
+            }
+          },
+          "total" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "current_page" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "last_page" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "per_page" : {
+            "type" : "integer",
+            "example" : 30
+          },
+          "fields" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "ResponseClustering" : {
+        "type" : "object",
+        "properties" : {
+          "clusters" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Cluster"
+            }
+          },
+          "total" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        }
+      },
+      "ResponseCustomFields" : {
+        "type" : "object",
+        "properties" : {
+          "label" : {
+            "type" : "string",
+            "example" : "Address"
+          },
+          "value" : {
+            "type" : "string",
+            "example" : "address_1"
+          },
+          "kind" : {
+            "type" : "string",
+            "example" : "static",
+            "enum" : [ "static", "dynamic" ]
+          },
+          "type" : {
+            "type" : "string",
+            "example" : "string"
+          },
+          "operators_exclude" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "SelectedAreas" : {
+        "type" : "array",
+        "example" : [ {
+          "type" : "circle",
+          "value" : {
+            "center" : {
+              "lat" : 40.00015,
+              "lng" : 80.00028
+            },
+            "distance" : 100000
+          }
+        }, {
+          "type" : "polygon",
+          "value" : {
+            "points" : [ [ -74, 40 ], [ -88, 30 ], [ -90, 25 ], [ -92, 58 ] ]
+          }
+        }, {
+          "type" : "rect",
+          "value" : {
+            "top_left" : [ 50, 90 ],
+            "bottom_right" : [ 48, 70 ]
+          }
+        } ],
+        "items" : {
+          "$ref" : "#/components/schemas/SelectedAreas_inner"
+        }
+      },
+      "SearchQuery" : {
+        "type" : "string"
+      },
+      "BoundingBox" : {
+        "type" : "object",
+        "properties" : {
+          "top" : {
+            "type" : "number",
+            "example" : 40.73
+          },
+          "left" : {
+            "type" : "number",
+            "example" : -74.1
+          },
+          "bottom" : {
+            "type" : "number",
+            "example" : 40.01
+          },
+          "right" : {
+            "type" : "number",
+            "example" : 71.12
+          }
+        }
+      },
+      "AddressIdsProp" : {
+        "type" : "array",
+        "example" : [ 1, 2, 3 ],
+        "items" : {
+          "type" : "number"
+        }
+      },
+      "ScheduleItem" : {
+        "type" : "object",
+        "properties" : {
+          "enabled" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "mode" : {
+            "type" : "string",
+            "example" : "monthly"
+          },
+          "monthly" : {
+            "$ref" : "#/components/schemas/ScheduleItem_monthly"
+          }
+        }
+      },
+      "ScheduleBlacklistItem" : {
+        "type" : "array",
+        "description" : "Also can be a date string with the 'YYYY-MM-DD' format.",
+        "example" : [ null, "2019-12-12" ],
+        "items" : {
+          "type" : "string"
+        }
+      },
+      "AssignedTo" : {
+        "type" : "object",
+        "properties" : {
+          "member_id" : {
+            "type" : "number",
+            "example" : 2
+          },
+          "member_first_name" : {
+            "type" : "string",
+            "example" : "John"
+          },
+          "member_last_name" : {
+            "type" : "string",
+            "example" : "Doe"
+          },
+          "member_email" : {
+            "type" : "string"
+          },
+          "until" : {
+            "type" : "string",
+            "example" : "2019-12-23T09:31:38+00:00"
+          }
+        }
+      },
+      "UpdatableFields" : {
+        "type" : "object",
+        "properties" : {
+          "address_group" : {
+            "type" : "string"
+          },
+          "address_alias" : {
+            "type" : "string",
+            "example" : "Jenkins Ways"
+          },
+          "member_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "first_name" : {
+            "type" : "string",
+            "example" : "Keyon"
+          },
+          "last_name" : {
+            "type" : "string",
+            "example" : "Will"
+          },
+          "address_email" : {
+            "type" : "string"
+          },
+          "address_phone_number" : {
+            "type" : "string"
+          },
+          "address_custom_data" : {
+            "$ref" : "#/components/schemas/Address_address_custom_data"
+          },
+          "local_time_window_start" : {
+            "type" : "number"
+          },
+          "local_time_window_end" : {
+            "type" : "number"
+          },
+          "local_time_window_start_2" : {
+            "type" : "number"
+          },
+          "local_time_window_end_2" : {
+            "type" : "number"
+          },
+          "service_time" : {
+            "type" : "number"
+          },
+          "local_timezone_string" : {
+            "type" : "string"
+          },
+          "color" : {
+            "type" : "string",
+            "example" : "000000"
+          },
+          "address_icon" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Address"
+            }
+          },
+          "total" : {
+            "type" : "integer",
+            "example" : 3
+          }
+        }
+      },
+      "body" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Address"
+            }
+          }
+        }
+      },
+      "inline_response_200_1" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseAddress"
+            }
+          }
+        }
+      },
+      "addressesupdatebyareas_filter" : {
+        "type" : "object",
+        "properties" : {
+          "query" : {
+            "$ref" : "#/components/schemas/SearchQuery"
+          },
+          "bounding_box" : {
+            "$ref" : "#/components/schemas/BoundingBox"
+          },
+          "selected_areas" : {
+            "$ref" : "#/components/schemas/SelectedAreas"
+          }
+        }
+      },
+      "body_1" : {
+        "type" : "object",
+        "properties" : {
+          "filter" : {
+            "$ref" : "#/components/schemas/addressesupdatebyareas_filter"
+          },
+          "data" : {
+            "$ref" : "#/components/schemas/UpdatableFields"
+          }
+        },
+        "description" : "The 'filter.query' and 'filter.bounding_box' parameters are not required."
+      },
+      "body_2" : {
+        "type" : "object",
+        "properties" : {
+          "address_ids" : {
+            "$ref" : "#/components/schemas/AddressIdsProp"
+          }
+        }
+      },
+      "inline_response_200_2" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : true
+          }
+        }
+      },
+      "body_3" : {
+        "type" : "object",
+        "properties" : {
+          "filter" : {
+            "$ref" : "#/components/schemas/addressesupdatebyareas_filter"
+          }
+        },
+        "description" : "The 'filter.query' and 'filter.bounding_box' parameters are not required."
+      },
+      "inline_response_200_3" : {
+        "type" : "object",
+        "properties" : {
+          "custom_fields" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseCustomFields"
+            }
+          }
+        }
+      },
+      "body_4" : {
+        "type" : "object",
+        "properties" : {
+          "ids" : {
+            "type" : "array",
+            "example" : [ 1, 2, 3 ],
+            "items" : {
+              "type" : "number"
+            }
+          }
+        }
+      },
+      "body_5" : {
+        "type" : "object",
+        "properties" : {
+          "filter" : {
+            "$ref" : "#/components/schemas/addressesupdatebyareas_filter"
+          }
+        },
+        "description" : "The 'filter.query' and 'filter.bounding_box' parameters are not required."
+      },
+      "Address_address_custom_data" : {
+        "type" : "object",
+        "properties" : {
+          "custom field name #1" : {
+            "type" : "string",
+            "example" : "custom field value #1"
+          },
+          "custom field name #2" : {
+            "type" : "string",
+            "example" : "custom field value #2"
+          }
+        }
+      },
+      "Filter_center" : {
+        "type" : "object",
+        "properties" : {
+          "lat" : {
+            "type" : "number",
+            "example" : 86.861606
+          },
+          "lng" : {
+            "type" : "number",
+            "example" : -61.215082
+          }
+        }
+      },
+      "RequestBodyClustering_clustering" : {
+        "type" : "object",
+        "properties" : {
+          "precision" : {
+            "maximum" : 12,
+            "minimum" : 1,
+            "type" : "number",
+            "example" : 5,
+            "default" : 5
+          }
+        }
+      },
+      "SelectedAreas_inner" : {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "enum" : [ "circle", "polygon", "rect" ]
+          },
+          "value" : {
+            "type" : "object"
+          }
+        }
+      },
+      "ScheduleItem_monthly" : {
+        "type" : "object",
+        "properties" : {
+          "every" : {
+            "type" : "number",
+            "example" : 1
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      },
+      "ExportStatus" : {
+        "description" : "Export process status.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Export200"
+            }
+          }
+        }
+      },
+      "ExportCompleted303" : {
+        "description" : "Export processed.",
+        "headers" : {
+          "Location" : {
+            "description" : "Path to the resource.",
+            "style" : "simple",
+            "explode" : false,
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Export303"
+            }
+          }
+        }
+      },
+      "JobStatusPending" : {
+        "description" : "Job process status.",
+        "headers" : {
+          "X-R4M-Async-Job-Running-Time" : {
+            "description" : "Job running time in seconds.",
+            "style" : "simple",
+            "explode" : false,
+            "schema" : {
+              "type" : "integer"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/JobTrackerPending"
+            }
+          }
+        }
+      },
+      "JobStatus303" : {
+        "description" : "Job process status.",
+        "headers" : {
+          "Location" : {
+            "description" : "Path to the job result.",
+            "style" : "simple",
+            "explode" : false,
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/JobTracker303"
+            }
+          }
+        }
+      },
+      "JobResultSuccess" : {
+        "description" : "Job ended with success.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/JobResult200"
+            }
+          }
+        }
+      },
+      "JobResultError" : {
+        "description" : "Job ended with success.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/JobResult500"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "fieldsParam" : {
+        "name" : "fields",
+        "in" : "query",
+        "description" : "The array of the fields to be included into the search results. e.g., [\"address_id\",  \"address_alias\", \"address_1\"].",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "uniqueItems" : true,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      },
+      "displayParam" : {
+        "name" : "display",
+        "in" : "query",
+        "description" : "Specify which Addresses to show in the corresponding query results.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string",
+          "default" : "all",
+          "enum" : [ "all", "routed", "unrouted" ]
+        }
+      },
+      "queryParam" : {
+        "name" : "query",
+        "in" : "query",
+        "description" : "Search in the Addresses by the corresponding query phrase.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "pageParam" : {
+        "name" : "page",
+        "in" : "query",
+        "description" : "Requested page.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number",
+          "default" : 1
+        }
+      },
+      "perPageParam" : {
+        "name" : "per_page",
+        "in" : "query",
+        "description" : "Number of Addresses per page.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number",
+          "default" : 30
+        }
+      },
+      "addressIdParam" : {
+        "name" : "address_id",
+        "in" : "query",
+        "description" : "The Address ID to be searched for.",
+        "required" : true,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number"
+        }
+      },
+      "extensionParam" : {
+        "name" : "extension",
+        "in" : "query",
+        "description" : "File extension.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string",
+          "default" : "csv",
+          "enum" : [ "csv", "tsv", "xls", "xlsx" ]
+        }
+      },
+      "fileNameParam" : {
+        "name" : "filename",
+        "in" : "query",
+        "description" : "The file for exporting the corresponding Address Book Contacts.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "limitParam" : {
+        "name" : "limit",
+        "in" : "query",
+        "description" : "Limit of the queried records number.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number"
+        }
+      },
+      "offsetParam" : {
+        "name" : "offset",
+        "in" : "query",
+        "description" : "Offset from the beginning of the queried records.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number"
+        }
+      },
+      "jobIdParam" : {
+        "name" : "job_id",
+        "in" : "path",
+        "description" : "Job ID.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "ExportjobIdParam" : {
+        "name" : "job_id",
+        "in" : "path",
+        "description" : "Export job ID.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "number"
+        }
+      },
+      "isRedirectedParam" : {
+        "name" : "redirect",
+        "in" : "query",
+        "description" : "Set it to '0' if you want to disable the redirect to download a file.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number",
+          "default" : 1,
+          "enum" : [ 0, 1 ]
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

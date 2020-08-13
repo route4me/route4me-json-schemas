@@ -1,0 +1,242 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Security Logging API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/security-logging",
+    "description" : "Route4Me API V5"
+  }, {
+    "url" : "https://virtserver.swaggerhub.com/Route4Me/address-book/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/logs" : {
+      "get" : {
+        "tags" : [ "Logs" ],
+        "summary" : "Get the list of Logs.",
+        "description" : "Get the list of Security Logs.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Log"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "APIKeyHeaderParam" : [ ]
+        } ]
+      },
+      "post" : {
+        "tags" : [ "Logs" ],
+        "summary" : "Upload a Log.",
+        "description" : "Upload a Log by sending the corresponding body payload.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Log"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Not Acceptable.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/logs/{log_id}" : {
+      "get" : {
+        "tags" : [ "Logs" ],
+        "summary" : "Get the Log by ID.",
+        "description" : "Get the Log by specifying the 'log_id' path parameter.",
+        "parameters" : [ {
+          "name" : "log_id",
+          "in" : "path",
+          "description" : "Log ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Log"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Log" : {
+        "required" : [ "created_at", "event", "ip", "log_id", "model", "user_agent", "user_id", "user_model" ],
+        "type" : "object",
+        "properties" : {
+          "log_id" : {
+            "type" : "string",
+            "example" : "5e15b91a285f4"
+          },
+          "model" : {
+            "type" : "string",
+            "example" : "my_model"
+          },
+          "event" : {
+            "type" : "string",
+            "example" : "create"
+          },
+          "user_id" : {
+            "type" : "number",
+            "example" : 1
+          },
+          "user_model" : {
+            "type" : "string",
+            "example" : "Route4Me\\\\Helpers\\\\Models\\\\Member"
+          },
+          "created_at" : {
+            "type" : "string",
+            "example" : "2020-01-08T11:12:26.000Z"
+          },
+          "ip" : {
+            "type" : "string",
+            "example" : "127.0.0.1"
+          },
+          "user_agent" : {
+            "type" : "string",
+            "example" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36\n"
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "$ref" : "#/components/schemas/Error406_messages"
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "body" : {
+        "type" : "object",
+        "properties" : {
+          "model" : {
+            "type" : "string",
+            "example" : "my_model"
+          },
+          "event" : {
+            "type" : "string",
+            "example" : "create"
+          }
+        }
+      },
+      "Error406_messages" : {
+        "type" : "object",
+        "properties" : {
+          "model" : {
+            "type" : "array",
+            "example" : [ "The model must be a string.", "The model field is required." ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "event" : {
+            "type" : "array",
+            "example" : [ "The event must be a string.", "The event field is required." ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

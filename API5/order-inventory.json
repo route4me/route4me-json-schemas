@@ -1,0 +1,461 @@
+{
+  "openapi" : "3.0.3",
+  "info" : {
+    "title" : "Route4Me Order Inventories API",
+    "description" : "Package for Order Inventories.",
+    "version" : "5.0"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/webapi/v5.0/"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "order-inventory",
+    "description" : "Everything about Order Inventories."
+  } ],
+  "paths" : {
+    "/order-inventory/{order_id}" : {
+      "get" : {
+        "tags" : [ "order-inventory" ],
+        "summary" : "Get all Inventories of the Order.",
+        "description" : "Get all Inventories of the specified Order by specifying the 'order_id' path parameter.",
+        "operationId" : "getOrderInventories",
+        "parameters" : [ {
+          "name" : "order_id",
+          "in" : "path",
+          "description" : "Order ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Order's Inventories loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderInventoryList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "order-inventory" ],
+        "summary" : "Store the Order's Inventories.",
+        "description" : "Store the Inventories of the specified Order by specifying the 'order_id' path parameter and by sending the corresponding body payload.",
+        "operationId" : "storeInventoriesOfOrder",
+        "parameters" : [ {
+          "name" : "order_id",
+          "in" : "path",
+          "description" : "Order ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "OrderInventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderInventoryUpdateRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Order's Inventories stored.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderInventoryList"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "order-inventory" ],
+        "summary" : "Delete all Order's Inventories.",
+        "description" : "Delete all Inventories of the Order by specifying the 'order_id' path parameter",
+        "operationId" : "deleteAllInventoriesOfOrder",
+        "parameters" : [ {
+          "name" : "order_id",
+          "in" : "path",
+          "description" : "Order ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "returns empty array",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "tags" : [ "order-inventory" ],
+        "summary" : "Update Inventories of the Order.",
+        "description" : "Update the Inventories of the specified Order by specifying the 'order_id' path parameter and by sending the corresponding body payload.",
+        "operationId" : "updateInventoriesOfOrder",
+        "parameters" : [ {
+          "name" : "order_id",
+          "in" : "path",
+          "description" : "Order ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "OrderInventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderInventoryUpdateRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Order's Inventories updated.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderInventoryList"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/order-inventory{order_id}/items" : {
+      "delete" : {
+        "tags" : [ "order-inventory" ],
+        "summary" : "Delete selected the Order's Inventories.",
+        "description" : "Delete the Inventories of the Order by specifying the 'order_id' path parameter and by sending the corresponding body payload with the array of the associated Inventory IDs.",
+        "operationId" : "deleteSelectedInventoriesOfOrder",
+        "parameters" : [ {
+          "name" : "order_id",
+          "in" : "path",
+          "description" : "Order ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "OrderInventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/OrderInventoryDelete"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Order's Inventories deleted.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderInventoryList"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/order-inventory" : {
+      "delete" : {
+        "tags" : [ "order-inventory" ],
+        "summary" : "Removes all the links between orders and inventory items",
+        "description" : "Removes all the links between orders and inventory items",
+        "operationId" : "deleteInventoriesOrders",
+        "responses" : {
+          "200" : {
+            "description" : "returns empty array",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/order-inventory/orders" : {
+      "get" : {
+        "tags" : [ "order-inventory" ],
+        "summary" : "Get all orders with inventories information",
+        "description" : "Get all orders with inventories information",
+        "operationId" : "getAllOrders",
+        "responses" : {
+          "200" : {
+            "description" : "Orders with inventories",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/OrderList"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "OrderInventory" : {
+        "type" : "object",
+        "properties" : {
+          "inventory_id" : {
+            "type" : "integer"
+          },
+          "order_id" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "quantity" : {
+            "type" : "integer"
+          },
+          "total_weight" : {
+            "type" : "number"
+          },
+          "total_volume" : {
+            "type" : "number"
+          },
+          "total_cost" : {
+            "type" : "number"
+          },
+          "total_price" : {
+            "type" : "number"
+          },
+          "created_at" : {
+            "type" : "string"
+          },
+          "updated_at" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Order" : {
+        "type" : "object",
+        "properties" : {
+          "address_1" : {
+            "type" : "string"
+          },
+          "address_2" : {
+            "type" : "string"
+          },
+          "address_alias" : {
+            "type" : "string"
+          },
+          "first_name" : {
+            "type" : "string"
+          },
+          "last_name" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "phone" : {
+            "type" : "string"
+          },
+          "inventories" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OrderInventory"
+            }
+          }
+        }
+      },
+      "OrderInventoryList" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/OrderInventory"
+        }
+      },
+      "OrderList" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Order"
+        }
+      },
+      "ApiResponse" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer"
+          },
+          "status" : {
+            "type" : "string",
+            "default" : "false"
+          },
+          "messages" : {
+            "type" : "string"
+          }
+        }
+      },
+      "OrderInventoryUpdateRequestSub" : {
+        "required" : [ "inventory_id", "quantity" ],
+        "type" : "object",
+        "properties" : {
+          "inventory_id" : {
+            "type" : "string"
+          },
+          "quantity" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "OrderInventoryUpdateRequest" : {
+        "required" : [ "inventory" ],
+        "type" : "object",
+        "properties" : {
+          "inventory" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/OrderInventoryUpdateRequestSub"
+            }
+          }
+        }
+      },
+      "OrderInventoryDelete" : {
+        "required" : [ "inventory_ids" ],
+        "type" : "object",
+        "properties" : {
+          "inventory_ids" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

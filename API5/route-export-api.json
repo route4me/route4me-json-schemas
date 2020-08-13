@@ -1,0 +1,1574 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "5.1",
+    "title" : "Route4Me Route Export API"
+  },
+  "host" : "wh.route4me.com",
+  "basePath" : "/modules/api/v5.1/routes",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/{route_id}/export" : {
+      "get" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export route information",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "text/csv", "text/xml", "text/html" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "type" : "file",
+              "format" : "string"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export route information",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "text/csv", "text/xml", "text/html" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "type" : "file",
+              "format" : "string"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      }
+    },
+    "/{route_id}/export/{export_profile_id}" : {
+      "get" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export route information",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "text/csv", "text/xml", "text/html" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "number"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "type" : "file",
+              "format" : "string"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export route information",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "text/csv", "text/xml", "text/html" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "number"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "type" : "file",
+              "format" : "string"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      }
+    },
+    "/export" : {
+      "get" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export informations of many routes",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "text/csv", "text/xml", "text/html" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "type" : "file",
+              "format" : "string"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export informations of many routes",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "text/csv", "text/xml", "text/html" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "type" : "file",
+              "format" : "string"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      }
+    },
+    "/export/{export_profile_id}" : {
+      "get" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export informations of many routes",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "text/csv", "text/xml", "text/html" ],
+        "parameters" : [ {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "number"
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "type" : "file",
+              "format" : "string"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export informations of many routes",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json", "text/csv", "text/xml", "text/html" ],
+        "parameters" : [ {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "number"
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "type" : "file",
+              "format" : "string"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      }
+    },
+    "/{route_id}/async-export" : {
+      "get" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save file with export route information",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "202" : {
+            "description" : "Export accepted",
+            "headers" : {
+              "Location" : {
+                "type" : "string",
+                "description" : "link for check status export"
+              }
+            },
+            "schema" : {
+              "$ref" : "#/definitions/Async"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save file with export route information",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "202" : {
+            "description" : "Export accepted",
+            "headers" : {
+              "Location" : {
+                "type" : "string",
+                "description" : "link for check status export"
+              }
+            },
+            "schema" : {
+              "$ref" : "#/definitions/Async"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      }
+    },
+    "/{route_id}/async-export/{export_profile_id}" : {
+      "get" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save file with export route information",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "number"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "202" : {
+            "description" : "Export accepted",
+            "headers" : {
+              "Location" : {
+                "type" : "string",
+                "description" : "link for check status export"
+              }
+            },
+            "schema" : {
+              "$ref" : "#/definitions/Async"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save file with export route information",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "number"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "202" : {
+            "description" : "Export accepted",
+            "headers" : {
+              "Location" : {
+                "type" : "string",
+                "description" : "link for check status export"
+              }
+            },
+            "schema" : {
+              "$ref" : "#/definitions/Async"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      }
+    },
+    "/async-export" : {
+      "get" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save file with export routes information",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "202" : {
+            "description" : "Export accepted",
+            "headers" : {
+              "Location" : {
+                "type" : "string",
+                "description" : "link for check status export"
+              }
+            },
+            "schema" : {
+              "$ref" : "#/definitions/Async"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save file with export routes information",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "202" : {
+            "description" : "Export accepted",
+            "headers" : {
+              "Location" : {
+                "type" : "string",
+                "description" : "link for check status export"
+              }
+            },
+            "schema" : {
+              "$ref" : "#/definitions/Async"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      }
+    },
+    "/async-export/{export_profile_id}" : {
+      "get" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save file with export routes information",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "number"
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "202" : {
+            "description" : "Export accepted",
+            "headers" : {
+              "Location" : {
+                "type" : "string",
+                "description" : "link for check status export"
+              }
+            },
+            "schema" : {
+              "$ref" : "#/definitions/Async"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save file with export routes information",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "number"
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "required" : false,
+          "type" : "boolean"
+        } ],
+        "responses" : {
+          "202" : {
+            "description" : "Export accepted",
+            "headers" : {
+              "Location" : {
+                "type" : "string",
+                "description" : "link for check status export"
+              }
+            },
+            "schema" : {
+              "$ref" : "#/definitions/Async"
+            }
+          },
+          "406" : {
+            "description" : "Validation failed",
+            "schema" : {
+              "$ref" : "#/definitions/Error406"
+            }
+          }
+        }
+      }
+    },
+    "/{route_id}/columns" : {
+      "get" : {
+        "tags" : [ "Columns" ],
+        "summary" : "Get allowed columns for export",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Columns"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Columns" ],
+        "summary" : "Get allowed columns for export",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Columns"
+            }
+          }
+        }
+      }
+    },
+    "/columns" : {
+      "get" : {
+        "tags" : [ "Columns" ],
+        "summary" : "Get allowed columns for export",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Columns"
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Columns" ],
+        "summary" : "Get allowed columns for export",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "required" : false,
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "collectionFormat" : "multi"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Columns"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Error406" : {
+      "type" : "object",
+      "properties" : {
+        "status" : {
+          "type" : "boolean",
+          "example" : false
+        },
+        "code" : {
+          "type" : "integer",
+          "example" : 406
+        },
+        "exit_code" : {
+          "type" : "integer",
+          "example" : 1
+        },
+        "messages" : {
+          "type" : "array",
+          "example" : {
+            "format" : [ "The selected format is invalid." ],
+            "start_date" : [ "The start date does not match the format Y-m-d." ],
+            "end_date" : [ "The end date does not match the format Y-m-d." ],
+            "tz" : [ "The selected tz is invalid." ]
+          },
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "Async" : {
+      "type" : "object",
+      "properties" : {
+        "status" : {
+          "type" : "string",
+          "example" : "ok"
+        },
+        "job_id" : {
+          "type" : "integer",
+          "example" : 1
+        }
+      }
+    },
+    "Columns" : {
+      "type" : "array",
+      "items" : {
+        "$ref" : "#/definitions/Columns_inner"
+      }
+    },
+    "Columns_inner" : {
+      "type" : "object",
+      "properties" : {
+        "field_name" : {
+          "type" : "string",
+          "example" : "sequence_no"
+        },
+        "field_title" : {
+          "type" : "string",
+          "example" : "sequence_no"
+        },
+        "group" : {
+          "type" : "string",
+          "example" : "Route"
+        },
+        "scope" : {
+          "type" : "string",
+          "example" : "addresses"
+        },
+        "allowed" : {
+          "type" : "boolean",
+          "example" : true
+        }
+      }
+    }
+  }
+}

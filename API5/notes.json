@@ -1,0 +1,449 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Route4Me Notes API",
+    "description" : "Package for Notes",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/webapi/v5.0/notes"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "notes",
+    "description" : "Everything about Notes."
+  } ],
+  "paths" : {
+    "/routeNotes" : {
+      "get" : {
+        "tags" : [ "notes" ],
+        "summary" : "Get all Notes.",
+        "description" : "Get all Route Notes.",
+        "operationId" : "getNotes",
+        "responses" : {
+          "200" : {
+            "description" : "Notes loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/NoteList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "notes" ],
+        "summary" : "Create a new Note.",
+        "description" : "Create a new Route Note by sending a body payload with the corresponding Note parameters.",
+        "operationId" : "createNote",
+        "requestBody" : {
+          "description" : "Note attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/NoteRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Note created.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Note"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/routeNotes/{note_id}" : {
+      "get" : {
+        "tags" : [ "notes" ],
+        "summary" : "Get the Note by ID.",
+        "description" : "Get the Route Note by specifying the 'note_id' path parameter.",
+        "operationId" : "getNoteById",
+        "parameters" : [ {
+          "name" : "note_id",
+          "in" : "path",
+          "description" : "Note ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Note loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Note"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "notes" ],
+        "summary" : "Update the Note.",
+        "description" : "Update the Route Note by specifying the 'note_id' path parameter and by sending the corresponding body payload.",
+        "operationId" : "updateNote",
+        "parameters" : [ {
+          "name" : "note_id",
+          "in" : "path",
+          "description" : "Note ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Note attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Note updated.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "notes" ],
+        "summary" : "Delete the Note by ID.",
+        "description" : "Delete the Route Note by specifying the 'note_id' path parameter.",
+        "operationId" : "deleteNoteById",
+        "parameters" : [ {
+          "name" : "note_id",
+          "in" : "path",
+          "description" : "Note ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Note deleted.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Note" : {
+        "type" : "object",
+        "properties" : {
+          "note_id" : {
+            "type" : "integer"
+          },
+          "upload_id" : {
+            "type" : "string"
+          },
+          "route_id" : {
+            "type" : "string"
+          },
+          "route_destination_id" : {
+            "type" : "integer"
+          },
+          "ts_added" : {
+            "type" : "integer"
+          },
+          "activity_type" : {
+            "type" : "string"
+          },
+          "upload_extension" : {
+            "type" : "string"
+          },
+          "upload_url" : {
+            "type" : "string"
+          },
+          "upload_type" : {
+            "type" : "string"
+          },
+          "contents" : {
+            "type" : "string"
+          },
+          "lat" : {
+            "type" : "number"
+          },
+          "lng" : {
+            "type" : "number"
+          },
+          "device_type" : {
+            "type" : "string"
+          },
+          "custom_types" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Note_custom_types"
+            }
+          }
+        }
+      },
+      "NoteList" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Note"
+            }
+          },
+          "current_page" : {
+            "type" : "integer"
+          },
+          "first_page_url" : {
+            "type" : "string"
+          },
+          "from" : {
+            "type" : "integer"
+          },
+          "last_page" : {
+            "type" : "integer"
+          },
+          "last_page_url" : {
+            "type" : "string"
+          },
+          "next_page_url" : {
+            "type" : "string"
+          },
+          "path" : {
+            "type" : "string"
+          },
+          "per_page" : {
+            "type" : "integer"
+          },
+          "prev_page_url" : {
+            "type" : "string"
+          },
+          "to" : {
+            "type" : "integer"
+          },
+          "total" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "ApiResponse" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer"
+          },
+          "status" : {
+            "type" : "string",
+            "default" : "false"
+          },
+          "messages" : {
+            "type" : "string"
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "default" : 1
+          }
+        }
+      },
+      "NoteRequest" : {
+        "required" : [ "address_id", "route_id", "strNoteContents" ],
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string"
+          },
+          "address_id" : {
+            "type" : "number"
+          },
+          "strNoteContents" : {
+            "type" : "string"
+          },
+          "strUpdateType" : {
+            "type" : "string",
+            "enum" : [ "pickup", "dropoff", "noanswer", "notfound", "notpaid", "paid", "wrongdelivery", "wrongaddressrecipient", "notpresent", "service_rendered", "parts_missing", "follow_up", "left_information", "spoke_with_decision_maker", "spoke_with_decision_influencer", "competitive_account", "scheduled_follow_up_meeting", "scheduled_lunch", "scheduled_product_demo", "scheduled_clinical_demo", "no_opportunity", "other" ]
+          },
+          "dev_lat" : {
+            "type" : "number"
+          },
+          "dev_lng" : {
+            "type" : "number"
+          },
+          "remote_speed" : {
+            "type" : "number"
+          },
+          "remote_altitude" : {
+            "type" : "number"
+          },
+          "file" : {
+            "type" : "string",
+            "format" : "binary"
+          },
+          "upload_type" : {
+            "type" : "string"
+          },
+          "device_type" : {
+            "type" : "string",
+            "enum" : [ "web", "iphone", "ipad", "android", "android_phone", "android_tablet", "blackberry", "windows_phone", "windows_tablet" ]
+          },
+          "custom_note_type" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "body" : {
+        "type" : "object",
+        "properties" : {
+          "address_id" : {
+            "type" : "number"
+          },
+          "strNoteContents" : {
+            "type" : "string"
+          },
+          "custom_note_type" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "note_id" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "Note_custom_types" : {
+        "type" : "object",
+        "properties" : {
+          "note_custom_entry_id" : {
+            "type" : "string"
+          },
+          "note_id" : {
+            "type" : "integer"
+          },
+          "note_custom_type_id" : {
+            "type" : "integer"
+          },
+          "note_custom_value" : {
+            "type" : "string"
+          },
+          "note_custom_type" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Route4Me Member Configuration Settings API",
+    "description" : "Package for the Member Configuration Settings",
+    "version" : "5.0"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/webapi/v5.0/member-configuration-settings"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "member-configuration-settings",
+    "description" : "Everything about the Member Configuration Settings."
+  } ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "tags" : [ "member-configuration-settings" ],
+        "summary" : "Get the Member Configuration Settings.",
+        "description" : "Get the Member Configuration Settings by specifying the 'mcs' and 'config_key' query parameters.",
+        "operationId" : "getMemberConfigurationSettings",
+        "parameters" : [ {
+          "name" : "mcs",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "config_key",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/IndexResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "member-configuration-settings" ],
+        "summary" : "Update the Member Configuration Setting.",
+        "description" : "Update the Member Configuration Setting by sending the corresponding body payload.",
+        "operationId" : "updateMemberConfigurationSetting",
+        "requestBody" : {
+          "description" : "Member Configuration Setting attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MemberConfigurationSettingRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Member Configuration Setting updated.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Response"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "member-configuration-settings" ],
+        "summary" : "Create a new Member Configuration Setting.",
+        "description" : "Create a new Member Configuration Setting by sending the corresponding body payload.",
+        "operationId" : "createMemberConfigurationSetting",
+        "requestBody" : {
+          "description" : "Member Configuration Setting attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/MemberConfigurationSettingRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Member Configuration Setting created.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Response"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "member-configuration-settings" ],
+        "summary" : "Delete the Member Configuration Setting.",
+        "description" : "Delete the Member Configuration Setting by specifying the 'config_key' query parameter.",
+        "operationId" : "deleteMemberConfigurationSetting",
+        "parameters" : [ {
+          "name" : "config_key",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Member Configuration Setting deleted.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Response"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "MemberConfigurationSetting" : {
+        "type" : "object",
+        "properties" : {
+          "member_id" : {
+            "type" : "integer"
+          },
+          "config_key" : {
+            "type" : "string"
+          },
+          "config_value" : {
+            "type" : "string"
+          },
+          "is_hidden_value" : {
+            "type" : "boolean"
+          },
+          "can_unhide_value" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "IndexResponse" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "string",
+            "default" : "OK"
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/MemberConfigurationSetting"
+            }
+          }
+        }
+      },
+      "MemberConfigurationSettingRequest" : {
+        "required" : [ "config_key", "config_value", "member_id" ],
+        "type" : "object",
+        "properties" : {
+          "member_id" : {
+            "type" : "integer"
+          },
+          "config_key" : {
+            "type" : "string"
+          },
+          "config_value" : {
+            "type" : "string"
+          },
+          "is_hidden_value" : {
+            "type" : "boolean"
+          }
+        }
+      },
+      "Response" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "string",
+            "default" : "OK"
+          },
+          "affected" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "ApiResponse" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer"
+          },
+          "status" : {
+            "type" : "string",
+            "default" : "false"
+          },
+          "messages" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Order Custom Fields API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/order-custom-user-fields" : {
+      "get" : {
+        "tags" : [ "Order Custom Fields" ],
+        "summary" : "Get the list of all Order Custom Fields.",
+        "description" : "Get the list of all Order Custom Fields.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAll"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Order Custom Fields" ],
+        "summary" : "Update the specified Order Custom Field.",
+        "description" : "Update the Order Custom Field by sending the corresponding body payload.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/UpdatedData"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseUpserted"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Order Custom Fields" ],
+        "summary" : "Add a new Order Custom Field entry.",
+        "description" : "Add a new Order Custom Field entry by sending the corresponding body payload.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/StoredData"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseUpserted"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Order Custom Fields" ],
+        "summary" : "Delete the Order Custom Field entry.",
+        "description" : "Delete the Order Custom Field entry by sending a body payload with the corresponding Field ID.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "StoredData" : {
+        "type" : "object",
+        "properties" : {
+          "order_custom_field_name" : {
+            "type" : "string",
+            "example" : "Some name"
+          },
+          "order_custom_field_label" : {
+            "type" : "string",
+            "example" : "Some label"
+          },
+          "order_custom_field_type" : {
+            "type" : "string",
+            "example" : "Some type"
+          },
+          "order_custom_field_type_info" : {
+            "type" : "object",
+            "example" : {
+              "short_label" : "Some value"
+            }
+          }
+        }
+      },
+      "UpdatedData" : {
+        "type" : "object",
+        "properties" : {
+          "order_custom_field_id" : {
+            "type" : "number",
+            "example" : 1
+          },
+          "order_custom_field_name" : {
+            "type" : "string",
+            "example" : "Some name"
+          },
+          "order_custom_field_label" : {
+            "type" : "string",
+            "example" : "Some label"
+          },
+          "order_custom_field_type" : {
+            "type" : "string",
+            "example" : "Some type"
+          },
+          "order_custom_field_type_info" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "Some type info"
+            }
+          }
+        }
+      },
+      "ResponseOne" : {
+        "type" : "object",
+        "properties" : {
+          "order_custom_field_id" : {
+            "type" : "number",
+            "example" : 1
+          },
+          "order_custom_field_name" : {
+            "type" : "string",
+            "example" : "Some name"
+          },
+          "order_custom_field_label" : {
+            "type" : "string",
+            "example" : "Some label"
+          },
+          "order_custom_field_type" : {
+            "type" : "string",
+            "example" : "Some type"
+          },
+          "root_owner_member_id" : {
+            "type" : "number",
+            "example" : 1
+          },
+          "order_custom_field_type_info" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "Some type info"
+            }
+          }
+        }
+      },
+      "ResponseAll" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseOne"
+            }
+          }
+        }
+      },
+      "ResponseUpserted" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "string",
+            "example" : "OK"
+          },
+          "affected" : {
+            "type" : "number",
+            "example" : 1
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseOne"
+            }
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "type" : "object"
+          }
+        }
+      },
+      "body" : {
+        "type" : "object",
+        "properties" : {
+          "order_custom_field_id" : {
+            "type" : "number",
+            "example" : 1
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "string",
+            "example" : "OK"
+          },
+          "affected" : {
+            "type" : "number",
+            "example" : 1
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

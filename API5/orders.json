@@ -1,0 +1,1009 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Orders API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/orders"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/" : {
+      "post" : {
+        "summary" : "Store or update an Order in the database.",
+        "description" : "Create or update an Order by sending a body payload with the corresponding Order parameters.",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/RequestOrders"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOrder"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search" : {
+      "get" : {
+        "summary" : "Display the list of Orders.",
+        "description" : "Display the list of Orders by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "query",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "display",
+          "in" : "query",
+          "description" : "Specify which Orders to show in the query results.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "all",
+            "enum" : [ "all", "routed", "unrouted" ]
+          }
+        }, {
+          "name" : "day_added_YYMMDD",
+          "in" : "query",
+          "description" : "Order insert date (e.g. '2020-01-20').",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "scheduled_for_YYMMDD",
+          "in" : "query",
+          "description" : "The date the corresponding Order was scheduled for (e.g., '2020-01-24').",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "fields",
+          "in" : "query",
+          "description" : "Array of the fields to be included into the search results (e.g., ['address_1', 'address_alias']).",
+          "required" : false,
+          "style" : "form",
+          "explode" : false,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "Limit of the number of the queried records.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "offset",
+          "in" : "query",
+          "description" : "Start the search from the record number.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOrdersSearch"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Display the list of Orders.",
+        "description" : "Display the list of filtered and sorted Orders.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RequestOrdersSearch"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOrdersSearch"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/show" : {
+      "get" : {
+        "summary" : "Display the list of Orders.",
+        "description" : "Display the list of Orders by specifying an array of the corresponding Order IDs.",
+        "parameters" : [ {
+          "name" : "order_id",
+          "in" : "query",
+          "description" : "Array of Order IDs.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOrdersSearch"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Display the list of Orders.",
+        "description" : "Display the list of Orders by specifying an array of the corresponding Order IDs in the body payload.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOrdersSearch"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/update" : {
+      "put" : {
+        "summary" : "Update the specified Order in the storage.",
+        "description" : "Update the specified Order in the storage by sending the body payload with the specified 'order_id' parameter.",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/RequestOrders"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOrder"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mass-update" : {
+      "put" : {
+        "summary" : "Update multiple specified Orders in the storage.",
+        "description" : "Update multiple Orders in the storage by sending a body payload with the specified 'order_ids' parameter (type: array[integer]).\n",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/RequestOrders"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOrder"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/delete" : {
+      "delete" : {
+        "summary" : "Remove multiple specified Orders from the storage.",
+        "description" : "Remove the specified Orders from the storage by sending a body payload with the specified array of the corresponding Order IDs.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_1"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "RequestOrders" : {
+        "type" : "object",
+        "properties" : {
+          "order_id" : {
+            "type" : "integer"
+          },
+          "order_ids" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          },
+          "address_1" : {
+            "type" : "integer"
+          },
+          "address_2" : {
+            "type" : "integer"
+          },
+          "address_zip" : {
+            "type" : "string"
+          },
+          "address_alias" : {
+            "type" : "string"
+          },
+          "address_city" : {
+            "type" : "string"
+          },
+          "address_state_id" : {
+            "type" : "integer"
+          },
+          "address_country_id" : {
+            "type" : "number"
+          },
+          "EXT_FIELD_first_name" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_last_name" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_email" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_phone" : {
+            "type" : "string"
+          },
+          "cached_lat" : {
+            "type" : "number"
+          },
+          "cached_lng" : {
+            "type" : "number"
+          },
+          "curbside_lat" : {
+            "type" : "number"
+          },
+          "curbside_lng" : {
+            "type" : "number"
+          },
+          "EXT_FIELD_custom_data" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "local_time_window_start" : {
+            "type" : "integer"
+          },
+          "local_time_window_end" : {
+            "type" : "integer"
+          },
+          "local_time_window_start_2" : {
+            "type" : "integer"
+          },
+          "local_time_window_end_2" : {
+            "type" : "integer"
+          },
+          "local_timezone_string" : {
+            "type" : "string"
+          },
+          "service_time" : {
+            "type" : "integer"
+          },
+          "color" : {
+            "type" : "string"
+          },
+          "order_icon" : {
+            "type" : "string"
+          },
+          "city_id" : {
+            "type" : "integer"
+          },
+          "day_scheduled_for_YYMMDD" : {
+            "type" : "string"
+          },
+          "is_accepted" : {
+            "type" : "boolean"
+          },
+          "is_completed" : {
+            "type" : "boolean"
+          },
+          "is_pending" : {
+            "type" : "boolean"
+          },
+          "is_started" : {
+            "type" : "boolean"
+          },
+          "is_validated" : {
+            "type" : "boolean"
+          },
+          "custom_user_fields" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "ResponseOrder" : {
+        "type" : "object",
+        "properties" : {
+          "created_timestamp" : {
+            "type" : "integer"
+          },
+          "order_id" : {
+            "type" : "integer"
+          },
+          "order_status_id" : {
+            "type" : "integer"
+          },
+          "day_added_YYMMDD" : {
+            "type" : "string"
+          },
+          "day_scheduled_for_YYMMDD" : {
+            "type" : "string"
+          },
+          "address_alias" : {
+            "type" : "string"
+          },
+          "address_1" : {
+            "type" : "integer"
+          },
+          "address_2" : {
+            "type" : "integer"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "EXT_FIELD_first_name" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_last_name" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_email" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_phone" : {
+            "type" : "string"
+          },
+          "address_city" : {
+            "type" : "string"
+          },
+          "address_state_id" : {
+            "type" : "integer"
+          },
+          "address_country_id" : {
+            "type" : "number"
+          },
+          "address_zip" : {
+            "type" : "string"
+          },
+          "cached_lat" : {
+            "type" : "number"
+          },
+          "cached_lng" : {
+            "type" : "number"
+          },
+          "curbside_lat" : {
+            "type" : "number"
+          },
+          "curbside_lng" : {
+            "type" : "number"
+          },
+          "EXT_FIELD_custom_data" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "in_route_count" : {
+            "type" : "integer"
+          },
+          "last_visited_timestamp" : {
+            "type" : "integer"
+          },
+          "last_routed_timestamp" : {
+            "type" : "integer"
+          },
+          "local_time_window_start" : {
+            "type" : "integer"
+          },
+          "local_time_window_end" : {
+            "type" : "integer"
+          },
+          "local_time_window_start_2" : {
+            "type" : "integer"
+          },
+          "local_time_window_end_2" : {
+            "type" : "integer"
+          },
+          "local_timezone_string" : {
+            "type" : "string"
+          },
+          "service_time" : {
+            "type" : "integer"
+          },
+          "color" : {
+            "type" : "string"
+          },
+          "order_icon" : {
+            "type" : "string"
+          },
+          "is_validated" : {
+            "type" : "boolean"
+          },
+          "is_pending" : {
+            "type" : "boolean"
+          },
+          "city_id" : {
+            "type" : "integer"
+          },
+          "is_accepted" : {
+            "type" : "boolean"
+          },
+          "is_started" : {
+            "type" : "boolean"
+          },
+          "is_completed" : {
+            "type" : "boolean"
+          },
+          "custom_user_fields" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "ResponseOrderSearch" : {
+        "type" : "object",
+        "properties" : {
+          "created_timestamp" : {
+            "type" : "integer"
+          },
+          "order_id" : {
+            "type" : "integer"
+          },
+          "order_status_id" : {
+            "type" : "integer"
+          },
+          "day_added_YYMMDD" : {
+            "type" : "string"
+          },
+          "day_scheduled_for_YYMMDD" : {
+            "type" : "string"
+          },
+          "address_alias" : {
+            "type" : "string"
+          },
+          "address_1" : {
+            "type" : "integer"
+          },
+          "address_2" : {
+            "type" : "integer"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "EXT_FIELD_first_name" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_last_name" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_email" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_phone" : {
+            "type" : "string"
+          },
+          "address_city" : {
+            "type" : "string"
+          },
+          "address_state_id" : {
+            "type" : "integer"
+          },
+          "address_country_id" : {
+            "type" : "number"
+          },
+          "address_zip" : {
+            "type" : "string"
+          },
+          "cached_lat" : {
+            "type" : "number"
+          },
+          "cached_lng" : {
+            "type" : "number"
+          },
+          "curbside_lat" : {
+            "type" : "number"
+          },
+          "curbside_lng" : {
+            "type" : "number"
+          },
+          "EXT_FIELD_custom_data" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "in_route_count" : {
+            "type" : "integer"
+          },
+          "last_visited_timestamp" : {
+            "type" : "integer"
+          },
+          "last_routed_timestamp" : {
+            "type" : "integer"
+          },
+          "local_time_window_start" : {
+            "type" : "integer"
+          },
+          "local_time_window_end" : {
+            "type" : "integer"
+          },
+          "local_time_window_start_2" : {
+            "type" : "integer"
+          },
+          "local_time_window_end_2" : {
+            "type" : "integer"
+          },
+          "local_timezone_string" : {
+            "type" : "string"
+          },
+          "service_time" : {
+            "type" : "integer"
+          },
+          "color" : {
+            "type" : "string"
+          },
+          "order_icon" : {
+            "type" : "string"
+          },
+          "is_validated" : {
+            "type" : "boolean"
+          },
+          "is_pending" : {
+            "type" : "boolean"
+          },
+          "city_id" : {
+            "type" : "integer"
+          },
+          "is_accepted" : {
+            "type" : "boolean"
+          },
+          "is_started" : {
+            "type" : "boolean"
+          },
+          "is_completed" : {
+            "type" : "boolean"
+          },
+          "custom_user_fields" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "route_ids" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "RequestOrdersSearch" : {
+        "type" : "object",
+        "properties" : {
+          "fields" : {
+            "type" : "array",
+            "items" : {
+              "uniqueItems" : true,
+              "type" : "string"
+            },
+            "default" : [ ]
+          },
+          "filter" : {
+            "$ref" : "#/components/schemas/Filter"
+          },
+          "order_by" : {
+            "$ref" : "#/components/schemas/OrderBy"
+          }
+        }
+      },
+      "ResponseOrdersSearch" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseOrderSearch"
+            }
+          },
+          "total" : {
+            "type" : "integer"
+          },
+          "fields" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "type" : "object"
+          }
+        }
+      },
+      "Filter" : {
+        "type" : "object",
+        "properties" : {
+          "query" : {
+            "type" : "string",
+            "example" : "some query string"
+          },
+          "display" : {
+            "type" : "string",
+            "default" : "all",
+            "enum" : [ "all", "routed", "unrouted" ]
+          },
+          "day_added_YYMMDD" : {
+            "type" : "string"
+          },
+          "scheduled_for_YYMMDD" : {
+            "type" : "array",
+            "description" : "An array of dates or a single date.",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "OrderBy" : {
+        "type" : "array",
+        "description" : "You can sort the result using the following fields: * address_alias * EXT_FIELD_first_name * EXT_FIELD_last_name * EXT_FIELD_phone * is_pending * is_validated * is_accepted * is_completed * day_scheduled_for_YYMMDD * day_added_YYMMDD\n",
+        "items" : {
+          "type" : "string",
+          "example" : "[[\"address_alias\",\"desc\"],[\"EXT_FIELD_first_name\",\"desc\"]]"
+        }
+      },
+      "body" : {
+        "required" : [ "order_ids" ],
+        "type" : "object",
+        "properties" : {
+          "order_ids" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          }
+        }
+      },
+      "body_1" : {
+        "type" : "object",
+        "properties" : {
+          "order_ids" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "requestBodies" : {
+      "RequestOrders" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/RequestOrders"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

@@ -1,0 +1,809 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Activity Feed API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/activity"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/feed" : {
+      "get" : {
+        "tags" : [ "Activities" ],
+        "summary" : "Get all Activities.",
+        "description" : "Get Activities by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "query",
+          "in" : "query",
+          "description" : "Search in the 'activity_message' field by the corresponding query phrase.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Route ID associated with the corresponding Activity(s).",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "activity_type",
+          "in" : "query",
+          "description" : "Filter results by Activity type.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "member_id",
+          "in" : "query",
+          "description" : "Member ID associated with the corresponding Activity(s).",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "team",
+          "in" : "query",
+          "description" : "If 'true', all Team Activities will be included into the search results.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "start",
+          "in" : "query",
+          "description" : "Start of the Activity dates range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 0
+          }
+        }, {
+          "name" : "end",
+          "in" : "query",
+          "description" : "End of the Activity dates range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 0
+          }
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "Limit of the queried records number.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 30
+          }
+        }, {
+          "name" : "offset",
+          "in" : "query",
+          "description" : "Start the search from the corresponding record number.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 0
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "headers" : {
+              "Body-length" : {
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAll"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Activities" ],
+        "summary" : "Add a new Activity.",
+        "description" : "Permanently store the specified message directly in the Activity Feed.",
+        "parameters" : [ {
+          "name" : "activity_type",
+          "in" : "query",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "user_message", "local_geofence_entered", "local_geofence_left", "approved-to-execute" ]
+          }
+        }, {
+          "name" : "activity_message",
+          "in" : "query",
+          "description" : "The message or text to log into the Activity Feed.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Route ID associated with the corresponding Activity(s).",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feed/export" : {
+      "post" : {
+        "tags" : [ "Activities" ],
+        "summary" : "Export Activities.",
+        "description" : "Export the Activities filtered by the corresponding query parameters into the specified file.",
+        "parameters" : [ {
+          "name" : "query",
+          "in" : "query",
+          "description" : "Search in the 'activity_message' field by the corresponding query phrase.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Route ID associated with the corresponding Activity(s).",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "activity_type",
+          "in" : "query",
+          "description" : "Filter results by Activity type.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start",
+          "in" : "query",
+          "description" : "Start of the Activity dates range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 0
+          }
+        }, {
+          "name" : "end",
+          "in" : "query",
+          "description" : "End of the Activity dates range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 0
+          }
+        }, {
+          "name" : "filename",
+          "in" : "query",
+          "description" : "File name for export.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "extension",
+          "in" : "query",
+          "description" : "File extension.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "csv",
+            "enum" : [ "csv", "tsv", "xls", "xlsx" ]
+          }
+        } ],
+        "responses" : {
+          "202" : {
+            "description" : "Export job was queued.",
+            "headers" : {
+              "Location" : {
+                "description" : "Path to the status checker.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feed/export/status{job_id}" : {
+      "get" : {
+        "tags" : [ "Check Job Status" ],
+        "summary" : "Check the export job status.",
+        "description" : "Check the export job status by specifying the 'job_id' path parameter.",
+        "parameters" : [ {
+          "name" : "job_id",
+          "in" : "path",
+          "description" : "Export job ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "redirect",
+          "in" : "query",
+          "description" : "Set to '0' if you want to disable the redirect to download the corresponding file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 1,
+            "enum" : [ 0, 1 ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Export process status.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Export200"
+                }
+              }
+            }
+          },
+          "303" : {
+            "description" : "Export processed.",
+            "headers" : {
+              "Location" : {
+                "description" : "Path to the specified resource.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Export303"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "type" : "object"
+          }
+        }
+      },
+      "Export200" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string",
+            "description" : "Current export status.",
+            "enum" : [ "completed", "panding", "failed" ]
+          },
+          "link" : {
+            "type" : "string",
+            "description" : "Link to download. Available if the redirect parameter is set to '0'."
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 200
+          }
+        }
+      },
+      "Export303" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string",
+            "description" : "Current export status.",
+            "enum" : [ "completed" ]
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 303
+          }
+        }
+      },
+      "ResponseActivity" : {
+        "type" : "object",
+        "properties" : {
+          "activity_id" : {
+            "type" : "string",
+            "example" : "EA4A73DD76FAAC6BAC6E33BE10E3916F"
+          },
+          "member_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "activity_timestamp" : {
+            "type" : "number",
+            "example" : 1573206294
+          },
+          "activity_type" : {
+            "type" : "string",
+            "example" : "some-activity-type"
+          },
+          "activity_message" : {
+            "type" : "string",
+            "example" : "Some activity message"
+          },
+          "route_id" : {
+            "type" : "string",
+            "example" : "B9F8A72EEC2B168084588DFFCD9B8284"
+          },
+          "route_destination_id" : {
+            "type" : "number"
+          },
+          "note_id" : {
+            "type" : "string"
+          },
+          "member" : {
+            "$ref" : "#/components/schemas/ResponseActivity_member"
+          }
+        }
+      },
+      "ResponseAll" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseActivity"
+            }
+          },
+          "total" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : true
+          }
+        }
+      },
+      "ResponseActivity_member" : {
+        "type" : "object",
+        "properties" : {
+          "member_id" : {
+            "type" : "number",
+            "example" : 1
+          },
+          "member_first_name" : {
+            "type" : "string",
+            "example" : "John"
+          },
+          "member_last_name" : {
+            "type" : "string",
+            "example" : "Doe"
+          },
+          "member_email" : {
+            "type" : "string",
+            "example" : "JohnDoe@example.com"
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      },
+      "ExportStatus" : {
+        "description" : "Export process status.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Export200"
+            }
+          }
+        }
+      },
+      "ExportCompleted303" : {
+        "description" : "Export processed.",
+        "headers" : {
+          "Location" : {
+            "description" : "Path to the specified resource.",
+            "style" : "simple",
+            "explode" : false,
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        },
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Export303"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "queryParam" : {
+        "name" : "query",
+        "in" : "query",
+        "description" : "Search in the 'activity_message' field by the corresponding query phrase.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "activityTypeParam" : {
+        "name" : "activity_type",
+        "in" : "query",
+        "description" : "Filter results by Activity type.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "activityTypeOnStoreParam" : {
+        "name" : "activity_type",
+        "in" : "query",
+        "required" : true,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string",
+          "enum" : [ "user_message", "local_geofence_entered", "local_geofence_left", "approved-to-execute" ]
+        }
+      },
+      "activityMessageParam" : {
+        "name" : "activity_message",
+        "in" : "query",
+        "description" : "The message or text to log into the Activity Feed.",
+        "required" : true,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "routeIdParam" : {
+        "name" : "route_id",
+        "in" : "query",
+        "description" : "Route ID associated with the corresponding Activity(s).",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "memberIdParam" : {
+        "name" : "member_id",
+        "in" : "query",
+        "description" : "Member ID associated with the corresponding Activity(s).",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number"
+        }
+      },
+      "teamParam" : {
+        "name" : "team",
+        "in" : "query",
+        "description" : "If 'true', all Team Activities will be included into the search results.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "boolean"
+        }
+      },
+      "startParam" : {
+        "name" : "start",
+        "in" : "query",
+        "description" : "Start of the Activity dates range.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number",
+          "default" : 0
+        }
+      },
+      "endParam" : {
+        "name" : "end",
+        "in" : "query",
+        "description" : "End of the Activity dates range.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number",
+          "default" : 0
+        }
+      },
+      "limitParam" : {
+        "name" : "limit",
+        "in" : "query",
+        "description" : "Limit of the queried records number.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number",
+          "default" : 30
+        }
+      },
+      "offsetParam" : {
+        "name" : "offset",
+        "in" : "query",
+        "description" : "Start the search from the corresponding record number.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number",
+          "default" : 0
+        }
+      },
+      "extensionParam" : {
+        "name" : "extension",
+        "in" : "query",
+        "description" : "File extension.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string",
+          "default" : "csv",
+          "enum" : [ "csv", "tsv", "xls", "xlsx" ]
+        }
+      },
+      "fileNameParam" : {
+        "name" : "filename",
+        "in" : "query",
+        "description" : "File name for export.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "jobIdParam" : {
+        "name" : "job_id",
+        "in" : "path",
+        "description" : "Job ID.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "ExportjobIdParam" : {
+        "name" : "job_id",
+        "in" : "path",
+        "description" : "Export job ID.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "number"
+        }
+      },
+      "isRedirectedParam" : {
+        "name" : "redirect",
+        "in" : "query",
+        "description" : "Set to '0' if you want to disable the redirect to download the corresponding file.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number",
+          "default" : 1,
+          "enum" : [ 0, 1 ]
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

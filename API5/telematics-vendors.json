@@ -1,0 +1,434 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Telematics API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/telematics" : {
+      "get" : {
+        "summary" : "Display the list of all Telematics Vendors.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseVendors"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/telematics/{vendor_id}" : {
+      "get" : {
+        "summary" : "Display the Telematics Vendor.",
+        "parameters" : [ {
+          "name" : "vendor_id",
+          "in" : "path",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/telematics/search" : {
+      "get" : {
+        "summary" : "Search for Telematics Vendors.",
+        "parameters" : [ {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "global", "regional", "local" ]
+          }
+        }, {
+          "name" : "is_integrated",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "feature",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "country",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "search",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseVendors"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/telematics/vendors" : {
+      "get" : {
+        "summary" : "Display the Telematics Vendors.",
+        "parameters" : [ {
+          "name" : "vendors",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_1"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ResponseVendors" : {
+        "type" : "object",
+        "properties" : {
+          "vendors" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseVendor"
+            }
+          }
+        }
+      },
+      "ResponseVendor" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "PC Miler"
+          },
+          "slug" : {
+            "type" : "string",
+            "example" : "pc-miler"
+          },
+          "description" : {
+            "type" : "string",
+            "example" : "PC*MILER is truck routing, mileage and mapping software for the transportation and logistics industry"
+          },
+          "logo_url" : {
+            "type" : "string",
+            "example" : "https://storage.googleapis.com/r4m-telematics-directory-production-1312313/pc-miler589abdd0cee1f2.01054106.png"
+          },
+          "website_url" : {
+            "type" : "string",
+            "example" : "http://www.pcmiler.com/"
+          },
+          "api_docs_url" : {
+            "type" : "string",
+            "example" : "http://api.pcmiler.com/"
+          },
+          "is_integrated" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "size" : {
+            "type" : "string",
+            "example" : "global",
+            "enum" : [ "global", "regional", "local" ]
+          }
+        }
+      },
+      "ResponseVendorWithFeaturesAndCountries" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "PC Miler"
+          },
+          "slug" : {
+            "type" : "string",
+            "example" : "pc-miler"
+          },
+          "description" : {
+            "type" : "string",
+            "example" : "PC*MILER is truck routing, mileage and mapping software for the transportation and logistics industry"
+          },
+          "logo_url" : {
+            "type" : "string",
+            "example" : "https://storage.googleapis.com/r4m-telematics-directory-production-1312313/pc-miler589abdd0cee1f2.01054106.png"
+          },
+          "website_url" : {
+            "type" : "string",
+            "example" : "http://www.pcmiler.com/"
+          },
+          "api_docs_url" : {
+            "type" : "string",
+            "example" : "http://api.pcmiler.com/"
+          },
+          "is_integrated" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "size" : {
+            "type" : "string",
+            "example" : "global",
+            "enum" : [ "global", "regional", "local" ]
+          },
+          "features" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseFeature"
+            }
+          },
+          "countries" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseCountry"
+            }
+          }
+        }
+      },
+      "ResponseFeature" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "Customizable Reports"
+          },
+          "slug" : {
+            "type" : "string",
+            "example" : "customizable-reports"
+          },
+          "feature_group" : {
+            "type" : "string",
+            "example" : "Analytics & Reporting"
+          }
+        }
+      },
+      "ResponseCountry" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 230
+          },
+          "country_code" : {
+            "type" : "string",
+            "example" : "US"
+          },
+          "country_name" : {
+            "type" : "string",
+            "example" : "United States"
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "$ref" : "#/components/schemas/Error406_messages"
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "vendor" : {
+            "$ref" : "#/components/schemas/ResponseVendorWithFeaturesAndCountries"
+          }
+        }
+      },
+      "inline_response_200_1" : {
+        "type" : "object",
+        "properties" : {
+          "vendors" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseVendorWithFeaturesAndCountries"
+            }
+          }
+        }
+      },
+      "Error406_messages" : {
+        "type" : "object",
+        "properties" : {
+          "size" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "The selected size is invalid."
+            }
+          },
+          "page" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "The page must be a number."
+            }
+          },
+          "per_page" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "The per page must be a number."
+            }
+          },
+          "vendor_id" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "The Vendor ID must be a number."
+            }
+          }
+        }
+      }
+    },
+    "responses" : {
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

@@ -1,0 +1,432 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Avoidance Zones API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/avoidance" : {
+      "get" : {
+        "tags" : [ "Avoidance Zones" ],
+        "summary" : "Get all Territories.",
+        "description" : "Get all Avoidance Zones from within the specified area.",
+        "parameters" : [ {
+          "name" : "position_lat",
+          "in" : "query",
+          "description" : "Latitude coordinates of the corresponding area center.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "position_lng",
+          "in" : "query",
+          "description" : "Longitude coordinates of the corresponding area center.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "distance",
+          "in" : "query",
+          "description" : "Area distance (radius of the area).",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 1000
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAll"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Avoidance Zones" ],
+        "summary" : "Add a new Territory.",
+        "description" : "Add a new Avoidance Zone by sending a body payload with the corresponding Territory parameters.",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/Territory"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOne"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/avoidance/{territory_id}" : {
+      "get" : {
+        "tags" : [ "Avoidance Zones" ],
+        "summary" : "Find the Territory by ID.",
+        "description" : "Get the Avoidance Zone by specifying the 'territory_id' path parameter.",
+        "parameters" : [ {
+          "name" : "territory_id",
+          "in" : "path",
+          "description" : "Territory ID of the Avoidance Zone.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOne"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Avoidance Zones" ],
+        "summary" : "Update the Territory.",
+        "description" : "Update the Avoidance Zone by sending a body payload with the corresponding Territory parameters.",
+        "parameters" : [ {
+          "name" : "territory_id",
+          "in" : "path",
+          "description" : "Territory ID of the Avoidance Zone.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/Territory"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOne"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Avoidance Zones" ],
+        "summary" : "Delete the Territory.",
+        "description" : "Delete the Avoidance Zone by specifying the 'territory_id' path parameter.",
+        "parameters" : [ {
+          "name" : "territory_id",
+          "in" : "path",
+          "description" : "Territory ID of the Avoidance Zone.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Territory" : {
+        "type" : "object",
+        "properties" : {
+          "territory_name" : {
+            "type" : "string",
+            "example" : "Some territory name"
+          },
+          "territory_color" : {
+            "type" : "string",
+            "example" : "000000"
+          },
+          "territory" : {
+            "$ref" : "#/components/schemas/Territory_territory"
+          }
+        }
+      },
+      "ResponseOne" : {
+        "type" : "object",
+        "properties" : {
+          "territory_id" : {
+            "type" : "string",
+            "example" : "5A51772FAC3C9F3A8A4F9002E9BF7399"
+          },
+          "territory_name" : {
+            "type" : "string",
+            "example" : "Some territory name"
+          },
+          "territory_color" : {
+            "type" : "string",
+            "example" : "000000"
+          },
+          "member_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "territory" : {
+            "$ref" : "#/components/schemas/ResponseOne_territory"
+          }
+        }
+      },
+      "ResponseAll" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseOne"
+            }
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "type" : "object"
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : true
+          }
+        }
+      },
+      "Territory_territory" : {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "example" : "circle",
+            "enum" : [ "poly", "rect", "circle" ]
+          },
+          "data" : {
+            "type" : "array",
+            "example" : [ "38.204727,-85.202452", 1000 ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "ResponseOne_territory" : {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "enum" : [ "poly", "rect", "circle" ]
+          },
+          "data" : {
+            "type" : "array",
+            "example" : [ "38.204727,-85.202452", "1000" ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "requestBodies" : {
+      "Territory" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Territory"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

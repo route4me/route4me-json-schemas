@@ -1,0 +1,847 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Route Destinations API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/route-destinations",
+    "description" : "Route4Me API V5"
+  }, {
+    "url" : "https://virtserver.swaggerhub.com/Route4Me/route-destinations/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Get the paginated list of all Route Addresses.",
+        "description" : "Get the paginated list of all Route Addresses.",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Requested page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 1
+          }
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "description" : "Number of Route Addresses per page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 30
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAll"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{Id}" : {
+      "get" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Get a Route Address by ID.",
+        "description" : "Get a Route Address by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Route Address ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseRouteAddress"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Delete the Route Address by ID.",
+        "description" : "Delete the Route Address by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Route Address ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseRouteAddress"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Update the Route Address by ID.",
+        "description" : "Update the Route Address by specifying the path parameter ID and by sending a body payload with the corresponding Address parameters.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Route Address ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ResponseRouteAddress"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseRouteAddress"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bounding" : {
+      "get" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Get the Route Addresses with a bounding box.",
+        "description" : "Get multiple Route Addresses by specifying the bounding box of the corresponding territory area.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAll"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clustering" : {
+      "get" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Get Route Address clusters.",
+        "description" : "Get the Route Address clusters of the corresponding route.",
+        "parameters" : [ {
+          "name" : "clustering.precision",
+          "in" : "query",
+          "description" : "Cluster precision.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 5
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_1"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseClustering"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mark_departed" : {
+      "patch" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Mark the Route Address as Departed.",
+        "description" : "Mark the Route Address as Departed by sending the corresponding body payload.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_2"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseRouteAddress"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/mark_visited" : {
+      "patch" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Mark the Route Address as Visited.",
+        "description" : "Mark the Route Address as Visited by sending the corresponding body payload.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_3"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseRouteAddress"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/remove_route_address" : {
+      "patch" : {
+        "tags" : [ "Addresses" ],
+        "summary" : "Remove the Route Addresses.",
+        "description" : "Remove the Route Address(es) using the corresponding 'route_id'.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_4"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAll"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ResponseAll" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseRouteAddress"
+            }
+          }
+        }
+      },
+      "ResponseClustering" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Cluster"
+        }
+      },
+      "Cluster" : {
+        "type" : "object",
+        "properties" : {
+          "geohash" : {
+            "type" : "string",
+            "example" : "1mr8h4r9"
+          },
+          "lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "lng" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "bbox" : {
+            "type" : "array",
+            "example" : [ [ -60.45621871948242, -113.01704406738281 ], [ -60.45604705810547, -113.0167007446289 ] ],
+            "items" : {
+              "type" : "number"
+            }
+          },
+          "address_count" : {
+            "type" : "number",
+            "example" : 1
+          }
+        }
+      },
+      "ResponseRouteAddress" : {
+        "type" : "object",
+        "properties" : {
+          "route_destination_id" : {
+            "type" : "integer"
+          },
+          "route_id" : {
+            "type" : "string",
+            "example" : "1B2B1C25D259035BDF458E45487CF531"
+          },
+          "original_route_id" : {
+            "type" : "string"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "destination_name" : {
+            "type" : "string"
+          },
+          "dst_lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "dst_lng" : {
+            "type" : "number",
+            "example" : -162.156663
+          },
+          "dst_curb_lat" : {
+            "type" : "number"
+          },
+          "dst_curb_lng" : {
+            "type" : "number"
+          },
+          "is_visited" : {
+            "type" : "boolean"
+          },
+          "contact_id" : {
+            "type" : "integer"
+          },
+          "order_id" : {
+            "type" : "integer"
+          },
+          "destination_alias" : {
+            "type" : "string"
+          },
+          "sequence_no" : {
+            "type" : "integer"
+          },
+          "estimated_service_time_min" : {
+            "type" : "integer"
+          },
+          "timestamp_last_visited" : {
+            "type" : "integer"
+          },
+          "EXT_FIELD_customer_po" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_invoice_no" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_reference_no" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_order_no" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_weight" : {
+            "type" : "number"
+          },
+          "EXT_FIELD_cost" : {
+            "type" : "number"
+          },
+          "EXT_FIELD_revenue" : {
+            "type" : "number"
+          },
+          "EXT_FIELD_cube" : {
+            "type" : "number"
+          },
+          "EXT_FIELD_pieces" : {
+            "type" : "number"
+          },
+          "EXT_FIELD_time" : {
+            "type" : "number"
+          },
+          "EXT_FIELD_customer_first_name" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_customer_last_name" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_customer_email" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_customer_phone" : {
+            "type" : "string"
+          },
+          "EXT_FIELD_custom_data" : {
+            "type" : "string"
+          },
+          "generated_time_window_start" : {
+            "type" : "integer"
+          },
+          "generated_time_window_end" : {
+            "type" : "integer"
+          },
+          "distance_to_next_destination" : {
+            "type" : "number"
+          },
+          "drive_time_to_next_destination" : {
+            "type" : "integer"
+          },
+          "time_window_start" : {
+            "type" : "integer"
+          },
+          "time_window_end" : {
+            "type" : "integer"
+          },
+          "is_depot" : {
+            "type" : "boolean"
+          },
+          "optimization_problem_id" : {
+            "type" : "string"
+          },
+          "json_custom_data" : {
+            "type" : "string"
+          },
+          "address_stop_type" : {
+            "type" : "string",
+            "enum" : [ "PICKUP", "DELIVERY", "BREAK", "MEETUP", "SERVICE", "VISIT", "DRIVEBY" ]
+          },
+          "note_count" : {
+            "type" : "integer"
+          },
+          "lat_last_visited" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "lng_last_visited" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "is_departed" : {
+            "type" : "boolean"
+          },
+          "departed_timestamp" : {
+            "type" : "integer"
+          },
+          "departed_lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "departed_lng" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "depot_route_name_from_upload" : {
+            "type" : "string"
+          },
+          "time_window_start_2" : {
+            "type" : "integer"
+          },
+          "time_window_end_2" : {
+            "type" : "integer"
+          },
+          "priority" : {
+            "type" : "integer"
+          },
+          "timeframe_violation_state" : {
+            "type" : "integer"
+          },
+          "timeframe_violation_time1" : {
+            "type" : "integer"
+          },
+          "customer_group" : {
+            "type" : "string"
+          },
+          "geofence_detected_visited_timestamp" : {
+            "type" : "integer"
+          },
+          "geofence_detected_service_time" : {
+            "type" : "integer"
+          },
+          "geofence_detected_departed_timestamp" : {
+            "type" : "integer"
+          },
+          "geofence_detected_visited_lat" : {
+            "type" : "number"
+          },
+          "geofence_detected_visited_lng" : {
+            "type" : "number"
+          },
+          "geofence_detected_departed_lat" : {
+            "type" : "number"
+          },
+          "geofence_detected_departed_lng" : {
+            "type" : "number"
+          },
+          "EXT_FIELD_custom_data_config" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          }
+        }
+      },
+      "body" : {
+        "type" : "object",
+        "properties" : {
+          "top" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "left" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "bottom" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "right" : {
+            "type" : "number",
+            "example" : -79.102999
+          }
+        }
+      },
+      "body_1" : {
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string",
+            "example" : "1B2B1C25D259035BDF458E45487CF531"
+          }
+        }
+      },
+      "body_2" : {
+        "required" : [ "route_destination_id", "route_id", "state" ],
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string",
+            "example" : "1B2B1C25D259035BDF458E45487CF531"
+          },
+          "route_destination_id" : {
+            "type" : "integer"
+          },
+          "is_departed" : {
+            "oneOf" : [ {
+              "type" : "boolean",
+              "enum" : [ true, false ]
+            }, {
+              "type" : "integer",
+              "enum" : [ 1, 0 ]
+            } ]
+          },
+          "lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "lng" : {
+            "type" : "number",
+            "example" : -79.102999
+          }
+        }
+      },
+      "body_3" : {
+        "required" : [ "route_destination_id", "route_id", "state" ],
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string",
+            "example" : "1B2B1C25D259035BDF458E45487CF531"
+          },
+          "route_destination_id" : {
+            "type" : "integer"
+          },
+          "is_visited" : {
+            "type" : "boolean",
+            "oneOf" : [ {
+              "type" : "boolean",
+              "enum" : [ true, false ]
+            }, {
+              "type" : "integer",
+              "enum" : [ 1, 0 ]
+            } ]
+          },
+          "lat" : {
+            "type" : "number",
+            "example" : -79.102999
+          },
+          "lng" : {
+            "type" : "number",
+            "example" : -79.102999
+          }
+        }
+      },
+      "body_4" : {
+        "required" : [ "route_id" ],
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string",
+            "example" : "1B2B1C25D259035BDF458E45487CF531"
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "idParam" : {
+        "name" : "Id",
+        "in" : "path",
+        "description" : "Route Address ID.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "integer"
+        }
+      },
+      "pageParam" : {
+        "name" : "page",
+        "in" : "query",
+        "description" : "Requested page.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number",
+          "default" : 1
+        }
+      },
+      "perPageParam" : {
+        "name" : "per_page",
+        "in" : "query",
+        "description" : "Number of Route Addresses per page.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number",
+          "default" : 30
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

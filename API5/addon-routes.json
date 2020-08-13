@@ -1,0 +1,1627 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Route4Me Add-On Routes API",
+    "description" : "Package for Add-On Routes API",
+    "version" : "5.0"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/webapi/v5.0/"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "routes",
+    "description" : "Everything about the Routes API."
+  } ],
+  "paths" : {
+    "/routes" : {
+      "get" : {
+        "tags" : [ "routes" ],
+        "summary" : "Get all Routes of the User.",
+        "description" : "Get all Routes of the User filtered by specifying the corresponding query parameters.",
+        "operationId" : "getRoutes",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Route IDs concatenated with a comma ','",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start timestamp of the date range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End timestamp of the date range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "query",
+          "in" : "query",
+          "description" : "Search the query for a Route.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "directions",
+          "in" : "query",
+          "description" : "Require Route directions in the results.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "notes",
+          "in" : "query",
+          "description" : "Require Route notes in the results.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "route_path_output",
+          "in" : "query",
+          "description" : "Path output style.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "Points", "Encoded", "None" ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Routes loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/RouteList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "routes" ],
+        "summary" : "Update the Route.",
+        "description" : "Update the Route by sending a body payload with the corresponding Route parameters and Addresses.",
+        "operationId" : "updateRoute",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "ID of the Route that needs to be updated.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Route attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RouteUpdateRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Route updated.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Route"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "routes" ],
+        "summary" : "Duplicate Routes.",
+        "description" : "Duplicate multiple Routes by sending a body payload with the array of the corresponding Route IDs.",
+        "operationId" : "duplicateRoutes",
+        "requestBody" : {
+          "description" : "OrderInventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "202" : {
+            "description" : "Routes duplicated.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_202"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Duplicate Routes errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "routes" ],
+        "summary" : "Delete multiple Routes.",
+        "description" : "Delete multiple Routes by sending a comma-delimited list of the corresponding Route IDs as a query string.",
+        "operationId" : "deleteRoutes",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Route IDs concatenated by a comma ','",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "202" : {
+            "description" : "Routes deleted.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_202_1"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Required Route IDs not specified.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/routes/merge" : {
+      "post" : {
+        "tags" : [ "routes" ],
+        "summary" : "Merge multiple Routes.",
+        "description" : "Merge multiple Routes by sending a comma-delimited list of the corresponding Route IDs as a query string and a body payload with the specified depot for the merged Route.",
+        "operationId" : "mergeRoutes",
+        "parameters" : [ {
+          "name" : "route_ids",
+          "in" : "query",
+          "description" : "Route IDs concatenated by a comma ','",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "remove_origin",
+          "in" : "query",
+          "description" : "Remove original Route depots.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Route attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body_1"
+              }
+            }
+          },
+          "required" : false
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Routes merged.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Routes merger errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Route" : {
+        "type" : "object",
+        "properties" : {
+          "route_id" : {
+            "type" : "string"
+          },
+          "optimization_problem_id" : {
+            "type" : "string"
+          },
+          "user_route_rating" : {
+            "type" : "string"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "member_email" : {
+            "type" : "string"
+          },
+          "member_first_name" : {
+            "type" : "string"
+          },
+          "member_last_name" : {
+            "type" : "string"
+          },
+          "member_picture" : {
+            "type" : "string"
+          },
+          "approved_for_execution" : {
+            "type" : "boolean"
+          },
+          "approved_revisions_counter" : {
+            "type" : "integer"
+          },
+          "channel_name" : {
+            "type" : "string"
+          },
+          "vehicle_alias" : {
+            "type" : "string"
+          },
+          "driver_alias" : {
+            "type" : "string"
+          },
+          "trip_distance" : {
+            "type" : "number"
+          },
+          "udu_distance_unit" : {
+            "type" : "string"
+          },
+          "udu_trip_distance" : {
+            "type" : "number"
+          },
+          "is_unrouted" : {
+            "type" : "boolean"
+          },
+          "route_cost" : {
+            "type" : "number"
+          },
+          "route_revenue" : {
+            "type" : "number"
+          },
+          "net_revenue_per_distance_unit" : {
+            "type" : "number"
+          },
+          "created_timestamp" : {
+            "type" : "integer"
+          },
+          "mpg" : {
+            "type" : "number"
+          },
+          "gas_price" : {
+            "type" : "number"
+          },
+          "route_duration_sec" : {
+            "type" : "integer"
+          },
+          "planned_total_route_duration" : {
+            "type" : "integer"
+          },
+          "total_wait_time" : {
+            "type" : "integer"
+          },
+          "udu_actual_travel_distance" : {
+            "type" : "number"
+          },
+          "actual_travel_distance" : {
+            "type" : "number"
+          },
+          "actual_travel_time" : {
+            "type" : "integer"
+          },
+          "actual_footsteps" : {
+            "type" : "integer"
+          },
+          "working_time" : {
+            "type" : "integer"
+          },
+          "driving_time" : {
+            "type" : "integer"
+          },
+          "idling_time" : {
+            "type" : "integer"
+          },
+          "paying_miles" : {
+            "type" : "number"
+          },
+          "geofence_polygon_type" : {
+            "type" : "string"
+          },
+          "geofence_polygon_size" : {
+            "type" : "integer"
+          },
+          "destination_count" : {
+            "type" : "integer"
+          },
+          "notes_count" : {
+            "type" : "integer"
+          },
+          "parameters" : {
+            "$ref" : "#/components/schemas/Parameters"
+          },
+          "path" : {
+            "type" : "array",
+            "items" : {
+              "type" : "array",
+              "items" : {
+                "type" : "number"
+              }
+            }
+          },
+          "links" : {
+            "$ref" : "#/components/schemas/Route_links"
+          },
+          "vehicle" : {
+            "type" : "object"
+          },
+          "member_config_storage" : {
+            "type" : "object"
+          },
+          "member_tracking_subheadline" : {
+            "type" : "string"
+          },
+          "directions" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Direction"
+            }
+          },
+          "addresses" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Address"
+            }
+          },
+          "notes" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Note"
+            }
+          }
+        }
+      },
+      "Note" : {
+        "type" : "object",
+        "properties" : {
+          "note_id" : {
+            "type" : "integer"
+          },
+          "upload_id" : {
+            "type" : "string"
+          },
+          "route_id" : {
+            "type" : "string"
+          },
+          "route_destination_id" : {
+            "type" : "integer"
+          },
+          "ts_added" : {
+            "type" : "integer"
+          },
+          "activity_type" : {
+            "type" : "string"
+          },
+          "upload_extension" : {
+            "type" : "string"
+          },
+          "upload_url" : {
+            "type" : "string"
+          },
+          "upload_type" : {
+            "type" : "string"
+          },
+          "contents" : {
+            "type" : "string"
+          },
+          "lat" : {
+            "type" : "number"
+          },
+          "lng" : {
+            "type" : "number"
+          },
+          "device_type" : {
+            "type" : "string"
+          },
+          "custom_types" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Note_custom_types"
+            }
+          }
+        }
+      },
+      "Address" : {
+        "type" : "object",
+        "properties" : {
+          "route_destination_id" : {
+            "type" : "integer"
+          },
+          "alias" : {
+            "type" : "string"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "address" : {
+            "type" : "string"
+          },
+          "is_depot" : {
+            "type" : "boolean"
+          },
+          "timeframe_violation_state" : {
+            "type" : "boolean"
+          },
+          "timeframe_violation_time" : {
+            "type" : "integer"
+          },
+          "timeframe_violation_rate" : {
+            "type" : "number"
+          },
+          "lat" : {
+            "type" : "number"
+          },
+          "lng" : {
+            "type" : "number"
+          },
+          "curbside_lat" : {
+            "type" : "number"
+          },
+          "curbside_lng" : {
+            "type" : "number"
+          },
+          "priority" : {
+            "type" : "boolean"
+          },
+          "route_id" : {
+            "type" : "string"
+          },
+          "original_route_id" : {
+            "type" : "string"
+          },
+          "route_name" : {
+            "type" : "string"
+          },
+          "optimization_problem_id" : {
+            "type" : "string"
+          },
+          "sequence_no" : {
+            "type" : "integer"
+          },
+          "geocoded" : {
+            "type" : "boolean"
+          },
+          "preferred_geocoding" : {
+            "type" : "string"
+          },
+          "failed_geocoding" : {
+            "type" : "boolean"
+          },
+          "geocodings" : {
+            "type" : "string"
+          },
+          "contact_id" : {
+            "type" : "integer"
+          },
+          "order_id" : {
+            "type" : "integer"
+          },
+          "address_stop_type" : {
+            "type" : "string"
+          },
+          "is_visited" : {
+            "type" : "boolean"
+          },
+          "timestamp_last_visited" : {
+            "type" : "integer"
+          },
+          "visited_lat" : {
+            "type" : "number"
+          },
+          "visited_lng" : {
+            "type" : "number"
+          },
+          "is_departed" : {
+            "type" : "boolean"
+          },
+          "departed_lat" : {
+            "type" : "number"
+          },
+          "departed_lng" : {
+            "type" : "number"
+          },
+          "timestamp_last_departed" : {
+            "type" : "integer"
+          },
+          "group" : {
+            "type" : "string"
+          },
+          "customer_po" : {
+            "type" : "string"
+          },
+          "invoice_no" : {
+            "type" : "string"
+          },
+          "reference_no" : {
+            "type" : "string"
+          },
+          "order_no" : {
+            "type" : "string"
+          },
+          "weight" : {
+            "type" : "number"
+          },
+          "cost" : {
+            "type" : "number"
+          },
+          "revenue" : {
+            "type" : "number"
+          },
+          "cube" : {
+            "type" : "number"
+          },
+          "pieces" : {
+            "type" : "integer"
+          },
+          "first_name" : {
+            "type" : "string"
+          },
+          "last_name" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "phone" : {
+            "type" : "string"
+          },
+          "destination_note_count" : {
+            "type" : "integer"
+          },
+          "drive_time_to_next_destination" : {
+            "type" : "integer"
+          },
+          "abnormal_traffic_time_to_next_destination" : {
+            "type" : "integer"
+          },
+          "uncongested_time_to_next_destination" : {
+            "type" : "integer"
+          },
+          "traffic_time_to_next_destination" : {
+            "type" : "number"
+          },
+          "distance_to_next_destination" : {
+            "type" : "number"
+          },
+          "channel_name" : {
+            "type" : "string"
+          },
+          "generated_time_window_start" : {
+            "type" : "integer"
+          },
+          "generated_time_window_end" : {
+            "type" : "integer"
+          },
+          "time_window_start" : {
+            "type" : "integer"
+          },
+          "time_window_end" : {
+            "type" : "integer"
+          },
+          "time_window_start_2" : {
+            "type" : "integer"
+          },
+          "time_window_end_2" : {
+            "type" : "integer"
+          },
+          "geofence_detected_visited_timestamp" : {
+            "type" : "integer"
+          },
+          "geofence_detected_departed_timestamp" : {
+            "type" : "integer"
+          },
+          "geofence_detected_service_time" : {
+            "type" : "integer"
+          },
+          "geofence_detected_visited_lat" : {
+            "type" : "number"
+          },
+          "geofence_detected_visited_lng" : {
+            "type" : "number"
+          },
+          "geofence_detected_departed_lat" : {
+            "type" : "number"
+          },
+          "geofence_detected_departed_lng" : {
+            "type" : "number"
+          },
+          "time" : {
+            "type" : "integer"
+          },
+          "tracking_number" : {
+            "type" : "integer"
+          },
+          "custom_fields" : {
+            "type" : "object"
+          },
+          "custom_fields_str_json" : {
+            "type" : "string"
+          },
+          "custom_fields_config" : {
+            "type" : "object"
+          },
+          "custom_fields_config_str_json" : {
+            "type" : "string"
+          },
+          "path_to_next" : {
+            "type" : "object"
+          },
+          "udu_distance_to_next_destination" : {
+            "type" : "number"
+          },
+          "wait_time_to_next_destination" : {
+            "type" : "integer"
+          },
+          "manifest" : {
+            "$ref" : "#/components/schemas/Manifest"
+          }
+        }
+      },
+      "Manifest" : {
+        "type" : "object",
+        "properties" : {
+          "running_service_time" : {
+            "type" : "integer"
+          },
+          "running_travel_time" : {
+            "type" : "integer"
+          },
+          "running_wait_time" : {
+            "type" : "integer"
+          },
+          "running_distance" : {
+            "type" : "integer"
+          },
+          "fuel_from_start" : {
+            "type" : "integer"
+          },
+          "fuel_cost_from_start" : {
+            "type" : "integer"
+          },
+          "estimated_arrival_time_ts" : {
+            "type" : "integer"
+          },
+          "estimated_departure_time_ts" : {
+            "type" : "integer"
+          },
+          "projected_arrival_time_ts" : {
+            "type" : "integer"
+          },
+          "projected_departure_time_ts" : {
+            "type" : "integer"
+          },
+          "actual_arrival_time_ts" : {
+            "type" : "integer"
+          },
+          "actual_departure_time_ts" : {
+            "type" : "integer"
+          },
+          "scheduled_arrival_time_ts" : {
+            "type" : "integer"
+          },
+          "scheduled_departure_time_ts" : {
+            "type" : "integer"
+          },
+          "time_impact" : {
+            "type" : "integer"
+          },
+          "udu_running_distance" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "Direction" : {
+        "type" : "object",
+        "properties" : {
+          "location" : {
+            "$ref" : "#/components/schemas/Direction_location"
+          },
+          "steps" : {
+            "type" : "object"
+          }
+        }
+      },
+      "Parameters" : {
+        "type" : "object",
+        "properties" : {
+          "is_upload" : {
+            "type" : "boolean"
+          },
+          "rt" : {
+            "type" : "boolean"
+          },
+          "route_name" : {
+            "type" : "string"
+          },
+          "route_date" : {
+            "type" : "integer"
+          },
+          "route_time" : {
+            "type" : "integer"
+          },
+          "shared_publicly" : {
+            "type" : "boolean"
+          },
+          "disable_optimization" : {
+            "type" : "boolean"
+          },
+          "optimize" : {
+            "type" : "string"
+          },
+          "lock_last" : {
+            "type" : "boolean"
+          },
+          "vehicle_capacity" : {
+            "type" : "integer"
+          },
+          "vehicle_max_cargo_weight" : {
+            "type" : "number"
+          },
+          "vehicle_max_cargo_volume" : {
+            "type" : "number"
+          },
+          "vehicle_max_distance_mi" : {
+            "type" : "integer"
+          },
+          "subtour_max_revenue" : {
+            "type" : "integer"
+          },
+          "distance_unit" : {
+            "type" : "string"
+          },
+          "travel_mode" : {
+            "type" : "string"
+          },
+          "avoid" : {
+            "type" : "string"
+          },
+          "avoidance_zones" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          },
+          "vehicle_id" : {
+            "type" : "string"
+          },
+          "driver_id" : {
+            "type" : "integer"
+          },
+          "dev_lat" : {
+            "type" : "number"
+          },
+          "dev_lng" : {
+            "type" : "number"
+          },
+          "route_max_duration" : {
+            "type" : "integer"
+          },
+          "route_email" : {
+            "type" : "string"
+          },
+          "store_route" : {
+            "type" : "boolean"
+          },
+          "metric" : {
+            "type" : "string"
+          },
+          "algorithm_type" : {
+            "type" : "boolean"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "ip" : {
+            "type" : "integer"
+          },
+          "dm" : {
+            "type" : "boolean"
+          },
+          "dirm" : {
+            "type" : "boolean"
+          },
+          "parts" : {
+            "type" : "integer"
+          },
+          "parts_min" : {
+            "type" : "integer"
+          },
+          "device_id" : {
+            "type" : "integer"
+          },
+          "device_type" : {
+            "type" : "string"
+          },
+          "first_drive_then_wait_between_stops" : {
+            "type" : "boolean"
+          },
+          "has_trailer" : {
+            "type" : "boolean"
+          },
+          "trailer_weight_t" : {
+            "type" : "number"
+          },
+          "limited_weight_t" : {
+            "type" : "number"
+          },
+          "weight_per_axle_t" : {
+            "type" : "number"
+          },
+          "truck_height" : {
+            "type" : "number"
+          },
+          "truck_width" : {
+            "type" : "number"
+          },
+          "truck_length" : {
+            "type" : "number"
+          },
+          "truck_hazardous_goods" : {
+            "type" : "string"
+          },
+          "truck_axles" : {
+            "type" : "string"
+          },
+          "truck_toll_road_usage" : {
+            "type" : "string"
+          },
+          "truck_avoid_ferries" : {
+            "type" : "string"
+          },
+          "truck_hwy_only" : {
+            "type" : "string"
+          },
+          "truck_lcv" : {
+            "type" : "string"
+          },
+          "truck_borders" : {
+            "type" : "string"
+          },
+          "truck_side_street_adherence" : {
+            "type" : "string"
+          },
+          "truck_config" : {
+            "type" : "string"
+          },
+          "truck_dim_unit" : {
+            "type" : "string"
+          },
+          "truck_type" : {
+            "type" : "string"
+          },
+          "truck_weight" : {
+            "type" : "number"
+          },
+          "optimization_quality" : {
+            "type" : "boolean"
+          },
+          "override_addresses" : {
+            "type" : "string"
+          },
+          "max_tour_size" : {
+            "type" : "integer"
+          },
+          "min_tour_size" : {
+            "type" : "integer"
+          },
+          "uturn" : {
+            "type" : "integer"
+          },
+          "leftturn" : {
+            "type" : "integer"
+          },
+          "rightturn" : {
+            "type" : "integer"
+          },
+          "route_time_multiplier" : {
+            "type" : "boolean"
+          },
+          "route_service_time_multiplier" : {
+            "type" : "boolean"
+          },
+          "optimization_engine" : {
+            "type" : "string"
+          }
+        }
+      },
+      "RouteList" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Route"
+            }
+          },
+          "links" : {
+            "$ref" : "#/components/schemas/RouteList_links"
+          },
+          "meta" : {
+            "$ref" : "#/components/schemas/RouteList_meta"
+          }
+        }
+      },
+      "ApiResponse" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer"
+          },
+          "status" : {
+            "type" : "string",
+            "default" : "false"
+          },
+          "messages" : {
+            "type" : "string"
+          }
+        }
+      },
+      "RouteUpdateParameters" : {
+        "type" : "object",
+        "properties" : {
+          "is_upload" : {
+            "type" : "boolean"
+          },
+          "rt" : {
+            "type" : "boolean"
+          },
+          "disable_optimization" : {
+            "type" : "boolean"
+          },
+          "route_name" : {
+            "type" : "string"
+          },
+          "route_date" : {
+            "type" : "integer"
+          },
+          "route_time" : {
+            "type" : "integer"
+          },
+          "shared_publicly" : {
+            "type" : "string"
+          },
+          "optimize" : {
+            "type" : "string"
+          },
+          "lock_last" : {
+            "type" : "boolean"
+          },
+          "vehicle_capacity" : {
+            "type" : "number"
+          },
+          "vehicle_max_cargo_weight" : {
+            "type" : "number"
+          },
+          "vehicle_max_cargo_volume" : {
+            "type" : "number"
+          },
+          "vehicle_max_distance_mi" : {
+            "type" : "number"
+          },
+          "subtour_max_revenue" : {
+            "type" : "number"
+          },
+          "distance_unit" : {
+            "type" : "string"
+          },
+          "travel_mode" : {
+            "type" : "string"
+          },
+          "avoid" : {
+            "type" : "string"
+          },
+          "avoidance_zones" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "vehicle_id" : {
+            "type" : "string"
+          },
+          "driver_id" : {
+            "type" : "string"
+          },
+          "dev_lat" : {
+            "type" : "number"
+          },
+          "dev_lng" : {
+            "type" : "number"
+          },
+          "route_max_duration" : {
+            "type" : "integer"
+          },
+          "route_email" : {
+            "type" : "string"
+          },
+          "store_route" : {
+            "type" : "boolean"
+          },
+          "metric" : {
+            "type" : "integer"
+          },
+          "algorithm_type" : {
+            "type" : "integer"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "ip" : {
+            "type" : "integer"
+          },
+          "dm" : {
+            "type" : "integer"
+          },
+          "dirm" : {
+            "type" : "integer"
+          },
+          "parts" : {
+            "type" : "integer"
+          },
+          "parts_min" : {
+            "type" : "integer"
+          },
+          "device_id" : {
+            "type" : "string"
+          },
+          "device_type" : {
+            "type" : "string"
+          },
+          "first_drive_then_wait_between_stops" : {
+            "type" : "boolean"
+          },
+          "has_trailer" : {
+            "type" : "boolean"
+          },
+          "trailer_weight_t" : {
+            "type" : "number"
+          },
+          "limited_weight_t" : {
+            "type" : "number"
+          },
+          "weight_per_axle_t" : {
+            "type" : "number"
+          },
+          "truck_height" : {
+            "type" : "number"
+          },
+          "truck_width" : {
+            "type" : "number"
+          },
+          "truck_length" : {
+            "type" : "number"
+          },
+          "truck_hazardous_goods" : {
+            "type" : "string"
+          },
+          "truck_axles" : {
+            "type" : "integer"
+          },
+          "truck_toll_road_usage" : {
+            "type" : "string"
+          },
+          "truck_avoid_ferries" : {
+            "type" : "string"
+          },
+          "truck_hwy_only" : {
+            "type" : "string"
+          },
+          "truck_lcv" : {
+            "type" : "string"
+          },
+          "truck_borders" : {
+            "type" : "string"
+          },
+          "truck_side_street_adherence" : {
+            "type" : "string"
+          },
+          "truck_config" : {
+            "type" : "string"
+          },
+          "truck_dim_unit" : {
+            "type" : "string"
+          },
+          "truck_type" : {
+            "type" : "string"
+          },
+          "truck_weight" : {
+            "type" : "number"
+          },
+          "min_tour_size" : {
+            "type" : "integer"
+          },
+          "max_tour_size" : {
+            "type" : "integer"
+          },
+          "optimization_quality" : {
+            "type" : "integer"
+          },
+          "uturn" : {
+            "type" : "integer"
+          },
+          "leftturn" : {
+            "type" : "integer"
+          },
+          "rightturn" : {
+            "type" : "integer"
+          },
+          "route_time_multiplier" : {
+            "type" : "number"
+          },
+          "route_service_time_multiplier" : {
+            "type" : "number"
+          },
+          "optimization_engine" : {
+            "type" : "string"
+          },
+          "override_addresses" : {
+            "$ref" : "#/components/schemas/RouteUpdateParameters_override_addresses"
+          }
+        }
+      },
+      "RouteUpdateAddress" : {
+        "type" : "object",
+        "properties" : {
+          "alias" : {
+            "type" : "string"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "address" : {
+            "type" : "string"
+          },
+          "lat" : {
+            "type" : "number"
+          },
+          "lng" : {
+            "type" : "number"
+          },
+          "curbside_lat" : {
+            "type" : "number"
+          },
+          "curbside_lng" : {
+            "type" : "number"
+          },
+          "is_visited" : {
+            "type" : "boolean"
+          },
+          "customer_po" : {
+            "type" : "string"
+          },
+          "invoice_no" : {
+            "type" : "string"
+          },
+          "reference_no" : {
+            "type" : "string"
+          },
+          "order_no" : {
+            "type" : "string"
+          },
+          "weight" : {
+            "type" : "number"
+          },
+          "cost" : {
+            "type" : "number"
+          },
+          "revenue" : {
+            "type" : "number"
+          },
+          "priority" : {
+            "type" : "integer"
+          },
+          "cube" : {
+            "type" : "number"
+          },
+          "pieces" : {
+            "type" : "integer"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "phone" : {
+            "type" : "string"
+          },
+          "first_name" : {
+            "type" : "string"
+          },
+          "last_name" : {
+            "type" : "string"
+          },
+          "time_window_start" : {
+            "type" : "integer"
+          },
+          "time_window_end" : {
+            "type" : "integer"
+          },
+          "time" : {
+            "type" : "integer"
+          },
+          "custom_fields" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object"
+            }
+          },
+          "contact_id" : {
+            "type" : "integer"
+          },
+          "is_depot" : {
+            "type" : "boolean"
+          },
+          "route_destination_id" : {
+            "type" : "integer"
+          },
+          "sequence_no" : {
+            "type" : "integer"
+          },
+          "address_stop_type" : {
+            "type" : "string"
+          },
+          "group" : {
+            "type" : "string"
+          },
+          "custom_fields_config" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object"
+            }
+          },
+          "order_id" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "RouteUpdateRequest" : {
+        "type" : "object",
+        "properties" : {
+          "parameters" : {
+            "$ref" : "#/components/schemas/RouteUpdateParameters"
+          },
+          "addresses" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/RouteUpdateAddress"
+            }
+          }
+        }
+      },
+      "body" : {
+        "type" : "object",
+        "properties" : {
+          "duplicate_routes_id" : {
+            "type" : "array",
+            "description" : "IDs of the Routes that need to be duplicated.",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "inline_response_202" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "default" : true
+          },
+          "async" : {
+            "type" : "boolean",
+            "default" : true
+          },
+          "route_ids" : {
+            "type" : "array",
+            "description" : "Duplicated Route IDs.",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "inline_response_202_1" : {
+        "type" : "object",
+        "properties" : {
+          "deleted" : {
+            "type" : "boolean",
+            "default" : true
+          },
+          "async" : {
+            "type" : "boolean",
+            "default" : true
+          },
+          "route_id" : {
+            "type" : "string"
+          },
+          "route_ids" : {
+            "type" : "array",
+            "description" : "Deleted Routes' IDs.",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "body_1" : {
+        "required" : [ "depot_address", "depot_lat", "depot_lng" ],
+        "type" : "object",
+        "properties" : {
+          "depot_address" : {
+            "type" : "string"
+          },
+          "depot_lat" : {
+            "type" : "number"
+          },
+          "depot_lng" : {
+            "type" : "number"
+          }
+        },
+        "description" : "New Routes' depot(s) parameters."
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "default" : true
+          },
+          "optimization_problem_id" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Route_links" : {
+        "type" : "object",
+        "properties" : {
+          "route" : {
+            "type" : "string"
+          },
+          "optimization_problem" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Note_custom_types" : {
+        "type" : "object",
+        "properties" : {
+          "note_custom_entry_id" : {
+            "type" : "integer"
+          },
+          "note_id" : {
+            "type" : "integer"
+          },
+          "note_custom_type_id" : {
+            "type" : "integer"
+          },
+          "note_custom_value" : {
+            "type" : "string"
+          },
+          "note_custom_type" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Direction_location" : {
+        "type" : "object",
+        "properties" : {
+          "time" : {
+            "type" : "integer"
+          },
+          "segment_distance" : {
+            "type" : "number"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "start_location" : {
+            "type" : "string"
+          },
+          "end_location" : {
+            "type" : "string"
+          },
+          "directions_error" : {
+            "type" : "string"
+          },
+          "error_code" : {
+            "type" : "string"
+          }
+        }
+      },
+      "RouteList_links" : {
+        "type" : "object",
+        "properties" : {
+          "first" : {
+            "type" : "string"
+          },
+          "last" : {
+            "type" : "string"
+          },
+          "prev" : {
+            "type" : "string"
+          },
+          "next" : {
+            "type" : "string"
+          }
+        }
+      },
+      "RouteList_meta" : {
+        "type" : "object",
+        "properties" : {
+          "current_page" : {
+            "type" : "integer"
+          },
+          "from" : {
+            "type" : "integer"
+          },
+          "last_page" : {
+            "type" : "integer"
+          },
+          "path" : {
+            "type" : "string"
+          },
+          "per_page" : {
+            "type" : "integer"
+          },
+          "to" : {
+            "type" : "integer"
+          },
+          "total" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "RouteUpdateParameters_override_addresses" : {
+        "type" : "object",
+        "properties" : {
+          "time" : {
+            "type" : "integer"
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

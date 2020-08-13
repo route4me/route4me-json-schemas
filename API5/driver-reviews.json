@@ -1,0 +1,517 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Driver Rating API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/driver-reviews",
+    "description" : "Route4Me API V5"
+  }, {
+    "url" : "https://virtserver.swaggerhub.com/Route4Me/driver-rating/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "tags" : [ "Review" ],
+        "summary" : "Get the list of Driver Reviews.",
+        "description" : "Get the list of the Driver Reviews by specifying the following query parameters:\n    filter, tracking_number.\n",
+        "parameters" : [ {
+          "name" : "comments",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "absence", "presence" ]
+          }
+        }, {
+          "name" : "rating",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "example" : [ 1, 3 ],
+            "items" : {
+              "type" : "integer"
+            }
+          }
+        }, {
+          "name" : "member_ids",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer"
+            }
+          }
+        }, {
+          "name" : "start",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "2020-07-01"
+          }
+        }, {
+          "name" : "end",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "example" : "2020-07-01"
+          }
+        }, {
+          "name" : "text",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "tracking_number",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/ReviewList"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Review" ],
+        "summary" : "Upload the Driver Review.",
+        "description" : "Upload the Driver Review to the storage by sending the corresponding body payload.",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/RequestReview"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Review"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "No authentication.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error403"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{rating_id}" : {
+      "get" : {
+        "tags" : [ "Review" ],
+        "summary" : "Get the Driver Review by ID.",
+        "description" : "Get the Driver Review by specifying the 'rating_id' path parameter.",
+        "parameters" : [ {
+          "name" : "rating_id",
+          "in" : "path",
+          "description" : "Driver Review ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Review"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Review" ],
+        "summary" : "Update the Driver Review.",
+        "description" : "Update the Driver Review by specifying the 'rating_id' path parameter and by sending the corresponding body payload.",
+        "parameters" : [ {
+          "name" : "rating_id",
+          "in" : "path",
+          "description" : "Driver Review ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/RequestReview"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Review"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "No authentication.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error403"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "tags" : [ "Review" ],
+        "summary" : "Update the Driver Review.",
+        "description" : "Update the Driver Review by specifying the 'rating_id' path parameter and by sending the corresponding body payload.",
+        "parameters" : [ {
+          "name" : "rating_id",
+          "in" : "path",
+          "description" : "Driver Review ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/RequestReview"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Review"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "No authentication.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error403"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "RequestReview" : {
+        "type" : "object",
+        "properties" : {
+          "tracking_number" : {
+            "type" : "string",
+            "example" : "95ZGLP0N"
+          },
+          "review" : {
+            "type" : "string",
+            "example" : "excelent"
+          },
+          "rating" : {
+            "type" : "integer",
+            "example" : 5
+          }
+        }
+      },
+      "ReviewList" : {
+        "type" : "object",
+        "properties" : {
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Review"
+            }
+          },
+          "simple_pagination" : {
+            "$ref" : "#/components/schemas/ReviewList_simple_pagination"
+          },
+          "total" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ReviewList_total"
+            }
+          }
+        }
+      },
+      "Review" : {
+        "type" : "object",
+        "properties" : {
+          "rating_id" : {
+            "type" : "string",
+            "example" : "5e15b91a285f4"
+          },
+          "tracking_number" : {
+            "type" : "string",
+            "example" : "95ZGLP0N"
+          },
+          "review" : {
+            "type" : "string",
+            "example" : "excelent"
+          },
+          "rating" : {
+            "type" : "integer",
+            "example" : 4
+          },
+          "added_at" : {
+            "type" : "string",
+            "example" : "2020-03-27"
+          }
+        }
+      },
+      "Error403" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 403
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "$ref" : "#/components/schemas/Error406_messages"
+          }
+        }
+      },
+      "ReviewList_simple_pagination" : {
+        "type" : "object",
+        "properties" : {
+          "per_page" : {
+            "type" : "integer",
+            "example" : 30
+          },
+          "page" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "path" : {
+            "type" : "string",
+            "example" : "https://wh.route4me.com/modules/api/v5.0/driver-reviews"
+          },
+          "first" : {
+            "type" : "string",
+            "example" : "https://wh.route4me.com/modules/api/v5.0/driver-reviews?simple_pagination[per_page]=2&simple_pagination[page]=0"
+          },
+          "prev" : {
+            "type" : "string",
+            "example" : "https://wh.route4me.com/modules/api/v5.0/driver-reviews?simple_pagination[per_page]=2&simple_pagination[page]=0"
+          },
+          "next" : {
+            "type" : "string",
+            "example" : "null"
+          }
+        }
+      },
+      "ReviewList_total" : {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "integer",
+            "example" : 4
+          },
+          "quantity" : {
+            "type" : "integer",
+            "example" : 10
+          }
+        }
+      },
+      "Error406_messages" : {
+        "type" : "object",
+        "properties" : {
+          "rating" : {
+            "type" : "array",
+            "example" : [ "The rating (review) must not be greater than '5'.", "The rating (review) field is required even when the Driver Review is absent." ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "route_id" : {
+            "type" : "array",
+            "example" : [ "The route ID field is required." ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "requestBodies" : {
+      "RequestReview" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/RequestReview"
+            }
+          }
+        },
+        "required" : true
+      }
+    }
+  }
+}

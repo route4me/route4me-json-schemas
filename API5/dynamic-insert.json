@@ -1,0 +1,174 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Route4Me Dynamic Insert API",
+    "description" : "Package for Dynamic Insert",
+    "version" : "5.0"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/webapi/v5.0/routes"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "dynamic-insert",
+    "description" : "Everything about the Dynamic Insert."
+  } ],
+  "paths" : {
+    "/lookup-for-new-destination" : {
+      "post" : {
+        "tags" : [ "dynamic-insert" ],
+        "summary" : "Lookup a new destination.",
+        "description" : "Lookup and insert a new destination by sending the corresponding body payload.",
+        "operationId" : "lookupForNewDestination",
+        "requestBody" : {
+          "description" : "Search attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Request"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Routes found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Response"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Request" : {
+        "required" : [ "lat", "lng", "scheduled_for" ],
+        "type" : "object",
+        "properties" : {
+          "insert_mode" : {
+            "type" : "string",
+            "default" : "optimal_after_last_visited",
+            "enum" : [ "optimal_anywhere", "optimal_after_last_visited", "end_of_route", "beginning_of_route" ]
+          },
+          "scheduled_for" : {
+            "type" : "string",
+            "format" : "date",
+            "example" : "2020-02-13"
+          },
+          "lat" : {
+            "type" : "number"
+          },
+          "lng" : {
+            "type" : "number"
+          },
+          "lookup_results_limit" : {
+            "type" : "number",
+            "default" : 3
+          },
+          "recommend_by" : {
+            "type" : "string",
+            "description" : "Distance.",
+            "enum" : [ "distance", "duration" ]
+          },
+          "max_increase_percent_allowed" : {
+            "type" : "number",
+            "default" : 500
+          }
+        }
+      },
+      "MatchedRoute" : {
+        "type" : "object",
+        "properties" : {
+          "route_name" : {
+            "type" : "string"
+          },
+          "route_id" : {
+            "type" : "string"
+          },
+          "recommended_insertion_stop_number" : {
+            "type" : "integer"
+          },
+          "old_distance" : {
+            "type" : "number"
+          },
+          "new_distance" : {
+            "type" : "number"
+          },
+          "old_time" : {
+            "type" : "number"
+          },
+          "new_time" : {
+            "type" : "number"
+          },
+          "percentage_distance_increase" : {
+            "type" : "number"
+          },
+          "percentage_time_increase" : {
+            "type" : "number"
+          },
+          "time_violation" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "Response" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/MatchedRoute"
+        }
+      },
+      "ApiResponse" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer"
+          },
+          "status" : {
+            "type" : "string",
+            "default" : "false"
+          },
+          "messages" : {
+            "type" : "string"
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "default" : 1
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

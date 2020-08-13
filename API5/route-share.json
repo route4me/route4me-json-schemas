@@ -1,0 +1,189 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "Route4Me Route Sharing Add-On API",
+    "description" : "Package for Route Sharing",
+    "version" : "5.0"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/webapi/v5.0/"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "share",
+    "description" : "Endpoint for Route Sharing."
+  } ],
+  "paths" : {
+    "/route-share/share/{route_id}" : {
+      "post" : {
+        "tags" : [ "share" ],
+        "summary" : "Share a Route.",
+        "operationId" : "shareRoute",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID of the Shared Route.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Attributes of the Shared Route.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RouteShareRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Route Sharing started successfully.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "302" : {
+            "description" : "Redirect to the 'myAccount_shareRoute.php' endpoint."
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Route Sharing errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ApiResponse" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer"
+          },
+          "status" : {
+            "type" : "string",
+            "default" : "false"
+          },
+          "messages" : {
+            "type" : "string"
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "default" : 1
+          }
+        }
+      },
+      "RouteShareRequest" : {
+        "required" : [ "recipient_email" ],
+        "type" : "object",
+        "properties" : {
+          "recipient_email" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "description" : "Email address of the recipient."
+            }
+          },
+          "recipient_phone" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "description" : "Phone number of the recipient."
+            }
+          },
+          "public" : {
+            "type" : "boolean",
+            "default" : false
+          },
+          "page" : {
+            "type" : "integer"
+          },
+          "query" : {
+            "type" : "string"
+          },
+          "maptype" : {
+            "type" : "integer"
+          },
+          "send_email" : {
+            "type" : "boolean",
+            "default" : true
+          },
+          "send_sms" : {
+            "type" : "boolean",
+            "default" : false
+          },
+          "days" : {
+            "type" : "integer"
+          },
+          "schedule" : {
+            "type" : "integer"
+          },
+          "date" : {
+            "type" : "string"
+          },
+          "response_format" : {
+            "type" : "string",
+            "description" : "If this parameter equals to 'JSON', then the response will be in JSON."
+          },
+          "tz" : {
+            "type" : "string",
+            "description" : "Time Zone.",
+            "default" : "UTC"
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "success" : {
+            "type" : "boolean",
+            "default" : true
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

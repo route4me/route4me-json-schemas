@@ -1,0 +1,3071 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Route Export API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/routes",
+    "description" : "Route4Me API V5"
+  }, {
+    "url" : "https://virtserver.swaggerhub.com/Route4Me/route-export/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/{route_id}/export" : {
+      "get" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export information of the route.",
+        "description" : "Export the route information in the specified format by specifying the 'route_id' path parameter and by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated custom data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "description" : "The array of the associated column names will be included into the route export.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export information of the route.",
+        "description" : "Export the route information in the specified format by specifying the 'route_id' path parameter and by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated custom data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "description" : "The array of the associated column names will be included into the route export.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{route_id}/export/{export_profile_id}" : {
+      "get" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export information of the route.",
+        "description" : "Export the route information in the specified format by specifying the 'route_id' and 'export_profile_id' path parameters and by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "description" : "Export profile ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export information of the route.",
+        "description" : "Export the route information in the specified format by specifying the 'route_id' and 'export_profile_id' path parameters and by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "description" : "Export profile ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/export" : {
+      "get" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export the information of multiple routes.",
+        "description" : "Export the information of multiple routes by specifying the corresponding query parameters, including the array of the associated route IDs.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Array of the associated route IDs.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated custom data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "description" : "The array of the associated column names will be included into the route export.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export the information of multiple routes.",
+        "description" : "Export the information of multiple routes by specifying the corresponding query parameters, including the array of the associated route IDs.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Array of the associated route IDs.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated custom data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "description" : "The array of the associated column names will be included into the route export.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/export/{export_profile_id}" : {
+      "get" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export the information of multiple routes.",
+        "description" : "Export the information of multiple routes in the specified format by specifying the 'route_id' and 'export_profile_id' path parameters and by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "description" : "Export profile ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Array of the associated route IDs.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Export" ],
+        "summary" : "Export the information of multiple routes.",
+        "description" : "Export the information of multiple routes in the specified format by specifying the 'route_id' and 'export_profile_id' path parameters and by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "description" : "Export profile ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Array of the associated route IDs.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{route_id}/async-export" : {
+      "get" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save the export file with the route information.",
+        "description" : "Save the export file with the route information in the specified format by specifying the 'route_id' path parameter and by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated custom data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "description" : "The array of the associated column names will be included into the route export.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Async"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save the export file with the route information.",
+        "description" : "Save the export file with the route information in the specified format by specifying the 'route_id' path parameter and by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated custom data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "description" : "The array of the associated column names will be included into the route export.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Async"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{route_id}/async-export/{export_profile_id}" : {
+      "get" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save the export file with the route information.",
+        "description" : "Save the export file with the route information in the specified format by specifying the 'route_id' and 'export_profile_id' path parameters and by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "description" : "Export profile ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Async"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save the export file with the route information.",
+        "description" : "Save the export file with the route information in the specified format by specifying the 'route_id' and 'export_profile_id' path parameters and by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "description" : "Export profile ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Async"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/async-export" : {
+      "get" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save the export file with the information of multiple routes.",
+        "description" : "Save the export file with the information of multiple routes by specifying the corresponding query parameters, including the array of the associated route IDs.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Array of the associated route IDs.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated custom data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "description" : "The array of the associated column names will be included into the route export.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Async"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save the export file with the information of multiple routes.",
+        "description" : "Save the export file with the information of multiple routes by specifying the corresponding query parameters, including the array of the associated route IDs.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Array of the associated route IDs.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "all_custom_fields",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated custom data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "columns",
+          "in" : "query",
+          "description" : "The array of the associated column names will be included into the route export.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Async"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/async-export/{export_profile_id}" : {
+      "get" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save the export file with the information of multiple routes.",
+        "description" : "Save the export file with the information of multiple routes in the specified format by specifying the 'route_id' and 'export_profile_id' path parameters and by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "description" : "Export profile ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Array of the associated route IDs.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Async"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Async-export" ],
+        "summary" : "Save the export file with the information of multiple routes.",
+        "description" : "Save the export file with the information of multiple routes in the specified format by specifying the 'route_id' and 'export_profile_id' path parameters and by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "export_profile_id",
+          "in" : "path",
+          "description" : "Export profile ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Array of the associated route IDs.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }, {
+          "name" : "strExportFormat",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "with_addresses",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_notes",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "with_actual_data",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the route(s) will be exported as a file.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time Zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Async"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{route_id}/columns" : {
+      "get" : {
+        "tags" : [ "Columns" ],
+        "summary" : "Get the allowed route data columns for export.",
+        "description" : "Get the allowed route data columns for export by specifying the 'route_id' path parameter.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Columns"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Columns" ],
+        "summary" : "Get the allowed route data columns for export.",
+        "description" : "Get the allowed route data columns for export by specifying the 'route_id' path parameter.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "path",
+          "description" : "Route ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Columns"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/columns" : {
+      "get" : {
+        "tags" : [ "Columns" ],
+        "summary" : "Get the allowed route data columns for export.",
+        "description" : "Get the allowed route data columns of multiple routes for export by specifying the 'route_id' path parameter, containing the array of the associated route IDs.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Array of the associated route IDs.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Columns"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Columns" ],
+        "summary" : "Get the allowed route data columns for export.",
+        "description" : "Get the allowed route data columns of multiple routes for export by specifying the 'route_id' path parameter, containing the array of the associated route IDs.",
+        "parameters" : [ {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Array of the associated route IDs.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Columns"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/export/formats" : {
+      "get" : {
+        "tags" : [ "Formats" ],
+        "summary" : "Get the allowed formats for export.",
+        "description" : "Get the allowed formats for export.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Formats"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "type" : "array",
+            "example" : {
+              "format" : [ "The selected format is invalid." ],
+              "start_date" : [ "The start date does not match the format 'YYYY-MM-DD'" ],
+              "end_date" : [ "The end date does not match the format 'YYYY-MM-DD'" ],
+              "tz" : [ "The selected Time Zone is invalid." ]
+            },
+            "items" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "Async" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string",
+            "example" : "ok"
+          },
+          "job_id" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        }
+      },
+      "Columns" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Columns_inner"
+        }
+      },
+      "Formats" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Formats_result"
+            }
+          }
+        }
+      },
+      "Columns_inner" : {
+        "type" : "object",
+        "properties" : {
+          "field_name" : {
+            "type" : "string",
+            "example" : "sequence_no"
+          },
+          "field_title" : {
+            "type" : "string",
+            "example" : "sequence_no"
+          },
+          "group" : {
+            "type" : "string",
+            "example" : "Route"
+          },
+          "scope" : {
+            "type" : "string",
+            "example" : "addresses"
+          },
+          "allowed" : {
+            "type" : "boolean",
+            "example" : true
+          }
+        }
+      },
+      "Formats_result" : {
+        "type" : "object",
+        "properties" : {
+          "format" : {
+            "type" : "string",
+            "example" : "csv"
+          },
+          "enabled" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "features" : {
+            "type" : "array",
+            "example" : [ "433773A93C658AE2B0C12BDDEACD029A" ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "ruteIdParam" : {
+        "name" : "route_id",
+        "in" : "path",
+        "description" : "Route ID.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "ruteIdArrayParam" : {
+        "name" : "route_id",
+        "in" : "query",
+        "description" : "Array of the associated route IDs.",
+        "required" : true,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      },
+      "exportProfileIdParam" : {
+        "name" : "export_profile_id",
+        "in" : "path",
+        "description" : "Export profile ID.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "number"
+        }
+      },
+      "strExportFormatParam" : {
+        "name" : "strExportFormat",
+        "in" : "query",
+        "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "formatParam" : {
+        "name" : "format",
+        "in" : "query",
+        "description" : "Route export file format.  Available values: json, csv, xml, html.\n",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "startDateParam" : {
+        "name" : "start_date",
+        "in" : "query",
+        "description" : "Start of the time range.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "endDateParam" : {
+        "name" : "end_date",
+        "in" : "query",
+        "description" : "End of the time range.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "withAddressesParam" : {
+        "name" : "with_addresses",
+        "in" : "query",
+        "description" : "If 'true', the route(s) will be exported, including all associated addresses.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "boolean"
+        }
+      },
+      "withNotesParam" : {
+        "name" : "with_notes",
+        "in" : "query",
+        "description" : "If 'true', the route(s) will be exported, including all associated notes.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "boolean"
+        }
+      },
+      "withActualDataParam" : {
+        "name" : "with_actual_data",
+        "in" : "query",
+        "description" : "If 'true', the route(s) will be exported, including the 'Actual' data.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "boolean"
+        }
+      },
+      "allCustomFieldsParam" : {
+        "name" : "all_custom_fields",
+        "in" : "query",
+        "description" : "If 'true', the route(s) will be exported, including all associated custom data.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "boolean"
+        }
+      },
+      "downloadParam" : {
+        "name" : "download",
+        "in" : "query",
+        "description" : "If 'true', the route(s) will be exported as a file.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "boolean"
+        }
+      },
+      "columnsParam" : {
+        "name" : "columns",
+        "in" : "query",
+        "description" : "The array of the associated column names will be included into the route export.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      },
+      "tzParam" : {
+        "name" : "tz",
+        "in" : "query",
+        "description" : "Time Zone.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

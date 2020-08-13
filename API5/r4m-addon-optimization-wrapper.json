@@ -1,0 +1,805 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Optimization Wrapper",
+    "description" : "Package for the Optimization API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/optimization"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/wrapper" : {
+      "get" : {
+        "summary" : "Display a listing of the optimizations",
+        "description" : "Get a list of all the optimizations.",
+        "parameters" : [ {
+          "name" : "state",
+          "in" : "query",
+          "description" : "The optimization state.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer",
+            "enum" : [ 0, 1, 2, 3, 4, 5 ]
+          }
+        }, {
+          "name" : "limit",
+          "in" : "query",
+          "description" : "Limit of the queried records number.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "offset",
+          "in" : "query",
+          "description" : "Offset from the beginning of the queried records.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOptimizations"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Store a new optimization in database",
+        "parameters" : [ {
+          "name" : "api_key",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/Data"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOptimization"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/wrapper/{Id}" : {
+      "get" : {
+        "summary" : "Get optimization by ID",
+        "description" : "Get a optimization by specifying the path parameter id.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "A optimization ID",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOptimization"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update optimization by ID",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "A optimization ID",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "reoptimize",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/Data"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOptimization"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete optimization by ID",
+        "description" : "Delete a optimization by specifying the path parameter id.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "A optimization ID",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "status" : {
+                      "type" : "boolean"
+                    },
+                    "removed" : {
+                      "type" : "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/wrapper/{Id}/address" : {
+      "delete" : {
+        "summary" : "Delete address by ID",
+        "description" : "Delete a address by specifying the path parameter id.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "A optimization ID",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "route_destination_id",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "deleted" : {
+                      "type" : "boolean"
+                    },
+                    "route_destination_id" : {
+                      "type" : "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/hybrid" : {
+      "get" : {
+        "summary" : "Get Hybrid Optimization",
+        "parameters" : [ {
+          "name" : "api_key",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "target_date_string",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "timezone_offset_minutes",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOptimization"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/hybrid/{Id}" : {
+      "put" : {
+        "summary" : "Add the depots to the Hybrid Optimization",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "A optimization ID",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "api_key",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "delete_old_depots",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "Add the depots to the Hybrid Optimization",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "address" : {
+                      "type" : "string"
+                    },
+                    "lat" : {
+                      "type" : "number"
+                    },
+                    "lng" : {
+                      "type" : "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "status" : {
+                      "type" : "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ResponseOptimizations" : {
+        "type" : "object",
+        "properties" : {
+          "optimizations" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseOptimization"
+            }
+          },
+          "totalRecords" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "RequestAddresses" : {
+        "type" : "array",
+        "items" : {
+          "type" : "object",
+          "properties" : {
+            "address" : {
+              "type" : "string"
+            },
+            "alias" : {
+              "type" : "string"
+            },
+            "curbside_lat" : {
+              "type" : "number"
+            },
+            "curbside_lng" : {
+              "type" : "number"
+            },
+            "is_depot" : {
+              "type" : "boolean"
+            },
+            "lat" : {
+              "type" : "number"
+            },
+            "lng" : {
+              "type" : "number"
+            },
+            "order_id" : {
+              "type" : "integer"
+            },
+            "phone" : {
+              "type" : "string"
+            },
+            "priority" : {
+              "type" : "integer"
+            },
+            "sequence_no" : {
+              "type" : "integer"
+            }
+          }
+        }
+      },
+      "RequestParameters" : {
+        "type" : "object",
+        "properties" : {
+          "algorithm_type" : {
+            "type" : "integer"
+          },
+          "avoid" : {
+            "type" : "string"
+          },
+          "device_type" : {
+            "type" : "string"
+          },
+          "disable_optimization" : {
+            "type" : "boolean"
+          },
+          "lock_last" : {
+            "type" : "boolean"
+          },
+          "metric" : {
+            "type" : "integer"
+          },
+          "optimize" : {
+            "type" : "string"
+          },
+          "route_date" : {
+            "type" : "integer"
+          },
+          "route_name" : {
+            "type" : "string"
+          },
+          "route_time" : {
+            "type" : "integer"
+          },
+          "rt" : {
+            "type" : "boolean"
+          },
+          "travel_mode" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ResponseOptimization" : {
+        "type" : "object",
+        "properties" : {
+          "optimization_problem_id" : {
+            "type" : "string"
+          },
+          "user_errors" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "optimization_errors" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "state" : {
+            "title" : "State",
+            "type" : "integer",
+            "description" : "an optimization problem can be at one state at any given time (Initial = 1, MatrixProcessing = 2, Optimizing = 3, Optimized = 4, Error = 5, ComputingDirections = 6)",
+            "enum" : [ 0, 1, 2, 3, 4, 5, 6 ]
+          },
+          "created_timestamp" : {
+            "type" : "integer"
+          },
+          "scheduled_for" : {
+            "type" : "integer"
+          },
+          "optimization_completed_timestamp" : {
+            "type" : "integer"
+          },
+          "parameters" : {
+            "$ref" : "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.dtd"
+          },
+          "sent_to_background" : {
+            "type" : "boolean"
+          },
+          "addresses" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "https://github.com/route4me/route4me-json-schemas/blob/master/Address.dtd"
+            }
+          },
+          "routes" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "https://github.com/route4me/route4me-json-schemas/blob/master/DataObjectRoute.dtd"
+            }
+          },
+          "links" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "https://github.com/route4me/route4me-json-schemas/blob/master/Links.dtd"
+            }
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "The specified resource was not found",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "idParam" : {
+        "name" : "Id",
+        "in" : "path",
+        "description" : "A optimization ID",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "stateParam" : {
+        "name" : "state",
+        "in" : "query",
+        "description" : "The optimization state.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "integer",
+          "enum" : [ 0, 1, 2, 3, 4, 5 ]
+        }
+      },
+      "limitParam" : {
+        "name" : "limit",
+        "in" : "query",
+        "description" : "Limit of the queried records number.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "integer"
+        }
+      },
+      "offsetParam" : {
+        "name" : "offset",
+        "in" : "query",
+        "description" : "Offset from the beginning of the queried records.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "integer"
+        }
+      },
+      "startDateParam" : {
+        "name" : "start_date",
+        "in" : "query",
+        "description" : "Start of the time range.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "endDateParam" : {
+        "name" : "end_date",
+        "in" : "query",
+        "description" : "End of the time range.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      }
+    },
+    "requestBodies" : {
+      "Data" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "addresses" : {
+                  "$ref" : "#/components/schemas/RequestAddresses"
+                },
+                "parameters" : {
+                  "$ref" : "#/components/schemas/RequestParameters"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

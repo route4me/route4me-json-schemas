@@ -1,0 +1,596 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Territories API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0",
+    "description" : "Route4Me API V5"
+  }, {
+    "url" : "https://virtserver.swaggerhub.com/Route4Me/address-book/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/territories" : {
+      "get" : {
+        "tags" : [ "Territories" ],
+        "summary" : "Get all Territories.",
+        "description" : "Get all Territory objects defined by a user.",
+        "parameters" : [ {
+          "name" : "lat",
+          "in" : "query",
+          "description" : "Latitude coordinates of the point located in the searched Territories.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "lng",
+          "in" : "query",
+          "description" : "Longitude coordinates of the point located in the searched Territories.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number"
+          }
+        }, {
+          "name" : "date",
+          "in" : "query",
+          "description" : "The date for filtering addresses and orders.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "addresses",
+          "in" : "query",
+          "description" : "If 'true', the array of the address IDs of the addresses that are located inside the searched Territories will be included into the output.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "default" : false
+          }
+        }, {
+          "name" : "orders",
+          "in" : "query",
+          "description" : "If 'true', the array of the order IDs of the orders that are located inside the searched Territories will be included into the output.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "default" : false
+          }
+        }, {
+          "name" : "scheduled_start",
+          "in" : "query",
+          "description" : "Filter the searched Territories by the scheduled Start date of the orders located in the searched Territories.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "scheduled_end",
+          "in" : "query",
+          "description" : "Filter the searched Territories by the scheduled End date of the orders located in the searched Territories.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "addresses_count",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "orders_count",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseAll"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Territories" ],
+        "summary" : "Add a new Territory.",
+        "description" : "Create a new Territory with a specified shape type by sending the corresponding body payload.",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/Territory"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOne"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/territories/{territory_id}" : {
+      "get" : {
+        "tags" : [ "Territories" ],
+        "summary" : "Find the Territory by ID.",
+        "description" : "Get the specified Territory object by its ID.",
+        "parameters" : [ {
+          "name" : "territory_id",
+          "in" : "path",
+          "description" : "Territory ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOne"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Territories" ],
+        "summary" : "Update the Territory.",
+        "description" : "Update the Territory by specifying the 'territory_id' path parameter and by sending the body payload with the corresponding Territory parameters.",
+        "parameters" : [ {
+          "name" : "territory_id",
+          "in" : "path",
+          "description" : "Territory ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/Territory"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseOne"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Territories" ],
+        "summary" : "Delete the Territory.",
+        "description" : "Delete the Territory by specifying the 'territory_id' path parameter.",
+        "parameters" : [ {
+          "name" : "territory_id",
+          "in" : "path",
+          "description" : "Territory ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/territories/data" : {
+      "post" : {
+        "tags" : [ "Territories" ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_1"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Territory" : {
+        "type" : "object",
+        "properties" : {
+          "territory_name" : {
+            "type" : "string",
+            "example" : "Some territory name"
+          },
+          "territory_color" : {
+            "type" : "string",
+            "example" : "000000"
+          },
+          "territory" : {
+            "$ref" : "#/components/schemas/Territory_territory"
+          }
+        }
+      },
+      "ResponseOne" : {
+        "type" : "object",
+        "properties" : {
+          "territory_id" : {
+            "type" : "string",
+            "example" : "5A51772FAC3C9F3A8A4F9002E9BF7399"
+          },
+          "territory_name" : {
+            "type" : "string",
+            "example" : "Some territory name"
+          },
+          "territory_color" : {
+            "type" : "string",
+            "example" : "000000"
+          },
+          "member_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "territory" : {
+            "$ref" : "#/components/schemas/ResponseOne_territory"
+          },
+          "addresses" : {
+            "type" : "array",
+            "example" : [ ],
+            "items" : {
+              "type" : "number"
+            }
+          },
+          "addresses_count" : {
+            "type" : "number"
+          },
+          "orders" : {
+            "type" : "array",
+            "example" : [ ],
+            "items" : {
+              "type" : "number"
+            }
+          },
+          "orders_count" : {
+            "type" : "number"
+          }
+        }
+      },
+      "ResponseAll" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseOne"
+            }
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "type" : "object"
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : true
+          }
+        }
+      },
+      "body" : {
+        "required" : [ "territories" ],
+        "type" : "object",
+        "properties" : {
+          "territories" : {
+            "type" : "array",
+            "description" : "An array of territory IDs",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "addresses" : {
+            "type" : "boolean",
+            "description" : "If true, the addresses data will be included in the API response",
+            "default" : false
+          },
+          "orders" : {
+            "type" : "boolean",
+            "description" : "If true, the orders data will be included in the API response",
+            "default" : false
+          },
+          "return_ids_only" : {
+            "type" : "boolean",
+            "description" : "If true, an array of address/order IDs will be returned. Otherwise, an array of address/order objects will be returned",
+            "default" : false
+          }
+        }
+      },
+      "inline_response_200_1" : {
+        "type" : "object",
+        "properties" : {
+          "addresses" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object"
+            }
+          },
+          "orders" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object"
+            }
+          }
+        }
+      },
+      "Territory_territory" : {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "example" : "circle",
+            "enum" : [ "poly", "rect", "circle" ]
+          },
+          "data" : {
+            "type" : "array",
+            "example" : [ "38.204727,-85.202452", 1000 ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "ResponseOne_territory" : {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "enum" : [ "poly", "rect", "circle" ]
+          },
+          "data" : {
+            "type" : "array",
+            "example" : [ "38.204727,-85.202452", "1000" ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "requestBodies" : {
+      "Territory" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Territory"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

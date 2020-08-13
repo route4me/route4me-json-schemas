@@ -1,0 +1,544 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Team Management API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/team"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/users" : {
+      "get" : {
+        "summary" : "Display the list of Members.",
+        "description" : "View all existing sub-users associated with the Member’s account.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseTeams"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Store a new Member in the database.",
+        "description" : "Add a new sub-user to the Member account by sending the corresponding body payload with the sub-users' parameters.",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/RequestTeam"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseTeams"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{Id}" : {
+      "get" : {
+        "summary" : "Get the sub-user by ID.",
+        "description" : "Get the sub-user by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "User ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseTeams"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete the sub-user by ID.",
+        "description" : "Delete the sub-user by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "User ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseTeams"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "summary" : "Update the sub-user by ID.",
+        "description" : "Update the sub-user by specifying the path parameter ID and by sending the corresponding body payload with the sub-user's parameters.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "User ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/RequestTeam"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseTeams"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bulk-insert" : {
+      "post" : {
+        "summary" : "Store a new sub-user in the database.",
+        "description" : "Add multiple sub-users to the User account by sending the corresponding body payload with the array of the sub-users' parameters.",
+        "parameters" : [ {
+          "name" : "api_key",
+          "in" : "query",
+          "description" : "API key of the User.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "conflicts",
+          "in" : "query",
+          "description" : "Conflict resolving rule.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "default" : "fail",
+            "enum" : [ "fail", "overwrite", "skip" ]
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseTeams"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "RequestTeam" : {
+        "type" : "object",
+        "properties" : {
+          "new_password" : {
+            "type" : "string"
+          },
+          "new_member_picture" : {
+            "type" : "string"
+          },
+          "member_first_name" : {
+            "type" : "string"
+          },
+          "member_last_name" : {
+            "type" : "string"
+          },
+          "member_email" : {
+            "type" : "string"
+          },
+          "member_company" : {
+            "type" : "string"
+          },
+          "member_type" : {
+            "type" : "string",
+            "example" : "SUB_ACCOUNT_DISPATCHER"
+          },
+          "OWNER_MEMBER_ID" : {
+            "type" : "integer"
+          },
+          "member_phone" : {
+            "type" : "string"
+          },
+          "date_of_birth" : {
+            "type" : "string"
+          },
+          "user_reg_state_id" : {
+            "type" : "integer"
+          },
+          "user_reg_country_id" : {
+            "type" : "integer"
+          },
+          "DriverHourlyRate" : {
+            "type" : "number"
+          },
+          "HIDE_ROUTED_ADDRESSES" : {
+            "type" : "boolean"
+          },
+          "HIDE_VISITED_ADDRESSES" : {
+            "type" : "boolean"
+          },
+          "HIDE_NONFUTURE_ROUTES" : {
+            "type" : "boolean"
+          },
+          "READONLY_USER" : {
+            "type" : "boolean"
+          },
+          "SHOW_SUSR_ADDR" : {
+            "type" : "boolean"
+          },
+          "SHOW_SUSR_ORDERS" : {
+            "type" : "boolean"
+          },
+          "SHOW_ALL_DRIVERS" : {
+            "type" : "boolean"
+          },
+          "SHOW_ALL_VEHICLES" : {
+            "type" : "boolean"
+          },
+          "display_max_routes_future_days" : {
+            "type" : "boolean"
+          },
+          "vendor_id" : {
+            "type" : "integer"
+          },
+          "driving_rate" : {
+            "type" : "number"
+          },
+          "working_rate" : {
+            "type" : "number"
+          },
+          "mile_rate" : {
+            "type" : "number"
+          },
+          "idling_rate" : {
+            "type" : "number"
+          },
+          "timezone" : {
+            "type" : "string",
+            "example" : "America/New_York"
+          }
+        }
+      },
+      "ResponseTeam" : {
+        "type" : "object",
+        "properties" : {
+          "member_id" : {
+            "type" : "integer"
+          },
+          "OWNER_MEMBER_ID" : {
+            "type" : "integer"
+          },
+          "member_first_name" : {
+            "type" : "string"
+          },
+          "member_last_name" : {
+            "type" : "string"
+          },
+          "member_email" : {
+            "type" : "string"
+          },
+          "member_picture" : {
+            "type" : "string",
+            "example" : "/uploads/cc6aba1a0e68ea429c51e3f9cb12e1ac/profile_c96135b77f6fc42be64cd98e0c21d341.jpg"
+          },
+          "member_type" : {
+            "type" : "string",
+            "example" : "SUB_ACCOUNT_DISPATCHER"
+          },
+          "HIDE_ROUTED_ADDRESSES" : {
+            "type" : "boolean"
+          },
+          "HIDE_VISITED_ADDRESSES" : {
+            "type" : "boolean"
+          },
+          "HIDE_NONFUTURE_ROUTES" : {
+            "type" : "boolean"
+          },
+          "READONLY_USER" : {
+            "type" : "boolean"
+          },
+          "SHOW_SUSR_ADDR" : {
+            "type" : "boolean"
+          },
+          "SHOW_SUSR_ORDERS" : {
+            "type" : "boolean"
+          },
+          "SHOW_ALL_DRIVERS" : {
+            "type" : "boolean"
+          },
+          "SHOW_ALL_VEHICLES" : {
+            "type" : "boolean"
+          },
+          "allowed_submember_types" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "can_edit" : {
+            "type" : "boolean"
+          },
+          "can_delete" : {
+            "type" : "boolean"
+          },
+          "custom_data" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "additionalProperties" : {
+                "type" : "string"
+              },
+              "example" : {
+                "some_custom_data_key" : "8tiV5ezA51KRYKFh"
+              }
+            }
+          }
+        }
+      },
+      "ResponseTeams" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/ResponseTeam"
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "description" : "1 - Validation error; 2 - Wrong key; 3 - Deletion Denied; 4 - Conflict.\n"
+          }
+        }
+      },
+      "body" : {
+        "type" : "object",
+        "properties" : {
+          "users" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/RequestTeam"
+            }
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "idParam" : {
+        "name" : "Id",
+        "in" : "path",
+        "description" : "User ID.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "requestBodies" : {
+      "RequestTeam" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/RequestTeam"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

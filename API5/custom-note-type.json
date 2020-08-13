@@ -1,0 +1,326 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Custom Note Types API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/custom-note-type",
+    "description" : "Route4Me API V5"
+  }, {
+    "url" : "https://virtserver.swaggerhub.com/Route4Me/address-book/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "tags" : [ "Custom Note Types" ],
+        "summary" : "Get the list of Custom Note Types.",
+        "description" : "Get the list of Custom Note Types.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/CustomNote"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Custom Note Types" ],
+        "summary" : "Update the Custom Note Type.",
+        "description" : "Update the Custom Note Type by sending the corresponding body payload.",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/RequestCustomNote"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Success"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "Custom Note Types" ],
+        "summary" : "Create a new Custom Note Type.",
+        "description" : "Add a new Custom Note Type to the user’s account.",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/RequestCustomNote"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Success"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "Custom Note Types" ],
+        "summary" : "Delete the Custom Note Type.",
+        "description" : "Delete the Custom Note Type by specifying the corresponding query parameter ID.",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "description" : "Custom Note Type ID.",
+          "required" : true,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Success"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "RequestCustomNote" : {
+        "type" : "object",
+        "properties" : {
+          "type" : {
+            "type" : "string",
+            "example" : "note type"
+          },
+          "values" : {
+            "type" : "array",
+            "example" : [ "note custom value", "note custom value 1" ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "CustomNote" : {
+        "type" : "object",
+        "properties" : {
+          "note_custom_type_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "note_custom_type" : {
+            "type" : "string",
+            "example" : "note custom type"
+          },
+          "root_owner_member_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "note_custom_type_values" : {
+            "type" : "array",
+            "example" : [ "note custom value", "note custom value 1" ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "Success" : {
+        "type" : "object",
+        "properties" : {
+          "result" : {
+            "type" : "string",
+            "example" : "OK"
+          },
+          "affected" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "$ref" : "#/components/schemas/Error406_messages"
+          }
+        }
+      },
+      "inline_response_406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "$ref" : "#/components/schemas/inline_response_406_messages"
+          }
+        }
+      },
+      "Error406_messages" : {
+        "type" : "object",
+        "properties" : {
+          "note_custom_type" : {
+            "type" : "array",
+            "example" : [ "The Custom Note Type field is required." ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "note_custom_type_values" : {
+            "type" : "array",
+            "example" : [ "The Custom Note Type values field is required.", "The Custom Note Type values must be an array." ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "inline_response_406_messages" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "array",
+            "example" : [ "The ID field is required." ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "requestBodies" : {
+      "RequestCustomNote" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/RequestCustomNote"
+            }
+          }
+        },
+        "required" : true
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

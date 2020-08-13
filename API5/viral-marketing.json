@@ -1,0 +1,584 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Viral Marketing API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/viral-marketing/invitations",
+    "description" : "Route4Me API V5"
+  }, {
+    "url" : "https://virtserver.swaggerhub.com/Route4Me/viral-marketing/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/version" : {
+      "get" : {
+        "tags" : [ "Viral Marketing" ],
+        "summary" : "Get a particular Viral Marketing module version.",
+        "description" : "Get a particular Viral Marketing module version.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{invitation_id}/preview" : {
+      "get" : {
+        "tags" : [ "Viral Marketing" ],
+        "summary" : "Get a preview email with an invitation.",
+        "description" : "Get a preview of the email with an invitation by specifying the 'invitation_id' path parameter.",
+        "parameters" : [ {
+          "name" : "invitation_id",
+          "in" : "path",
+          "description" : "Invitation ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation."
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{invitation_id}/people" : {
+      "get" : {
+        "tags" : [ "Viral Marketing" ],
+        "summary" : "Get information about the invited person.",
+        "description" : "Get information about the invitee by specifying the 'invitation_id' path parameter and the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "invitation_id",
+          "in" : "path",
+          "description" : "Invitation ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "email",
+          "in" : "query",
+          "description" : "Invitation email.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "object_id",
+          "in" : "query",
+          "description" : "Object ID.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "object_type",
+          "in" : "query",
+          "description" : "Invitee type.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string",
+            "enum" : [ "member", "lead" ]
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Person"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{invitation_id}/people/send" : {
+      "post" : {
+        "tags" : [ "Viral Marketing" ],
+        "summary" : "Send invitation.",
+        "description" : "Send an invitation to the invitee by specifying the 'invitation_id' path parameter and by sending the corresponding body payload.",
+        "parameters" : [ {
+          "name" : "invitation_id",
+          "in" : "path",
+          "description" : "Invitation ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RequestSend"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_1"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SendError406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/{invitation_id}/people/showed" : {
+      "put" : {
+        "tags" : [ "Viral Marketing" ],
+        "summary" : "Mark the invitation as Shown.",
+        "description" : "Mark the invitation as Shown by specifying the 'invitation_id ' path parameter and by sending the corresponding body payload.",
+        "parameters" : [ {
+          "name" : "invitation_id",
+          "in" : "path",
+          "description" : "Invitation ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RequestInvitation"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_1"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Person" : {
+        "type" : "object",
+        "properties" : {
+          "invitation" : {
+            "$ref" : "#/components/schemas/Person_invitation"
+          }
+        }
+      },
+      "PersonData" : {
+        "type" : "object",
+        "properties" : {
+          "email" : {
+            "type" : "string",
+            "example" : "targetEmail@mail.ru"
+          },
+          "name" : {
+            "type" : "string",
+            "example" : "targetName"
+          },
+          "title" : {
+            "type" : "string",
+            "example" : "Title"
+          },
+          "role" : {
+            "type" : "string",
+            "example" : "Manager"
+          },
+          "seniority" : {
+            "type" : "string",
+            "example" : "Junior"
+          },
+          "phone" : {
+            "type" : "string",
+            "example" : "+1-88-44-257"
+          },
+          "logo" : {
+            "type" : "string",
+            "example" : "https://secure.gravatar.com/avatar/8e72ea3901e53b9c3366bda12acf7852?s=36&r=g&d=identicon"
+          },
+          "is_invited" : {
+            "type" : "integer",
+            "example" : 0
+          },
+          "invited_member_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "is_shown" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "is_paid" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "is_validated" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "is_registered" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "its_time_to_invite" : {
+            "type" : "boolean",
+            "example" : true
+          }
+        }
+      },
+      "RequestSend" : {
+        "type" : "object",
+        "properties" : {
+          "email" : {
+            "type" : "string",
+            "example" : "email@gmail.com"
+          },
+          "object_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "object_type" : {
+            "type" : "string",
+            "example" : "member",
+            "enum" : [ "member", "lead" ]
+          },
+          "target_email" : {
+            "type" : "array",
+            "example" : [ "targetEmail@gmail.com" ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "device_type" : {
+            "type" : "string",
+            "example" : "web",
+            "enum" : [ "web", "iphone", "ipad", "android_phone", "android_tablet", "map4me", "gps4me", "telematics4me", "tracker", "appdirect", "virtual" ]
+          }
+        }
+      },
+      "RequestInvitation" : {
+        "type" : "object",
+        "properties" : {
+          "email" : {
+            "type" : "string",
+            "example" : "email@gmail.com"
+          },
+          "object_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "object_type" : {
+            "type" : "string",
+            "example" : "member",
+            "enum" : [ "member", "lead" ]
+          },
+          "target_email" : {
+            "type" : "array",
+            "example" : [ "targetEmail@gmail.com" ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "$ref" : "#/components/schemas/Error406_messages"
+          }
+        }
+      },
+      "SendError406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "$ref" : "#/components/schemas/SendError406_messages"
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "version" : {
+            "type" : "number",
+            "example" : 1
+          }
+        }
+      },
+      "inline_response_200_1" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 200
+          }
+        }
+      },
+      "inline_response_406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "$ref" : "#/components/schemas/inline_response_406_messages"
+          }
+        }
+      },
+      "Person_invitation" : {
+        "type" : "object",
+        "properties" : {
+          "message" : {
+            "type" : "string",
+            "example" : "Message from FirstName lastName email@gmail.com"
+          },
+          "its_time_to_invite" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "data" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/PersonData"
+            }
+          }
+        }
+      },
+      "Error406_messages" : {
+        "type" : "object",
+        "properties" : {
+          "email" : {
+            "type" : "array",
+            "example" : [ "The email must be a valid email address." ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "SendError406_messages" : {
+        "type" : "object",
+        "properties" : {
+          "target_email" : {
+            "type" : "array",
+            "example" : [ "The target email field is required." ],
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "device_type" : {
+            "type" : "array",
+            "example" : [ "The selected device type is invalid." ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "inline_response_406_messages" : {
+        "type" : "object",
+        "properties" : {
+          "target_email" : {
+            "type" : "array",
+            "example" : [ "The target email field is required." ],
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "invitationIdParam" : {
+        "name" : "invitation_id",
+        "in" : "path",
+        "description" : "Invitation ID.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

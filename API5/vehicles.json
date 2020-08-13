@@ -1,0 +1,1022 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Vehicles API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0",
+    "description" : "Route4Me API V5"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/vehicles" : {
+      "get" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Display the list of Vehicles.",
+        "description" : "Get the paginated list of Vehicles.",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The requested page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 1
+          }
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "description" : "The number of Vehicles per page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 100
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseVehicles"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Store a new Vehicle in the database.",
+        "description" : "Create a new Vehicle in the user's account by sending the corresponding body payload with the Vehicle parameters.",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/ResponseVehicle"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseVehicle"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicles/{Id}" : {
+      "get" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Get the Vehicle by ID.",
+        "description" : "Get the Vehicle by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Vehicle ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseVehicle"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Delete the Vehicle by ID.",
+        "description" : "Delete the Vehicle by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Vehicle ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseVehicle"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Update the Vehicle by ID.",
+        "description" : "Update the Vehicle by specifying the path parameter ID and by sending the corresponding body payload with the Vehicle's parameters.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Vehicle ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/ResponseVehicle"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseVehicle"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicles/assign" : {
+      "post" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Store a new temporary Vehicles in the database.",
+        "description" : "Create a new temporary Vehicle by sending the corresponding body payload.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseTemporalVehicles"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicle-profiles" : {
+      "get" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Display the list of Vehicle Profiles.",
+        "description" : "Get the list of Vehicle Profiles.",
+        "parameters" : [ {
+          "name" : "with_pagination",
+          "in" : "query",
+          "description" : "If 'true', the Vehicle Profiles list will be paginated.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean",
+            "default" : false
+          }
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "The requested page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 1
+          }
+        }, {
+          "name" : "per_page",
+          "in" : "query",
+          "description" : "The number of Vehicles per page.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "number",
+            "default" : 100
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseVehicleProfiles"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Store a new Vehicle Profile in the database.",
+        "description" : "Create a new Vehicle Profile by sending the corresponding body payload with the Vehicle Profile's parameters.",
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/ResponseVehicleProfile"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseVehicleProfile"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicle-profiles/{Id}" : {
+      "get" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Get the Vehicle Profile by ID.",
+        "description" : "Get the Vehicle Profile by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Vehicle Profile ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseVehicleProfile"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Delete the Vehicle Profile by ID.",
+        "description" : "Delete the Vehicle Profile by specifying the path parameter ID.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Vehicle Profile ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseVehicleProfile"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Update the Vehicle Profile by ID.",
+        "description" : "Update the Vehicle Profile by specifying the path parameter ID and by sending the corresponding body payload with the Vehicle Profile's parameters.",
+        "parameters" : [ {
+          "name" : "Id",
+          "in" : "path",
+          "description" : "Vehicle Profile ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "requestBody" : {
+          "$ref" : "#/components/requestBodies/ResponseVehicleProfile"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseVehicleProfile"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicles/search" : {
+      "post" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Search for the Vehicle.",
+        "description" : "Search for the Vehicle by sending the corresponding body payload with Vehicles ids and location.",
+        "operationId" : "searchVehicles",
+        "requestBody" : {
+          "description" : "Vehicles attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/VehiclesSearchRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Vehicles loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VehiclesSearchList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicles/execute" : {
+      "post" : {
+        "tags" : [ "vehicles" ],
+        "summary" : "Execute order.",
+        "description" : "Execute the Vehicle's Order by sending the corresponding body payload with the corresponding  location, and Vehicle ID.",
+        "operationId" : "executeVehicles",
+        "requestBody" : {
+          "description" : "Vehicle attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/VehiclesExecuteRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "The associated route has started.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ResponseTemporalVehicles" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/ResponseTemporalVehicle"
+        }
+      },
+      "ResponseTemporalVehicle" : {
+        "type" : "object",
+        "properties" : {
+          "vehicle_id" : {
+            "type" : "string",
+            "example" : "EE90D46C8065A65A35FE1AE9B4BE80A3"
+          },
+          "expires_at" : {
+            "type" : "string"
+          },
+          "original_member_id" : {
+            "type" : "integer"
+          },
+          "assigned_member_id" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "ResponseVehicleProfiles" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseVehicleProfile"
+            }
+          }
+        }
+      },
+      "ResponseVehicleProfile" : {
+        "type" : "object",
+        "properties" : {
+          "vehicle_profile_id" : {
+            "type" : "string"
+          },
+          "root_member_id" : {
+            "type" : "integer"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "height" : {
+            "type" : "number"
+          },
+          "width" : {
+            "type" : "number"
+          },
+          "length" : {
+            "type" : "number"
+          },
+          "weight" : {
+            "type" : "number"
+          },
+          "max_weight_per_axle" : {
+            "type" : "number"
+          },
+          "created_at" : {
+            "type" : "string",
+            "example" : "2019-10-30T04:56:08.000Z"
+          },
+          "updated_at" : {
+            "type" : "string"
+          },
+          "deleted_at" : {
+            "type" : "string"
+          },
+          "fuel_type" : {
+            "type" : "string",
+            "enum" : [ "unleaded 87", "unleaded 89", "unleaded 91", "unleaded 93", "diesel", "electric", "hybrid" ]
+          },
+          "fuel_consumption_city" : {
+            "type" : "number"
+          },
+          "fuel_consumption_highway" : {
+            "type" : "number"
+          },
+          "hazmat_type" : {
+            "type" : "string",
+            "enum" : [ "general", "explosives", "flammable", "inhalants", "caustic", "radioactive" ]
+          },
+          "is_predefined" : {
+            "type" : "boolean"
+          },
+          "is_default" : {
+            "type" : "boolean"
+          },
+          "height_units" : {
+            "type" : "string",
+            "example" : "ft"
+          },
+          "width_units" : {
+            "type" : "string",
+            "example" : "ft"
+          },
+          "length_units" : {
+            "type" : "string",
+            "example" : "ft"
+          },
+          "weight_units" : {
+            "type" : "string",
+            "example" : "lb"
+          },
+          "max_weight_per_axle_units" : {
+            "type" : "string",
+            "example" : "lb"
+          },
+          "fuel_consumption_city_units" : {
+            "type" : "string",
+            "example" : "mpg"
+          },
+          "fuel_consumption_highway_units" : {
+            "type" : "string",
+            "example" : "mpg"
+          },
+          "height_uf_value" : {
+            "type" : "string",
+            "example" : "3 m"
+          },
+          "width_uf_value" : {
+            "type" : "string",
+            "example" : "5'"
+          },
+          "length_uf_value" : {
+            "type" : "string",
+            "example" : "10'7''"
+          },
+          "weight_uf_value" : {
+            "type" : "string",
+            "example" : "26,000lb 3oz"
+          },
+          "max_weight_per_axle_uf_value" : {
+            "type" : "string",
+            "example" : "900lb"
+          },
+          "fuel_consumption_city_uf_value" : {
+            "type" : "string",
+            "example" : "20.01 mi/l"
+          },
+          "fuel_consumption_highway_uf_value" : {
+            "type" : "string",
+            "example" : "2,000.01 mpg"
+          }
+        }
+      },
+      "ResponseVehicles" : {
+        "type" : "object",
+        "properties" : {
+          "results" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/ResponseVehicle"
+            }
+          }
+        }
+      },
+      "ResponseVehicle" : {
+        "type" : "object",
+        "properties" : {
+          "vehicle_id" : {
+            "type" : "string",
+            "example" : "EE90D46C8065A65A35FE1AE9B4BE80A3"
+          },
+          "member_id" : {
+            "type" : "integer"
+          },
+          "is_deleted" : {
+            "type" : "boolean"
+          },
+          "vehicle_alias" : {
+            "type" : "string"
+          },
+          "vehicle_vin" : {
+            "type" : "string"
+          },
+          "vehicle_reg_state_id" : {
+            "type" : "integer"
+          },
+          "vehicle_reg_country_id" : {
+            "type" : "integer"
+          },
+          "vehicle_license_plate" : {
+            "type" : "string"
+          },
+          "vehicle_type_id" : {
+            "type" : "integer"
+          },
+          "timestamp_added" : {
+            "type" : "string"
+          },
+          "vehicle_make" : {
+            "type" : "string"
+          },
+          "vehicle_model_year" : {
+            "type" : "integer"
+          },
+          "vehicle_model" : {
+            "type" : "string"
+          },
+          "vehicle_year_acquired" : {
+            "type" : "integer"
+          },
+          "vehicle_cost_new" : {
+            "type" : "number"
+          },
+          "purchased_new" : {
+            "type" : "boolean"
+          },
+          "license_start_date" : {
+            "type" : "string",
+            "example" : "2019-10-25T00:00:00.000Z"
+          },
+          "license_end_date" : {
+            "type" : "string"
+          },
+          "is_operational" : {
+            "type" : "boolean"
+          },
+          "fuel_type" : {
+            "type" : "string",
+            "enum" : [ "unleaded 87", "unleaded 89", "unleaded 91", "unleaded 93", "diesel", "electric", "hybrid" ]
+          },
+          "external_telematics_vehicle_id" : {
+            "type" : "integer"
+          },
+          "timestamp_removed" : {
+            "type" : "integer"
+          },
+          "vehicle_profile_id" : {
+            "type" : "string"
+          },
+          "fuel_consumption_city" : {
+            "type" : "number"
+          },
+          "fuel_consumption_highway" : {
+            "type" : "number"
+          },
+          "fuel_consumption_city_units" : {
+            "type" : "string",
+            "example" : "mi/l"
+          },
+          "fuel_consumption_highway_units" : {
+            "type" : "string",
+            "example" : "mi/l"
+          },
+          "mpg_city" : {
+            "type" : "number"
+          },
+          "mpg_highway" : {
+            "type" : "number"
+          },
+          "fuel_consumption_city_uf_value" : {
+            "type" : "string",
+            "example" : "20.01 mi/l"
+          },
+          "fuel_consumption_highway_uf_value" : {
+            "type" : "string",
+            "example" : "2,000.01 mpg"
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          }
+        }
+      },
+      "VehiclesSearchRequest" : {
+        "required" : [ "lat", "lng", "vehicle_ids" ],
+        "type" : "object",
+        "properties" : {
+          "vehicle_ids" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "example" : "EE90D46C8065A65A35FE1AE9B4BE80A3"
+            }
+          },
+          "lat" : {
+            "type" : "number"
+          },
+          "lng" : {
+            "type" : "number"
+          }
+        }
+      },
+      "VehiclesSearchList" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/ResponseVehicle"
+        }
+      },
+      "VehiclesExecuteRequest" : {
+        "required" : [ "lat", "lng", "vehicle_ids" ],
+        "type" : "object",
+        "properties" : {
+          "vehicle_id" : {
+            "type" : "string",
+            "example" : "EE90D46C8065A65A35FE1AE9B4BE80A3"
+          },
+          "lat" : {
+            "type" : "number"
+          },
+          "lng" : {
+            "type" : "number"
+          }
+        }
+      },
+      "body" : {
+        "required" : [ "assigned_member_id", "expires_at" ],
+        "type" : "object",
+        "properties" : {
+          "vehicle_id" : {
+            "type" : "string",
+            "example" : "EE90D46C8065A65A35FE1AE9B4BE80A3"
+          },
+          "vehicle_license_plate" : {
+            "type" : "string"
+          },
+          "assigned_member_id" : {
+            "type" : "integer"
+          },
+          "expires_at" : {
+            "type" : "integer",
+            "description" : "Unix timestamp."
+          },
+          "force-assignment" : {
+            "type" : "boolean",
+            "default" : false
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "vehicle_id" : {
+            "type" : "string"
+          },
+          "order_id" : {
+            "type" : "integer"
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "idParam" : {
+        "name" : "Id",
+        "in" : "path",
+        "description" : "Vehicle ID.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "pageParam" : {
+        "name" : "page",
+        "in" : "query",
+        "description" : "The requested page.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number",
+          "default" : 1
+        }
+      },
+      "perPageParam" : {
+        "name" : "per_page",
+        "in" : "query",
+        "description" : "The number of Vehicles per page.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "number",
+          "default" : 100
+        }
+      }
+    },
+    "requestBodies" : {
+      "ResponseVehicle" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/ResponseVehicle"
+            }
+          }
+        }
+      },
+      "ResponseVehicleProfile" : {
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/ResponseVehicleProfile"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

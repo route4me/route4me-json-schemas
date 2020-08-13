@@ -1,0 +1,811 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Route4Me Vehicle Inventories API",
+    "description" : "Package for Vehicle Inventories.",
+    "version" : "5.0"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "tags" : [ {
+    "name" : "vehicle-inventory",
+    "description" : "Everything about Vehicle Inventories."
+  } ],
+  "paths" : {
+    "/vehicle-inventory/{vehicle_id}" : {
+      "get" : {
+        "tags" : [ "vehicle-inventory" ],
+        "summary" : "Get all Inventories of a Vehicle.",
+        "description" : "Get the list of all Inventories of the Vehicle by specifying the 'vehicle_id' path parameter.",
+        "operationId" : "getVehicleInventories",
+        "parameters" : [ {
+          "name" : "vehicle_id",
+          "in" : "path",
+          "description" : "Vehicle ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Vehicle's Inventories loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VehicleInventoryList"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "vehicle-inventory" ],
+        "summary" : "Store the Vehicle's Inventories.",
+        "description" : "Update the Inventories of the Vehicle by specifying the 'vehicle_id' path parameter and by sending the corresponding body payload.",
+        "operationId" : "storeInventoriesOfVehicle",
+        "parameters" : [ {
+          "name" : "vehicle_id",
+          "in" : "path",
+          "description" : "Vehicle ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "VehicleInventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/VehicleInventoryUpdateRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Vehicle's Inventories stored.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VehicleInventoryList"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "vehicle-inventory" ],
+        "summary" : "Increase the Vehicle  Inventories quantity, weight, volume.",
+        "description" : "Increase the Vehicle  Inventories quantity, weight, volume.",
+        "operationId" : "increaseInventoriesOfVehicle",
+        "parameters" : [ {
+          "name" : "vehicle_id",
+          "in" : "path",
+          "description" : "Vehicle ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "VehicleInventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Vehicle's Inventories increased.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VehicleInventoryList"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete" : {
+        "tags" : [ "vehicle-inventory" ],
+        "summary" : "Delete all Vehicle's Inventories",
+        "description" : "Delete all Inventories of the Vehicle by specifying the 'vehicle_id' path parameter",
+        "operationId" : "deleteAllInventoriesOfVehicle",
+        "parameters" : [ {
+          "name" : "vehicle_id",
+          "in" : "path",
+          "description" : "Vehicle ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "returns empty array",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch" : {
+        "tags" : [ "vehicle-inventory" ],
+        "summary" : "Update the Vehicle's Inventories.",
+        "description" : "Update the Inventories of the Vehicle by specifying the 'vehicle_id' path parameter and by sending the corresponding body payload.",
+        "operationId" : "updateInventoriesOfVehicle",
+        "parameters" : [ {
+          "name" : "vehicle_id",
+          "in" : "path",
+          "description" : "Vehicle ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "VehicleInventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/VehicleInventoryUpdateRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Vehicle's Inventories updated.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VehicleInventoryList"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicle-inventory/{vehicle_id}/items" : {
+      "delete" : {
+        "tags" : [ "vehicle-inventory" ],
+        "summary" : "Delete selected Vehicle's Inventories",
+        "description" : "Delete Inventories of the Vehicle by specifying the 'vehicle_id' path parameter and by sending the corresponding body payload with the array of the associated Inventory IDs.",
+        "operationId" : "deleteSelectedInventoriesOfVehicle",
+        "parameters" : [ {
+          "name" : "vehicle_id",
+          "in" : "path",
+          "description" : "Vehicle ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "description" : "VehicleInventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/VehicleInventoryDelete"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Vehicle's Inventories deleted.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VehicleInventoryList"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicle-inventory/bulk" : {
+      "delete" : {
+        "tags" : [ "vehicle-inventory" ],
+        "summary" : "Removes all the links between vehicles and inventory items for the requested vehicles",
+        "description" : "Delete Inventories of the requested Vehicles by sending the corresponding body payload with the array of the associated Vehicle IDs.",
+        "operationId" : "bulkDeleteInventoriesOfVehicles",
+        "requestBody" : {
+          "description" : "VehicleInventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/VehicleIds"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Vehicles with inventories",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VehicleList"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicle-inventory" : {
+      "delete" : {
+        "tags" : [ "vehicle-inventory" ],
+        "summary" : "Removes all the links between vehicles and inventory items",
+        "description" : "Removes all the links between vehicles and inventory items",
+        "operationId" : "deleteInventoriesVehicles",
+        "responses" : {
+          "200" : {
+            "description" : "returns empty array",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicle-inventory/vehicles" : {
+      "get" : {
+        "tags" : [ "vehicle-inventory" ],
+        "summary" : "Get all vehicles with inventories information",
+        "description" : "Get all vehicles with inventories information",
+        "operationId" : "getAllVehicles",
+        "responses" : {
+          "200" : {
+            "description" : "Vehicles with inventories",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/VehicleList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicle-inventory/search" : {
+      "post" : {
+        "tags" : [ "dynamic-inventory-dispatch" ],
+        "summary" : "Search for the Vehicle by Vehicle Inventories.",
+        "description" : "Search for the Vehicle by sending the corresponding body payload with the Inventory parameters and location.",
+        "operationId" : "searchVehicleByInventories",
+        "requestBody" : {
+          "description" : "VehicleInventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/VehicleInventorySearchRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Vehicles loaded.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/InventorySearchList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/vehicle-inventory/execute" : {
+      "post" : {
+        "tags" : [ "dynamic-inventory-dispatch" ],
+        "summary" : "Execute order.",
+        "description" : "Execute the Vehicle's Inventories Order by sending the corresponding body payload with the corresponding Inventory parameters, location, and Vehicle ID.",
+        "operationId" : "executeVehicleByInventories",
+        "requestBody" : {
+          "description" : "VehicleInventory attributes.",
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ExecuteOrderRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "The associated route has started.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Execution errors.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "VehicleInventory" : {
+        "type" : "object",
+        "properties" : {
+          "inventory_id" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "quantity" : {
+            "type" : "integer"
+          },
+          "total_weight" : {
+            "type" : "number"
+          },
+          "total_volume" : {
+            "type" : "number"
+          },
+          "total_cost" : {
+            "type" : "number"
+          },
+          "total_price" : {
+            "type" : "number"
+          },
+          "created_at" : {
+            "type" : "string"
+          },
+          "updated_at" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Vehicle" : {
+        "type" : "object",
+        "properties" : {
+          "vehicle_id" : {
+            "type" : "string"
+          },
+          "vehicle_alias" : {
+            "type" : "string"
+          },
+          "vehicle_license_plate" : {
+            "type" : "string"
+          },
+          "vehicle_make" : {
+            "type" : "string"
+          },
+          "vehicle_model_year" : {
+            "type" : "integer"
+          },
+          "vehicle_model" : {
+            "type" : "string"
+          },
+          "inventories" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/VehicleInventory"
+            }
+          }
+        }
+      },
+      "InventorySearch" : {
+        "type" : "object",
+        "properties" : {
+          "vehicle" : {
+            "$ref" : "#/components/schemas/Vehicle"
+          },
+          "vehicleLocation" : {
+            "$ref" : "#/components/schemas/InventorySearch_vehicleLocation"
+          },
+          "distance" : {
+            "type" : "number"
+          }
+        }
+      },
+      "VehicleInventoryList" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/VehicleInventory"
+        }
+      },
+      "InventorySearchList" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/InventorySearch"
+        }
+      },
+      "VehicleList" : {
+        "type" : "array",
+        "items" : {
+          "$ref" : "#/components/schemas/Vehicle"
+        }
+      },
+      "ApiResponse" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer"
+          },
+          "status" : {
+            "type" : "string",
+            "default" : "false"
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "default" : 1
+          },
+          "messages" : {
+            "type" : "string"
+          }
+        }
+      },
+      "VehicleInventoryUpdateRequestSub" : {
+        "required" : [ "inventory_id", "quantity" ],
+        "type" : "object",
+        "properties" : {
+          "inventory_id" : {
+            "type" : "string"
+          },
+          "quantity" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "VehicleInventoryUpdateRequest" : {
+        "required" : [ "inventory" ],
+        "type" : "object",
+        "properties" : {
+          "inventory" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/VehicleInventoryUpdateRequestSub"
+            }
+          }
+        }
+      },
+      "VehicleInventoryDelete" : {
+        "required" : [ "inventory_ids" ],
+        "type" : "object",
+        "properties" : {
+          "inventory_ids" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "VehicleIds" : {
+        "required" : [ "vehicle_ids" ],
+        "type" : "object",
+        "properties" : {
+          "vehicle_ids" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "VehicleInventorySearchRequestSub" : {
+        "required" : [ "inventory_id" ],
+        "type" : "object",
+        "properties" : {
+          "inventory_id" : {
+            "type" : "string"
+          },
+          "quantity" : {
+            "type" : "integer"
+          },
+          "weight" : {
+            "type" : "number"
+          },
+          "volume" : {
+            "type" : "number"
+          }
+        }
+      },
+      "VehicleInventorySearchRequest" : {
+        "required" : [ "inventory", "lat", "lng" ],
+        "type" : "object",
+        "properties" : {
+          "inventory" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/VehicleInventorySearchRequestSub"
+            }
+          },
+          "lat" : {
+            "type" : "number"
+          },
+          "lng" : {
+            "type" : "number"
+          },
+          "use_assigned_member_location" : {
+            "type" : "boolean",
+            "default" : false
+          }
+        }
+      },
+      "ExecuteOrderRequest" : {
+        "allOf" : [ {
+          "$ref" : "#/components/schemas/VehicleInventorySearchRequest"
+        }, {
+          "type" : "object",
+          "properties" : {
+            "vehicle_id" : {
+              "type" : "string"
+            },
+            "order_custom_data" : {
+              "type" : "array",
+              "example" : "{\"external_order_id\":1232}",
+              "items" : {
+                "type" : "string"
+              }
+            },
+            "scheduled_for" : {
+              "type" : "string",
+              "example" : "2020-06-05"
+            }
+          }
+        } ]
+      },
+      "body" : {
+        "type" : "object",
+        "properties" : {
+          "inventory" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/VehicleInventorySearchRequestSub"
+            }
+          }
+        }
+      },
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "vehicle_id" : {
+            "type" : "string"
+          },
+          "order_id" : {
+            "type" : "integer"
+          },
+          "order_custom_data" : {
+            "type" : "array",
+            "example" : "{\"external_order_id\":1323,\"extra_package\":\"yes\"}",
+            "items" : {
+              "type" : "string"
+            }
+          },
+          "route_id" : {
+            "type" : "string"
+          },
+          "estimated_arrival_time_ts" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "InventorySearch_vehicleLocation" : {
+        "type" : "object",
+        "properties" : {
+          "lat" : {
+            "type" : "number"
+          },
+          "lng" : {
+            "type" : "number"
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "vehicleIdParam" : {
+        "name" : "vehicle_id",
+        "in" : "path",
+        "description" : "Vehicle ID.",
+        "required" : true,
+        "style" : "simple",
+        "explode" : false,
+        "schema" : {
+          "type" : "string"
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

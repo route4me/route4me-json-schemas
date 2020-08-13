@@ -1,0 +1,194 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Fuel Costs API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/fuel-cost"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/" : {
+      "get" : {
+        "summary" : "Display the list of Fuel Costs.",
+        "description" : "Get the list of Fuel Costs.",
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseFuelCosts"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Store or update the new Fuel Costs in the database.",
+        "description" : "Update the Fuel Costs by sending the corresponding body payload.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/body"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ResponseFuelCosts"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation Exception.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "ResponseFuelCosts" : {
+        "type" : "object",
+        "properties" : {
+          "unleaded 87" : {
+            "type" : "number"
+          },
+          "unleaded 89" : {
+            "type" : "number"
+          },
+          "unleaded 91" : {
+            "type" : "number"
+          },
+          "unleaded 93" : {
+            "type" : "number"
+          },
+          "diesel" : {
+            "type" : "number"
+          },
+          "electric" : {
+            "type" : "number"
+          },
+          "hybrid" : {
+            "type" : "number"
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          }
+        }
+      },
+      "body" : {
+        "type" : "object",
+        "properties" : {
+          "unleaded 87" : {
+            "type" : "number"
+          },
+          "unleaded 89" : {
+            "type" : "number"
+          },
+          "unleaded 91" : {
+            "type" : "number"
+          },
+          "unleaded 93" : {
+            "type" : "number"
+          },
+          "diesel" : {
+            "type" : "number"
+          },
+          "electric" : {
+            "type" : "number"
+          },
+          "hybrid" : {
+            "type" : "number"
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      },
+      "InvalidValue" : {
+        "description" : "Validation Exception.",
+        "content" : {
+          "application/json" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error406"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

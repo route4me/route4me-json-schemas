@@ -1,0 +1,728 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "title" : "Route4Me Tracking History API",
+    "version" : "5.0-oas3"
+  },
+  "servers" : [ {
+    "url" : "https://wh.route4me.com/modules/api/v5.0/tracking-history",
+    "description" : "Route4Me API V5"
+  }, {
+    "url" : "https://virtserver.swaggerhub.com/Route4Me/tracking-history/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "security" : [ {
+    "APIKeyQueryParam" : [ ]
+  }, {
+    "BearerAuth" : [ ]
+  } ],
+  "paths" : {
+    "/export" : {
+      "get" : {
+        "tags" : [ "Export" ],
+        "summary" : "Get a Tracking History file.",
+        "description" : "Get a Tracking History file with the option to filter the file contents by a particular date range.",
+        "parameters" : [ {
+          "name" : "device_id",
+          "in" : "query",
+          "description" : "Device ID.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "member_id",
+          "in" : "query",
+          "description" : "Member ID.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Output data format. Available values: csv, json, xml.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "time_period",
+          "in" : "query",
+          "description" : "If equal to ‘custom’, you can get the device’s location history within the corresponding time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "last_position",
+          "in" : "query",
+          "description" : "If 'true', only the last position of the corresponding device will be retrieved.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range in Epoch time (Unix time) format.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range in Epoch time (Unix time) format.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "show_cd",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "show_mmd",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Route ID.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "description" : "If 'true', the corresponding file will be downloaded.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "type" : "string",
+                  "format" : "binary"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/csv" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              },
+              "text/html" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/async-export" : {
+      "get" : {
+        "tags" : [ "Export" ],
+        "summary" : "Save the Tracking History file.",
+        "description" : "Get the Tracking History file by specifying the corresponding query parameters.",
+        "parameters" : [ {
+          "name" : "device_id",
+          "in" : "query",
+          "description" : "Device ID.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "member_id",
+          "in" : "query",
+          "description" : "Member ID.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "integer"
+          }
+        }, {
+          "name" : "format",
+          "in" : "query",
+          "description" : "Output data format. Available values: csv, json, xml.\n",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "time_period",
+          "in" : "query",
+          "description" : "If equal to ‘custom’, you can get the device’s location history within the corresponding time range.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "last_position",
+          "in" : "query",
+          "description" : "If 'true', only the last position of the corresponding device will be retrieved.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "start_date",
+          "in" : "query",
+          "description" : "Start of the time range in Epoch time (Unix time) format.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "end_date",
+          "in" : "query",
+          "description" : "End of the time range in Epoch time (Unix time) format.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "show_cd",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "show_mmd",
+          "in" : "query",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        }, {
+          "name" : "route_id",
+          "in" : "query",
+          "description" : "Route ID.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "name" : "tz",
+          "in" : "query",
+          "description" : "Time zone.",
+          "required" : false,
+          "style" : "form",
+          "explode" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "202" : {
+            "description" : "Successful operation.",
+            "headers" : {
+              "Location" : {
+                "description" : "Link for checking the file export status.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Async"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "Validation failed.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Error406"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/status/{id}" : {
+      "get" : {
+        "tags" : [ "Status" ],
+        "summary" : "Check the file export status.",
+        "description" : "Check the status of the exported file by specifying the corresponding path parameter ID.",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Export file ID.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "type" : "integer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "The export file is being processed or failed.",
+            "headers" : {
+              "ratelimit-limit" : {
+                "description" : "Requests quota.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "ratelimit-remaining" : {
+                "description" : "Remaining requests quota.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/StatusFailed"
+                }
+              }
+            }
+          },
+          "303" : {
+            "description" : "The file is ready.",
+            "headers" : {
+              "Location" : {
+                "description" : "Link for the file.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "string"
+                }
+              },
+              "ratelimit-limit" : {
+                "description" : "Requests quota.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "ratelimit-remaining" : {
+                "description" : "Remaining requests quota.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            },
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Status"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not found.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/responses/NotFound"
+                }
+              }
+            }
+          },
+          "429" : {
+            "description" : "Requests quota exceeded.",
+            "headers" : {
+              "ratelimit-limit" : {
+                "description" : "Requests quota.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "ratelimit-remaining" : {
+                "description" : "Remaining requests quota.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              },
+              "ratelimit-reset" : {
+                "description" : "The number of seconds remaining until the requests quota is reset.",
+                "style" : "simple",
+                "explode" : false,
+                "schema" : {
+                  "type" : "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Error406" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 406
+          },
+          "exit_code" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "messages" : {
+            "type" : "array",
+            "example" : {
+              "start_date" : [ "The start date must be a number." ],
+              "end_date" : [ "The end date must be a number." ]
+            },
+            "items" : {
+              "type" : "array",
+              "items" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      },
+      "Async" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "string",
+            "example" : "ok"
+          },
+          "job_id" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        }
+      },
+      "Error404" : {
+        "type" : "object",
+        "properties" : {
+          "status" : {
+            "type" : "boolean",
+            "example" : false
+          },
+          "code" : {
+            "type" : "integer",
+            "example" : 404
+          }
+        }
+      },
+      "Status" : {
+        "type" : "object",
+        "properties" : {
+          "filename" : {
+            "type" : "string",
+            "example" : "file_name.csv"
+          },
+          "status" : {
+            "type" : "string",
+            "example" : "finished"
+          },
+          "started" : {
+            "type" : "string",
+            "example" : "2020-01-30T05:15:07.000Z"
+          },
+          "finished" : {
+            "type" : "string",
+            "example" : "2020-01-30T05:15:15.000Z"
+          }
+        }
+      },
+      "StatusFailed" : {
+        "type" : "object",
+        "properties" : {
+          "filename" : {
+            "type" : "string",
+            "example" : "file_name.csv"
+          },
+          "status" : {
+            "type" : "string",
+            "example" : "failed"
+          },
+          "started" : {
+            "type" : "string",
+            "example" : "2020-01-30T05:15:07.000Z"
+          }
+        }
+      }
+    },
+    "responses" : {
+      "NotFound" : {
+        "description" : "Not found.",
+        "content" : {
+          "*/*" : {
+            "schema" : {
+              "$ref" : "#/components/schemas/Error404"
+            }
+          }
+        }
+      }
+    },
+    "parameters" : {
+      "deviceIdParam" : {
+        "name" : "device_id",
+        "in" : "query",
+        "description" : "Device ID.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "memberIdParam" : {
+        "name" : "member_id",
+        "in" : "query",
+        "description" : "Member ID.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "integer"
+        }
+      },
+      "formatParam" : {
+        "name" : "format",
+        "in" : "query",
+        "description" : "Output data format. Available values: csv, json, xml.\n",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "timePeriodParam" : {
+        "name" : "time_period",
+        "in" : "query",
+        "description" : "If equal to ‘custom’, you can get the device’s location history within the corresponding time range.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "lastPositionParam" : {
+        "name" : "last_position",
+        "in" : "query",
+        "description" : "If 'true', only the last position of the corresponding device will be retrieved.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "boolean"
+        }
+      },
+      "startDateParam" : {
+        "name" : "start_date",
+        "in" : "query",
+        "description" : "Start of the time range in Epoch time (Unix time) format.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "boolean"
+        }
+      },
+      "endDateParam" : {
+        "name" : "end_date",
+        "in" : "query",
+        "description" : "End of the time range in Epoch time (Unix time) format.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "boolean"
+        }
+      },
+      "showCdParam" : {
+        "name" : "show_cd",
+        "in" : "query",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "boolean"
+        }
+      },
+      "showMmdParam" : {
+        "name" : "show_mmd",
+        "in" : "query",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "boolean"
+        }
+      },
+      "routeIdParam" : {
+        "name" : "route_id",
+        "in" : "query",
+        "description" : "Route ID.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      },
+      "downloadParam" : {
+        "name" : "download",
+        "in" : "query",
+        "description" : "If 'true', the corresponding file will be downloaded.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "boolean"
+        }
+      },
+      "tzParam" : {
+        "name" : "tz",
+        "in" : "query",
+        "description" : "Time zone.",
+        "required" : false,
+        "style" : "form",
+        "explode" : true,
+        "schema" : {
+          "type" : "string"
+        }
+      }
+    },
+    "securitySchemes" : {
+      "APIKeyQueryParam" : {
+        "type" : "apiKey",
+        "name" : "api_key",
+        "in" : "query"
+      },
+      "BearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}
