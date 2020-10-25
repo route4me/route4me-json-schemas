@@ -12,6 +12,14 @@
 			},
 			"descrption": "Route Addresses. POST data"
 		},
+		"depots": {
+			"type": "array",
+			"title": "Depots",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.dtd"
+			},
+			"descrption": "Optimization depots. POST data"
+		},
 		"parameters": {
 			"type": "array",
 			"title": "Route Parameters",
