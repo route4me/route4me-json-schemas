@@ -371,6 +371,11 @@
 					"description": "Service time at a route destination (address)"
 				}
 			}
+		},
+		"bundling": {
+		    "type": "object",
+		    "$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address_bundling.dtd",
+			"description": "Address_bundling rules"
 		}
 	}
 }
