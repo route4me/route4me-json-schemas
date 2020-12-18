@@ -40,6 +40,11 @@
 			"title": "Tracking TTL",
 			"description": "Tracking TTL"
 		},
+		"update_channel_name": {
+			"type": "string",
+			"title": "Update Channel Name",
+			"description": "Update channel name"
+		},
 		"geofence_polygon_shape ": {
 			"enum": [
 				"circle",
@@ -160,6 +165,35 @@
 			"type": "integer",
 			"title": "Auto logout TS",
 			"description": "Time in seconds. If a user is inactive during this period, he will be logout."
+		},
+		"last_known_member_payment_device": {
+			"type": "string",
+			"title": "Last Known Member Payment Device",
+			"description": "Last known member payment device (e.g. 'web')"
+		},
+		"account_expires_timestamp": {
+			"type": "integer",
+			"title": "Account expires timestamp",
+			"description": "Account expire date"
+		},
+		"account_past_due": {
+			"type": "boolean",
+			"title": "Account Past Due",
+			"descrption": "Account past due"
+		},
+		"licensed_modules": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"description": "Licensed module (e.g. 'MODULE__ROUTE_EDITOR_CUSTOM_DATA_EDITING',  'MODULE__VOICE_NAVIGATION:TRUE', 'MODULE__VOICE_NAVIGATION')"
+			},
+			"title": "Licensed Modules",
+			"description": "Licensed modules"
+		},
+		"last_active_timestamp": {
+			"type": "integer",
+			"title": "Last Active Timestamp",
+			"description": "Last active timestamp"
 		}
 	}
 }
