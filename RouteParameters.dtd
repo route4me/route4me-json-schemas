@@ -361,21 +361,106 @@
 			"title": "Optimization Engine",
 			"description": "The parameter shows what solver engine system use for build optimization routes 1 RVRP, 2 NVRP (default)."
 		},
+		"ignore_tw" : {
+			"type": "boolean",
+			"title": "Ignore Time Windows",
+			"description": "If true, the address time windows ignored."
+		},
 		"override_addresses": {
 			"type": "object",
 			"title": "Override Addresses",
 			"properties": {
 				"time": {
 					"type": "integer",
-					"title": "TIme",
+					"title": "Time",
 					"description": "Service time at a route destination (address)"
+				},
+				"address_stop_type": {
+					"type": "string",
+					"enum": ["DELIVERY","PICKUP","BREAK","MEETUP","SERVICE","VISIT","DRIVEBY"],
+					"title": "AddressStopType",
+					"description": "The type of stop that this is (DELIVERY,PICKUP,BREAK,MEETUP,SERVICE,VISIT,DRIVEBY)"
+				},
+				"group": {
+					"type": "string",
+					"title": "Group",
+					"description": "Address group"
 				}
 			}
+		},
+		"slowdowns": {
+			"type": "object",
+			"title": "Slowdowns",
+			"properties": {
+				"service_time": {
+					"type": "integer",
+					"title": "Service Time",
+					"description": "Service time slowdowon (percent)."
+				},
+				"travel_time": {
+					"type": "integer",
+					"title": "Travel Time",
+					"description": "Travel time slowdowon (percent)."
+				}
+			}
+		},
+		"is_dynamic_start_time": {
+			"type": "boolean",
+			"title": "Is Dynamic Start Time",
+			"description": "If true, the start time is dynamic."
 		},
 		"bundling": {
 		    "type": "object",
 		    "$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address_bundling.dtd",
 			"description": "Address_bundling rules"
+		},
+		"advanced_constraints": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"title": "Advanced Constraints",
+				"properties": {
+					"max_cargo_volume": {
+						"type": "number",
+						"title": "Maximum Cargo Volume",
+						"description": "Maximum cargo volume per route."
+					},
+					"max_capacity": {
+						"type": "integer",
+						"title": "Maximum Vehicle Capacity",
+						"description": "How much total cargo can be transported per route (units, e.g. cubic meters)."
+					},
+					"members_count": {
+						"type": "integer",
+						"title": "Members Count",
+						"description": "Legacy feature which permits a user to request an example number of optimized routes."
+					},
+					"available_time_windows": {
+						"type": "array",
+						"items": {
+							"type": "array",
+							"items": {
+								"type": "integer"
+							}
+						}
+					},
+					"tags": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						},
+						"title": "Tags",
+						"description": "The driver tags specified in a team member's custom data. ((e.g. 'driver skills': ['Class A CDL', 'Class B CDL', 'Forklift', 'Skid Steer Loader', 'Independent Contractor''])"
+					},
+					"route4me_members_id": {
+						"type": "array",
+						"items": {
+							"type": "integer"
+						}
+					}
+				}
+			}
+			
 		}
 	}
 }
