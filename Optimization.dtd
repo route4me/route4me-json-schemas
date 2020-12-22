@@ -10,6 +10,11 @@
 			"title": "Optimization Problem ID",
 			"descrption": "Optimization which generated this route"
 		},
+		"smart_optimization_id": {
+			"type": "string",
+			"title": "Smart Optimization ID",
+			"description": "Smart Optimization ID"
+		},
 		"user_errors": {
 			"type": "array",
 			"title": "User Errors",
