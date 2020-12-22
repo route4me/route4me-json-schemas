@@ -301,6 +301,21 @@
 			"title": "Channel name",
 			"description": "Channel name"
 		},
+		"pickup": {
+			"type": "string",
+			"title": "Pickup",
+			"description": "Alias of a pickup point."
+		},
+		"dropoff": {
+			"type": "string",
+			"title": "Dropoff",
+			"description": "Alias of the paired pickup point."
+		},
+		"joint": {
+			"type": "integer",
+			"title": "Joint",
+			"description": "If equal to 1, the pickup and dropoff addresses are joint (one by one despite the regular pickup-dropoff addresses when it's possible to have multiple pickup addresses with one dropoff address)."
+		},
 		"generated_time_window_start": {
 			"type": ["integer", "null"],
 			"title": "Generated Time Window Start",
@@ -411,6 +426,75 @@
 			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/note.dtd"},
 			"title": "Notes",
 			"description": "Notes"
+		},
+		"bundle_count": {
+			"type": "integer",
+			"title": "Bundle Count",
+			"description": "Count of the bundled addresses."
+		},
+		"bundle_items": {
+			"type": "object",
+			"readonly": true,
+			"title": "Bundle Items",
+			"description": "Additional bundle items",
+			"properties": {
+				"cube": {
+					"type": "number",
+					"title": "Cube",
+					"description": "Summary cube value of the bundled addresses."
+				},
+				"revenue": {
+					"type": "number",
+					"title": "Revenue",
+					"description": "Summary revenue value of the bundled addresses."
+				},
+				"pieces": {
+					"type": "integer",
+					"title": "Pieces",
+					"description": "Summary pieces value of the bundled addresses."
+				},
+				"weight": {
+					"type": "number",
+					"title": "Weight",
+					"description": "Summary weight value of the bundled addresses."
+				},
+				"cost": {
+					"type": "number",
+					"title": "Cost",
+					"description": "Summary cost value of the bundled addresses."
+				},
+				"service_time": {
+					"type": "integer",
+					"title": "Service Time",
+					"description": "Service time of the bundled addresses."
+				},
+				"time_window_start": {
+					"type": "integer",
+					"title": "Time Window Start",
+					"description": "Time window start of the bundled addresses."
+				},
+				"time_window_end": {
+					"type": "integer",
+					"title": "Time Window End",
+					"description": "Time window end of the bundled addresses."
+				},
+				"custom_data": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"title": "Custom Data",
+					"description": "Custom data"
+				},
+				"addresses_id": {
+					"type": "array",
+					"items": {
+						"type": "integer"
+					},
+					"title": "Addresses IDs",
+					"description": "Array of the IDs of the bundeld addresses."
+				}
+			}
 		},
 		"path_to_next": {
 			"type": "array",
