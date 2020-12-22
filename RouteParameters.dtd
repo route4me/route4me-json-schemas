@@ -160,9 +160,9 @@
 		},
 		"algorithm_type": {
 			"type": "integer",
-			"enum": [1, 2, 3, 4, 5, 6, 7, 100, 101 ],
+			"enum": [1, 2, 3, 4, 5, 6, 7, 9, 100, 101 ],
 			"title": "Algorithm Type",
-			"description": "The algorithm to be used: 1 = TSP, 2 = VRP, 3 = CVRP_TW_SD, 4 = CVRP_TW_MD, 5 = TSP_TW, 6 = TSP_TW_CR, 7 = BBCVRP, 100 = ALG_NONE, 101 = ALG_LEGACY_DISTRIBUTED"
+			"description": "The algorithm to be used: 1 = TSP, 2 = VRP, 3 = CVRP_TW_SD, 4 = CVRP_TW_MD, 5 = TSP_TW, 6 = TSP_TW_CR, 7 = BBCVRP, 9 = ADVANCED_CVRP_TW,100 = ALG_NONE, 101 = ALG_LEGACY_DISTRIBUTED"
 		},
 		"member_id": {
 			"type": ["string", "null"],
