@@ -9,6 +9,21 @@
 		"cached_lng"
 	],
 	"properties": {
+		"created_timestamp": {
+			"type": "integer",
+			"title": "Created Timestamp",
+			"description": "Created timestamp"
+		},
+		"address_id": {
+			"type": "integer",
+			"title": "Address ID",
+			"description": "Address ID"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "A contact owner's member ID"
+		},
 		"api_key": {
 			"type": "string",
 			"title": "Api key",
@@ -364,6 +379,26 @@
 			"name": "address_customer_po",
 			"title": "Address Customer PO",
 			"description": "The customer purchase order for the address"
+		},
+		"in_route_count": {
+			"type": "integer",
+			"title": "In Route Count",
+			"description": "How many routes contain the address"
+		},
+		"visited_count": {
+			"type": "integer",
+			"title": "Visited_Count",
+			"description": "How many times visited the address"
+		},
+		"last_routed_timestamp": {
+			"type": "integer",
+			"title": "Last Routed Timestamp",
+			"description": "Last routed timestamp"
+		},
+		"is_assigned": {
+			"type": "boolean",
+			"title": "Enabled",
+			"descripton": "If true, a location assigned to a route."
 		}
 	}
 }
