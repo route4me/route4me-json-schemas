@@ -15,10 +15,20 @@
 			"title": "Large logo URI",
 			"description": "A link to a large logo"
 		},
+		"large_logo_uri_2x": {
+			"type": ["string", "null"],
+			"title": "Large logo URI 2x",
+			"description": "A link to a large logo 2x"
+		},
 		"mobile_logo_uri": {
 			"type": ["string", "null"],
 			"title": "Mobile logo URI",
 			"description": "A link to a mobile logo"
+		},
+		"mobile_logo_uri_2x": {
+			"type": ["string", "null"],
+			"title": "Mobile logo URI 2x",
+			"description": "A link to a mobile logo 2x"
 		},
 		"map_color": {
 			"type": ["string", "null"],
@@ -54,6 +64,11 @@
 			"type": ["string", "null"],
 			"title": "Customer Service Phone",
 			"description": "Customer service phone"
+		},
+		"hide_covid19_warning": {
+			"type": "boolean",
+			"title": "Hide Covid19 Warning",
+			"description": "If true, Covid19 warning hidden"
 		},
 		"driver_name": {
 			"type": "string",
