@@ -264,7 +264,6 @@
 					}
 				}
 			}
-			
 		},
 		"schedule_blacklist": {
 			"type": ["array", "null"],
@@ -387,6 +386,11 @@
 			"name": "address_customer_po",
 			"title": "Address Customer PO",
 			"description": "The customer purchase order for the address"
+		},
+		"is_assigned": {
+			"type": "boolean",
+			"title": "Enabled",
+			"descripton": "If true, a location assigned to a route."
 		}
 	}
 }
