@@ -121,6 +121,11 @@
 			"type": "integer",
 			"title": "Level",
 			"description": "Subordination level. 0 is the highest level."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "API key of the user."
 		}
 	}
 }
