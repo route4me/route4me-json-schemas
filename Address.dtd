@@ -496,6 +496,65 @@
 				}
 			}
 		},
+		"order_inventory": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"inventory_id": {
+						"type": "integer",
+						"title": "Inventory ID",
+						"description": "Unique inventory ID"
+					},
+					"order_id": {
+						"type": "integer",
+						"title": "Order ID",
+						"description": "Unique order ID"
+					
+					},
+					 "name": {
+						"type": "string",
+						"title": "Name",
+						"description": "Order inventory name"
+					 },
+					 "quantity": {
+						"type": "integer",
+						"title": "Quantity",
+						"description": "An order inventory quantity"
+					 },
+					 "total_weight": {
+						"type": "number",
+						"title": "Total Weight",
+						"description": "Total weight of the inventory"
+					 },
+					 "total_volume": {
+						"type": "number",
+						"title": "Total Volume",
+						"description": "Total volume of the inventory"
+					 },
+					 "total_cost": {
+						"type": "number",
+						"title": "Total Cost",
+						"description": "Total cost of the inventory"
+					 },
+					 "total_price": {
+						"type": "number",
+						"title": "Total Price",
+						"description": "Total price of the inventory"
+					 },
+					 "created_at": {
+						"type": "string",
+						"title": "Created At",
+						"description": "When the inventory created"
+					 },
+					 "updated_at": {
+						"type": "string",
+						"title": "Updated At",
+						"description": "When the inventory updated"
+					 }
+				}
+			}
+		},
 		"path_to_next": {
 			"type": "array",
 			"items": {
