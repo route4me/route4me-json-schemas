@@ -209,6 +209,11 @@
 			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_custom_field.dtd"},
 			"title": "Custom User Fields",
 			"description": "Custom user fields"
+		},
+		"visited_count": {
+			"type": "integer",
+			"title": "Visited Count",
+			"description": "How many times the order visited."
 		}
 	}
 }
