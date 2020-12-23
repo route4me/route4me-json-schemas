@@ -101,6 +101,21 @@
 			"title": "Route Cost",
 			"description": "Route cost"
 		},
+		"route_weight": {
+			"type": "number",
+			"title": "Route Weight",
+			"description": "Route weight"
+		},
+		"route_cube": {
+			"type": "number",
+			"title": "Route Cube",
+			"description": "Route cube"
+		},
+		"route_pieces": {
+			"type": "integer",
+			"title": "Route Pieces",
+			"description": "Route pieces"
+		},
 		"route_revenue": {
 			"type": "number",
 			"title": "Route Revenue",
@@ -234,25 +249,7 @@
 		},
 		"path": {
 			"type": "array",
-			"items": {
-				"type": "object",
-				"properties": {
-					"lat": {
-						"type": "number",
-						"title": "Latitude",
-						"minimum": -90,
-						"maximum": 90,
-						"descrption": "Latitude of the path point"
-					},
-					"lng": {
-						"type": "number",
-						"title": "Longitude",
-						"minimum": -180,
-						"maximum": 180,
-						"descrption": "Longitude of the path point"
-					}
-				}
-			},
+			"items": {"type": "string"},
 			"title": "Path",
 			"description": "Edge-wise path to be drawn on the map"
 		},
@@ -267,6 +264,68 @@
 			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Route.dtd",
 			"title": "Original Route",
 			"description": "Original route"
+		},
+		"bundle_items": {
+			"type": "array",
+			"readOnly": true,
+			"items": {
+				"type": "object",
+				"properties": {
+					"cube": {
+						"type": "number",
+						"title": "Cube",
+						"description": "Summary cube value of the bundled addresses."
+					},
+					"revenue": {
+						"type": "number",
+						"title": "Revenue",
+						"description": "Summary revenue value of the bundled addresses."
+					},
+					"pieces": {
+						"type": "integer",
+						"title": "Pieces",
+						"description": "Summary pieces value of the bundled addresses."
+					},
+					"weight": {
+						"type": "number",
+						"title": "Weight",
+						"description": "Summary weight value of the bundled addresses."
+					},
+					"cost": {
+						"type": "number",
+						"title": "Cost",
+						"description": "Summary cost value of the bundled addresses."
+					},
+					"service_time": {
+						"type": "integer",
+						"title": "ServiceTime",
+						"description": "Service time of the bundled addresses."
+					},
+					"time_window_start": {
+						"type": "integer",
+						"title": "Time Window Start",
+						"description": "Time window start of the bundled addresses."
+					},
+					"time_window_end": {
+						"type": "integer",
+						"title": "Time Window End",
+						"description": "Time window end of the bundled addresses."
+					},
+					"custom_data": {
+						"type": "object",
+						"additionalProperties": { "type": "string" },
+						"description": "Custom data",
+						"title": "Custom Data"
+					},
+					"addresses_id": {
+						"type": "array",
+						"items": {
+							"type": "integer"
+						},
+						"description": "Array of the IDs of the bundeld addresses."
+					}
+				}
+			}
 		}
 	}
 }
