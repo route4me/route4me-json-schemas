@@ -397,7 +397,7 @@
 		},
 		"is_assigned": {
 			"type": "boolean",
-			"title": "Enabled",
+			"title": "Is Assigned",
 			"descripton": "If true, a location assigned to a route."
 		}
 	}
