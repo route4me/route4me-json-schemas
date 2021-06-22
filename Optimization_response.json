@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Optimization_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Optimization_response.json",
 	"title": "Optimization Response",
 	"type": "object",
 	"properties": {
@@ -45,7 +45,7 @@
 		"parameters": {
 			"type": "object",
 			"title": "Route Parameters",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/RouteParameters.json",
 			"descrption": "Route Parameters"
 		},
 		"sent_to_background": {
@@ -56,19 +56,19 @@
 		"addresses": {
 			"type": "array",
 			"title": "Route Addresses",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.json"},
+			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Address.json"},
 			"descrption": "Route Addresses"
 		},
 		"routes": {
 			"type": "array",
 			"title": "Routes",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/DataObjectRoute.json"},
+			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/DataObjectRoute.json"},
 			"descrption": "Routes"
 		},
 		"links": {
 			"type": "array",
 			"title": "Links",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Links.json"},
+			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Links.json"},
 			"descrption": "Links to the GET operations for the optimization problem"
 		}
 	}

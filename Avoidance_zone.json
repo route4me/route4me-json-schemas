@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Avoidance_zone.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Avoidance_zone.json",
 	"title": "Avoidance Zone",
 	"description": "Json schema for an Avoidance Zone clas, which is used for defining different type avoidance zones. For detailed usage see curl Avoidance Zones group",
 	"type": "object",
@@ -28,7 +28,7 @@
 		"orders": {
 			"type": ["array", "null"],
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_response.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Order_response.json"
 			},
 			"description": "The orders enclosed in the avoidance zone"
 		},

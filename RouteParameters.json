@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/RouteParameters.json",
 	"title": "Route Parameters",
 	"type": "object",
 	"properties": {
@@ -411,7 +411,7 @@
 		},
 		"bundling": {
 		    "type": "object",
-		    "$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address_bundling.json",
+		    "$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Address_bundling.json",
 			"description": "Address_bundling rules"
 		},
 		"advanced_constraints": {

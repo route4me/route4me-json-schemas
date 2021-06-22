@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/driving.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/driving.json",
 	"description": "Driving",
 	"title": "Driving",
 	"type": "object",
@@ -29,7 +29,7 @@
 		"waypoints": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/waypoint.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/waypoint.json"
 			}
 		},
 		"alternatives": {

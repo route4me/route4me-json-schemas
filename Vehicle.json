@@ -1,9 +1,9 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Vehicle.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Vehicle.json",
 	"title": "Vehicle",
 	"type": "object",
-	"description": "Vehicles in the user's account. Endpoint: url: https://www.route4me.com/api/vehicles/view_vehicles.php",
+	"description": "Vehicles in the user's account. Endpoint: url: https://api.route4me.com/api/vehicles/view_vehicles.php",
 	"properties": {
 		"vehicle_id": {
 			"type": "string",

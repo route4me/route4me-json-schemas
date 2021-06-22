@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/note_request.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/note_request.json",
 	"description": "request parameters for adding note object to a route or route destination. Endpoint - https://www.route4me.com/actions/addRouteNotes.php",
 	"type": "object",
 	"title": "Note Request",
@@ -90,7 +90,7 @@
 				"csv"
 			],
 			"title": "Format",
-			"description": "The format in which to return the route data.. HTTP method - GET"
+			"description": "The format in which to return the route data. HTTP method - GET"
 		}
 	},
 	"required": [

@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/User_location_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/User_location_response.json",
 	"title": "User Location Response",
 	"type": "object",
 	"description": "End point: https://api.route4me.com/api/track/view_user_locations.php",

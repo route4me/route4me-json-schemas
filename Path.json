@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Path.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Path.json",
 	"description": "Path - an array of the geographic points, which are laying on a path",
 	"title": "Path",
 	"type": "array",

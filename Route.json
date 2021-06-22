@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Route.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Route.json",
 	"type": "object",
 	"title": "Route",
 	"properties": {
@@ -219,23 +219,23 @@
 		},
 		"parameters": {
 		    "type": "object",
-		    "$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.json",
+		    "$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/RouteParameters.json",
 			"description": "Route parameters"
 		},
 		"addresses": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.json"},
+			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Address.json},
 			"title": "Addresses"
 		},
-		"links": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Link.json"},
+		"links": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Links.json"},
 		"notes": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/note.json"},
+			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/note.json"},
 			"title": "Notes"
 		},
 		"vehicle": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Vehicle_V4.json"
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Vehicle_V4.json"
 		},
 		"member_config_storage": {
 			"type": "object",
@@ -255,13 +255,13 @@
 		},
 		"tracking_history": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingHistory_packet.json"},
+			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/TrackingHistory.json"},
 			"title": "Tracking History",
 			"description": "A collection of device tracking data with coordinates, speed, and timestamps"
 		},
 		"original_route": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Route.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Route.json",
 			"title": "Original Route",
 			"description": "Original route"
 		},

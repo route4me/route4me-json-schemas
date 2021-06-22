@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_custom_field.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Order_custom_field.json",
 	"title": "Order",
 	"description": "JSON schema for Order Custom Filed query response. Endpoint: https://api.route4me.com/api.v4/order_custom_user_fields.php",
 	"type": "object",

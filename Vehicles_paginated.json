@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Vehicles_paginated.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Vehicles_paginated.json",
 	"title": "Vehicles Paginated",
 	"type": "object",
 	"description": "Vehicles response with pagination. Endpoint: url: https://api.route4me.com/api/vehicles",
@@ -12,7 +12,7 @@
 		},
 		"data": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Vehicle_V4.json"}
+			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Vehicle_V4.json"}
 		},
 		"first_page_url": {
 			"type": "string",

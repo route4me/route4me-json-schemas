@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingDeviceLocation.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/TrackingDeviceLocation.json",
 	"title": "Tracking Device Location",
 	"description": "Device location history. Endpoint: https://api.route4me.com/api/track/get_device_location.php",
 	"type": "object",
@@ -9,7 +9,7 @@
 			"type": "array",
 			"title": "Data",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingHistory.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/TrackingHistory.json"
 			}
 		},
 		"mmd": {

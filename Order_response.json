@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Order_response.json",
 	"title": "Order Response",
 	"description": "Json schema for an Order response, which is used for getting information about existing order. For usage details see curl examples in Order group",
 	"type": "object",
@@ -206,7 +206,7 @@
 		},
 		"custom_user_fields": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_custom_field.json"},
+			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Order_custom_field.json"},
 			"title": "Custom User Fields",
 			"description": "Custom user fields"
 		},

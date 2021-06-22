@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Optimization.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Optimization.json",
 	"title": "Optimization",
 	"description": "JSON schema for Optimization object",
 	"type": "object",
@@ -54,7 +54,7 @@
 			"type": "array",
 			"title": "Route Parameters",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/RouteParameters.json"
 			},
 			"descrption": "Route Parameters"
 		},
@@ -68,7 +68,7 @@
 			"type": "array",
 			"title": "Route Addresses",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Address.json"
 			},
 			"descrption": "Route Addresses"
 		},
@@ -76,7 +76,7 @@
 			"type": "array",
 			"title": "Routes",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/DataObjectRoute.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/DataObjectRoute.json"
 			},
 			"descrption": "Routes"
 		},
@@ -84,7 +84,7 @@
 			"type": "array",
 			"title": "Links",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Links.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Links.json"
 			},
 			"descrption": "Links to the GET operations for the optimization problem"
 		},
@@ -92,7 +92,7 @@
 			"type": "array",
 			"title": "TrackingHistory",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingHistory.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/TrackingHistory.json"
 			},
 			"descrption": "A collection of device tracking data with coordinates, speed, and timestamps"
 		},

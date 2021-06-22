@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Asset_tracking.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Asset_tracking.json",
 	"title": "Asset tracking",
 	"type": "object",
 	"description": "A user has many assets (such as a package) that they must deliver. The user uploads a list of generated tracking numbers, and the  corresponding delivery address and Route4Me creates one or more delivery routes. As packages are added to each batch, the routes are re-balanced until all the packages have been added into the system. Now that all the tracking numbers are in the system, the user needs to label and sequence each package. Doing it by hand is tedious, because they don't know which route each package goes on. By re-scanning each package manually, or on a conveyor, the client application will automatically output the route ID and the sequence number in the route that the package is found in, by querying the system with the package's unique ID. url: https://route4me.com/api.v4/status.php",

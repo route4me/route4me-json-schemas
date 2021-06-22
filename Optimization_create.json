@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Optimization_create.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Optimization_create.json",
 	"title": "Optimization Create",
 	"type": "object",
 	"properties": {
@@ -8,7 +8,7 @@
 			"type": "array",
 			"title": "Route Addresses",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Address.json
 			},
 			"descrption": "Route Addresses. POST data"
 		},
@@ -16,7 +16,7 @@
 			"type": "array",
 			"title": "Depots",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Address.json"
 			},
 			"descrption": "Optimization depots. POST data"
 		},
@@ -24,7 +24,7 @@
 			"type": "array",
 			"title": "Route Parameters",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/RouteParameters.json"
 			},
 			"descrption": "Route Parameters. POST data"
 		},
@@ -57,7 +57,7 @@
 			],
 			"default": "None",
 			"title": "Route Path Output",
-			"description": "Return the path points when returning the newly created route... Query string (GET fields)."
+			"description": "Return the path points when returning the newly created route. Query string (GET fields)."
 		},
 		"optimized_callback_url": {
 			"type": "string",

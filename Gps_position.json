@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Gps_position.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Gps_position.json",
 	"title": "Gps Position",
 	"type": "object",
 	"description": "Set GPS Position of the Device. url: https://www.route4me.com/track/set.php",

@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Territory_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Territory_response.json",
 	"title": "Territory Response",
 	"description": "Json schema for an Territory class, which is response from territory endpoints. For detailed usage see curl Territory group",
 	"type": "object",

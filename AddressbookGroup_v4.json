@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/AddressbookGroup_v4.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/AddressbookGroup_v4.json",
 	"title": "Addressbook Group v4",
 	"type": "object",
 	"description": "Describes the query response from the endpoint http://www.route4me.com/api.v4/address_book_group.php",
