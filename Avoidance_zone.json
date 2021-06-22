@@ -1,0 +1,61 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Avoidance_zone.json",
+	"title": "Avoidance Zone",
+	"description": "Json schema for an Avoidance Zone clas, which is used for defining different type avoidance zones. For detailed usage see curl Avoidance Zones group",
+	"type": "object",
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "User api key"
+		},
+		"territory_id": {
+			"type": "string",
+			"title": "Territory id",
+			"description": "32 character MD5 unique identifier"
+		},
+		"territory_name": {
+			"type": "string",
+			"title": "Territory name",
+			"description": "Territory name"
+		},
+		"territory_color": {
+			"type": "string",
+			"title": "Territory color",
+			"description": "Territory color"
+		},
+		"orders": {
+			"type": ["array", "null"],
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_response.json"
+			},
+			"description": "The orders enclosed in the avoidance zone"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Member ID"
+		},
+		"territory": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": [
+						"poly",
+						"circle",
+						"rect"
+					]
+				},
+				"data": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"description": "String array containing geodezic parameters, for example, '56.127184156131065,56.93115234375', or '5000' for radius in case of circle shape territory"
+				}
+			}
+		}
+	}
+}

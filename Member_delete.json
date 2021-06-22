@@ -1,0 +1,23 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Member_delete.json",
+	"title": "Member Delete",
+	"type": "object",
+	"description": "For removing an user. url: https://www.route4me.com/api.v4/user.php",
+	"required": [
+		"api_key",
+		"member_id"
+	],
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "API key of en user. HTTP method - GET"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Member ID. HTTP method - DELETE"
+		}
+	}
+}

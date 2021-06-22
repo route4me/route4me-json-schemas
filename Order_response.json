@@ -1,0 +1,219 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_response.json",
+	"title": "Order Response",
+	"description": "Json schema for an Order response, which is used for getting information about existing order. For usage details see curl examples in Order group",
+	"type": "object",
+	"properties": {
+		"created_timestamp": {
+			"type": "integer",
+			"title": "Created Timestamp",
+			"description": "Timestamp of an order crreation."
+		},
+		"order_id": {
+			"type": "integer",
+			"title": "Order ID",
+			"description": "An unique internal ID of an order."
+		},
+		"order_status_id": {
+			"type": "integer",
+			"title": "Order status ID",
+			"description": "Order status ID"
+		},
+		"day_added_YYMMDD": {
+			"type": "string",
+			"title": "Day Added",
+			"description": "Order inserted date"
+		},
+		"day_scheduled_for_YYMMDD": {
+			"type": "string",
+			"title": "Day scheduled",
+			"description": "Date order was scheduled for"
+		},
+		"address_alias": {
+			"type": "string",
+			"title": "Address alias",
+			"description": "Address alias"
+		},
+		"address_1": {
+			"type": "string",
+			"title": "Address 1",
+			"description": "address_1 field"
+		},
+		"address_2": {
+			"type": "string",
+			"title": "Address 2",
+			"description": "address_2 field"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "User ID who is assigned to the route"
+		},
+		"EXT_FIELD_first_name": {
+			"type": "string",
+			"title": "First name",
+			"description": "The first name of the receiving address"
+		},
+		"EXT_FIELD_last_name": {
+			"type": "string",
+			"title": "Last name",
+			"description": "The last name of the receiving address"
+		},
+		"EXT_FIELD_email": {
+			"type": "string",
+			"title": "Address email",
+			"description": "Address email"
+		},
+		"EXT_FIELD_phone": {
+			"type": "string",
+			"title": "Address phone number",
+			"description": "The phone number for the address"
+		},
+		"address_city": {
+			"type": "string",
+			"title": "Address city",
+			"description": "The city the address is located in"
+		},
+		"address_state_id": {
+			"type": ["string", "null"],
+			"title": "Address state id",
+			"description": "The state the address is located in"
+		},
+		"address_country_id": {
+			"type": "string",
+			"title": "Address country id",
+			"description": "The country the address is located in"
+		},
+		"address_zip": {
+			"type": "string",
+			"title": "Address zip",
+			"description": "The zip code the address is located in"
+		},
+		"cached_lat": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Cached latitude",
+			"description": "Cached latitude"
+		},
+		"cached_lng": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Cached longitude",
+			"description": "Cached longitude"
+		},
+		"curbside_lat": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Curbside latitude",
+			"description": "Curbside latitude"
+		},
+		"curbside_lng": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Curbside longitude",
+			"description": "Curbside longitude"
+		},
+		"EXT_FIELD_custom_data": {
+			"type": "object",
+			"additionalProperties": { "type": "string" },
+			"title": "Order custom data",
+			"description": "A custom data of the order"
+		},
+		"in_route_count": {
+			"type": "integer",
+			"title": "In route count",
+			"description": "In how many routes is included address."
+		},
+		"last_visited_timestamp": {
+			"type": "integer",
+			"title": "Last visited timestamp",
+			"description": "When the last time an address was visited."
+		},
+		"last_routed_timestamp": {
+			"type": "integer",
+			"title": "Last routed timestamp",
+			"description": "When last time an address was included in a route."
+		},
+		"local_time_window_start": {
+			"type": "integer",
+			"title": "Local time window start",
+			"description": "When a time window was started."
+		},
+		"local_time_window_end": {
+			"type": "integer",
+			"title": "Local time window end",
+			"description": "When a time window was ended."
+		},
+		"local_time_window_start_2": {
+			"type": "integer",
+			"title": "Local time window start 2",
+			"description": "When second time window was started."
+		},
+		"local_time_window_end_2": {
+			"type": "integer",
+			"title": "Local time window end 2",
+			"description": "When second time window was ended."
+		},
+		"service_time": {
+			"type": ["integer","null"],
+			"title": "Service time",
+			"description": "Consumed service time at an address."
+		},
+		"local_timezone_string": {
+			"type": "string",
+			"title": "Local timezone",
+			"description": "Local timezone"
+		},
+		"color": {
+			"type": ["string", "null"],
+			"title": "Color",
+			"description": "Hexadecimal color."
+		},
+		"order_icon": {
+			"type": ["string", "null"],
+			"title": "Order icon",
+			"description": "URL of an order icon"
+		},
+		"is_validated": {
+			"type": "boolean",
+			"title": "Is validated",
+			"description": "If true, the order is validated."
+		},
+		"is_pending": {
+			"type": "boolean",
+			"title": "Is pending",
+			"description": "If true, the order is pending."
+		},
+		"is_accepted": {
+			"type": "boolean",
+			"title": "Is accepted",
+			"description": "If true, the order is accepted."
+		},
+		"is_started": {
+			"type": "boolean",
+			"title": "Is started",
+			"description": "If true, the order is started."
+		},
+		"is_completed": {
+			"type": "boolean",
+			"title": "Is completed",
+			"description": "If true, the order is completed."
+		},
+		"custom_user_fields": {
+			"type": "array",
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_custom_field.json"},
+			"title": "Custom User Fields",
+			"description": "Custom user fields"
+		},
+		"visited_count": {
+			"type": "integer",
+			"title": "Visited Count",
+			"description": "How many times the order visited."
+		}
+	}
+}

@@ -1,0 +1,50 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Address_bundling.json",
+	"type": "object",
+	"title": "Address Bundling",
+	"properties": {
+		"mode": {
+			"type": "integer",
+			"enum": [1,2,3,4],
+			"title": "Mode",
+			"description": "1 = address, 2 = coordinates, 3 = address obj field (1 param), 4 = address custom field (1 params)"
+		},
+		"mode_params": {
+			"type": "array",
+			"items": {"type": "string"},
+			"title": "Mode Parameters",
+			"description": "Mode Parameters: if mode=3, contains address IDs; if mode=4 - the address custom fields"
+		},
+		"service_time_rules": {
+			"type": "object",
+			"title": "Service Time Rules",
+			"properties": {
+				"first_item_mode": {
+					"type": "integer",
+					"enum": [1,2],
+					"title": "First Item Mode",
+					"description": "1 = keep original, 2 = custom time (1 param)"
+				},
+				"first_item_mode_params": {
+					"type": "array",
+					"items": {"type": "integer"},
+					"title": "First Item Mode Parametrs",
+					"description": "If first_item_mode=2, contains list of the custom times (EPOCH format)"
+				},
+				"additional_items_mode": {
+					"type": "integer",
+					"enum": [1,2,3],
+					"title": "Additional Items Mode",
+					"description": "1 = preserve original address service time, 2 = custom time (1 param), 3 = don't add"
+				},
+				"additional_items_mode_params": {
+					"type": "array",
+					"items": {"type": "integer"},
+					"title": "Additional Items Mode Parametrs",
+					"description": If additional_items_mode=2, contains list of the custom times (EPOCH format)"
+				}
+			}
+		}
+	}
+}

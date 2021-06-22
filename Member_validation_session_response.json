@@ -1,0 +1,377 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Member_validation_session_response.json",
+	"title": "Membes validation session response",
+	"type": "object",
+	"description": "For validating of a session. url: https://www.route4me.com/datafeed/session/validate_session.php",
+	"properties": {
+		"authenticated": {
+			"type": "boolean",
+			"title": "Authenticated",
+			"descrption": "A boolean flag indicating if the session is valid"
+		},
+		"geocoding_service": {
+			"type": "string",
+			"title": "Geocoding service",
+			"description": "Geocoding service"
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "Member api key"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Member ID"
+		},
+		"member_email": {
+			"type": "string",
+			"title": "Member email",
+			"description": "Member email"
+		},
+		"is_trial": {
+			"type": "boolean",
+			"title": "Is trial",
+			"descrption": "If the user is currently a trial customer"
+		},
+		"is_active": {
+			"type": "boolean",
+			"title": "Is Active",
+			"descrption": "If the user is currently an active customer"
+		},
+		"session_id": {
+			"type": "string",
+			"title": "Session ID",
+			"description": "The integer session id of the current session"
+		},
+		"session_guid": {
+			"type": "string",
+			"title": "Session guid",
+			"description": "An MD5 hash string of the currently authenticated sesssion, important to use this with future requests"
+		},
+		"member_first_name": {
+			"type": "string",
+			"title": "Member First Name",
+			"description": "The first name of the user."
+		},
+		"member_last_name": {
+			"type": "string",
+			"title": "Member Last Name",
+			"description": "The last name of the user."
+		},
+		"member_timestamp_added": {
+			"type": "integer",
+			"title": "Member timestamp added",
+			"description": "The unix timestamp when the user joined the service"
+		},
+		"industry": {
+			"type": "string",
+			"title": "Industry",
+			"description": "The industry the authenticated user specified"
+		},
+		"account_type_id": {
+			"type": "integer",
+			"title": "Account type ID",
+			"description": "Account type ID."
+		},
+		"current_price": {
+			"type": "string",
+			"title": "Current Price",
+			"description": "Current price (e.g. '0.000')"
+		},
+		"initially_requested_account_type_id": {
+			"type": "integer",
+			"title": "Initially Requested Account Type ID",
+			"description": "Initially Requested account type ID."
+		},
+		"account_type_alias": {
+			"type": "string",
+			"title": "Account type alias",
+			"description": "Account type alias."
+		},
+		"max_stops_per_route": {
+			"type": "integer",
+			"title": "Max stops per route",
+			"description": "Maximum stops per route."
+		},
+		"max_routes": {
+			"type": "integer",
+			"title": "Max routes",
+			"description": "Maximum number of the routes."
+		},
+		"route_planned": {
+			"type": "integer",
+			"title": "Route Planned",
+			"description": "Planned route number"
+		},
+		"routes_planned": {
+			"type": "integer",
+			"title": "Routes Planned",
+			"description": "Planned routes number"
+		},
+		"total_routes_planned": {
+			"type": "integer",
+			"title": "Total Routes Planned",
+			"description": "Total planned routes."
+		},
+		"authentication_count": {
+			"type": "integer",
+			"title": "Authentication Count",
+			"description": "Authentication count."
+		},
+		"salesforce_unique_record_id": {
+			"type": "string",
+			"title": "Salesforce Unique Record ID",
+			"description": "Salesforce unique record ID"
+		},
+		"salesforce_account_id": {
+			"type": "string",
+			"title": "Salesforce Account ID",
+			"description": "Salesforce account ID"
+		},
+		"salesforce_lead_id": {
+			"type": "string",
+			"title": "Salesforce Lead ID",
+			"description": "Salesforce lead ID"
+		},
+		"max_api_optimization_addresses": {
+			"type": "integer",
+			"title": "Max API optimization addresses",
+			"description": "The maximun number of addresses the authenticated user can optimize in this billing cycle"
+		},
+		"max_api_geocoding_addresses": {
+			"type": "integer",
+			"title": "Max API geocoding addresses",
+			"description": "The maximun number of geocodings the authenticated user can optimize in this billing cycle"
+		},
+		"max_api_directions_addresses": {
+			"type": "integer",
+			"title": "Max API directions addresses",
+			"description": "The maximum number of driving route transactions the authenticated user can execute in this billing cycle"
+		},
+		"max_api_validation_addresses": {
+			"type": "integer",
+			"title": "Max API validation addresses",
+			"description": "The maximun number of address validation transactions the authenticated user can execute in this billing cycle"
+		},
+		"max_stops_per_unoptimized_route": {
+			"type": "integer",
+			"title": "Max stops per unoptimized route",
+			"description": "The maximum number of stops the authenticated user can put into a route with optimization disabled"
+		},
+		"max_api_distance_tx": {
+			"type": "integer",
+			"title": "Max API distance tx",
+			"description": "The maximum number of distance transactions the authenticated user can execute in this billing cycle"
+		},
+		"blDisplayUpgradeTrackingHTML": {
+			"type": "boolean",
+			"title": "Display Upgrade Tracking HTML",
+			"descrption": "Display upgrade tracking HTML"
+		},
+		"intTrackingTrigger": {
+			"type": "integer",
+			"title": "Tracking Trigger",
+			"description": "Tracking trigger (int)"
+		},
+		"last_payment_ts": {
+			"type": "integer",
+			"title": "Last payment ts",
+			"description": "The last unix timestamp when this user was successfully charged"
+		},
+		"last_failed_payment_ts": {
+			"type": "integer",
+			"title": "Last Failed payment ts",
+			"description": "The last unix timestamp when this user was failed to pay"
+		},
+		"account_expires_timestamp": {
+			"type": "integer",
+			"title": "Account expires timestamp",
+			"description": "Account expire date"
+		},
+		"account_past_due": {
+			"type": "boolean",
+			"title": "Account Past Due",
+			"descrption": "Account past due"
+		},
+		"ui_input_method": {
+			"type": "string",
+			"title": "UI input method",
+			"description": "UI input method"
+		},
+		"registration_app": {
+			"type": "string",
+			"title": "Registration application",
+			"description": "Registration application"
+		},
+		"registration_device": {
+			"type": "string",
+			"title": "Registration Device",
+			"description": "Registration device"
+		},
+		"hide_routed_addresses": {
+			"type": "string",
+			"title": "Hide Routed Addresses",
+			"description": "Hide routed addresses ('0', '1')"
+		},
+		"hide_visited_addresses": {
+			"type": "string",
+			"title": "Hide Visited Addresses",
+			"description": "Hide visited addresses ('0', '1')"
+		},
+		"show_superuser_addresses": {
+			"type": "string",
+			"title": "Show Superuser Addresses",
+			"description": "Show superuser addresses ('0', '1')"
+		},
+		"appdirect_url": {
+			"type": "string",
+			"title": "Application direction URL",
+			"description": "Application direction URL"
+		},
+		"timestamp_trial_expiration": {
+			"type": "integer",
+			"title": "Timestamp Trial Expiration",
+			"description": "Timestamp trial expiration"
+		},
+		"update_channel_name": {
+			"type": "string",
+			"title": "Update Channel Name",
+			"description": "Update channel name"
+		},
+		"max_subusers_cnt": {
+			"type": "integer",
+			"title": "Maximum Subusers Count",
+			"description": "Maximum subusers count"
+		},
+		"HIDE_NONFUTURE_ROUTES": {
+			"type": "string",
+			"title": "Hide Nonfuture Routes",
+			"description": "Hide nonfuture routes ('0', '1')"
+		},
+		"display_max_routes_future_days": {
+			"type": "string",
+			"title": "Display Maximum Routes Future Days",
+			"description": "Display maximum routes future days ('0', '1')"
+		},
+		"READONLY_USER": {
+			"type": "string",
+			"title": "Readonly User",
+			"description": "Readonly uer ('0', '1')"
+		},
+		"preferred_units": {
+			"type": "string",
+			"title": "Preferred Units",
+			"description": "Preferred units, ENUM [km, ml]."
+		},
+		"preferred_language": {
+			"type": "string",
+			"title": "Preferred Language",
+			"description": "Preferred language, ENUM [en, fr, ...]."
+		},
+		"member_type": {
+			"type": "string",
+			"title": "Member Type",
+			"description": "Member type, ENUM [PRIMARY_ACCOUNT, SUB_ACCOUNT_ADMIN, SUB_ACCOUNT_REGIONAL_MANAGER, SUB_ACCOUNT_DISPATCHER, SUB_ACCOUNT_PLANNER, SUB_ACCOUNT_DRIVER]."
+		},
+		"OWNER_MEMBER_ID": {
+			"type": "string",
+			"title": "Owner Member ID",
+			"description": "Parent user ID."
+		},
+		"ROOT_OWNER_MEMBER_ID": {
+			"type": "string",
+			"title": "Root Owner Member ID",
+			"description": "Root owner member ID (e.g. '402088')"
+		},
+		"ROOT_OWNER_MEMBER_EMAIL": {
+			"type": "string",
+			"title": "Root Owner Member Email",
+			"description": "Root owner member email"
+		},
+		"ROOT_OWNER_MEMBER_API_KEY": {
+			"type": "string",
+			"title": "Root Owner Member API Key",
+			"description": "Root owner member API key"
+		},
+		"geocodingMethod": {
+			"type": "string",
+			"title": "Geocoding Method",
+			"description": "Geocoding method"
+		},
+		"service_type": {
+			"type": "string",
+			"title": "Service Type",
+			"description": "Service type (e.g. 'pre5')"
+		},
+		"validated_by": {
+			"type": "string",
+			"title": "Validated By",
+			"description": "Validated by (e.g. 'ADMIN_PANEL')"
+		},
+		"auto_logout_ts": {
+			"type": "string",
+			"title": "Auto Logout (ts)",
+			"description": "Auto Logout (ts)(e.g. '-1')"
+		},
+		"is_subscription_past_due": {
+			"type": "boolean",
+			"title": "Is subscription past due",
+			"descrption": "If true, subscription is past due."
+		},
+		"geofence_polygon_shape ": {
+			"enum": [
+				"circle",
+				"poly",
+				"rect"
+			],
+			"title": "Geofence polygon shape",
+			"descrption": "Geofence polygon shape. ENUM(circle, poly rect)."
+		},
+		"geofence_polygon_size": {
+			"type": "integer",
+			"title": "Geofence polygon size",
+			"description": "Geofence polygon size"
+		},
+		"geofence_time_onsite_trigger_secs": {
+			"type": "integer",
+			"title": "Geofence time onsite trigger secs",
+			"description": "Geofence time onsite trigger in seconds."
+		},
+		"geofence_minimum_trigger_speed": {
+			"type": "integer",
+			"title": "Geofence minimum trigger speed",
+			"description": "Geofence minimum trigger speed."
+		},
+		"tracking_ttl": {
+			"type": "integer",
+			"title": "Tracking TTL",
+			"description": "Tracking TTL"
+		},
+		"hide_billing_section": {
+			"type": "boolean",
+			"title": "Hide Billing Section",
+			"description": "Hide billing section"
+		},
+		"last_known_member_payment_device": {
+			"type": "string",
+			"title": "Last Known Member Payment Device",
+			"description": "Last known member payment device (e.g. 'web')"
+		},
+		"licensed_modules": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"description": "Licensed module (e.g. 'MODULE__ROUTE_EDITOR_CUSTOM_DATA_EDITING',  'MODULE__VOICE_NAVIGATION:TRUE', 'MODULE__VOICE_NAVIGATION')"
+			},
+			"title": "Licensed Modules",
+			"description": "Licensed modules"
+		},
+		"member_business_type": {
+			"type": "string",
+			"title": "Member Business Type",
+			"description": "Member business type (e.g. 'BUSINESS_EMPLOYEE')"
+		}
+	}
+}

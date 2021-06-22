@@ -1,0 +1,25 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Path.json",
+	"description": "Path - an array of the geographic points, which are laying on a path",
+	"title": "Path",
+	"type": "array",
+	"items": {
+		"properties": {
+			"lat": {
+				"type": "number",
+				"minimum": -90,
+				"maximum": 90,
+				"title": "Latitude",
+				"description": "Point latitude"
+			},
+			"lng": {
+				"type": "number",
+				"minimum": -180,
+				"maximum": 180,
+				"title": "Longitude",
+				"description": "Point longitude"
+			}
+		}
+	}
+}

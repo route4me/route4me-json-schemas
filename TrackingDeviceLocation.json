@@ -1,0 +1,204 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingDeviceLocation.json",
+	"title": "Tracking Device Location",
+	"description": "Device location history. Endpoint: https://api.route4me.com/api/track/get_device_location.php",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"title": "Data",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/TrackingHistory.json"
+			}
+		},
+		"mmd": {
+			"type": "object",
+			"title": "MMD",
+			"description": "Road snapping/map matching. The entire GPS feed was run through a map matching algorithm inside our routing engine. The driving directions and the corresponding points were converted to encoded polylines as well.",
+			"properties": {
+			    "matchings": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"confidence": {
+								"type": "number",
+								"title": "Confidence",
+								"description": "Confidence in the mathing"
+							},
+							"geometry": {
+							    "type": "string",
+								"title": "Geometry",
+								"description": "Matching geometry"
+							},
+							"legs": {
+							    "type": "array",
+								"title": "Legs",
+								"items": {
+									 "type": "object",
+									 "properties": {
+										"geometry": {
+											"type": "string",
+											"title": "Geometry",
+											"description": "Leg geometry"
+										},
+										"steps": {
+											"type": "array",
+											"items": {
+												"item": "object"
+											}
+										},
+										"distance": {
+											"type": "number",
+											"title": "Distance",
+											"description": "Leg distance"
+										},
+										"duration": {
+											"type": "number",
+											"title": "Duration",
+											"description": "Leg duration"
+										},
+										"summary": {
+											"type": "string",
+											"title": "Summary",
+											"description": "Leg summary"
+										},
+										"weight": {
+											"type": "number",
+											"title": "Weight",
+											"description": "Leg weight"
+										}
+									}
+								}
+							},
+							"distance": {
+								"type": "number",
+								"title": "Distance",
+								"description": "Matching distance"
+							},
+							"duration": {
+								"type": "number",
+								"title": "Duration",
+								"description": "Matching duration"
+							},
+							"weight_name": {
+								"type": "string",
+								"title": "Weight Name",
+								"description": "Weight name"
+							},
+							"weight": {
+								"type": "number",
+								"title": "Weight",
+								"description": "Matching weight"
+							}
+						}
+					}
+				},
+				"tracepoints": {
+					"type": "array",
+					"title": "tracepoints",
+					"items": {
+						"type": "object",
+						"properties": {
+							"alternatives_count": {
+								"type": "integer",
+								"title": "Alternatives Count",
+								"description": "Alternatives count"
+							},
+							"waypoint_index": {
+								"type": "integer",
+								"title": "Waypoint Index",
+								"description": "Waypoint index"
+							},
+							"location": {
+								"type": "array",
+								"items": {"type": "integer"},
+								"title": "Location",
+								"description": "Tracepoint location"
+							},
+							"name": {
+								"type": "string",
+								"title": "Name",
+								"description": "Tracepoint Name"
+							},
+							"distance": {
+								"type": "number",
+								"title": "Distance",
+								"description": "Matching distance"
+							},
+							"matchings_index": {
+								"type": "integer",
+								"title": "Matchings Index",
+								"description": "Matchings index"
+							}
+						}
+					},
+					"description": "Tracepoints"
+				},
+				"gaps": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"distance": {
+								"type": "number",
+								"title": "Distance",
+								"description": "Gaps distance"
+							},
+							"duration": {
+								"type": "number",
+								"title": "Duration",
+								"description": "Gaps duration"
+							},
+							"geometry": {
+							    "type": "string",
+								"title": "Geometry",
+								"description": "Gaps geometry"
+							}
+						}
+					},
+					"title": "Gaps",
+					"description": "Gaps"
+				},
+				"summary": {
+					"type": "object",
+					"title": "Summary",
+					"properties": {
+						"total_distance": {
+							"type": "number",
+							"title": "Total Distance",
+							"description": "Total distance"
+						},
+						"total_duration": {
+							"type": "number",
+							"title": "Total Duration",
+							"description": "Total duration"
+						},
+						"matchings_distance": {
+							"type": "number",
+							"title": "Matchings Distance",
+							"description": "Matchings distance"
+						},
+						"matchings_duration": {
+							"type": "number",
+							"title": "Matchings Duration",
+							"description": "Matchings duration"
+						},
+						"gaps_distance": {
+							"type": "number",
+							"title": "Gaps Distance",
+							"description": "Gaps distance"
+						},
+						"gaps_duration": {
+							"type": "number",
+							"title": "Gaps Duration",
+							"description": "Gaps duration"
+						}
+					},
+					"description": "Summary"
+				}
+			}
+		}
+	}
+}

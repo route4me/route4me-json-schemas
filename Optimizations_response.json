@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Optimizations_response.json",
+	"title": "Optimization Response",
+	"type": "object",
+	"properties": {
+		"optimizations": {
+			"type": "array",
+			"title": "Optimizations",
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Optimization_response.json"},
+			"descrption": "Optimizations"
+		},
+		"totalRecords": {
+			"type": "integer",
+			"title": "Total Records",
+			"descrption": "Total optimizations in the response"
+		}
+	}
+}

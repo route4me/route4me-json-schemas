@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Orders_response.json",
+	"title": "Orders response",
+	"description": "Json schema for the multiple Orders response, which is used for getting information about multiple existing orders. For usage details see curl examples in Order group",
+	"type": "object",
+	"properties": {
+		"results": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_response.json"
+			},
+			"title": "Results",
+			"description": "Array of the Order objects"
+		},
+		"total": {
+			"type": "integer",
+			"title": "Total",
+			"description": "Number of the returned Order objects"
+		},
+		"fields": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"title": "Fields",
+			"description": "List of the field names"
+		}
+	}
+}

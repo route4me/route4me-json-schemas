@@ -1,0 +1,141 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Order.json",
+	"title": "Order",
+	"description": "Json schema for an Order class, which is used for keeping client order information at certain address. For usage details see curl examples in Order group",
+	"type": "object",
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "User api key for a developer"
+		},
+		"order_id": {
+			"type": "integer",
+			"title": "Order ID",
+			"description": "An unique internal ID of an order."
+		},
+		"address_1": {
+			"type": "string",
+			"title": "Address 1",
+			"description": "address_1 field"
+		},
+		"address_2": {
+			"type": "string",
+			"title": "Address 2",
+			"description": "address_2 field"
+		},
+		"cached_lat": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Cached latitude",
+			"description": "Cached latitude"
+		},
+		"cached_lng": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Cached longitude",
+			"description": "Cached longitude"
+		},
+		"color": {
+			"type": "string",
+			"title": "Color",
+			"description": "Order icon color on a map"
+		},
+		"curbside_lat": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Curbside latitude",
+			"description": "Curbside latitude"
+		},
+		"curbside_lng": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Curbside longitude",
+			"description": "Curbside longitude"
+		},
+		"day_scheduled_for_YYMMDD": {
+			"type": "string",
+			"title": "Day scheduled",
+			"description": "Date order was scheduled for"
+		},
+		"address_alias": {
+			"type": "string",
+			"title": "Address alias",
+			"description": "Address alias"
+		},
+		"local_time_window_start": {
+			"type": "integer",
+			"title": "Local time window start",
+			"description": "When a time window was started."
+		},
+		"local_time_window_end": {
+			"type": "integer",
+			"title": "Local time window end",
+			"description": "When a time window was ended."
+		},
+		"local_time_window_start_2": {
+			"type": "integer",
+			"title": "Local time window start 2",
+			"description": "When second time window was started."
+		},
+		"local_time_window_end_2": {
+			"type": "integer",
+			"title": "Local time window end 2",
+			"description": "When second time window was ended."
+		},
+		"service_time": {
+			"type": "integer",
+			"title": "Service time",
+			"description": "Consumed service time at an address."
+		},
+		"EXT_FIELD_first_name": {
+			"type": "string",
+			"title": "First name",
+			"description": "The first name of the receiving address"
+		},
+		"EXT_FIELD_last_name": {
+			"type": "string",
+			"title": "Last name",
+			"description": "The last name of the receiving address"
+		},
+		"EXT_FIELD_email": {
+			"type": "string",
+			"title": "Address email",
+			"description": "Address email"
+		},
+		"EXT_FIELD_phone": {
+			"type": "string",
+			"title": "Address phone number",
+			"description": "The phone number for the address"
+		},
+		"EXT_FIELD_custom_data": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"title": "Order custom data",
+			"description": "A custom data of the order"
+		},
+		"order_icon": {
+			"type": "string",
+			"title": "Order icon",
+			"description": "URL to an order icon file"
+		},
+		"custom_user_fields": {
+			"type": "array",
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_custom_field.json"},
+			"title": "Custom User Fields",
+			"description": "Custom user fields"
+		},
+		"visited_count": {
+			"type": "integer",
+			"title": "Visited Count",
+			"description": "How many times the order visited."
+		}
+	}
+}

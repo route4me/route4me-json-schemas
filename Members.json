@@ -1,0 +1,100 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Members.json",
+	"title": "Members",
+	"type": "object",
+	"description": "For new account registration. url: https://www.route4me.com/actions/register_action.php",
+	"required": [
+		"strEmail",
+		"strPassword_1",
+		"strPassword_2",
+		"strFirstName",
+		"strLastName",
+		"strIndustry",
+		"chkTerms",
+		"plan"
+	],
+	"properties": {
+		"strEmail": {
+			"type": "string",
+			"title": "Email",
+			"format": "email",
+			"descrption": "E-mail address of the user that was used for site registration"
+		},
+		"strPassword_1": {
+			"type": "string",
+			"title": "Password 1",
+			"description": "Password associated with this e-mail address"
+		},
+		"strPassword_2": {
+			"type": "string",
+			"title": "Password 2",
+			"descrption": "Password confirmation field"
+		},
+		"strFirstName": {
+			"type": "string",
+			"title": "First name",
+			"descrption": "The first name of the user"
+		},
+		"strLastName": {
+			"type": "string",
+			"title": "Last name",
+			"descrption": "The last name of the user"
+		},
+		"strIndustry": {
+			"type": "string",
+			"title": "Industry",
+			"enum": [
+				'Airport Shuttle Service', 'Alarm and Security', 'Appliance Install/Repair', 'Asset Recovery', 'Auto Parts/Repair', 'Beauty Supply', 'Cable/Satellite Sales', 'Cable/Satellite Installation', 'Carpet Cleaning', 'Charitable Foundation', 'Distribution', 'Driveway Sealcoating', 'Education / Tutor', 'Electricians', 'Farming and Agriculture', 'Federal Government', 'Fire and Water Restoration', 'Fire Extinguishers', 'Fleet Maintenance and Repair', 'Fleet/Trucking', 'Florists', 'Food - Catering', 'Gutter Cleaning', 'Home Health Care', 'HVAC - Heating and AC', 'Inspections', 'Janitorial', 'Laboratory Courier', 'Laundromat / Cleaners', 'Law Enforcement', 'Maintenance', 'Medical Equipment Installation', 'Municipal Government', 'Non-Profit Organization', 'Patio and Deck', 'Pest Control', 'Pet Sitting', 'Political Organization', 'Pool Maintenance', 'Printing and Press', 'Real Estate', 'Residential Cleaning', 'Retail Furniture', 'Satellite Dish Installation', 'Secret Shopper', 'Septic Tank Cleaning', 'Siding Installation Service', 'State Government', 'Taxi/Limo Service', 'Technicians', 'Telecommunications', 'Vehicle Transport', 'Waste Collection', 'Other'
+			],
+			"descrption": "The industry of the user (dropdown of industries below)"
+		},
+		"strZIP": {
+			"type": "string",
+			"title": "Zip code",
+			"pattern": "^[0-9]{5,7}$",
+			"descrption": "The 5-7 digit ZIP code (minimum length of 5))"
+		},
+		"chkTerms": {
+			"enum": [
+				0,
+				1
+			],
+			"title": "Check terms",
+			"descrption": "If the user agreed to the terms of the site checkbox"
+		},
+		"device_id": {
+			"type": "string",
+			"title": "Device id",
+			"descrption": "If a device ID is passed, the registration page assumes a temporary member associated with that device id exists. The registration page updates that member's information, sets an email address. After completion, the member is no longer temporary and the member_id is preserved."
+		},
+		"plan": {
+			"enum": [
+				"free",
+				"basic",
+				"pro",
+				"premium",
+				"personal"
+			],
+			"title": "Plan",
+			"descrption": "The plan type that the user selected"
+		},
+		"format ": {
+			"enum": [
+				"xml",
+				"json"
+			],
+			"title": "Format",
+			"descrption": "ENUM(xml, json) Returns the new member id, authenticated session id and membership restrictions"
+		},
+		"business_member_type": {
+			"enum": [
+				"BUSINESS_OWNER_OPERATOR",
+				"BUSINESS_EMPLOYEE",
+				"INDIVIDUAL"
+			],
+			"title": "Check terms",
+			"descrption": "The plan type that the user selected"
+		}
+	}
+}

@@ -1,0 +1,177 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Vehicle_V5_api.json",
+	"title": "Vehicle",
+	"type": "object",
+	"required": [
+		"vehicle_alias"
+	],
+	"description": "Vehicle object in the user's account. Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicles",
+	"properties": {
+		"vehicle_id": {
+			"type": "string",
+			"title": "Vehicle id",
+			"descrption": "A unique identifcation 32-char string of the vehicle"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member id",
+			"descrption": "An unique identification number of the member"
+		},
+		"is_deleted": {
+			"type": "boolean",
+			"title": "Is Deleted",
+			"description": "If true, the vehicle is deleted"
+		},
+		"vehicle_alias": {
+			"type": "string",
+			"title": "Vehicle alias",
+			"descrption": "Internal name of the vehicle"
+		},
+		"vehicle_vin": {
+			"type": ["string", "null"],
+			"maxLength": 17,
+			"title": "Vehicle VIN",
+			"descrption": "Vehicle VIN number"
+		},
+		"vehicle_reg_state_id": {
+			"type": ["string", "null"],
+			"title": "Vehicle registration state ID",
+			"descrption": "An ID of the state, where vehicle was registered"
+		},
+		"vehicle_reg_country_id": {
+			"type": ["string", "null"],
+			"title": "Vehicle registration country ID",
+			"descrption": "An ID of the country, where vehicle was registered"
+		},
+		"vehicle_license_plate": {
+			"type": ["string", "null"],
+			"title": "Vehicle License Plate",
+			"descrption": "A license plate of the vehicle"
+		},
+		"vehicle_type_id": {
+			"type": ["string", "null"],
+			"enum": ["sedan", "suv", "pickup_truck", "van", "18wheeler", "cabin", "hatchback", "motorcyle", "waste_disposal", "tree_cutting", "bigrig", "cement_mixer", "livestock_carrier", "dairy","tractor_trailer"],
+			"title": "Vehicle Type ID",
+			"descrption": "Vehicle type"
+		},
+		"timestamp_added": {
+			"type": "string",
+			"title": "Timestamp Added",
+			"descrption": "When the vehicle was added"
+		},
+		"vehicle_make": {
+			"type": ["string", "null"],
+			"enum": ["american coleman", "bmw", "chevrolet", "ford", "freightliner", "gmc", "hino", "honda", "isuzu", "kenworth", "mack", "mercedes-benz", "mitsubishi", "navistar", "nissan", "peterbilt", "renault", "scania", "sterling", "toyota", "volvo", "western star"],
+			"title": "Vehicle Make",
+			"descrption": "Vehicle maker brend"
+		},
+		"vehicle_model_year": {
+			"type": ["integer", "null"],
+			"title": "Vehicle Model Year",
+			"descrption": "A year of the vehicle model"
+		},
+		"vehicle_model": {
+			"type": ["string", "null"],
+			"title": "Vehicle Model",
+			"descrption": "A model of the vehicle"
+		},
+		"vehicle_year_acquired": {
+			"type": ["integer", "null"],
+			"title": "Vehicle Acquired Year",
+			"descrption": "A year the vehicle was acquired"
+		},
+		"vehicle_cost_new": {
+			"type": ["number", "null"],
+			"title": "Vehicle Cost New",
+			"descrption": "A cost of the new vehicle"
+		},
+		"purchased_new": {
+			"type": ["boolean", "null"],
+			"title": "Purchased New",
+			"description": "If true, the vehicle was purchased new"
+		},
+		"license_start_date": {
+			"type": ["string", "null"],
+			"format": "date-time",
+			"title": "License Start Date",
+			"descrption": "A start date of the license"
+		},
+		"license_end_date": {
+			"type": ["string","null"],
+			"format": "date-time",
+			"title": "License End Date",
+			"descrption": "An end date of the license"
+		},
+		"is_operational": {
+			"type": "boolean",
+			"title": "Is Operational",
+			"description": "If true, the vehicle is operational"
+		},
+		"fuel_type": {
+			"type": ["string", "null"],
+			"enum": ["unleaded 87", "unleaded 89", "unleaded 91", "unleaded 93", "diesel", "electric", "hybrid"],
+			"title": "Fuel Type",
+			"descrption": "A type of the fuel"
+		},
+		"external_telematics_vehicle_id": {
+			"type": ["string", "null"],
+			"title": "External Telematics Vehicle ID",
+			"descrption": "External telematics vehicle ID"
+		},
+		"timestamp_removed": {
+			"type": "string",
+			"title": "Timestamp Removed",
+			"descrption": "When he vehicle was removed"
+		},
+		"vehicle_profile_id": {
+			"type": "string",
+			"title": "Vehicle Profile ID",
+			"descrption": "Vehicle Profile ID"
+		},
+		"fuel_consumption_city": {
+			"type": ["number", "null"],
+			"title": "Fuel Consumption City",
+			"descrption": "Fuel consumption in the city area"
+		},
+		"fuel_consumption_highway": {
+			"type": ["number", "null"],
+			"title": "Fuel Consumption Highway",
+			"descrption": "Fuel consumption in the highway area"
+		},
+		"fuel_consumption_city_unit": {
+			"type": "string",
+			"title": "Fuel Consumption City Unit",
+			"descrption": "Fuel consumption unit in the city area"
+		},
+		"fuel_consumption_highway_unit": {
+			"type": "string",
+			"title": "Fuel Consumption Highway Unit",
+			"descrption": "Fuel consumption unit in the highway area"
+		},
+		"mpg_city": {
+			"type": ["number", "null"],
+			"minimum": 6,
+			"maximum": 60,
+			"title": "MPG City",
+			"descrption": "Miles per gallon in the city area"
+		},
+		"mpg_highway": {
+			"type": ["number", "null"],
+			"minimum": 6,
+			"maximum": 60,
+			"title": "MPG Highway",
+			"descrption": "Miles per gallon in the highway area"
+		},
+		"fuel_consumption_city_uf_value": {
+			"type": ["number", "null"],
+			"title": "Fuel Consumption City UF Value",
+			"descrption": "Fuel consumption UF value in the city area"
+		},
+		"fuel_consumption_highway_uf_value": {
+			"type": ["number", "null"],
+			"title": "Fuel Consumption Highway UF Value",
+			"descrption": "Fuel consumption UF value in the highway area"
+		}
+	}
+}

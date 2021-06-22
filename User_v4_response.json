@@ -1,0 +1,131 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/User_v4_response.json",
+	"title": "User (v4) response",
+	"type": "object",
+	"description": "Response object structure from the endpoint: https://route4me.com/api.v4/user.php",
+	"properties": {
+		"member_first_name": {
+			"type": "string",
+			"title": "Member First Name",
+			"description": "The first name of the user"
+		},
+		"member_id": {
+			"type": "string",
+			"title": "Member ID",
+			"description": "Member ID"
+		},
+		"member_last_name": {
+			"type": "string",
+			"title": "Member Last Name",
+			"description": "The last name of the user"
+		},
+		"member_email": {
+			"type": "string",
+			"title": "Member Email",
+			"format": "email",
+			"description": "E-mail address of the user that was used for website registration."
+		},
+		"preferred_units": {
+			"type": "string",
+			"title": "Preferred Units",
+			"description": "Preferred units, ENUM [km, ml]."
+		},
+		"preferred_language": {
+			"type": "string",
+			"title": "Preferred Language",
+			"description": "Preferred language, ENUM [en, fr, ...]."
+		},
+		"timezone": {
+			"type": "string",
+			"title": "Timezone",
+			"description": "Member timezone."
+		},
+		"member_zipcode": {
+			"type": "string",
+			"title": "Zip code",
+			"pattern": "^[0-9]{5,7}$",
+			"description": "The 5-7 digit ZIP code (minimum length of 5))."
+		},
+		"OWNER_MEMBER_ID": {
+			"type": "string",
+			"title": "Owner Member ID",
+			"description": "Parent user ID."
+		},
+		"member_type": {
+			"type": "string",
+			"title": "Member Type",
+			"description": "Member type, ENUM [PRIMARY_ACCOUNT, SUB_ACCOUNT_ADMIN, SUB_ACCOUNT_REGIONAL_MANAGER, SUB_ACCOUNT_DISPATCHER, SUB_ACCOUNT_PLANNER, SUB_ACCOUNT_DRIVER]."
+		},
+		"member_phone": {
+			"type": "string",
+			"title": "Member Phone",
+			"description": "A phone number of the user."
+		},
+		"user_reg_state_id": {
+			"type": "string",
+			"title": "User Region State ID",
+			"description": "Member state, Enum(COUNTRY_CODES)."
+		},
+		"user_reg_country_id": {
+			"type": "string",
+			"title": "User Region Country ID",
+			"description": "Member country, Enum(COUNTRY_CODES)."
+		},
+		"date_of_birth": {
+			"type": "string",
+			"title": "Date of Birth",
+			"description": "Date of birth."
+		},
+		"HIDE_ROUTED_ADDRESSES": {
+			"type": "string",
+			"title": "Hide Routed Addresses",
+			"description": "Hide routed sddresses, ENUM['TRUE', 'FALSE']."
+		},
+		"HIDE_VISITED_ADDRESSES": {
+			"type": "string",
+			"title": "Hide Visited Addresses",
+			"description": "Hide visited sddresses, ENUM['TRUE', 'FALSE']."
+		},
+		"HIDE_NONFUTURE_ROUTES": {
+			"type": "string",
+			"title": "Hide Nonfuture Routes",
+			"description": "Hide non-future routes, ENUM['TRUE', 'FALSE']."
+		},
+		"READONLY_USER": {
+			"type": "string",
+			"title": "Readonly User",
+			"description": "Readonly user, ENUM[TRUE', 'FALSE']."
+		},
+		"SHOW_ALL_DRIVERS": {
+			"type": "string",
+			"title": "Show All Drivers",
+			"description": "Show all drivers, ENUM['TRUE', 'FALSE']."
+		},
+		"SHOW_ALL_VEHICLES": {
+			"type": "string",
+			"title": "Show All Vehicles",
+			"description": "Show all vehicles, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
+		"member_picture": {
+			"type": "string",
+			"title": "Member picture",
+			"description": "A link to Member's image file"
+		},
+		"custom_data": {
+			"type": "string",
+			"title": "Custom data",
+			"description": "User's custom data (JSON string) - POST."
+		},
+		"level": {
+			"type": "integer",
+			"title": "Level",
+			"description": "Subordination level. 0 is the highest level."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "API key of the user."
+		}
+	}
+}

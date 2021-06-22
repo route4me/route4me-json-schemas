@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/waypoint.json#",
+	"description": "Waypoint",
+	"title": "Waypoint",
+	"type": "object",
+	"required": [
+		"geo"
+	],
+	"properties": {
+		"id": {
+			"type": "integer",
+			"title": "Waypoint ID",
+			"description": "Internal unique ID identifier"
+		},
+		"geo": {
+			"type": "string",
+			"title": "Waypoint GEO locaton",
+			"description": "Waypoint GEO location presented as string ('40.528667,-74.23188' etc)"
+		}
+	}
+}

@@ -1,0 +1,101 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/note_request.json",
+	"description": "request parameters for adding note object to a route or route destination. Endpoint - https://www.route4me.com/actions/addRouteNotes.php",
+	"type": "object",
+	"title": "Note Request",
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "API key of the registered user. HTTP method - GET"
+		},
+		"route_id": {
+			"type": "string",
+			"title": "Route ID",
+			"description": "Route ID. HTTP method - GET"
+		},
+		"address_id": {
+			"type": "integer",
+			"title": "Route Destination ID",
+			"description": "Route Destination ID. HTTP method - GET"
+		},
+		"strNoteContents": {
+			"type": "string",
+			"title": "Note Contents",
+			"description": "Note Contents. Max character 1000. HTTP method - POST"
+		},
+		"dev_lat": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Device Latitude",
+			"description": "The latitude location of where a mobile device was located when it made a request. HTTP method - GET"
+		},
+		"dev_lng": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Device Longitude",
+			"description": "The longitude location of where a mobile device was located when it made a request. HTTP method - GET"
+		},
+		"utc_time": {
+			"type": "integer",
+			"title": "UTC time",
+			"description": "UTC time when the note was added. HTTP method - GET"
+		},
+		"strFilename": {
+			"type": "string",
+			"title": "Filename",
+			"description": "A file name to be uploaded. HTTP method - POST"
+		},
+		"strUpdateType": {
+			"type": "string",
+			"enum": [
+				"pickup",
+				"dropoff",
+				"noanswer",
+				"notfound",
+				"notpaid",
+				"paid",
+				"wrongdelivery",
+				"wrongaddressrecipient",
+				"notpresent",
+				"service_rendered",
+				"parts_missing",
+				"follow_up",
+				"left_information",
+				"spoke_with_decision_maker",
+				"spoke_with_decision_influencer",
+				"competitive_account",
+				"scheduled_follow_up_meeting",
+				"scheduled_lunch",
+				"scheduled_product_demo",
+				"scheduled_clinical_demo",
+				"no_opportunity",
+				"other"
+			],
+			"title": "Update Type",
+			"description": "Note status update type. HTTP method - POST"
+		},
+		"esignature": {
+			"type": "boolean",
+			"title": "Electronic signature",
+			"description": "Inform system that file is signature image. HTTP method - POST"
+		},
+		"format": {
+			"type": "string",
+			"enum": [
+				"json",
+				"csv"
+			],
+			"title": "Format",
+			"description": "The format in which to return the route data.. HTTP method - GET"
+		}
+	},
+	"required": [
+		"api_key",
+		"route_id",
+		"address_id"
+	]
+}

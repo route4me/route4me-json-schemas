@@ -1,0 +1,68 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Optimization_create.json",
+	"title": "Optimization Create",
+	"type": "object",
+	"properties": {
+		"addresses": {
+			"type": "array",
+			"title": "Route Addresses",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.json"
+			},
+			"descrption": "Route Addresses. POST data"
+		},
+		"depots": {
+			"type": "array",
+			"title": "Depots",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.json"
+			},
+			"descrption": "Optimization depots. POST data"
+		},
+		"parameters": {
+			"type": "array",
+			"title": "Route Parameters",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteParameters.json"
+			},
+			"descrption": "Route Parameters. POST data"
+		},
+		"directions": {
+			"type": "integer",
+			"enum": [
+				0,
+				1
+			],
+			"title": "Directions",
+			"description": "A flag to enable or disable driving and turn-by-turn directions being returned. Not returning them is more efficient for the database. Query string (GET fields)."
+		},
+		"format": {
+			"type": "string",
+			"enum": [
+				"json",
+				"xml",
+				"serialized",
+				"friendly",
+				"csv"
+			],
+			"title": "Format",
+			"description": "The format in which to return the route data. This parameter is ignored for now, as only JSON is supported. Query string (GET fields)."
+		},
+		"route_path_output": {
+			"type": "string",
+			"enum": [
+				"Points",
+				"None"
+			],
+			"default": "None",
+			"title": "Route Path Output",
+			"description": "Return the path points when returning the newly created route... Query string (GET fields)."
+		},
+		"optimized_callback_url": {
+			"type": "string",
+			"title": "Optimized Callback URL",
+			"description": "A URL that gets called when the optimization is solved, or if there is an error. The callback is called with a POST request. The POST data sent is: timestamp (Seconds): Server timestamp of request sent optimization_problem_id (Hash String): ID of the optimization state (Small Int). The state can be one of the values: 4 = OPTIMIZATION_STATE_OPTIMIZED, which means the optimization was successful; or 5 = OPTIMIZATION_STATE_ERROR, which means there was an error solving the optimization.. Query string (GET fields)."
+		}
+	}
+}

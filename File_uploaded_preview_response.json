@@ -1,0 +1,37 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/File_uploaded_preview_response.json",
+	"description": "Response schema of a uploaded file",
+	"title": "File Uploaded Preview Response",
+	"type": "object",
+	"properties": {
+		"csv_header": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"description": "A header of the uploaded file"
+		},
+		"sample_csv_data": {
+			"type": "array",
+			"items": {
+				"type": "array",
+				"items": {
+					"type": "string"
+				}
+			},
+			"description": "A data from the uploaded file"
+		},
+		"sample_parsed_data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.json"
+			}
+		},
+		"address_count": {
+			"type": "integer",
+			"title": "Address count",
+			"description": "A number of the returned addresses"
+		}
+	}
+}

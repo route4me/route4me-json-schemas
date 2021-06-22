@@ -1,0 +1,50 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Search.json",
+	"type": "object",
+	"title": "Search",
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"title": "API Key",
+			"description": "api_key"
+		},
+		"device_id": {
+			"type": "string",
+			"title": "Device ID",
+			"description": "Device id"
+		},
+		"query": {
+			"type": "string",
+			"title": "Query",
+			"description": "Query"
+		},
+		"type": {
+			"type": "string",
+			"enum": [
+				"routes",
+				"addresses",
+				"notes",
+				"address_book"
+			],
+			"title": "Search Type",
+			"description": "Type of search: 'routes' - Search in routes index, 'addresses' - Search in routes_data index, 'notes' - Search in notes index, 'address_book' - Search in address book index"
+		},
+		"limit": {
+			"type": "integer",
+			"default": 10,
+			"title": "Limit",
+			"description": "Limit of displayed found items"
+		},
+		"offset": {
+			"type": "integer",
+			"default": 0,
+			"title": "Offset",
+			"description": "Offest of start item index searched for"
+		}
+	},
+	"required": [
+		"query",
+		"type"
+	]
+}

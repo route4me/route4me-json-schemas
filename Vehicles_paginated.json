@@ -1,0 +1,68 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Vehicles_paginated.json",
+	"title": "Vehicles Paginated",
+	"type": "object",
+	"description": "Vehicles response with pagination. Endpoint: url: https://api.route4me.com/api/vehicles",
+	"properties": {
+		"current_page": {
+			"type": "integer",
+			"title": "Current page",
+			"descrption": "Current page in the vehicles collection"
+		},
+		"data": {
+			"type": "array",
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Vehicle_V4.json"}
+		},
+		"first_page_url": {
+			"type": "string",
+			"title": "First Page URL",
+			"descrption": "URL to the first page"
+		},
+		"from": {
+			"type": "integer",
+			"title": "From",
+			"descrption": "From which vehicle is starting the page"
+		},
+		"last_page": {
+			"type": "integer",
+			"title": "Last Page",
+			"descrption": "Last page in the vehicles collection"
+		},
+		"last_page_url": {
+			"type": "string",
+			"title": "Last Page URL",
+			"descrption": "URL to the last page"
+		},
+		"next_page_url": {
+			"type": "string",
+			"title": "Next Page URL",
+			"descrption": "URL to the next page"
+		},
+		"path": {
+			"type": "string",
+			"title": "Path",
+			"descrption": "Path to the API endpoint"
+		},
+		"per_page": {
+			"type": "integer",
+			"title": "Per Page",
+			"descrption": "Vehicles number per page"
+		},
+		"prev_page_url": {
+			"type": "string",
+			"title": "Previous Page URL",
+			"descrption": "URL to the previous page"
+		},
+		"to": {
+			"type": "integer",
+			"title": "To",
+			"descrption": "To which vehicle is ending the page"
+		},
+		"total": {
+			"type": "integer",
+			"title": "Total",
+			"descrption": "Total number of the vehicles"
+		}
+	}
+}

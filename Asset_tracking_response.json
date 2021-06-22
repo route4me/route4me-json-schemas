@@ -1,0 +1,223 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Asset_tracking_response.json",
+	"title": "Asset tracking response",
+	"type": "object",
+	"description": "Response from the endpoint: https://route4me.com/api.v4/status.php",
+	"properties": {
+		"tracking_number": {
+			"type": "string",
+			"title": "Tracking Number",
+			"descrption": "The ID assigned to an asset by the system"
+		},
+		"large_logo_uri": {
+			"type": ["string", "null"],
+			"title": "Large logo URI",
+			"description": "A link to a large logo"
+		},
+		"large_logo_uri_2x": {
+			"type": ["string", "null"],
+			"title": "Large logo URI 2x",
+			"description": "A link to a large logo 2x"
+		},
+		"mobile_logo_uri": {
+			"type": ["string", "null"],
+			"title": "Mobile logo URI",
+			"description": "A link to a mobile logo"
+		},
+		"mobile_logo_uri_2x": {
+			"type": ["string", "null"],
+			"title": "Mobile logo URI 2x",
+			"description": "A link to a mobile logo 2x"
+		},
+		"map_color": {
+			"type": ["string", "null"],
+			"title": "Map color",
+			"description": "Map color"
+		},
+		"large_logo_alignment": {
+			"type": ["string", "null"],
+			"title": "Large logo alignment",
+			"description": "An alignment of a large logo"
+		},
+		"mobile_logo_alignment": {
+			"type": ["string", "null"],
+			"title": "Mobile logo alignment",
+			"description": "An alignment of a mobile logo"
+		},
+		"show_map_zoom_controls": {
+			"type": "boolean",
+			"title": "Show map zooom controls",
+			"description": "If true, the map zoom controls will be shown"
+		},
+		"driver_phone": {
+			"type": ["string", "null"],
+			"title": "Driver phone",
+			"description": "Driver phone number"
+		},
+		"route_started": {
+			"type": "boolean",
+			"title": "Route Started",
+			"description": "Route started"
+		},
+		"customer_service_phone": {
+			"type": ["string", "null"],
+			"title": "Customer Service Phone",
+			"description": "Customer service phone"
+		},
+		"hide_covid19_warning": {
+			"type": "boolean",
+			"title": "Hide Covid19 Warning",
+			"description": "If true, Covid19 warning hidden"
+		},
+		"driver_name": {
+			"type": "string",
+			"title": "Driver name",
+			"description": "Driver name"
+		},
+		"driver_picture": {
+			"type": ["string", "null"],
+			"title": "Driver picture",
+			"description": "A link to a driver picture file"
+		},
+		"tracking_page_subheadline": {
+			"type": ["string", "null"],
+			"title": "Tracking page subheadline",
+			"description": "A subheadline of a tracking page"
+		},
+		"destination_address_1": {
+			"type": "string",
+			"title": "Destination address 1",
+			"description": "A first destination address"
+		},
+		"destination_address_2": {
+			"type": "string",
+			"title": "Destination address 1",
+			"description": "A second destination address"
+		},
+		"delivered": {
+			"type": "boolean",
+			"title": "Delivered",
+			"description": "If true, the item was delivered to the location"
+		},
+		"status_history": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"unix_timestamp": {
+						"type": "integer",
+						"title": "Unix Timestamp",
+						"description": "Unix timestamp"
+					},
+					"info": {
+						"type": "string",
+						"enum": [
+							"Order Received",
+							"Order Assigned to Route",
+							"Packing",
+							"Loaded to Vehicle",
+							"Out for Delivery"
+						],
+						"title": "Information",
+						"description": "Information about a shipped package"
+					}
+				}
+			}
+		},
+		"locations": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+				    "is_destination": {
+					    "type": "boolean",
+						"title": "Is Destination",
+						"description": "True if the location is destination"
+					},
+					"lat": {
+						"type": "number",
+						"minimum": -90,
+						"maximum": 90,
+						"title": "Latitude",
+						"description": "Point latitude"
+					},
+					"lng": {
+						"type": "number",
+						"minimum": -180,
+						"maximum": 180,
+						"title": "Longitude",
+						"description": "Point longitude"
+					},
+					"icon": {
+						"type": ["string", "null"],
+						"title": "Icon",
+						"description": "Link to the icon"
+					},
+					"size": {
+						"type": "integer",
+						"title": "Size",
+						"description": "Size of the icon"
+					},
+					"anchor": {
+						"type": "array",
+						"items": {
+							"type": "integer"
+						},
+						"description": "A icon's acnhor position"
+					},
+					"popupAnchor": {
+						"type": ["array", "null"],
+						"items": {
+							"type": "integer"
+						}
+					},
+					"angle": {
+						"type": "integer",
+						"title": "Angle",
+						"description": "Rotation angle"
+					},
+					"info": {
+						"type": "string",
+						"title": "Information",
+						"description": "Information about a shipped package at a specified location."
+					}
+				}
+			}
+		},
+		"custom_data": {
+			"type": "object",
+			"additionalProperties": { "type": "string" },
+			"title": "Custom Data",
+			"description": "Unclasified data of a Tracking_number object. You can put here asset name too."
+		},
+		"arrival": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"from_unix_timestamp": {
+						"type": "integer",
+						"title": "From Unix Timestamp",
+						"description": "Start of arrival time range in EPOCH"
+					},
+					"to_unix_timestamp": {
+						"type": "integer",
+						"title": "To Unix Timestamp",
+						"description": "End of arrival time range in EPOCH"
+					}
+				}
+			}
+		},
+		"timestamp_geofence_visited": {
+			"type": ["integer", "null"],
+			"title": "Timestamp geofence visited",
+			"description": "UNIX timestamp when a geofence visited event was triggered"
+		},
+		"timestamp_last_visited": {
+			"type": ["integer", "null"],
+			"title": "Timestamp geofence visited",
+			"description": "UNIX timestamp of a last visited event"
+		}
+	}
+}

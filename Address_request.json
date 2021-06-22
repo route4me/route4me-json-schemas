@@ -1,0 +1,293 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Address_request.json",
+	"title": "Address Request",
+	"description": "Json schema for an Address request class. See curl examples: add_address_to_optimization, update_address_in_route",
+	"type": "object",
+	"properties": {
+		"route_destination_id": {
+			"type": "integer",
+			"title": "Route Destination ID",
+			"description": "Internal unique address identifier"
+		},
+		"alias": {
+			"type": "string",
+			"title": "Address Alias",
+			"description": "Address Alias"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Member ID"
+		},
+		"address": {
+			"type": "string",
+			"title": "Address Name",
+			"description": "The route Address Line 1"
+		},
+		"is_depot": {
+			"type": "boolean",
+			"title": "Is Depot",
+			"description": "This address is a depot",
+			"default": "false"
+		},
+		"lat": {
+			"type": "number",
+			"title": "Latitude",
+			"description": "Latitude",
+			"minimum": -90,
+			"maximum": 90
+		},
+		"lng": {
+			"type": "number",
+			"title": "Longitude",
+			"description": "Longitude",
+			"minimum": -180,
+			"maximum": 180
+		},
+		"curbside_lat": {
+			"type": "number",
+			"title": "Curbside Latitude",
+			"description": "Curbside latitude",
+			"minimum": -90,
+			"maximum": 90
+		},
+		"curbside_lng": {
+			"type": "number",
+			"title": "Curbside Longitude",
+			"description": "Curbside longitude",
+			"minimum": -180,
+			"maximum": 180
+		},
+		"priority": {
+			"type": "integer",
+			"title": "Priority",
+			"description": "0 is the highest priority; n has higher priority than n + 1"
+		},
+		"route_id": {
+			"type": "string",
+			"title": "Route ID",
+			"description": "Parent route"
+		},
+		"optimization_problem_id": {
+			"type": "string",
+			"title": "Optimization Problem ID",
+			"description": "Optimization Problem ID"
+		},
+		"sequence_no": {
+			"type": "integer",
+			"title": "Sequence No",
+			"description": "The sequence number for the address"
+		},
+		"geocoded": {
+			"type": "boolean",
+			"title": "Geocoded",
+			"description": "True means the 'address' field was successfully geocoded"
+		},
+		"preferred_geocoding": {
+			"type": "integer",
+			"title": "Preferred Geocoding",
+			"description": "Index of 'geocodings' array that the user has chosen"
+		},
+		"geocodings": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/geocoding.json"
+			},
+			"title": "Geocodings ID"
+		},
+		"contact_id": {
+			"type": "integer",
+			"minimum": 0,
+			"title": "Contact ID",
+			"description": "Address book contact id (0 means not connected to the address book)"
+		},
+		"address_stop_type": {
+			"type": "string",
+			"enum": [
+				"DELIVERY","PICKUP","BREAK","MEETUP","SERVICE","VISIT","DRIVEBY"
+			],
+			"title": "Address stop type",
+			"description": "The type of stop that this is (DELIVERY,PICKUP,BREAK,MEETUP,SERVICE,VISIT,DRIVEBY)"
+		},
+		"is_visited": {
+			"type": "boolean",
+			"title": "Is Visited",
+			"description": "The driver pressed the 'Visited' button",
+			"default": "false"
+		},
+		"visited_lat": {
+			"type": "number",
+			"title": "Visited Latitude",
+			"description": "Last known check in latitude",
+			"minimum": -90,
+			"maximum": 90
+		},
+		"visited_lng": {
+			"type": "number",
+			"title": "Visited Longitude",
+			"description": "Last known check in longitude",
+			"minimum": -180,
+			"maximum": 180
+		},
+		"is_departed": {
+			"type": "boolean",
+			"title": "Is Departed",
+			"description": "The driver marked the 'Departed' button"
+		},
+		"departed_lat": {
+			"type": "number",
+			"title": "Departed Latitude",
+			"description": "Last known departed latitude",
+			"minimum": -90,
+			"maximum": 90
+		},
+		"departed_lng": {
+			"type": "number",
+			"description": "Last known departed longitude",
+			"title": "Departed Longitude",
+			"minimum": -180,
+			"maximum": 180
+		},
+		"group": {
+			"type": "string",
+			"title": "Group",
+			"description": "Address group"
+		},
+		"customer_po": {
+			"type": "string",
+			"title": "Customer PO",
+			"description": "The customer purchase order for the address"
+		},
+		"invoice_no": {
+			"type": "string",
+			"title": "Invoice No",
+			"description": "The invoice number for the address"
+		},
+		"reference_no": {
+			"type": "string",
+			"title": "Reference NO",
+			"description": "The reference number for the address"
+		},
+		"order_no": {
+			"type": "string",
+			"title": "Order NO",
+			"description": "The order number for the address"
+		},
+		"order_id": {
+			"type": "integer",
+			"title": "Order ID",
+			"description": "Parent order ID"
+		},
+		"weight": {
+			"type": "number",
+			"title": "Weight",
+			"description": "Weight"
+		},
+		"cost": {
+			"type": "number",
+			"title": "Cost",
+			"description": "The cost of the order for the address"
+		},
+		"revenue": {
+			"type": "number",
+			"title": "Revenue",
+			"description": "The total revenue for the address"
+		},
+		"cube": {
+			"type": "number",
+			"title": "Cube",
+			"description": "The cubic volume of the cargo being delivered or picked up at the address"
+		},
+		"pieces": {
+			"type": "integer",
+			"title": "Pieces",
+			"description": "Pieces"
+		},
+		"first_name": {
+			"type": "string",
+			"title": "First name",
+			"description": "The first name of the receiving address"
+		},
+		"last_name": {
+			"type": "string",
+			"title": "Last name",
+			"description": "The last name of the receiving address"
+		},
+		"email": {
+			"type": "string",
+			"format": "email",
+			"title": "Email",
+			"description": "A valid e-mail address assigned to this stop"
+		},
+		"phone": {
+			"type": "string",
+			"title": "Phone",
+			"description": "Customer Phone"
+		},
+		"time_window_start": {
+			"type": "integer",
+			"title": "Time Window Start",
+			"description": "Time Window Start in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start datebecause start time changes would shift time windows"
+		},
+		"time_window_end": {
+			"type": "integer",
+			"title": "Time Window End",
+			"description": "Time Window End in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start datebecause start time changes would shift time windows"
+		},
+		"time_window_start_2": {
+			"type": "integer",
+			"title": "Time Window Start 2",
+			"description": "See time_window_start"
+		},
+		"time_window_end_2": {
+			"type": "integer",
+			"title": "Time Window End 2",
+			"description": "See time_window_end"
+		},
+		"time": {
+			"type": "integer",
+			"title": "Time",
+			"description": "Service time (seconds)"
+		},
+		"custom_fields": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"description": "Any unrecognized fields from the original CSV upload will be found here",
+			"title": "Custom Fields"
+		},
+		"custom_fields_str_json": {
+			"type": "string",
+			"title": "Custom fields JSON string",
+			"description": "JSON string representation of the custom fields"
+		},
+		"custom_fields_config": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"title": "Custom fields configuration",
+			"description": "Configuration of the custom fields"
+		},
+		"custom_fields_config_str_json": {
+			"type": "string",
+			"title": "Custom fields config JSON string",
+			"description": "JSON string representation of the custom fields configuration"
+		},
+		"notes": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/note.json"
+			},
+			"title": "Notes",
+			"description": "Notes"
+		},
+		"tracking_number": {
+			"type": "string",
+			"title": "Tracking Number",
+			"description": "Systemwide unique code, which permits end-users (recipients) to track the status of their order"
+		}
+	}
+}

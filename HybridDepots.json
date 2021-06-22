@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/HybridDepots.json",
+	"title": "Order",
+	"description": "Json schema for adding the depots to a Hybrid Optimization",
+	"type": "object",
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "User api key for a developer"
+		},
+		"optimization_problem_id": {
+			"type": "integer",
+			"title": "Optimization Problem ID",
+			"description": "Optimization problem ID (unique 32-char string)"
+		},
+		"delete_old_depots": {
+			"type": "boolean",
+			"title": "Delete Old Depots",
+			"description": "If true, the old depots will be deleted drom the Hybrid Optimization"
+		},
+		"new_depots": {
+			"type": "array",
+			"title": "New Depots",
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Address.json" },
+			"description": "Array of the Address objects"
+		}
+	}
+}

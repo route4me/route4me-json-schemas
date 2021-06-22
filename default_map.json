@@ -1,0 +1,294 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/default_map.json",
+	"title": "Default Map",
+	"description": "",
+	"type": "object",
+	"properties": {
+		"email": {
+			"description": "A valid e-mail address assigned to this stop",
+			"valid_headers": [
+				"email",
+				"e-mail",
+				"email_address",
+				"emailaddress",
+				"customer_email",
+				"order_email",
+				"address_email"
+			]
+		},
+		"alias": {
+			"description": "Alias assigned to the route",
+			"valid_headers": [
+				"alias",
+				"customeralias",
+				"customer",
+				"name",
+				"nickname",
+				"address_alias"
+			]
+		},
+		"address": {
+			"description": "The route Address Line 1",
+			"valid_headers": [
+				"adress",
+				"address",
+				"address_1",
+				"address1",
+				"addr1",
+				"destination_name",
+				"customer_address"
+			]
+		},
+		"address2": {
+			"description": "The route Address Line 2 which is not used for geocoding",
+			"valid_headers": [
+				"address2",
+				"address_2",
+				"addr2"
+			]
+		},
+		"city": {
+			"description": "The city the address is located in",
+			"valid_headers": [
+				"city",
+				"city_name",
+				"address_city",
+				"cityname",
+				"town"
+			]
+		},
+		"state": {
+			"description": "The state the address is located in",
+			"valid_headers": [
+				"state",
+				"state_name",
+				"address_state"
+			]
+		},
+		"country": {
+			"description": "The country the address is located in",
+			"valid_headers": [
+				"country",
+				"country_name",
+				"countryname",
+				"nation"
+			]
+		},
+		"zip": {
+			"description": "The zip code the address is located in",
+			"valid_headers": [
+				"zip",
+				"zipcode",
+				"addresszip",
+				"addresszipcode",
+				"address_zip"
+			]
+		},
+		"phone": {
+			"description": "The phone number for the address",
+			"valid_headers": [
+				"phone",
+				"phonenumber",
+				"telephone",
+				"phone_1",
+				"address_phone"
+			]
+		},
+		"first_name": {
+			"description": "The first name of the receiving address",
+			"valid_headers": [
+				"first_name",
+				"firstname",
+				"first",
+				"customer_first_name"
+			]
+		},
+		"last_name": {
+			"description": "Th last name of the receiving party",
+			"valid_headers": [
+				"last_name",
+				"last_name",
+				"last",
+				"customer_last_name"
+			]
+		},
+		"account_no": {
+			"description": "The account number for the address",
+			"valid_headers": [
+				"account",
+				"accountnumber",
+				"account_number"
+			]
+		},
+		"order_no": {
+			"description": "The order number for the address",
+			"valid_headers": [
+				"order",
+				"order_no",
+				"order_number",
+				"orderno"
+			]
+		},
+		"sequence_no": {
+			"description": "The sequence number for the address",
+			"valid_headers": [
+				"seq",
+				"sequence_no",
+				"sequence_number",
+				"sequenceno"
+			]
+		},
+		"original_route_id": {
+			"description": "The route ID of the address",
+			"valid_headers": [
+				"route",
+				"route_no",
+				"route_id",
+				"routeid",
+				"original_route_id"
+			]
+		},
+		"customer_po": {
+			"description": "The customer purchase order for the address",
+			"valid_headers": [
+				"customer_po",
+				"customerpo",
+				"customer_purchase_order",
+				"purchase_order",
+				"po_number",
+				"cust po"
+			]
+		},
+		"reference_no": {
+			"description": "The reference number for the address",
+			"valid_headers": [
+				"reference_no",
+				"ref_no",
+				"reference_number",
+				"ref_number",
+				"ref num"
+			]
+		},
+		"invoice_no": {
+			"description": "The invoice number for the address",
+			"valid_headers": [
+				"invoice_no",
+				"invoice",
+				"invoice_number"
+			]
+		},
+		"cost": {
+			"description": "The cost of the order for the address",
+			"valid_headers": [
+				"cost",
+				"total_cost",
+				"order_cost",
+				"stop_cost"
+			]
+		},
+		"revenue": {
+			"description": "The total revenue for the address",
+			"valid_headers": [
+				"revenue",
+				"income",
+				"earnings"
+			]
+		},
+		"cube": {
+			"description": "The cubic volume of the cargo being delivered/picked up at the address",
+			"valid_headers": [
+				"dimensions",
+				"cube",
+				"cubic"
+			]
+		},
+		"pieces": {
+			"description": "Pieces",
+			"valid_headers": [
+				"pcs",
+				"pieces"
+			]
+		},
+		"weight": {
+			"description": "The numeric weight that is being delivered/picked up at this stop",
+			"valid_headers": [
+				"weight",
+				"pounds",
+				"kilograms"
+			]
+		},
+		"time": {
+			"description": "The expected amount of time the driver will be at the stop (integer minutes or HH:MM:SS)",
+			"valid_headers": [
+				"time",
+				"minutes",
+				"service_time",
+				"servicetime"
+			]
+		},
+		"time_window_start": {
+			"description": "The requested estimated beginning of the time windows (integer minutes or HH:MM:SS)",
+			"valid_headers": [
+				"time_window_start",
+				"window_start",
+				"window_open",
+				"start_time",
+				"time_start"
+			]
+		},
+		"time_window_end": {
+			"description": "The requested estimated end of the time windows (integer minutes or HH:MM:SS)",
+			"valid_headers": [
+				"time_window_end",
+				"time_window_close",
+				"window_end",
+				"window_close",
+				"end_time",
+				"time_end"
+			]
+		},
+		"dst_lat": {
+			"description": "The destination's latitude coordinates (decimal form)",
+			"valid_headers": [
+				"dst_lat",
+				"lat",
+				"latitude",
+				"address_latitude"
+			]
+		},
+		"dst_lng": {
+			"description": "The destination's longitude coordinates (decimal form)",
+			"valid_headers": [
+				"dst_lng",
+				"lng",
+				"longitude",
+				"address_longitude"
+			]
+		},
+		"is_depot": {
+			"description": "The destination is a depot (0 or 1)",
+			"valid_headers": [
+				"is_depot",
+				"depot"
+			]
+		},
+		"address_stop_type": {
+			"description": "The type of stop that this is (DELIVERY,PICKUP,BREAK,MEETUP,SERVICE,VISIT,DRIVEBY)",
+			"valid_headers": [
+				"address_type",
+				"address_stop_type",
+				"stop_type",
+				"delivery_type",
+				"location_type"
+			]
+		},
+		"route_name": {
+			"description": "Applies to depots: a text that is included in the names of generated routes that involve the depot",
+			"valid_headers": [
+				"route_name",
+				"depot_route_name"
+			]
+		}
+	}
+}

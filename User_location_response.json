@@ -1,0 +1,180 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/User_location_response.json",
+	"title": "User Location Response",
+	"type": "object",
+	"description": "End point: https://api.route4me.com/api/track/view_user_locations.php",
+	"properties": {
+		"type": "array",
+		"items": {
+			"member_data": {
+				"type": "object",
+				"title": "Member Data",
+				"properties": {
+					"member_id": {
+						"type": "integer",
+						"title": "Member ID",
+						"descrpition": "Member ID"
+					},
+					"member_first_name": {
+						"type": "string",
+						"title": "Member First Name",
+						"description": "The first name of the user."
+					},
+					"member_last_name": {
+						"type": "string",
+						"title": "Member Last Name",
+						"description": "The last name of the user."
+					},
+					"member_email": {
+						"type": "string",
+						"title": "Member Email",
+						"format": "email",
+						"description": "E-mail address of the user that was used for site registration."
+					},
+					"account_type_id": {
+						"type": "integer",
+						"title": "Account Type ID",
+						"description": "Account type ID of the member"
+					},
+					"member_type": {
+						"type": "string",
+						"title": "Member Type",
+						"description": "Member type, ENUM [PRIMARY_ACCOUNT, SUB_ACCOUNT_ADMIN, SUB_ACCOUNT_REGIONAL_MANAGER, SUB_ACCOUNT_DISPATCHER, SUB_ACCOUNT_DRIVER]."
+					},
+					"phone_number": {
+						"type": "string",
+						"title": "Phone Number",
+						"description": "A phone number of the user."
+					},
+					"readonly_user": {
+						"type": "integer",
+						"title": "Readonly User",
+						"description": "If equal to 1, an account of an user is readonly"
+					},
+					"show_superuser_addresses": {
+						"type": "integer",
+						"title": "Show Superuser Addresses",
+						"description": "If equal to 1, showing of the superuser addresses is enabled"
+					}
+				}
+			},
+			"tracking": {
+				"type": "object",
+				"title": "Tracking",
+				"properties": {
+					"position_lng": {
+						"type": "number",
+						"minimum": -180,
+						"maximum": 180,
+						"title": "Position Longitude",
+						"description": "Position longitude"
+					},
+					"position_lat": {
+						"type": "number",
+						"minimum": -90,
+						"maximum": 90,
+						"title": "Position Latitude",
+						"description": "Position latitude"
+					},
+					"direction": {
+						"type": "integer",
+						"title": "Direction",
+						"description": "Movement direction in the degrees (north = 0, clockwise)"
+					},
+					"data_source_name": {
+						"type": "string",
+						"title": "Data Source Name",
+						"description": "Data source name"
+					},
+					"activity_timestamp": {
+						"type": "integer",
+						"title": "Activity Timestamp",
+						"description": "Activity timestamp (EPOCH)"
+					},
+					"device_timestamp": {
+						"type": "integer",
+						"title": "Device Timestamp",
+						"description": "Device timestamp (EPOCH)"
+					},
+					"route_id": {
+						"type": "string",
+						"title": "Route ID",
+						"description": "Route Unique Identifier"
+					},
+					"device_id": {
+						"type": "string",
+						"title": "Device ID",
+						"description": "Device ID"
+					},
+					"speed": {
+						"type": "number",
+						"title": "Speed",
+						"description": "Movement speed of a vehicle"
+					},
+					"altitude": {
+						"type": "integer",
+						"title": "Altitude",
+						"description": "Altitude"
+					},
+					"footsteps": {
+						"type": "integer",
+						"title": "Footsteps",
+						"description": "Footsteps"
+					},
+					"custom_data": {
+					    "type": "object",
+						"additionalProperties": { "type": "string" },
+						"description": "Custom data",
+						"title": "Custom Data"
+					},
+					"device_timezone": {
+						"type": "string",
+						"title": "Device Timezone",
+						"description": "Device timezone (e.g. 'America/New_York')"
+					},
+					"device_timezone_offset": {
+						"type": "integer",
+						"title": "Device Timezone Offset",
+						"description": "Device timezone offset"
+					},
+					"vehicle_id": {
+						"type": "string",
+						"title": "Vehicle ID",
+						"description": "Vehicle ID"
+					},
+					"day_id": {
+						"type": "integer",
+						"title": "Day ID",
+						"description": "Day ID"
+					},
+					"device_type": {
+						"type": "string",
+						"title": "Device Type",
+						"description": "Device Type"
+					},
+					"member_id": {
+						"type": "integer",
+						"title": "Member ID",
+						"descrpition": "Member ID"
+					},
+					"activity_timestamp_friendly": {
+						"type": "string",
+						"title": "Activity Timestamp Friendly",
+						"description": "Activity timestamp friendly"
+					},
+					"LAST_KNOWN": {
+						"type": "integer",
+						"title": "Last Known Location",
+						"description": "Timestamp of a last known location"
+					}
+				}
+			},
+			"from_cache": {
+				"type": "boolean",
+				"title": "From Cache",
+				"description": "If true, getting a location from the cache enabled"
+			}
+		}
+	}
+}

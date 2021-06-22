@@ -1,0 +1,34 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Telematics_vendors_response.json",
+	"title": "Telematics vendors",
+	"description": "Json schema for a Telematics vendors response object. For detailed usage see curl Telematics group",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string",
+			"title": "ID",
+			"description": "Vendor ID"
+		},
+		"name": {
+			"type": "string",
+			"title": "Name",
+			"description": "Vendor name"
+		},
+		"slug": {
+			"type": "string",
+			"title": "Slug",
+			"description": "Slug"
+		},
+		"logo_url": {
+			"type": "string",
+			"title": "Logo URL",
+			"description": "URL to a vendor's logo"
+		},
+		"is_integrated": {
+			"type": "string",
+			"title": "Is integrated",
+			"description": "If equal to 1, the vendor is integrated in the Route4Me system."
+		}
+	}
+}

@@ -1,0 +1,133 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "https://github.com/route4me/route4me-json-schemas/blob/master/Activity_response.json",
+    "title": "Activity Response",
+	"description": "Json schema for the response (create) from the endpoint: https://api.route4me.com/api/get_activities.php",
+    "type": "object",
+    "properties": {
+        "activity_id": {
+            "type": "string",
+            "title": "Activity ID",
+            "description": "32-char uniqie ID of the acitivity"
+        },
+        "activity_type": {
+            "type": "string",
+            "enum": [
+                "",
+                "area-removed",
+                "area-added",
+                "area-updated",
+                "insert-destination",
+                "approved-to-execute",
+                "route-owner-changed",
+                "move-destination",
+                "member-created",
+                "route-delete",
+                "member-deleted",
+                "geofence-entered",
+                "geofence-left",
+                "mark-destination-departed",
+                "mark-destination-visited",
+                "member-modified",
+                "note-insert",
+                "delete-destination",
+                "destination-out-sequence",
+                "route-duplicate",
+                "route-merge",
+                "route-optimized",
+                "update-destinations",
+                "driver-arrived-early",
+                "driver-arrived-late",
+                "driver-arrived-on-time",
+                "user_message"
+            ],
+            "title": "Activity type",
+            "description": "area-removed - Territory Area Removed; area-added - Territory Area Added; area-updated - Territory Area Updated; insert-destination - Add New Address; approved-to-execute - Approved to Execute; route-owner-changed - Assigned Other User To Route; move-destination - Change Address Sequence; member-created - Created Team Member; route-delete - Delete Route; member-deleted - Delete Team Member; geofence-entered - Geofence Triggered Check In; geofence-left - Geofence Triggered Check Out; mark-destination-departed - Mark Address Departed; mark-destination-visited - Mark Address Visited; member-modified - Modified Member; note-insert - Note Insert; delete-destination - Remove Address From Route; destination-out-sequence - Route Deviation; route-duplicate - Route Duplication; route-merge - Route Merging; route-optimized - Route Optimized; update-destinations - Update Address Attribute; driver-arrived-early - User Arrived Early; driver-arrived-late - User Arrived Late; driver-arrived-on-time - User Arrived On Time; user_message - User Message;"
+        },
+        "activity_timestamp": {
+            "type": "integer",
+            "title": "Activity timestamp",
+            "description": "Time when activity happened"
+        },
+        "activity_message": {
+            "type": "string",
+            "title": "Activity message",
+            "description": "Activity message"
+        },
+        "route_id": {
+            "type": "string",
+            "title": "Route ID",
+            "description": "Parent route"
+        },
+        "route_name": {
+            "type": "string",
+            "title": "Route name",
+            "description": "Parent route name"
+        },
+        "route_destination_id": {
+            "type": "integer",
+            "title": "Route destination ID",
+            "description": "An address on the route"
+        },
+        "note_id": {
+            "type": "string",
+            "title": "Note ID",
+            "description": "Note ID"
+        },
+        "note_type": {
+            "type": "string",
+            "title": "Note type",
+            "description": "Note type"
+        },
+        "note_contents": {
+            "type": "string",
+            "title": "Note contents",
+            "description": "Note contents"
+        },
+        "note_file": {
+            "type": "string",
+            "title": "Note attachment url",
+            "description": "URL of the uploaded note"
+        },
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Member ID"
+		},
+        "member": {
+            "type": "object",
+            "properties": {
+                "member_id": {
+                    "type": "integer",
+                    "title": "Member ID",
+                    "description": "Unique ID of an user created an activity"
+                },
+                "member_first_name": {
+                    "type": "integer",
+                    "title": "Member first name",
+                    "description": "First name of an user created an activity"
+                },
+                "member_last_name": {
+                    "type": "integer",
+                    "title": "Member last name",
+                    "description": "Last name of an user created an activity"
+                },
+                "member_email": {
+                    "type": "integer",
+                    "title": "Member email",
+                    "description": "Email of an user created an activity"
+                }
+            }
+        },
+		"destination_name": {
+			"type": "string",
+			"title": "Destination Name",
+			"description": "A route destination name"
+		},
+		"destination_alias": {
+			"type": "string",
+			"title": "Destination Alias",
+			"description": "A route destination alias"
+		}
+    }
+}

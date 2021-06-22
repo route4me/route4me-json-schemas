@@ -1,0 +1,110 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Addressbook.json",
+	"title": "Addressbook",
+	"type": "object",
+	"required": [
+		"address_1",
+		"cached_lat",
+		"cached_lng"
+	],
+	"properties": {
+		"member_id": {
+			"type": "string",
+			"title": "Member id",
+			"description": "Member id"
+		},
+		"address_1": {
+			"type": "string",
+			"title": "Address 1",
+			"description": "Address 1"
+		},
+		"address_2": {
+			"type": "string",
+			"title": "Address 2",
+			"description": "Address 2"
+		},
+		"address_alias": {
+			"type": "string",
+			"title": "Address alias",
+			"description": "Address alias"
+		},
+		"address_city": {
+			"type": "string",
+			"title": "Address city",
+			"description": "Address city"
+		},
+		"address_state_id": {
+			"type": "string",
+			"title": "Address state id",
+			"description": "Address state id"
+		},
+		"address_zip": {
+			"type": "string",
+			"title": "Address zip",
+			"description": "Address zip code"
+		},
+		"address_country_id": {
+			"type": "string",
+			"title": "Address country id",
+			"description": "Address country id"
+		},
+		"cached_lat": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Cached latitude",
+			"description": "Cached latitude"
+		},
+		"cached_lng": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Cached longitude",
+			"description": "Cached longitude"
+		},
+		"is_validated": {
+			"type": "boolean",
+			"title": "Is validated",
+			"description": "Is validated"
+		},
+		"address_phone_number": {
+			"type": "string",
+			"title": "Address phone number",
+			"description": "Address phone number"
+		},
+		"first_name": {
+			"type": "string",
+			"title": "First name",
+			"description": "First name"
+		},
+		"last_name": {
+			"type": "string",
+			"title": "Last name",
+			"description": "Last name"
+		},
+		"company_name": {
+			"type": "string",
+			"title": "Company name",
+			"description": "Company name"
+		},
+		"address_email": {
+			"type": "string",
+			"title": "Address email",
+			"description": "Address email"
+		},
+		"address_group": {
+			"type": "string",
+			"title": "Address group",
+			"description": "Address group"
+		},
+		"address_custom_data": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"title": "Address custom data",
+			"description": "Address custom data"
+		}
+	}
+}

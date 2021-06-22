@@ -1,0 +1,46 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/General_api_parameters.json",
+	"type": "object",
+	"title": "General API Parameters",
+	"description": "General API Parameters",
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"title": "Api key",
+			"description": "A valid and active API key obtained from authentication or a user's API control panel.. Required if not defined X-R4M-API-Key"
+		},
+		"X-R4M-API-Key": {
+			"type": "string",
+			"title": "X Route4Me api key",
+			"description": "A valid and active API key obtained from authentication or a user's API control panel. Required if not defined api_key"
+		},
+		"remote_ip": {
+			"type": "string",
+			"title": "Remote ip",
+			"description": "A decimal converted IP address of a user. If the IP is in the format x.x.x.x it will generate an error response. This is used for example when geolocating: the geolocation is sensitive to the user IP."
+		},
+		"device_type": {
+			"enum": [
+				"web",
+				"iphone",
+				"ipad",
+				"android_phone",
+				"android_tablet"
+			],
+			"default": "web",
+			"title": "Device type",
+			"description": "The device type from which the request originates. This is sometimes used to log actions."
+		},
+		"device_id": {
+			"type": "string",
+			"title": "Device id",
+			"description": "The device ID from which the request originates. This is used to ban devices"
+		},
+		"socket_id": {
+			"type": "string",
+			"title": "Socket id",
+			"description": "A socket id that will be included in pusher events"
+		}
+	}
+}
