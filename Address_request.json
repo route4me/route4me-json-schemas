@@ -92,7 +92,7 @@
 		"geocodings": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/geocoding.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/geocoding.json"
 			},
 			"title": "Geocodings ID"
 		},
