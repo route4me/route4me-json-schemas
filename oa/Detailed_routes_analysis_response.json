@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Detailed_routes_analysis_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Detailed_routes_analysis_response.json",
 	"title": "Detailed Routes Analysis",
 	"description": "The response parameters of the detailed routes analysis. Used by different endpoints",
 	"type": "object",
@@ -191,7 +191,7 @@
 		},
 		"device": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_vehicle_info.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_vehicle_info.json",
 			"description": "Device"
 		},
 		"subtotal_distance_formatted": {
@@ -211,7 +211,7 @@
 		},
 		"savings": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Savings.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Savings.json",
 			"description": "Savings of the scenario"
 		},
 		"subtotal_at_fault_accident_costs": {

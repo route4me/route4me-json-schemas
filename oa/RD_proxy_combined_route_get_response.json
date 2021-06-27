@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_combined_route_get_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/RD_proxy_combined_route_get_response.json",
 	"title": "Response for Get Combined Analyzed Route",
 	"description": "Response JSON schema for getting of a combined analyzed route information. Endpoint: https://oa.route4me.com/api/v1/route-data-proxy/actual/{analyzed_route_id}",
 	"type": "object",
@@ -10,12 +10,12 @@
 			"properties": {
 				"vehicle": {
 					"type": "object",
-					"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_vehicle_info.json"
+					"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_vehicle_info.json"
 				},
 				"depots": {
 					"type": "array",
 					"items": {
-						"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_depot.jsom"
+						"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/RD_proxy_depot.jsom"
 					}
 				},
 				"savings": {
@@ -26,7 +26,7 @@
 							"properties": {
 								"100": {
 									"type": "object",
-									"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_savings.json"
+									"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/RD_proxy_savings.json"
 								}
 							}
 						}
@@ -40,7 +40,7 @@
 							"addresses": {
 								"type": "array",
 								"item": {
-									"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Address.json"
+									"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Address.json"
 								}
 							},
 							"trip_costs": {
@@ -112,7 +112,7 @@
 								"type": "object",
 								"o": {
 									"type": "object",
-									"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_savings.json"
+									"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/RD_proxy_savings.json"
 								}
 							},
 							"trip_costs": {
@@ -133,7 +133,7 @@
 							"addresses": {
 								"type": "array",
 								"item": {
-									"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Address.json"
+									"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Address.json"
 								}
 							},
 							"description": {

@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_affiliate_deactivate.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_affiliate_deactivate.json",
 	"title": "Deactivate/Activate Affiliate",
 	"description": "Deactivates/Activate an afiliate. Only for Admins. Patch. Endpoint - https://api.route4me.com/api/v1/user/admins/{admin_id}",
 	"required": ["affiliate_id","payload"],
@@ -28,7 +28,7 @@
 		},
 		"payload": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_affiliate_deactivate_data.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_affiliate_deactivate_data.json",
 			"description": "JSON payload for input"
 		},
 		"api_key": {

@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_vendor_deactivate.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_telematics_vendor_deactivate.json",
 	"title": "Deactivate/Activate Telematics Vendor",
 	"description": "Deactivate a telematics vendor. Only for Admins, Affiliates. Patch. Endpoint - https://api.route4me.com/api/v1/user/vendors/{vendor_id}",
 	"required": ["vendor_id","payload"],
@@ -18,7 +18,7 @@
 		},
 		"payload": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_vendor_deactivate_data.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_telematics_vendor_deactivate_data.json",
 			"description": "JSON payload for input"
 		},
 		"x-auth-token": {

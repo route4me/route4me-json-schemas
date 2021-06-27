@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Vehicle_info_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Vehicle_info_response.json",
 	"title": "Response Schema For Vehicle Info",
 	"description": "Response Schema For the returned vehicle Info. Endpoint - https://api.route4me.com/api/v1/vehicles_info/all",
 	"type": "object",

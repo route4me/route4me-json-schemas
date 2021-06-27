@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_summary_analyzed_route_query.json
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Analysis_summary_analyzed_route_query.json
 	"title": "Analysis Summary of the Route",
 	"description": "Parameters for the detailed summary analysis by analysis route id from OA. Endpoint - https://api.route4me.com/api/v1/analysis/route/{analyzed_route_id}",
 	"required": ["analyzed_route_id","api_key"],

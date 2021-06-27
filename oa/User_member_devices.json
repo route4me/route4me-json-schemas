@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_member_devices.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_member_devices.json",
 	"title": "Devices of a Member",
 	"description": "Returns json with device by its id (vehicle_id param). Endpoint - https://api.route4me.com/api/v1/user/members/{members_id}/devices",
 	"required": ["members_id"],

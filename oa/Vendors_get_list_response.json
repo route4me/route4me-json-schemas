@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Vendors_get_list_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Vendors_get_list_response.json",
 	"title": "Get Vendors List Response",
 	"description": "Response JSON schema for getting the vendors list. Endpoint - https://api.route4me.com/api/v1/vendors",
 	"type": "object",
@@ -8,7 +8,7 @@
 		"data": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Vendors_vendor.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Vendors_vendor.json"
 			}	
 		}
 	}

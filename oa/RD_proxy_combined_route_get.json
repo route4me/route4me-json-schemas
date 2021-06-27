@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_combined_route_get.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/RD_proxy_combined_route_get.json",
 	"title": "Get Combined Analyzed Route",
 	"description": "JSON schema for getting of a combined analyzed route information. Endpoint - https://api.route4me.com/api/v1/route-data-proxy/combined/{analyzed_route_id}",
 	"type": "object",

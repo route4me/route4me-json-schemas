@@ -1,13 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_update_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant_update_response.json",
 	"title": "Response for Participant Update ",
 	"description": "Response JSON schema for updating of a participant. Endpoint: https://api.route4me.com/api/v1/user/participants/{participant_id}",
 	"type": "object",
 	"properties": {
 		"data": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant.json",
 			"title": "Participant Info",
 			"description": "Participant info"
 		}

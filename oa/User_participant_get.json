@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/UUser_participant_get.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/UUser_participant_get.json",
 	"title": "Get Participant",
 	"description": "Returns participant by sending participant_is. Endpoint - https://api.route4me.com/api/v1/user/participants/{participant_id}",
 	"type": "object",

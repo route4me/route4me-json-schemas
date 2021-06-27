@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics_stops_detected.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Statistics_stops_detected.json",
 	"title": "Detected Stops Statistics",
 	"description": "Statistics for the detected stops. Endpoint - https://api.route4me.com/api/v1/statistics/stop/detected/count-grouped",
 	"required": ["trim_ts","from_ts"],

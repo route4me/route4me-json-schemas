@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_depot.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/RD_proxy_depot.json",
 	"title": "Depot",
 	"description": "The JSON sub-schema for the depot",
 	"type": "object",
@@ -43,7 +43,7 @@
 		"depot": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Geo_point.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Geo_point.json"
 			}
 		},
 		"source_address_stop_type": {
@@ -64,7 +64,7 @@
 		"polygon": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Geo_point.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Geo_point.json"
 			}
 		}
 	}

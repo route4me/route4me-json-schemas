@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Depots_get_depot_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Depots_get_depot_response.json",
 	"title": "Get Depot Response",
 	"description": "Response JSON schema for getting a depot. Endpoint - https://api.route4me.com/api/v1/depot/{depot_id}",
 	"type": "object",
@@ -21,7 +21,7 @@
 				"polygon": {
 					"type": "array",
 					"items": {
-						"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Geo_point.json"
+						"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Geo_point.json"
 					}
 				},
 				"source_type": {
@@ -37,7 +37,7 @@
 				"depot": {
 					"type": "array",
 					"items": {
-						"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Geo_point.json"
+						"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Geo_point.json"
 					}
 				},
 				"source_created_timestamp": {

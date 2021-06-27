@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Feed_activity_query.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Feed_activity_query.json",
 	"title": "Action Feed Event",
 	"description": "Get generall information about event by its id. Endpoint - https://api.route4me.com/api/v1/feed/event/{event_id}",
 	"required": ["event_id"],

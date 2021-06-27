@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics_route_destinations_created_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Statistics_route_destinations_created_response.json",
 	"title": "Response for Route Destinations Statistics",
 	"description": "Response JSON schema for the created Route Destinations statistics. Endpoint - https://api.route4me.com/api/v1/statistics/route-destination/created/count-grouped",
 	"type": "object",

@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics_telematics_connections_created.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Statistics_telematics_connections_created.json",
 	"title": "Telematics Connections Created Statistics",
 	"description": "Statistics for the created Telematic Connections. Endpoint - https://api.route4me.com/api/v1/statistics/telematic-connection/created/count-grouped",
 	"required": ["trim_ts","from_ts"],

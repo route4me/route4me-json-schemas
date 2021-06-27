@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Report_settings_get.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Report_settings_get.json",
 	"title": "Get Report Settings",
 	"description": "Returns user's report settings. Endpoint - https://api.route4me.com/api/v1/report/settings/",
 	"required": ["user_id"],

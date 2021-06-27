@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_connections_draw_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_telematics_connections_draw_response.json",
 	"title": "Resposne for Telematics Connections Draw",
 	"description": "Response for assigning the parameter draw to the telematics connections. Endpoint: https://api.route4me.com/api/v1/user/telematics-connections",
 	"type": "object",
@@ -18,7 +18,7 @@
 		"data": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_connection_credentials.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_telematics_connection_credentials.json"
 			},
 			"title": "Telematics Connections List",
 			"description": "Telematics connections list with credentials"

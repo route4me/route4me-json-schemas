@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Geo_point.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Geo_point.json",
 	"title": "Geographic Point",
 	"description": "Geographic point",
 	"type": "array",

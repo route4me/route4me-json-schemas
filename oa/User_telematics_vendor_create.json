@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_vendor_create.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_telematics_vendor_create.json",
 	"title": "Create Telematics Vendor",
 	"description": "Creates a new Vendor in the system only for Admins. HTTP method: POST. Endpoint: https://api.route4me.com/api/v1/user/vendors",
 	"required": ["payload"],
@@ -13,7 +13,7 @@
 		},
 		"payload": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_vendor_create_data.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_telematics_vendor_create_data.json",
 			"description": "JSON payload for input"
 		},
 		"x-auth-token": {

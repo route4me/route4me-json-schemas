@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_member_device_stop_error_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_member_device_stop_error_response.json",
 	"title": "Member Devices Stop Error Resposne",
 	"description": "Returns json of stop from device by it's timestamp in case of the failure. Get. Endpoint: https://api.route4me.com/api/v1/user/members/devices/{device_id}/stops/{stop_timestamp}",
 	"type": "object",

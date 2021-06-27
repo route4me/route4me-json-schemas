@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Vendors_vendor.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Vendors_vendor.json",
 	"title": "Vendor",
 	"description": "The JSON sub-schema for a vendor object. Endpoint - https://api.route4me.com/api/v1/vendors",
 	"type": "object",

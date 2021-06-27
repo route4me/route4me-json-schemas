@@ -1,13 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_affiliate_deactivate_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_affiliate_deactivate_response.json",
 	"title": "Resposne for Affiliate Activate/Deactivate",
 	"description": "Response JSON schema for activating/deactivating of an affiliate. Endpoint: https://api.route4me.com/api/v1/user/affiliates/{affiliate_id}",
 	"type": "object",
 	"properties": {
 		"data": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_admin.json",
 			"title": "Affiliate Info",
 			"description": "Affiliate info"
 		}

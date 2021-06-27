@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Feed_all_activity_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Feed_all_activity_response.json",
 	"title": "All OA Actions Response",
 	"description": "Parameters for response of getting all OA actions in one feed. Endpoint - https://api.route4me.com/api/v1/feed/all",
 	"type": "object",
@@ -8,13 +8,13 @@
 		"data": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Activity_feed_event.json"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Activity_feed_event.json"
 			},
 			"title": "Array of the activity Feed Events"
 		},
 		"metadata": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Metadata.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Metadata.json",
 			"title": "Metadata"
 		}
 	}

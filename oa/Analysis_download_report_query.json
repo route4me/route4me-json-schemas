@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_download_report_query.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Analysis_download_report_query.json",
 	"title": "Download Detailed Routes Analysis Reports",
 	"description": "Parameters for downloading analysis file (csv/xls/pdf). Endpoint - https://api.route4me.com/api/v1/analysis/download/report",
 	"required": ["from_ts","trim_ts","format","member_id"],

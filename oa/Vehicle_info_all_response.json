@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Vehicle_info_all_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Vehicle_info_all_response.json",
 	"title": "Response Schema For Returned Vehicles",
 	"description": "Returns json with all vehicles from r4m_oa_vehicles table Deprecated. Endpoint - https://api.route4me.com/api/v1/vehicles_info/all",
 	"type": "object",
@@ -18,7 +18,7 @@
 		"data": {
 			"type": "array",
 			"items": {
-					"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Vehicle_info_response.json"
+					"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Vehicle_info_response.json"
 				},
 			"title": "Data",
 			"description": "Array of the vehicles"

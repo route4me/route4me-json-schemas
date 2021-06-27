@@ -1,13 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_get_report_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Analysis_get_report_response.json",
 	"title": "Get Report",
 	"description": "Response JSON schema for a report. Endpoint: https://oa.route4me.com/api/v1/analysis/report/{report_id}",
 	"type": "object",
 	"properties": {
 		"savings_summary": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Savings_summary.json"
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Savings_summary.json"
 		},
 		"metadata": {
 			"type": "object",
@@ -41,7 +41,7 @@
 		},
 		"assumptions": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Assumptions.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Assumptions.json",
 			"title": "Assumptions for optimization"
 		},
 		"aggregate_analysis_summary": {
@@ -120,20 +120,20 @@
 				"detailed_routes_analysis": {
 					"type": "array",
 					"items": {
-						"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Detailed_routes_analysis_response.json"
+						"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Detailed_routes_analysis_response.json"
 					}
 				},
 				"optimization_scenarios": {
 					"type": "array",
 					"items": {
-						"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Optimization_scenario.json"
+						"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Optimization_scenario.json"
 					}
 				}
 			}
 		},
 		"statistics": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Statistics.json",
 			"title": "Statistics"
 		}
 	}

@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_data_monitoring_get.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Analysis_data_monitoring_get.json",
 	"title": "Data Monitoring",
 	"description": "Returns general information about calculated savings for a given period of time. Endpoint - https://api.route4me.com/api/v1/analysis/monitoring",
 	"type": "object",

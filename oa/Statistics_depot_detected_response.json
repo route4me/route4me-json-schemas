@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics_depot_detected_response.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Statistics_depot_detected_response.json",
 	"title": "Response of Detected Depots Statistics",
 	"description": "Response JSON schema of the detected depots statistics. Endpoint - https://api.route4me.com/api/v1/statistics/depot/detected/count-grouped",
 	"type": "object",

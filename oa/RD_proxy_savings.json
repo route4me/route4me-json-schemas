@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_savings.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/RD_proxy_savings.json",
 	"title": "RD proxy Savings",
 	"description": "The response parameters of the RD proxy savings. Sub-schema",
 	"type": "object",

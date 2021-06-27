@@ -1,13 +1,13 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_tc_update_name.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant_tc_update_name.json",
 	"title": "Response for Update Participant's Telematics Connection's Name",
 	"description": "Response for updating the telematics connection's name of a participant. Put. Endpoint: https://api.route4me.com/api/v1/user/participants/{participant_user_id}/telematics-connection/{telematic_connection_id}",
 	"type": "object",
 	"properties": {
 		"data": {
 			"type": "object",
-			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_telematics_connection.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant_telematics_connection.json",
 			"title": "Participant's Teleamtics Connection Info",
 			"description": "Participant's teleamtics connection info"
 		},

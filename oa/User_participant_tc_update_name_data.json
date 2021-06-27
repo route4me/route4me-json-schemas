@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_tc_update_name_data.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant_tc_update_name_data.json",
 	"title": "Participant's Telematics Connection's Update Payload",
 	"description": "JSON payload for updating the telematics connection's name of a participant",
 	"type": "object",

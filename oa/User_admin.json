@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_admin.json",
 	"title": "User (admin)",
 	"description": "JSON schema for a user (admin). Sub-schema",
 	"type": "object",

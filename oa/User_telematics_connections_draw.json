@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_connections_draw.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_telematics_connections_draw.json",
 	"title": "Teleamtics Connections Draw",
 	"description": "Assigns value of the technical parameter <draw> to the telematics connections. HTTP method: POST. Endpoint - https://api.route4me.com/api/v1/user/telematics-connections",
 	"required": ["start","draw","length"],

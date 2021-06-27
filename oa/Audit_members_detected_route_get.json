@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Audit_members_detected_route_get.json",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Audit_members_detected_route_get.json",
 	"title": "Get a Detected Route",
 	"description": "Returns info for requested route by its id. Endpoint - https://api.route4me.com/api/v1/audit/members/{r4m_member_id}/detected-routes/{internal_route_id}",
 	"type": "object",
