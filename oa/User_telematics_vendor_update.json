@@ -18,7 +18,7 @@
 		},
 		"payload": {
 			"type": "object",
-			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oaUser_telematics_vendor_update_data.json",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_telematics_vendor_update_data.json",
 			"description": "JSON payload for input"
 		},
 		"x-auth-token": {
