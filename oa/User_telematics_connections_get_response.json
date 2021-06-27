@@ -1,0 +1,43 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_connections_get_response.json",
+	"title": "Response for Get Telematics Connections",
+	"description": "Response JSON schema for getting the list of the Telematics connections. Endpoint: https://api.route4me.com/api/v1/user/telematics-connections",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_telematics_connection.json"
+			},
+			"title": "Telematics Connections",
+			"description": "Array of the telematics connection's objects"
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"limit": {
+					"type": "integer",
+					"title": "Limit",
+					"description": "Limit the number of records in response - GET."
+				},
+				"total": {
+					"type": "integer",
+					"title": "Total",
+					"description": "Total number of the telematics connections - GET."
+				},
+				"user_id": {
+					"type": "string",
+					"title": "User ID",
+					"description": "User ID - GET."
+				},
+				"offset": {
+					"type": "integer",
+					"title": "Offset",
+					"description": "Only records from that offset will be consider - GET."
+				}
+			},
+			"title": "Metadata"
+		}
+	}
+}

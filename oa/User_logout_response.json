@@ -1,0 +1,20 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_logout_response.json",
+	"title": "User Logout Resposne",
+	"description": "Response for logout from the system. Get. Endpoint: https://api.route4me.com/api/v1/user/logout",
+	"type": "object",
+	"properties": {
+		"status": {
+			"type": "string",
+			"enum": ["logout"],
+			"title": "Status",
+			"description": "If logout process finished successfuly, status=logout"
+		},
+		"error": {
+			"type": "string",
+			"title": "Error",
+			"description": "if logout process failed, this parameter is returned with the error text content"
+		}
+	}
+}

@@ -1,0 +1,50 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_telematics_connection_delete.json",
+	"title": "Delete Participant's Telematics Connection",
+	"description": "Delete the participant's connection. DELETE. Endpoint: https://api.route4me.com/api/v1/user/participants/{participant_user_id}/telematics-connection/{telematic_connection_id}",
+	"required": ["telematic_connection_id","participant_user_id"],
+	"type": "object",
+	"properties": {
+		"telematic_connection_id": {
+			"type": "string",
+			"title": "Telematic Connection ID",
+			"description": "Telematics connection id - PATH."
+		},
+		"participant_user_id": {
+			"type": "string",
+			"title": "Participant User ID",
+			"description": "Participant user id - PATH."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original API Key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API Key",
+			"description": "Use API with API key without authorization - GET."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original API Key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X API Key",
+			"description": "Use API with API key without authorization - HEADER."
+		}
+	}
+}

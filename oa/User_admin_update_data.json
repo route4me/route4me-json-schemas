@@ -1,0 +1,39 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin_update_data.json",
+	"title": "Admin Update Payload",
+	"description": "JSON payload for updating an admin",
+	"type": "object",
+	"properties": {
+		"company_name": {
+			"type": "string",
+			"title": "Company Name",
+			"description": "User's company name"
+		},
+		"first_name": {
+			"type": "string",
+			"title": "First Name",
+			"description": "First name"
+		},
+		"password": {
+			"type": "string",
+			"title": "Password",
+			"description": "Password"
+		},
+		"last_name": {
+			"type": "string",
+			"title": "Last Name",
+			"description": "Last name"
+		},
+		"website": {
+			"type": "string",
+			"title": "Website",
+			"description": "Website"
+		},
+		"phone_number": {
+			"type": "string",
+			"title": "Phone Number",
+			"description": "Phone number of the user"
+		}
+	}
+}

@@ -1,0 +1,91 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_actual_route_get_response.json",
+	"title": "Response for Get Actual Analyzed Route",
+	"description": "Response JSON schema for getting of an actual analyzed route information. Endpoint: https://oa.route4me.com/api/v1/route-data-proxy/actual/{analyzed_route_id}",
+	"type": "object",
+	"properties": {
+		"addresses": {
+			"type": "array",
+			"item": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Address.json"
+			}
+		},
+		"vehicle": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_vehicle_info.json"
+		},
+		"trip_costs": {
+			"type": "number",
+			"title": "Trip Costs",
+			"description": "How much costs the trip"
+		},
+		"trip_costs_formatted": {
+			"type": "string",
+			"title": "Trip Costs Formatted",
+			"description": "Formatted value of the trip costs (e.g. '$27')"
+		},
+		"links": {
+			"type": "object",
+			"properties": {
+				"analyzed_route_id": {
+					"type": "string",
+					"title": "Analyzed Route ID",
+					"description": "Analyzed route ID"
+				}
+			}
+		},
+		"trip_time_formatted": {
+			"type": "string",
+			"title": "Trip Time Formatted",
+			"description": "Formatted value of the trip time (e.g. '3 minutes')"
+		},
+		"scenario_label": {
+			"type": "string",
+			"title": "Scenario Label",
+			"description": "Scenario label"
+		},
+		"description": {
+			"type": "string",
+			"title": "Description",
+			"description": "Description of the reponse content"
+		},
+		"trip_distance": {
+			"type": "number",
+			"title": "Trip distance",
+			"description": "Trip distance"
+		},
+		"trip_time": {
+			"type": "integer",
+			"title": "Trip Time",
+			"description": "Trip time in the EPOCH format"
+		},
+		"algorithm_type": {
+			"type": "integer",
+			"title": "Algorithm Type",
+			"description": "Algorithm type"
+		},
+		"label": {
+			"type": "string",
+			"title": "Label",
+			"description": "The analysis label"
+		},
+		"raw_track": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Track_point.json"
+			},
+			"description": "Track of the route"
+		},
+		"trip_distance_formatted": {
+			"type": "string",
+			"title": "Trip Distance Formatted",
+			"description": "Formatted value of the trip distance (e.g. '1 mi')"
+		},
+		"path": {
+			"type": "string",
+			"title": "Psth",
+			"description": "Compressed track of the route"
+		}
+	}
+}

@@ -1,0 +1,75 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_login_response.json",
+	"title": "User Login Response",
+	"description": "Response for the login process of a user to the system. Endpoint: https://api.route4me.com/api/v1/user/login",
+	"type": "object",
+	"properties": {
+		"user": {
+			"type": "object",
+			"properties": {
+				"type": {
+					"type": "integer",
+					"title": "Type",
+					"description": "User type"
+				},
+				"created_at": {
+					"type": "integer",
+					"title": "Created At",
+					"description": "When the user account was created. EPOCH format"
+				},
+				"user_id": {
+					"type": "string",
+					"title": "User ID",
+					"description": "User ID"
+				},
+				"is_sso": {
+					"type": "boolean",
+					"title": "Is SSO",
+					"description": "Is SSO secure"
+				},
+				"email": {
+					"type": "string",
+					"title": "Email",
+					"description": "Email"
+				},
+				"tc_api_token": {
+					"type": "string",
+					"title": "TC API Token",
+					"description": "TC API Token"
+				},
+				"member_id": {
+					"type": "integer",
+					"title": "Member ID",
+					"description": "User member_id you want to get"
+				},
+				"r4m_api_key": {
+					"type": "string",
+					"title": "Route4Me API Key",
+					"description": "API Key of a Route4Me account"
+				},
+				"user_name": {
+					"type": "string",
+					"title": "User Name",
+					"description": "User name"
+				},
+				"tc_connection_token": {
+					"type": "string",
+					"title": "TC Connection Token",
+					"description": "TC connection token"
+				},
+				"updated_at": {
+					"type": "integer",
+					"title": "Upated At",
+					"description": "When the user account was updated. EPOCH format"
+				}
+			},
+			"title": "User"
+		},
+		"token": {
+			"type": "string",
+			"title": "Token",
+			"description": "Token"
+		}
+	}
+}

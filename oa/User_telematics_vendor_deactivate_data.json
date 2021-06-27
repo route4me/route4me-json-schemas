@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_telematics_vendor_deactivate_data.json",
+	"title": "Activate Vendor Payload",
+	"description": "JSON payload for activating/deactivating a telematics vendor",
+	"type": "object",
+	"properties": {
+		"is_active": {
+			"type": "boolean",
+			"title": "Is Active",
+			"description": "If is true, a telematics vendor will be activated"
+		}
+	}
+}

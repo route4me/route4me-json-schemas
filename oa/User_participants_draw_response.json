@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participants_draw_response.json",
+	"title": "Resposne for Participants Draw",
+	"description": "Response JSON schema for assigning the parameter draw to the participants list. Endpoint: https://api.route4me.com/api/v1/user/participants/plain",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant.json"
+			},
+			"title": "Participants List",
+			"description": "Array of the objects User_participant"
+		},
+		"recordsTotal": {
+			"type": "integer",
+			"title": "Records Total",
+			"description": "Total number of the returned records"
+		},
+		"recordsFiltered": {
+			"type": "integer",
+			"title": "Records Filtered",
+			"description": "Total number of the filtered records"
+		},
+		"draw": {
+			"type": "integer",
+			"title": "Draw",
+			"description": "Technical parameter draw"
+		}
+	}
+}

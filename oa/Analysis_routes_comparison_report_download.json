@@ -1,0 +1,50 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_routes_comparison_report_download.json",
+	"title": "Routes Comparison Report Download",
+	"description": "Parameters for downloading routes comparison reports as csv or xls file. Endpoint - https://api.route4me.com/api/v1/analysis/routes_comparison/{analyzed_route_id}/download/report",
+	"required": ["analyzed_route_id","format"],
+	"type": "object",
+	"properties": {
+		"analyzed_route_id": {
+			"type": "string",
+			"title": "Analyzed Route ID",
+			"description": "Analyzed route id - PATH."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original Api key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original Api key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "Api key",
+			"description": "Use API with API key without authorization. HTTP method - GET."
+		},
+		"format": {
+			"type": "string",
+			"title": "Format",
+			"description": "A report type, it can be csv or xls - GET."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X Api key",
+			"description": "Use API with API key without authorization - HEADER."
+		}
+	}
+}

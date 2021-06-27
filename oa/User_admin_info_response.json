@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin_info_response.json",
+	"title": "Resposne for Admin Info",
+	"description": "Response JSON schema for returned admin info. Endpoint: https://api.route4me.com/api/v1/user/admins/{admin_id}",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_admin.json",
+			"title": "User Info",
+			"description": "User (admin) info"
+		}
+	}
+}

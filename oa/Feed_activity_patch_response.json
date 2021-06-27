@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Feed_activity_patch_response.json",
+	"title": "Hide/Unhide Activity Feed Event",
+	"description": "Response schema of hiding/unhiding the activity feed event. HTTP method: patch. Endpoint: https://api.route4me.com/api/v1/feed/event/{event_id}",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Activity_feed_event.json",
+			"title": "Activity Feed Event"
+		},
+		"metadata": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Activity_feed_event.json",
+			"title": "Metadata"
+		}
+	}
+}

@@ -1,0 +1,64 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_tc_vendor.json",
+	"title": "Telematics Vendor",
+	"description": "JSON sub-schema for a telematics vendor",
+	"type": "object",
+	"properties": {
+		"locale": {
+			"type": "string",
+			"title": "Locale",
+			"description": "Locale code ('en', 'fr', etc)"
+		},
+		"timezone": {
+			"type": "string",
+			"title": "Timezone",
+			"description": "Timezone (e.g. 'UTC')"
+		},
+		"measurement": {
+			"type": "integer",
+			"title": "Measurement",
+			"description": "Measurement"
+		},
+		"email": {
+			"type": "string",
+			"title": "Email",
+			"description": "Email"
+		},
+		"vendor_id": {
+			"type": "integer",
+			"title": "Vendor ID",
+			"description": "Vendor ID"
+		},
+		"phone_number": {
+			"type": "string",
+			"title": "Phone Number",
+			"description": "Phone numberof the user"
+		},
+		"last_name": {
+			"type": "string",
+			"title": "Last Name",
+			"description": "Last name"
+		},
+		"website": {
+			"type": "string",
+			"title": "Website",
+			"description": "Website"
+		},
+		"company_name": {
+			"type": "string",
+			"title": "Company Name",
+			"description": "User's company name"
+		},
+		"user_id": {
+			"type": "string",
+			"title": "User ID",
+			"description": "User ID"
+		},
+		"first_name": {
+			"type": "string",
+			"title": "First Name",
+			"description": "First name"
+		}
+	}
+}

@@ -1,0 +1,70 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Feed_all_activity_query.json",
+	"title": "All OA Actions Feed",
+	"description": "All OA actions in one feed. Endpoint - https://api.route4me.com/api/v1/feed/all",
+	"type": "object",
+	"properties": {
+		"trim_ts": {
+			"type": "integer",
+			"title": "Trim ts",
+			"description": "End period timestamp, unix timestamp in seconds - GET."
+		},
+		"offset": {
+			"type": "integer",
+			"title": "Offset",
+			"description": "Only records from that offset will be considered - GET."
+		},
+		"type": {
+			"type": "string",
+			"enum": ["analysis_session.created", "depot.detected", "member.created", "route.created", "stop_detection.created", "saving.created", "saving.as-is.created", "saving.optimized.created", "report.daily", "report.weekly", "report.monthly"],
+			"title": "Type",
+			"description": "End period timestamp, unix timestamp in seconds - GET."
+		},
+		"from_ts": {
+			"type": "integer",
+			"title": "From ts",
+			"description": "Start period timestamp, unix timestamp in seconds - GET."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "Api key",
+			"description": "Use API with API key without authorization. HTTP method - GET."
+		},
+		"limit": {
+			"type": "integer",
+			"title": "Limit",
+			"description": "Limit the number of records in response - GET."
+		},
+		"hidden": {
+			"type": "boolean",
+			"title": "Hidden",
+			"description": "Show hidden events or not - GET."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X Api key",
+			"description": "Use API with API key without authorization - GET."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original Api key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original Api key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - GET."
+		}
+	}
+}

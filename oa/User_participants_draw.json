@@ -1,0 +1,55 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participants_draw.json",
+	"title": "Participants Draw",
+	"description": "Assigns value of the technical parameter <draw> to the participants. POST. Endpoint - https://api.route4me.com/api/v1/user/participants/plain",
+	"required": ["draw","length","start"],
+	"type": "object",
+	"properties": {
+		"draw": {
+			"type": "integer",
+			"title": "Draw",
+			"description": "Draw - technical parameter - formData."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
+		},
+		"length": {
+			"type": "integer",
+			"title": "Length",
+			"description": "Length of participants list - formData."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original API Key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"start": {
+			"type": "integer",
+			"title": "Start",
+			"description": "Starting point on participants list(Should start from 0) - formData."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original API Key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X API Key",
+			"description": "Use API with API key without authorization - HEADER."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API Key",
+			"description": "Use API with API key without authorization - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		}
+	}
+}

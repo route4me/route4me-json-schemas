@@ -1,0 +1,39 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_telematics_connection_create_data.json",
+	"title": "Payload for Create Participant's Telematics Connection",
+	"description": "JSON payload for creating the telematics conncetion for a participant",
+	"type": "object",
+	"properties": {
+		"participant_user_id": {
+			"type": "string",
+			"title": "Participant User ID",
+			"description": "Participant user ID"
+		},
+		"name": {
+			"type": "string",
+			"title": "Name",
+			"description": "Telematics connection name"
+		},
+		"vendor_id": {
+			"type": "integer",
+			"title": "Vendor ID",
+			"description": "Vendor ID"
+		},
+		"validate_remote_credentials": {
+			"type": "boolean",
+			"title": "Validate Remote Credentials",
+			"description": "If true, the remote credentials will be validated"
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API Key",
+			"description": "API key of a telematics conneciton"
+		},
+		"vehicle_position_refresh_rate": {
+			"type": "integer",
+			"title": "Vehicle Position Refresh Rate",
+			"description": "Vehicle position refresh rate"
+		}
+	}
+}

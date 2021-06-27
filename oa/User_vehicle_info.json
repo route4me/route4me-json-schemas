@@ -1,0 +1,98 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_vehicle_info.json",
+	"title": "Response Schema For Vehicle Info",
+	"description": "Response Schema For the returned vehicle Info. Endpoint - https://api.route4me.com/api/v1/user/members/devices",
+	"type": "object",
+	"properties": {
+		"created_time": {
+			"type": "integer",
+			"title": "Created Time",
+			"description": "Created time"
+		},
+		"vehicle_license_plate": {
+			"type": "string",
+			"title": "Vehicle License Plate",
+			"description": "Vehicle license plate"
+		},
+		"external_id": {
+			"type": "string",
+			"title": "External ID",
+			"description": "External ID"
+		},
+		"vehicle_id": {
+			"type": "string",
+			"title": "Vehicle ID",
+			"description": "Vehicle ID"
+		},
+		"vehicle_alias": {
+			"type": "string",
+			"title": "Vehicle Alias",
+			"description": "Vehicle alias"
+		},
+		"vendor_hash_id": {
+			"type": "string",
+			"title": "Vendor HASH id",
+			"description": "Hashed ID of a vendor"
+		},
+		"latitude": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Latitude",
+			"description": "Latitude"
+		},
+		"timezone": {
+			"type": "string",
+			"title": "Timezone",
+			"description": "Timezone"
+		},
+		"vehicle_make": {
+			"type": "string",
+			"title": "Vehicle Make",
+			"description": "Vehicle maker"
+		},
+		"vehicle_model": {
+			"type": "string",
+			"title": "Vehicle Model",
+			"description": "Vehicle model"
+		},
+		"longitude": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Longitude",
+			"description": "Longitude"
+		},
+		"vehicle_model_year": {
+			"type": "integer",
+			"title": "Vehicle Model Year",
+			"description": "Vehicle model year"
+		},
+		"last_position_received": {
+			"type": "integer",
+			"title": "Last Position Received",
+			"description": "Last received vehilce position"
+		},
+		"last_moved_at": {
+			"type": "integer",
+			"title": "Last Moved At",
+			"description": "Last moved at"
+		},
+		"vendor_id": {
+			"type": "integer",
+			"title": "Vendor ID",
+			"description": "Unique ID of a telematics vendor"
+		},
+		"vendor_company_name": {
+			"type": "string",
+			"title": "Vendor Company Name",
+			"description": "Vendor company name"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Member ID"
+		}
+	}
+}

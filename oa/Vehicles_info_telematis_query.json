@@ -1,0 +1,85 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Vehicles_info_telematis_query.json",
+	"title": "Vehicles Info From Telematics Vendor",
+	"description": "Returns json with all vehicles from r4m_oa_vehicles table. Deprecated. Endpoint - https://api.route4me.com/api/v1/vehicles_info/all",
+	"required": ["auth_token"],
+	"type": "object",
+	"properties": {
+		"limit": {
+			"type": "integer",
+			"title": "Limit",
+			"description": "Limit of the returned activity feed events number - GET."
+		},
+		"last_moved_at_from_ts": {
+			"type": "integer",
+			"title": "Last Moved At from_ts",
+			"description": "Start period timestamp for last_moved_at, unix timestamp in seconds - GET."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original Api key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - GET."
+		},
+		"created_time_from_ts": {
+			"type": "integer",
+			"title": "Created Time from_ts",
+			"description": "Start period timestamp for created_time, unix timestamp in seconds - GET."
+		},
+		"last_position_received_trim_ts": {
+			"type": "integer",
+			"title": "Last Position Received trim_ts",
+			"description": "End period timestamp for last_position_received, unix timestamp in seconds - GET."
+		},
+		"last_position_received_from_ts": {
+			"type": "integer",
+			"title": "Last Position Received from_ts",
+			"description": "Start period timestamp for last_position_received, unix timestamp in seconds - GET."
+		},
+		"search": {
+			"type": "string",
+			"title": "Search",
+			"description": "Filter devices by string from vehicle_alias or external_id - GET."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "Api key",
+			"description": "Use API with API key without authorization. HTTP method - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"offset": {
+			"type": "integer",
+			"title": "Offset",
+			"description": "Only records from that offset will be considered - GET."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"last_moved_at_trim_ts": {
+			"type": "integer",
+			"title": "Last Moved At trim_ts",
+			"description": "End period timestamp for last_moved_at, unix timestamp in seconds - GET."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original Api key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"created_time_trim_ts": {
+			"type": "integer",
+			"title": "Created Time trim_ts",
+			"description": "End period timestamp for created_time, unix timestamp in seconds - GET."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X Api key",
+			"description": "Use API with API key without authorization - GET."
+		}
+	}
+}

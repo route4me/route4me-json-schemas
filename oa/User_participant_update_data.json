@@ -1,0 +1,44 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant_update_data.json",
+	"title": "Participant Update Payload",
+	"description": "JSON payload for updating a participant",
+	"type": "object",
+	"properties": {
+		"is_active": {
+			"type": "boolean",
+			"title": "Is Active",
+			"description": "If true, the participant will be active"
+		},
+		"affiliate_user_id": {
+			"type": "string",
+			"title": "Affiliate User ID",
+			"description": "Affiliate user ID"
+		},
+		"phone_number": {
+			"type": "string",
+			"title": "Phone Number",
+			"description": "Phone number of the user"
+		},
+		"last_name": {
+			"type": "string",
+			"title": "Last Name",
+			"description": "Last name"
+		},
+		"first_name": {
+			"type": "string",
+			"title": "First Name",
+			"description": "First name"
+		},
+		"company_name": {
+			"type": "string",
+			"title": "Company Name",
+			"description": "User's company name"
+		},
+		"website": {
+			"type": "string",
+			"title": "Website",
+			"description": "Website"
+		}
+	}
+}

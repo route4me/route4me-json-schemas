@@ -1,0 +1,107 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Vendors_vendor.json",
+	"title": "Vendor",
+	"description": "The JSON sub-schema for a vendor object. Endpoint - https://api.route4me.com/api/v1/vendors",
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "integer",
+			"title": "Records Total",
+			"description": "Total number of the returned records"
+		},
+		"updated_at": {
+			"type": "string",
+			"title": "Updated At",
+			"description": "When was updated a vendor's account"
+		},
+		"is_readonly": {
+			"type": "integer",
+			"title": "Is Readonly",
+			"description": "If equal to 1, a vendor's account is readonly"
+		},
+		"title": {
+			"type": "string",
+			"title": "Title",
+			"description": "The title of a vendor's account"
+		},
+		"created_at": {
+			"type": "string",
+			"title": "Created At",
+			"description": "When was created a vendor's account"
+		},
+		"is_integrated": {
+			"type": "boolean",
+			"title": "Is Integrated",
+			"description": "If true, the vendor is integrated into the system"
+		},
+		"is_enabled": {
+			"type": "integer",
+			"title": "Is Enabled",
+			"description": "If equal to 1, the vendor is enabled"
+		},
+		"hint": {
+			"type": "string",
+			"title": "Hint",
+			"description": "Hint text for a vendor's account"
+		},
+		"slug": {
+			"type": "string",
+			"title": "Slug",
+			"description": "The slug"
+		},
+		"website_url": {
+			"type": "string",
+			"title": "Website URL",
+			"description": "The website URL, of a vendor"
+		},
+		"name": {
+			"type": "string",
+			"title": "Name",
+			"description": "A vendor's name"
+		},
+		"icon": {
+			"type": "string",
+			"title": "Icon",
+			"description": "Icon"
+		},
+		"icon_url": {
+			"type": "string",
+			"title": "Icon URL",
+			"description": "Icon URL"
+		},
+		"logo_url": {
+			"type": "string",
+			"title": "Logo URL",
+			"description": "Logo URL"
+		},
+		"size": {
+			"type": "string",
+			"title": "Size",
+			"description": "The size of s vendor ['global', 'regional', 'size']"
+		},
+		"credentials": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"is_required": {
+						"type": "boolean",
+						"title": "Is Required",
+						"description": "If true, the credential is required"
+					},
+					"name": {
+						"type": "string",
+						"title": "Name",
+						"description": "A vendor's name"
+					},
+					"default": {
+						"type": "string",
+						"title": "Default",
+						"description": "Default value of the credential"
+					}
+				}
+			}	
+		}
+	}
+}

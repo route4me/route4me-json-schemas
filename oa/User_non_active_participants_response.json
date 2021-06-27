@@ -1,0 +1,17 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_non_active_participants_response.json",
+	"title": "Resposne Non-active Participants",
+	"description": "Response for getting of the non-activie participants. patch. Endpoint: https://api.route4me.com/api/v1/user/participants/non-active",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_participant.json"
+			},
+			"title": "Participants List",
+			"description": "Array of the objects User_participant"
+		}
+	}
+}

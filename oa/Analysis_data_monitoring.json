@@ -1,0 +1,154 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_data_monitoring.json",
+	"title": "Data Monitoring Unit",
+	"description": "The JSON sub-schema for a data monitoring object",
+	"type": "object",
+	"properties": {
+		"distance_saving": {
+			"type": "integer",
+			"title": "Distance Saving",
+			"description": "Distance saving"
+		},
+		"vendor_company_name": {
+			"type": "string",
+			"title": "Vendor Company Name",
+			"description": "Vendor company name"
+		},
+		"period_distance_saving": {
+			"type": "number",
+			"title": "Period Distance Saving",
+			"description": "Period distance saving"
+		},
+		"money_saving": {
+			"type": "number",
+			"title": "Money Saving",
+			"description": "Money saving"
+		},
+		"affiliate_company_name": {
+			"type": "string",
+			"title": "Affiliate Company Name",
+			"description": "Affiliate company name"
+		},
+		"email": {
+			"type": "string",
+			"title": "Email",
+			"description": "User's email"
+		},
+		"period_gps": {
+			"type": "integer",
+			"title": "Period GPS",
+			"description": "Period between GPS signals"
+		},
+		"oa_routes_report_url": {
+			"type": "string",
+			"title": "OA Routes  Report URL",
+			"description": "OA routes report URL"
+		},
+		"company_name": {
+			"type": "string",
+			"title": "Company Name",
+			"description": "Company name"
+		},
+		"period_time_saving": {
+			"type": "number",
+			"title": "Period Time Saving",
+			"description": "Period time saving"
+		},
+		"routes": {
+			"type": "integer",
+			"title": "Routes",
+			"description": "Number of the routes"
+		},
+		"first_name": {
+			"type": "string",
+			"title": "First Name",
+			"description": "First name"
+		},
+		"oa_period_routes_report_url": {
+			"type": "string",
+			"title": "OA Period Routes Report URL",
+			"description": "OA period routes report URL"
+		},
+		"account_id": {
+			"type": "string",
+			"title": "ID",
+			"description": "32-char unique account ID"
+		},
+		"period_money_saving": {
+			"type": "number",
+			"title": "Period Money Saving",
+			"description": "Period money saving"
+		},
+		"period_gps_formatted": {
+			"type": "string",
+			"title": "Period GPS Formatted",
+			"description": "Period GPS formatted"
+		},
+		"time_saving": {
+			"type": "integer",
+			"title": "Time Saving",
+			"description": "Time saving"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Member ID"
+		},
+		"period_distance_saving_formatted": {
+			"type": "string",
+			"title": "Period Distance Saving Formatted",
+			"description": "Period distance saving formatted"
+		},
+		"period_routes": {
+			"type": "integer",
+			"title": "Period Routes",
+			"description": "Number of the period routes"
+		},
+		"distance_saving_formatted": {
+			"type": "string",
+			"title": "Distance Saving Formatted",
+			"description": "Distance saving formatted"
+		},
+		"gps_formatted": {
+			"type": "string",
+			"title": "GPS Formatted",
+			"description": "GPS formatted"
+		},
+		"last_name": {
+			"type": "string",
+			"title": "Last Name",
+			"description": "Last name"
+		},
+		"period_vehicles": {
+			"type": "integer",
+			"title": "Period Vehicles",
+			"description": "Period vehicles"
+		},
+		"id": {
+			"type": "string",
+			"title": "ID",
+			"description": "32-char unique ID"
+		},
+		"oa_report_url": {
+			"type": "string",
+			"title": "OA Report URL",
+			"description": "OA report URL"
+		},
+		"vehicles": {
+			"type": "integer",
+			"title": "vehicles",
+			"description": "Number of the vehicles"
+		},
+		"vendor": {
+			"type": "string",
+			"title": "Vendor",
+			"description": "The telematics vendor"
+		},
+		"gps": {
+			"type": "integer",
+			"title": "GPS",
+			"description": "GPS"
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Apikeys_apikey_create_data.json",
+	"title": "API Key Payload",
+	"description": "JSON payload for creating of an API key",
+	"type": "object",
+	"properties": {
+		"user_id": {
+			"type": "string",
+			"title": "User ID",
+			"description": "User ID"
+		}
+	}
+}

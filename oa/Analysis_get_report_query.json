@@ -1,0 +1,70 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_get_report_query.json",
+	"title": "Analysis Report",
+	"description": "Parameters for getting analysis report. Endpoint - https://api.route4me.com/api/v1/analysis/report/{report_id}",
+	"required": ["report_id","auth_token","x-auth-token","original_api_key","x-original-api-key"],
+	"type": "object",
+	"properties": {
+		"report_id": {
+			"type": "string",
+			"title": "Report ID",
+			"description": "Report id from activity feed. - GET."
+		},
+		"show_savings": {
+			"type": "integer",
+			"title": "Show Savings",
+			"description": "Include savings to report - GET."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original API key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original API key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Autentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"show_business_summary": {
+			"type": "integer",
+			"title": "Show Business Summary",
+			"description": "Include business summary to report - GET."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "User api key. HTTP method - GET."
+		},
+		"show_location_analysis_summary": {
+			"type": "integer",
+			"title": "Show Location Analysis Summary",
+			"description": "Include locations analysis summary to report - GET."
+		},
+		"show_location_analysis": {
+			"type": "integer",
+			"title": "Show Location Analysis",
+			"description": "Include locations analysis to report - GET."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Autentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X API key",
+			"description": "Use API with API key without authorization - HEADER."
+		},
+		"show_detailed_routes_analysis": {
+			"type": "integer",
+			"title": "Show Detailed Routes Analysis",
+			"description": "Include detailed route analysis to report - GET."
+		}
+	}
+}

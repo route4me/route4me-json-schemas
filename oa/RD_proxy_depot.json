@@ -1,0 +1,71 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/RD_proxy_depot.json",
+	"title": "Depot",
+	"description": "The JSON sub-schema for the depot",
+	"type": "object",
+	"properties": {
+		"source": {
+			"type": "string",
+			"title": "Source",
+			"description": "Depot source (e.g. 'oa.affiliate')"
+		},
+		"source_type": {
+			"type": "integer",
+			"title": "Source Type",
+			"description": "Source type"
+		},
+		"probability": {
+			"type": "number",
+			"title": "Probability",
+			"description": "Probability"
+		},
+		"id": {
+			"type": "string",
+			"title": "ID",
+			"description": "Depot ID"
+		},
+		"source_created_timestamp": {
+			"type": "integer",
+			"title": "Source Created Timestamp",
+			"description": "Source created timestamp in the EPOCH format"
+		},
+		"algo_id": {
+			"type": "string",
+			"title": "Algorithm ID",
+			"description": "Depot ID"
+		},
+		"polygon_hash": {
+			"type": "string",
+			"title": "Polygon hash",
+			"description": "Hashed polygon"
+		},
+		"depot": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Geo_point.json"
+			}
+		},
+		"source_address_stop_type": {
+			"type": "string",
+			"title": "Source Address Stop Type",
+			"description": "Source address stop type"
+		},
+		"source_route_id": {
+			"type": "string",
+			"title": "Source Route ID",
+			"description": "Source route ID"
+		},
+		"user_id": {
+			"type": "string",
+			"title": "User ID",
+			"description": "User ID"
+		},
+		"polygon": {
+			"type": "array",
+			"items": {
+				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Geo_point.json"
+			}
+		}
+	}
+}

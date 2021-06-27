@@ -1,0 +1,120 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Analysis_summary_analyzed_route_query_response.json",
+	"title": "Summary of Analyzed Route",
+	"description": "Response JSON schema for detailed analysis summary by analysis route id from OA. Endpoint: https://oa.route4me.com/api/v1/analysis/route/{analyzed_route_id}",
+	"type": "object",
+	"properties": {
+		"statistics": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Statistics.json",
+			"title": "Statistics"
+		},
+		"assumptions": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Assumptions.json",
+			"title": "Assumptions for optimization"
+		},
+		"aggregate_analysis_summary": {
+			"type": "object",
+			"properties": {
+				"optimization_scenarios": {
+					"type": "array",
+					"items": {
+						"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Optimization_scenario.json"
+					}
+				},
+				"detailed_routes_analysis": {
+					"type": "array",
+					"items": {
+						"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Detailed_routes_analysis_response.json"
+					}
+				},
+				"export_all_link": {
+					"type": "object",
+					"properties": {
+						"url": {
+							"type": "string",
+							"title": "URL",
+							"description": "URL to the export link"
+						},
+						"label": {
+							"type": "string",
+							"title": "Label",
+							"description": "The export label"
+						},
+						"title": {
+							"type": "string",
+							"title": "Title",
+							"description": "The export title"
+						},
+						"formats": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"url": {
+										"type": "string",
+										"title": "URL",
+										"description": "URL to the specific format of the export data (xls, csv)"
+									},
+									"label": {
+										"type": "string",
+										"title": "Label",
+										"description": "The label of the specific format export data (xls, csv)"
+									},
+									"title": {
+										"type": "string",
+										"title": "Title",
+										"description": "The title of the specific format export data (xls, csv)"
+									},
+									"format": {
+										"type": "string",
+										"title": "Title",
+										"description": "The format of the current export data (xls, csv)"
+									}
+								}
+							}
+						}
+					},
+					"title": "Export All Link",
+					"description": "If true, all the links will be exported"
+				}
+			}
+		},
+		"savings_summary": {
+			"type": "object",
+			"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/Savings_summary.json"
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"participant_label": {
+					"type": "string",
+					"title": "Participant Label",
+					"description": "Participant label"
+				},
+				"from_ts": {
+					"type": "integer",
+					"title": "From Ts",
+					"description": "Start period timestamp, unix timestamp in seconds"
+				},
+				"r4m_api_key": {
+					"type": "string",
+					"title": "Route4Me API Key",
+					"description": "API Key of a Route4Me account"
+				},
+				"user_id": {
+					"type": "string",
+					"title": "User ID",
+					"description": "User ID"
+				},
+				"trim_ts": {
+					"type": "integer",
+					"title": "Trim ts",
+					"description": "End period timestamp, unix timestamp in seconds - GET."
+				}
+			}
+		}
+	}
+}

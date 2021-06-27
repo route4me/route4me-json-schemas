@@ -1,0 +1,106 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/oa/User_affiliate_create_response.json",
+	"title": "Response for Create Affiliate",
+	"description": "Response JSON schema for creating a new affiliate in the system. Endpoint: https://api.route4me.com/api/v1/user/affiliates",
+	"type": "object",
+	"properties": {
+		"data": {
+			"api_key": {
+				"type": "object",
+				"properties": {
+					"creator_id": {
+						"type": "string",
+						"title": "Creator ID",
+						"description": "Unique 32-char ID of the API key creator"
+					},
+					"private": {
+						"type": "string",
+						"title": "Private",
+						"description": "Private password"
+					},
+					"public": {
+						"type": "string",
+						"title": "Public",
+						"description": "Public password"
+					},
+					"ttl": {
+						"type": "integer",
+						"title": "TTL",
+						"description": "TTL timeout"
+					},
+					"owner_id": {
+						"type": "string",
+						"title": "Owner ID",
+						"description": "Unique 32-char ID of the API key owner"
+					},
+					"is_active": {
+						"type": "boolean",
+						"title": "Is Active",
+						"description": "If true, created admin acoount will be active"
+					},
+					"api_key_id": {
+						"type": "string",
+						"title": "API Key ID",
+						"description": "Unique 32-char ID for the API key"
+					},
+					"created_at": {
+						"type": "integer",
+						"title": "Created At",
+						"description": "Timestamp of the API key creating"
+					}
+				}
+			},
+			"locale": {
+				"type": "string",
+				"title": "Locale",
+				"description": "Locale code ('en', 'fr', etc)"
+			},
+			"first_name": {
+				"type": "string",
+				"title": "First Name",
+				"description": "First name"
+			},
+			"last_name": {
+				"type": "string",
+				"title": "Last Name",
+				"description": "Last name"
+			},
+			"measurement": {
+				"type": "integer",
+				"title": "Measurement",
+				"description": "Measurement"
+			},
+			"phone_number": {
+				"type": "string",
+				"title": "Phone Number",
+				"description": "Phone numberof the user"
+			},
+			"email": {
+				"type": "string",
+				"title": "Email",
+				"description": "Email"
+			},
+			"user_id": {
+				"type": "string",
+				"title": "User ID",
+				"description": "User ID"
+			},
+			"company_name": {
+				"type": "string",
+				"title": "Company Name",
+				"description": "User's company name"
+			},
+			"timezone": {
+				"type": "string",
+				"title": "Timezone",
+				"description": "Timezone (e.g. 'UTC')"
+			},
+			"website": {
+				"type": "string",
+				"title": "Website",
+				"description": "Website"
+			}
+		}
+	}
+}
