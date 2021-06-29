@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Optimization_create.json",
 	"title": "Optimization Create",
 	"type": "object",
 	"properties": {
@@ -8,9 +6,9 @@
 			"type": "array",
 			"title": "Route Addresses",
 			"items": {
-				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Address.json
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Address.json"
 			},
-			"descrption": "Route Addresses. POST data"
+			"description": "Route Addresses. POST data"
 		},
 		"depots": {
 			"type": "array",
@@ -18,7 +16,7 @@
 			"items": {
 				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Address.json"
 			},
-			"descrption": "Optimization depots. POST data"
+			"description": "Optimization depots. POST data"
 		},
 		"parameters": {
 			"type": "array",
@@ -26,7 +24,7 @@
 			"items": {
 				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/RouteParameters.json"
 			},
-			"descrption": "Route Parameters. POST data"
+			"description": "Route Parameters. POST data"
 		},
 		"directions": {
 			"type": "integer",

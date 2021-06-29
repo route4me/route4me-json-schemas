@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/TrackingHistory_request.json",
 	"title": "Tracking History Request",
 	"description": "GET parameters for the endpoint https://www.route4me.com/api/track/get_device_location.php",
 	"type": "object",

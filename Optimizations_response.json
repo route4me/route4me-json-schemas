@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Optimizations_response.json",
 	"title": "Optimization Response",
 	"type": "object",
 	"properties": {
@@ -8,12 +6,12 @@
 			"type": "array",
 			"title": "Optimizations",
 			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Optimization_response.json"},
-			"descrption": "Optimizations"
+			"description": "Optimizations"
 		},
 		"totalRecords": {
 			"type": "integer",
 			"title": "Total Records",
-			"descrption": "Total optimizations in the response"
+			"description": "Total optimizations in the response"
 		}
 	}
 }

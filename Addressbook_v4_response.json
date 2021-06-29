@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Addressbook_v4_response.json",
 	"title": "Addressbook v4 Response",
 	"type": "object",
 	"properties": {
@@ -114,7 +112,8 @@
 			"description": "Address custom data"
 		},
 		"schedule": {
-			"type": ["array", "null"],
+			"type": "array",
+			"nullable": true,
 			"title": "Schedules",
 			"description": "Array of the trip schedules to a location",
 			"items": {
@@ -125,7 +124,7 @@
 					"enabled": {
 						"type": "boolean",
 						"title": "Enabled",
-						"descripton": "If true, a location schedule is enabled during construction of a hybrid optimization"
+						"description": "If true, a location schedule is enabled during construction of a hybrid optimization"
 					},
 					"from": {
 						"type": "string",
@@ -390,7 +389,7 @@
 		"is_assigned": {
 			"type": "boolean",
 			"title": "Is Assigned",
-			"descripton": "If true, a location assigned to a route."
+			"description": "If true, a location assigned to a route."
 		}
 	}
 }

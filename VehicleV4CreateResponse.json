@@ -1,22 +1,20 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/VehicleV4CreateResponse.json",
 	"title": "Vehicle",
 	"type": "object",
 	"required": [
 		"vehicle_alias"
 	],
-	"description": "Response object from a vechicle creating request. Endpoint: https://api.route4me.com/api.v4/vehicle.php",
+	"description": "Response object from a vehicle creating request. Endpoint: https://api.route4me.com/api.v4/vehicle.php",
 	"properties": {
 		"status": {
 			"type": "boolean",
 			"title": "Status",
-			"descrption": "The status of the finished request - if true, a vehicle created successfully"
+			"description": "The status of the finished request - if true, a vehicle created successfully"
 		},
 		"vehicle_guid": {
 			"type": "string",
 			"title": "Vehicle Guid",
-			"descrption": "An unique identifier of the created vehicle (32-char)"
+			"description": "An unique identifier of the created vehicle (32-char)"
 		},
 		"new": {
 			"type": "boolean",

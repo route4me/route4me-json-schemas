@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Members_authenticate.json",
 	"title": "Members Authenticate",
 	"type": "object",
 	"description": "For members authentication. url: https://www.route4me.com/actions/authenticate.php. Content-Type: multipart/form-data",
@@ -19,7 +17,7 @@
 			"type": "string",
 			"title": "Email",
 			"format": "email",
-			"descrption": "E-mail address of the user that was used for site registration. HTTP method - FORM data."
+			"description": "E-mail address of the user that was used for site registration. HTTP method - FORM data."
 		},
 		"strPassword": {
 			"type": "string",

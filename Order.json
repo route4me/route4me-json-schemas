@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Order.json",
 	"title": "Order",
 	"description": "Json schema for an Order class, which is used for keeping client order information at certain address. For usage details see curl examples in Order group",
 	"type": "object",

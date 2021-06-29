@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/File_uploaded_preview_response.json",
 	"description": "Response schema of a uploaded file",
 	"title": "File Uploaded Preview Response",
 	"type": "object",

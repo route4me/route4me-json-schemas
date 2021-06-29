@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Route_duplicate_request.json",
 	"type": "object",
 	"description": "For duplicating of an route. GET parameters. url: https://www.route4me.com/actions/duplicate_route.php",
 	"required": [

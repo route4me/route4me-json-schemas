@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Member_validation_session_response.json",
 	"title": "Membes validation session response",
 	"type": "object",
 	"description": "For validating of a session. url: https://www.route4me.com/datafeed/session/validate_session.php",
@@ -8,7 +6,7 @@
 		"authenticated": {
 			"type": "boolean",
 			"title": "Authenticated",
-			"descrption": "A boolean flag indicating if the session is valid"
+			"description": "A boolean flag indicating if the session is valid"
 		},
 		"geocoding_service": {
 			"type": "string",
@@ -33,12 +31,12 @@
 		"is_trial": {
 			"type": "boolean",
 			"title": "Is trial",
-			"descrption": "If the user is currently a trial customer"
+			"description": "If the user is currently a trial customer"
 		},
 		"is_active": {
 			"type": "boolean",
 			"title": "Is Active",
-			"descrption": "If the user is currently an active customer"
+			"description": "If the user is currently an active customer"
 		},
 		"session_id": {
 			"type": "string",
@@ -168,7 +166,7 @@
 		"blDisplayUpgradeTrackingHTML": {
 			"type": "boolean",
 			"title": "Display Upgrade Tracking HTML",
-			"descrption": "Display upgrade tracking HTML"
+			"description": "Display upgrade tracking HTML"
 		},
 		"intTrackingTrigger": {
 			"type": "integer",
@@ -193,7 +191,7 @@
 		"account_past_due": {
 			"type": "boolean",
 			"title": "Account Past Due",
-			"descrption": "Account past due"
+			"description": "Account past due"
 		},
 		"ui_input_method": {
 			"type": "string",
@@ -318,7 +316,7 @@
 		"is_subscription_past_due": {
 			"type": "boolean",
 			"title": "Is subscription past due",
-			"descrption": "If true, subscription is past due."
+			"description": "If true, subscription is past due."
 		},
 		"geofence_polygon_shape ": {
 			"enum": [
@@ -327,7 +325,7 @@
 				"rect"
 			],
 			"title": "Geofence polygon shape",
-			"descrption": "Geofence polygon shape. ENUM(circle, poly rect)."
+			"description": "Geofence polygon shape. ENUM(circle, poly rect)."
 		},
 		"geofence_polygon_size": {
 			"type": "integer",

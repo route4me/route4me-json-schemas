@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Direction.json",
 	"description": "the course or path on which something is moving or pointing",
 	"title": "Direction",
 	"type": "object",

@@ -1,62 +1,52 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/TrackingHistory.json",
 	"title": "Tracking History",
 	"type": "object",
 	"properties": {
 		"s": {
-			"type": [
-				"string", "null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Speed",
 			"description": "Speed at the time of the location transaction event"
 		},
 		"lt": {
-			"type": [
-				"string", "null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Latitude",
 			"description": "Latitude at the time of the location transaction event"
 		},
 		"m": {
-			"type": [
-				"integer", "null"
-			],
+			"type": "integer",
+			"nullable": true,
 			"title": "Member ID",
 			"description": "Member ID"
 		},
 		"lg": {
-			"type": [
-				"string", "null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Longitude",
 			"description": "Longitude at the time of the location transaction event"
 		},
 		"d": {
-			"type": [
-				"integer", "null"
-			],
+			"type": "integer",
+			"nullable": true,
 			"title": "Direction",
 			"description": "Direction/Heading at the time of the location transaction event"
 		},
 		"ts": {
-			"type": [
-				"string", "null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Timestamp",
 			"description": "The original timestamp in unix timestamp format at the moment location transaction event"
 		},
 		"ts_friendly": {
-			"type": [
-				"string", "null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Friendly Timestamp",
 			"description": "The original timestamp in a human readable timestamp format at the moment location transaction event"
 		},
 		"src": {
-			"type": [
-				"string", "null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "SRC",
 			"description": "Package src (e.g. 'R4M')"
 		}

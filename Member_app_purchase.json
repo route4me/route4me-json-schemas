@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Member_app_purchase.json",
 	"title": "Member application purchase",
 	"type": "object",
 	"description": "For purchasing Route4Me application by the member. url: https://www.route4me.com/api/member/user_license.php.",
@@ -39,7 +37,7 @@
 				"android_tablet"
 			],
 			"title": "Device type",
-			"descrption": "Type of the user's device. HTTP method - POST"
+			"description": "Type of the user's device. HTTP method - POST"
 		},
 		"subscription_name": {
 			"type": "string",

@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/waypoint.json",
 	"description": "Waypoint",
 	"title": "Waypoint",
 	"type": "object",
@@ -15,7 +13,7 @@
 		},
 		"geo": {
 			"type": "string",
-			"title": "Waypoint GEO locaton",
+			"title": "Waypoint GEO location",
 			"description": "Waypoint GEO location presented as string ('40.528667,-74.23188' etc)"
 		}
 	}

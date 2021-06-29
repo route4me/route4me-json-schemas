@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Gps_position.json",
 	"title": "Gps Position",
 	"type": "object",
 	"description": "Set GPS Position of the Device. url: https://www.route4me.com/track/set.php",
@@ -25,57 +23,57 @@
 			],
 			"default": "xml",
 			"title": "Format",
-			"descrption": "The expected response format"
+			"description": "The expected response format"
 		},
 		"member_id": {
 			"type": "number",
 			"title": "Member id",
-			"descrption": "The member id retrieved from the website that this instance of the application belongs to"
+			"description": "The member id retrieved from the website that this instance of the application belongs to"
 		},
 		"route_id": {
 			"type": "string",
 			"title": "Route id",
-			"descrption": "The route id that is currently open on the user's phone"
+			"description": "The route id that is currently open on the user's phone"
 		},
 		"tx_id": {
 			"type": "string",
 			"title": "tx id",
-			"descrption": "On the first request you do not need to provide a tx_id. On the second request you provide the tx_id which you got back from the first request. The tx_id is the unique group of points related to this specific route transaction"
+			"description": "On the first request you do not need to provide a tx_id. On the second request you provide the tx_id which you got back from the first request. The tx_id is the unique group of points related to this specific route transaction"
 		},
 		"vehicle_id": {
 			"type": "number",
 			"default": 0,
 			"title": "Vehicle id",
-			"descrption": "Each vehicle added into the system will have a vehicle id if the user added a vehicle. If the user did not add the vehicle, then the vehicle id will be zero"
+			"description": "Each vehicle added into the system will have a vehicle id if the user added a vehicle. If the user did not add the vehicle, then the vehicle id will be zero"
 		},
 		"course": {
 			"type": "number",
 			"title": "Course",
-			"descrption": "The direction in degrees in which the vehicle is heading"
+			"description": "The direction in degrees in which the vehicle is heading"
 		},
 		"speed": {
 			"type": "number",
 			"title": "Speed",
-			"descrption": "The speed with which the vehicle is moving"
+			"description": "The speed with which the vehicle is moving"
 		},
 		"lat": {
 			"type": "number",
 			"title": "Latitude",
 			"minimum": -90,
 			"maximum": 90,
-			"descrption": "The current latitude position of the device"
+			"description": "The current latitude position of the device"
 		},
 		"lng": {
 			"type": "number",
 			"title": "Longitude",
 			"minimum": -180,
 			"maximum": 180,
-			"descrption": "The current longitude position of the device"
+			"description": "The current longitude position of the device"
 		},
 		"altitude": {
 			"type": "number",
 			"title": "Altitude",
-			"descrption": "Altitude relative to sea level of the device being tracked"
+			"description": "Altitude relative to sea level of the device being tracked"
 		},
 		"device_type": {
 			"enum": [
@@ -85,23 +83,23 @@
 				"android_tablet"
 			],
 			"title": "Device type",
-			"descrption": "The device type submitting the data"
+			"description": "The device type submitting the data"
 		},
 		"device_guid": {
 			"type": "string",
 			"title": "Device id",
-			"descrption": "Device id"
+			"description": "Device id"
 		},
 		"device_timestamp": {
 			"type": "string",
 			"format": "date-time",
 			"title": "Device timestamp",
-			"descrption": "The timestamp on the local (remote relative to the server) device"
+			"description": "The timestamp on the local (remote relative to the server) device"
 		},
 		"app_version": {
 			"type": "string",
 			"title": "Application version",
-			"descrption": "The version of the app submitting the data"
+			"description": "The version of the app submitting the data"
 		}
 	}
 }

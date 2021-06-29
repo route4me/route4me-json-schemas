@@ -1,29 +1,21 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Links.json",
 	"title": "Links",
 	"type": "object",
 	"properties": {
 		"route": {
-			"type": [
-				"string"
-			],
+			"type": "string",
 			"title": "Route",
-			"descrption": "API URL Route GET call for the current route"
+			"description": "API URL Route GET call for the current route"
 		},
 		"view": {
-			"type": [
-				"string"
-			],
+			"type": "string",
 			"title": "View",
-			"descrption": "A Link to the GET operation for the optimization problem"
+			"description": "A Link to the GET operation for the optimization problem"
 		},
 		"optimization_problem_id": {
-			"type": [
-				"string"
-			],
+			"type": "string",
 			"title": "Optimization Problem (id)",
-			"descrption": "API URL optimization_problem_id GET call for the current route"
+			"description": "API URL optimization_problem_id GET call for the current route"
 		}
 	}
 }

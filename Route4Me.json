@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "Route4Me.dtd",
 	"type": "object",
 	"title": "Route4Me",
 	"description": "Route4Me schemes",
@@ -50,7 +48,7 @@
 			"type": "object",
 			"$ref": "Optimization.dtd",
 			"title": "Optimization",
-			"description": "Route optimization. An Optimization Problem is a collection of addresses that need to be visited. The optimization problem takes into consideration all of the addresses that need to be visited and all the constraints associated with each address and depot. This is different from a Route, which is a sequence of addresses that need to be visited by a single vehicle and a single driver in a fixed time period. Solving an Optimization Problem results in a number of routes. For usage details see curl examples in Optimization group, also examples in WIndows and Linux core folder - multiple_depot_multiple_driver, single_driver_multiple_time_windows etc"
+			"description": "Route optimization. An Optimization Problem is a collection of addresses that need to be visited. The optimization problem takes into consideration all of the addresses that need to be visited and all the constraints associated with each address and depot. This is different from a Route, which is a sequence of addresses that need to be visited by a single vehicle and a single driver in a fixed time period. Solving an Optimization Problem results in a number of routes. For usage details see curl examples in Optimization group, also examples in Windows and Linux core folder - multiple_depot_multiple_driver, single_driver_multiple_time_windows etc"
 		},
 		"Address": {
 			"type": "object",
@@ -86,7 +84,7 @@
 			"type": "object",
 			"$ref": "Activity.dtd",
 			"title": "Activity",
-			"description": "Json schema for a Activity responce format. For detailed usage see curl Activity group"
+			"description": "Json schema for a Activity response format. For detailed usage see curl Activity group"
 		}
 	}
 }
