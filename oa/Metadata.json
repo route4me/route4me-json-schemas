@@ -1,0 +1,45 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Metadata.json",
+	"title": "Savings",
+	"description": "Metadata. Sub-schema",
+	"type": "object",
+	"properties": {
+		"type_list": {
+			"type": "array",
+			"items": { "type": "string" },
+			"title": "Type List",
+			"description": "Type list. ['analysis_session.created', 'depot.detected', 'member.created', 'route.created', 'stop_detection.created', 'saving.created', 'saving.as-is.created', 'saving.optimized.created', 'report.daily', 'report.weekly', 'report.monthly']"
+		},
+		"offset": {
+			"type": "integer",
+			"title": "Type",
+			"description": "Offset"
+		},
+		"current_lang": {
+			"type": "string",
+			"title": "Current Language",
+			"description": "Current language"
+		},
+		"total": {
+			"type": "integer",
+			"title": "Total",
+			"description": "Total"
+		},
+		"limit": {
+			"type": "integer",
+			"title": "Limit",
+			"description": "Limit"
+		},
+		"from_ts": {
+			"type": "integer",
+			"title": "From ts",
+			"description": "Start period timestamp, unix timestamp in seconds"
+		},
+		"trim_ts": {
+			"type": "integer",
+			"title": "Trim ts",
+			"description": "End period timestamp, unix timestamp in seconds"
+		}
+	}
+}

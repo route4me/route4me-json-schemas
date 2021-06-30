@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Depots_get_list_response.json",
+	"title": "Get Depots List Response",
+	"description": "Response JSON schema for getting depots list. Endpoint - https://api.route4me.com/api/v1/depot/",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Depots_depot.json"
+			}
+		}
+	}
+}

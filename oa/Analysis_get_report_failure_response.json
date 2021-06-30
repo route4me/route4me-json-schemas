@@ -1,0 +1,43 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Analysis_get_report_failure_response.json",
+	"title": "Get Report Failure",
+	"description": "Response JSON schema for failure of the getting a report. Endpoint: https://oa.route4me.com/api/v1/analysis/report/{report_id}",
+	"type": "object",
+	"properties": {
+		"code": {
+			"type": "string",
+			"title": "Code",
+			"description": "Failure code / explanataion"
+		},
+		"error": {
+			"type": "string",
+			"title": "Error",
+			"description": "Error text"
+		},
+		"details": {
+			"type": "object",
+			"properties": {
+				"report_id": {
+					"type": "string",
+					"title": "Details"
+				}
+			}
+		},
+		"url": {
+			"type": "string",
+			"title": "URL",
+			"description": "URL to the failure response"
+		},
+		"method": {
+			"type": "string",
+			"title": "Method",
+			"description": "HTTP method"
+		},
+		"message": {
+			"type": "string",
+			"title": "Message",
+			"description": "THe message text with detailed esplanation of the failure"
+		}
+	}
+}

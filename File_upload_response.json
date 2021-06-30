@@ -1,6 +1,6 @@
 {
 	"description": "Response schema of a uploaded file",
-	"title": "File Upload Response.dtd",
+	"title": "File Upload Response",
 	"type": "object",
 	"properties": {
 		"status": {

@@ -1,0 +1,49 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Apikeys_apikey.json",
+	"title": "API Key",
+	"description": "The JSON sub-schema for API key object",
+	"type": "object",
+	"properties": {
+		"creator_id": {
+			"type": "string",
+			"title": "Creator ID",
+			"description": "Unique 32-char ID of an API key creator"
+		},
+		"public": {
+			"type": "string",
+			"title": "Public",
+			"description": "64-char unique string"
+		},
+		"private": {
+			"type": "string",
+			"title": "Private",
+			"description": "16-char unique string"
+		},
+		"ttl": {
+			"type": "integer",
+			"title": "TTL",
+			"description": "TTL timeout"
+		},
+		"owner_id": {
+			"type": "string",
+			"title": "Owner ID",
+			"description": "Unique 32-char ID of the API key owner"
+		},
+		"api_key_id": {
+			"type": "string",
+			"title": "API Key ID",
+			"description": "Unique 32-char ID for the API key"
+		},
+		"is_active": {
+			"type": "boolean",
+			"title": "Is Active",
+			"description": "If true, the API key will be active"
+		},
+		"created_at": {
+			"type": "integer",
+			"title": "Created At",
+			"description": "When the API key was created"
+		}
+	}
+}

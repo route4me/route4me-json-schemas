@@ -1,0 +1,17 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/OA_Route.json",
+	"type": "object",
+	"title": "OA Route",
+	"merge": {
+		"source": { "$ref": "https://github.com/route4me/json-schemas/blob/master/Route.json" },
+        "with": {
+            "properties": {
+				"vehicle": {
+					"type": "object",
+					"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/OA_Vehicle_V4.json"
+				}
+            }
+        }
+	}
+}

@@ -1,0 +1,193 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Savings.json",
+	"title": "Savings",
+	"description": "The response parameters of the savings. Sub-schema",
+	"type": "object",
+	"properties": {
+		"subtotal_at_fault_accident_costs_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal At Fault Accident Costs Percent Savings",
+			"description": "Subtotal at fault accident costs percent savings"
+		},
+		"subtotal_at_fault_accident_costs_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal At Fault Accident Costs Savings",
+			"description": "Subtotal at fault accident costs savings"
+		},
+		"subtotal_at_fault_accident_count_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal At Fault Accident Coount Percent Savings",
+			"description": "Subtotal at fault accident count percent savings"
+		},
+		"subtotal_at_fault_accident_count_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal At Fault Accident Coount Savings",
+			"description": "Subtotal at fault accident coount savings"
+		},
+		"subtotal_costs_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Costs Percent Savings",
+			"description": "Subtotal costs percent savings"
+		},
+		"subtotal_costs_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Costs Savings",
+			"description": "Subtotal costs savings"
+		},
+		"subtotal_distance_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Distance Percent Savings",
+			"description": "Subtotal distance percent savings"
+		},
+		"subtotal_distance_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Distance Savings",
+			"description": "Subtotal distance savings"
+		},
+		"subtotal_drive_time_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Drive Time Percent Savings",
+			"description": "Subtotal drive time percent savings"
+		},
+		"subtotal_drive_time_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Drive Time Savings",
+			"description": "Subtotal drive time savings"
+		},
+		"subtotal_emissions_ktonc02_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Emissions KtonC02 Percent Savings",
+			"description": "Subtotal emissions ktonc02 percent savings"
+		},
+		"subtotal_emissions_ktonc02_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Emissions KtonC02 Savings",
+			"description": "Subtotal emissions ktonc02 savings"
+		},
+		"subtotal_fuel_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Fuel Percent Savings",
+			"description": "Subtotal fuel percent savings"
+		},
+		"subtotal_fuel_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Fuel Savings",
+			"description": "Subtotal fuel savings"
+		},
+		"subtotal_labor_costs_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal Labor Costs Percent Savings",
+			"description": "Subtotal labor costs percent savings"
+		},
+		"subtotal_labor_costs_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Labor Costs Savings",
+			"description": "Subtotal labor costs savings"
+		},
+		"subtotal_labor_time_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal Labor Time Percent Savings",
+			"description": "Subtotal labor time percent savings"
+		},
+		"subtotal_labor_time_savings": {
+			"type": "integer",
+			"title": "Subtotal Labor Time Savings",
+			"description": "Subtotal labor time savings"
+		},
+		"subtotal_operating_cost_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Operating Cost Percent Savings",
+			"description": "Subtotal operating cost percent savings"
+		},
+		"subtotal_operating_cost_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Operating Cost Savings",
+			"description": "Subtotal operating cost savings"
+		},
+		"subtotal_pieces_percent_savings": {
+			"type": "integer",
+			"title": "Subtotal Pieces Percent Savings",
+			"description": "Subtotal pieces percent savings"
+		},
+		"subtotal_pieces_savings": {
+			"type": "integer",
+			"title": "Subtotal Pieces Savings",
+			"description": "Subtotal pieces savings"
+		},
+		"subtotal_revenue_percent_savings": {
+			"type": "integer",
+			"title": "Subtotal Revenue Percent Savings",
+			"description": "Subtotal revenue percent savings"
+		},
+		"subtotal_revenue_savings": {
+			"type": "integer",
+			"title": "Subtotal Revenue Savings",
+			"description": "Subtotal revenue savings"
+		},
+		"subtotal_stop_cost_percent_savings": {
+			"type": "integer",
+			"title": "Subtotal Stop Cost Percent Savings",
+			"description": "Subtotal stop cost percent savings"
+		},
+		"subtotal_stop_cost_savings": {
+			"type": "integer",
+			"title": "Subtotal Stop Cost Savings",
+			"description": "Subtotal stop cost savings"
+		},
+		"subtotal_stops_per_hour_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Stops Per Hour Percent Savings",
+			"description": "Subtotal stops per hour percent savings"
+		},
+		"subtotal_stops_per_hour_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Stops Per Hour Savings",
+			"description": "Subtotal stops per hour savings"
+		},
+		"subtotal_stops_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal Stops Percent Savings",
+			"description": "Subtotal stops percent savings"
+		},
+		"subtotal_stops_savings": {
+			"type": "integer",
+			"title": "Subtotal Stops Savings",
+			"description": "Subtotal stops savings"
+		},
+		"subtotal_vehicle_costs_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Vehicle Costs Percent Savings",
+			"description": "Subtotal vehicle costs percent savings"
+		},
+		"subtotal_vehicle_costs_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Vehicle Costs Savings",
+			"description": "Subtotal vehicle costs savings"
+		}
+	}
+}

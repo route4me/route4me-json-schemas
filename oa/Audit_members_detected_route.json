@@ -1,0 +1,109 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Audit_members_detected_route.json",
+	"title": "Audit Members Detected Route",
+	"description": "The response parameters of the detected route. Sub-schema",
+	"type": "object",
+	"properties": {
+		"route_duration": {
+			"type": "integer",
+			"title": "Route Duration",
+			"description": "Route duration"
+		},
+		"vehicle_model": {
+			"type": "string",
+			"title": "Vehicle Model",
+			"description": "Vehicle model"
+		},
+		"is_round_trip": {
+			"type": "boolean",
+			"title": "Is Round Trip",
+			"description": "If true, the route type is rount trip"
+		},
+		"route_name": {
+			"type": "string",
+			"title": "Route Name",
+			"description": "Route name"
+		},
+		"stops_detection_confidence": {
+			"type": "number",
+			"title": "Stops Detection Confidence",
+			"description": "Stops detection confidence"
+		},
+		"detected_route_duration": {
+			"type": "integer",
+			"title": "Detected Route Duration",
+			"description": "Detected route duration"
+		},
+		"matched_route_id": {
+			"type": "string",
+			"title": "Matched Route ID",
+			"description": "Matched route ID"
+		},
+		"vehicle_license_plate": {
+			"type": "string",
+			"title": "Vehicle License Plate",
+			"description": "Vehicle license plate"
+		},
+		"is_eligible": {
+			"type": "boolean",
+			"title": "Is Eligible",
+			"description": "If true, the route is eligible"
+		},
+		"internal_route_id": {
+			"type": "string",
+			"title": "Internal Route ID",
+			"description": "Internal route ID"
+		},
+		"route_time": {
+			"type": "integer",
+			"title": "Route Time",
+			"description": "Route time"
+		},
+		"detected_route_start": {
+			"type": "integer",
+			"title": "Detected route start",
+			"description": "Detected route start"
+		},
+		"detected_route_id": {
+			"type": "string",
+			"title": "Detected Route ID",
+			"description": "Detected route ID"
+		},
+		"stops_count": {
+			"type": "integer",
+			"title": "Stops Count",
+			"description": "Stops count"
+		},
+		"vehicle_alias": {
+			"type": "string",
+			"title": "Vehicle Alias",
+			"description": "Vehicle alias"
+		},
+		"vehicle_make": {
+			"type": "string",
+			"title": "Vehicle Make",
+			"description": "Vehicle make"
+		},
+		"match_timestamp": {
+			"type": "string",
+			"title": "Match Timestamp",
+			"description": "Match timestamp"
+		},
+		"trip_distance": {
+			"type": "number",
+			"title": "Trip distance",
+			"description": "Trip distance"
+		},
+		"created_timestamp": {
+			"type": "integer",
+			"title": "Created Timestamp",
+			"description": "Route created timestamp"
+		},
+		"vehicle_id": {
+			"type": "string",
+			"title": "Vehicle ID",
+			"description": "Vehicle ID"
+		}
+	}
+}

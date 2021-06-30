@@ -1,0 +1,17 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_active_admins_response.json",
+	"title": "Resposne for Active Admins",
+	"description": "Response JSON schema for getting the active admins list. Endpoint: https://api.route4me.com/api/v1/user/admins/active",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_admin.json"
+			},
+			"title": "Users List",
+			"description": "Array of the objects User_admin"
+		}
+	}
+}

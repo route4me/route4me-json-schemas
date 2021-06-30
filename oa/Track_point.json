@@ -1,0 +1,63 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Track_point.json",
+	"title": "Device Track Poin",
+	"description": "Response Schema For the device track point",
+	"type": "object",
+	"properties": {
+		"longitude": {
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Longitude",
+			"description": "Longitude"
+		},
+		"latitude": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Latitude",
+			"description": "Latitude"
+		},
+		"timestamp": {
+			"type": "integer",
+			"title": "Timestamp",
+			"description": "Timestamp"
+		},
+		"custom_data": {
+			"type": "object",
+			"properties": {
+				"disabled": {
+					"type": "integer",
+					"title": "Disabled",
+					"description": "Disabled"
+				},
+				"typeId": {
+					"type": "integer",
+					"title": "Type Id",
+					"description": "Type Id"
+				},
+				"volts": {
+					"type": "integer",
+					"title": "Volts",
+					"description": "Volts"
+				},
+				"buzzer": {
+					"type": "integer",
+					"title": "Buzzer",
+					"description": "Buzzer"
+				},
+				"distance": {
+					"type": "number",
+					"title": "Distance",
+					"description": "Distance"
+				}
+			}
+		},
+		"speed": {
+			"type": "integer",
+			"title": "Speed",
+			"description": "Speed"
+		}
+	}
+}

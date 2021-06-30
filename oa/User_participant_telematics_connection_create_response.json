@@ -1,0 +1,115 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant_telematics_connection_create_response.json",
+	"title": "Response for Create Participant's Telematics Connection",
+	"description": "Response JSON schema for creating the telematics connection for a participant. Endpoint: https://api.route4me.com/api/v1/user/participants/{participant_user_id}/telematics-connection",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"properties": {
+				"is_active": {
+					"type": "boolean",
+					"title": "Is Active",
+					"description": "If true, telematics connection is active"
+				},
+				"email": {
+					"type": "string",
+					"title": "Email",
+					"description": "Participant's email"
+				},
+				"name": {
+					"type": "string",
+					"title": "Name",
+					"description": "Telematics connection name"
+				},
+				"updated_at": {
+					"type": "integer",
+					"title": "Updated At",
+					"description": "When the telematics connection was updated"
+				},
+				"last_name": {
+					"type": "string",
+					"title": "Last Name",
+					"description": "Last name"
+				},
+				"api_key": {
+					"type": "string",
+					"title": "API key",
+					"description": "Unique 32-char API key for telematics connection"
+				},
+				"telematics_connection_id": {
+					"type": "string",
+					"title": "Telematics Connection ID",
+					"description": "Telematics connection ID"
+				},
+				"user_id": {
+					"type": "string",
+					"title": "User ID",
+					"description": "Participant's user ID"
+				},
+				"telematics_id": {
+					"type": "integer",
+					"title": "Telematics ID",
+					"description": "Telematics ID"
+				},
+				"device_position_refresh_rate": {
+					"type": "integer",
+					"title": "Device Position Refresh Rate",
+					"description": "Device position refresh rate"
+				},
+				"telematics_connection_token": {
+					"type": "string",
+					"title": "Telematics Connection Token",
+					"description": "Telematics connection token"
+				},
+				"vendor_name": {
+					"type": "string",
+					"title": "Vendor Name",
+					"description": "Vendor name"
+				},
+				"vendor_id": {
+					"type": "integer",
+					"title": "Vendor ID",
+					"description": "Vendor ID"
+				},
+				"created_at": {
+					"type": "integer",
+					"title": "Created At",
+					"description": "When the telematics connection was created"
+				},
+				"first_name": {
+					"type": "string",
+					"title": "First Name",
+					"description": "First name"
+				},
+				"company_name": {
+					"type": "string",
+					"title": "Company Name",
+					"description": "Company name"
+				},
+				"telematics_api_token": {
+					"type": "string",
+					"title": "Telematics API Token",
+					"description": "Telematics API token"
+				}
+			}
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"user_id": {
+					"type": "string",
+					"title": "User ID",
+					"description": "Participant's user ID"
+				},
+				"participant": {
+					"type": "object",
+					"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant.json",
+					"title": "Participant Info",
+					"description": "Participant info"
+				}
+			}
+		}
+	}
+}

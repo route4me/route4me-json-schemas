@@ -1,0 +1,57 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Statistics.json",
+	"title": "Savings",
+	"description": "Statistics part of the response",
+	"type": "object",
+	"properties": {
+		"gps-counter": {
+			"type": "object",
+			"properties": {
+				"global": {
+					"type": "integer",
+					"title": "Global",
+					"description": "Global counter"
+				},
+				"period": {
+					"type": "integer",
+					"title": "Period",
+					"description": "Selected time period counter"
+				},
+				"period_formatted": {
+					"type": "string",
+					"title": "Period Formatted",
+					"description": "Period formatted"
+				},
+				"global_formatted": {
+					"type": "string",
+					"title": "Global Formatted",
+					"description": "Global formatted"
+				},
+				"_args": {
+					"@meta": {
+						"type": "string",
+						"title": "Meta"
+					},
+					"from_ts": {
+						"type": "integer",
+						"title": "From Ts",
+						"description": "Include from timestamp for analysis to report"
+					},
+					"trim_ts": {
+						"type": "integer",
+						"title": "Trim Ts",
+						"description": "Include trim timestamp for analysis to report"
+					},
+					"member_id": {
+						"type": "string",
+						"title": "Member ID",
+						"description": "Member ID"
+					}
+				}
+			},
+			"title": "GPS Counter",
+			"description": "GPS counter"
+		}
+	}
+}

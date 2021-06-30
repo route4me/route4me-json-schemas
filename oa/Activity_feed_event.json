@@ -1,0 +1,189 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Activity_feed_event.json",
+	"title": "Activity Feed Event",
+	"description": "The response parameters of the activity feed event. Sub-schema",
+	"type": "object",
+	"properties": {
+		"event_id": {
+			"type": "string",
+			"title": "Event ID",
+			"description": "Activity feed event ID"
+		},
+		"report_start_ts": {
+			"type": "integer",
+			"title": "Report Start ts",
+			"description": "Report start ts"
+		},
+		"activity_timestamp": {
+			"type": "integer",
+			"title": "Activity Timestamp",
+			"description": "Activity Timestamp"
+		},
+		"hidden": {
+			"type": "boolean",
+			"title": "Hidden",
+			"description": "If true, the event is hidden"
+		},
+		"original_route_id": {
+			"type": "string",
+			"title": "Original Route ID",
+			"description": "Original route ID"
+		},
+		"route_name": {
+			"type": "string",
+			"title": "Route Name",
+			"description": "Route name"
+		},
+		"analyzed_route_id": {
+			"type": "string",
+			"title": "Analysed Route ID",
+			"description": "Analysed route ID"
+		},
+		"affiliate_id": {
+			"type": "string",
+			"title": "Affiliate ID",
+			"description": "A unique ID of an affiliated user"
+		},
+		"telematics_connection_token": {
+			"type": "string",
+			"title": "Telematics Connection Token",
+			"description": "Telematics connection token"
+		},
+		"destination_name": {
+			"type": "string",
+			"title": "Destination Name",
+			"description": "Destination name"
+		},
+		"telematics_vendor_id": {
+			"type": "integer",
+			"title": "Telematics Vendor ID",
+			"description": "Telematics vendor ID"
+		},
+		"route_id": {
+			"type": "string",
+			"title": "Route ID",
+			"description": "Route ID"
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "API key"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Member ID"
+		},
+		"report_end_ts": {
+			"type": "integer",
+			"title": "Report End ts",
+			"description": "Report end ts"
+		},
+		"user_id": {
+			"type": "string",
+			"title": "User ID",
+			"description": "User ID"
+		},
+		"activity_feed_id": {
+			"type": "string",
+			"title": "Activity Feed ID",
+			"description": "Activity feed ID"
+		},
+		"activity_message": {
+			"type": "string",
+			"title": "Activity Message",
+			"description": "Activity message"
+		},
+		"telematics_vendor_name": {
+			"type": "string",
+			"title": "Telematics Vendor Name",
+			"description": "Telematics vendor name"
+		},
+		"depot_id": {
+			"type": "integer",
+			"title": "Depot ID",
+			"description": "Depot ID"
+		},
+		"activity_type": {
+			"type": "string",
+			"enum": ["analysis_session.created", "depot.detected", "member.created", "route.created", "stop_detection.created", "saving.created", "saving.as-is.created", "saving.optimized.created", "report.daily", "report.weekly", "report.monthly"],
+			"title": "Activity Type",
+			"description": "Activity type"
+		},
+		"device_id": {
+			"type": "string",
+			"title": "Device ID",
+			"description": "Device ID"
+		},
+		"route_destination_id": {
+			"type": "integer",
+			"title": "Route Destination ID",
+			"description": "Route destination ID"
+		},
+		"saving_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Savings Costs",
+			"description": "Savings costs"
+		},
+		"telematics_api_token": {
+			"type": "string",
+			"title": "Telematics API Token",
+			"description": "Telematics API token"
+		},
+		"member_name": {
+			"type": "string",
+			"title": "Member Name",
+			"description": "Member name"
+		},
+		"analysis_session_id": {
+			"type": "string",
+			"title": "Analysis Session ID",
+			"description": "Analysis session ID"
+		},
+		"original_member_id": {
+			"type": "integer",
+			"title": "Original Member ID",
+			"description": "Original member ID"
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original API Key",
+			"description": "Original API key"
+		},
+		"saving_time": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Saving Time",
+			"description": "Saving time"
+		},
+		"member_email": {
+			"type": "string",
+			"title": "Member Email",
+			"description": "Member email"
+		},
+		"type": {
+			"type": "integer",
+			"enum": [0,1,2,3,4,5,6,7,8,9,10],
+			"title": "Type",
+			"description": "Type of the activity feed event"
+		},
+		"saving_distance": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Saving Distance",
+			"description": "Saving distance"
+		},
+		"depot_unique_key": {
+			"type": "string",
+			"title": "Depot Unique Key",
+			"description": "Depot unique key"
+		},
+		"report_id": {
+			"type": "string",
+			"title": "Report ID",
+			"description": "Report ID"
+		}
+	}
+}

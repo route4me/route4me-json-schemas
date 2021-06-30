@@ -1,0 +1,618 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Savings_summary.json",
+	"title": "Savings Summary Response",
+	"description": "The response parameters for the savings summary. The endpoint: https://oa.route4me.com/api/v1/analysis/summary",
+	"type": "object",
+	"properties": {
+		"device_count_formatted": {
+			"type": "integer",
+			"title": "Device Count Formatted",
+			"description": "Device count formatted (e.g. 47)"
+		},
+		"subtotal_drive_time_savings_formatted": {
+			"type": "string",
+			"title": "Subtotal Drive Time Savings Formatted",
+			"description": "Subtotal drive time savings formatted (e.g. '16d 05h 01m')"
+		},
+		"subtotal_emissions_ktonc02_optimized_formatted": {
+			"type": "integer",
+			"title": "Subtotal Emissions KtonC02 Optimized Formatted",
+			"description": "Subtotal emissions ktonc02 optimized formatted (e.g. 93)"
+		},
+		"subtotal_distance_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Distance Savings",
+			"description": "Subtotal distance savings"
+		},
+		"subtotal_distance_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Distance Percent Savings",
+			"description": "Subtotal distance percent savings"
+		},
+		"subtotal_routes_count_optimized": {
+			"type": "integer",
+			"title": "Subtotal Routes Count Optimized",
+			"description": "Subtotal of the routes count optimized"
+		},
+		"unit_short_name": {
+			"type": "string",
+			"title": "Unit Short Name",
+			"description": "Unit short name (e.g. 'mi')"
+		},
+		"accidents": {
+			"type": "integer",
+			"title": "Accidents",
+			"description": "Accidents"
+		},
+		"subtotal_emissions_ktonc02_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Emissions KtonC02 Savings",
+			"description": "Subtotal emissions ktonc02 savings"
+		},
+		"scenario_description_optimized": {
+			"type": "string",
+			"title": "Scenario Description Optimized",
+			"description": "Description of the scenario optimized"
+		},
+		"subtotal_at_fault_accident_count_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal At Fault Accident Coount Savings",
+			"description": "Subtotal at fault accident coount savings"
+		},
+		"subtotal_drive_time_optimized_formatted": {
+			"type": "string",
+			"title": "Subtotal Drive Time Optimized Formatted",
+			"description": "Subtotal drive time optimized formatted (e.g. '12d 09h 52m')"
+		},
+		"subtotal_fuel_percent_savings": {
+			"type": "number",
+			"title": "Subtotal Fuel Percent Savings",
+			"description": "Subtotal fuel percent savings"
+		},
+		"subtotal_costs_optimized_formatted": {
+			"type": "string",
+			"title": "Subtotal Costs Optimized Formatted",
+			"description": "Subtotal costs optimized formatted (e.g. '$74.7K')"
+		},
+		"scenario_label": {
+			"type": "string",
+			"title": "Scenario Label",
+			"description": "The label of the scenario"
+		},
+		"subtotal_distance_optimized_formatted": {
+			"type": "string",
+			"title": "Subtotal Distance Optimized Formatted",
+			"description": "Subtotal distance optimized formatted (e.g. '10.3K mi')"
+		},
+		"subtotal_drive_time_optimized": {
+			"type": "integer",
+			"title": "Subtotal Drive Time Optimized",
+			"description": "Subtotal of the driving time optimized"
+		},
+		"subtotal_emissions_ktonc02_optimized": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal Emissions KtonC02 Optimized",
+			"description": "Subtotal of the emissions ktonc02 optimized"
+		},
+		"accidents_percent_savings_formated": {
+			"type": "integer",
+			"title": "Accidents Percent Savings Formated",
+			"description": "Accidents percent savings formated"
+		},
+		"device_count": {
+			"type": "integer",
+			"title": "Device Count",
+			"description": "Device count"
+		},
+		"accidents_savings_formated_formatted": {
+			"type": "integer",
+			"title": "Accidents Savings Formated Formated",
+			"description": "Accidents savings formated formated"
+		},
+		"subtotal_fuel_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Fuel Savings",
+			"description": "Subtotal fuel savings"
+		},
+		"accidents_savings_formated": {
+			"type": "integer",
+			"title": "Accidents Savings Formated",
+			"description": "Accidents savings formated"
+		},
+		"sum_confidence": {
+			"type": "number",
+			"title": "Sum Confidence",
+			"description": "Sum confidence (e.g. 0.7663)"
+		},
+		"subtotal_fuel_percent_savings_formatted": {
+			"type": "string",
+			"title": "Subtotal Fuel Percent Savings Formatted",
+			"description": "Subtotal fuel percent savings formatted (e.g. '57%')"
+		},
+		"subtotal_routes_count_optimized_formatted": {
+			"type": "string",
+			"title": "Subtotal Routes Count Optimized Formatted",
+			"description": "Subtotal routes count optimized formatted (e.g. '200')"
+		},
+		"subtotal_fuel_savings_formatted": {
+			"type": "string",
+			"title": "Subtotal Fuel Savings Formatted",
+			"description": "Subtotal fuel savings formatted (e.g. '5.8K')"
+		},
+		"subtotal_costs_percent_savings_formatted": {
+			"type": "string",
+			"title": "Subtotal Costs Percent Savings Formatted",
+			"description": "Subtotal costs percent savings formatted (e.g. '21%')"
+		},
+		"subtotal_drive_time": {
+			"type": "integer",
+			"title": "Subtotal Drive Time",
+			"description": "Subtotal of the driving time"
+		},
+		"sum_confidence_formatted": {
+			"type": "string",
+			"title": "Subtotal Confidence Formatted",
+			"description": "Subtotal confidence formatted (e.g. '77%')"
+		},
+		"subtotal_distance_percent_savings_formatted": {
+			"type": "string",
+			"title": "Subtotal Distance Percent Savings Formatted",
+			"description": "Subtotal distance percent savings formatted (e.g. '57%')"
+		},
+		"subtotal_emissions_ktonc02_percent_savings_formatted": {
+			"type": "string",
+			"title": "Subtotal Emissions KtonC02 Percent Savings Formatted",
+			"description": "Subtotal emissions ktonc02 percent savings formatted (e.g. '57%')"
+		},
+		"accidents_percent_savings_formated_formatted": {
+			"type": "string",
+			"title": "Accidents Percent Savings Formated Formatted",
+			"description": "Accidents percent savings formated formatted (e.g. '0%')"
+		},
+		"subtotal_costs_optimized": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Costs Optimized",
+			"description": "Subtotal of the costs optimized"
+		},
+		"subtotal_emissions_ktonc02_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Emissions KtonC02 Percent Savings",
+			"description": "Subtotal emissions ktonc02 percent savings"
+		},
+		"scenario_name_optimized": {
+			"type": "string",
+			"title": "Scenario Name Optimized",
+			"description": "Scenario name optimized"
+		},
+		"subtotal_costs_savings_formatted": {
+			"type": "string",
+			"title": "Subtotal Costs Savings Formatted",
+			"description": "Subtotal costs savings formatted (e.g. '$20.2K')"
+		},
+		"subtotal_emissions_ktonc02_formatted": {
+			"type": "string",
+			"title": "Subtotal Emissions KtonC02 Formatted",
+			"description": "Subtotal Emissions ktonc02 Formatted (e.g. '216')"
+		},
+		"subtotal_at_fault_accident_count_savings_formatted": {
+			"type": "integer",
+			"title": "Subtotal At Fault Accident Count Savings Formatted",
+			"description": "Subtotal at fault accident count savings formatted"
+		},
+		"subtotal_distance_optimized": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Distance Optimized",
+			"description": "Subtotal of the distance optimized"
+		},
+		"subtotal_drive_time_percent_savings_formatted": {
+			"type": "string",
+			"title": "Subtotal Drive Time Percent Savings Formatted",
+			"description": "Subtotal drive time percent savings formatted (e.g. '57%')"
+		},
+		"accidents_optimized_formatted": {
+			"type": "integer",
+			"title": "Accidents Optimized Formatted",
+			"description": "Accidents optimized formatted"
+		},
+		"unit_full_name": {
+			"type": "string",
+			"title": "Unit Full Name",
+			"description": "Unit full name (e.g. 'Miles')"
+		},
+		"subtotal_costs_formatted": {
+			"type": "string",
+			"title": "Subtotal Costs Formatted",
+			"description": "Subtotal costs formatted (e.g. '$94.8K')"
+		},
+		"scenario_label_optimized": {
+			"type": "string",
+			"title": "Scenario Label Optimized",
+			"description": "The label of the scenario optimized"
+		},
+		"subtotal_costs_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Costs Savings",
+			"description": "Subtotal costs savings"
+		},
+		"subtotal_emissions_ktonc02": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal Emissions KtonC02",
+			"description": "Subtotal of the emissions ktonc02"
+		},
+		"subtotal_routes_count": {
+			"type": "integer",
+			"title": "Subtotal Routes Count",
+			"description": "Subtotal of the routes count"
+		},
+		"subtotal_fuel_optimized": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Fuel Optimized",
+			"description": "Subtotal of the fuel consumption, optimized"
+		},
+		"subtotal_distance": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Distance",
+			"description": "Subtotal of the distance"
+		},
+		"subtotal_distance_savings_formatted": {
+			"type": "string",
+			"title": "Subtotal Distance Savings Formatted",
+			"description": "Subtotal distance savings formatted (e.g. '13.5K mi')"
+		},
+		"subtotal_drive_time_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Drive Time Percent Savings",
+			"description": "Subtotal drive time percent savings"
+		},
+		"subtotal_routes_count_formatted": {
+			"type": "string",
+			"title": "Subtotal Routes Count Formatted",
+			"description": "Subtotal routes count formatted (e.g. '200')"
+		},
+		"accidents_optimized": {
+			"type": "integer",
+			"title": "Accidents Optimized",
+			"description": "Accidents optimized"
+		},
+		"subtotal_fuel": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Fuel",
+			"description": "Subtotal of the fuel consumption"
+		},
+		"subtotal_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Costs",
+			"description": "Subtotal of the costs"
+		},
+		"subtotal_drive_time_formatted": {
+			"type": "string",
+			"title": "Subtotal Drive Time Formatted",
+			"description": "Subtotal drive time formatted (e.g. '28d 14h 53m')"
+		},
+		"scenario_name": {
+			"type": "string",
+			"title": "Scenario Name",
+			"description": "Scenario name"
+		},
+		"scenario_description": {
+			"type": "string",
+			"title": "Scenario Description",
+			"description": "Description of the scenario"
+		},
+		"subtotal_fuel_optimized_formatted": {
+			"type": "string",
+			"title": "Subtotal Fuel Optimized Formatted",
+			"description": "Subtotal fuel optimized formatted (e.g. '4.4K')"
+		},
+		"subtotal_costs_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Costs Percent Savings",
+			"description": "Subtotal costs percent savings"
+		},
+		"subtotal_distance_formatted": {
+			"type": "string",
+			"title": "Subtotal Distance Formatted",
+			"description": "Subtotal distance formatted (e.g. '23.8K mi')"
+		},
+		"subtotal_emissions_ktonc02_savings_formatted": {
+			"type": "string",
+			"title": "Subtotal Emissions KtonC02 Savings Formatted",
+			"description": "Subtotal emissions ktonc02 savings formatted (e.g. '123')"
+		},
+		"subtotal_fuel_formatted": {
+			"type": "string",
+			"title": "Subtotal Fuel Formatted",
+			"description": "Subtotal fuel formatted (e.g. '10.3K')"
+		},
+		"accidents_formatted": {
+			"type": "integer",
+			"title": "Accidents Formatted",
+			"description": "Accidents formatted"
+		},
+		"subtotal_drive_time_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Drive Time Savings",
+			"description": "Subtotal drive time savings"
+		},
+		"subtotal_at_fault_accident_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal At Fault Accident Costs",
+			"description": "Subtotal at fault accident_costs"
+		},
+		"subtotal_at_fault_accident_costs_optimized": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal At Fault Accident_Costs",
+			"description": "Subtotal at fault accident_costs"
+		},
+		"subtotal_at_fault_accident_costs_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal At Fault Accident Costs Percent Savings",
+			"description": "Subtotal at fault accident costs percent savings"
+		},
+		"subtotal_at_fault_accident_costs_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal At Fault Accident Costs Savings",
+			"description": "Subtotal at fault accident costs savings"
+		},
+		"subtotal_at_fault_accident_count": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal At Fault Accident Count",
+			"description": "Subtotal at fault accident count"
+		},
+		"subtotal_at_fault_accident_count_optimized": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal At Fault Accident Count Optimized",
+			"description": "Subtotal at fault accident count optimized"
+		},
+		"subtotal_at_fault_accident_count_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal At Fault Accident Coount Percent Savings",
+			"description": "Subtotal at fault accident count percent savings"
+		},
+		"subtotal_labor_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Labor Costs",
+			"description": "Subtotal of the labor costs"
+		},
+		"subtotal_labor_costs_optimized": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Labor Costs Optimized",
+			"description": "Subtotal of the labor costs optimized"
+		},
+		"subtotal_labor_costs_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal Labor Costs Percent Savings",
+			"description": "Subtotal labor costs percent savings"
+		},
+		"subtotal_labor_costs_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Labor Costs Savings",
+			"description": "Subtotal labor costs savings"
+		},
+		"subtotal_labor_time": {
+			"type": "integer",
+			"title": "Subtotal Labor Time",
+			"description": "Subtotal of the labor time"
+		},
+		"subtotal_labor_time_optimized": {
+			"type": "integer",
+			"title": "Subtotal Labor Time Optimized",
+			"description": "Subtotal of the labor time optimized"
+		},
+		"subtotal_labor_time_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal Labor Time Percent Savings",
+			"description": "Subtotal labor time percent savings"
+		},
+		"subtotal_labor_time_savings": {
+			"type": "integer",
+			"title": "Subtotal Labor Time Savings",
+			"description": "Subtotal labor time savings"
+		},
+		"subtotal_operating_cost": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Operating Costs",
+			"description": "Subtotal of the operating costs"
+		},
+		"subtotal_operating_cost_optimized": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Operating Costs Optimized",
+			"description": "Subtotal of the operating costs optimized"
+		},
+		"subtotal_operating_cost_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Operating Cost Percent Savings",
+			"description": "Subtotal operating cost percent savings"
+		},
+		"subtotal_operating_cost_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Operating Cost Savings",
+			"description": "Subtotal operating cost savings"
+		},
+		"subtotal_pieces": {
+			"type": "integer",
+			"title": "Subtotal Pieces",
+			"description": "Subtotal of the cargo pieces"
+		},
+		"subtotal_pieces_optimized": {
+			"type": "integer",
+			"title": "Subtotal Pieces Optimized",
+			"description": "Subtotal of the cargo pieces optimized"
+		},
+		"subtotal_pieces_percent_savings": {
+			"type": "integer",
+			"title": "Subtotal Pieces Percent Savings",
+			"description": "Subtotal pieces percent savings"
+		},
+		"subtotal_pieces_savings": {
+			"type": "integer",
+			"title": "Subtotal Pieces Savings",
+			"description": "Subtotal pieces savings"
+		},
+		"subtotal_revenue": {
+			"type": "integer",
+			"title": "Subtotal Revenue",
+			"description": "Subtotal of the revenue"
+		},
+		"subtotal_revenue_optimized": {
+			"type": "integer",
+			"title": "Subtotal Revenue Optimized",
+			"description": "Subtotal of the revenue optimized"
+		},
+		"subtotal_revenue_percent_savings": {
+			"type": "integer",
+			"title": "Subtotal Revenue Percent Savings",
+			"description": "Subtotal revenue percent savings"
+		},
+		"subtotal_revenue_savings": {
+			"type": "integer",
+			"title": "Subtotal Revenue Savings",
+			"description": "Subtotal revenue savings"
+		},
+		"subtotal_routes_count_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal Routes Count Percent Savings",
+			"description": "Subtotal routes count percent savings"
+		},
+		"subtotal_routes_count_savings": {
+			"type": "integer",
+			"title": "Subtotal Routes Count Savings",
+			"description": "Subtotal routes count savings"
+		},
+		"subtotal_stop_cost": {
+			"type": "integer",
+			"title": "Subtotal Stop Cost",
+			"description": "Subtotal of the stop cost"
+		},
+		"subtotal_stop_cost_optimized": {
+			"type": "integer",
+			"title": "Subtotal Stop Cost Optimized",
+			"description": "Subtotal of the stop cost optimized"
+		},
+		"subtotal_stop_cost_percent_savings": {
+			"type": "integer",
+			"title": "Subtotal Stop Cost Percent Savings",
+			"description": "Subtotal stop cost percent savings"
+		},
+		"subtotal_stop_cost_savings": {
+			"type": "integer",
+			"title": "Subtotal Stop Cost Savings",
+			"description": "Subtotal stop cost savings"
+		},
+		"subtotal_stops": {
+			"type": "integer",
+			"title": "Subtotal Stops",
+			"description": "Subtotal of the stops"
+		},
+		"subtotal_stops_optimized": {
+			"type": "integer",
+			"title": "Subtotal Stops Optimized",
+			"description": "Subtotal of the stops optimized"
+		},
+		"subtotal_stops_per_hour": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Stops Per Hour",
+			"description": "Subtotal of the stops per hour"
+		},
+		"subtotal_stops_per_hour_optimized": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Stops Per Hour Optimized",
+			"description": "Subtotal of the stops per hour optimized"
+		},
+		"subtotal_stops_per_hour_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Stops Per Hour Percent Savings",
+			"description": "Subtotal stops per hour percent savings"
+		},
+		"subtotal_stops_per_hour_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Stops Per Hour Savings",
+			"description": "Subtotal stops per hour savings"
+		},
+		"subtotal_stops_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal Stops Percent Savings",
+			"description": "Subtotal stops percent savings"
+		},
+		"subtotal_stops_savings": {
+			"type": "integer",
+			"title": "Subtotal Stops Savings",
+			"description": "Subtotal stops savings"
+		},
+		"subtotal_summary_title": {
+			"type": "string",
+			"title": "Scenario Summary Title",
+			"description": "The scenario summary title"
+		},
+		"subtotal_summary_title_optimized": {
+			"type": "string",
+			"title": "Scenario Summary Title Optimized",
+			"description": "The scenario summary title optimized"
+		},
+		"subtotal_vehicle_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Vehicle Costs",
+			"description": "Subtotal of the vehicle costs"
+		},
+		"subtotal_vehicle_costs_optimized": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Vehicle Costs Optimized",
+			"description": "Subtotal of the vehicle costs optimized"
+		},
+		"subtotal_vehicle_costs_percent_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Vehicle Costs Percent Savings",
+			"description": "Subtotal vehicle costs percent savings"
+		},
+		"subtotal_vehicle_costs_savings": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Vehicle Costs Savings",
+			"description": "Subtotal vehicle costs savings"
+		}
+	}
+}

@@ -1,0 +1,56 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Depots_depot.json",
+	"title": "Depot",
+	"description": "The JSON sub-schema for the depot",
+	"type": "object",
+	"properties": {
+		"depot": {
+			"type": "array",
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Geo_point.json"
+			}
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"algo_params": {
+					"type": "object",
+					"properties": {
+						"precision": {
+							"type": "number",
+							"title": "Precision",
+							"description": "The number precision"
+						}
+					}
+				},
+				"algo_name": {
+					"type": "string",
+					"title": "Algorithm Name",
+					"description": "The name of the algorithm"
+				},
+				"algo_id": {
+					"type": "string",
+					"title": "Algorithm ID",
+					"description": "Unique 32-char ID of an algorithm"
+				}
+			}
+		},
+		"polygon_hash": {
+			"type": "string",
+			"title": "Polygon Hash",
+			"description": "Polygon hash"
+		},
+		"detected_depot_id": {
+			"type": "integer",
+			"title": "Detected Depot ID",
+			"description": "Detected depot ID"
+		},
+		"polygon": {
+			"type": "array",
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Geo_point.json"
+			}
+		}
+	}
+}

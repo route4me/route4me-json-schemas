@@ -1,0 +1,47 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/System_algos_get_response.json",
+	"title": "Get System Algorithms",
+	"description": "Response for getting the system algorithms. Endpoint: https://api.route4me.com/api/v1/algos/",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"algo_id": {
+						"type": "string",
+						"title": "Algorithm ID",
+						"description": "Unique 32-char ID of an algorithm"
+					},
+					"algo_name": {
+						"type": "string",
+						"title": "Algorithm Name",
+						"description": "The name of the algorithm"
+					},
+					"algo_params": {
+						"type": "object",
+						"properties": {
+							"precision": {
+								"type": "number",
+								"title": "Precision",
+								"description": "The number precision"
+							}
+						}
+					},
+					"created_at": {
+						"type": "integer",
+						"title": "Created At",
+						"description": "When was created the algorithm"
+					},
+					"detection_type": {
+						"type": "integer",
+						"title": "Detection Type",
+						"description": "Detection Type"
+					}
+				}
+			}
+		}
+	}
+}

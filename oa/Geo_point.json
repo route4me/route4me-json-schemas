@@ -1,0 +1,23 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Geo_point.json",
+	"title": "Geographic Point",
+	"description": "Geographic point",
+	"type": "array",
+	"items": [
+		{
+			"type": "number",
+			"minimum": -180,
+			"maximum": 180,
+			"title": "Longitude",
+			"description": "Longitude"
+		},
+		{
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Latitude",
+			"description": "Latitude"
+		}
+	]
+}

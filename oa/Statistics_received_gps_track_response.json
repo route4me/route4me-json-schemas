@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Statistics_received_gps_track_response.json",
+	"title": "Response of GPS Tracks Statistics",
+	"description": "Response JSON schema for the GPS tracks statistics. Endpoint - https://api.route4me.com/api/v1/statistics/gps-track/received/count-grouped",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"time": {
+							"type": "string",
+							"title": "Time",
+							"description": "Time"
+						},
+						"counter": {
+							"type": "integer",
+							"title": "Counter",
+							"description": "Counter"
+						}
+					}
+					
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participants_list_response.json",
+	"title": "Resposne for Participants List",
+	"description": "Response for getting the participants list. Endpoint: https://api.route4me.com/api/v1/user/participants/plain",
+	"type": "object",
+	"properties": {
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"recordsTotal": {
+					"type": "integer",
+					"title": "Records Total",
+					"description": "Total number of the returned records"
+				}
+			}
+		},
+		"data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant.json"
+			},
+			"title": "Participants List",
+			"description": "Array of the objects User_participant"
+		}
+	}
+}

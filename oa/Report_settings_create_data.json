@@ -1,0 +1,23 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Report_settings_create_data.json",
+	"title": "Report Settings Payload",
+	"description": "JSON payload for creating of the report settings",
+	"type": "object",
+	"properties": {
+		"settings": {
+			"type": "object",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Report_settings.json"
+		},
+		"user_id": {
+			"type": "string",
+			"title": "User ID",
+			"description": "User ID"
+		},
+		"description": {
+			"type": "string",
+			"title": "Description",
+			"description": "Report description"
+		}
+	}
+}

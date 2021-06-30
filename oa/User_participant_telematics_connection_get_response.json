@@ -1,0 +1,25 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant_telematics_connection_get_response.json",
+	"title": "Response for Get Participant's Telematics Connection",
+	"description": "Response JSON schema for getting the telematics connection of a participant. Get. Endpoint: https://api.route4me.com/api/v1/user/participants/{participant_user_id}/telematics-connection/{telematic_connection_id}",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant_telematics_connection.json",
+			"title": "Participant's Teleamtics Connection Info",
+			"description": "Participant's teleamtics connection iInfo"
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"user_id": {
+					"type": "string",
+					"title": "User ID",
+					"description": "Participant's user ID"
+				}
+			}
+		}
+	}
+}

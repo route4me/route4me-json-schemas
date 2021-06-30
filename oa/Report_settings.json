@@ -1,0 +1,67 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Report_settings.json",
+	"title": "Report Settings",
+	"description": "The JSON sub-schema report settings",
+	"type": "object",
+	"properties": {
+		"cost_per_accident": {
+			"type": "integer",
+			"title": "Cost Per Accident",
+			"description": "Cost per accident"
+		},
+		"accidents_per_million_miles": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Accidents Per Million Miles",
+			"description": "Accidents per million miles"
+		},
+		"resource_base_pay": {
+			"type": "integer",
+			"title": "Resource Base Pay",
+			"description": "Resource base pay"
+		},
+		"service_time_per_hour": {
+			"type": "integer",
+			"title": "Service Time Per Hour",
+			"description": "Service time per hour"
+		},
+		"miles_per_gallon": {
+			"type": "integer",
+			"title": "Miles Per Gallon",
+			"description": "Miles per gallon"
+		},
+		"drive_time_per_hour": {
+			"type": "integer",
+			"title": "Drive Time Per Hour",
+			"description": "Drive time per hour"
+		},
+		"metric_tons_of_co2_per_mile": {
+			"type": "number",
+			"title": "Metric Tons Of CO2 Per Mile",
+			"description": "Metric tons of CO2 per mile"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Member ID"
+		},
+		"stop_cost": {
+			"type": "integer",
+			"title": "Stop Cost",
+			"description": "Stop cost"
+		},
+		"operating_cost_mile": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Operating Cost Mile",
+			"description": "Operating cost mile"
+		},
+		"gallon_fuel_cost": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Gallon fuel cost",
+			"description": "Gallon fuel cost"
+		}
+	}
+}

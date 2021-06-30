@@ -1,0 +1,89 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Telematics/Telematics_connection_response.json",
+	"title": "Telematics connection",
+	"description": "Parameters for getting telematics connections accounts. Endpoint - https://production-api-telematics.route4me.com/api/connections",
+	"type": "object",
+	"properties": {
+		"api_key": {
+			"type": "string",
+			"title": "Api key",
+			"description": "User api key"
+		},
+		"name": {
+			"type": "string",
+			"title": "Name",
+			"description": "Connection name"
+		},
+		"vendor": {
+			"type": "string",
+			"title": "Vendor",
+			"description": "Telematics vendor"
+		},
+		"host": {
+			"type": "string",
+			"title": "Host",
+			"description": "Telematics connection host"
+		},
+		"account_id": {
+			"type": "string",
+			"title": "Account ID",
+			"description": "Telematics account ID"
+		},
+		"username": {
+			"type": "string",
+			"title": "User Name",
+			"description": "Telematics provider user name"
+		},
+		"password": {
+			"type": "string",
+			"title": "Password",
+			"description": "Telematics connection password"
+		},
+		"connection_token": {
+			"type": "string",
+			"title": "Connection Token",
+			"description": "Telematics third party connection token"
+		},
+		"vendor_id": {
+			"type": "integer",
+			"title": "Vendor ID",
+			"description": "Telematics vendor ID"
+		},
+		"is_enabled": {
+			"type": "integer",
+			"title": "Is Enabled",
+			"description": "If eual to 1, connection is enabled"
+		},
+		"vehicle_position_refresh_rate": {
+			"type": "integer",
+			"title": "Vehicle Position Refresh Rate",
+			"description": "Refresh rate (per sec) of the vehicle position"
+		},
+		"max_idle_time": {
+			"type": "integer",
+			"title": "Maximum Idle Time",
+			"description": "Maximum idle time"
+		},
+		"synced_vehicles_count": {
+			"type": "integer",
+			"title": "Synced Vehicles Count",
+			"description": "Number of the synchronized vehicles"
+		},
+		"total_vehicles_count": {
+			"type": "integer",
+			"title": "Total Vehicles Count",
+			"description": "Total vehicles count"
+		},
+		"last_vehicles_reload": {
+			"type": "integer",
+			"title": "Last Vehicles Reload",
+			"description": "Last vehicles reload"
+		},
+		"last_position_reload": {
+			"type": "integer",
+			"title": "Last Position Reload",
+			"description": "Last position reload"
+		}
+	}
+}

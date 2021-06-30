@@ -1,0 +1,60 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Analysis_download_report_query.json",
+	"title": "Download Detailed Routes Analysis Reports",
+	"description": "Parameters for downloading analysis file (csv/xls/pdf). Endpoint - https://api.route4me.com/api/v1/analysis/download/report",
+	"required": ["from_ts","trim_ts","format","member_id"],
+	"type": "object",
+	"properties": {
+		"from_ts": {
+			"type": "integer",
+			"title": "From ts",
+			"description": "Start period timestamp, unix timestamp in seconds - GET."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original Api key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original Api key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"trim_ts": {
+			"type": "integer",
+			"title": "Trim ts",
+			"description": "End period timestamp, unix timestamp in seconds - GET."
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "User member_id you want to get - GET."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "Api key",
+			"description": "User api key. HTTP method - GET."
+		},
+		"format": {
+			"type": "string",
+			"title": "Format",
+			"description": "A report type, it can be csv, xls or pdf - GET."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X Api key",
+			"description": "Use API with API key without authorization - HEADER."
+		}
+	}
+}

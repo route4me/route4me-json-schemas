@@ -1,0 +1,54 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant_create_data.json",
+	"title": "Create Participant Payload",
+	"description": "JSON payload for creating a participant",
+	"type": "object",
+	"properties": {
+		"affiliate_user_id": {
+			"type": "string",
+			"title": "Affiliate User ID",
+			"description": "Affiliate user ID"
+		},
+		"phone_number": {
+			"type": "string",
+			"title": "Phone Number",
+			"description": "Phone number of the user"
+		},
+		"origin_r4m_member_id": {
+			"type": "integer",
+			"title": "Origin Route4Me Member ID",
+			"description": "Origin Route4Me member ID"
+		},
+		"website": {
+			"type": "string",
+			"title": "Website",
+			"description": "Website"
+		},
+		"last_name": {
+			"type": "string",
+			"title": "Last Name",
+			"description": "Last name"
+		},
+		"email": {
+			"type": "string",
+			"title": "Email",
+			"description": "Email"
+		},
+		"company_name": {
+			"type": "string",
+			"title": "Company Name",
+			"description": "User's company name"
+		},
+		"first_name": {
+			"type": "string",
+			"title": "First Name",
+			"description": "First name"
+		},
+		"password": {
+			"type": "string",
+			"title": "Password",
+			"description": "Password"
+		}
+	}
+}

@@ -1,0 +1,100 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Telematics/Telematics_vehicle_location.json",
+	"title": "Telematics Vehicle Location",
+	"description": "Vehicle location parameters returned by the endpoint - https://production-api-telematics.route4me.com/api/connections/{connection_token}/vehicles/locations",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"properties": {
+			"vehicle_id": {
+				"type": "string",
+				"title": "Vehicle ID",
+				"description": "Telematics connection's vehicle ID"
+			},
+			"EventDateTime": {
+				"type": "string",
+				"title": "Event DateTime",
+				"description": "When happened the event"
+			},
+			"speed": {
+				"type": "integer",
+				"title": "Speed",
+				"description": "Vehicle movement speed"
+			},
+			"Latitude": {
+				"type": "number",
+				"title": "Latitude",
+				"description": "Vehicle location latitude"
+			},
+			"Longitude": {
+				"type": "number",
+				"title": "Longitude",
+				"description": "Vehicle location longitude"
+			},
+			"custom_data": {
+				"type": "object",
+				"title": "Custom Data",
+				"description": "Vehicle custom data",
+				"properties": {
+					"bearing": {
+						"type": "integer",
+						"title": "Bearing",
+						"description": "Bearing"
+					},
+					"currentStateDuration": {
+						"type": "string",
+						"title": "Current State Duration",
+						"description": "Current state duration"
+					},
+					"exceptionEvents": {
+						"type": "array",
+						"items": {"type": "string"}
+					},
+					"isDeviceCommunicating": {
+						"type": "boolean",
+						"title": "Is Device Communicating",
+						"description": "Is device communicating"
+					},
+					"isDriving": {
+						"type": "boolean",
+						"title": "Is Driving",
+						"description": "Is driving"
+					},
+					"device": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "string",
+								"title": "ID",
+								"description": "Device ID"
+							}
+						}
+					},
+					"driver": {
+						"type": "string",
+						"title": "Driver",
+						"description": "Vehicle driver"
+					},
+					"groups": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"children": {
+									"type": "array",
+									"items": {"type": "string"}
+								},
+								"id": {
+									"type": "string",
+									"title": "ID",
+									"description": "Group ID"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

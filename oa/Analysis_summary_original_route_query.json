@@ -1,0 +1,80 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Analysis_summary_original_route_query.json",
+	"title": "Analysis Summary of the Planned Route",
+	"description": "Returns detailed analysis summary for Route planned in the Route4Me(or other system). Endpoint - https://api.route4me.com/api/v1/analysis/summary/{original_route_id",
+	"required": ["original_route_id","x-auth-token","auth_token","original_api_key","x-original-api-key"],
+	"type": "object",
+	"properties": {
+		"original_route_id": {
+			"type": "string",
+			"title": "Original Route ID",
+			"description": "Original Route ID - PATH."
+		},
+		"show_location_analysis_summary": {
+			"type": "integer",
+			"title": "Show Location Analysis Summary",
+			"description": "Include locations analysis summary to report - GET."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original Api key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "Api key",
+			"description": "Use API with API key without authorization. HTTP method - GET."
+		},
+		"show_business_summary": {
+			"type": "integer",
+			"title": "Show Buisiness Summary",
+			"description": "Include business summary to report - GET."
+		},
+		"show_savings": {
+			"type": "integer",
+			"title": "Show Savings",
+			"description": "Include savings to report- GET."
+		},
+		"show_detailed_routes_analysis": {
+			"type": "integer",
+			"title": "Show Detailed Routes Analysis",
+			"description": "Include detailed route analysis to report - GET."
+		},
+		"from_ts": {
+			"type": "integer",
+			"title": "From ts",
+			"description": "Start period timestamp, unix timestamp in seconds - GET."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original Api key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"trim_ts": {
+			"type": "integer",
+			"title": "Trim ts",
+			"description": "Include trim timestamp for analysis to report - GET."
+		},
+		"show_location_analysis": {
+			"type": "integer",
+			"title": "Show Location Analysis",
+			"description": "Include locations analysis to report- GET."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X Api key",
+			"description": "Use API with API key without authorization - GET."
+		}
+	}
+}

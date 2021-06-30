@@ -1,0 +1,49 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_affiliate_update_data.json",
+	"title": "Update Affiliate Payload",
+	"description": "JSON payload for updating an affiliate",
+	"type": "object",
+	"properties": {
+		"company_name": {
+			"type": "string",
+			"title": "Company Name",
+			"description": "User's company name"
+		},
+		"first_name": {
+			"type": "string",
+			"title": "First Name",
+			"description": "First name"
+		},
+		"password": {
+			"type": "string",
+			"title": "Password",
+			"description": "Password"
+		},
+		"last_name": {
+			"type": "string",
+			"title": "Last Name",
+			"description": "Last name"
+		},
+		"website": {
+			"type": "string",
+			"title": "Website",
+			"description": "Website"
+		},
+		"phone_number": {
+			"type": "string",
+			"title": "Phone Number",
+			"description": "Phone number of the user"
+		},
+		"email": {
+			"type": "string",
+			"title": "Email",
+			"description": "Email"
+		},
+		"is_active": {
+			"type": "boolean",
+			"title": "Is Active",
+			"description": "If true, the affiliate will be active"
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/OA_Vehicle_V4.json",
+	"title": "OA Vehicle",
+	"type": "object",
+	"description": "OA Vehicle object. Sub-schema",
+	"allOf": [ 
+		{"$ref": "https://github.com/route4me/json-schemas/blob/master/Vehicle_V4.json"},
+		{
+			"type": "object",
+			"properties": {
+				"route4me_telematics_internal_api_key": {
+					"type": [
+						"string",
+						"null"
+					],
+					"title": "Route4Me Telematics Internal API Key",
+					"descrption": "Route4Me telematics internal API key"
+				},
+				"r4m_telematics_gateway_vehicle_id": {
+					"type": [
+						"string",
+						"null"
+					],
+					"title": "Route4Me Telematics Gateway Vehicle ID",
+					"descrption": "Route4Me telematics gateway vehicle ID"
+				},
+				"r4m_telematics_gateway_connection_id": {
+					"type": [
+						"string",
+						"null"
+					],
+					"title": "Route4Me Telematics Gateway Connection ID",
+					"descrption": "Route4Me telematics gateway connection ID"
+				}
+			}
+		}
+	]
+}

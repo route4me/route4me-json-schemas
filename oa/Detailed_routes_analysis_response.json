@@ -1,0 +1,268 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Detailed_routes_analysis_response.json",
+	"title": "Detailed Routes Analysis",
+	"description": "The response parameters of the detailed routes analysis. Used by different endpoints",
+	"type": "object",
+	"properties": {
+		"scenario_name": {
+			"type": "string",
+			"title": "Scenario Name",
+			"description": "Scenario name"
+		},
+		"subtotal_labor_costs_formatted": {
+			"type": "string",
+			"title": "Subtotal labor cost formatted",
+			"description": "Subtotal labor cost formatted (e.g. '$11')"
+		},
+		"audit_data_link": {
+			"type": "object",
+			"properties": {
+				"url": {
+					"type": "string",
+					"title": "URL",
+					"description": "URL to the audit data"
+				},
+				"label": {
+					"type": "string",
+					"title": "Label",
+					"description": "The audit data label"
+				},
+				"title": {
+					"type": "string",
+					"title": "Title",
+					"description": "The audit data title"
+				},
+				"formats": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"url": {
+								"type": "string",
+								"title": "URL",
+								"description": "URL to the specific format of the audit data (xls, csv)"
+							},
+							"label": {
+								"type": "string",
+								"title": "Label",
+								"description": "The label of the specific format audit data (xls, csv)"
+							},
+							"title": {
+								"type": "string",
+								"title": "Title",
+								"description": "The title of the specific format audit data (xls, csv)"
+							},
+							"format": {
+								"type": "string",
+								"title": "Title",
+								"description": "The format of the current audit data (xls, csv)"
+							}
+						}
+					}
+				}
+			}
+		},
+		"subtotal_stops_per_hour": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Stops Per Hour",
+			"description": "Subtotal of the stops per hour"
+		},
+		"subtotal_labor_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Labor Costs",
+			"description": "Subtotal of the labor costs"
+		},
+		"is_eligible": {
+			"type": "boolean",
+			"title": "Is Eligible",
+			"description": "If true, the route is eigible"
+		},
+		"subtotal_drive_time": {
+			"type": "integer",
+			"title": "Subtotal Drive Time",
+			"description": "Subtotal of the driving time in EPOCH format"
+		},
+		"subtotal_vehicle_costs_formatted": {
+			"type": "string",
+			"title": "Subtotal Vehicle Costs Formatted",
+			"description": "Subtotal vehicle costs formatted (e.g. '$63')"
+		},
+		"subtotal_costs_formatted": {
+			"type": "string",
+			"title": "Subtotal Costs Formatted",
+			"description": "Subtotal costs formatted (e.g. '$63')"
+		},
+		"subtotal_stops": {
+			"type": "integer",
+			"title": "Subtotal Stops",
+			"description": "Subtotal of the stops"
+		},
+		"route_view_link": {
+			"type": "string",
+			"title": "Route View Link",
+			"description": "URL to the route view"
+		},
+		"subtotal_stops_formatted": {
+			"type": "integer",
+			"title": "Subtotal Stops Formatted",
+			"description": "Subtotal of the formatted stops (e.g. 4)"
+		},
+		"route_date_time": {
+			"type": "string",
+			"title": "Route Date Time",
+			"description": "Route date time (e.g. '06/18/2018 12:00')"
+		},
+		"route_id": {
+			"type": "string",
+			"title": "Route ID",
+			"description": "Route ID"
+		},
+		"confidence_formatted": {
+			"type": "string",
+			"title": "Confidence Formatted",
+			"description": "Confidence. Formatted (e.g. '83%')"
+		},
+		"subtotal_summary_title": {
+			"type": "string",
+			"title": "Subtotal Summary Title",
+			"description": "Subtotal summary title"
+		},
+		"subtotal_distance": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Distance",
+			"description": "Subtotal of the distance"
+		},
+		"scenario_label": {
+			"type": "string",
+			"title": "Scenario Label",
+			"description": "Scenario label"
+		},
+		"subtotal_vehicle_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Vehicle Costs",
+			"description": "Subtotal of the vehicle costs"
+		},
+		"confidence": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Confidence",
+			"description": "Confidence"
+		},
+		"subtotal_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Costs",
+			"description": "Subtotal of the costs"
+		},
+		"route_time": {
+			"type": "string",
+			"title": "Route Time",
+			"description": "Route time (e.g. '12:00')"
+		},
+		"is_eligible_formatted": {
+			"type": "boolean",
+			"title": "Is Eligible Formatted",
+			"description": "If true, the route is eigible formatted"
+		},
+		"subtotal_stops_per_hour_formatted": {
+			"type": "integer",
+			"title": "Subtotal Stops Per Hour Formatted",
+			"description": "Subtotal of the formatted stops per hour (e.g. 14)"
+		},
+		"subtotal_drive_time_formatted": {
+			"type": "string",
+			"title": "Subtotal Drive Time Formatted",
+			"description": "Subtotal drive time formatted (e.g. '17m')"
+		},
+		"route_date": {
+			"type": "string",
+			"title": "Route Date",
+			"description": "Route Date (e.g. '06/18/2018')"
+		},
+		"scenario_description": {
+			"type": "string",
+			"title": "Scenario Description",
+			"description": "Optimization scenario description"
+		},
+		"device": {
+			"type": "object",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_vehicle_info.json",
+			"description": "Device"
+		},
+		"subtotal_distance_formatted": {
+			"type": "string",
+			"title": "Subtotal Distance Formatted",
+			"description": "Subtotal distance formatted (e.g. '10 mi')"
+		},
+		"original_route_id": {
+			"type": "string",
+			"title": "Original Route ID",
+			"description": "Original route ID"
+		},
+		"analyzed_route_id": {
+			"type": "string",
+			"title": "Analyzed Route ID",
+			"description": "Analyzed route ID"
+		},
+		"savings": {
+			"type": "object",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Savings.json",
+			"description": "Savings of the scenario"
+		},
+		"subtotal_at_fault_accident_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal At Fault Accident Costs",
+			"description": "Subtotal at fault accident costs"
+		},
+		"subtotal_at_fault_accident_count": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal At Fault Accident Coount",
+			"description": "Subtotal at fault accident count"
+		},
+		"subtotal_emissions_ktonc02": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Emissions ktonc02",
+			"description": "Subtotal emissions ktonc02"
+		},
+		"subtotal_fuel": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Fuel",
+			"description": "Subtotal of the consumed fuel"
+		},
+		"subtotal_labor_time": {
+			"type": "integer",
+			"title": "Subtotal Labor Time",
+			"description": "Subtotal of the labor time in EPOCH format"
+		},
+		"subtotal_operating_cost": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Operating Costs",
+			"description": "Subtotal operating costs"
+		},
+		"subtotal_pieces": {
+			"type": "integer",
+			"title": "Subtotal Pieces",
+			"description": "Subtotal of the cargo pieces"
+		},
+		"subtotal_revenue": {
+			"type": "integer",
+			"title": "Subtotal Revenue",
+			"description": "Subtotal of the revenue"
+		},
+		"subtotal_stop_cost": {
+			"type": "integer",
+			"title": "Subtotal Stop Cost",
+			"description": "Subtotal of the stop cost"
+		}
+	}
+}

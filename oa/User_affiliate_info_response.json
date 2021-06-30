@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_affiliate_info_response.json",
+	"title": "Response for Affiliate Info",
+	"description": "Response JSON schema for returned affiliate info. Endpoint: https://api.route4me.com/api/v1/user/affiliates/{affiliate_id}",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_admin.json",
+			"title": "Affiliate Info",
+			"description": "Affiliate info"
+		}
+	}
+}

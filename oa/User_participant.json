@@ -1,0 +1,109 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant.json",
+	"title": "Participant",
+	"description": "JSON schema for a participant",
+	"type": "object",
+	"properties": {
+		"phone_number": {
+			"type": "string",
+			"title": "Phone Number",
+			"description": "Phone number of the user"
+		},
+		"website": {
+			"type": "string",
+			"title": "Website",
+			"description": "Website"
+		},
+		"original_r4m_api_key": {
+			"type": "string",
+			"title": "Original Route4Me API Key",
+			"description": "Original Route4Me API Key"
+		},
+		"email": {
+			"type": "string",
+			"title": "Email",
+			"description": "Email"
+		},
+		"company_name": {
+			"type": "string",
+			"title": "Company Name",
+			"description": "User's company name"
+		},
+		"first_name": {
+			"type": "string",
+			"title": "First Name",
+			"description": "First name"
+		},
+		"vendor_user_id": {
+			"type": "string",
+			"title": "Vendor User ID",
+			"description": "Vendor user ID"
+		},
+		"timezone": {
+			"type": "string",
+			"title": "Timezone",
+			"description": "Timezone (e.g. 'UTC')"
+		},
+		"vendor_company_name": {
+			"type": "string",
+			"title": "Vendor Company Name",
+			"description": "Vendor company name"
+		},
+		"locale": {
+			"type": "string",
+			"title": "Locale",
+			"description": "Locale code ('en', 'fr', etc)"
+		},
+		"origin_r4m_member_id": {
+			"type": "integer",
+			"title": "Original Route4Me Member ID",
+			"description": "Original Route4Me member ID"
+		},
+		"r4m_member_id": {
+			"type": "integer",
+			"title": "Route4Me Member ID",
+			"description": "Route4Me member ID"
+		},
+		"user_id": {
+			"type": "string",
+			"title": "User ID",
+			"description": "User ID"
+		},
+		"last_name": {
+			"type": "string",
+			"title": "Last Name",
+			"description": "Last name"
+		},
+		"vendor_id": {
+			"type": "string",
+			"title": "Vendor ID",
+			"description": "Vendor ID"
+		},
+		"measurement": {
+			"type": "integer",
+			"title": "Measurement",
+			"description": "Measurement"
+		},
+		"r4m_api_key": {
+			"type": "string",
+			"title": "Route4Me API Key",
+			"description": "Route4Me API Key"
+		},
+		"affiliate_user_id": {
+			"type": "string",
+			"title": "Affiliate User ID",
+			"description": "Affiliate user ID"
+		},
+		"affiliate_email": {
+			"type": "string",
+			"title": "Affiliate Email",
+			"description": "Affiliate email"
+		},
+		"affiliate_company_name": {
+			"type": "string",
+			"title": "Affiliate Company Name",
+			"description": "Affiliate company name"
+		}
+	}
+}

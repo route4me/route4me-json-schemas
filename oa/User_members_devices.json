@@ -1,0 +1,89 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_members_devices.json",
+	"title": "Members Devices",
+	"description": "Returns json with all devices for current user. Endpoint - https://api.route4me.com/api/v1/user/members/devices",
+	"type": "object",
+	"properties": {
+		"created_time_from_ts": {
+			"type": "integer",
+			"title": "Created Time from_ts",
+			"description": "Start period timestamp for created_time, unix timestamp in seconds"
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original API Key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "User member_id you want to get"
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
+		},
+		"created_time_trim_ts": {
+			"type": "integer",
+			"title": "Created Time trim_ts",
+			"description": "End period timestamp for created_time, unix timestamp in seconds"
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original API Key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"limit": {
+			"type": "integer",
+			"title": "Limit",
+			"description": "Limit the number of records in response"
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API Key",
+			"description": "Use API with API key without authorization - GET."
+		},
+		"last_moved_at_from_ts": {
+			"type": "integer",
+			"title": "Last Moved At from_ts",
+			"description": "Start period timestamp for last_moved_at, unix timestamp in seconds"
+		},
+		"last_position_received_trim_ts": {
+			"type": "integer",
+			"title": "Last Position Received trim_ts",
+			"description": "End period timestamp for last_position_received, unix timestamp in seconds"
+		},
+		"offset": {
+			"type": "integer",
+			"title": "Offset",
+			"description": "Only records from that offset will be considered"
+		},
+		"last_moved_at_trim_ts": {
+			"type": "integer",
+			"title": "Last Moved At trim_ts",
+			"description": "End period timestamp for last_moved_at, unix timestamp in seconds"
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X API Key",
+			"description": "Use API with API key without authorization - HEADER."
+		},
+		"last_position_received_from_ts": {
+			"type": "integer",
+			"title": "Last Position Received from_ts",
+			"description": "Start period timestamp for last_position_received, unix timestamp in seconds"
+		},
+		"search": {
+			"type": "string",
+			"title": "Search",
+			"description": "Filter devices by string from vehicle_alias or external_id"
+		}
+	}
+}

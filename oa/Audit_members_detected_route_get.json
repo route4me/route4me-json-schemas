@@ -1,0 +1,59 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Audit_members_detected_route_get.json",
+	"title": "Get a Detected Route",
+	"description": "Returns info for requested route by its id. Endpoint - https://api.route4me.com/api/v1/audit/members/{r4m_member_id}/detected-routes/{internal_route_id}",
+	"type": "object",
+	"properties": {
+		"internal_route_id": {
+			"type": "integer",
+			"title": "Internal Route ID",
+			"description": "Internal Route ID - PATH."
+		},
+		"r4m_member_id": {
+			"type": "integer",
+			"title": "Route4Me Member ID",
+			"description": "Member's id for which will be returned info - PATH."
+		},
+		"x-original-api-key": {
+			"type": "string",
+			"title": "X Original Api key",
+			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."
+		},
+		"original_api_key": {
+			"type": "string",
+			"title": "Original Api key",
+			"description": "Authorization by Route4Me key, for Route4Me users - GET."
+		},
+		"auth_token": {
+			"type": "string",
+			"title": "Authentication Token",
+			"description": "Authorization token that will be given after signing in - GET."
+		},
+		"api_key": {
+			"type": "string",
+			"title": "API key",
+			"description": "Use API with API key without authorization - GET."
+		},
+		"timestamp_from": {
+			"type": "integer",
+			"title": "Timestamp From",
+			"description": "Period start timestamp - GET."
+		},
+		"x-auth-token": {
+			"type": "string",
+			"title": "X Authentication Token",
+			"description": "Authorization token that will be given after signing in - HEADER."
+		},
+		"x-api-key": {
+			"type": "string",
+			"title": "X Api key",
+			"description": "Use API with API key without authorization - HEADER."
+		},
+		"timestamp_to": {
+			"type": "integer",
+			"title": "Timestamp To",
+			"description": "Period end timestamp - GET."
+		}
+	}
+}

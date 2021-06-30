@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant_get_response.json",
+	"title": "Get Participant Response",
+	"description": "Response for getting a participant. Endpoint: https://api.route4me.com/api/v1/user/participants/{participant_id}",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "object",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_participant.json",
+			"title": "Participant",
+			"description": "User Participant"
+		}
+	}
+}

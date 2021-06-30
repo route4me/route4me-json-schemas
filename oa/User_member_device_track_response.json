@@ -1,0 +1,10 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_member_device_track_response.json",
+	"title": "Member Device Track Resposne",
+	"description": "Response for the device track. Endpoint: https://api.route4me.com/api/v1/user/members/devices/{device_id}/track",
+	"type": "array",
+	"items": {
+		"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Track_point.json"
+	}
+}

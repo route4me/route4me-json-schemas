@@ -1,0 +1,199 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Optimization_scenario.json",
+	"title": "Optimization Scenario",
+	"description": "The optimization scenario. Used by different Endpoints",
+	"type": "object",
+	"properties": {
+		"scenario_description": {
+			"type": "string",
+			"title": "Scenario Description",
+			"description": "Description of the scenario"
+		},
+		"subtotal_distance_formatted": {
+			"type": "string",
+			"title": "Subtotal Distance Formatted",
+			"description": "Subtotal distance formatted (e.g. '23.8K mi')"
+		},
+		"device_count_formatted": {
+			"type": "integer",
+			"title": "Device Count Formatted",
+			"description": "Device count formatted"
+		},
+		"subtotal_emissions_ktonc02_formatted": {
+			"type": "string",
+			"title": "Subtotal Emissions ktonc02 Formatted",
+			"description": "Subtotal emissions ktonc02 formatted (e.g. '216')"
+		},
+		"subtotal_labor_time_formatted": {
+			"type": "string",
+			"title": "Subtotal Labor Time Formatted",
+			"description": "Subtotal labor time formatted (e.g. '30 days')"
+		},
+		"scenario_label": {
+			"type": "string",
+			"title": "Scenario Label",
+			"description": "The label of the scenario"
+		},
+		"subtotal_vehicle_costs_formatted": {
+			"type": "string",
+			"title": "Subtotal Vehicle Costs Formatted",
+			"description": "Subtotal vehicle costs formatted (e.g. '$28.6K')"
+		},
+		"subtotal_costs_formatted": {
+			"type": "string",
+			"title": "Subtotal Costs Formatted",
+			"description": "Subtotal costs formatted (e.g. '$94.8K')"
+		},
+		"subtotal_at_fault_accident_count_formatted": {
+			"type": "integer",
+			"title": "Subtotal At Fault Accident Count Formatted",
+			"description": "Subtotal at fault accident count formatted (e.g. '0')"
+		},
+		"subtotal_at_fault_accident_costs_formatted": {
+			"type": "string",
+			"title": "Subtotal At Fault Accident Costs Formatted",
+			"description": "Subtotal at fault accident costs formatted (e.g. '$0')"
+		},
+		"device_count": {
+			"type": "integer",
+			"title": "Device count",
+			"description": "Device count (e.g. 47)"
+		},
+		"scenario_name": {
+			"type": "string",
+			"title": "Scenario Name",
+			"description": "Scenario name"
+		},
+		"scenario_sum_avg_confidence": {
+			"type": "number",
+			"title": "Scenario sum avg confidence",
+			"description": "Scenario sum avg confidence (e.g.  0.7663)"
+		},
+		"subtotal_at_fault_accident_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal at fault accident_costs",
+			"description": "Subtotal at fault accident_costs"
+		},
+		"subtotal_drive_time_formatted": {
+			"type": "string",
+			"title": "Subtotal Drive Time Formatted",
+			"description": "Subtotal drive time formatted (e.g.  '28d 14h 53m')"
+		},
+		"subtotal_at_fault_accident_count": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal At Fault Accident Count",
+			"description": "Subtotal at fault accident count"
+		},
+		"subtotal_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Costs",
+			"description": "Subtotal of the costs"
+		},
+		"subtotal_distance": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Distance",
+			"description": "Subtotal of the distance"
+		},
+		"scenario_sum_avg_confidence_formatted": {
+			"type": "string",
+			"title": "Scenario Sum Average Confidence Formatted",
+			"description": "Scenario sum average confidence formatted (e.g.  '77%')"
+		},
+		"subtotal_drive_time": {
+			"type": "integer",
+			"title": "Subtotal Drive Time",
+			"description": "Subtotal of the driving time"
+		},
+		"subtotal_emissions_ktonc02": {
+			"type": "number",
+			"multipleOf": 0.1,
+			"title": "Subtotal Emissions ktonc02",
+			"description": "Subtotal of the emissions ktonc02"
+		},
+		"subtotal_labor_costs_formatted": {
+			"type": "string",
+			"title": "Subtotal Labor Costs Formatted",
+			"description": "Subtotal labor costs formatted (e.g.  '$14.3K')"
+		},
+		"subtotal_fuel": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Fuel",
+			"description": "Subtotal of the fuel comsumption"
+		},
+		"subtotal_stops_costs_formatted": {
+			"type": "string",
+			"title": "Subtotal Stops Costs Formatted",
+			"description": "Subtotal stops costs formatted (e.g.  '$51.9K')"
+		},
+		"subtotal_fuel_formatted": {
+			"type": "string",
+			"title": "Subtotal Fuel Formatted",
+			"description": "Subtotal fuel formatted (e.g.  '10.3K')"
+		},
+		"subtotal_labor_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Labor Costs",
+			"description": "Subtotal of the labor costs"
+		},
+		"subtotal_labor_time": {
+			"type": "integer",
+			"title": "Subtotal Labor Time",
+			"description": "Subtotal of the labor time"
+		},
+		"subtotal_operating_cost": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Operating Costs",
+			"description": "Subtotal of the operating costs"
+		},
+		"subtotal_pieces": {
+			"type": "integer",
+			"title": "Subtotal Pieces",
+			"description": "Subtotal of the cargo pieces"
+		},
+		"subtotal_revenue": {
+			"type": "integer",
+			"title": "Subtotal Revenue",
+			"description": "Subtotal of the revenue"
+		},
+		"subtotal_routes_count": {
+			"type": "integer",
+			"title": "Subtotal Routes Count",
+			"description": "Subtotal of the routes count"
+		},
+		"subtotal_stops_costs": {
+			"type": "integer",
+			"title": "Subtotal Stops Costs",
+			"description": "Subtotal of the stops costs"
+		},
+		"subtotal_stops": {
+			"type": "integer",
+			"title": "Subtotal Stops",
+			"description": "Subtotal of the stops"
+		},
+		"subtotal_stops_per_hour": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Stops Per Hour",
+			"description": "Subtotal of the stops per hour"
+		},
+		"subtotal_summary_title": {
+			"type": "string",
+			"title": "Scenario Summary Title",
+			"description": "The scenario summary title"
+		},
+		"subtotal_vehicle_costs": {
+			"type": "number",
+			"multipleOf": 0.01,
+			"title": "Subtotal Vehicle Costs",
+			"description": "Subtotal of the vehicle costs"
+		}
+	}
+}

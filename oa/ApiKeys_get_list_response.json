@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/ApiKeys_get_list_response.json",
+	"title": "Get API Keys List Response",
+	"description": "Response JSON schema for getting the API keys list. Endpoint - https://api.route4me.com/api/v1/api_keys",
+	"type": "object",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/Apikeys_apikey.json"
+			}	
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"limit": {
+					"type": "integer",
+					"title": "Limit",
+					"description": "Number of participants to request"
+				},
+				"offset": {
+					"type": "integer",
+					"title": "Offset",
+					"description": "Offset to request number of participants"
+				}
+			}
+		}
+	}
+}

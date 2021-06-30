@@ -1,0 +1,79 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/RD_proxy_savings.json",
+	"title": "RD proxy Savings",
+	"description": "The response parameters of the RD proxy savings. Sub-schema",
+	"type": "object",
+	"properties": {
+		"costs_formatted": {
+			"type": "string",
+			"title": "Costs Formatted",
+			"description": "Formatted value of the costs (e.g. '$0.2')"
+		},
+		"costs_percent_formatted": {
+			"type": "string",
+			"title": "Costs Percent Formatted",
+			"description": "Formatted value of the costs percent (e.g. '1%')"
+		},
+		"time_formatted": {
+			"type": "string",
+			"title": "Time Formatted",
+			"description": "Formatted value of the time (e.g. '13 seconds')"
+		},
+		"costs_percent": {
+			"type": "number",
+			"title": "Costs Percent",
+			"description": "Costs percent (e.g 0.0065640825)"
+		},
+		"description": {
+			"type": "string",
+			"title": "Description",
+			"description": "Description of the savings"
+		},
+		"distance": {
+			"type": "number",
+			"title": "Distance",
+			"description": "Distance"
+		},
+		"time": {
+			"type": "integer",
+			"title": "Time",
+			"description": "Time"
+		},
+		"costs": {
+			"type": "number",
+			"title": "Costs",
+			"description": "Costs"
+		},
+		"distance_formatted": {
+			"type": "string",
+			"title": "Distance Formatted",
+			"description": "Formatted value of the distance (e.g. '0.1 mi')"
+		},
+		"distance_percent": {
+			"type": "number",
+			"title": "Distance Percent",
+			"description": "Distance percent (e.g 0.0920856147)"
+		},
+		"algorithm_type": {
+			"type": "integer",
+			"title": "Algorithm Type",
+			"description": "Algorithm type"
+		},
+		"label": {
+			"type": "string",
+			"title": "Label",
+			"description": "The export label"
+		},
+		"distance_percent_formatted": {
+			"type": "string",
+			"title": "Distance Percent Formatted",
+			"description": "Formatted value of the distance percent (e.g. '9%')"
+		},
+		"time_percent_formatted": {
+			"type": "string",
+			"title": "Time Percent Formatted",
+			"description": "Formatted value of the time percent (e.g. '6%')"
+		}
+	}
+}

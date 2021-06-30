@@ -1,0 +1,51 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/User_member_device_stop_error_response.json",
+	"title": "Member Devices Stop Error Resposne",
+	"description": "Returns json of stop from device by it's timestamp in case of the failure. Get. Endpoint: https://api.route4me.com/api/v1/user/members/devices/{device_id}/stops/{stop_timestamp}",
+	"type": "object",
+	"properties": {
+		"method": {
+			"type": "string",
+			"title": "Method",
+			"description": "HTTP method"
+		},
+		"url": {
+			"type": "string",
+			"title": "URL",
+			"description": "url address"
+		},
+		"message": {
+			"type": "string",
+			"title": "Message",
+			"description": "Message"
+		},
+		"error": {
+			"type": "string",
+			"title": "Error",
+			"description": "Error text"
+		},
+		"code": {
+			"type": "string",
+			"title": "Code",
+			"description": "Code"
+		},
+		"details": {
+			"type": "object",
+			"properties": {
+				"stop_timestamp": {
+					"type": "string",
+					"title": "Stop Timestamp",
+					"description": "Stop timestamp"
+				},
+				"device_id": {
+					"type": "string",
+					"title": "Device ID",
+					"description": "Device ID"
+				}
+			},
+			"title": "Details",
+			"description": "Details"
+		}
+	}
+}

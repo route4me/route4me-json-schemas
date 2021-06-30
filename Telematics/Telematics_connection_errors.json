@@ -1,0 +1,61 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Telematics/Telematics_connection_errors.json",
+	"title": "Telematics connection_errors",
+	"description": "Parameters returned at failed telematics connection attempt. Endpoint - https://production-api-telematics.route4me.com/api/errors",
+	"type": "object",
+	"properties": {
+		
+		"current_page": {
+			"type": "integer",
+			"title": "Current Page",
+			"description": "Current page"
+		},
+		"data": {
+			"type": "array",
+			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Telematics/Telematics_connection_error.json"},
+			"title": "Data",
+			"description": "Array of the connection error pages"
+		},
+		"from": {
+			"type": "integer",
+			"title": "Start Page",
+			"description": "Start page"
+		},
+		"last_page": {
+			"type": "integer",
+			"title": "Last Page",
+			"description": "Last page"
+		},
+		"next_page_url": {
+			"type": "string",
+			"title": "Next Page URL",
+			"description": "Next page URL"
+		},
+		"path": {
+			"type": "string",
+			"title": "Path",
+			"description": "The link to the errors endpoint"
+		},
+		"per_page": {
+			"type": "integer",
+			"title": "Per Page",
+			"description": "Per page"
+		},
+		"prev_page_url": {
+			"type": "string",
+			"title": "Previous Page URL",
+			"description": "Previous page URL"
+		},
+		"to": {
+			"type": "integer",
+			"title": "To",
+			"description": "To (last page?)"
+		},
+		"total": {
+			"type": "integer",
+			"title": "Total",
+			"description": "Total connection errorss"
+		}
+	}
+}
