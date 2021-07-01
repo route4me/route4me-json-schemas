@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Addressbook_v4_search_response.json",
 	"title": "Addressbook v4 Search Response",
 	"type": "object",
 	"properties": {

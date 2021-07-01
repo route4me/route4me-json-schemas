@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Addressbook_v4.json",
 	"title": "Addressbook v4",
 	"type": "object",
 	"required": [
@@ -157,18 +155,18 @@
 					"enabled": {
 						"type": "boolean",
 						"title": "Enabled",
-						"descripton": "If true, a location schedule is enabled during construction of a hybrid optimization"
+						"description": "If true, a location schedule is enabled during construction of a hybrid optimization"
 					},
 					"from": {
 						"type": "string",
 						"title":"From",
-						"Description": "When schedule will be started from"
+						"description": "When schedule will be started from"
 					},
 					"mode": {
 						"type": "string",
 						"enum": ["daily", "weekly", "monthly", "annually"],
 						"title":"Mode",
-						"Description": "Schedule mode"
+						"description": "Schedule mode"
 					},
 					"daily": {
 						"type": "object",
@@ -296,7 +294,7 @@
 					}
 				}
 			}
-			
+
 		},
 		"schedule_blacklist": {
 			"type": "array",
@@ -398,7 +396,7 @@
 		"is_assigned": {
 			"type": "boolean",
 			"title": "Is Assigned",
-			"descripton": "If true, a location assigned to a route."
+			"description": "If true, a location assigned to a route."
 		}
 	}
 }

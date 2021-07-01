@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Address_bundling.json",
 	"type": "object",
 	"title": "Address Bundling",
 	"properties": {
@@ -41,8 +39,8 @@
 				"additional_items_mode_params": {
 					"type": "array",
 					"items": {"type": "integer"},
-					"title": "Additional Items Mode Parametrs",
-					"description": If additional_items_mode=2, contains list of the custom times (EPOCH format)"
+					"title": "Additional Items Mode Parameters",
+					"description": "If additional_items_mode=2, contains list of the custom times (EPOCH format)"
 				}
 			}
 		}

@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/note_custom_type.json",
 	"type": "object",
 	"title": "Note Custom Type",
 	"description": "The included part of the property of the route destination response <notes>",

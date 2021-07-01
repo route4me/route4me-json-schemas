@@ -1,46 +1,34 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/DataObjectRoute.json",
 	"title": "DataObjectRoute",
 	"type": "object",
 	"properties": {
 		"route_id": {
-			"type": [
-				"string"
-			],
+			"type": "string",
 			"title": "Route ID",
-			"descrption": "Route unique identifier"
+			"description": "Route unique identifier"
 		},
 		"member_id": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Member ID",
-			"descrption": "User ID who is assigned to the route"
+			"description": "User ID who is assigned to the route"
 		},
 		"member_email": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Member Email",
 			"format": "email",
-			"descrption": "User email"
+			"description": "User email"
 		},
 		"member_picture":{
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Member Picture",
 			"description": "URL to a member picture"
 		},
 		"member_tracking_subheadline" : {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Member Tracking Subheadline",
 			"description": "Member tracking subheadline"
 		},
@@ -50,84 +38,64 @@
 			"description": "The route approved for execution"
 		},
 		"vehicle_alias": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle Alias",
-			"descrption": "Name of vehicle_id"
+			"description": "Name of vehicle_id"
 		},
 		"driver_alias": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Driver Alias",
-			"descrption": "Name of driver_id"
+			"description": "Name of driver_id"
 		},
 		"route_cost": {
-			"type": [
-				"number",
-				"null"
-			],
+			"type": "number",
+			"nullable": true,
 			"title": "Route Cost",
-			"descrption": "Route cost"
+			"description": "Route cost"
 		},
 		"route_revenue": {
-			"type": [
-				"number",
-				"null"
-			],
+			"type": "number",
+			"nullable": true,
 			"title": "Route Revenue",
-			"descrption": "Route revenue"
+			"description": "Route revenue"
 		},
 		"net_revenue_per_distance_unit": {
-			"type": [
-				"number",
-				"null"
-			],
+			"type": "number",
+			"nullable": true,
 			"title": "Net Revenue per Distance Unit",
-			"descrption": "equal to (Revenue - cost) / distance units"
+			"description": "equal to (Revenue - cost) / distance units"
 		},
 		"created_timestamp": {
-			"type": [
-				"integer",
-				"null"
-			],
+			"type": "integer",
+			"nullable": true,
 			"title": "Created Timestamp",
-			"descrption": "When was the route created"
+			"description": "When was the route created"
 		},
 		"mpg": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Miles per Gallon",
-			"descrption": "Miles per gallon (used to compute fuel consumption)"
+			"description": "Miles per gallon (used to compute fuel consumption)"
 		},
 		"trip_distance": {
-			"type": [
-				"number",
-				"null"
-			],
+			"type": "number",
+			"nullable": true,
 			"title": "Trip Distance",
-			"descrption": "Route length (the unit is given by distance_unit)"
+			"description": "Route length (the unit is given by distance_unit)"
 		},
 		"gas_price": {
-			"type": [
-				"number",
-				"null"
-			],
+			"type": "number",
+			"nullable": true,
 			"title": "Gas Price",
-			"descrption": "Price of gas (used to compute route costs)"
+			"description": "Price of gas (used to compute route costs)"
 		},
 		"route_duration_sec": {
-			"type": [
-				"integer",
-				"null"
-			],
+			"type": "integer",
+			"nullable": true,
 			"title": "Route Duration (sec)",
-			"descrption": "Estimated drive time of route (Seconds)"
+			"description": "Estimated drive time of route (Seconds)"
 		}
 	},
 	"required": [

@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Territory_response.json",
 	"title": "Territory Response",
 	"description": "Json schema for an Territory class, which is response from territory endpoints. For detailed usage see curl Territory group",
 	"type": "object",
@@ -26,14 +24,16 @@
 			"description": "Territory color"
 		},
 		"addresses": {
-			"type": ["array", "null"],
+			"type": "array",
+			"nullable": true,
 			"items": {
 				"type": "integer",
 				"description": "An address IDs enclosed in the territory"
 			}
 		},
 		"orders": {
-			"type": ["array", "null"],
+			"type": "array",
+			"nullable": true,
 			"items": {
 				"type": "integer",
 				"description": "An order IDs enclosed in the territory"

@@ -1,7 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Analytics.json",
-    "title": "Analytics",
+   	"title": "Analytics",
     "description": "JSON schema for the query response from the endpoint - https://api.route4me.com/datafeed/account_analytics.php",
     "type": "object",
     "properties": {

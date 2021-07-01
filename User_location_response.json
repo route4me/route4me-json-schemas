@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/User_location_response.json",
 	"title": "User Location Response",
 	"type": "object",
 	"description": "End point: https://api.route4me.com/api/track/view_user_locations.php",
@@ -14,7 +12,7 @@
 					"member_id": {
 						"type": "integer",
 						"title": "Member ID",
-						"descrpition": "Member ID"
+						"description": "Member ID"
 					},
 					"member_first_name": {
 						"type": "string",
@@ -156,7 +154,7 @@
 					"member_id": {
 						"type": "integer",
 						"title": "Member ID",
-						"descrpition": "Member ID"
+						"description": "Member ID"
 					},
 					"activity_timestamp_friendly": {
 						"type": "string",

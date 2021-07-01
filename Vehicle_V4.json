@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Vehicle_V4.json",
 	"title": "Vehicle",
 	"type": "object",
 	"required": [
@@ -11,12 +9,12 @@
 		"vehicle_id": {
 			"type": "string",
 			"title": "Vehicle id",
-			"descrption": "A unique identifcation 32-char string of the vehicle"
+			"description": "A unique identification 32-char string of the vehicle"
 		},
 		"member_id": {
 			"type": "integer",
 			"title": "Member id",
-			"descrption": "An unique identification number of the member"
+			"description": "An unique identification number of the member"
 		},
 		"is_deleted": {
 			"type": "boolean",
@@ -26,82 +24,95 @@
 		"vehicle_alias": {
 			"type": "string",
 			"title": "Vehicle alias",
-			"descrption": "Internal name of the vehicle"
+			"description": "Internal name of the vehicle"
 		},
 		"vehicle_vin": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"maxLength": 17,
 			"title": "Vehicle VIN",
-			"descrption": "Vehicle VIN number"
+			"description": "Vehicle VIN number"
 		},
 		"vehicle_reg_state_id": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle registration state ID",
-			"descrption": "An ID of the state, where vehicle was registered"
+			"description": "An ID of the state, where vehicle was registered"
 		},
 		"vehicle_reg_country_id": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle registration country ID",
-			"descrption": "An ID of the country, where vehicle was registered"
+			"description": "An ID of the country, where vehicle was registered"
 		},
 		"vehicle_license_plate": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle License Plate",
-			"descrption": "A license plate of the vehicle"
+			"description": "A license plate of the vehicle"
 		},
 		"vehicle_type_id": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"enum": ["sedan", "suv", "pickup_truck", "van", "18wheeler", "cabin", "hatchback", "motorcyle", "waste_disposal", "tree_cutting", "bigrig", "cement_mixer", "livestock_carrier", "dairy","tractor_trailer"],
 			"title": "Vehicle Type ID",
-			"descrption": "Vehicle type"
+			"description": "Vehicle type"
 		},
 		"timestamp_added": {
 			"type": "string",
 			"title": "Timestamp Added",
-			"descrption": "When the vehicle was added"
+			"description": "When the vehicle was added"
 		},
 		"vehicle_make": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"enum": ["american coleman", "bmw", "chevrolet", "ford", "freightliner", "gmc", "hino", "honda", "isuzu", "kenworth", "mack", "mercedes-benz", "mitsubishi", "navistar", "nissan", "peterbilt", "renault", "scania", "sterling", "toyota", "volvo", "western star"],
 			"title": "Vehicle Make",
-			"descrption": "Vehicle maker brend"
+			"description": "Vehicle maker brand"
 		},
 		"vehicle_model_year": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Vehicle Model Year",
-			"descrption": "A year of the vehicle model"
+			"description": "A year of the vehicle model"
 		},
 		"vehicle_model": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle Model",
-			"descrption": "A model of the vehicle"
+			"description": "A model of the vehicle"
 		},
 		"vehicle_year_acquired": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Vehicle Acquired Year",
-			"descrption": "A year the vehicle was acquired"
+			"description": "A year the vehicle was acquired"
 		},
 		"vehicle_cost_new": {
-			"type": ["number", "null"],
+			"type": "number",
+			"nullable": true,
 			"title": "Vehicle Cost New",
-			"descrption": "A cost of the new vehicle"
+			"description": "A cost of the new vehicle"
 		},
 		"purchased_new": {
-			"type": ["boolean", "null"],
+			"type": "boolean",
+			"nullable": true,
 			"title": "Purchased New",
 			"description": "If true, the vehicle was purchased new"
 		},
 		"license_start_date": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"format": "date-time",
 			"title": "License Start Date",
-			"descrption": "A start date of the license"
+			"description": "A start date of the license"
 		},
 		"license_end_date": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"format": "date-time",
 			"title": "License End Date",
-			"descrption": "An end date of the license"
+			"description": "An end date of the license"
 		},
 		"is_operational": {
 			"type": "boolean",
@@ -109,20 +120,22 @@
 			"description": "If true, the vehicle is operational"
 		},
 		"fuel_type": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"enum": ["unleaded 87", "unleaded 89", "unleaded 91", "unleaded 93", "diesel", "electric", "hybrid"],
 			"title": "Fuel Type",
-			"descrption": "A type of the fuel"
+			"description": "A type of the fuel"
 		},
 		"external_telematics_vehicle_id": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "External Telematics Vehicle ID",
-			"descrption": "External telematics vehicle ID"
+			"description": "External telematics vehicle ID"
 		},
 		"timestamp_removed": {
 			"type": "string",
 			"title": "Timestamp Removed",
-			"descrption": "When he vehicle was removed"
+			"description": "When the vehicle was removed"
 		}
 	}
 }

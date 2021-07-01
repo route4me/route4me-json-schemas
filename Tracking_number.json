@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Tracking_number.json",
 	"title": "Tracking Number",
 	"type": "object",
 	"description": "Tracking numbers are numbers given to packages when they are shipped",
@@ -88,7 +86,7 @@
 						"items": {
 							"type": "integer"
 						},
-						"description": "A icon's acnhor position"
+						"description": "A icon's anchor position"
 					},
 					"popupAnchor": {
 						"type": "array",
@@ -109,7 +107,7 @@
 						},
 						"name": "custom_data",
 						"title": "Custom Data",
-						"description": "Unclasified data of a Tracking_number object"
+						"description": "Unclassified data of a Tracking_number object"
 					},
 					"time_windows": {
 						"type": "array",

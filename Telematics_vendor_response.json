@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Telematics_vendor_response.json",
 	"title": "Telematics vendor",
 	"description": "Json schema for a Telematics vendor response object. For detailed usage see curl Telematics group",
 	"type": "object",
@@ -41,7 +39,8 @@
 			"description": "Website URL of a vendor"
 		},
 		"api_docs_url": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "API documentation URL",
 			"description": "URL to a vendor's API documentation."
 		},

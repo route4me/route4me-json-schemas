@@ -1,8 +1,6 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Activities_response.json",
     "title": "Activity Response",
-	"description": "Json schema for the response (query) from the endpoint: https://api.route4me.com/api/get_activities.php",
+	  "description": "Json schema for the response (query) from the endpoint: https://api.route4me.com/api/get_activities.php",
     "type": "object",
     "properties": {
 	    "results": {

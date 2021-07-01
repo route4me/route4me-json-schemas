@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Route.json",
 	"type": "object",
 	"title": "Route",
 	"properties": {
@@ -15,7 +13,8 @@
 			"description": "Optimization which generated this route"
 		},
 		"user_route_rating": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"enum": [0, 1, 2, 3, 4, 5 ],
 			"title": "User Route Rating",
 			"description": "User route rating [0, 5]. A null value means no rating was given. Users can rate routes so that future optimizations take these ratings into account."
@@ -31,14 +30,16 @@
 			"description": "Member email"
 		},
 		"member_picture":{
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Member Picture",
 			"description": "URL to a member picture"
 		},
 		"member_tracking_subheadline" : {
-			"type": ["string", "null"],
-			"title": "Member Trtacking Subheadline",
-			"description": "Member trtacking subheadline"
+			"type": "string",
+			"nullable": true,
+			"title": "Member Tracking Subheadline",
+			"description": "Member tracking subheadline"
 		},
 		"approved_for_execution": {
 			"type": "boolean",
@@ -224,7 +225,7 @@
 		},
 		"addresses": {
 			"type": "array",
-			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Address.json},
+			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Address.json"},
 			"title": "Addresses"
 		},
 		"links": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Links.json"},
@@ -322,7 +323,7 @@
 						"items": {
 							"type": "integer"
 						},
-						"description": "Array of the IDs of the bundeld addresses."
+						"description": "Array of the IDs of the bundled addresses."
 					}
 				}
 			}

@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Order_response.json",
 	"title": "Order Response",
 	"description": "Json schema for an Order response, which is used for getting information about existing order. For usage details see curl examples in Order group",
 	"type": "object",
@@ -8,7 +6,7 @@
 		"created_timestamp": {
 			"type": "integer",
 			"title": "Created Timestamp",
-			"description": "Timestamp of an order crreation."
+			"description": "Timestamp of an order creation."
 		},
 		"order_id": {
 			"type": "integer",
@@ -76,7 +74,8 @@
 			"description": "The city the address is located in"
 		},
 		"address_state_id": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Address state id",
 			"description": "The state the address is located in"
 		},
@@ -160,7 +159,8 @@
 			"description": "When second time window was ended."
 		},
 		"service_time": {
-			"type": ["integer","null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Service time",
 			"description": "Consumed service time at an address."
 		},
@@ -170,12 +170,14 @@
 			"description": "Local timezone"
 		},
 		"color": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Color",
 			"description": "Hexadecimal color."
 		},
 		"order_icon": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable":  true,
 			"title": "Order icon",
 			"description": "URL of an order icon"
 		},

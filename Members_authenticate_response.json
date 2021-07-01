@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Members_authenticate_response.json",
 	"title": "Members Authenticate Response",
 	"type": "object",
 	"description": "For members authentication. url: https://www.route4me.com/actions/authenticate.php",
@@ -8,7 +6,7 @@
 		"status": {
 			"type": "boolean",
 			"title": "Status",
-			"descrption": "True, if authentication process was finished successfuly."
+			"description": "True, if authentication process was finished successfuly."
 		},
 		"geocoding_service": {
 			"type": "string",
@@ -52,7 +50,7 @@
 				"rect"
 			],
 			"title": "Geofence polygon shape",
-			"descrption": "Geofence polygon shape. ENUM(circle, poly rect)."
+			"description": "Geofence polygon shape. ENUM(circle, poly rect)."
 		},
 		"geofence_polygon_size": {
 			"type": "integer",
@@ -72,7 +70,7 @@
 		"is_subscription_past_due": {
 			"type": "boolean",
 			"title": "Is subscription past due",
-			"descrption": "If true, subscription is past due."
+			"description": "If true, subscription is past due."
 		},
 		"visited_departed_enabled": {
 			"type": "string",
@@ -131,7 +129,7 @@
 				"MI"
 			],
 			"title": "Preferred units",
-			"descrption": "Preferred units. Enum(km,mi)."
+			"description": "Preferred units. Enum(km,mi)."
 		},
 		"preferred_language ": {
 			"enum": [
@@ -139,7 +137,7 @@
 				"fr"
 			],
 			"title": "Preferred language",
-			"descrption": "Preferred language. Enum(en,fr)"
+			"description": "Preferred language. Enum(en,fr)"
 		},
 		"HIDE_ROUTED_ADDRESSES": {
 			"type": "string",
@@ -179,7 +177,7 @@
 		"account_past_due": {
 			"type": "boolean",
 			"title": "Account Past Due",
-			"descrption": "Account past due"
+			"description": "Account past due"
 		},
 		"licensed_modules": {
 			"type": "array",

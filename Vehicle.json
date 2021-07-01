@@ -1,6 +1,4 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema#",
-	"id": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Vehicle.json",
 	"title": "Vehicle",
 	"type": "object",
 	"description": "Vehicles in the user's account. Endpoint: url: https://api.route4me.com/api/vehicles/view_vehicles.php",
@@ -8,169 +6,133 @@
 		"vehicle_id": {
 			"type": "string",
 			"title": "Vehicle id",
-			"descrption": "A unique identifcation 32-char string of the vehicle"
+			"description": "A unique identification 32-char string of the vehicle"
 		},
 		"created_time": {
 			"type": "string",
 			"format": "date-time",
 			"title": "Created time",
-			"descrption": "Created time of the record about vehicle"
+			"description": "Created time of the record about vehicle"
 		},
 		"member_id": {
 			"type": "integer",
 			"title": "Member id",
-			"descrption": "An unique identification number of the member"
+			"description": "An unique identification number of the member"
 		},
 		"vehicle_alias": {
 			"type": "string",
 			"title": "Vehicle alias",
-			"descrption": "Internal name of the vehicle"
+			"description": "Internal name of the vehicle"
 		},
 		"vehicle_reg_state": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle registration state",
-			"descrption": "A state where vehicle was registered"
+			"description": "A state where vehicle was registered"
 		},
 		"vehicle_reg_state_id": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle registration state ID",
-			"descrption": "An ID of the state, where vehicle was registered"
+			"description": "An ID of the state, where vehicle was registered"
 		},
 		"vehicle_reg_country": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle registration country",
-			"descrption": "A country where vehicle was registered"
+			"description": "A country where vehicle was registered"
 		},
 		"vehicle_reg_country_id": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle registration country ID",
-			"descrption": "An ID of the country, where vehicle was registered"
+			"description": "An ID of the country, where vehicle was registered"
 		},
 		"vehicle_license_plate": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle license plate",
-			"descrption": "A license plate of the vehicle"
+			"description": "A license plate of the vehicle"
 		},
 		"vehicle_make": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle make",
-			"descrption": "Vehicle maker brend"
+			"description": "Vehicle maker brend"
 		},
 		"vehicle_model_year": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle model year",
-			"descrption": "A year of the vehicle model"
+			"description": "A year of the vehicle model"
 		},
 		"vehicle_model": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle model",
-			"descrption": "A model of the vehicle"
+			"description": "A model of the vehicle"
 		},
 		"vehicle_year_acquired": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle acquired year",
-			"descrption": "A year the vehicle was acquired"
+			"description": "A year the vehicle was acquired"
 		},
 		"vehicle_cost_new": {
-			"type": [
-				"number",
-				"null"
-			],
+			"type": "number",
+			"nullable": true,
 			"title": "Vehicle cost new",
-			"descrption": "A cost f the new vehicle"
+			"description": "A cost f the new vehicle"
 		},
 		"license_start_date": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"format": "date-time",
 			"title": "License start date",
-			"descrption": "A start date of the license"
+			"description": "A start date of the license"
 		},
 		"license_end_date": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"format": "date-time",
 			"title": "License end date",
-			"descrption": "An end date of the license"
+			"description": "An end date of the license"
 		},
 		"vehicle_axle_count": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Vehicle axle count",
-			"descrption": "A number of the vecile's axles"
+			"description": "A number of the vecile's axles"
 		},
 		"mpg_city": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "MPG city",
-			"descrption": "Miles per gallon in the city area"
+			"description": "Miles per gallon in the city area"
 		},
 		"mpg_highway": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "MPG highway",
-			"descrption": "Miles per gallon in the highway area"
+			"description": "Miles per gallon in the highway area"
 		},
 		"fuel_type": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Fuel type",
-			"descrption": "A type of the fuel"
+			"description": "A type of the fuel"
 		},
 		"height_inches": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Height inches",
-			"descrption": "A height of the vehicle in the inches."
+			"description": "A height of the vehicle in the inches."
 		},
 		"weight_lb": {
-			"type": [
-				"string",
-				"null"
-			],
+			"type": "string",
+			"nullable": true,
 			"title": "Weight lbs",
-			"descrption": "A weight of the vehicle in the pounds."
+			"description": "A weight of the vehicle in the pounds."
 		},
 		"is_operational": {
 			"type": "boolean",
