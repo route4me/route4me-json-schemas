@@ -98,7 +98,10 @@
 			"type": "integer",
 			"title": "Total Addresses",
 			"description": "Total addresses included in the optimization"
+		},
+		"order_territories": {
+			"type": "object",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Order_territories.json"
 		}
-
 	}
 }
