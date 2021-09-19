@@ -44,9 +44,7 @@
 					"title": "Tracking Numbers",
 					"description": "An array of the tracking numbers to filter the orders by tracking numbers."
 				}
-			},
-			"title": "Fields",
-			"description": "List of the field names"
+			}
 		}
 	}
 }
