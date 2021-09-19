@@ -61,6 +61,10 @@
 			"type": "string",
 			"title": "Optimized Callback URL",
 			"description": "A URL that gets called when the optimization is solved, or if there is an error. The callback is called with a POST request. The POST data sent is: timestamp (Seconds): Server timestamp of request sent optimization_problem_id (Hash String): ID of the optimization state (Small Int). The state can be one of the values: 4 = OPTIMIZATION_STATE_OPTIMIZED, which means the optimization was successful; or 5 = OPTIMIZATION_STATE_ERROR, which means there was an error solving the optimization.. Query string (GET fields)."
+		},
+		"order_territories": {
+			"type": "object",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Order_territories.json"
 		}
 	}
 }
