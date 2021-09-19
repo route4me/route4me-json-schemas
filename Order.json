@@ -134,6 +134,17 @@
 			"type": "integer",
 			"title": "Visited Count",
 			"description": "How many times the order visited."
+		},
+		"address_stop_type": {
+			"type": "string",
+			"enum": ["DELIVERY","PICKUP","BREAK","MEETUP","SERVICE","VISIT","DRIVEBY"],
+			"title": "Address stop type",
+			"description": "The type of stop that this is (DELIVERY,PICKUP,BREAK,MEETUP,SERVICE,VISIT,DRIVEBY)"
+		},
+		"tracking_number": {
+			"type": "string",
+			"title": "Tracking Number",
+			"description": "Systemwide unique code (chars<=255), which permits end-users (recipients) to track the status of their order"
 		}
 	}
 }
