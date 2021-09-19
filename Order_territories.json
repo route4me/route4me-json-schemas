@@ -33,8 +33,8 @@
 					"items": { 
 						"type": "string" 
 					},
-					"title": "Scheduled For YYMMDD",
-					"description": "Start and end dates to filter the orders by schedule. e.g. ['2019-06-01', '2019-06-18']"
+					"title": "Scheduled For Date",
+					"description": "Start and end dates to filter the orders by schedule. Format: 'yyyy-MM-dd' e.g. ['2019-06-01', '2019-06-18']"
 				},
 				"tracking_numbers": {
 					"type": "array",
