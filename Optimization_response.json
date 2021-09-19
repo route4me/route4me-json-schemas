@@ -69,6 +69,10 @@
 			"title": "Links",
 			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Links.json"},
 			"description": "Links to the GET operations for the optimization problem"
+		},
+		"order_territories": {
+			"type": "object",
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Order_territories.json"
 		}
 	}
 }
