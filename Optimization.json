@@ -101,7 +101,8 @@
 		},
 		"order_territories": {
 			"type": "object",
-			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Order_territories.json"
+			"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Order_territories.json",
+			"description": "The order territories containing addresses for an optimization process."
 		}
 	}
 }
