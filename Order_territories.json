@@ -3,13 +3,10 @@
 	"description": "Json schema to specify order territories in the optimization payload. For usage details see curl examples in Optimization group",
 	"type": "object",
 	"properties": {
-		"results": {
-			"type": "array",
-			"items": {
-				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/Order_territories.json"
-			},
-			"title": "Order Territories",
-			"description": "Order territories for an optimization payload"
+		"split_territories": {
+			"type": "boolean",
+			"title": "Split Territories",
+			"description": "If true, each territory is splitted to own optimization"
 		},
 		"territories_id": {
 			"type": "array",
