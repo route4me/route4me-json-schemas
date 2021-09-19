@@ -6,7 +6,7 @@
 		"split_territories": {
 			"type": "boolean",
 			"title": "Split Territories",
-			"description": "If true, each territory is splitted to own optimization"
+			"description": "If true, split each territory to own optimization"
 		},
 		"territories_id": {
 			"type": "array",
