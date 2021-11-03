@@ -22,11 +22,6 @@
 			"title": "Member ID",
 			"description": "A contact owner's member ID"
 		},
-		"api_key": {
-			"type": "string",
-			"title": "Api key",
-			"description": "User api key"
-		},
 		"address_1": {
 			"type": "string",
 			"title": "Address 1",
@@ -387,6 +382,11 @@
 			"type": "integer",
 			"title": "Visited_Count",
 			"description": "How many times visited the address"
+		},
+		"last_visited_timestamp": {
+			"type": "integer",
+			"title": "Last Visited Timestamp",
+			"description": "Last visited timestamp"
 		},
 		"last_routed_timestamp": {
 			"type": "integer",
