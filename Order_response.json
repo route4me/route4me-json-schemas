@@ -8,6 +8,11 @@
 			"title": "Created Timestamp",
 			"description": "Timestamp of an order creation."
 		},
+		"updated_timestamp": {
+			"type": "integer",
+			"title": "Updated Timestamp",
+			"description": "Timestamp of an order creation."
+		},
 		"order_id": {
 			"type": "integer",
 			"title": "Order ID",
@@ -222,6 +227,11 @@
 			"enum": ["DELIVERY","PICKUP","BREAK","MEETUP","SERVICE","VISIT","DRIVEBY"],
 			"title": "Address stop type",
 			"description": "The type of stop that this is (DELIVERY,PICKUP,BREAK,MEETUP,SERVICE,VISIT,DRIVEBY)"
+		},
+		"last_status": {
+			"type": "string",
+			"title": "Last Status",
+			"description": "Last status of the order"
 		},
 		"tracking_number": {
 			"type": "string",
