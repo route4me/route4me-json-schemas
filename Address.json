@@ -619,6 +619,18 @@
 				}
 			}
 		},
+		"required_skills": {
+			"type": "array",
+			"items": { "type": "string" },
+			"title": "Required Skills",
+			"description": "Required skills of a driver"
+		},
+		"additional_status": {
+			"type": "string",
+			"nullable": true,
+			"title": "Additional Status",
+			"description": "Additional Status of the address"
+		},
 		"wait_time_to_next_destination": {
 			"type": "integer",
 			"title": "Wait time to next destination",
@@ -627,6 +639,11 @@
 		"manifest": {
 			"type": "object",
 			"properties": {
+				"estimated_wait_time_before_tw_open": {
+					"type": "integer",
+					"title": "Estimated Wait Time Before TW Open",
+					"description": "Estimated wait time before TW open"
+				},
 				"running_service_time": {
 					"type": "integer",
 					"title": "Running Service Time",
@@ -674,13 +691,13 @@
 				},
 				"actual_arrival_time_ts": {
 					"type": "integer",
-			"nullable": true,
+					"nullable": true,
 					"title": "Actual Arrival Time ts",
 					"description": "Time when the address was marked as visited UTC unixtime. This is actually equal to timestamp_last_visited most of the time."
 				},
 				"actual_departure_time_ts": {
 					"type": "integer",
-			"nullable": true,
+					"nullable": true,
 					"title": "Actual Departure Time ts",
 					"description": "Time when the address was mared as departed UTC. This is actually equal to timestamp_last_departed most of the time."
 				},
@@ -706,9 +723,49 @@
 				},
 				"time_impact": {
 					"type": "integer",
-			"nullable": true,
+					"nullable": true,
 					"title": "Time Impact",
 					"description": "This is the difference between the originally projected arrival time and Actual Arrival Time"
+				},
+				"arrival_on_time": {
+					"type": "boolean",
+					"title": "Arrival On Time",
+					"description": "If true, a vehicle arrived on time at the address"
+				},
+				"arrival_deviation_seconds": {
+					"type": "integer",
+					"title": "Arrival Deviation Seconds",
+					"description": "Arrival deviation in seconds."
+				},
+				"departure_on_time": {
+					"type": "boolean",
+					"title": "Departure On Time",
+					"description": "If true, a vehicle departed on time from the address."
+				},
+				"departure_deviation_seconds": {
+					"type": "integer",
+					"title": "Departure Deviation Seconds",
+					"description": "Departure deviation in seconds."
+				},
+				"remaining_weight": {
+					"type": "number",
+					"title": "Remaining Weight",
+					"description": "Remaining weight."
+				},
+				"remaining_cube": {
+					"type": "number",
+					"title": "Remaining Cube",
+					"description": "Remaining cube (volume)."
+				},
+				"remaining_pieces": {
+					"type": "integer",
+					"title": "Remaining Pieces",
+					"description": "Remaining pieces."
+				},
+				"remaining_revenue": {
+					"type": "number",
+					"title": "Remaining Revenue",
+					"description": "Remaining revenue."
 				}
 			},
 			"description": "The manifest contains values derived from other values",
