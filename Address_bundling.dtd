@@ -16,6 +16,12 @@
 			"title": "Mode Parameters",
 			"description": "Mode Parameters: if mode=3, contains address IDs; if mode=4 - the address custom fields"
 		},
+		"merge_mode": {
+			"type": "integer",
+			"enum": [1,2],
+			"title": "Merge Mode",
+			"description": "1 = Keep as separate destinations, 2 = Merge into single destination"
+		},
 		"service_time_rules": {
 			"type": "object",
 			"title": "Service Time Rules",
@@ -41,8 +47,8 @@
 				"additional_items_mode_params": {
 					"type": "array",
 					"items": {"type": "integer"},
-					"title": "Additional Items Mode Parametrs",
-					"description": If additional_items_mode=2, contains list of the custom times (EPOCH format)"
+					"title": "Additional Items Mode Parameters",
+					"description": "If additional_items_mode=2, contains list of the custom times (EPOCH format)"
 				}
 			}
 		}
