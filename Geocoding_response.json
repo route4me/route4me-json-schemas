@@ -24,7 +24,7 @@
 		},
 		"type": {
 			"type": "string",
-			"enum": ["street_address", "premise", "locality, political", "postal_code", "administrative_area_level_2, political", "political", "administrative_area_level_1, political", "country, political"],
+			"enum": ["street_address", "premise", "airport", "establishment", "locality, political", "postal_code", "administrative_area_level_2, political", "political", "administrative_area_level_1, political", "country, political"],
 			"title": "Type",
 			"description": "Geocoded area level type"
 		},
