@@ -118,6 +118,11 @@
 			"type": "integer",
 			"title": "Level",
 			"description": "Subordination level. 0 is the highest level."
+		},
+		"is_active": {
+			"type": "integer",
+			"title": "Is Active",
+			"description": "If equal to 1, the user account is active."
 		}
 	}
 }
