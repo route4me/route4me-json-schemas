@@ -92,7 +92,7 @@
 		"geocodings": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/geocoding.dtd"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/geocoding.json"
 			},
 			"title": "Geocodings ID"
 		},
@@ -279,7 +279,7 @@
 		"notes": {
 			"type": "array",
 			"items": {
-				"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/note.dtd"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/note.json"
 			},
 			"title": "Notes",
 			"description": "Notes"
@@ -288,6 +288,23 @@
 			"type": "string",
 			"title": "Tracking Number",
 			"description": "Systemwide unique code, which permits end-users (recipients) to track the status of their order"
+		},
+		"required_skills": {
+			"type": "array",
+			"items": { "type": "string" },
+			"title": "Required Skills",
+			"description": "Required skills of a driver"
+		},
+		"additional_status": {
+			"type": "string",
+			"nullable": true,
+			"title": "Additional Status",
+			"description": "Additional Status of the address"
+		},
+		"wait_time_to_next_destination": {
+			"type": "integer",
+			"title": "Wait time to next destination",
+			"description": "Wait time to next destination"
 		}
 	}
 }
