@@ -8,40 +8,47 @@
 		"tracking_number": {
 			"type": "string",
 			"title": "Tracking Number",
-			"descrption": "The ID assigned to an asset by the system"
+			"description": "The ID assigned to an asset by the system"
 		},
 		"large_logo_uri": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Large logo URI",
 			"description": "A link to a large logo"
 		},
 		"large_logo_uri_2x": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Large logo URI 2x",
 			"description": "A link to a large logo 2x"
 		},
 		"mobile_logo_uri": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Mobile logo URI",
 			"description": "A link to a mobile logo"
 		},
 		"mobile_logo_uri_2x": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Mobile logo URI 2x",
 			"description": "A link to a mobile logo 2x"
 		},
 		"map_color": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Map color",
 			"description": "Map color"
 		},
 		"large_logo_alignment": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Large logo alignment",
 			"description": "An alignment of a large logo"
 		},
 		"mobile_logo_alignment": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Mobile logo alignment",
 			"description": "An alignment of a mobile logo"
 		},
@@ -51,7 +58,8 @@
 			"description": "If true, the map zoom controls will be shown"
 		},
 		"driver_phone": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Driver phone",
 			"description": "Driver phone number"
 		},
@@ -61,7 +69,8 @@
 			"description": "Route started"
 		},
 		"customer_service_phone": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Customer Service Phone",
 			"description": "Customer service phone"
 		},
@@ -76,12 +85,14 @@
 			"description": "Driver name"
 		},
 		"driver_picture": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Driver picture",
 			"description": "A link to a driver picture file"
 		},
 		"tracking_page_subheadline": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Tracking page subheadline",
 			"description": "A subheadline of a tracking page"
 		},
@@ -150,7 +161,8 @@
 						"description": "Point longitude"
 					},
 					"icon": {
-						"type": ["string", "null"],
+						"type": "string",
+						"nullable": true,
 						"title": "Icon",
 						"description": "Link to the icon"
 					},
@@ -167,7 +179,8 @@
 						"description": "A icon's acnhor position"
 					},
 					"popupAnchor": {
-						"type": ["array", "null"],
+						"type": "array",
+						"nullable": true,
 						"items": {
 							"type": "integer"
 						}
@@ -209,15 +222,39 @@
 				}
 			}
 		},
-		"timestamp_geofence_visited": {
-			"type": ["integer", "null"],
-			"title": "Timestamp geofence visited",
-			"description": "UNIX timestamp when a geofence visited event was triggered"
+		"stop_status": {
+			"type": "string",
+			"title": "Stop Status",
+			"description": "Stop status"
 		},
-		"timestamp_last_visited": {
-			"type": ["integer", "null"],
-			"title": "Timestamp geofence visited",
-			"description": "UNIX timestamp of a last visited event"
+		"stop_status_time": {
+			"type": "integer",
+			"title": "Stop Status Time",
+			"description": "Stop status time"
+		},
+		"is_failed": {
+			"type": "boolean",
+			"title": "Is Failed",
+			"description": "If true, the tracking process failed."
+		},
+		"route_start_time": {
+			"type": "object",
+			"properties": {
+				"planned": {
+					"type": "integer",
+					"nullable": true,
+					"title": "Planned Route Start Time",
+					"description": "Planned start time of the route."
+				},
+				"actual": {
+					"type": "integer",
+					"nullable": true,
+					"title": "Actual Route Start Time",
+					"description": "Actual start time of the route."
+				}
+			},
+			"title": "Route Start Time",
+			"description": "Route start time"
 		}
 	}
 }
