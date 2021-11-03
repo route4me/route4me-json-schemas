@@ -6,7 +6,6 @@
 	"description": "Set GPS Position of the Device. url: https://www.route4me.com/track/set.php",
 	"required": [
 		"format",
-		"member_id",
 		"route_id",
 		"course",
 		"speed",
