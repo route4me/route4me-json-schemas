@@ -75,7 +75,8 @@
 			"maximum": 180
 		},
 		"priority": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Priority",
 			"description": "0 is the highest priority; n has higher priority than n + 1"
 		},
@@ -85,12 +86,14 @@
 			"description": "Parent route"
 		},
 		"original_route_id": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Original Route ID",
 			"description": "The original customer-specific route id assigned at route creation time."
 		},
 		"route_name": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Route Name",
 			"description": "Route name of a depot address"
 		},
@@ -110,28 +113,34 @@
 			"description": "True means the 'address' field was successfully geocoded"
 		},
 		"preferred_geocoding": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Preferred Geocoding",
 			"description": "Index of 'geocodings' array that the user has chosen"
 		},
 		"failed_geocoding": {
-			"type": ["boolean", "null"],
+			"type": "boolean",
+			"nullable": true,
 			"title": "Failed Geocoding",
 			"description": "True means there was a geocoding attempt which failed. False means success or no geocoding"
 		},
 		"geocodings": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/geocoding.dtd"},
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/geocoding.json"
+			},
 			"title": "Geocodings ID"
 		},
 		"contact_id": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"minimum": 0,
 			"title": "Contact ID",
 			"description": "Address book contact id (0 means not connected to the address book)"
 		},
 		"order_id": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Order ID",
 			"description": "Parent order ID"
 		},
@@ -148,19 +157,22 @@
 			"default": "false"
 		},
 		"timestamp_last_visited": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Timestamp Last Vsited",
 			"description": "Timestamp when the driver presses 'Visited'"
 		},
 		"visited_lat": {
-			"type": ["number", "null"],
+			"type": "number",
+			"nullable": true,
 			"title": "Visited Latitude",
 			"description": "Last known check in latitude",
 			"minimum": -90,
 			"maximum": 90
 		},
 		"visited_lng": {
-			"type": ["number", "null"],
+			"type": "number",
+			"nullable": true,
 			"title": "Visited Longitude",
 			"description": "Last known check in longitude",
 			"minimum": -180,
@@ -172,46 +184,54 @@
 			"description": "The driver marked the 'Departed' button"
 		},
 		"departed_lat": {
-			"type": ["number", "null"],
+			"type": "number",
+			"nullable": true,
 			"title": "Departed Latitude",
 			"description": "Last known departed latitude",
 			"minimum": -90,
 			"maximum": 90
 		},
 		"departed_lng": {
-			"type": ["number", "null"],
+			"type": "number",
+			"nullable": true,
 			"description": "Last known departed longitude",
 			"title": "Departed Longitude",
 			"minimum": -180,
 			"maximum": 180
 		},
 		"timestamp_last_departed": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Timestamp Last Departed",
 			"description": "Timestamp when the driver marks the stop as 'Departed'"
 		},
 		"group": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Group",
 			"description": "Address group"
 		},
 		"customer_po": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Customer PO",
 			"description": "The customer purchase order for the address"
 		},
 		"invoice_no": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Invoice No",
 			"description": "The invoice number for the address"
 		},
 		"reference_no": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Reference NO",
 			"description": "The reference number for the address"
 		},
 		"order_no": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Order NO",
 			"description": "The order number for the address"
 		},
@@ -241,23 +261,27 @@
 			"description": "Pieces"
 		},
 		"first_name": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "First name",
 			"description": "The first name of the receiving address"
 		},
 		"last_name": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Last name",
 			"description": "The last name of the receiving address"
 		},
 		"email": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"format": "email",
 			"title": "Email",
 			"description": "A valid e-mail address assigned to this stop"
 		},
 		"phone": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Phone",
 			"description": "Customer Phone"
 		},
@@ -272,17 +296,20 @@
 			"description": "Time to next destination in seconds."
 		},
 		"abnormal_traffic_time_to_next_destination": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"description": "Abnormal traffic time to next destination",
 			"title": "Abnormal traffic time to next destination"
 		},
 		"uncongested_time_to_next_destination": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Uncongested Time To Next Destination",
 			"description": "Supposing that there was no traffic at all, this gives how many seconds it takes to get to the next stop."
 		},
 		"traffic_time_to_next_destination": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Traffic Time To Next Destination",
 			"description": "Traffic time to a next destination."
 		},
@@ -317,73 +344,86 @@
 			"description": "If equal to 1, the pickup and dropoff addresses are joint (one by one despite the regular pickup-dropoff addresses when it's possible to have multiple pickup addresses with one dropoff address)."
 		},
 		"generated_time_window_start": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Generated Time Window Start",
 			"description": "Generated Time Window Start in seconds"
 		},
 		"generated_time_window_end": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Generated Time Window End",
 			"description": "Generated Time Window End in seconds"
 		},
 		"time_window_start": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Time Window Start",
 			"description": "Time Window Start in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start datebecause start time changes would shift time windows"
 		},
 		"time_window_end": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Time Window End",
 			"description": "Time Window End in seconds, relative to the route start date (midnight), UTC time zone. It is relative to start datebecause start time changes would shift time windows"
 		},
 		"time_window_start_2": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Time Window Start 2",
 			"description": "See time_window_start"
 		},
 		"time_window_end_2": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Time Window End 2",
 			"description": "See time_window_end"
 		},
 		"geofence_detected_visited_timestamp": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Geofence detected visited timestamp",
 			"description": "Timestamp of a geofence detected visited"
 		},
 		"geofence_detected_departed_timestamp": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Geofence detected departed timestamp",
 			"description": "Timestamp of a geofence detected departed"
 		},
 		"geofence_detected_service_time": {
-			"type": ["integer", "null"],
+			"type": "integer",
+			"nullable": true,
 			"title": "Geofence detected service time",
 			"description": "The service time of a detected geofence"
 		},
 		"geofence_detected_visited_lat": {
-			"type": ["number", "null"],
+			"type": "number",
+			"nullable": true,
 			"title": "Geofence detected visited lat",
 			"description": "Latitude of a visited detected geofence",
 			"minimum": -90,
 			"maximum": 90
 		},
 		"geofence_detected_visited_lng": {
-			"type": ["number", "null"],
+			"type": "number",
+			"nullable": true,
 			"title": "Geofence detected visited lng",
 			"description": "Longitude of a visited detected geofence",
 			"minimum": -180,
 			"maximum": 180
 		},
 		"geofence_detected_departed_lat": {
-			"type": ["number", "null"],
+			"type": "number",
+			"nullable": true,
 			"title": "Geofence detected departed lat",
 			"description": "Latitude of a departed detected geofence",
 			"minimum": -90,
 			"maximum": 90
 		},
 		"geofence_detected_departed_lng": {
-			"type": ["number", "null"],
+			"type": "number",
+			"nullable": true,
 			"title": "Geofence detected departed lng",
 			"description": "Longitude of a departed detected geofence",
 			"minimum": -180,
@@ -411,19 +451,23 @@
 			"description": "JSON string representation of the custom fields"
 		},
 		"custom_fields_config": {
-			"type": ["object", "null"],
+			"type": "object",
+			"nullable": true,
 			"additionalProperties": {"type": "string"},
 			"title": "Custom fields configuration",
 			"description": "Configuration of the custom fields"
 		},
 		"custom_fields_config_str_json": {
-			"type": ["string", "null"],
+			"type": "string",
+			"nullable": true,
 			"title": "Custom fields config JSON string",
 			"description": "JSON string representation of the custom fields configuration"
 		},
 		"notes": {
 			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/note.dtd"},
+			"items": {
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/note.json"
+			},
 			"title": "Notes",
 			"description": "Notes"
 		},
@@ -434,7 +478,7 @@
 		},
 		"bundle_items": {
 			"type": "object",
-			"readonly": true,
+			"readOnly": true,
 			"title": "Bundle Items",
 			"description": "Additional bundle items",
 			"properties": {
@@ -510,7 +554,7 @@
 						"type": "integer",
 						"title": "Order ID",
 						"description": "Unique order ID"
-					
+
 					},
 					 "name": {
 						"type": "string",
@@ -577,6 +621,18 @@
 				}
 			}
 		},
+		"required_skills": {
+			"type": "array",
+			"items": { "type": "string" },
+			"title": "Required Skills",
+			"description": "Required skills of a driver"
+		},
+		"additional_status": {
+			"type": "string",
+			"nullable": true,
+			"title": "Additional Status",
+			"description": "Additional Status of the address"
+		},
 		"wait_time_to_next_destination": {
 			"type": "integer",
 			"title": "Wait time to next destination",
@@ -585,6 +641,11 @@
 		"manifest": {
 			"type": "object",
 			"properties": {
+				"estimated_wait_time_before_tw_open": {
+					"type": "integer",
+					"title": "Estimated Wait Time Before TW Open",
+					"description": "Estimated wait time before TW open"
+				},
 				"running_service_time": {
 					"type": "integer",
 					"title": "Running Service Time",
@@ -631,12 +692,14 @@
 					"description": "Estimated departure time UTC unixtime"
 				},
 				"actual_arrival_time_ts": {
-					"type": ["integer", "null"],
+					"type": "integer",
+					"nullable": true,
 					"title": "Actual Arrival Time ts",
 					"description": "Time when the address was marked as visited UTC unixtime. This is actually equal to timestamp_last_visited most of the time."
 				},
 				"actual_departure_time_ts": {
-					"type": ["integer", "null"],
+					"type": "integer",
+					"nullable": true,
 					"title": "Actual Departure Time ts",
 					"description": "Time when the address was mared as departed UTC. This is actually equal to timestamp_last_departed most of the time."
 				},
@@ -661,9 +724,50 @@
 					"description": "Scheduled departure time of a vehicle from this destination"
 				},
 				"time_impact": {
-					"type": ["integer", "null"],
+					"type": "integer",
+					"nullable": true,
 					"title": "Time Impact",
 					"description": "This is the difference between the originally projected arrival time and Actual Arrival Time"
+				},
+				"arrival_on_time": {
+					"type": "boolean",
+					"title": "Arrival On Time",
+					"description": "If true, a vehicle arrived on time at the address"
+				},
+				"arrival_deviation_seconds": {
+					"type": "integer",
+					"title": "Arrival Deviation Seconds",
+					"description": "Arrival deviation in seconds."
+				},
+				"departure_on_time": {
+					"type": "boolean",
+					"title": "Departure On Time",
+					"description": "If true, a vehicle departed on time from the address."
+				},
+				"departure_deviation_seconds": {
+					"type": "integer",
+					"title": "Departure Deviation Seconds",
+					"description": "Departure deviation in seconds."
+				},
+				"remaining_weight": {
+					"type": "number",
+					"title": "Remaining Weight",
+					"description": "Remaining weight."
+				},
+				"remaining_cube": {
+					"type": "number",
+					"title": "Remaining Cube",
+					"description": "Remaining cube (volume)."
+				},
+				"remaining_pieces": {
+					"type": "integer",
+					"title": "Remaining Pieces",
+					"description": "Remaining pieces."
+				},
+				"remaining_revenue": {
+					"type": "number",
+					"title": "Remaining Revenue",
+					"description": "Remaining revenue."
 				}
 			},
 			"description": "The manifest contains values derived from other values",
