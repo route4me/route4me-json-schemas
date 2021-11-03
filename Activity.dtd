@@ -16,7 +16,7 @@
 		"activity_timestamp": {
             "type": "integer",
             "title": "Activity timestamp",
-            "description": "When the activity created"
+            "description": "Time when activity happened"
         },
 		"activity_type": {
             "type": "string",
@@ -65,12 +65,12 @@
 		"route_id": {
             "type": "string",
             "title": "Route ID",
-            "description": "Route ID."
+            "description": "Parent route ID."
         },
         "route_destination_id": {
             "type": "integer",
             "title": "Route destination ID",
-            "description": "Route destination ID."
+            "description": "An address on the route."
         },
 		"note_id": {
             "type": "integer",
@@ -90,22 +90,22 @@
 		"route_name": {
 			"type": "string",
 			"title": "Route Name",
-			"description": "Route name"
+			"description": "Parent route name"
 		},
 		"note_file": {
 			"type": "string",
 			"title": "Note File",
-			"description": "Note file URl"
+			"description": "URL of the uploaded note"
 		},
 		"destination_name": {
 			"type": "string",
 			"title": "Destination Name",
-			"description": "Destination name"
+			"description": "A route destination name"
 		},
 		"destination_alias": {
 			"type": "string",
 			"title": "Destination Alias",
-			"description": "Destination alias"
+			"description": "A route destination alias"
 		},
 		"member": {
 			"type": "object",
@@ -113,23 +113,23 @@
 				"member_id": {
 					"type": "string",
 					"title": "Member ID",
-					"description": "Unique member ID"
+					"description": "Unique ID of an user created an activity"
 				},
 				"member_first_name": {
 					"type": "string",
 					"title": "Member First Name",
-					"description": "The first name of the user. HTTP method - POST."
+					"description": "First name of an user created an activity."
 				},
 				"member_last_name": {
 					"type": "string",
 					"title": "Member Last Name",
-					"description": "The last name of the user. HTTP method - POST."
+					"description": "Last name of an user created an activity."
 				},
 				"member_email": {
 					"type": "string",
 					"title": "Member Email",
 					"format": "email",
-					"description": "E-mail address of the user that was used for site registration. HTTP method - POST."
+					"description": "Email of an user created an activity"
 				}
 			}
 		}
