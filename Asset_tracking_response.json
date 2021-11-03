@@ -160,7 +160,7 @@
 					},
 					"icon": {
 						"type": "string",
-			"nullable": true,
+						"nullable": true,
 						"title": "Icon",
 						"description": "Link to the icon"
 					},
@@ -178,7 +178,7 @@
 					},
 					"popupAnchor": {
 						"type": "array",
-			"nullable": true,
+						"nullable": true,
 						"items": {
 							"type": "integer"
 						}
@@ -220,17 +220,39 @@
 				}
 			}
 		},
-		"timestamp_geofence_visited": {
-			"type": "integer",
-			"nullable": true,
-			"title": "Timestamp geofence visited",
-			"description": "UNIX timestamp when a geofence visited event was triggered"
+		"stop_status": {
+			"type": "string",
+			"title": "Stop Status",
+			"description": "Stop status"
 		},
-		"timestamp_last_visited": {
+		"stop_status_time": {
 			"type": "integer",
-			"nullable": true,
-			"title": "Timestamp geofence visited",
-			"description": "UNIX timestamp of a last visited event"
+			"title": "Stop Status Time",
+			"description": "Stop status time"
+		},
+		"is_failed": {
+			"type": "boolean",
+			"title": "Is Failed",
+			"description": "If true, the tracking process failed."
+		},
+		"route_start_time": {
+			"type": "object",
+			"properties": {
+				"planned": {
+					"type": "integer",
+					"nullable": true,
+					"title": "Planned Route Start Time",
+					"description": "Planned start time of the route."
+				},
+				"actual": {
+					"type": "integer",
+					"nullable": true,
+					"title": "Actual Route Start Time",
+					"description": "Actual start time of the route."
+				}
+			},
+			"title": "Route Start Time",
+			"description": "Route start time"
 		}
 	}
 }
