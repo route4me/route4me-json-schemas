@@ -3,22 +3,22 @@
     "description": "Parameters for creating user activity. Endpoint - https://www.route4me.com/api.v4/activity_feed.php",
     "type": "object",
     "properties": {
-        "api_key": {
+		"activity_id": {
             "type": "string",
-            "title": "Api key",
-            "description": "User api key. HTTP method - GET."
+            "title": "Activity ID",
+            "description": "Unique ID of the activity."
         },
-        "route_id": {
-            "type": "string",
-            "title": "Route ID",
-            "description": "Route ID. HTTP method - POST."
-        },
-        "route_destination_id": {
+		"member_id": {
             "type": "integer",
-            "title": "Route destination ID",
-            "description": "Route destination ID. HTTP method - POST."
+            "title": "Member ID",
+            "description": "Member ID."
         },
-        "activity_type": {
+		"activity_timestamp": {
+            "type": "integer",
+            "title": "Activity timestamp",
+            "description": "When the activity created"
+        },
+		"activity_type": {
             "type": "string",
             "enum": [
                 "",
@@ -57,15 +57,81 @@
             "title": "Activity type",
             "description": "area-removed - Territory Area Removed; area-added - Territory Area Added; area-updated - Territory Area Updated; insert-destination - Add New Address; approved-to-execute - Approved to Execute; route-owner-changed - Assigned Other User To Route; move-destination - Change Address Sequence; member-created - Created Team Member; route-delete - Delete Route; member-deleted - Delete Team Member; geofence-entered - Geofence Triggered Check In; geofence-left - Geofence Triggered Check Out; mark-destination-departed - Mark Address Departed; mark-destination-visited - Mark Address Visited; member-modified - Modified Member; note-insert - Note Insert; delete-destination - Remove Address From Route; destination-out-sequence - Route Deviation; route-duplicate - Route Duplication; route-merge - Route Merging; route-optimized - Route Optimized; update-destinations - Update Address Attribute; driver-arrived-early - User Arrived Early; driver-arrived-late - User Arrived Late; driver-arrived-on-time - User Arrived On Time; user_message - User Message; order-created - Order Created; order-updated - Order Updated; order-deleted - Order Deleted; unapproved-to-execute - Unapproved to Execute; route-update - Route Update"
         },
-        "member_id": {
-            "type": "integer",
-            "title": "Member ID",
-            "description": "Member ID. HTTP method - POST."
-        },
         "activity_message": {
             "type": "string",
             "title": "Activity message",
-            "description": "Activity message. HTTP method - POST."
-        }
+            "description": "Activity message."
+        },
+		"route_id": {
+            "type": "string",
+            "title": "Route ID",
+            "description": "Route ID."
+        },
+        "route_destination_id": {
+            "type": "integer",
+            "title": "Route destination ID",
+            "description": "Route destination ID."
+        },
+		"note_id": {
+            "type": "integer",
+            "title": "Note ID",
+            "description": "Unique ID of a note"
+        },
+		"note_type": {
+            "type": "string",
+            "title": "Note Type",
+            "description": "Note type."
+        },
+		"note_contents": {
+			"type": "string",
+			"title": "Note Contents",
+			"description": "Note contents"
+		},
+		"route_name": {
+			"type": "string",
+			"title": "Route Name",
+			"description": "Route name"
+		},
+		"note_file": {
+			"type": "string",
+			"title": "Note File",
+			"description": "Note file URl"
+		},
+		"destination_name": {
+			"type": "string",
+			"title": "Destination Name",
+			"description": "Destination name"
+		},
+		"destination_alias": {
+			"type": "string",
+			"title": "Destination Alias",
+			"description": "Destination alias"
+		},
+		"member": {
+			"type": "object",
+			"properties": {
+				"member_id": {
+					"type": "string",
+					"title": "Member ID",
+					"description": "Unique member ID"
+				},
+				"member_first_name": {
+					"type": "string",
+					"title": "Member First Name",
+					"description": "The first name of the user. HTTP method - POST."
+				},
+				"member_last_name": {
+					"type": "string",
+					"title": "Member Last Name",
+					"description": "The last name of the user. HTTP method - POST."
+				},
+				"member_email": {
+					"type": "string",
+					"title": "Member Email",
+					"format": "email",
+					"description": "E-mail address of the user that was used for site registration. HTTP method - POST."
+				}
+			}
+		}
     }
 }
