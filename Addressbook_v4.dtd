@@ -24,11 +24,6 @@
 			"title": "Member ID",
 			"description": "A contact owner's member ID"
 		},
-		"api_key": {
-			"type": "string",
-			"title": "Api key",
-			"description": "User api key"
-		},
 		"address_1": {
 			"type": "string",
 			"title": "Address 1",
@@ -157,18 +152,18 @@
 					"enabled": {
 						"type": "boolean",
 						"title": "Enabled",
-						"descripton": "If true, a location schedule is enabled during construction of a hybrid optimization"
+						"description": "If true, a location schedule is enabled during construction of a hybrid optimization"
 					},
 					"from": {
 						"type": "string",
 						"title":"From",
-						"Description": "When schedule will be started from"
+						"description": "When schedule will be started from"
 					},
 					"mode": {
 						"type": "string",
 						"enum": ["daily", "weekly", "monthly", "annually"],
 						"title":"Mode",
-						"Description": "Schedule mode"
+						"description": "Schedule mode"
 					},
 					"daily": {
 						"type": "object",
@@ -296,7 +291,7 @@
 					}
 				}
 			}
-			
+
 		},
 		"schedule_blacklist": {
 			"type": "array",
@@ -390,6 +385,11 @@
 			"title": "Visited_Count",
 			"description": "How many times visited the address"
 		},
+		"last_visited_timestamp": {
+			"type": "integer",
+			"title": "Last Visited Timestamp",
+			"description": "Last visited timestamp"
+		},
 		"last_routed_timestamp": {
 			"type": "integer",
 			"title": "Last Routed Timestamp",
@@ -398,7 +398,7 @@
 		"is_assigned": {
 			"type": "boolean",
 			"title": "Is Assigned",
-			"descripton": "If true, a location assigned to a route."
+			"description": "If true, a location assigned to a route."
 		}
 	}
 }
