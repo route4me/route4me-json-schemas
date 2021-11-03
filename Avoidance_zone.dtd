@@ -5,11 +5,6 @@
 	"description": "Json schema for an Avoidance Zone clas, which is used for defining different type avoidance zones. For detailed usage see curl Avoidance Zones group",
 	"type": "object",
 	"properties": {
-		"api_key": {
-			"type": "string",
-			"title": "API key",
-			"description": "User api key"
-		},
 		"territory_id": {
 			"type": "string",
 			"title": "Territory id",
