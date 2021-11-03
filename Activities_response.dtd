@@ -14,6 +14,11 @@
 		    "type": "integer",
 			"title": "Total",
             "description": "Total number of the activity objects in the response"
+		},
+		"next_page_cursor": {
+			"type": "string",
+			"title": "Next Page Cursor",
+            "description": "Next page cursor"
 		}
     }
 }
