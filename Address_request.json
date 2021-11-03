@@ -286,6 +286,23 @@
 			"type": "string",
 			"title": "Tracking Number",
 			"description": "Systemwide unique code, which permits end-users (recipients) to track the status of their order"
+		},
+		"required_skills": {
+			"type": "array",
+			"items": { "type": "string" },
+			"title": "Required Skills",
+			"description": "Required skills of a driver"
+		},
+		"additional_status": {
+			"type": "string",
+			"nullable": true,
+			"title": "Additional Status",
+			"description": "Additional Status of the address"
+		},
+		"wait_time_to_next_destination": {
+			"type": "integer",
+			"title": "Wait time to next destination",
+			"description": "Wait time to next destination"
 		}
 	}
 }
