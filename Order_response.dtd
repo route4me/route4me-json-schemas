@@ -8,7 +8,12 @@
 		"created_timestamp": {
 			"type": "integer",
 			"title": "Created Timestamp",
-			"description": "Timestamp of an order crreation."
+			"description": "Timestamp of an order creation."
+		},
+		"updated_timestamp": {
+			"type": "integer",
+			"title": "Updated Timestamp",
+			"description": "Timestamp of an order updating."
 		},
 		"order_id": {
 			"type": "integer",
@@ -124,6 +129,11 @@
 			"title": "Order custom data",
 			"description": "A custom data of the order"
 		},
+		"visited_count": {
+			"type": "integer",
+			"title": "Visited Count",
+			"description": "How many times the order visited."
+		},
 		"in_route_count": {
 			"type": "integer",
 			"title": "In route count",
@@ -204,16 +214,10 @@
 			"title": "Is completed",
 			"description": "If true, the order is completed."
 		},
-		"custom_user_fields": {
-			"type": "array",
-			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_custom_field.dtd"},
-			"title": "Custom User Fields",
-			"description": "Custom user fields"
-		},
-		"visited_count": {
-			"type": "integer",
-			"title": "Visited Count",
-			"description": "How many times the order visited."
+		"tracking_number": {
+			"type": "string",
+			"title": "Tracking Number",
+			"description": "Systemwide unique code (chars<=255), which permits end-users (recipients) to track the status of their order"
 		},
 		"address_stop_type": {
 			"type": "string",
@@ -226,10 +230,11 @@
 			"title": "Last Status",
 			"description": "Last status of the order"
 		},
-		"tracking_number": {
-			"type": "string",
-			"title": "Tracking Number",
-			"description": "Systemwide unique code (chars<=255), which permits end-users (recipients) to track the status of their order"
+		"custom_user_fields": {
+			"type": "array",
+			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_custom_field.dtd"},
+			"title": "Custom User Fields",
+			"description": "Custom user fields"
 		}
 	}
 }
