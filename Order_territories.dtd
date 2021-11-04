@@ -1,0 +1,54 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_territories.dtd",
+	"title": "Orders territories",
+	"description": "Json schema to specify order territories in the optimization payload. For usage details see curl examples in Optimization group",
+	"type": "object",
+	"properties": {
+		"split_territories": {
+			"type": "boolean",
+			"title": "Split Territories",
+			"description": "If true, split each territory to own optimization"
+		},
+		"territories_id": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"description": "An array of the territory IDs"
+		},
+		"filters": {
+			"type": "object",
+			"properties": {
+				"query": {
+					"type": "string",
+					"title": "Query",
+					"description": "A query text for the orders searching."
+				},
+				"display": {
+					"type": "string",
+					"title": "Display",
+					"description": "Available values: 'all', 'routed', 'unrouted'"
+				},
+				"scheduled_for_YYMMDD": {
+					"type": "array",
+					"items": { 
+						"type": "string" 
+					},
+					"title": "Scheduled For Date",
+					"description": "Start and end dates to filter the orders by schedule. Format: 'yyyy-MM-dd' e.g. ['2019-06-01', '2019-06-18']"
+				},
+				"tracking_numbers": {
+					"type": "array",
+					"items": { 
+						"type": "string" 
+					},
+					"title": "Tracking Numbers",
+					"description": "An array of the tracking numbers to filter the orders by tracking numbers."
+				}
+			},
+			"title": "Filters",
+			"description": "Order filters"
+		}
+	}
+}
