@@ -4,7 +4,7 @@
 	"description": "The included part of the property of the route destination response <notes>",
 	"properties": {
 		"note_custom_entry_id": {
-			"type": "integer",
+			"type": "string",
 			"title": "Note Custom Entry ID",
 			"description": "Note custom entry ID"
 		},
