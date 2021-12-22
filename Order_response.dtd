@@ -75,6 +75,37 @@
 			"title": "Address phone number",
 			"description": "The phone number for the address"
 		},
+		"EXT_FIELD_custom_data": {
+			"type": "object",
+			"additionalProperties": { "type": "string" },
+			"title": "Order custom data",
+			"description": "A custom data of the order"
+		},
+		"EXT_FIELD_weight": {
+			"type": "number",
+			"title": "Order Weight",
+			"description": "Order weight"
+		},
+		"EXT_FIELD_cost": {
+			"type": "number",
+			"title": "Order Cost",
+			"description": "Order cost"
+		},
+		"EXT_FIELD_revenue": {
+			"type": "number",
+			"title": "Order Revenue",
+			"description": "Order revenue"
+		},
+		"EXT_FIELD_cube": {
+			"type": "number",
+			"title": "Order Cube",
+			"description": "Order cube"
+		},
+		"EXT_FIELD_pieces": {
+			"type": "number",
+			"title": "Order Pieces",
+			"description": "Order pieces"
+		},
 		"address_city": {
 			"type": "string",
 			"title": "Address city",
@@ -122,12 +153,6 @@
 			"maximum": 180,
 			"title": "Curbside longitude",
 			"description": "Curbside longitude"
-		},
-		"EXT_FIELD_custom_data": {
-			"type": "object",
-			"additionalProperties": { "type": "string" },
-			"title": "Order custom data",
-			"description": "A custom data of the order"
 		},
 		"visited_count": {
 			"type": "integer",
