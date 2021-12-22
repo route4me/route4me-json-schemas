@@ -121,6 +121,31 @@
 			"title": "Order custom data",
 			"description": "A custom data of the order"
 		},
+		"EXT_FIELD_weight": {
+			"type": "number",
+			"title": "Order Weight",
+			"description": "Order weight"
+		},
+		"EXT_FIELD_cost": {
+			"type": "number",
+			"title": "Order Cost",
+			"description": "Order cost"
+		},
+		"EXT_FIELD_revenue": {
+			"type": "number",
+			"title": "Order Revenue",
+			"description": "Order revenue"
+		},
+		"EXT_FIELD_cube": {
+			"type": "number",
+			"title": "Order Cube",
+			"description": "Order cube"
+		},
+		"EXT_FIELD_pieces": {
+			"type": "number",
+			"title": "Order Pieces",
+			"description": "Order pieces"
+		},
 		"order_icon": {
 			"type": "string",
 			"title": "Order icon",
