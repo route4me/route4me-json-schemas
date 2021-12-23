@@ -41,11 +41,22 @@
 				"short_label": {
 					"type": "string",
 					"title": "Short Label",
-					"description": "Short label"
+					"description": "Short label of the custom field (specified when order_custom_field_type=checkbox)."
+				},
+				"short_caption": {
+					"type": "string",
+					"title": "Short Caption",
+					"description": "Short caption of the custom field (specified when order_custom_field_type=dropdown)."
+				},
+				"allowed_values": {
+					"type": "array",
+					"items": { "type": "string" },
+					"title": "Short Values",
+					"description": "Allowed values of the custom field (specified when order_custom_field_type=dropdown)."
 				}
 			},
 			"title": "Order Custom Field Type Info",
-			"description": "Information about an order's custom field. You can specify the propertiesof the different types in this property, but the property "short_label" is reserved - it specifies custom field column header in the orders table in the page: https://route4me.com/orders."
+			"description": "Information about an order's custom field. You can specify the propertiesof the different types in this property, but the property `short_label` is reserved - it specifies custom field column header in the orders table in the page: https://route4me.com/orders."
 		}
 	}
 }
