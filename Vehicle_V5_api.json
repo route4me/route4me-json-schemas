@@ -34,13 +34,13 @@
 			"description": "Vehicle VIN number"
 		},
 		"vehicle_reg_state_id": {
-			"type": "string",
+			"type": "integer",
 			"nullable": true,
 			"title": "Vehicle registration state ID",
 			"description": "An ID of the state, where vehicle was registered"
 		},
 		"vehicle_reg_country_id": {
-			"type": "string",
+			"type": "integer",
 			"nullable": true,
 			"title": "Vehicle registration country ID",
 			"description": "An ID of the country, where vehicle was registered"
@@ -126,18 +126,18 @@
 			"description": "A type of the fuel"
 		},
 		"external_telematics_vehicle_id": {
-			"type": "string",
+			"type": "integer",
 			"nullable": true,
 			"title": "External Telematics Vehicle ID",
 			"description": "External telematics vehicle ID"
 		},
 		"timestamp_removed": {
-			"type": "string",
+			"type": "integer",
 			"title": "Timestamp Removed",
 			"description": "When he vehicle was removed"
 		},
 		"vehicle_profile_id": {
-			"type": "string",
+			"type": "integer",
 			"title": "Vehicle Profile ID",
 			"description": "Vehicle Profile ID"
 		},
@@ -180,14 +180,12 @@
 			"description": "Miles per gallon in the highway area"
 		},
 		"fuel_consumption_city_uf_value": {
-			"type": "number",
-			"nullable": true,
+			"type": "string",
 			"title": "Fuel Consumption City UF Value",
 			"description": "Fuel consumption UF value in the city area"
 		},
 		"fuel_consumption_highway_uf_value": {
-			"type": "number",
-			"nullable": true,
+			"type": "string",
 			"title": "Fuel Consumption Highway UF Value",
 			"description": "Fuel consumption UF value in the highway area"
 		}
