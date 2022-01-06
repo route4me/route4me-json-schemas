@@ -457,6 +457,49 @@
 						"items": {
 							"type": "integer"
 						}
+					},
+					"depot_address": {
+						"type": "object",
+						"properties": {
+							"source_id": {
+								"type": "integer",
+								"title": "Source ID",
+								"description": "Source ID"
+							},
+							"source_type": {
+								"type": "string",
+								"title": "Source Type",
+								"description": "Source type (e.g. input_addresses)"
+							}
+						}
+					},
+					"location_sequence_pattern": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"alias": {
+									"type": "string",
+									"title": "Alias",
+									"description": "Location alias"
+								},
+								"address": {
+									"type": "string",
+									"title": "Address",
+									"descripton": "Location address"
+								},
+								"lat": {
+									"type": "number",
+									"title": "Latitude",
+									"descripton": "Location latitude"
+								},
+								"lng": {
+									"type": "number",
+									"title": "Longitude",
+									"description": "Location longitude"
+								}
+							}
+						}
 					}
 				}
 			}
