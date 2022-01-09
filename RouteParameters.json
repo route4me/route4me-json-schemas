@@ -466,6 +466,7 @@
 			"items": {
 				"type": "object",
 				"title": "Advanced Constraints",
+				"description": "The parameter is used in advanced constraints to set the stops you plan to visit each route. Note: empty string \"\" means any stops, for example [\"\", AddresssObject1, AddresssObject2, \"\", AddresssObject3] means any stops before AddresssObject1 and between AddresssObject2 and AddresssObject3.",
 				"properties": {
 					"max_cargo_volume": {
 						"type": "number",
