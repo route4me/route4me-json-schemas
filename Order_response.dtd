@@ -255,11 +255,31 @@
 			"title": "Last Status",
 			"description": "Last status of the order"
 		},
+		"sorted_on_date": {
+			"type": "string",
+			"title": "Sorted On Date",
+			"description": "An order sorted on date"
+		},
 		"custom_user_fields": {
 			"type": "array",
 			"items": {"$ref": "https://github.com/route4me/route4me-json-schemas/blob/master/Order_custom_field.dtd"},
 			"title": "Custom User Fields",
 			"description": "Custom user fields"
+		},
+		"root_member_id": {
+			"type": "integer",
+			"title": "Root Member ID",
+			"description": "Root member ID"
+		},
+		"organization_id": {
+			"type": "integer",
+			"title": "Organization ID",
+			"description": "A unique identifier for the organization to which the order belongs."
+		},
+		"done_day_id": {
+			"type": "integer",
+			"title": "Done Day ID",
+			"description": "A day ID, the order was done."
 		}
 	}
 }
