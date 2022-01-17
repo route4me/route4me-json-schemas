@@ -122,7 +122,7 @@
 		"EXT_FIELD_weight": {
 			"type": "number",
 			"title": "Order Weight",
-			"description": "Order weight"
+			"description": "The weight of the order's cargo."
 		},
 		"EXT_FIELD_cost": {
 			"type": "number",
@@ -137,12 +137,12 @@
 		"EXT_FIELD_cube": {
 			"type": "number",
 			"title": "Order Cube",
-			"description": "Order cube"
+			"description": "The cubic volume that this order consumes/containson on a vehicle."
 		},
 		"EXT_FIELD_pieces": {
 			"type": "number",
 			"title": "Order Pieces",
-			"description": "Order pieces"
+			"description": "The number of pieces/palllets that this order consumes/contains on a vehicle."
 		},
 		"order_icon": {
 			"type": "string",
