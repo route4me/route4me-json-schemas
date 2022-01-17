@@ -258,10 +258,30 @@
 			"title": "Last Status",
 			"description": "Last status of the order"
 		},
+		"sorted_on_date": {
+			"type": "string",
+			"title": "Sorted On Date",
+			"description": "An order sorted on date"
+		},
 		"tracking_number": {
 			"type": "string",
 			"title": "Tracking Number",
 			"description": "Systemwide unique code (chars<=255), which permits end-users (recipients) to track the status of their order"
+		},
+		"root_member_id": {
+			"type": "integer",
+			"title": "Root Member ID",
+			"description": "Root member ID"
+		},
+		"organization_id": {
+			"type": "integer",
+			"title": "Organization ID",
+			"description": "A unique identifier for the organization to which the order belongs."
+		},
+		"done_day_id": {
+			"type": "integer",
+			"title": "Done Day ID",
+			"description": "A day ID, the order was done."
 		}
 	}
 }
