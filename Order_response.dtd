@@ -23,7 +23,10 @@
 		"order_status_id": {
 			"type": "integer",
 			"title": "Order status ID",
-			"description": "Order status ID"
+			"enum": [
+				0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+			],
+			"description": "Order status ID. Available values: 0: New, 1: Inbound Scan, 2: Sorted by Territory, 3: Loaded, 4: Missing, 5: Damaged, 6: Manually Loaded, 7: Routed, 8: Unrouted, 9: Sorted by Route, 10: Route Started, 11: Failed, 12: Skipped, 13: Done, 14: Cancelled, 15: Scheduled"
 		},
 		"day_added_YYMMDD": {
 			"type": "string",
@@ -53,7 +56,7 @@
 		"member_id": {
 			"type": "integer",
 			"title": "Member ID",
-			"description": "User ID who is assigned to the route"
+			"description": "A unique identifier for the user to whom the route was assigned."
 		},
 		"EXT_FIELD_first_name": {
 			"type": "string",
@@ -274,12 +277,12 @@
 		"organization_id": {
 			"type": "integer",
 			"title": "Organization ID",
-			"description": "A unique identifier for the organization to which the order belongs."
+			"description": "A unique ID of a group the organizations or partners."
 		},
 		"done_day_id": {
 			"type": "integer",
 			"title": "Done Day ID",
-			"description": "A day ID, the order was done."
+			"description": "A day ID, when the order was completed."
 		}
 	}
 }
