@@ -5,15 +5,28 @@
 	"description": "Json schema for an Order class, which is used for keeping client order information at certain address. For usage details see curl examples in Order group",
 	"type": "object",
 	"properties": {
-		"api_key": {
-			"type": "string",
-			"title": "API key",
-			"description": "User api key for a developer"
+		"created_timestamp": {
+			"type": "integer",
+			"title": "Created Timestamp",
+			"description": "Timestamp of an order creation."
+		},
+		"updated_timestamp": {
+			"type": "integer",
+			"title": "Updated Timestamp",
+			"description": "Timestamp of an order creation."
 		},
 		"order_id": {
 			"type": "integer",
 			"title": "Order ID",
 			"description": "An unique internal ID of an order."
+		},
+		"order_status_id": {
+			"type": "integer",
+			"title": "Order status ID",
+			"enum": [
+				0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+			],
+			"description": "Order status ID. Available values: 0: New, 1: Inbound Scan, 2: Sorted by Territory, 3: Loaded, 4: Missing, 5: Damaged, 6: Manually Loaded, 7: Routed, 8: Unrouted, 9: Sorted by Route, 10: Route Started, 11: Failed, 12: Skipped, 13: Done, 14: Cancelled, 15: Scheduled"
 		},
 		"address_1": {
 			"type": "string",
@@ -24,6 +37,11 @@
 			"type": "string",
 			"title": "Address 2",
 			"description": "address_2 field"
+		},
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "A unique identifier for the user to whom the route was assigned."
 		},
 		"cached_lat": {
 			"type": "number",
@@ -42,7 +60,7 @@
 		"color": {
 			"type": "string",
 			"title": "Color",
-			"description": "Order icon color on a map"
+			"description": "Order icon hexadecimal color on a map."
 		},
 		"curbside_lat": {
 			"type": "number",
@@ -57,6 +75,26 @@
 			"maximum": 180,
 			"title": "Curbside longitude",
 			"description": "Curbside longitude"
+		},
+		"in_route_count": {
+			"type": "integer",
+			"title": "In route count",
+			"description": "In how many routes is included address."
+		},
+		"last_visited_timestamp": {
+			"type": "integer",
+			"title": "Last visited timestamp",
+			"description": "When the last time an address was visited."
+		},
+		"last_routed_timestamp": {
+			"type": "integer",
+			"title": "Last routed timestamp",
+			"description": "When last time an address was included in a route."
+		},
+		"day_added_YYMMDD": {
+			"type": "string",
+			"title": "Day Added",
+			"description": "Order inserted date"
 		},
 		"day_scheduled_for_YYMMDD": {
 			"type": "string",
@@ -92,6 +130,11 @@
 			"type": "integer",
 			"title": "Service time",
 			"description": "Consumed service time at an address."
+		},
+		"local_timezone_string": {
+			"type": "string",
+			"title": "Local timezone",
+			"description": "Local timezone"
 		},
 		"EXT_FIELD_first_name": {
 			"type": "string",
@@ -146,10 +189,56 @@
 			"title": "Order Pieces",
 			"description": "Order pieces"
 		},
+		"address_city": {
+			"type": "string",
+			"title": "Address city",
+			"description": "The city the address is located in"
+		},
+		"address_state_id": {
+			"type": "string",
+			"nullable": true,
+			"title": "Address state id",
+			"description": "The state the address is located in"
+		},
+		"address_country_id": {
+			"type": "string",
+			"title": "Address country id",
+			"description": "The country the address is located in"
+		},
+		"address_zip": {
+			"type": "string",
+			"title": "Address zip",
+			"description": "The zip code the address is located in"
+		},
 		"order_icon": {
 			"type": "string",
 			"title": "Order icon",
 			"description": "URL to an order icon file"
+		},
+		"is_validated": {
+			"type": "boolean",
+			"title": "Is validated",
+			"description": "If true, the order is validated."
+		},
+		"is_pending": {
+			"type": "boolean",
+			"title": "Is pending",
+			"description": "If true, the order is pending."
+		},
+		"is_accepted": {
+			"type": "boolean",
+			"title": "Is accepted",
+			"description": "If true, the order is accepted."
+		},
+		"is_started": {
+			"type": "boolean",
+			"title": "Is started",
+			"description": "If true, the order is started."
+		},
+		"is_completed": {
+			"type": "boolean",
+			"title": "Is completed",
+			"description": "If true, the order is completed."
 		},
 		"custom_user_fields": {
 			"type": "array",
@@ -161,6 +250,42 @@
 			"type": "integer",
 			"title": "Visited Count",
 			"description": "How many times the order visited."
+		},
+		"address_stop_type": {
+			"type": "string",
+			"enum": ["DELIVERY","PICKUP","BREAK","MEETUP","SERVICE","VISIT","DRIVEBY"],
+			"title": "Address stop type",
+			"description": "The type of stop that this is (DELIVERY,PICKUP,BREAK,MEETUP,SERVICE,VISIT,DRIVEBY)"
+		},
+		"last_status": {
+			"type": "string",
+			"title": "Last Status",
+			"description": "Last status of the order"
+		},
+		"sorted_on_date": {
+			"type": "string",
+			"title": "Sorted On Date",
+			"description": "An order sorted on date"
+		},
+		"tracking_number": {
+			"type": "string",
+			"title": "Tracking Number",
+			"description": "Systemwide unique code (chars<=255), which permits end-users (recipients) to track the status of their order"
+		},
+		"root_member_id": {
+			"type": "integer",
+			"title": "Root Member ID",
+			"description": "Root member ID"
+		},
+		"organization_id": {
+			"type": "integer",
+			"title": "Organization ID",
+			"description": "A unique ID of a group the organizations or partners."
+		},
+		"done_day_id": {
+			"type": "integer",
+			"title": "Done Day ID",
+			"description": "A day ID, when the order was completed."
 		}
 	}
 }
