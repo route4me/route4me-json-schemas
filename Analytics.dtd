@@ -90,10 +90,15 @@
                       "title": "Total Time",
                       "description": "Total time"
                    },
-				   "avg_actual_distance": {
+				   "total_actual_distance": {
                       "type": "number",
                       "title": "Total Actual Distance",
                       "description": "Total actual distance"
+                   },
+				   "avg_actual_distance": {
+                      "type": "number",
+                      "title": "Average Actual Distance",
+                      "description": "Average actual distance"
                    },
 				   "total_actual_time": {
                       "type": "integer",
