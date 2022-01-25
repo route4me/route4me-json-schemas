@@ -1,7 +1,7 @@
 
 {
 	"type": "object",
-	"title": "Route",
+	"title": "Route Status",
 	"description": "Json schema for the Route Status object. V-5. Endpoint: https://wh.route4me.com/modules/api/v5.0/route-status",
 	"properties": {
 		"route_id": {
