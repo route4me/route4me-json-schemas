@@ -1,0 +1,61 @@
+
+{
+	"type": "object",
+	"title": "Route Status History",
+	"description": "Json schema for the Route Status History object. V-5. Endpoint: https://wh.route4me.com/modules/api/v5.0/route-status/[route_id]/history",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"route_status_history_id": {
+						"type": "string",
+						"title": "Route Status Histoy ID",
+						"description": "A unique ID of the route status history"
+					},
+					"route_id": {
+						"type": "string",
+						"title": "Route ID",
+						"description": "Route Unique Identifier"
+					},
+					"member_id": {
+						"type": "integer",
+						"title": "Member ID",
+						"description": "a Unique ID of a route owner member."
+					},
+					"status": {
+						"type": "string",
+						"enum": ["planned", "started", "paused", "completed"],
+						"title": "Route Status",
+						"description": "Route current status"
+					},
+					"lat": {
+						"type": "number",
+						"minimum": -90,
+						"maximum": 90,
+						"title": "Latitude",
+						"description": "Latitude"
+					},
+					"lng": {
+						"type": "number",
+						"minimum": -90,
+						"maximum": 90,
+						"title": "Longitude",
+						"description": "Longitude"
+					},
+					"timestamp": {
+						"type": "integer",
+						"title": "Timestamp",
+						"description": "When the route status was sat."
+					},
+					"rollback_timestamp": {
+						"type": "integer",
+						"title": "Rollback Timestamp",
+						"description": "When the route status rollback was done."
+					}
+				}
+			}
+		}
+	}
+}
