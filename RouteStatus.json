@@ -1,0 +1,58 @@
+
+{
+	"type": "object",
+	"title": "Route",
+	"description": "Json schema for the Route Status object. V-5. Endpoint: https://wh.route4me.com/modules/api/v5.0/route-status",
+	"properties": {
+		"route_id": {
+			"type": "string",
+			"title": "Route ID",
+			"description": "Route Unique Identifier"
+		},
+		"optimization_problem_id": {
+			"type": "string",
+			"title": "Optimization Problem ID",
+			"description": "Optimization which generated this route"
+		},
+		"status": {
+			"type": "string",
+			"enum": ["planned", "started", "paused", "completed"],
+			"title": "Route Status",
+			"description": "Route current status"
+		},
+		"lat": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Latitude",
+			"description": "Latitude"
+		},
+		"lng": {
+			"type": "number",
+			"minimum": -90,
+			"maximum": 90,
+			"title": "Longitude",
+			"description": "Longitude"
+		},
+		"planned_at": {
+			"type": "integer",
+			"title": "Planned At",
+			"description": "When the route was planned (EPOCH format time)."
+		},
+		"started_at": {
+			"type": "integer",
+			"title": "Started At",
+			"description": "When the route was started (EPOCH format time)."
+		},
+		"paused_at": {
+			"type": "integer",
+			"title": "Paused At",
+			"description": "When the route was paused (EPOCH format time)."
+		},
+		"completed_at": {
+			"type": "integer",
+			"title": "Completed At",
+			"description": "When the route was completed (EPOCH format time)."
+		}
+	}
+}
