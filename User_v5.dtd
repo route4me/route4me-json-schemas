@@ -1,0 +1,179 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/User_v5.dtd",
+	"title": "User (v5)",
+	"type": "object",
+	"description": "The JSON schema for a user object. url: https://wh.route4me.com/modules/api/v5.0/team/users",
+	"properties": {
+		"member_id": {
+			"type": "integer",
+			"title": "Member ID",
+			"description": "Identification of the member."
+		},
+		"member_first_name": {
+			"type": "string",
+			"title": "Member First Name",
+			"description": "The first name of the user."
+		},
+		"member_last_name": {
+			"type": "string",
+			"title": "Member Last Name",
+			"description": "The last name of the user."
+		},
+		"member_email": {
+			"type": "string",
+			"title": "Member Email",
+			"format": "email",
+			"description": "E-mail address of the user that was used for site registration. HTTP method - POST."
+		},
+		"member_type": {
+			"type": "string",
+			"title": "Member Type",
+			"description": "Member type, ENUM [PRIMARY_ACCOUNT, SUB_ACCOUNT_ADMIN, SUB_ACCOUNT_REGIONAL_MANAGER, SUB_ACCOUNT_DISPATCHER, SUB_ACCOUNT_PLANNER, SUB_ACCOUNT_DRIVER]. HTTP method - POST."
+		},
+		"member_company": {
+			"type": "string",
+			"title": "Member Company",
+			"description": "A company to which the member belongs."
+		},
+		"member_phone": {
+			"type": "string",
+			"title": "Member Phone",
+			"description": "A phone number of the user. HTTP method - POST."
+		},
+		"timezone": {
+			"type": "string",
+			"title": "Timezone",
+			"description": "Member timezone. HTTP method - POST."
+		},
+		"HIDE_ROUTED_ADDRESSES": {
+			"type": "string",
+			"title": "Hide Routed Addresses",
+			"description": "Hide routed sddresses, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
+		"HIDE_VISITED_ADDRESSES": {
+			"type": "string",
+			"title": "Hide Visited Addresses",
+			"description": "Hide visited sddresses, ENUM['TRUE, 'FALSE']. HTTP method - POST."
+		},
+		"HIDE_NONFUTURE_ROUTES": {
+			"type": "string",
+			"title": "Hide Nonfuture Routes",
+			"description": "Hide non-future routes, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
+		"READONLY_USER": {
+			"type": "string",
+			"title": "Readonly User",
+			"description": "Readonly user, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
+		"OWNER_MEMBER_ID": {
+			"type": "string",
+			"title": "Owner Member ID",
+			"description": "Parent user ID. HTTP method - POST."
+		},
+		"date_of_birth": {
+			"type": "string",
+			"title": "Date of Birth",
+			"description": "Date of birth. HTTP method - POST."
+		},
+		"user_reg_state_id": {
+			"type": "integer",
+			"title": "User Region State ID",
+			"description": "Member state, Enum(COUNTRY_CODES). HTTP method - POST."
+		},
+		"user_reg_country_id": {
+			"type": "integer",
+			"title": "User Region Country ID",
+			"description": "Member country, Enum(COUNTRY_CODES). HTTP method - POST."
+		},
+		"SHOW_SUSR_ADDR": {
+			"type": "string",
+			"title": "Show Global Addresses",
+			"description": "Show global address book contacts in a user's account, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
+		"SHOW_SUSR_ORDERS": {
+			"type": "string",
+			"title": "Show Global Orders",
+			"description": "Show global orders in a user's account, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
+		"DriverHourlyRate": {
+			"type": "number",
+			"title": "Driver Hourly Rate",
+			"description": "An hourly rate for driving work."
+		},
+		"member_picture": {
+			"type": "string",
+			"title": "Member Picture",
+			"description": "An URL to a member picture file."
+		},
+		"SHOW_ALL_DRIVERS": {
+			"type": "string",
+			"title": "Show All Drivers",
+			"description": "Show all drivers, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
+		"vendor_id": {
+			"type": "integer",
+			"title": "Vendor ID",
+			"description": "Telematics vendor ID"
+		},
+		"driving_rate": {
+			"type": "number",
+			"title": "Driving Rate",
+			"description": "Driving rate of a user."
+		},
+		"working_rate": {
+			"type": "number",
+			"title": "Working Rate",
+			"description": "Working rate of a user."
+		},
+		"mile_rate": {
+			"type": "number",
+			"title": "Mile Rate",
+			"description": "Mile rate of a user."
+		},
+		"idling_rate": {
+			"type": "number",
+			"title": "Idling Rate",
+			"description": "Idling rate of a user."
+		},
+		"display_max_routes_future_days": {
+			"type": "boolean",
+			"title": "Display Maximum_Routes Number Of Future Days",
+			"description": "Display maximum_routes number of future days."
+		},
+		"SHOW_ALL_VEHICLES": {
+			"type": "string",
+			"title": "Show All Vehicles",
+			"description": "Show all vehicles, ENUM['TRUE', 'FALSE']. HTTP method - POST."
+		},
+		"allowed_submember_types": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"title": "Allowed Submember Types",
+			"description": "Allowed sub-member types in the user's account."
+		},
+		"can_edit" : {
+            "type" : "boolean",
+			"title": "Can Edit",
+			"description": "If true, the user can edit the account data."
+        },
+		"can_delete" : {
+            "type" : "boolean",
+			"title": "Can Delete",
+			"description": "If true, the user can delete the account data."
+        },
+		"custom_data" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "additionalProperties" : {
+                "type" : "string"
+              },
+			  "title": "Custom Data",
+			  "description": "Custom data of the user's account."
+            }
+        }
+	}
+}
