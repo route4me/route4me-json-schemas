@@ -1,0 +1,23 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/RouteAddressStatus.dtd",
+	"type": "object",
+	"title": "Route Address Status",
+	"description": "Json schema for the Route Address Status object. V5. Endpoint: https://wh.route4me.com/modules/api/v5.0/route-stop-status",
+	"properties": {
+		"destination_ids": {
+			"type": "array",
+			"description": "an array of the route addresses to set a status",
+			"items": {
+				"type": "integer",
+				"desription": "A route address ID"
+			}
+		},
+		"status": {
+			"type": "string",
+			"enum": ["Skipped", "Completed", "Failed", "Empty"],
+			"title": "Route Address Status",
+			"description": "Current route address status"
+		}
+	}
+}
