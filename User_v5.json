@@ -172,6 +172,14 @@
 			  "title": "Custom Data",
 			  "description": "Custom data of the user's account."
             }
-        }
+        },
+		"territories": {
+			"type": "array",
+			"description": "The territories assigned to the member.",
+			"items": {
+				"type": "string",
+				"description": "A territory ID"
+			}
+		}
 	}
 }
