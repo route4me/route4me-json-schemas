@@ -40,7 +40,7 @@
 		},
 		"max_weight_per_axle": {
 			"type": "number",
-			"title": "Maximmum Weight Per Axle",
+			"title": "Maximum Weight Per Axle",
 			"description": "Maximmum weight per axle"
 		},
 		"deleted_at": {
