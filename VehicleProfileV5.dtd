@@ -1,0 +1,181 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/VehicleProfileV5.dtd",
+	"title": "Vehicle Profile V5",
+	"type": "object",
+	"description": "Vehicle profile object in the user's account. Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicle-profiles",
+	"properties": {
+		"vehicle_profile_id": {
+			"type": "string",
+			"title": "Vehicle Profile ID",
+			"description": "A unique identification 32-char string of the vehicle profile"
+		},
+		"root_member_id": {
+			"type": "integer",
+			"title": "Root Member ID",
+			"description": "An unique identification number of the root member"
+		},
+		"name": {
+			"type": "string",
+			"title": "Name",
+			"description": "A name of the vehicle profile"
+		},
+		"height": {
+			"type": "number",
+			"title": "Height",
+			"description": "Vehicle height"
+		},
+		"width": {
+			"type": "number",
+			"title": "Width",
+			"description": "Vehicle width"
+		},
+		"length": {
+			"type": "number",
+			"title": "Length",
+			"description": "Vehicle length"
+		},
+		"weight": {
+			"type": "number",
+			"title": "Weight",
+			"description": "Vehicle weight"
+		},
+		"max_weight_per_axle": {
+			"type": "number",
+			"title": "Maximum Weight Per Axle",
+			"description": "Maximmum weight per axle"
+		},
+		"deleted_at": {
+			"type": "string",
+			"title": "Deleted At",
+			"description": "When the vehicle profile was deleted"
+		},
+		"created_at": {
+			"type": "string",
+			"title": "Created At",
+			"description": "When the vehicle profile was created"
+		},
+		"updated_at": {
+			"type": "string",
+			"title": "Upated At",
+			"description": "When the vehicle profile was updated"
+		},
+		"fuel_type": {
+			"type": "string",
+			"nullable": true,
+			"enum": ["unleaded 87", "unleaded 89", "unleaded 91", "unleaded 93", "diesel", "electric", "hybrid"],
+			"title": "Fuel Type",
+			"description": "A type of the fuel"
+		},
+		"fuel_consumption_city": {
+			"type": "number",
+			"nullable": true,
+			"title": "Fuel Consumption City",
+			"description": "Fuel consumption in the city area"
+		},
+		"fuel_consumption_highway": {
+			"type": "number",
+			"nullable": true,
+			"title": "Fuel Consumption Highway",
+			"description": "Fuel consumption in the highway area"
+		},
+		"hazmat_type": {
+			"type": "string",
+			"title": "Hazardous Material Type",
+			"enum": [
+				"general",
+				"explosives",
+				"flammable",
+				"inhalants",
+				"caustic",
+				"radioactive"
+			],
+			"description": "A hazardous material type"
+		},
+		"is_predefined": {
+			"type": "boolean",
+			"title": "Is Predefined",
+			"description": "If true, the vehicle parameters are predefined."
+		},
+		"is_default": {
+			"type": "boolean",
+			"title": "Is Default",
+			"description": "If true, the vehicle profile is default."
+		},
+		"vehicle_profile_code": {
+			"type": "string",
+			"title": "Vehicle Profile Code",
+			"description": "Internal code of the vehicle profile (e.g. '28DTRA' for 28 foot double trailer)."
+		},
+		"height_unit": {
+			"type": "string",
+			"title": "Height Unit",
+			"description": "Vehicle height unit. Available values are 'm' and 'ft'."
+		},
+		"width_unit": {
+			"type": "string",
+			"title": "Width Unit",
+			"description": "Vehicle width unit. Available values are 'm' and 'ft'."
+		},
+		"length_unit": {
+			"type": "string",
+			"title": "Length Unit",
+			"description": "Vehicle length unit. Available values are 'm' and 'ft'."
+		},
+		"weight_unit": {
+			"type": "string",
+			"title": "Weight Unit",
+			"description": "Vehicle weight unit. Available values are 'kg' and 'lb'."
+		},
+		"max_weight_per_axle_unit": {
+			"type": "string",
+			"title": "Maximum Weight Per Axle Unit",
+			"description": "A unit of the maximum weight per axle. Available values are 'kg' and 'lb'."
+		},
+		"fuel_consumption_city_unit": {
+			"type": "string",
+			"title": "Fuel Consumption City Unit",
+			"description": "Fuel consumption unit in the city area. Available values: 'mpg', 'mi/l', 'l/100km' 'km/l'."
+		},
+		"fuel_consumption_highway_unit": {
+			"type": "string",
+			"title": "Fuel Consumption Highway Unit",
+			"description": "Fuel consumption unit in the highway area. Available values: ''mpg', 'mi/l', 'l/100km' 'km/l'."
+		},
+		"height_uf_value": {
+			"type": "string",
+			"title": "Height UF Value",
+			"description": "User-friendly vehicle height value (e.g. '4.11 m')."
+		},
+		"width_uf_value": {
+			"type": "string",
+			"title": "Width UF Value",
+			"description": "User-friendly vehicle width value (e.g. '2.59 m')."
+		},
+		"length_uf_value": {
+			"type": "string",
+			"title": "Length UF Value",
+			"description": "User-friendly vehicle length value (e.g. '17.07 m')."
+		},
+		"weight_uf_value": {
+			"type": "string",
+			"title": "Weight UF Value",
+			"description": "User-friendly vehicle weight value (e.g. '36,287 kg')."
+		},
+		"max_weight_per_axle_uf_value": {
+			"type": "string",
+			"title": "Maximum Weight Per Axle UF Value",
+			"description": "User-friendly value of the maximum weight per axle (e.g. '15,422 kg')."
+		},
+		"fuel_consumption_city_uf_value": {
+			"type": "string",
+			"title": "Fuel Consumption City UF Value",
+			"description": "User-friendly fuel consumption value in the city area. Available values: 'mpg', 'mi/l', 'l/100km' 'km/l'."
+		},
+		"fuel_consumption_highway_uf_value": {
+			"type": "string",
+			"title": "Fuel Consumption Highway UF Value",
+			"description": "User-friendly fuel consumption value in the highway area. Available values: 'mpg', 'mi/l', 'l/100km' 'km/l'."
+		}
+	}
+}
