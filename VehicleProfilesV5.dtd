@@ -1,0 +1,80 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/VehicleProfilesV5.dtd",
+	"title": "Vehicle Profiles V5",
+	"description": "The JSON schema for the response of a Vehicle profiles request. Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicle-profiles",
+	"oneOf": [
+		{
+			"type": "array",
+			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/VehicleProfileV5.dtd"},
+			"description": "The JSON schema for the response of a Vehicle profiles request, when the parameter with_pagination=0."
+		},
+		{
+			"type": "object",
+			"description": "The JSON schema for the response of a Vehicle profiles request, when the parameter with_pagination=1.",
+			"properties": {
+				"current_page": {
+					"type": "integer",
+					"title": "Current Page",
+					"description": "Current page in the vehicle profiles collection."
+				},
+				"data": {
+					"type": "array",
+					"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/VehicleProfileV5.dtd"},
+					"title": "Data",
+					"description": "An array of the vehicle profiles."
+				},
+				"first_page_url": {
+					"type": "string",
+					"title": "First Page URL",
+					"description": "URL to the first page."
+				},
+				"from": {
+					"type": "integer",
+					"title": "From",
+					"description": "From which vehicle profile is starting the page."
+				},
+				"last_page": {
+					"type": "integer",
+					"title": "Last Page",
+					"description": "The last page in the vehicle profile collection."
+				},
+				"last_page_url": {
+					"type": "string",
+					"title": "Last Page URL",
+					"description": "URL to the last page."
+				},
+				"next_page_url": {
+					"type": "string",
+					"title": "Next Page URL",
+					"description": "URL to the next page."
+				},
+				"path": {
+					"type": "string",
+					"title": "Path",
+					"description": "Path to the API endpoin.t"
+				},
+				"per_page": {
+					"type": "integer",
+					"title": "Per Page",
+					"description": "The number of vehicles on a single page."
+				},
+				"prev_page_url": {
+					"type": "string",
+					"title": "Previous Page URL",
+					"description": "URL to the previous page"
+				},
+				"to": {
+					"type": "integer",
+					"title": "To",
+					"description": "Last vehicle profile in the page."
+				},
+				"total": {
+					"type": "integer",
+					"title": "Total",
+					"description": "Total number of the vehicle profiles."
+				}
+			}
+		}
+	]		
+}
