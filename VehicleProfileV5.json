@@ -11,7 +11,7 @@
 		"root_member_id": {
 			"type": "integer",
 			"title": "Root Member ID",
-			"description": "An unique identification number of the root member"
+			"description": "A unique identification number of the root member"
 		},
 		"name": {
 			"type": "string",
@@ -41,7 +41,7 @@
 		"max_weight_per_axle": {
 			"type": "number",
 			"title": "Maximum Weight Per Axle",
-			"description": "Maximmum weight per axle"
+			"description": "The maximum weight that can be carried per vehicle axle."
 		},
 		"deleted_at": {
 			"type": "string",
@@ -88,12 +88,12 @@
 				"caustic",
 				"radioactive"
 			],
-			"description": "A hazardous material type"
+			"description": "A hazardous material type the vehicle carry."
 		},
 		"is_predefined": {
 			"type": "boolean",
 			"title": "Is Predefined",
-			"description": "If true, the vehicle parameters are predefined."
+			"description": "If true, the vehicle profile is predefined. Note: When is_predefined=true, a vehicle profile is not updatable or removable."
 		},
 		"is_default": {
 			"type": "boolean",
