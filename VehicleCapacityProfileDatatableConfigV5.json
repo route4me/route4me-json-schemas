@@ -1,0 +1,140 @@
+{
+	"title": "Vehicle Capacity Profile Datatable Configuration V5",
+	"type": "object",
+	"description": "Configuration of the vehicle capacity profile datatable (how the table is shown on the website). Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicle-capacity-profiles/datatable/config",
+	"properties": {
+		"row_id_field": {
+			"type": "string",
+			"title": "Row Identification Field",
+			"description": "Which field stands for the row identification in the datatable."
+		},
+		"table_actions": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"title": "Table Actions",
+				"description": "The configuration of an action applied to the datatable.",
+				"properties": {
+					"component": {
+						"type": "string",
+						"title": "Component",
+						"description": "A webpage component type which triggers the action."
+					},
+					"data": {
+						"type": "object",
+						"title": "Data",
+						"description": "The data of the website component's features.",
+						"properties": {
+							"operation": {
+								"type": "string",
+								"title": "Operation",
+								"description": "An operation ID in the system."
+							},
+							"text": {
+								"type": "string",
+								"title": "Text",
+								"description": "A text of the action component."
+							},
+							"icon": {
+								"type": "string",
+								"title": "Icon",
+								"description": "An icon for the action component."
+							}
+						}
+					}
+				}
+			}
+		},
+		"filters_config": {
+			"type": "array",
+			"title": "Filters Configuration",
+			"description": "Configuration of the datatable filter",
+			"items": {
+				"type": "object",
+				"properties": {
+					"component": {
+						"type": "string",
+						"title": "Component",
+						"description": "A webpage component type for the datatable filter."
+					},
+					"targetField": {
+						"type": "string",
+						"title": "Target Field",
+						"description": "A target field of the datatable filter."
+					},
+					"title": {
+						"type": "string",
+						"title": "Title",
+						"description": "The title of the datatable filter component."
+					},
+					"icon": {
+						"type": "string",
+						"title": "Icon",
+						"description": "An icon for the datatable filter component."
+					}
+				}
+			}
+		},
+		"columns": {
+			"type": "array",
+			"title": "Columns",
+			"description": "Datatable columns",
+			"items": {
+				"type": "object",
+				"properties": {
+					"label": {
+						"type": "string",
+						"title": "Label",
+						"description": "Column label (header)"
+					},
+					"width": {
+						"type": "string",
+						"title": "Width",
+						"description": "Column width (e.g. 50px)"
+					},
+					"cell_config": {
+						"type": "object",
+						"title": "Cell Config",
+						"description": "Configuration of the column cell.",
+						"properties": {
+							"component": {
+								"type": "string",
+								"title": "Component",
+								"description": "Type of the cell component."
+							},
+							"data": {
+								"type": "object",
+								"title": "Data",
+								"description": "Feature data of the cell component.",
+								"properties": {
+									"operation": {
+										"type": "string",
+										"title": "Operation",
+										"description": "An operation ID in the system applied to the column cell."
+									},
+									"icon": {
+										"type": "string",
+										"title": "Icon",
+										"description": "An icon for the column component."
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"data_request": {
+			"type": "object",
+			"title": "Data Request",
+			"description": "Data request features",
+			"properties": {
+				"url": {
+					"type": "string",
+					"title": "URL",
+					"description": "The endpoint (URL) to retrieve the vehicle capacity profiles."
+				}
+			}
+		}
+	}
+}
