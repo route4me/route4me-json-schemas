@@ -4,9 +4,9 @@
 	"description": "Vehicle profile object in the user's account. Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicle-profiles",
 	"properties": {
 		"vehicle_profile_id": {
-			"type": "string",
+			"type": "integer",
 			"title": "Vehicle Profile ID",
-			"description": "A unique identification 32-char string of the vehicle profile"
+			"description": "A unique internal identification of the vehicle profile"
 		},
 		"root_member_id": {
 			"type": "integer",
