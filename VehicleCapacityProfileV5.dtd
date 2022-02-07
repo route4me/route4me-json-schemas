@@ -58,12 +58,12 @@
 		"max_volume_unit": {
 			"type": "string",
 			"title": "Maximum Volume Unit",
-			"description": "The units in which the maximum volume of the vehicle capacity profile is measured (cu ft, cu m)."
+			"description": "A unit in which maximum volume is measured (cu ft, cu m)."
 		},
 		"max_weight_unit": {
 			"type": "string",
 			"title": "Maximum Weight Unit",
-			"description": "The units in which the maximum weight of the vehicle capacity profile is measured (kg, lb)."
+			"description": "A unit in which maximum weight is measured (kg, lb)."
 		}
 	}
 }
