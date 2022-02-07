@@ -5,65 +5,70 @@
 	"type": "object",
 	"description": "Vehicle capacity profile object in the user's account. Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicle-capacity-profiles",
 	"properties": {
-		"vehicle_capacity_profile_id": {
-			"type": "integer",
-			"title": "Vehicle Capacity Profile ID",
-			"description": "A unique internal identification of the vehicle capacity profile."
-		},
-		"root_member_id": {
-			"type": "integer",
-			"title": "Root Member ID",
-			"description": "A unique identification number of the root member"
-		},
-		"name": {
-			"type": "string",
-			"title": "Name",
-			"description": "A name of the vehicle capacity profile"
-		},
-		"max_volume": {
-			"type": "number",
-			"title": "Maximum Volume",
-			"description": "A maximum cargo volume the vehicle can carry."
-		},
-		"max_weight": {
-			"type": "number",
-			"title": "Maximum Weight",
-			"description": "The maximum weight a vehicle can carry."
-		},
-		"max_items_number": {
-			"type": "integer",
-			"title": "Maximum Items Number",
-			"description": "The maximum number of items a vehicle can carry."
-		},
-		"max_revenue": {
-			"type": "number",
-			"title": "Maximum Revenue",
-			"description": "The maximum revenue an owner company can gain from a vehicle."
-		},
-		"deleted_at": {
-			"type": "string",
-			"title": "Deleted At",
-			"description": "When the vehicle capacity profile was deleted"
-		},
-		"created_at": {
-			"type": "string",
-			"title": "Created At",
-			"description": "When the vehicle capacity profile was created."
-		},
-		"updated_at": {
-			"type": "string",
-			"title": "Upated At",
-			"description": "When the vehicle capacity profile was updated."
-		},
-		"max_volume_unit": {
-			"type": "string",
-			"title": "Maximum Volume Unit",
-			"description": "A unit in which maximum volume is measured (cu ft, cu m)."
-		},
-		"max_weight_unit": {
-			"type": "string",
-			"title": "Maximum Weight Unit",
-			"description": "A unit in which maximum weight is measured (kg, lb)."
+		"data": {
+			"type": "object",
+			"properties": {
+				"vehicle_capacity_profile_id": {
+					"type": "integer",
+					"title": "Vehicle Capacity Profile ID",
+					"description": "A unique internal identification of the vehicle capacity profile."
+				},
+				"root_member_id": {
+					"type": "integer",
+					"title": "Root Member ID",
+					"description": "A unique identification number of the root member"
+				},
+				"name": {
+					"type": "string",
+					"title": "Name",
+					"description": "A name of the vehicle capacity profile"
+				},
+				"max_volume": {
+					"type": "number",
+					"title": "Maximum Volume",
+					"description": "A maximum cargo volume the vehicle can carry."
+				},
+				"max_weight": {
+					"type": "number",
+					"title": "Maximum Weight",
+					"description": "The maximum weight a vehicle can carry."
+				},
+				"max_items_number": {
+					"type": "integer",
+					"title": "Maximum Items Number",
+					"description": "The maximum number of items a vehicle can carry."
+				},
+				"max_revenue": {
+					"type": "number",
+					"title": "Maximum Revenue",
+					"description": "The maximum revenue an owner company can gain from a vehicle."
+				},
+				"deleted_at": {
+					"type": "string",
+					"title": "Deleted At",
+					"description": "When the vehicle capacity profile was deleted"
+				},
+				"created_at": {
+					"type": "string",
+					"title": "Created At",
+					"description": "When the vehicle capacity profile was created."
+				},
+				"updated_at": {
+					"type": "string",
+					"title": "Upated At",
+					"description": "When the vehicle capacity profile was updated."
+				},
+				"max_volume_unit": {
+					"type": "string",
+					"title": "Maximum Volume Unit",
+					"description": "A unit in which maximum volume is measured (cu ft, cu m)."
+				},
+				"max_weight_unit": {
+					"type": "string",
+					"title": "Maximum Weight Unit",
+					"description": "A unit in which maximum weight is measured (kg, lb)."
+				}
+			}
 		}
 	}
 }

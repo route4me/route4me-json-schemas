@@ -1,0 +1,80 @@
+{
+	"title": "Vehicle Capacity Profiles V5",
+	"type": "object",
+	"description": "The paginated list of vehicle capacity profiles' object. Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicle-capacity-profiles",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/VehicleCapacityProfileV5.json"}
+		},
+		"links": {
+			"type": "object",
+			"properties": {
+				"first": {
+					"type": "string",
+					"nullable": true,
+					"title": "First",
+					"description": "URL to the first page."
+				},
+				"last": {
+					"type": "string",
+					"nullable": true,
+					"title": "Last",
+					"description": "URL to the last page."
+				},
+				"prev": {
+					"type": "string",
+					"nullable": true,
+					"title": "Previos",
+					"description": "URL to the previous page."
+				},
+				"next": {
+					"type": "string",
+					"nullable": true,
+					"title": "Next",
+					"description": "URL to the next page."
+				}
+			}
+		},
+		"meta": {
+			"type": "object",
+			"properties": {
+				"current_page": {
+					"type": "integer",
+					"title": "Current Page",
+					"description": "Current page number"
+				},
+				"from": {
+					"type": "integer",
+					"title": "From",
+					"description": "From which vehicle is starting the page."
+				},
+				"last_page": {
+					"type": "integer",
+					"title": "Last Page",
+					"description": "Last page in the vehicles collection."
+				},
+				"path": {
+					"type": "string",
+					"title": "Path",
+					"descrption": "Path to the API endpoint."
+				},
+				"per_page": {
+					"type": "integer",
+					"title": "Per Page",
+					"descrption": "Number of the vehicle capacity profiles per page."
+				},
+				"to": {
+					"type": "integer",
+					"title": "To",
+					"descrption": "To which vehicle capacity profile is ending the page."
+				},
+				"total": {
+					"type": "integer",
+					"title": "Total",
+					"descrption": "Total number of the vehicle capacity profiles."
+				}
+			}
+		}
+	}
+}
