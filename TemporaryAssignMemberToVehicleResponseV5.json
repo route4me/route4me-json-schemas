@@ -1,7 +1,7 @@
 {
 	"title": "Assign Member To Vehicle Temporary Response V5",
 	"type": "object",
-	"description": "Response body of an assignment of a member to a vehicle temporary. Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicles/assign",
+	"description": "A response body for the temporary assignment of a member to a vehicle. Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicles/assign",
 	"properties": {
 		"data": {
 			"type": "array",
