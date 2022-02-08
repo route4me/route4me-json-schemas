@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/TemporaryAssignMemberToVehicleResponseV5.dtd",
+	"title": "Assign Member To Vehicle Temporary Response V5",
+	"type": "object",
+	"description": "Response body of an assignment of a member to a vehicle temporary. Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicles/assign",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"vehicle_id": {
+						"type": "string",
+						"title": "Vehicle ID",
+						"description": "Unique 32-char ID of a vehicle."
+					},
+					"expires_at": {
+						"type": "integer",
+						"title": "Expires At",
+						"description": "When will the assignment of a member to a vehicle expire (Unix timestamp)."
+					},
+					"assigned_member_id": {
+						"type": "integer",
+						"title": "Assigned Member ID",
+						"description": "A unique ID of a member assigned to the vehicle."
+					}
+				}
+			}
+		}
+	}
+}
