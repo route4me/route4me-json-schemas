@@ -3,7 +3,7 @@
 	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/TemporaryAssignMemberToVEhicleV5.dtd",
 	"title": "Assign Member To Vehicle Temporary Request V5",
 	"type": "object",
-	"description": "Request body of an assignment of a member to a vehicle temporary. Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicles/assign",
+	"description": "A request body for the temporary assignment of a member to a vehicle. Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicles/assign",
 	"properties": {
 		"vehicle_id": {
 			"type": "string",
