@@ -1,0 +1,67 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/VehicleCapacityProfilePageConfigV5.dtd",
+	"title": "Vehicle Capacity Profile Page Configuration V5",
+	"type": "object",
+	"description": "Configuration of the vehicle capacity profile page (unit user-friendly formats). Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicle-capacity-profiles/page/config",
+	"properties": {
+		"units": {
+			"type": "object",
+			"title": "Units",
+			"description": "User-friendly format of the units.",
+			"properties": {
+				"volume": {
+					"type": "object",
+					"title": "Volume",
+					"description": "User-friendly format of volume.",
+					"properties": {
+						"id": {
+							"type": "string",
+							"title": "ID",
+							"description": "A unique ID of the unit"
+						},
+						"label": {
+							"type": "string",
+							"title": "Label",
+							"description": "User-friendly label of the unit"
+						}
+					}
+				},
+				"revenue": {
+					"type": "object",
+					"title": "Revenue",
+					"description": "User-friendly format of revenue.",
+					"properties": {
+						"id": {
+							"type": "string",
+							"title": "ID",
+							"description": "A unique ID of the unit"
+						},
+						"label": {
+							"type": "string",
+							"title": "Label",
+							"description": "User-friendly label of the unit"
+						}
+					}
+				},
+				"weight": {
+					"type": "object",
+					"title": "Weight",
+					"description": "User-friendly format of weight.",
+					"properties": {
+						"id": {
+							"type": "string",
+							"title": "ID",
+							"description": "A unique ID of the unit"
+						},
+						"label": {
+							"type": "string",
+							"title": "Label",
+							"description": "User-friendly label of the unit"
+						}
+					}
+				}
+			}
+		}
+	}
+}
