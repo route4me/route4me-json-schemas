@@ -1,0 +1,55 @@
+{
+	"title": "Vehicle Track Response V5",
+	"type": "object",
+	"description": "Response of the vehicle track request. Endpoint: https://wh.route4me.com/modules/api/v5.0/vehicles/{vehicle_id}/track",
+	"properties": {
+		"data": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"route_id": {
+						"type": "string",
+						"title": "Route ID",
+						"description": "Route ID"
+					},
+					"member_id": {
+						"type": "integer",
+						"title": "Member ID",
+						"description": "A unique identification number of the member"
+					},
+					"lat": {
+						"type": "number",
+						"title": "Latitude",
+						"description": "Latitude",
+						"minimum": -90,
+						"maximum": 90
+					},
+					"lng": {
+						"type": "number",
+						"title": "Longitude",
+						"description": "Longitude",
+						"minimum": -180,
+						"maximum": 180
+					},
+					"altitude": {
+						"type": "number",
+						"title": "Altitude",
+						"descrption": "Altitude relative to sea level of the device being tracked"
+					},
+					"speed": {
+						"type": "number",
+						"title": "Speed",
+						"descrption": "The speed with which the vehicle is moving"
+					},
+					"timestamp": {
+						"type": "string",
+						"format": "date-time",
+						"title": "Device timestamp",
+						"descrption": "The timestamp on the local (remote relative to the server) device"
+					}
+				}
+			}
+		}
+	}
+}
