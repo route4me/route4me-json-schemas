@@ -552,6 +552,17 @@
 				}
 			}
 
+		},
+		"balance": {
+			"type": "object",
+			"title": "Balance",
+			"mode": {
+				"type": "string",
+				"enum": ["distance", "time", "localtions"],
+				"title": "Mode",
+				"description": "Route balancing mode. Available values: 'distance', 'time', 'localtions'"
+			},
+			"description": "Route balancing parameter."
 		}
 	}
 }
