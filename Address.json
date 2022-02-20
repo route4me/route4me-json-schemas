@@ -125,7 +125,7 @@
 		"geocodings": {
 			"type": "array",
 			"items": {
-				"type": "object"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/geocoding.json"
 			},
 			"title": "Geocodings ID"
 		},
@@ -464,7 +464,7 @@
 		"notes": {
 			"type": "array",
 			"items": {
-				"type": "object"
+				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/note.json"
 			},
 			"title": "Notes",
 			"description": "Notes"
