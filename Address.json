@@ -464,7 +464,7 @@
 		"notes": {
 			"type": "array",
 			"items": {
-				"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/note.json"
+				"type": "object"
 			},
 			"title": "Notes",
 			"description": "Notes"
