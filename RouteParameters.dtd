@@ -487,12 +487,12 @@
 								"address": {
 									"type": "string",
 									"title": "Address",
-									"descripton": "Location address"
+									"description": "Location address"
 								},
 								"lat": {
 									"type": "number",
 									"title": "Latitude",
-									"descripton": "Location latitude"
+									"description": "Location latitude"
 								},
 								"lng": {
 									"type": "number",
