@@ -67,22 +67,22 @@
 			"type": "number",
 			"nullable": true,
 			"title": "Vehicle Maximum Cargo Weight",
-			"description": "Maximum cargo weight a vehicle can cary"
+			"description": "Maximum cargo weight a vehicle can cary. Number precision = 1 (e.g. 4.9)."
 		},
 		"vehicle_max_cargo_volume": {
 			"type": "number",
 			"nullable": true,
 			"title": "Vehicle Maximum Cargo Volume",
-			"description": "Maximum cargo volume a vehicle can cary"
+			"description": "Maximum cargo volume a vehicle can cary. Number precision = 2 (e.g. 3.54)."
 		},
 		"vehicle_max_distance_mi": {
-			"type": "number",
+			"type": "integer",
 			"nullable": true,
 			"title": "Vehicle Maximum Distance (mi)",
 			"description": "Maximum distance for a single vehicle in this route (always in miles)"
 		},
 		"subtour_max_revenue": {
-			"type": "number",
+			"type": "integer",
 			"nullable": true,
 			"title": "Subtour Max Revenue",
 			"description": "Maximum allowed revenue from a subtour"
@@ -247,34 +247,34 @@
 			"type": "number",
 			"nullable": true,
 			"title": "Trailer Weight (t)",
-			"description": "If has_trailer = true, specifies the weight of the trailer (required)"
+			"description": "If has_trailer = true, specifies the weight of the trailer (required). Number precision = 2 (e.g. 3.54)."
 		},
 		"limited_weight_t": {
 			"type": "number",
 			"nullable": true,
 			"title": "Limited Weight (t)",
-			"description": "If travel_mode = 'Trucking', specifies the truck weight (required)"
+			"description": "If travel_mode = 'Trucking', specifies the truck weight (required). Number precision = 2 (e.g. 3.54)."
 		},
 		"weight_per_axle_t": {
 			"type": "number",
 			"nullable": true,
 			"title": "Weight per Axle (t)",
-			"description": "If travel_mode = 'Trucking', specifies the weight per axle (required)"
+			"description": "If travel_mode = 'Trucking', specifies the weight per axle (required). Number precision = 2 (e.g. 3.54)."
 		},
 		"truck_height": {
-			"type": "number",
+			"type": "integer",
 			"nullable": true,
 			"title": "Truck Height",
 			"description": "If travel_mode = 'Trucking', specifies the truck height (required)"
 		},
 		"truck_width": {
-			"type": "number",
+			"type": "integer",
 			"nullable": true,
 			"title": "Truck Width",
 			"description": "If travel_mode = 'Trucking', specifies the truck width (required)"
 		},
 		"truck_length": {
-			"type": "number",
+			"type": "integer",
 			"nullable": true,
 			"title": "Truck Length",
 			"description": "If travel_mode = 'Trucking', specifies the truck length (required)"
@@ -355,7 +355,7 @@
 			"type": "number",
 			"nullable": true,
 			"title": "Truck Weight",
-			"description": "If travel_mode = 'Trucking', specifies the truck weight (required)"
+			"description": "If travel_mode = 'Trucking', specifies the truck weight (required). Number precision = 2 (e.g. 4.65)."
 		},
 		"min_tour_size": {
 			"type": "integer",
@@ -394,13 +394,13 @@
 			"description": "Available with: 1 = RIGHTTURN_ALLOW, 2 = RIGHTTURN_FORBID, 3 = RIGHTTURN_MULTIAPPROACH (assumes points are intersections and visits them from all sides. Ignores uturn and leftturn constraints.)"
 		},
 		"route_time_multiplier": {
-			"type": "number",
+			"type": "integer",
 			"nullable": true,
 			"title": "Route Time Multiplier",
 			"description": "Route travel time slowdown (e.g. 25 (means 25% slowdown))"
 		},
 		"route_service_time_multiplier": {
-			"type": "number",
+			"type": "integer",
 			"nullable": true,
 			"title": "Route Service Time Multiplier",
 			"description": "Route service time slowdown (e.g. 10 (means 10% slowdown))"
