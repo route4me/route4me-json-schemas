@@ -238,22 +238,22 @@
 		"weight": {
 			"type": "number",
 			"title": "Weight",
-			"description": "Weight"
+			"description": "The weight of the package (cargo) to dropof/pickup to/from the address. Number precise = 2 (e.g. 4.77)."
 		},
 		"cost": {
 			"type": "number",
 			"title": "Cost",
-			"description": "The cost of the order for the address"
+			"description": "The cost of the order for the address. Number precise = 2 (e.g. 530.88)."
 		},
 		"revenue": {
 			"type": "number",
 			"title": "Revenue",
-			"description": "The total revenue for the address"
+			"description": "The total revenue for the address. Number precise = 2 (e.g. 4.77)."
 		},
 		"cube": {
 			"type": "number",
 			"title": "Cube",
-			"description": "The cubic volume of the cargo being delivered or picked up at the address"
+			"description": "The cubic volume of the cargo being delivered or picked up at the address. Number precise = 2 (e.g. 4.85)."
 		},
 		"pieces": {
 			"type": "integer",
