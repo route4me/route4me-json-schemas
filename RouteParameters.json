@@ -467,6 +467,11 @@
 				"type": "object",
 				"title": "Advanced Constraints",
 				"properties": {
+					"max_cargo_weight": {
+						"type": "number",
+						"title": "Maximum Cargo Weight",
+						"description": "Maximum cargo weight per route."
+					},
 					"max_cargo_volume": {
 						"type": "number",
 						"title": "Maximum Cargo Volume",
