@@ -121,6 +121,9 @@
 			"title": "Route Revenue",
 			"description": "Route revenue"
 		},
+		"route_demand_stats": {
+			"$ref": "#/$defs/stats"
+		},
 		"net_revenue_per_distance_unit": {
 			"type": "number",
 			"title": "Net Revenue Per Distance Unit",
@@ -324,6 +327,33 @@
 						},
 						"description": "Array of the IDs of the bundeld addresses."
 					}
+				}
+			}
+		}
+	},
+	"$defs": {
+		"stats": { 
+			"type": "object",
+			"properties": {
+				"running": {
+					"type": "number",
+					"description": "Running value"
+				},
+				"initial": {
+					"type": "number",
+					"description": "Initial value"
+				},
+				"remaining": {
+					"type": "number",
+					"description": "Remaining value"
+				},
+				"delivered": {
+					"type": "number",
+					"description": "Delivered value"
+				},
+				"picked": {
+					"type": "number",
+					"description": "Picked value"
 				}
 			}
 		}
