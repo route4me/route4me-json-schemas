@@ -135,7 +135,7 @@
 			"description": "Idling rate of a user."
 		},
 		"display_max_routes_future_days": {
-			"type": "boolean",
+			"type": "integer",
 			"title": "Display Maximum_Routes Number Of Future Days",
 			"description": "Display maximum_routes number of future days."
 		},
@@ -163,15 +163,12 @@
 			"description": "If true, the user can delete the account data."
         },
 		"custom_data" : {
-            "type" : "array",
-            "items" : {
-              "type" : "object",
-              "additionalProperties" : {
-                "type" : "string"
-              },
-			  "title": "Custom Data",
-			  "description": "Custom data of the user's account."
-            }
+			"type" : "object",
+			"additionalProperties" : {
+				"type" : "string"
+			},
+			"title": "Custom Data",
+			"description": "Custom data of the user's account."
         },
 		"territories": {
 			"type": "array",
