@@ -1,0 +1,21 @@
+{
+    "optimization_problem_id": null,
+    "route_id": "11111111111111111111111111111111",
+    "route_name": "Thursday 4th of November 2021 09:53 PM (+02:00)",
+    "member_id": 1,
+    "old_member_id": "1",
+    "new_member_id": 2,
+    "activity_type": "route-owner-changed",
+    "activity_id": "11111111111111111111111111111111",
+    "activity_timestamp": 1636059885,
+    "activity_message": "Route owner was changed from 'John Driver 2' to 'John Admin' by 'John Doe'",
+    "remote_ip": 0,
+    "day_id": 4326,
+    "device_type": "web",
+    "root_owner_member_id": "1",
+    "activity_day_id": 4326,
+    "account_type_id": "135",
+    "member_level": "0",
+    "root_owner_member_email": "test@email.mail",
+    "member_custom_data": {}
+  }

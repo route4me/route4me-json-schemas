@@ -1,0 +1,22 @@
+{
+    "route_id": "11111111111111111111111111111111",
+    "member_id": 1,
+    "route_destination_id": "706574716",
+    "activity_type": "geofence-entered",
+    "activity_id": "11111111111111111111111111111111",
+    "activity_timestamp": 1636056043,
+    "activity_message": "Geofence triggered check in 'Kryvyi Rih 33A Vatutina Street, Kryvyi Rih, Dnipropetrovs\\'ka oblast, Ukraine, 50000'",
+    "remote_ip": 111111111,
+    "day_id": 4326,
+    "device_type": "web",
+    "root_owner_member_id": "1",
+    "activity_day_id": 4326,
+    "order_id": "141297",
+    "address_custom_data": {
+      "Custom data": "Some custom data"
+    },
+    "account_type_id": "135",
+    "member_level": "0",
+    "root_owner_member_email": "test@email.mail",
+    "member_custom_data": {}
+  }

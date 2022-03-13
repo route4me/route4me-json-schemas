@@ -1,0 +1,17 @@
+{
+    "area_id": "1081EDED426DDD2B510ABF1007695CC8",
+    "member_id": "1",
+    "activity_type": "area-removed",
+    "activity_id": "EC1488D7B5921320D3431B9A58493AC0",
+    "activity_timestamp": 1636060224,
+    "activity_message": "Region 'lessdots2' was removed",
+    "remote_ip": 0,
+    "day_id": 4326,
+    "device_type": "web",
+    "root_owner_member_id": "1",
+    "activity_day_id": 4326,
+    "account_type_id": "135",
+    "member_level": "0",
+    "root_owner_member_email": "test@email.mail",
+    "member_custom_data": {}
+}

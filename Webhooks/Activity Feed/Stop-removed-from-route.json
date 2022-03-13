@@ -1,0 +1,20 @@
+{
+    "route_id": "11111111111111111111111111111111",
+    "route_destination_id": 706574766,
+    "member_id": 1,
+    "activity_type": "delete-destination",
+    "activity_id": "11111111111111111111111111111111",
+    "activity_timestamp": 1636061496,
+    "activity_message": "Address was deleted from the route.",
+    "remote_ip": 111111111,
+    "day_id": 4326,
+    "device_type": "web",
+    "root_owner_member_id": "1",
+    "activity_day_id": 4326,
+    "order_id": null,
+    "address_custom_data": {},
+    "account_type_id": "135",
+    "member_level": "0",
+    "root_owner_member_email": "test@email.mail",
+    "member_custom_data": {}
+  }

@@ -1,0 +1,21 @@
+{
+    "optimization_problem_id": "11111111111111111111111111111111",
+    "route_id": "11111111111111111111111111111111",
+    "route_name": "Friday 5th of November 2021 09:45 AM (+02:00)",
+    "member_id": 1,
+    "old_vehicle_id": "11111111111111111111111111111111",
+    "new_vehicle_id": "",
+    "activity_type": "route-vehicle-changed",
+    "activity_id": "11111111111111111111111111111111",
+    "activity_timestamp": 1636125427,
+    "activity_message": "Route vehicle 'invoice CSS Outdoors' was removed by 'John Doe'",
+    "remote_ip": 0,
+    "day_id": 4327,
+    "device_type": "web",
+    "root_owner_member_id": "1",
+    "activity_day_id": 4327,
+    "account_type_id": "135",
+    "member_level": "0",
+    "root_owner_member_email": "test@email.mail",
+    "member_custom_data": {}
+  }

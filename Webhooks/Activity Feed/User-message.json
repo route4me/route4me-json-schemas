@@ -1,0 +1,17 @@
+{
+    "activity_type": "user_message",
+    "activity_message": "dfgdfg",
+    "route_id": "11111111111111111111111111111111",
+    "member_id": 1,
+    "activity_id": "840D0C8C2174CA02E79A1151E74A0126",
+    "activity_timestamp": 1636059152,
+    "remote_ip": 0,
+    "day_id": 4326,
+    "device_type": "web",
+    "root_owner_member_id": "1",
+    "activity_day_id": 4326,
+    "account_type_id": "135",
+    "member_level": "0",
+    "root_owner_member_email": "test@email.mail",
+    "member_custom_data": {}
+}

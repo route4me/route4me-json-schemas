@@ -1,0 +1,17 @@
+{
+    "area_id": "828275DBAC503483656A0242B384BB7B",
+    "member_id": "1",
+    "activity_type": "area-removed",
+    "activity_id": "11111111111111111111111111111111",
+    "activity_timestamp": 1636060467,
+    "activity_message": "Region '1232345' was removed",
+    "remote_ip": 0,
+    "day_id": 4326,
+    "device_type": "web",
+    "root_owner_member_id": "1",
+    "activity_day_id": 4326,
+    "account_type_id": "135",
+    "member_level": "0",
+    "root_owner_member_email": "test@email.mail",
+    "member_custom_data": {}
+}
