@@ -1,17 +1,20 @@
 {
-    "route_id": "11111111111111111111111111111111",
-    "member_id": 1,
+    "route_id": "1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A",
+    "member_id": 1111111,
     "activity_type": "route-update",
-    "activity_id": "11111111111111111111111111111111",
-    "activity_timestamp": 1636063016,
-    "activity_message": "Route la1 (Duplicate) (Duplicate) (Duplicate) was updated",
-    "remote_ip": 111111111,
-    "day_id": 4326,
+    "activity_id": "1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A",
+    "activity_timestamp": 1111111111,
+    "activity_message": "Directions updated: on route \"Route 001\"",
+    "remote_ip": 1111111111,
+    "day_id": 1111,
     "device_type": "web",
-    "root_owner_member_id": "1",
-    "activity_day_id": 4326,
-    "account_type_id": "135",
-    "member_level": "0",
-    "root_owner_member_email": "test@email.mail",
-    "member_custom_data": {}
-  }
+    "root_owner_member_id": "1111111",
+    "activity_day_id": 1111,
+    "account_type_id": "111",
+    "member_level": "1",
+    "root_owner_member_email": "john.doe@route4me.com",
+    "member_custom_data": {
+        "Custom Field 1": "Custom Data 1",
+        "Custom Field 2": "Custom Data 2"
+    }
+}

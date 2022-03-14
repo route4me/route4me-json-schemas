@@ -1,17 +1,20 @@
 {
     "activity_type": "route-started",
-    "activity_message": "Route started: route \"Thursday 4th of November 2021 11:41 PM (+02:00)\" started from web",
-    "route_id": "11111111111111111111111111111111",
-    "member_id": 1,
-    "activity_id": "11111111111111111111111111111111",
-    "activity_timestamp": 1636062174,
-    "remote_ip": 0,
-    "day_id": 4326,
-    "device_type": "web",
-    "root_owner_member_id": "1",
-    "activity_day_id": 4326,
-    "account_type_id": "135",
-    "member_level": "0",
-    "root_owner_member_email": "test@email.mail",
-    "member_custom_data": {}
-  }
+    "activity_message": "Route started: route \"Route 001\" started from Android Phone",
+    "route_id": "1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A",
+    "member_id": 1111111,
+    "activity_id": "1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A",
+    "activity_timestamp": 1111111111,
+    "remote_ip": 111111111,
+    "day_id": 1111,
+    "device_type": "Android Phone",
+    "root_owner_member_id": "1111111",
+    "activity_day_id": 1111,
+    "account_type_id": "111",
+    "member_level": "1",
+    "root_owner_member_email": "john.doe@route4me.com",
+    "member_custom_data": {
+        "Custom Field 1": "Custom Data 1",
+        "Custom Field 2": "Custom Data 2"
+    }
+}

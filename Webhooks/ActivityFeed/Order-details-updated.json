@@ -1,9 +1,9 @@
 {
     "member_id": 1111111,
-    "activity_type": "order-deleted",
+    "activity_type": "order-updated",
     "activity_id": "1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A",
     "activity_timestamp": 1111111111,
-    "activity_message": "Order deleted",
+    "activity_message": "Order updated",
     "remote_ip": 111111111,
     "day_id": 1111,
     "device_type": "web",
@@ -19,13 +19,13 @@
         "address_alias": "Customer 001",
         "address_1": "20 W 34th St, New York, NY 10118, USA",
         "address_2": null,
-        "member_id": 1111111,
+        "member_id": 111111,
         "EXT_FIELD_first_name": "John",
         "EXT_FIELD_last_name": "Doe",
         "EXT_FIELD_email": "john.doe@route4me.com",
         "EXT_FIELD_phone": "+ 1-888-552-9045",
         "address_city": "New York",
-        "address_state_id": null,
+        "address_state_id": "New York",
         "address_country_id": "1",
         "address_zip": 10118,
         "cached_lat": 40.748765,
@@ -50,16 +50,21 @@
         "is_accepted": false,
         "is_started": false,
         "is_completed": false,
-        "tracking_number": null,
+        "tracking_number": "AA111111",
         "address_stop_type": "DELIVERY",
         "last_status": 0,
         "custom_user_fields": []
     },
     "order_diffs": [
         {
-            "field": "is_deleted",
-            "old_value": false,
-            "new_value": true
+            "field": "EXT_FIELD_first_name",
+            "old_value": "",
+            "new_value": "John"
+        },
+        {
+            "field": "EXT_FIELD_last_name",
+            "old_value": "",
+            "new_value": "Doe"
         },
         {
             "field": "updated_timestamp",
