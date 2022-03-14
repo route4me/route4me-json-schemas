@@ -1,18 +1,21 @@
 {
-    "route_id": "11111111111111111111111111111111",
+    "route_id": "1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A",
     "optimization_problem_id": null,
-    "member_id": "1",
+    "member_id": "1111111",
     "activity_type": "route-duplicate",
-    "activity_id": "11111111111111111111111111111111",
-    "activity_timestamp": 1636061577,
-    "activity_message": "Route \"Wednesday 3rd of November 2021 01:02 PM (-04:00) (Part 001)\" was duplicated",
+    "activity_id": "1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A1A",
+    "activity_timestamp": 1111111111,
+    "activity_message": "Route duplicated: \"Route 001\"",
     "remote_ip": 0,
-    "day_id": 4326,
+    "day_id": 1111,
     "device_type": "web",
-    "root_owner_member_id": "1",
-    "activity_day_id": 4326,
-    "account_type_id": "135",
-    "member_level": "0",
-    "root_owner_member_email": "test@email.mail",
-    "member_custom_data": {}
-  }
+    "root_owner_member_id": "1111111",
+    "activity_day_id": 1111,
+    "account_type_id": "111",
+    "member_level": "1",
+    "root_owner_member_email": "john.doe@route4me.com",
+    "member_custom_data": {
+        "Custom Field 1": "Custom Data 1",
+        "Custom Field 2": "Custom Data 2"
+    }
+}
