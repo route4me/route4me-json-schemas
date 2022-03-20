@@ -29,7 +29,7 @@
 			"type": "boolean",
 			"title": "Is Depot",
 			"description": "This address is a depot",
-			"default": "false"
+			"default": false
 		},
 		"timeframe_violation_state": {
 			"type": "integer",
@@ -154,7 +154,7 @@
 			"type": "boolean",
 			"title": "Is Visited",
 			"description": "The driver pressed the 'Visited' button",
-			"default": "false"
+			"default": false
 		},
 		"timestamp_last_visited": {
 			"type": "integer",
