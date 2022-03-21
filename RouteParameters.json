@@ -239,7 +239,7 @@
 		},
 		"has_trailer": {
 			"type": "boolean",
-			"default": "false",
+			"default": false,
 			"title": "Has Trailer",
 			"description": "if True vehicle has trailer"
 		},
