@@ -513,9 +513,9 @@
 			"properties": {
 				"mode": {
 					"type": "string",
-					"enum": ["distance", "time", "localtions"],
+					"enum": ["distance", "time", "destinations_count"],
 					"title": "Mode",
-					"description": "Route balancing mode. Available values: 'distance', 'time', 'localtions'"
+					"description": "Route balancing mode. Available values: 'distance', 'time', 'destinations_count'"
 				}
 			}
 		}
