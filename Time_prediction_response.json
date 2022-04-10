@@ -4,19 +4,22 @@
 	"type": "object",
 	"properties": {
 		"time-prediction": {
-			"type": "object",
-			"properties": {
-				"model": {
-					"type": "string",
-					"description": "An optimization model. Available values: 'matrix', 'optimization', 'direction'"
-				},
-				"value": {
-					"type": "integer",
-					"description": "Predicted time value"
-				},
-				"unit": {
-					"type": "string",
-					"description": "A time unit. Available values: 'seconds', 'minutes', 'hours'"
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"model": {
+						"type": "string",
+						"description": "An optimization model. Available values: 'matrix', 'optimization', 'direction'"
+					},
+					"value": {
+						"type": "integer",
+						"description": "Predicted time value"
+					},
+					"unit": {
+						"type": "string",
+						"description": "A time unit. Available values: 'seconds', 'minutes', 'hours'"
+					}
 				}
 			}
 		}
