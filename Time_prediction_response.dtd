@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "https://github.com/route4me/route4me-json-schemas/blob/master/Time_prediction_response.dtd",
+	"title": "Time Prediction Response",
+	"description": "Json schema for an Time Prediction response class. Endpoint: https://api.route4me.com/api.v4/predict-optimization-time.php",
+	"type": "object",
+	"properties": {
+		"time-prediction": {
+			"type": "object",
+			"properties": {
+				"model": {
+					"type": "string",
+					"description": "An optimization model. Available values: 'matrix', 'optimization', 'direction'"
+				},
+				"value": {
+					"type": "integer",
+					"description": "Predicted time value"
+				},
+				"unit": {
+					"type": "string",
+					"description": "A time unit. Available values: 'seconds', 'minutes', 'hours'"
+				}
+			}
+		}
+	}
+}
