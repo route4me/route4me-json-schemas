@@ -1,5 +1,5 @@
 {
-	"title": "TIme Predction Response",
+	"title": "Time Prediction Response",
 	"description": "Json schema for an Time Prediction response class. Endpoint: https://api.route4me.com/api.v4/predict-optimization-time.php",
 	"type": "object",
 	"properties": {
