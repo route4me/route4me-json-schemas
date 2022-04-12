@@ -156,9 +156,9 @@
 			"title": "Address phone number",
 			"description": "The phone number for the address"
 		},
-		"EXT_FIELD_custom_data": {
-			"type": "array",
-			"items": {
+		""EXT_FIELD_custom_data": {
+			"type": "object",
+			"additionalProperties": {
 				"type": "string"
 			},
 			"title": "Order custom data",
