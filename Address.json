@@ -625,6 +625,12 @@
 			"title": "Required Skills",
 			"description": "Required skills of a driver"
 		},
+		"tags": {
+			"type": "array",
+			"items": { "type": "string" },
+			"title": "Tags",
+			"description": "Address tags"
+		},
 		"additional_status": {
 			"type": "string",
 			"nullable": true,
