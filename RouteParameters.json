@@ -553,6 +553,11 @@
 								}
 							}
 						}
+					},
+					"group": {
+						"type": "string",
+						"title": "Group",
+						"description": "Group name of an advanced constraint"
 					}
 				}
 			}
@@ -568,6 +573,18 @@
 					"enum": ["distance", "time", "destinations_count"],
 					"title": "Mode",
 					"description": "Route balancing mode. Available values: 'distance', 'time', 'destinations_count'"
+				}
+			}
+		},
+		"group_max_routes": {
+			"type": "array",
+			"description": "Specifies the maximum number of the routes by advanced constraint groups.",
+			"items": {
+				"type": "array",
+				"description": "The pairs of the group name and the maximum allowed route number in the advanced constraint group.",
+				"items": {
+					"type": "object",
+					"description": "Available values: group name and maximum allowed route number in the advanced constraint group."
 				}
 			}
 		}

@@ -59,12 +59,12 @@
 		"vehicle_max_cargo_weight": {
 			"type": ["number", "null"],
 			"title": "Vehicle Maximum Cargo Weight",
-			"description": "Maximum cargo weight a vehicle can cary. Number precision = 1 (e.g. 4.9)."
+			"description": "Maximum cargo weight a vehicle can carry. Number precision = 1 (e.g. 4.9)."
 		},
 		"vehicle_max_cargo_volume": {
 			"type": ["number", "null"],
 			"title": "Vehicle Maximum Cargo Volume",
-			"description": "Maximum cargo volume a vehicle can cary. Number precision = 2 (e.g. 3.54)."
+			"description": "Maximum cargo volume a vehicle can carry. Number precision = 2 (e.g. 3.54)."
 		},
 		"vehicle_max_distance_mi": {
 			"type": ["integer", "null"],
@@ -501,10 +501,15 @@
 								}
 							}
 						}
+					},
+					"group": {
+						"type": "string",
+						"title": "Group",
+						"description": "Group name of an advanced constraint"
 					}
 				}
 			}
-			
+
 		},
 		"balance": {
 			"type": "object",
@@ -516,6 +521,18 @@
 					"enum": ["distance", "time", "destinations_count"],
 					"title": "Mode",
 					"description": "Route balancing mode. Available values: 'distance', 'time', 'destinations_count'"
+				}
+			}
+		},
+		"group_max_routes": {
+			"type": "array",
+			"description": "Specifies the maximum number of the routes by advanced constraint groups.",
+			"items": {
+				"type": "array",
+				"description": "The pairs of the group name and the maximum allowed route number in the advanced constraint group.",
+				"items": {
+					"type": "object",
+					"description": "Available values: group name and maximum allowed route number in the advanced constraint group."
 				}
 			}
 		}
