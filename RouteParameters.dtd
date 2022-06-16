@@ -505,7 +505,7 @@
 					"group": {
 						"type": "string",
 						"title": "Group",
-						"description": "Group name of an advanced constraint"
+						"description": "Group name of the advanced constraints."
 					}
 				}
 			}
