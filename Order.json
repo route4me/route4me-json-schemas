@@ -285,6 +285,11 @@
 			"type": "integer",
 			"title": "Done Day ID",
 			"description": "A day ID, when the order was completed."
+		},
+		"possession_day_id": {
+			"type": "integer",
+			"title": "possession Day ID",
+			"description": "A day ID, when the order was possessed by an organization (number of the days passed from 1/1/2010)."
 		}
 	}
 }
