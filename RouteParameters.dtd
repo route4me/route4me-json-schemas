@@ -420,6 +420,11 @@
 				"type": "object",
 				"title": "Advanced Constraints",
 				"properties": {
+					"max_cargo_weight": {
+						"type": "number",
+						"title": "Maximum Cargo Weight",
+						"description": "Maximum cargo weight per route."
+					},
 					"max_cargo_volume": {
 						"type": "number",
 						"title": "Maximum Cargo Volume",
@@ -434,6 +439,13 @@
 						"type": "integer",
 						"title": "Members Count",
 						"description": "Legacy feature which permits a user to request an example number of optimized routes."
+					},
+					"vehicles_id": {
+						"type": "array",
+						"description": "An array of the vehicle IDs.",
+						"items": {
+							"type": "string"
+						}
 					},
 					"available_time_windows": {
 						"type": "array",
@@ -461,15 +473,21 @@
 					"depot_address": {
 						"type": "object",
 						"properties": {
-							"source_id": {
-								"type": "integer",
-								"title": "Source ID",
-								"description": "Source ID"
-							},
-							"source_type": {
-								"type": "string",
-								"title": "Source Type",
-								"description": "Source type (e.g. input_addresses)"
+							"source": {
+								"type": "object",
+								"description": "A source of the depots",
+								"properties": {
+									"source_id": {
+										"type": "integer",
+										"title": "Source ID",
+										"description": "Source ID"
+									},
+									"source_type": {
+										"type": "string",
+										"title": "Source Type",
+										"description": "Source type (e.g. input_addresses)"
+									}
+								}
 							}
 						}
 					},
