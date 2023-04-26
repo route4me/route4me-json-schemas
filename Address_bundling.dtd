@@ -51,6 +51,27 @@
 					"description": "If additional_items_mode=2, contains list of the custom times (EPOCH format)"
 				}
 			}
+		},
+		"time_window_rules": {
+			"type": "object",
+			"title": "Time Window Rules",
+			"properties": {
+				"resolve_strategy": {
+					"type": "integer",
+					"title": "Time Windows Solve Strategy",
+					"description": "Time window solving strategy. Available values: 1 - if time window is incorrect, the address won't be bundled; 0 - the address will be bundled, even with an incorrect time window."
+				},
+				"bundle_only_overlapping": {
+					"type": "boolean",
+					"title": "Bundle Only Overlapping",
+					"description": "Bundle only overlapping time windows. Available values: True - if the stops have not intersected Time Windows, they will not be bundled in the bundling group; False - even if stops have not intersected Time Windows, they will be bundled in the bundling group."
+				},
+				"bundle_service_time_greater_than_tw": {
+					"type": "boolean",
+					"title": "Bundle Service Time Greater Than TW",
+					"description": "Bundle the service time greater than the time windows. Available values: True - all stops will be bundled even if they have Service Time greater than summary TW for the bundling group; False - stops with greater service time than the Time Window of a group will be excluded from the bundling group."
+				}
+			}
 		}
 	}
 }
