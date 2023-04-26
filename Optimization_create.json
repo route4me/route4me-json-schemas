@@ -70,10 +70,28 @@
 		"uploads": {
 			"type": "array",
 			"title": "Array Of Uploaded File IDs",
-			"description": "An array of the uploaded file IDs."
+			"description": "An array of the uploaded file IDs.",
 			"items": {
 				"type": "string",
 				"description": "A unique ID of an uploaded address file."
+			}
+		},
+		"analytics": {
+			"type": "object",
+			"description": "Timestamps for analytics time range.",
+			"properties": {
+				"route_settings_open_timestamps": {
+					"type": "array",
+					"items": {
+						"type": "number"
+					}
+				},
+				"optimization_post_timestamps": {
+					"type": "array",
+					"items": {
+						"type": "number"
+					}
+				}
 			}
 		}
 	}
