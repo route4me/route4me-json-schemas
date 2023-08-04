@@ -123,7 +123,29 @@
 			"description": "Route revenue"
 		},
 		"route_demand_stats": {
-			"$ref": "#/$defs/stats"
+			"type": "object",
+			"properties": {
+				"running": {
+					"type": "number",
+					"description": "Running value"
+				},
+				"initial": {
+					"type": "number",
+					"description": "Initial value"
+				},
+				"remaining": {
+					"type": "number",
+					"description": "Remaining value"
+				},
+				"delivered": {
+					"type": "number",
+					"description": "Delivered value"
+				},
+				"picked": {
+					"type": "number",
+					"description": "Picked value"
+				}
+			}
 		},
 		"net_revenue_per_distance_unit": {
 			"type": "number",
@@ -331,33 +353,5 @@
 				}
 			}
 		}
-	},
-	"$defs": {
-		"stats": { 
-			"type": "object",
-			"properties": {
-				"running": {
-					"type": "number",
-					"description": "Running value"
-				},
-				"initial": {
-					"type": "number",
-					"description": "Initial value"
-				},
-				"remaining": {
-					"type": "number",
-					"description": "Remaining value"
-				},
-				"delivered": {
-					"type": "number",
-					"description": "Delivered value"
-				},
-				"picked": {
-					"type": "number",
-					"description": "Picked value"
-				}
-			}
-		}
 	}
-
 }
