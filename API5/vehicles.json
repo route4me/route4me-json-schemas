@@ -1055,7 +1055,7 @@
         }
       }
     },
-    "/vehicles/job-tracker/result/{job_id}}": {
+    "/vehicles/job-tracker/result/{job_id}": {
       "get": {
         "operationId": "getJobTrackerResult",
         "tags": [
