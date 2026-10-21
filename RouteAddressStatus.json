@@ -8,7 +8,7 @@
 			"description": "an array of the route addresses to set a status",
 			"items": {
 				"type": "integer",
-				"desription": "A route address ID"
+				"description": "A route address ID"
 			}
 		},
 		"status": {

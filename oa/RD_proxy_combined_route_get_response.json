@@ -15,7 +15,7 @@
 				"depots": {
 					"type": "array",
 					"items": {
-						"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/RD_proxy_depot.jsom"
+						"$ref": "https://raw.githubusercontent.com/route4me/route4me-json-schemas/master/oa/RD_proxy_depot.json"
 					}
 				},
 				"savings": {
