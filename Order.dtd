@@ -156,7 +156,7 @@
 			"title": "Address phone number",
 			"description": "The phone number for the address"
 		},
-		""EXT_FIELD_custom_data": {
+		"EXT_FIELD_custom_data": {
 			"type": "object",
 			"additionalProperties": {
 				"type": "string"
