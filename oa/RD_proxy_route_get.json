@@ -20,7 +20,7 @@
 			"title": "API Key",
 			"description": "Use API with API key without authorization - GET."
 		},
-		"x-original-api-key": {wwwwwwww
+		"x-original-api-key": {
 			"type": "string",
 			"title": "X Original API Key",
 			"description": "Authorization by Route4Me key in the http request header, for Route4Me users - HEADER."

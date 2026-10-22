@@ -164,7 +164,7 @@
 			"descrption": "Miles per gallon in the highway area"
 		},
 		"fuel_consumption_city_uf_value": {
-			"type": "string,
+			"type": "string",
 			"title": "Fuel Consumption City UF Value",
 			"descrption": "Fuel consumption UF value in the city area"
 		},
