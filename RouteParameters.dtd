@@ -127,17 +127,17 @@
 			"description": "How many seconds a route can last at most. Default is 24 hours = 86400 seconds"
 		},
 		"target_duration": {
-			"type": "double",
+			"type": "number",
 			"title": "Target Duration",
 			"description": "The parameter specifies fine-tuning of an optimization process by route duration."
 		},
 		"target_distance": {
-			"type": "double",
+			"type": "number",
 			"title": "Target Distance",
 			"description": "The parameter specifies fine-tuning of an optimization process by route distance."
 		},
 		"target_wait_by_tail_size": {
-			"type": "double",
+			"type": "number",
 			"title": "Target Wait By Tail Size",
 			"description": "The parameter specifies fine-tuning of an optimization process by waiting time."
 		},

@@ -141,7 +141,7 @@
                       "description": "Deviation percent"
                    },
 				   "co2": {
-                      "type": "double",
+                      "type": "number",
                       "title": "CO2",
                       "description": "CO2 emmision"
                    },
