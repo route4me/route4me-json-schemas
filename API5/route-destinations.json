@@ -742,7 +742,6 @@
             "type" : "integer"
           },
           "is_visited" : {
-            "type" : "boolean",
             "oneOf" : [ {
               "type" : "boolean",
               "enum" : [ true, false ]
